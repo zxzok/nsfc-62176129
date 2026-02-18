@@ -3,157 +3,762 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>把“同名不同型”的抑郁分出来：用脑影像为治疗选对靶点</title>
+  <title>把"同名不同型"的抑郁分出来：用脑影像为rTMS选对靶点</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #f8fafb !important; }
+
+    /* Hero */
+    .hero-custom {
+      background: linear-gradient(155deg, #042f2e 0%, #064e3b 30%, #047857 60%, #10b981 100%) !important;
+      padding: 5rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: '';
+      position: absolute;
+      bottom: -25%;
+      left: 8%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important;
+      max-width: 24ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.82) !important;
+      font-size: 1.08rem !important;
+      line-height: 1.7 !important;
+      max-width: 54ch !important;
+      margin: 0 !important;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Sections */
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    .sec-label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: #047857; margin-bottom: 0.4rem;
+    }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important;
+      color: #0f2b46 !important;
+      line-height: 1.3 !important;
+      margin: 0 0 1rem !important;
+      border: none !important; padding: 0 !important;
+    }
+    .sec h2::after { display: none !important; }
+
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    /* Callout */
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(4,120,87,0.06), rgba(16,185,129,0.03));
+      border-left: 4px solid #047857;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem;
+      margin: 2rem 0;
+      font-size: 1.05rem; line-height: 1.75; color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+
+    .callout-warn {
+      background: rgba(251,191,36,0.06);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem; color: #78350f;
+    }
+
+    /* Fig inline */
+    .fig-inline {
+      background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 14px; padding: 1rem; margin: 2rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    /* KPI strip */
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin: 2.5rem 0;
+    }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center; padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #042f2e, #064e3b);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(4,78,59,0.2);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #6ee7b7; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    /* Analogy */
+    .analogy {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: linear-gradient(135deg, #ecfdf5, #f8fafc);
+      border: 1px solid #d1fae5;
+      border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0; width: 44px; height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #047857, #10b981);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    /* Step flow */
+    .steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin: 2.5rem 0; position: relative;
+    }
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none !important; }
+    }
+    .step { text-align: center; padding: 0 0.75rem; position: relative; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(145deg, #042f2e, #047857);
+      color: #a7f3d0; font-size: 1.2rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 12px rgba(4,120,87,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow { position: absolute; right: -10px; top: 26px; color: #047857; font-size: 1.3rem; z-index: 2; }
+
+    /* Finding cards */
+    .find-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 2rem 0;
+    }
+    .find-card {
+      border-radius: 14px; padding: 1.25rem;
+      border: 1px solid; transition: all 0.25s ease; cursor: default;
+    }
+    .find-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .find-card .desc { font-size: 0.85rem; line-height: 1.6; margin: 0; color: #475569; }
+    .find-card .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+
+    .fc-a { background: rgba(4,120,87,0.04); border-color: rgba(4,120,87,0.15); }
+    .fc-a h4, .fc-a .tag { color: #047857; }
+    .fc-b { background: rgba(6,182,212,0.04); border-color: rgba(6,182,212,0.15); }
+    .fc-b h4, .fc-b .tag { color: #0891b2; }
+    .fc-c { background: rgba(139,92,246,0.04); border-color: rgba(139,92,246,0.15); }
+    .fc-c h4, .fc-c .tag { color: #7c3aed; }
+    .fc-d { background: rgba(236,72,153,0.04); border-color: rgba(236,72,153,0.15); }
+    .fc-d h4, .fc-d .tag { color: #db2777; }
+
+    /* Bar chart */
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 100px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-green { background: linear-gradient(90deg, #047857, #10b981); }
+    .bf-teal { background: linear-gradient(90deg, #0891b2, #06b6d4); }
+    .bf-purple { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+
+    /* Two-col */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* VS comparison */
+    .vs-row {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 1rem; align-items: stretch; margin: 2rem 0;
+    }
+    @media (max-width: 640px) { .vs-row { grid-template-columns: 1fr; } }
+    .vs-card {
+      border-radius: 14px; padding: 1.5rem; text-align: center;
+    }
+    .vs-card h4 { font-size: 1rem; font-weight: 800; margin: 0 0 0.5rem; }
+    .vs-card .num { font-size: 2rem; font-weight: 900; font-family: 'Inter', sans-serif; line-height: 1.1; }
+    .vs-card p { font-size: 0.85rem; color: #475569; margin: 0.5rem 0 0; line-height: 1.5; }
+    .vs-proto { background: linear-gradient(145deg, #ecfdf5, #d1fae5); border: 2px solid #a7f3d0; }
+    .vs-proto h4 { color: #047857; }
+    .vs-proto .num { color: #059669; }
+    .vs-atyp { background: linear-gradient(145deg, #ecfeff, #cffafe); border: 2px solid #a5f3fc; }
+    .vs-atyp h4 { color: #0891b2; }
+    .vs-atyp .num { color: #0891b2; }
+    .vs-divider {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 900; color: #94a3b8;
+    }
+
+    /* Takeaway */
+    .takeaway-banner {
+      background: linear-gradient(135deg, #042f2e, #064e3b);
+      border-radius: 18px; padding: 2.5rem 2rem;
+      text-align: center; margin: 2rem 0;
+      box-shadow: 0 8px 32px rgba(4,78,59,0.15);
+    }
+    .takeaway-banner .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .takeaway-banner p { color: #d1fae5; font-size: 1.15rem; line-height: 1.7; margin: 0; }
+    .takeaway-banner strong { color: #6ee7b7; }
+
+    /* FAQ */
+    .faq details {
+      border: 1px solid #e2e8f0; border-radius: 12px;
+      margin-bottom: 0.75rem; background: #fff;
+      transition: box-shadow 0.25s ease;
+    }
+    .faq details[open] { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary {
+      padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem;
+      color: #0f2b46; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before {
+      content: '+'; width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, #047857, #10b981);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; transition: transform 0.25s ease;
+    }
+    .faq details[open] summary::before { content: '−'; transform: rotate(180deg); }
+    .faq .faq-body { padding: 0 1.25rem 1.25rem 3.5rem; font-size: 0.92rem; line-height: 1.7; color: #475569; }
+
+    /* Glossary */
+    .gloss-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+    .gloss-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+    .gloss-card dt { font-weight: 700; font-size: 0.92rem; color: #047857; margin-bottom: 0.3rem; }
+    .gloss-card dd { font-size: 0.85rem; color: #475569; line-height: 1.55; margin: 0; }
+
+    /* Footer override */
+    .site-footer a { color: #10b981 !important; }
+  </style>
 </head>
 <body>
+
+<!-- Navigation -->
 <div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+  <a href="../../#/" style="color:#6ee7b7;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
   <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
 </div>
 
+<!-- Reading progress -->
 <div class="reading-progress" id="readingProgress"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">把“同名不同型”的抑郁分出来：用脑影像为治疗选对靶点</h1>
-    <p class="hero-subtitle">静息态fMRI + 机器学习分两类亚型，并在住院青少年中尝试“按分型精准rTMS”</p>
-  </div>
-</section>
-
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>抑郁影响的人很多，也影响得很深。论文在背景中给出三个现实信号：</p><p><ul><li>它的终生患病率约 <strong>15%–18%</strong>，全球约 <strong>3.5亿</strong> 人受到影响；</li><br><li>即使持续 <strong>3–6个月</strong> 的抗抑郁药单药治疗，达到缓解的人也“最多约 <strong>40%</strong>”；</li><br><li>与一些其他疾病不同，抑郁的全球疾病负担在过去 <strong>30年</strong> 没有明显下降。</li><br></ul><br>这意味着：我们不仅需要“更多治疗”，也需要“更对症的治疗”。作者指出，基于症状的诊断标准容易带来抑郁的<strong>异质性</strong>（看起来同一种病，背后机制可能不同）与<strong>主观性</strong>，从而阻碍精准医疗。于是他们提出：能否用更客观的神经影像指标把人群先分得更像，再谈靶点与参数？</p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/motivation.svg" alt="为什么要做这个研究" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的：把大脑当作“背景电台”来调台</h2>
-    <div class="reveal"><p>研究分两阶段、两个中心完成：</p><p><strong>第一阶段（中心1）：先分型，再选靶点。</strong> 研究招募 <strong>238名门诊MDD</strong> 与 <strong>66名健康对照（HC）</strong>（13–55岁），进行静息态fMRI。静息态fMRI可以理解为：人在不做任何任务时，大脑各区域仍会有自发活动；作者用 <strong>ALFF</strong> 来量化这种“低频波动的振幅”，把它当作每个脑区的“背景音量起伏”。</p><p>接着他们用两步机器学习把人群分成两团：先用 <strong>t‑SNE</strong> 把高维ALFF模式压到二维（像把复杂地形投影成平面图，方便看聚集），再用 <strong>高斯混合模型（GMM）</strong> 进行聚类；同时用一致性聚类检验分型是否稳定，并用SVM评估分型后的可区分性。</p><p>然后是“选靶点”：研究把大脑按AAL‑90分成90个脑区，逐脑区训练分类器区分“某亚型 vs 健康对照”，把每型区分能力最强的前10个脑区挑出来，看它们主要集中在哪个解剖区域，从而确定该亚型的rTMS刺激靶点。</p><p><strong>第二阶段（中心2）：把分型策略用到真实住院青年，并做两周精准rTMS。</strong> 中心2纳入 <strong>72名住院青少年/青年（13–24岁）</strong> 的抑郁发作个体（38 MDD、34 双相II型抑郁发作）。研究使用中心1训练的分类器给他们分型后，进行两周20次rTMS：原型亚型刺激 <strong>dmPFC</strong>（10 Hz、每次1200脉冲），非典型亚型刺激 <strong>枕叶皮层OCC</strong>（1 Hz、每次1000脉冲），两者均为100%静息运动阈值；并在治疗前（T0）、1周（T1）、2周（T2）采集MRI与量表（HAMD‑17、HAMA及自杀意念条目）评估变化。</p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/boundary.svg" alt="我们怎么做的：把大脑当作“背景电台”来调台" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么：三条最重要结论</h2>
-    <div class="reveal"><p><h4>发现1：抑郁在脑影像上可分两类，“前脑—后脑”失衡方向相反</h4></p><p>在中心1的238名MDD中，算法分出两类亚型：<strong>原型（n=143）</strong> 与 <strong>非典型（n=95）</strong>。两者共同主题是“前额叶—后部（尤其枕叶/视觉皮层）功能不平衡”，但方向相反：原型表现为前部ALFF更高、后部更低；非典型则相反。分型稳定性指标m1=0.93、m2=0.73。</p><p>更关键的是：把抑郁分型后再建模，比把所有抑郁混在一起更能区分健康对照——原型与非典型对HC的分类性能（F1≈0.70–0.71、AUC≈0.77）高于“总MDD vs HC”（F1=0.44、AUC=0.60），置换检验p<0.002支持其可靠性。</p><p><h4>发现2：两类亚型对应两个不同的刺激靶点：dmPFC vs 枕叶OCC</h4></p><p>作者不是沿用最常见的左侧dlPFC经验靶点，而是从“最能区分亚型与健康对照”的候选脑区分布推导靶点：原型亚型前10候选中 <strong>6/10</strong> 主要位于额叶，因此选 <strong>dmPFC</strong>；非典型亚型前10候选中 <strong>6/10</strong> 主要位于枕叶，因此选 <strong>OCC</strong>。</p><p><h4>发现3：在住院青少年/青年中，精准rTMS后出现影像回调与症状改善</h4></p><p>中心2把72人分成原型 <strong>16人</strong>、非典型 <strong>56人</strong> 后进行两周精准rTMS；两亚型均未出现严重不良事件。影像上，两亚型在治疗1周后就出现显著的前后失衡变化并维持至2周；作者指出多数变化发生在第一周。</p><p>临床上，T2时总体响应率为：原型 <strong>90.00%</strong>、非典型 <strong>70.73%</strong>；缓解率为：原型 <strong>30.00%</strong>、非典型 <strong>46.34%</strong>。在基线自杀意念条目>0者中，T2时自杀意念响应率：原型 <strong>100%</strong>、非典型 <strong>81.25%</strong>。</p><p><blockquote>重要提醒：论文明确指出本试验缺少假刺激对照且未完全盲法，因此这些改善不能直接等同于“完全由rTMS导致”的因果结论，需要更严格的随机对照试验验证。</blockquote></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/seesaw.svg" alt="我们发现了什么：三条最重要结论" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用：已证据支持 vs 合理推测</h2>
-    <div class="reveal"><p><strong>论文证据直接支持的价值</strong>：</p><p><ul><li>它演示了一条可操作的“闭环”路径：用客观影像指标（ALFF）分型 → 为不同亚型选不同rTMS靶点 → 用影像与量表在T0/T1/T2回看是否回调。作者把这称为“subtyping‑treatment‑evaluation closed loop”。</li><br></ul><br><ul><li>在住院青少年/青年抑郁发作样本中，这条路径与较高的总体响应率、以及自杀意念条目的改善同时出现，提示该框架具备可行性。</li><br></ul><br><strong>合理推测（但论文尚未证明）</strong>：</p><p>如果未来在更大样本、双盲随机对照试验中再次验证有效，这种分型‑选靶策略可能减少“试错式”治疗，让rTMS更像按机制对症。</p><p><strong>论文目前不支持的用法</strong>：</p><p>它不能用于个人自测或自行决定治疗靶点：论文未提供可供个体使用的简化规则/阈值；且临床应用仍缺乏假刺激对照与长期随访。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步：作者自己最在意的三件事</h2>
-    <div class="reveal"><p>论文在讨论中清楚指出：</p><p><ul><li><strong>没有假刺激（sham）对照</strong>：由于探索性试验，未设置假刺激组。</li><br><li><strong>未完全盲法</strong>：参与者知道自己刺激的靶点，安慰剂效应可能混杂。</li><br><li><strong>样本量与疗程限制</strong>：样本量较小；“高响应但相对较低的缓解率”提示可能需要超过两周的更长疗程。</li><br></ul><br>作者给出的下一步方向是：开展更大样本、双盲、随机对照试验（文中提到正在进行，ClinicalTrials.gov：<strong>NCT05465928</strong>），并探索更长疗程以提升缓解率。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">一句话带走</h2>
-    <div class="reveal"><p><strong>用脑影像先分型，让rTMS更“对症”。</strong></p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/motivation.svg" alt="motivation" loading="lazy">
-          <div class="visual-card-body">
-            <p>motivation</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/boundary.svg" alt="boundary" loading="lazy">
-          <div class="visual-card-body">
-            <p>boundary</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/seesaw.svg" alt="seesaw" loading="lazy">
-          <div class="visual-card-body">
-            <p>seesaw</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/outcomes.svg" alt="outcomes" loading="lazy">
-          <div class="visual-card-body">
-            <p>outcomes</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/performance.svg" alt="performance" loading="lazy">
-          <div class="visual-card-body">
-            <p>performance</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/sample.svg" alt="sample" loading="lazy">
-          <div class="visual-card-body">
-            <p>sample</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig3_p5.jpg" alt="fig3 p5" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig3 p5</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig1_p3.jpg" alt="fig1 p3" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig1 p3</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig4_p6.jpg" alt="fig4 p6" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig4 p6</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig2_p4.jpg" alt="fig2 p4" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig2 p4</p>
-          </div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(16,185,129,0.2);color:#6ee7b7;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>把"同名不同型"的抑郁分出来：用脑影像为rTMS选对靶点</h1>
+    <p class="lead">同样被诊断为"抑郁"的人，大脑可能在不同方向上失衡。本研究用静息态fMRI把抑郁分成两种亚型，为每种选定不同的rTMS刺激部位，并在住院青少年中初步验证了这条"先分型、再精准刺激"的路径。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">精准医学</span>
+      <span class="hero-chip">fMRI 分型</span>
+      <span class="hero-chip">经颅磁刺激</span>
+      <span class="hero-chip">青少年抑郁</span>
     </div>
   </div>
 </section>
 
+<!-- ============ KPI STRIP ============ -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">238+66</span>
+        <span class="small">门诊MDD + 健康对照</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">2</span>
+        <span class="small">分出的抑郁亚型</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">90%</span>
+        <span class="small">原型亚型响应率</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">72</span>
+        <span class="small">住院青少年验证样本</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ 为什么要做 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>抑郁影响的人很多，也影响得很深。论文给出三个现实信号：终生患病率约 <strong>15%–18%</strong>，全球约 <strong>3.5 亿</strong>人受影响；即使持续 3–6 个月抗抑郁药单药治疗，达到缓解的也"最多约 <strong>40%</strong>"；全球疾病负担在过去 <strong>30 年</strong>没有明显下降。</p>
+      <p>这意味着：我们不仅需要"更多治疗"，也需要"更对症的治疗"。作者指出，基于症状的诊断标准容易带来<strong>异质性</strong>——看起来同一种病，背后机制可能不同——从而阻碍精准医疗。</p>
+    </div>
 
+    <div class="analogy reveal">
+      <div class="analogy-icon">🎭</div>
+      <div class="analogy-text">
+        <strong>生活类比：</strong>想象一下——"发烧"可能是流感、肺炎或自身免疫病引起的。如果只看"发烧"这个症状给药，效果自然参差。抑郁也是如此：同样被诊断为"抑郁"的患者，大脑可能在不同的区域、以不同的方式出现异常。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/motivation.svg" alt="研究动机示意">
+      <figcaption>研究动机：从"同一种药治所有人"到"分型后精准选靶"</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>怎么做的：把大脑"背景音量"当作分型指纹</h2>
+    </div>
+    <div class="prose reveal">
+      <p>研究分<strong>两阶段、两个中心</strong>完成：</p>
+    </div>
+
+    <!-- Step flow -->
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>采集静息fMRI</h4>
+        <p>238名MDD + 66名健康对照，计算每个脑区的ALFF</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>机器学习分型</h4>
+        <p>t-SNE降维 + 高斯混合模型聚类，分出两种亚型</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>选定rTMS靶点</h4>
+        <p>逐脑区训练分类器，确定各亚型最具区分力的靶区</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>青少年精准验证</h4>
+        <p>72名住院青少年接受两周20次靶向rTMS</p>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">📻</div>
+      <div class="analogy-text">
+        <strong>ALFF 是什么？</strong>可以理解为：人在不做任何任务时，大脑各区域仍在自发活动。ALFF 量化的是这种"低频波动的振幅"，像是给每个脑区测量它的"背景音量起伏"。把全脑 90 个区域的 ALFF 值拼在一起，就构成了这个人的一张"脑活动指纹"。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/sample.svg" alt="样本构成">
+      <figcaption>两中心样本构成：中心1用于分型建模，中心2用于精准治疗验证</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/boundary.svg" alt="分型边界">
+      <figcaption>t-SNE 降维后两种亚型在二维空间中的聚集边界</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig1_p3.jpg" alt="论文原始图1">
+      <figcaption>Fig 1 — 分型与聚类结果</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 核心发现 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">核心发现</div>
+      <h2>三条最重要的发现</h2>
+    </div>
+
+    <!-- Finding 1 -->
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">发现 1</span>
+        <h4>抑郁在脑影像上可分两类</h4>
+        <p class="desc">原型亚型（n=143）前额叶ALFF偏高、枕叶偏低；非典型亚型（n=95）方向相反。两者共同主题是"前额叶—枕叶功能不平衡"，但方向相反。</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">发现 2</span>
+        <h4>两种亚型对应两个不同靶点</h4>
+        <p class="desc">原型：候选脑区 6/10 在额叶 → 选 dmPFC（10Hz）；非典型：候选脑区 6/10 在枕叶 → 选 OCC（1Hz）。</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">发现 3</span>
+        <h4>住院青少年出现影像回调与症状改善</h4>
+        <p class="desc">两周精准rTMS后，原型响应率 90%、非典型 70.73%。自杀意念响应率：原型 100%、非典型 81.25%。</p>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">⚖️</div>
+      <div class="analogy-text">
+        <strong>"前—后跷跷板"：</strong>想象大脑前部（额叶）和后部（枕叶）像一个跷跷板。原型抑郁的跷跷板向前倾（前部过度活跃），非典型则向后倾。rTMS 就像在翘高的那端加上"配重"，帮助两边重新平衡。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/seesaw.svg" alt="跷跷板模型示意">
+      <figcaption>两种亚型的"前—后跷跷板"失衡方向示意</figcaption>
+    </figure>
+
+    <!-- VS comparison -->
+    <div class="vs-row reveal">
+      <div class="vs-card vs-proto">
+        <h4>原型亚型</h4>
+        <div class="num">dmPFC</div>
+        <p>10 Hz 高频刺激<br>前额叶过活跃 → 调节额叶<br>响应率 <strong>90%</strong></p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-card vs-atyp">
+        <h4>非典型亚型</h4>
+        <div class="num">OCC</div>
+        <p>1 Hz 低频刺激<br>枕叶过活跃 → 调节枕叶<br>响应率 <strong>70.7%</strong></p>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig2_p4.jpg" alt="论文原始图2">
+      <figcaption>Fig 2 — 两种亚型的ALFF差异脑图</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 分型优于混合 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">为什么分型更好</div>
+      <h2>"分开看"比"混在一起看"更能认出抑郁</h2>
+    </div>
+    <div class="prose reveal">
+      <p>把抑郁分型后再建模，比把所有抑郁混在一起更能区分健康对照。这是该研究的关键验证步骤：</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div class="bar-row">
+        <span class="bar-label">总MDD vs HC</span>
+        <div class="bar-track"><div class="bar-fill bf-purple" style="width:60%;">AUC 0.60</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">原型 vs HC</span>
+        <div class="bar-track"><div class="bar-fill bf-green" style="width:77%;">AUC 0.77</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">非典型 vs HC</span>
+        <div class="bar-track"><div class="bar-fill bf-teal" style="width:77%;">AUC 0.77</div></div>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      分型后F1≈0.70–0.71，远高于混合时的F1=0.44。这说明把"不同型"的抑郁硬当成同一种看，反而模糊了与健康人的区别。
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/performance.svg" alt="分类性能对比">
+      <figcaption>分型前后分类器性能对比</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 临床验证 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">临床验证</div>
+      <h2>精准rTMS在住院青少年中的效果</h2>
+    </div>
+    <div class="prose reveal">
+      <p>中心2纳入 <strong>72 名住院青少年/青年</strong>（13–24岁，38名MDD + 34名双相II型抑郁发作），使用中心1训练好的分类器进行分型后，实施两周20次精准rTMS治疗。</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">HAMD-17 响应率（T2）</div>
+      <div class="bar-row">
+        <span class="bar-label">原型</span>
+        <div class="bar-track"><div class="bar-fill bf-green" style="width:90%;">90.0%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">非典型</span>
+        <div class="bar-track"><div class="bar-fill bf-teal" style="width:70.73%;">70.7%</div></div>
+      </div>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">自杀意念响应率</div>
+      <div class="bar-row">
+        <span class="bar-label">原型</span>
+        <div class="bar-track"><div class="bar-fill bf-green" style="width:100%;">100%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">非典型</span>
+        <div class="bar-track"><div class="bar-fill bf-teal" style="width:81.25%;">81.25%</div></div>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/outcomes.svg" alt="治疗结局">
+      <figcaption>两种亚型的治疗结局（响应率与缓解率）</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig3_p5.jpg" alt="论文原始图3">
+      <figcaption>Fig 3 — 治疗前后ALFF变化</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig4_p6.jpg" alt="论文原始图4">
+      <figcaption>Fig 4 — 临床评估量表变化趋势</figcaption>
+    </figure>
+
+    <div class="callout-warn reveal">
+      <strong>重要提醒：</strong>论文明确指出本试验缺少假刺激对照且未完全盲法，因此这些改善不能直接等同于"完全由rTMS导致"的因果结论，需要更严格的随机对照试验验证。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 研究价值 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">临床意义</div>
+      <h2>这条路径有什么用</h2>
+    </div>
+    <div class="prose reveal">
+      <p>这项研究演示了一条可操作的<strong>"闭环"路径</strong>：用客观影像指标（ALFF）分型 → 为不同亚型选不同rTMS靶点 → 用影像与量表回看是否回调——作者称之为"分型—治疗—评估闭环"。</p>
+    </div>
+
+    <div class="two-col reveal">
+      <div style="background:#ecfdf5;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#047857;font-size:0.92rem;margin-bottom:0.5rem;">✅ 证据直接支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>影像分型与较高的总体响应率同时出现</li>
+          <li>自杀意念条目的改善</li>
+          <li>"先分型后靶向"框架具备可行性</li>
+        </ul>
+      </div>
+      <div style="background:#fef3c7;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#92400e;font-size:0.92rem;margin-bottom:0.5rem;">⚠️ 目前不支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>不能用于个人自测</li>
+          <li>不提供简化诊断规则/阈值</li>
+          <li>缺少假刺激对照与长期随访</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 局限 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">局限与展望</div>
+      <h2>作者自己最在意的三件事</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-d">
+        <span class="tag">局限 1</span>
+        <h4>无假刺激对照</h4>
+        <p class="desc">探索性试验未设置假刺激（sham）组，安慰剂效应可能混杂在疗效中。</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">局限 2</span>
+        <h4>未完全盲法</h4>
+        <p class="desc">参与者知道自己刺激的靶点位置，无法完全排除期望效应。</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">局限 3</span>
+        <h4>样本量与疗程</h4>
+        <p class="desc">"高响应但相对较低的缓解率"提示两周可能不够，需更长疗程与更大样本验证。</p>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      <strong>下一步：</strong>作者正在开展更大样本的双盲随机对照试验（ClinicalTrials.gov: <strong>NCT05465928</strong>），并探索更长疗程以提升缓解率。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">🎯</div>
+      <p><strong>用脑影像先分型，让rTMS更"对症"</strong>——同样诊断为抑郁的人，大脑在不同方向上失衡，按亚型选靶点可能比"千人一方"更有效。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>rTMS 是什么？疼不疼？</summary>
+        <div class="faq-body">rTMS（重复经颅磁刺激）是一种非侵入性脑刺激技术，通过在头皮外放置线圈产生脉冲磁场来调节特定脑区的活动。一般感觉是头皮轻微敲击感，大多数人可以耐受。</div>
+      </details>
+      <details>
+        <summary>ALFF 和功能连接有什么区别？</summary>
+        <div class="faq-body">ALFF 测量的是<strong>单个脑区</strong>的自发活动强度（"自己有多活跃"），而功能连接测量的是<strong>两个脑区之间</strong>的信号协同程度（"两个区域是否同步"）。本研究选择 ALFF 是因为它计算简单、可解释性强，适合作为"快速指纹"进行分型。</div>
+      </details>
+      <details>
+        <summary>为什么不直接刺激常用的左侧 dlPFC？</summary>
+        <div class="faq-body">左侧 dlPFC 是 FDA 批准的 rTMS 抑郁治疗靶点，但它是一个"经验性"的通用靶点。本研究的理念是：既然不同亚型的异常脑区不同，那靶点也应该因人而异。数据驱动的方式让靶点选择更有针对性。</div>
+      </details>
+      <details>
+        <summary>这个分型方法可以在门诊直接用吗？</summary>
+        <div class="faq-body">目前还不行。分型需要静息态fMRI扫描和训练好的分类器；且该框架仍处于探索阶段，缺少假刺激对照验证。从研究到临床推广还需要更大规模的随机对照试验。</div>
+      </details>
+      <details>
+        <summary>青少年与成人的分型结果一样吗？</summary>
+        <div class="faq-body">有趣的是，中心1的分型模型是在13–55岁的门诊样本上训练的，中心2直接应用于13–24岁住院样本。虽然两组人口构成不同（门诊 vs 住院、年龄范围更窄），但分型后的靶向rTMS仍显示了较高响应率，提示分型可能具有一定跨场景泛化能力——但这需要进一步验证。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>ALFF</dt>
+        <dd>低频振幅（Amplitude of Low-Frequency Fluctuations），量化静息态下某脑区自发活动的强度</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>rTMS</dt>
+        <dd>重复经颅磁刺激，通过磁脉冲非侵入性调节脑区活动</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>t-SNE</dt>
+        <dd>一种非线性降维方法，擅长保留高维数据中的局部结构</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>GMM</dt>
+        <dd>高斯混合模型，假设数据由多个高斯分布混合而成的聚类方法</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>dmPFC</dt>
+        <dd>背内侧前额叶皮层，与自我参照、情绪调节等认知功能相关</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>OCC</dt>
+        <dd>枕叶皮层（Occipital Cortex），主要负责视觉处理，在本研究中为非典型亚型的异常核心区</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>HAMD-17</dt>
+        <dd>汉密尔顿抑郁量表（17项版），广泛使用的抑郁严重程度评估工具</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>响应率 / 缓解率</dt>
+        <dd>响应 = HAMD减分≥50%；缓解 = HAMD≤7分。响应代表显著改善，缓解代表接近恢复</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 图表资料 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">图表资料</div>
+      <h2>研究原始图表</h2>
+    </div>
+    <div class="feature-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.5rem;">
+      <div class="fig-inline">
+        <img src="visuals/fig1_p3.jpg" alt="Figure 1" loading="lazy">
+        <figcaption>Figure 1 — 分型与聚类结果</figcaption>
+      </div>
+      <div class="fig-inline">
+        <img src="visuals/fig2_p4.jpg" alt="Figure 2" loading="lazy">
+        <figcaption>Figure 2 — ALFF差异脑图</figcaption>
+      </div>
+      <div class="fig-inline">
+        <img src="visuals/fig3_p5.jpg" alt="Figure 3" loading="lazy">
+        <figcaption>Figure 3 — 治疗前后ALFF变化</figcaption>
+      </div>
+      <div class="fig-inline">
+        <img src="visuals/fig4_p6.jpg" alt="Figure 4" loading="lazy">
+        <figcaption>Figure 4 — 临床评估量表变化</figcaption>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container">
     <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
