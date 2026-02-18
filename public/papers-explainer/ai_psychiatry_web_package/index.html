@@ -12,13 +12,13 @@
     body { background: #fafbfd !important; }
     .hero-custom {
       background: linear-gradient(160deg, #0a1628 0%, #1a2744 30%, #2d4a7a 60%, #0ea5e9 100%) !important;
-      padding: 5rem 24px 4rem !important; text-align: left !important;
+      padding:7rem 24px 4rem !important; text-align: left !important;
       position: relative !important; overflow: hidden !important;
     }
     .hero-custom::before { content: ''; position: absolute; top: -40%; right: -15%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 65%); pointer-events: none; }
     .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-custom h1 { font-family: 'Noto Sans SC', sans-serif !important; font-size: clamp(2rem, 5vw, 3.2rem) !important; font-weight: 900 !important; color: #fff !important; line-height: 1.25 !important; margin: 0 0 1.25rem !important; max-width: 22ch !important; }
-    .hero-custom .lead { color: rgba(255,255,255,0.78) !important; font-size: 1.1rem !important; line-height: 1.7 !important; max-width: 52ch !important; margin: 0 !important; }
+    .hero-custom h1{ font-family: 'Noto Sans SC', sans-serif !important; font-size: clamp(2rem, 5vw, 3.2rem) !important; font-weight: 900 !important; color: #fff !important; line-height: 1.25 !important; margin: 0 0 1.25rem !important; max-width: 22ch !important; }
+    .hero-custom .lead { color: rgba(255,255,255,0.78) !important; font-size: 1.1rem !important; line-height: 1.7 !important; max-width: 52ch !important; margin: 0 !important; ;margin-left:auto;margin-right:auto}
     .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
     .hero-chip { display: inline-flex; align-items: center; gap: 5px; padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
 
@@ -72,14 +72,27 @@
     .gloss-card h4 { margin: 0 0 0.3rem; font-size: 0.92rem; color: #0f2b46; }
     .gloss-card .gloss-en { font-size: 0.75rem; color: #94a3b8; margin: 0 0 0.5rem; font-style: italic; }
     .gloss-card p { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.6; }
-  </style>
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
-<div id="nsfc-nav">
-  <a href="../../#/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站</a>
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
   <span>NSFC 62176129</span>
-</div>
+</nav>
 <div class="reading-progress" id="readingProgress"></div>
 
 <!-- HERO -->
@@ -133,7 +146,7 @@
 </section>
 
 <!-- 为什么做这个研究 -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-inner">
     <div class="sec-label">研究背景</div>
     <h2>精神科面临哪些"老问题"？</h2>
@@ -196,7 +209,7 @@
 </section>
 
 <!-- Takeaway -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-wide">
     <div class="takeaway-banner reveal">
       <h3>一句话带走</h3>
@@ -232,7 +245,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="sec sec-alt" id="faq">
+<section class="sec bg-surface" id="faq">
   <div class="sec-inner">
     <div class="sec-label">常见问题</div>
     <h2>你可能会问……</h2>
@@ -291,11 +304,9 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面基于论文 <em>Psychiatry in the Era of Artificial Intelligence</em> (Frontiers in Public Health, 2025) 生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
-  </div>
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>

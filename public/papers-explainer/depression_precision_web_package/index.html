@@ -14,7 +14,7 @@
     /* Hero */
     .hero-custom {
       background: linear-gradient(155deg, #042f2e 0%, #064e3b 30%, #047857 60%, #10b981 100%) !important;
-      padding: 5rem 24px 4rem !important;
+      padding:7rem 24px 4rem !important;
       text-align: left !important;
       position: relative !important;
       overflow: hidden !important;
@@ -40,7 +40,7 @@
       pointer-events: none;
     }
     .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-custom h1 {
+    .hero-custom h1{
       font-family: 'Noto Sans SC', sans-serif !important;
       font-size: clamp(2rem, 5vw, 3.2rem) !important;
       font-weight: 900 !important;
@@ -56,7 +56,7 @@
       line-height: 1.7 !important;
       max-width: 54ch !important;
       margin: 0 !important;
-    }
+    ;margin-left:auto;margin-right:auto}
     .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
     .hero-chip {
       display: inline-flex; align-items: center; gap: 5px;
@@ -284,18 +284,28 @@
 
     /* Footer override */
     .site-footer a { color: #10b981 !important; }
-  </style>
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
 <!-- Navigation -->
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#6ee7b7;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+<nav class="topbar">
+  <a href="../../#/">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span>NSFC 62176129</span>
+</nav>
 
 <!-- Reading progress -->
 <div class="reading-progress" id="readingProgress"></div>
@@ -317,7 +327,7 @@
 </section>
 
 <!-- ============ KPI STRIP ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-wide">
     <div class="kpi-strip reveal">
       <div class="kpi-item">
@@ -367,7 +377,7 @@
 </section>
 
 <!-- ============ 方法 ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-label">方法</div>
@@ -490,7 +500,7 @@
 </section>
 
 <!-- ============ 分型优于混合 ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-label">为什么分型更好</div>
@@ -583,7 +593,7 @@
 </section>
 
 <!-- ============ 研究价值 ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-label">临床意义</div>
@@ -646,7 +656,7 @@
 </section>
 
 <!-- ============ 一句话带走 ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-wide">
     <div class="takeaway-banner reveal">
       <div class="icon">🎯</div>
@@ -688,7 +698,7 @@
 </section>
 
 <!-- ============ 术语表 ============ -->
-<section class="sec sec-alt">
+<section class="sec bg-surface">
   <div class="sec-wide">
     <div class="reveal">
       <div class="sec-label">术语速查</div>
@@ -760,11 +770,9 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
-  </div>
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>

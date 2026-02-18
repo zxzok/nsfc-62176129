@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="../unified-style.css">
   <style>
     :root{--accent:#ca8a04;--accent-light:#fde68a;--accent-bg:rgba(202,138,4,.08);--grad-start:#713f12;--grad-end:#a16207}
-    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
     .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(253,230,138,.12),transparent 70%);pointer-events:none}
     .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
-    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7}
-    .hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
     .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
     .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
     .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
@@ -48,18 +48,29 @@
     .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
     .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
     @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.timeline-row{grid-template-columns:1fr}}
-  </style>
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#fde68a;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#fde68a),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#fde68a)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
-<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.55rem 1.5rem;background:rgba(113,63,18,.92);backdrop-filter:blur(6px)">
-  <a href="../../#/" style="color:#fde68a;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
   </a>
-  <span style="color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+  <span>NSFC 62176129</span>
 </nav>
 
-<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:101;transition:width .1s"></div>
+<div class="reading-progress" id="readingProgress"></div>
 
 <header class="hero-custom">
   <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
@@ -85,7 +96,7 @@
   </div>
 </section>
 
-<section class="sec sec-alt" style="padding:2.5rem 0">
+<section class="sec bg-surface" style="padding:2.5rem 0">
   <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
     <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
     <div class="analogy-box reveal">
@@ -124,7 +135,7 @@
 </section>
 
 <!-- Findings -->
-<section class="sec sec-alt" style="padding:2.5rem 0">
+<section class="sec bg-surface" style="padding:2.5rem 0">
   <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
     <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
     <div class="finding-cards">
@@ -166,7 +177,7 @@
   </div>
 </section>
 
-<section class="sec sec-alt" style="padding:2.5rem 0">
+<section class="sec bg-surface" style="padding:2.5rem 0">
   <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
     <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
     <div class="glossary-grid">
@@ -180,9 +191,9 @@
   </div>
 </section>
 
-<footer style="background:#0f172a;color:rgba(255,255,255,.5);text-align:center;padding:2rem 1rem;font-size:.82rem">
+<footer class="site-foot">
   <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-  <p style="margin-top:.5rem"><a href="../../#/" style="color:#fde68a">NSFC 62176129 项目主站</a></p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>
