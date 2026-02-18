@@ -3,15 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>抑郁会改变吃饭的“节奏”吗？</title>
+  <title>抑郁会改变吃饭的"节奏"吗？——校园食堂刷卡记录里的数字饮食画像</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #f7fdf4 !important; }
+
+    .hero-custom {
+      background: linear-gradient(155deg, #14220a 0%, #365314 30%, #4d7c0f 60%, #84cc16 100%) !important;
+      padding: 5rem 24px 4rem !important;
+      text-align: left !important; position: relative !important; overflow: hidden !important;
+    }
+    .hero-custom::before { content:''; position:absolute; top:-35%; right:-10%; width:550px; height:550px; background:radial-gradient(circle,rgba(132,204,22,0.15) 0%,transparent 65%); pointer-events:none; }
+    .hero-custom::after { content:''; position:absolute; bottom:-20%; left:10%; width:400px; height:400px; background:radial-gradient(circle,rgba(163,230,53,0.08) 0%,transparent 55%); pointer-events:none; }
+    .hero-inner { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+    .hero-custom h1 { font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(2rem,5vw,3.2rem)!important; font-weight:900!important; color:#fff!important; line-height:1.25!important; letter-spacing:-0.03em!important; margin:0 0 1.25rem!important; max-width:22ch!important; }
+    .hero-custom .lead { color:rgba(255,255,255,0.82)!important; font-size:1.08rem!important; line-height:1.7!important; max-width:54ch!important; margin:0!important; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.75rem; }
+    .hero-chip { display:inline-flex; align-items:center; gap:5px; padding:5px 14px; border-radius:20px; font-size:0.78rem; font-weight:600; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.07); backdrop-filter:blur(6px); }
+
+    .sec { padding:4rem 24px!important; }
+    .sec-alt { background:#fff!important; }
+    .sec-inner { max-width:760px; margin:0 auto; }
+    .sec-wide { max-width:960px; margin:0 auto; }
+
+    .sec-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#4d7c0f; margin-bottom:0.4rem; }
+    .sec h2 { font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(1.5rem,3.5vw,2rem)!important; font-weight:800!important; color:#0f2b46!important; line-height:1.3!important; margin:0 0 1rem!important; border:none!important; padding:0!important; }
+    .sec h2::after { display:none!important; }
+
+    .prose { font-size:1.05rem; line-height:1.9; color:#334155; }
+    .prose p { margin:0 0 1.25rem; }
+    .prose strong { color:#0f2b46; }
+
+    .callout-highlight { background:linear-gradient(135deg,rgba(77,124,15,0.06),rgba(132,204,22,0.03)); border-left:4px solid #4d7c0f; border-radius:0 14px 14px 0; padding:1.25rem 1.75rem; margin:2rem 0; font-size:1.05rem; line-height:1.75; color:#1e293b; }
+    .callout-highlight strong { color:#0f2b46; }
+    .callout-warn { background:rgba(251,191,36,0.06); border-left:4px solid #f59e0b; border-radius:0 14px 14px 0; padding:1.1rem 1.5rem; margin:1.5rem 0; font-size:0.92rem; color:#78350f; }
+
+    .fig-inline { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; margin:2rem 0; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+    .fig-inline img { max-width:100%; height:auto; display:block; margin:0 auto; border-radius:8px; }
+    .fig-inline figcaption { text-align:center; color:#64748b; font-size:0.82rem; margin-top:0.75rem; font-style:italic; }
+
+    .kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:2.5rem 0; }
+    @media(max-width:600px){ .kpi-strip{grid-template-columns:repeat(2,1fr);} }
+    .kpi-item { text-align:center; padding:1.5rem 1rem; background:linear-gradient(145deg,#14220a,#365314); border-radius:14px; box-shadow:0 4px 16px rgba(54,83,20,0.2); }
+    .kpi-item .big { display:block; font-size:2.2rem; font-weight:900; color:#bef264; line-height:1.1; font-family:'Inter',sans-serif; }
+    .kpi-item .small { display:block; font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:6px; }
+
+    .analogy { display:flex; gap:1rem; align-items:flex-start; background:linear-gradient(135deg,#f7fee7,#ecfccb); border:1px solid #d9f99d; border-radius:14px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+    .analogy-icon { flex-shrink:0; width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,#4d7c0f,#84cc16); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+    .analogy-text { font-size:0.95rem; color:#334155; line-height:1.7; }
+    .analogy-text strong { color:#0f2b46; }
+
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:2.5rem 0; position:relative; }
+    @media(max-width:700px){ .steps{grid-template-columns:1fr;gap:1.25rem;} .step-arrow{display:none!important;} }
+    .step { text-align:center; padding:0 0.75rem; position:relative; }
+    .step-num { width:52px; height:52px; border-radius:50%; background:linear-gradient(145deg,#14220a,#4d7c0f); color:#ecfccb; font-size:1.2rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; box-shadow:0 4px 12px rgba(77,124,15,0.2); }
+    .step h4 { font-size:0.92rem; color:#0f2b46; margin:0 0 0.3rem; font-weight:700; }
+    .step p { font-size:0.82rem; color:#64748b; margin:0; line-height:1.55; }
+    .step-arrow { position:absolute; right:-10px; top:26px; color:#4d7c0f; font-size:1.3rem; z-index:2; }
+
+    .find-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+    .find-card { border-radius:14px; padding:1.25rem; border:1px solid; transition:all 0.25s ease; cursor:default; }
+    .find-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin:0 0 0.3rem; font-size:0.95rem; }
+    .find-card .desc { font-size:0.85rem; line-height:1.6; margin:0; color:#475569; }
+    .find-card .tag { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; display:block; }
+    .fc-a { background:rgba(77,124,15,0.04); border-color:rgba(77,124,15,0.15); }
+    .fc-a h4,.fc-a .tag { color:#4d7c0f; }
+    .fc-b { background:rgba(234,88,12,0.04); border-color:rgba(234,88,12,0.15); }
+    .fc-b h4,.fc-b .tag { color:#ea580c; }
+    .fc-c { background:rgba(79,70,229,0.04); border-color:rgba(79,70,229,0.15); }
+    .fc-c h4,.fc-c .tag { color:#4f46e5; }
+
+    .bar-chart { margin:1.5rem 0; }
+    .bar-row { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem; }
+    .bar-label { width:100px; font-size:0.82rem; font-weight:700; color:#0f2b46; text-align:right; flex-shrink:0; }
+    .bar-track { flex:1; height:26px; background:#f1f5f9; border-radius:13px; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:13px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; font-size:0.72rem; font-weight:800; color:#fff; transition:width 1s ease; }
+    .bf-lime { background:linear-gradient(90deg,#4d7c0f,#84cc16); }
+    .bf-orange { background:linear-gradient(90deg,#ea580c,#fb923c); }
+    .bf-red { background:linear-gradient(90deg,#dc2626,#f87171); }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
+    @media(max-width:640px){ .two-col{grid-template-columns:1fr;} }
+
+    .takeaway-banner { background:linear-gradient(135deg,#14220a,#365314); border-radius:18px; padding:2.5rem 2rem; text-align:center; margin:2rem 0; box-shadow:0 8px 32px rgba(54,83,20,0.15); }
+    .takeaway-banner .icon { font-size:2.5rem; margin-bottom:0.75rem; }
+    .takeaway-banner p { color:#ecfccb; font-size:1.15rem; line-height:1.7; margin:0; }
+    .takeaway-banner strong { color:#bef264; }
+
+    .faq details { border:1px solid #e2e8f0; border-radius:12px; margin-bottom:0.75rem; background:#fff; transition:box-shadow 0.25s ease; }
+    .faq details[open] { box-shadow:0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary { padding:1rem 1.25rem; font-weight:700; font-size:0.95rem; color:#0f2b46; cursor:pointer; list-style:none; display:flex; align-items:center; gap:0.75rem; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::before { content:'+'; width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,#4d7c0f,#84cc16); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; transition:transform 0.25s ease; }
+    .faq details[open] summary::before { content:'−'; transform:rotate(180deg); }
+    .faq .faq-body { padding:0 1.25rem 1.25rem 3.5rem; font-size:0.92rem; line-height:1.7; color:#475569; }
+
+    .gloss-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:0.75rem; margin:1.5rem 0; }
+    .gloss-card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1rem 1.25rem; }
+    .gloss-card dt { font-weight:700; font-size:0.92rem; color:#4d7c0f; margin-bottom:0.3rem; }
+    .gloss-card dd { font-size:0.85rem; color:#475569; line-height:1.55; margin:0; }
+
+    .site-footer a { color:#65a30d!important; }
+  </style>
 </head>
 <body>
+
 <div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+  <a href="../../#/" style="color:#bef264;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
@@ -20,144 +122,361 @@
 
 <div class="reading-progress" id="readingProgress"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">抑郁会改变吃饭的“节奏”吗？</h1>
-    
-  </div>
-</section>
-
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">用校园食堂刷卡记录，看见抑郁相关的真实饮食行为变化</h2>
-    <div class="reveal"><p><blockquote>本页面基于论文《Digital Dietary Behaviors in Individuals With Depression: Real-World Behavioral Observation》制作，所有关键事实均标注证据锚点（PDF页码/图表）。来源：JMIR Public Health and Surveillance 2024</blockquote></p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/figure2_full.png" alt="用校园食堂刷卡记录，看见抑郁相关的真实饮食行为变化" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（约120-180字）</h2>
-    <div class="reveal"><p>问题：抑郁常伴随食欲与饮食行为变化，但以前很多研究靠回忆式问卷，容易偏差。  <br>方法：研究把校园食堂的电子交易记录当作“行为传感器”，连续1个月客观记录吃饭时间、花费、餐次模式等，并用PHQ-9分组比较与建模。  <br>发现：中重度抑郁组更不规律：午晚餐时间波动更大、午晚间隔更“飘”，早餐更少、食物多样性更低，也更常出现“只吃午+晚”。  <br>意义：这些“数字化饮食特征”在研究层面能一定程度区分抑郁，提示未来可能作为客观补充线索，但不能替代临床评估。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/table1.png" alt="30秒读懂（约120-180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>在现实生活里，很多人并不会主动说出“我最近情绪很差”，但行为往往会悄悄变化。抑郁筛查常依赖自评问卷或访谈，既可能受记忆影响，也难以做到长期、连续地追踪。  <br>与此同时，大学生心理健康在疫情等压力情境下受到关注。论文引述既有研究指出，在COVID-19暴发期间，中国大学生中相当比例报告存在心理健康问题。在校园场景里，学生就餐往往使用与个人账户绑定的电子支付，这就提供了一个机会：能不能用更“客观、连续”的真实记录，描绘抑郁相关的饮食行为画像，并探索其作为数字化标记（digital markers）的潜力？</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的（500-800字，含类比解释）</h2>
-    <div class="reveal"><p>你可以把这项研究想象成：不问你“你上周几点吃的午饭”，而是直接读取“食堂刷卡时间线”，从而减少“靠回忆填空”的误差。</p><p>研究对象是中国一所医学院校的学生。研究先在2020年10月6-12日进行一次线上心理状态调查（通过微信平台完成问卷并签署线上知情同意），同时征得同意获取10月1-31日的食堂电子交易记录。最初有3678名学生参与，按量表标准筛选后，最终纳入3310人：健康对照2222人、轻度抑郁916人、中重度抑郁172人。</p><p>抑郁程度用PHQ-9自评量表划分：5-9分为轻度抑郁，≥10分为中重度抑郁；健康组还要求焦虑（GAD-7）、压力（PSS-14）与失眠（ISI）等指标处于低范围，以尽量排除“没有抑郁但有其他情绪问题”的情况。</p><p>饮食行为怎么从刷卡记录里“算出来”？研究把一天的刷卡记录按时间聚合：从当天第一条记录开始，2小时内的多次交易算作同一顿饭；再根据食堂营业时间把三餐划分为早餐6:30-8:30、午餐11:00-13:00、晚餐17:30-19:30，并用“一顿饭里第一笔交易的时间”代表该餐的用餐时间。在此基础上，研究计算六类饮食特征：吃饭时间模式、两餐间隔、每餐花费、就餐地点模式、每日食物多样性与各餐频率、以及“全天饮食模式”（比如某天是否是早-午-晚三餐，或只吃午+晚）。</p><p>统计上，研究用协方差分析（ANCOVA）比较三组差异，并把年龄、性别、BMI和教育水平作为协变量控制；同时把各指标转换为Z分数以统一尺度。研究还用多因素Logistic回归分析“全天饮食模式”与抑郁程度的关联，并用中介分析探讨焦虑在其中可能扮演的角色。最后，用支持向量机（SVM，RBF核）把多维饮食特征输入模型，评估其在区分不同抑郁组别上的表现。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
-    <div class="reveal"><p><h4>发现一：中重度抑郁的“吃饭时间”更不稳定，午餐与晚餐波动更明显</h4><br>通俗表述：不是简单地“吃得早/晚”，而是更像“忽早忽晚、节奏更飘”。  <br>关键证据：论文给出了工作日的具体波动时间（MAD）。午餐时间MAD：中重度抑郁18分58秒，高于轻度抑郁17分38秒与健康组17分05秒；晚餐时间MAD：中重度抑郁26分11秒，高于轻度抑郁23分39秒与健康组23分26秒；午晚间隔MAD：中重度抑郁34分20秒，高于轻度抑郁29分25秒与健康组29分23秒。  <br>这意味着什么：如果把一周的就餐看作一条“作息曲线”，中重度抑郁组的曲线更锯齿化。它提示饮食节律可能是抑郁相关的可量化行为线索之一，但仍需更多研究确定其稳定性与适用范围。</p><p><h4>发现二：中重度抑郁更常“少早餐、少多样性”，也更难维持三餐规律</h4><br>通俗表述：中重度抑郁组更可能出现“早餐缺席”，同时每天吃到的食物种类更少。  <br>关键证据：论文报告中重度抑郁组的早餐频率在工作日与周末都显著降低（与健康组相比P=.02与P=.005），并且日常饮食多样性在工作日与周末都显著降低（与健康组相比P=.01与P=.01）。此外，“早-午-晚”三餐模式在中重度抑郁组减少，而“只吃午+晚”模式增加（至少在工作日显著）。  <br>这意味着什么：抑郁的行为表现可能更像“模式级”的变化——不仅是某一餐吃多少，还包括一整天的安排是否规律。对校园健康服务来说，监测“早餐缺席 + 午晚偏重 + 节奏波动”的组合，可能比盯某个单一指标更接近真实情况。</p><p><h4>发现三：某些“全天饮食模式”与抑郁程度存在统计关联，且这些特征能在研究层面做出一定程度的分类</h4><br>通俗表述：在控制了年龄、性别、BMI、教育水平后，保持规律三餐与中重度抑郁“更少同时出现”；而更常见的“午+晚”模式与轻度抑郁“更常同时出现”。  <br>关键证据（关联）：工作日“总是三餐（Bre-Lun-Din）”与中重度抑郁呈负相关，AOR 0.467（95% CI 0.239-0.912）；工作日“总是午+晚（Lun-Din）”与轻度抑郁呈正相关，AOR 1.460（95% CI 1.016-2.100）。  <br>关键证据（分类）：用饮食特征检测中重度抑郁（健康 vs 中重度）时，模型准确率0.67、AUC 0.69；在三分类（健康 vs 轻度 vs 中重度）时，准确率为0.53、AUC 0.59。  <br>这意味着什么：这些数字提示“有信号”，但信号还不够强到可以单独用于个体诊断；更合理的定位是作为传统评估（问卷/访谈）的补充线索，或用于群体层面的风险提示与研究。</p><p><blockquote>补充：并非所有指标都不同。论文指出，就餐地点模式在三组之间没有显著差异。</blockquote></p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
-    <div class="reveal"><p>证据支持的层面：论文认为，连续的数字化饮食行为有潜力作为抑郁检测的客观补充指标，尤其对中重度抑郁更有区分度。这为校园人群的“早发现”提供了一个新方向：当行为长期偏离个人/群体健康基线时，可以触发进一步的关注与支持。</p><p>合理推测但需验证的层面：如果未来在更多学校、更多时间尺度、并结合临床评估与营养结构数据验证（论文也建议如此），这类方法可能用于：1）学校健康服务的群体监测与资源配置；2）数字健康产品里的“行为提示”模块；3）科研中用于研究饮食节律与情绪的动态关系。这些都需要在隐私保护、伦理治理与误报成本可控的前提下推进。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步（必须读）</h2>
-    <div class="reveal"><p>论文明确指出三点局限。第一，抑郁严重程度来自PHQ-9自评，未来应考虑临床评定以减少偏差。第二，本研究是横断面调查，无法捕捉症状随时间变化；作者建议未来做纵向心理评估并结合连续行为监测，以研究“饮食进展标记”。第三，研究未评估每日膳食结构和营养摄入，因此无法回答“吃了什么、营养是否均衡”这一层面的问题。  <br>基于这些局限，读者在解读时应把它理解为“行为线索画像”，而不是“饮食导致抑郁/抑郁导致饮食”的因果结论。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">一句话带走（≤30字）</h2>
-    <div class="reveal"><p>抑郁越重，吃饭越不规律且更易少早餐。</p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/figure1_full.png" alt="figure1 full" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure1 full</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure2_full.png" alt="figure2 full" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure2 full</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/table1.png" alt="table1" loading="lazy">
-          <div class="visual-card-body">
-            <p>table1</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/table2.png" alt="table2" loading="lazy">
-          <div class="visual-card-body">
-            <p>table2</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure3</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/meal_rhythm.svg" alt="meal rhythm" loading="lazy">
-          <div class="visual-card-body">
-            <p>meal rhythm</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/nutrition_missing.svg" alt="nutrition missing" loading="lazy">
-          <div class="visual-card-body">
-            <p>nutrition missing</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/two_vs_three_meals.svg" alt="two vs three meals" loading="lazy">
-          <div class="visual-card-body">
-            <p>two vs three meals</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/privacy_shield.svg" alt="privacy shield" loading="lazy">
-          <div class="visual-card-body">
-            <p>privacy shield</p>
-          </div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(132,204,22,0.25);color:#ecfccb;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>抑郁会改变吃饭的"节奏"吗？</h1>
+    <p class="lead">用校园食堂刷卡记录当"行为传感器"，连续1个月客观记录3310名大学生的饮食节律——发现中重度抑郁组吃饭更不规律、早餐更少、食物多样性更低。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">数字表型</span>
+      <span class="hero-chip">校园食堂记录</span>
+      <span class="hero-chip">3310名大学生</span>
+      <span class="hero-chip">JMIR 2024</span>
     </div>
   </div>
 </section>
 
+<!-- ============ KPI ============ -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">3310</span>
+        <span class="small">纳入大学生</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">1月</span>
+        <span class="small">连续行为记录</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">0.69</span>
+        <span class="small">中重度 vs 健康 AUC</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">6类</span>
+        <span class="small">数字饮食特征维度</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ 背景 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>很多人不会主动说出"我最近情绪很差"，但<strong>行为往往会悄悄变化</strong>。抑郁筛查常依赖自评问卷，既受记忆影响，也难做到长期连续追踪。</p>
+      <p>在校园里，学生就餐使用电子支付，这就提供了一个机会：能不能用更<strong>客观、连续</strong>的真实记录，描绘抑郁相关的饮食行为画像？</p>
+    </div>
+    <div class="analogy reveal">
+      <div class="analogy-icon">🍽️</div>
+      <div class="analogy-text">
+        <strong>核心思路：</strong>不问你"你上周几点吃的午饭"，而是直接读取"食堂刷卡时间线"——从而减少"靠回忆填空"的误差。把交易记录当作"行为传感器"，看见抑郁可能带来的饮食节律变化。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>怎么做的：从刷卡记录里"算出"饮食行为</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>线上问卷</h4>
+        <p>3678人填写PHQ-9等量表，最终纳入3310人</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>获取刷卡记录</h4>
+        <p>10月1-31日食堂电子交易记录</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>特征提取</h4>
+        <p>6类饮食特征：时间、间隔、花费、地点、多样性、全天模式</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>统计与建模</h4>
+        <p>ANCOVA + Logistic回归 + SVM分类</p>
+      </div>
+    </div>
+
+    <div class="prose reveal">
+      <p><strong>分组标准：</strong>PHQ-9 5-9分为轻度抑郁（916人），≥10分为中重度抑郁（172人），健康组（2222人）还要求焦虑/压力/失眠均在低范围。</p>
+      <p><strong>餐次识别：</strong>2小时内的多次交易算同一顿饭，按食堂营业时间划分三餐（早6:30-8:30、午11:00-13:00、晚17:30-19:30），用第一笔交易时间代表用餐时间。</p>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/meal_rhythm.svg" alt="饮食节律概念图">
+      <figcaption>饮食节律概念 — 从刷卡记录提取时间模式</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/table1.png" alt="Table 1">
+      <figcaption>Table 1 — 三组人口学特征</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现1 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 1</div>
+      <h2>中重度抑郁的"吃饭时间"更不稳定</h2>
+    </div>
+    <div class="prose reveal">
+      <p>不是简单地"吃得早或晚"，而是更像<strong>"忽早忽晚、节奏更飘"</strong>：</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">午餐时间波动（MAD，工作日）</div>
+      <div class="bar-row">
+        <span class="bar-label">健康</span>
+        <div class="bar-track"><div class="bar-fill bf-lime" style="width:66%;">17分05秒</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">轻度抑郁</span>
+        <div class="bar-track"><div class="bar-fill bf-orange" style="width:68%;">17分38秒</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">中重度</span>
+        <div class="bar-track"><div class="bar-fill bf-red" style="width:73%;">18分58秒</div></div>
+      </div>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">晚餐时间波动（MAD，工作日）</div>
+      <div class="bar-row">
+        <span class="bar-label">健康</span>
+        <div class="bar-track"><div class="bar-fill bf-lime" style="width:63%;">23分26秒</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">轻度抑郁</span>
+        <div class="bar-track"><div class="bar-fill bf-orange" style="width:64%;">23分39秒</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">中重度</span>
+        <div class="bar-track"><div class="bar-fill bf-red" style="width:71%;">26分11秒</div></div>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">📉</div>
+      <div class="analogy-text">
+        <strong>简单理解：</strong>如果把一周的就餐时间画成一条曲线，健康组更平稳，而中重度抑郁组的曲线更"锯齿化"——饮食节律可能是抑郁的可量化行为线索之一。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure1_full.png" alt="Figure 1">
+      <figcaption>Figure 1 — 三组饮食行为特征对比</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现2 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 2</div>
+      <h2>更常"少早餐、少多样性"，三餐模式被打破</h2>
+    </div>
+
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">行为变化</span>
+        <h4>早餐频率降低</h4>
+        <p class="desc">中重度组工作日(P=.02)与周末(P=.005)的早餐频率都显著低于健康组</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">行为变化</span>
+        <h4>食物多样性降低</h4>
+        <p class="desc">每天吃到的食物种类更少(工作日P=.01，周末P=.01)</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">模式变化</span>
+        <h4>"午+晚"替代三餐</h4>
+        <p class="desc">"早-午-晚"三餐模式在中重度组减少，"只吃午+晚"增加(工作日显著)</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/two_vs_three_meals.svg" alt="两餐vs三餐模式">
+      <figcaption>三餐模式与两餐模式的对比</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure2_full.png" alt="Figure 2">
+      <figcaption>Figure 2 — 全天饮食模式分布</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现3 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 3</div>
+      <h2>饮食特征能做出一定程度的分类，但信号还不够强</h2>
+    </div>
+    <div class="prose reveal">
+      <p>在控制年龄、性别、BMI、教育水平后：</p>
+    </div>
+
+    <div class="two-col reveal">
+      <div style="background:#f7fee7;border-radius:14px;padding:1.25rem;text-align:center;">
+        <div style="font-weight:700;color:#4d7c0f;font-size:0.85rem;margin-bottom:0.5rem;">二分类（健康 vs 中重度）</div>
+        <div style="font-size:2.2rem;font-weight:900;color:#4d7c0f;font-family:'Inter',sans-serif;">0.69</div>
+        <div style="font-size:0.82rem;color:#64748b;">AUC | 准确率 0.67</div>
+      </div>
+      <div style="background:#fef3c7;border-radius:14px;padding:1.25rem;text-align:center;">
+        <div style="font-weight:700;color:#92400e;font-size:0.85rem;margin-bottom:0.5rem;">三分类（健康/轻度/中重度）</div>
+        <div style="font-size:2.2rem;font-weight:900;color:#92400e;font-family:'Inter',sans-serif;">0.59</div>
+        <div style="font-size:0.82rem;color:#64748b;">AUC | 准确率 0.53</div>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      <strong>关键关联：</strong>工作日"总是三餐"与中重度抑郁呈负相关（AOR 0.467）；"总是午+晚"与轻度抑郁呈正相关（AOR 1.460）。有信号，但还不够强到单独用于个体诊断。
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure3.png" alt="Figure 3">
+      <figcaption>Figure 3 — 分类模型性能</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/table2.png" alt="Table 2">
+      <figcaption>Table 2 — Logistic回归结果</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 局限 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">局限</div>
+      <h2>三个必须知道的局限</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-b">
+        <span class="tag">局限 1</span>
+        <h4>自评而非临床评定</h4>
+        <p class="desc">抑郁严重程度来自PHQ-9自评，未来应考虑临床评定以减少偏差</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">局限 2</span>
+        <h4>横断面设计</h4>
+        <p class="desc">无法捕捉症状随时间变化，不能建立因果关系</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">局限 3</span>
+        <h4>缺少营养数据</h4>
+        <p class="desc">只知道"何时、多少钱"，不知道"吃了什么、营养是否均衡"</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/nutrition_missing.svg" alt="缺少营养信息">
+      <figcaption>局限示意 — 刷卡记录无法反映具体食物内容与营养结构</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/privacy_shield.svg" alt="隐私保护">
+      <figcaption>隐私提示 — 行为监测需在隐私保护与伦理治理框架下推进</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">🕐</div>
+      <p><strong>抑郁越重，吃饭越不规律且更易少早餐</strong>——食堂刷卡记录里藏着的"数字饮食画像"可能成为心理健康的客观补充线索，但不能替代专业评估。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>不吃早餐就代表有抑郁吗？</summary>
+        <div class="faq-body">当然不是。很多健康的人也不吃早餐。研究发现的是<strong>群体层面的统计关联</strong>：中重度抑郁组整体早餐频率更低。个体不吃早餐的原因很多（作息、习惯、课程安排等），不能简单画等号。</div>
+      </details>
+      <details>
+        <summary>学校能用这种方法监控学生心理健康吗？</summary>
+        <div class="faq-body">论文在讨论中提到这类方法需要在<strong>隐私保护、伦理治理与误报成本可控</strong>的前提下推进。当前分类精度（AUC 0.69）还不够高，更适合作为研究工具而非直接的监控手段。</div>
+      </details>
+      <details>
+        <summary>MAD是什么意思？</summary>
+        <div class="faq-body">MAD（Median Absolute Deviation）是中位绝对偏差，衡量数据偏离中位数的程度。这里用它来描述"一个人在不同天里，午餐/晚餐时间偏离自己通常时间的幅度"。MAD越大，吃饭时间越不稳定。</div>
+      </details>
+      <details>
+        <summary>为什么就餐地点没有组间差异？</summary>
+        <div class="faq-body">论文指出就餐地点模式在三组之间没有显著差异。可能因为校园食堂选择有限，地点更多由便利性而非情绪状态决定。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>数字表型</dt>
+        <dd>从数字设备（手机、可穿戴、支付系统等）被动采集的行为数据所反映的健康相关模式</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PHQ-9</dt>
+        <dd>患者健康问卷-9项，标准化抑郁筛查工具。5-9分轻度，≥10分中重度</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>MAD</dt>
+        <dd>中位绝对偏差，衡量数据波动程度的稳健指标，对极端值不敏感</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>SVM</dt>
+        <dd>支持向量机，一种机器学习分类方法。本研究用RBF核进行多维饮食特征分类</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>AOR</dt>
+        <dd>调整后比值比，控制协变量后某因素与结局的关联强度</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>ANCOVA</dt>
+        <dd>协方差分析，在比较组间差异时控制协变量（如年龄、性别等）的影响</dd>
+      </dl>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
