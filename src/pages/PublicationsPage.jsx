@@ -113,6 +113,14 @@ export default function PublicationsPage() {
                             {language === 'zh' ? '科普解读' : 'Explainer'}
                           </a>
                         )}
+                        {!pub.explainerUrl && pub.hasExplainer && (
+                          <Link
+                            to={`/publications/${pub.slug}/explainer`}
+                            className="text-xs px-2 py-0.5 rounded-full bg-cyan/10 text-cyan font-medium hover:bg-cyan/20 transition-colors"
+                          >
+                            {language === 'zh' ? '科普解读' : 'Explainer'}
+                          </Link>
+                        )}
                       </div>
                       <Link to={`/publications/${pub.slug}`} className="font-medium text-navy text-[15px] leading-snug mb-1.5 block hover:text-ocean transition-colors">
                         {pub.title}
