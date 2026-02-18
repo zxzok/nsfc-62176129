@@ -52,6 +52,7 @@ export const publications = [
     slug: slugify('Bridging animal models and humans neuroimaging as intermediate phenotypes linking genetic or stress factors to anhedonia'),
     pdf: 'bridging-animal-models-and-humans.pdf',
     hasExplainer: true,
+    explainerUrl: 'papers-explainer/guo2025_anhedonia_web_content_pack/',
   },
   {
     id: 4,
@@ -64,6 +65,7 @@ export const publications = [
     representative: false,
     slug: slugify('Evaluation of the Efficacy of Group Cognitive Behavioral Therapy on Anxiety in College Students Based on Wearable Devices and Mobile Applications'),
     pdf: 'evaluation-efficacy-group-cbt-anxiety.pdf',
+    explainerUrl: 'papers-explainer/gcbt_web_content_pack/',
   },
   {
     id: 5,
@@ -167,7 +169,6 @@ export const publications = [
     representative: false,
     slug: slugify('Exploring the relationship between response time sequence in scale answering process and severity of insomnia'),
     pdf: 'exploring-response-time-sequence-insomnia.pdf',
-    explainerUrl: 'papers-explainer/response-time-dataset_web_content_package/',
   },
   {
     id: 13,
@@ -193,6 +194,7 @@ export const publications = [
     representative: false,
     slug: slugify('Temporal Dynamics in Psychological Assessments A Novel Dataset with Scales and Response Times'),
     pdf: 'temporal-dynamics-psychological-assessments.pdf',
+    explainerUrl: 'papers-explainer/response-time-dataset_web_content_package/',
   },
   {
     id: 15,
