@@ -3,250 +3,555 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>动态网络自适应控制 | Adaptive Control of Dynamic Networks</title>
-  <meta name="description" content="一种在线自适应算法，在未来未知的情况下减少动态网络驱动节点频繁切换的成本。IEEE TNSE 2026。">
+  <title>动态网络也能实时"少换控制点"</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #fafbfd !important; }
+
+    .hero-custom {
+      background: linear-gradient(160deg, #0a1628 0%, #0f2b46 35%, #1e6091 70%, #00b4d8 100%) !important;
+      padding: 5rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(72,202,228,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important;
+      max-width: 20ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.78) !important;
+      font-size: 1.1rem !important;
+      line-height: 1.7 !important;
+      max-width: 52ch !important;
+      margin: 0 !important;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(6px);
+    }
+    .hero-chip.rep { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); color: #34d399; }
+
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    .sec-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #00b4d8; margin-bottom: 0.4rem; }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important; color: #0f2b46 !important;
+      line-height: 1.3 !important; margin: 0 0 1rem !important;
+      border: none !important; padding: 0 !important;
+    }
+    .sec h2::after { display: none !important; }
+
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(0,180,216,0.06), rgba(72,202,228,0.03));
+      border-left: 4px solid #00b4d8;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem; margin: 2rem 0;
+      font-size: 1.05rem; line-height: 1.75; color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+
+    .callout-warn {
+      background: rgba(251,191,36,0.06);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem; margin: 1.5rem 0;
+      font-size: 0.92rem; color: #78350f;
+    }
+
+    .fig-inline {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 1rem; margin: 2rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2.5rem 0; }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center; padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #0f2b46, #1a3a5c);
+      border-radius: 14px; box-shadow: 0 4px 16px rgba(15,43,70,0.18);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #48cae4; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    .analogy {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: linear-gradient(135deg, #f0f9ff, #f8fafc);
+      border: 1px solid #e0f2fe; border-radius: 14px;
+      padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, #00b4d8, #48cae4);
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 2.5rem 0; position: relative; }
+    @media (max-width: 700px) { .steps { grid-template-columns: 1fr; gap: 1.25rem; } .step-arrow { display: none !important; } }
+    .step { text-align: center; padding: 0 0.75rem; position: relative; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(145deg, #0f2b46, #1e6091);
+      color: #48cae4; font-size: 1.2rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem; box-shadow: 0 4px 12px rgba(15,43,70,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow { position: absolute; right: -10px; top: 26px; color: #00b4d8; font-size: 1.3rem; z-index: 2; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .col-box { border-radius: 14px; padding: 1.5rem; }
+    .col-box h4 { font-size: 0.85rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .col-green { background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); }
+    .col-green h4 { color: #059669; }
+    .col-amber { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); }
+    .col-amber h4 { color: #d97706; }
+
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 110px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-blue { background: linear-gradient(90deg, #0ea5e9, #00b4d8); }
+    .bf-gray { background: linear-gradient(90deg, #94a3b8, #cbd5e1); }
+
+    .takeaway-banner {
+      background: linear-gradient(145deg, #0f2b46, #1e6091);
+      border-radius: 18px; padding: 2.5rem 2rem; text-align: center;
+      margin: 3rem 0; position: relative; overflow: hidden;
+    }
+    .takeaway-banner::before {
+      content: ''; position: absolute; top: -30%; right: -10%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(72,202,228,0.15) 0%, transparent 60%);
+    }
+    .takeaway-banner h3 { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 0.75rem; position: relative; z-index: 1; }
+    .takeaway-banner p { color: #fff; font-size: 1.3rem; font-weight: 700; line-height: 1.5; margin: 0; position: relative; z-index: 1; max-width: 36ch; margin: 0 auto; }
+
+    .faq-list { margin: 1.5rem 0; }
+    .faq-list details { margin-bottom: 0.75rem; }
+
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .gloss-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 1.25rem; transition: all 0.25s;
+    }
+    .gloss-card:hover { border-color: #00b4d8; box-shadow: 0 4px 16px rgba(0,180,216,0.08); }
+    .gloss-card h4 { margin: 0 0 0.3rem; font-size: 0.92rem; color: #0f2b46; }
+    .gloss-card .gloss-en { font-size: 0.75rem; color: #94a3b8; margin: 0 0 0.5rem; font-style: italic; }
+    .gloss-card p { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.6; }
+
+    .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+    @media (max-width: 700px) { .finding-grid { grid-template-columns: 1fr; } }
+    .finding-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 1.5rem; transition: all 0.25s;
+    }
+    .finding-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .finding-card .finding-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .finding-card h4 { font-size: 0.95rem; color: #0f2b46; margin: 0 0 0.5rem; font-weight: 700; }
+    .finding-card p { font-size: 0.85rem; color: #64748b; margin: 0; line-height: 1.6; }
+  </style>
 </head>
 <body>
-<!-- Back Nav -->
+
 <div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+  <a href="../../#/">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+  <span>NSFC 62176129</span>
 </div>
 
-<!-- Page Navigation -->
-<nav class="page-nav">
-  <div class="page-nav-inner">
-    <a href="index.html" class="active">
-      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      概览
-    </a>
-    <a href="method.html">
-      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-      方法详解
-    </a>
-    <a href="results.html">
-      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      实验结果
-    </a>
-    <a href="glossary.html">
-      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-      术语与FAQ
-    </a>
-  </div>
-</nav>
-
-<!-- Reading Progress -->
 <div class="reading-progress" id="readingProgress"></div>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <div style="margin-bottom:1.5rem;">
-      <span class="hero-badge">IEEE TNSE 2026</span>
-      <span class="hero-badge" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3);color:#34d399;">代表性论文</span>
-    </div>
-    <h1>动态网络也能实时<br>"少换控制点"</h1>
-    <p class="hero-subtitle">一种在线自适应算法：在未来未知的情况下，减少驱动节点频繁切换的成本</p>
+<!-- ======================== HERO ======================== -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <h1>动态网络也能实时"少换控制点"</h1>
+    <p class="lead">
+      现实中的网络时刻在变，但控制它的"关键节点"每次都换代价太大。这项研究提出了一种<strong style="color:#48cae4;">在线自适应算法</strong>，在不知道未来的情况下，让控制点尽量稳定——平均减少 19-22% 的切换成本。
+    </p>
     <div class="hero-meta">
-      <span>Pan C, Zhang X*, Zheng H, Zhang R, Su Z, Zhang C, Zhang W</span>
-      <span>·</span>
-      <span>IEEE Trans. Network Science & Engineering, 13, 1918-1931</span>
+      <span class="hero-chip rep">代表性论文</span>
+      <span class="hero-chip">IEEE TNSE &middot; 2026</span>
+      <span class="hero-chip">Pan, Zhang 等</span>
+      <span class="hero-chip">20 个真实网络验证</span>
     </div>
   </div>
 </section>
 
-<!-- KPI Stats -->
-<div class="stats-row">
-  <div class="stat-card reveal">
-    <div class="stat-value">22%</div>
-    <div class="stat-label">合成网络平均<br>切换成本降低</div>
-  </div>
-  <div class="stat-card reveal">
-    <div class="stat-value">19%</div>
-    <div class="stat-label">真实网络平均<br>切换成本降低</div>
-  </div>
-  <div class="stat-card reveal">
-    <div class="stat-value">20</div>
-    <div class="stat-label">真实动态网络<br>数据集验证</div>
-  </div>
-  <div class="stat-card reveal">
-    <div class="stat-value" style="font-size:1.5rem;">0.81</div>
-    <div class="stat-label">平均 ECC 比值<br>(越低越好)</div>
-  </div>
-</div>
+<!-- ======================== 30秒读懂 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">30 秒读懂</div>
+    <h2>这篇论文说了什么？</h2>
 
-<!-- 30s Summary -->
-<section class="section" id="summary">
-  <div class="container">
-    <div class="section-label reveal">30秒读懂</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">核心问题与发现</h2>
+    <div class="prose">
+      <p>
+        想象你是一座城市的交通调度员。城市的道路每天都在变——施工封路、新路开通。你需要在关键路口安排指挥员，让全城交通可控。但如果每天都全部换人，<strong>培训和交接的成本太高了</strong>。
+      </p>
+      <p>
+        这个比喻就是"动态网络控制"面临的核心难题：网络结构不断变化，用来控制网络的"驱动节点"也必须跟着调整。但频繁更换 = 额外成本。
+      </p>
+      <p>
+        以前的方法要么假设"你已经知道未来网络怎么变"（现实中做不到），要么每次从头算（导致控制点大幅更换）。这篇论文提出了一种新方法：<strong>只看过去和现在，就能让控制点尽量稳定</strong>。
+      </p>
+    </div>
 
-    <div class="two-col reveal">
-      <div>
-        <h3 style="margin-top:0;">问题是什么？</h3>
-        <p>现实网络（交通、社交、基因调控）会不断变化。为了"控制"网络——让系统从任意状态到达目标状态——我们需要选择一些关键节点（驱动节点）来施加控制信号。但网络结构一变，原来的驱动节点就可能失效，需要重新选择。</p>
-        <p><strong>频繁更换驱动节点 = 重新部署控制器 = 额外成本。</strong></p>
-        <p>能不能在只知道"过去和现在"的情况下，让控制点尽量稳定、少折腾？</p>
+    <div class="callout-highlight">
+      <strong>核心思想：</strong>给每个节点打一个"优先级分"——历史上越稳定、上一步已经在用的节点分越高。然后每次只做"局部修补"而不是推翻重来。就像<strong>尽量保留熟练的老指挥员，只替换不得不换的</strong>。
+    </div>
+  </div>
+</section>
+
+<!-- ======================== KPI ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="kpi-strip">
+      <div class="kpi-item">
+        <span class="big">22%</span>
+        <span class="small">合成网络切换成本降低</span>
       </div>
-      <div>
-        <h3 style="margin-top:0;">解决方案</h3>
-        <p>作者提出<strong>自适应控制（AC）算法</strong>：</p>
-        <ul style="padding-left:1.2em;margin:0.75rem 0;">
-          <li>不需要知道未来网络怎么变</li>
-          <li>用节点的历史稳定性 + 上一时刻是否已是驱动节点来评分</li>
-          <li>从上一时刻的匹配出发做"局部修补"而非从头计算</li>
-          <li>保证每个时刻仍用最少的控制点</li>
-        </ul>
-        <div class="callout takeaway" style="margin-top:1rem;">
-          <div class="callout-title">一句话带走</div>
-          <p style="font-size:1.1rem;font-weight:600;color:var(--navy);margin:0;"><strong>让控制点少变，动态网络更好控</strong></p>
+      <div class="kpi-item">
+        <span class="big">19%</span>
+        <span class="small">真实网络切换成本降低</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">20</span>
+        <span class="small">个真实网络验证</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">0.81</span>
+        <span class="small">平均 ECC 比值</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 为什么做这个研究 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">研究背景</div>
+    <h2>为什么要研究"动态网络的控制"？</h2>
+
+    <div class="prose">
+      <p>
+        现实世界中的网络——社交网络、交通网络、基因调控网络——都不是一成不变的。朋友会加减、道路会开关、基因表达会波动。要"控制"这样的网络，需要选一些关键节点施加信号。
+      </p>
+      <p>
+        但网络一变，原来选好的关键节点可能就不再适用了。传统方法每一步都<strong>独立地重新计算</strong>最佳控制点集合，完全不考虑上一步的选择——导致控制点在相邻时刻频繁更换。
+      </p>
+    </div>
+
+    <div class="analogy">
+      <div class="analogy-icon">&#127961;</div>
+      <div class="analogy-text">
+        <strong>打个比方：</strong>每天重新招一批交通指挥员，哪怕大部分路口没变。每天培训、交接、适应——这些"隐形成本"就是论文定义的<strong>额外控制成本（ECC）</strong>。
+      </div>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/png/visual_01_online_setting_diagram.png" alt="在线设置：过去已知，未来未知" loading="lazy">
+      <figcaption>在线设置示意 — 在当前时刻只能看到过去的网络快照，未来的拓扑结构未知，但仍需实时决策</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 怎么做的 ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="sec-label">研究方法</div>
+    <h2>自适应控制（AC）算法怎么工作？</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>继承上一步</h4>
+        <p>从上一时刻的匹配方案出发，不从零开始</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>移除失效边</h4>
+        <p>检查哪些连接已经消失，把对应匹配移除</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>按优先级修补</h4>
+        <p>给节点打分（稳定性+延续性），按优先级修补匹配</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h4>输出当前 MDS</h4>
+        <p>得到本时刻的最小驱动节点集，切换最少</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="max-width:760px;margin:2rem auto;">
+      <div class="analogy">
+        <div class="analogy-icon">&#128170;</div>
+        <div class="analogy-text">
+          <strong>原则一：稳定性优先</strong> — 历史上连接越稳定的节点（度中心性高、邻居变化小），越优先被选为控制点。就像优先选经验丰富的"老员工"。
+        </div>
+      </div>
+      <div class="analogy">
+        <div class="analogy-icon">&#128257;</div>
+        <div class="analogy-text">
+          <strong>原则二：延续性加分</strong> — 上一步已经是控制点的节点获得更高优先级。"能不换就不换"，最大程度减少切换。
         </div>
       </div>
     </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/png/visual_04_ac_workflow_flowchart.png" alt="AC 算法流程" loading="lazy">
+      <figcaption>AC 算法流程 — 从上一刻匹配出发做局部修补，用优先级引导搜索，输出当前最小驱动节点集</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- Key Visual: Online Setting -->
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <div class="section-label reveal">核心概念</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">在线自适应控制：过去已知、未来未知</h2>
-    <p class="reveal">传统方法假设我们预先知道整个网络的演化过程，可以离线求解最优方案。但现实中，未来的网络拓扑往往不可预测。AC 算法只用历史与当前快照实时更新驱动节点集。</p>
-    <div class="figure reveal">
-      <img src="visuals/png/visual_01_online_setting_diagram.png" alt="时间轴把过去与未来分开：左侧浅色区域表示已观测到的历史快照，右侧表示未知的未来拓扑" loading="lazy">
-      <div class="figure-caption"><strong>图 1 |</strong> 在线设置示意图 — 在当前时刻只能看到历史快照 G₁ 到 Gₙ，仍需实时计算当前最小驱动节点集（MDS）。基于 Fig.1（第2页）重绘。</div>
-    </div>
-  </div>
-</section>
+<!-- ======================== 核心发现 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">核心发现</div>
+    <h2>研究发现了什么？</h2>
 
-<!-- Three Key Findings -->
-<section class="section" id="findings">
-  <div class="container">
-    <div class="section-label reveal">关键发现</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">三个核心发现</h2>
-    <div class="feature-grid">
-      <div class="card reveal">
-        <div style="font-size:2rem;margin-bottom:0.75rem;">📉</div>
-        <h3 style="margin-top:0;">发现 1：显著降低切换成本</h3>
-        <p>在不知道未来网络怎么变的情况下，AC 在合成网络上平均降低 22% 切换成本，在 20 个真实网络上平均降低 19%。最好的案例（ia-hospital）比值低至 0.71。</p>
+    <div class="finding-grid">
+      <div class="finding-card">
+        <div class="finding-icon">&#128200;</div>
+        <h4>切换成本显著降低</h4>
+        <p>合成网络平均降低 22%，20 个真实网络平均降低 19%。最佳案例（ia-hospital）比值低至 0.71。</p>
       </div>
-      <div class="card reveal">
-        <div style="font-size:2rem;margin-bottom:0.75rem;">🌊</div>
-        <h3 style="margin-top:0;">发现 2：越平稳越有效</h3>
-        <p>网络演化越"平稳"（相邻快照的节点/边相似度越高），AC 的优势越明显。变化剧烈时 AC 会接近基线但不会更差——它有明确的性能下界。</p>
+      <div class="finding-card">
+        <div class="finding-icon">&#127754;</div>
+        <h4>越平稳越有效</h4>
+        <p>网络变化越缓慢（相邻快照越相似），AC 的优势越大。剧烈变化时退化到基线水平，但不会更差。</p>
       </div>
-      <div class="card reveal">
-        <div style="font-size:2rem;margin-bottom:0.75rem;">🎯</div>
-        <h3 style="margin-top:0;">发现 3：控制点更集中</h3>
-        <p>与只偏好高度/高 PageRank 节点的方法相比，AC 获得更小的 UMDS（全时段驱动节点并集）和更低的 ECC，说明"稳定+延续"的度量更有效。</p>
+      <div class="finding-card">
+        <div class="finding-icon">&#127919;</div>
+        <h4>控制点更集中</h4>
+        <p>与只选高度/高 PageRank 节点的方法相比，AC 的全时段控制点集合更小，资源利用更高效。</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Visual: Real Network Results -->
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <div class="figure reveal">
-      <img src="visuals/png/visual_05_real_ratio_bar.png" alt="20个真实网络的ECC比值条形图" loading="lazy">
-      <div class="figure-caption"><strong>图 2 |</strong> 20 个真实网络的 ECC 比值（ECC_AC / ECC_MM）。虚线为基线 1，多数网络的比值小于 1，平均约 0.81，说明 AC 有效降低了驱动节点切换成本。基于 Table III（第11页）重绘。</div>
+    <figure class="fig-inline">
+      <img src="visuals/png/visual_05_real_ratio_bar.png" alt="20 个真实网络的 ECC 比值" loading="lazy">
+      <figcaption>20 个真实网络的 ECC 比值 — 虚线为基线 1，多数网络比值小于 1，平均约 0.81</figcaption>
+    </figure>
+
+    <h3 style="color:#0f2b46;margin-top:2.5rem;">网络越稳定，AC 越给力</h3>
+    <div class="prose">
+      <p>
+        研究还发现了一个清晰的趋势：<strong>相邻快照的节点/边相似度越高，ECC 比值越低</strong>。这符合直觉——如果路网每天变化不大，"沿用昨天的指挥员"这个策略自然更有效。
+      </p>
     </div>
-  </div>
-</section>
 
-<!-- Sub-page Navigation -->
-<section class="section" id="explore">
-  <div class="container">
-    <div class="section-label reveal">深入了解</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">探索更多内容</h2>
-    <div class="nav-cards">
-      <a href="method.html" class="nav-card reveal">
-        <div class="nav-card-icon">⚙️</div>
-        <h3>方法详解</h3>
-        <p>了解 AC 算法的核心思路：从交通调度类比到 ECC 公式、q 评分机制和局部匹配修补流程。</p>
-        <span class="nav-card-arrow">阅读详情 →</span>
-      </a>
-      <a href="results.html" class="nav-card reveal">
-        <div class="nav-card-icon">📊</div>
-        <h3>实验结果</h3>
-        <p>20 个真实网络的交互数据表、散点图可视化、合成网络对比与四策略基线比较。</p>
-        <span class="nav-card-arrow">查看数据 →</span>
-      </a>
-      <a href="glossary.html" class="nav-card reveal">
-        <div class="nav-card-icon">📖</div>
-        <h3>术语与 FAQ</h3>
-        <p>12 个核心术语的通俗解释与类比，以及 9 个常见问题的详细解答。</p>
-        <span class="nav-card-arrow">查阅词典 →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Applications & Limitations -->
-<section class="section" style="background:var(--surface);">
-  <div class="container">
     <div class="two-col">
-      <div class="reveal">
-        <div class="section-label">应用前景</div>
-        <h2 style="margin-top:0.5rem;">这项研究有什么用？</h2>
-        <div class="callout">
-          <div class="callout-title">✅ 证据支持</div>
-          <p>作为"在线"控制点更新策略：只依赖当前与历史拓扑计算 MDS，减少驱动节点更换成本。在 ER、SF 合成模型及 20 个真实动态网络上验证有效。</p>
-        </div>
-        <div class="callout warning">
-          <div class="callout-title">💭 潜在方向</div>
-          <p>论文指出有望用于交通、社交与分子调控系统，但未报告真实系统部署或成本换算，需后续研究验证。</p>
-        </div>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/png/visual_06_sn_scatter.png" alt="节点相似度散点图" loading="lazy">
+        <figcaption>节点相似度越大 → ECC 比值越低</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/png/visual_07_se_scatter.png" alt="边相似度散点图" loading="lazy">
+        <figcaption>边相似度越大 → AC 优势越明显</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== Takeaway ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <h3>一句话带走</h3>
+      <p>让控制点少变，动态网络更好控。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 意义与局限 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">意义与局限</div>
+    <h2>这个发现意味着什么？</h2>
+
+    <div class="two-col">
+      <div class="col-box col-green">
+        <h4 style="color:#059669!important;">这项研究做到了</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>提出了第一个不需要预知未来的在线自适应控制算法</li>
+          <li>在 ER/SF 合成网络和 20 个真实网络上验证有效</li>
+          <li>有明确的性能下界——最差也不比传统方法差</li>
+          <li>代码与数据可复现</li>
+        </ul>
       </div>
-      <div class="reveal">
-        <div class="section-label">局限与未来</div>
-        <h2 style="margin-top:0.5rem;">局限性与下一步</h2>
-        <div class="card" style="margin-top:1rem;">
-          <h4 style="color:var(--coral);margin:0 0 0.5rem;">① 启发式算法</h4>
-          <p style="margin:0;">目前缺乏"距全局最优 ECC 有多远"的理论近似界，建立理论框架是未来方向。</p>
-        </div>
-        <div class="card" style="margin-top:0.75rem;">
-          <h4 style="color:var(--amber);margin:0 0 0.5rem;">② 依赖渐进变化</h4>
-          <p style="margin:0;">当相邻快照差异很大时，AC 会退化到与基线相近的表现。在高动态网络上两者几乎一样。</p>
-        </div>
-        <div class="card" style="margin-top:0.75rem;">
-          <h4 style="color:var(--ocean);margin:0 0 0.5rem;">③ 快照化假设</h4>
-          <p style="margin:0;">将动态网络视作快照序列下的线性系统，使用结构可控性确定 MDS。若实际系统的动力学参数很关键，仍需扩展。</p>
-        </div>
+      <div class="col-box col-amber">
+        <h4 style="color:#d97706!important;">需要注意的限制</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li><strong>启发式算法</strong>：缺少与全局最优的理论差距证明</li>
+          <li><strong>依赖渐进变化</strong>：网络剧变时退化到基线</li>
+          <li><strong>快照化假设</strong>：将连续演化离散化为快照序列</li>
+          <li><strong>未真实部署</strong>：未报告交通/生物等场景的实际成本换算</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="fig-inline" style="margin-top:2rem;">
+      <img src="visuals/png/visual_09_tableIV_ecc_grouped.png" alt="四种策略 ECC 分组对比" loading="lazy">
+      <figcaption>四种策略在不同参数下的 ECC 对比 — AC 在各组中通常最低，且获得更小的全时段控制点集合</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section class="sec sec-alt" id="faq">
+  <div class="sec-inner">
+    <div class="sec-label">常见问题</div>
+    <h2>你可能会问……</h2>
+
+    <div class="faq-list">
+      <details>
+        <summary>选对几个节点就能控制复杂系统？</summary>
+        <p>论文用的是"结构可控性"框架：只看拓扑结构判断需要多少驱动节点。实际系统还受动力学参数、噪声等影响，论文未做这些验证。</p>
+      </details>
+      <details>
+        <summary>为什么不提前算好固定的控制点？</summary>
+        <p>因为现实网络的未来拓扑不可预测。传统离线方法假设已知完整演化序列，这在大多数场景不现实。</p>
+      </details>
+      <details>
+        <summary>AC 需要知道未来网络怎么变吗？</summary>
+        <p>不需要。这正是 AC 的核心优势——只用当前和历史快照做决策，不需要任何未来信息。</p>
+      </details>
+      <details>
+        <summary>网络突然大变怎么办？</summary>
+        <p>AC 会自动退化为常规最大匹配，不会比传统方法更差。这个性能下界是有理论保证的。</p>
+      </details>
+      <details>
+        <summary>22%/19% 的降低是怎么算出来的？</summary>
+        <p>合成网络上所有实验的平均 ECC 降低约 22%；20 个真实网络的平均 ECC 比值为 0.81（即降低 19%）。</p>
+      </details>
+      <details>
+        <summary>这项工作的下一步是什么？</summary>
+        <p>作者提出要建立理论框架，量化启发式算法与全局最优之间的差距。扩展到带权动力学系统和真实部署场景也是方向。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 术语 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">术语速查</div>
+    <h2>几个关键概念，用大白话说</h2>
+
+    <div class="gloss-grid">
+      <div class="gloss-card">
+        <h4>动态网络</h4>
+        <p class="gloss-en">Dynamic Network</p>
+        <p>节点和连接会随时间变化的网络。像每天路况不同的城市路网。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>驱动节点</h4>
+        <p class="gloss-en">Driver Node</p>
+        <p>直接接收控制信号的关键节点。像交通指挥员站的路口。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>最小驱动节点集</h4>
+        <p class="gloss-en">MDS</p>
+        <p>保证网络可控所需的最少控制点。同一网络可能有多种方案。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>额外控制成本</h4>
+        <p class="gloss-en">ECC</p>
+        <p>相邻时刻之间新增的驱动节点数累加。越小代表控制方案越稳定。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>最大匹配</h4>
+        <p class="gloss-en">Maximum Matching</p>
+        <p>在网络的二分图里选尽可能多的互不冲突的配对。未配对的点就是驱动节点。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>Jaccard 相似度</h4>
+        <p class="gloss-en">Jaccard Similarity</p>
+        <p>两个集合的重叠程度：交集 / 并集。用来衡量相邻快照的变化大小。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ======================== Footer ======================== -->
 <footer class="site-footer">
   <div class="container">
-    <p>本页面内容基于论文 "Adaptive Control of Dynamic Networks" (Pan et al., IEEE TNSE, 2026) 生成，仅用于科学传播。</p>
-    <p style="margin-top:0.5rem;">所有数据图为基于论文数据重绘，非原文截图。如需引用请参阅原始论文。</p>
-    <p style="margin-top:1rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+    <p>本页面基于论文 <em>Adaptive Control of Dynamic Networks</em> (Pan et al., IEEE TNSE, 2026) 生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
   </div>
 </footer>
 
 <script>
-// Reading progress
-window.addEventListener('scroll', () => {
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  const p = h > 0 ? (window.scrollY / h) * 100 : 0;
-  document.getElementById('readingProgress').style.width = p + '%';
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
 }, { passive: true });
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
 </script>
 </body>
 </html>
