@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>长期抗精神病药会影响大脑吗？精神分裂症真实世界MRI研究解读</title>
+  <meta name="description" content="真实世界横断面MRI研究比较用药/未用药精神分裂症与健康对照的灰质体积(GMV)与静息态脑活动(ALFF)。结果提示：GMV更受用药状态影响，而ALFF异常模式在两类患者间相似，可能更像疾病本底。" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #101828;
+      --muted: #475467;
+      --border: #D0D5DD;
+      --card: #F9FAFB;
+      --accent: #2E90FA;
+      --accent2: #12B76A;
+      --warn: #F79009;
+      --shadow: 0 8px 24px rgba(16,24,40,.08);
+      --radius: 16px;
+      --max: 980px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "PingFang SC", "Noto Sans CJK SC", "Microsoft Yahei", sans-serif;
+    }
+    body { margin:0; background:var(--bg); color:var(--text); }
+    header { border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; z-index:10; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 18px 16px; }
+    .nav { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .nav a { color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px; }
+    .nav a:hover { background: var(--card); color: var(--text); }
+    h1 { font-size: 34px; line-height: 1.2; margin: 24px 0 8px; }
+    h2 { font-size: 24px; margin: 34px 0 12px; }
+    p { line-height: 1.75; color: var(--text); }
+    .subtitle { color: var(--muted); font-size: 18px; line-height: 1.6; margin-bottom: 10px; }
+    .badge { display:inline-block; border:1px solid var(--border); background:var(--card); border-radius:999px; padding:6px 10px; font-size: 13px; color: var(--muted); }
+    .grid2 { display:grid; grid-template-columns: 1fr; gap: 16px; }
+    @media(min-width: 860px) { .grid2 { grid-template-columns: 1.2fr .8fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 10px; font-size: 18px; }
+    .kpi { display:flex; gap:12px; flex-wrap:wrap; }
+    .kpi .item { background:#fff; border:1px solid var(--border); border-radius: 14px; padding: 12px 12px; min-width: 210px; }
+    .kpi .num { font-size: 20px; font-weight: 700; }
+    .kpi .lab { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: auto; border-radius: 14px; border:1px solid var(--border); background:#fff; }
+    figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 8px; }
+    .cite { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .pillbox { display:flex; gap: 10px; flex-wrap:wrap; margin: 10px 0; }
+    .pillbox button { border:1px solid var(--border); background:#fff; padding:8px 10px; border-radius:999px; cursor:pointer; }
+    .pillbox button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,144,250,.15); }
+    table { width:100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--border); padding: 10px 8px; text-align:left; vertical-align: top; }
+    th { font-size: 13px; color: var(--muted); font-weight: 600; }
+    td { font-size: 14px; }
+    .small { font-size: 13px; color: var(--muted); }
+    .footer { border-top:1px solid var(--border); margin-top: 42px; padding-top: 18px; color: var(--muted); }
+    .callout { border-left: 4px solid var(--warn); background: #FFFAEB; padding: 12px 14px; border-radius: 12px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+<header>
+  <div class="wrap">
+    <nav class="nav" aria-label="页面导航">
+      <a href="#quick">30秒读懂</a>
+      <a href="#why">为什么做</a>
+      <a href="#how">怎么做</a>
+      <a href="#findings">发现</a>
+      <a href="#interactive">交互</a>
+      <a href="#limits">局限</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="badge">基于论文：Chen et al., Frontiers in Neuroscience (2022)</div>
+  <h1 id="hero-title"></h1>
+  <div class="subtitle" id="hero-subtitle"></div>
+
+  <section id="quick" class="grid2" aria-labelledby="quick-h">
+    <div>
+      <h2 id="quick-h">30秒读懂</h2>
+      <div id="quick-body"></div>
+    </div>
+    <aside class="card" aria-label="关键数字">
+      <h3>关键数字</h3>
+      <div class="kpi" id="kpi"></div>
+      <div class="cite" id="kpi-cite"></div>
+    </aside>
+  </section>
+
+  <section id="why" aria-labelledby="why-h">
+    <h2 id="why-h">为什么要做这个研究</h2>
+    <div id="why-body"></div>
+    <div class="cite" id="why-cite"></div>
+  </section>
+
+  <section id="how" aria-labelledby="how-h">
+    <h2 id="how-h">我们怎么做的</h2>
+    <div id="how-body"></div>
+    <div class="cite" id="how-cite"></div>
+  </section>
+
+  <section id="findings" aria-labelledby="findings-h">
+    <h2 id="findings-h">我们发现了什么</h2>
+    <div id="findings-body"></div>
+    <div class="grid2" style="margin-top:16px;">
+      <figure class="card">
+        <img src="../assets/figures/figure1.png" alt="脑表面图标出三组在灰质体积上的显著差异区域，主要分布在前额叶、颞叶、扣带回与左岛叶等；下方柱状图展示典型脑区三组GMV对比，并用星号标注显著性。" />
+        <figcaption><strong>Figure 1（论文图1）</strong>：GMV差异（证据：第5页图1；第6页表2）</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="../assets/figures/figure2.png" alt="脑表面图标出三组在ALFF上的显著差异区域；患者相对健康对照在纹状体等前部区域ALFF升高，在枕叶视觉皮层ALFF降低；下方柱状图展示几个代表区域三组对比。" />
+        <figcaption><strong>Figure 2（论文图2）</strong>：ALFF差异（证据：第7页图2；第8页表3）</figcaption>
+      </figure>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <strong>边界提醒：</strong>这些图展示的是组平均差异，不能用于个人诊断或自测；研究为横断面观察，不能证明因果。（证据：第9页局限性段；论文未报告个体诊断准确率）
+    </div>
+  </section>
+
+  <section id="interactive" aria-labelledby="interactive-h">
+    <h2 id="interactive-h">交互：把结论“玩明白”</h2>
+    <p class="small">这是一个可落地的原型示例：用论文表2/表3的簇信息，做“点击看证据”的探索器。数据在本包的 <code>data/interactive/interactive_data.json</code>。</p>
+
+    <div class="card" aria-label="GMV脑区探索器">
+      <h3>模块1：GMV脑区探索器（表2）</h3>
+      <div class="pillbox" role="group" aria-label="GMV对比选择">
+        <button data-gmv-contrast="med_vs_unmed" aria-pressed="true">用药 vs 未用药</button>
+        <button data-gmv-contrast="med_vs_hc" aria-pressed="false">用药 vs 健康</button>
+        <button data-gmv-contrast="unmed_vs_hc" aria-pressed="false">未用药 vs 健康（仅论文明确报告的区域）</button>
+      </div>
+      <div style="overflow:auto;">
+        <table id="gmv-table">
+          <thead><tr>
+            <th>簇</th><th>簇大小(体素)</th><th>MNI坐标(mm)</th><th>F值</th><th>脑区标签</th><th>方向</th><th>病程协变量后仍显著？</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="cite">来源：第5页图1；第6页表2；第6页GMV Findings段</div>
+    </div>
+
+    <div class="card" style="margin-top:16px;" aria-label="ALFF模式浏览器">
+      <h3>模块2：ALFF模式浏览器（表3）</h3>
+      <div class="pillbox" role="group" aria-label="ALFF模式切换">
+        <button data-alff-mode="increase" aria-pressed="true">前部↑（纹状体等）</button>
+        <button data-alff-mode="decrease" aria-pressed="false">后部↓（视觉皮层）</button>
+      </div>
+      <div style="overflow:auto;">
+        <table id="alff-table">
+          <thead><tr>
+            <th>簇</th><th>簇大小(体素)</th><th>MNI坐标(mm)</th><th>F值</th><th>脑区标签</th><th>患者 vs 健康</th><th>用药 vs 未用药</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="cite">来源：第7页图2；第8页表3；第6页ALFF Findings段</div>
+    </div>
+
+    <div class="card" style="margin-top:16px;" aria-label="年龄×用药索引">
+      <h3>模块3：年龄×用药的结构变化索引（文本分类）</h3>
+      <p class="small">论文给出“哪一组年龄相关GMV下降更快”的分类，但正文未给出斜率/效应量数值，因此这里按类别展示。</p>
+      <div class="pillbox" role="group" aria-label="年龄效应筛选">
+        <button data-age-filter="med_faster_decline" aria-pressed="true">用药者下降更快</button>
+        <button data-age-filter="unmed_faster_decline" aria-pressed="false">未用药者下降更快</button>
+        <button data-age-filter="no_group_difference" aria-pressed="false">无组差异（如梭状回）</button>
+        <button data-age-filter="not_significant_after_fdr" aria-pressed="false">ALFF：FDR后不显著</button>
+      </div>
+      <ul id="age-list"></ul>
+      <div class="cite">来源：第6页Age-Related Differences段；年龄范围：第4页Subjects段</div>
+    </div>
+  </section>
+
+  <section id="limits" aria-labelledby="limits-h">
+    <h2 id="limits-h">局限性与下一步</h2>
+    <div id="limits-body"></div>
+    <div class="cite" id="limits-cite"></div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">FAQ</h2>
+    <div id="faq-body"></div>
+  </section>
+
+  <section class="footer" aria-label="免责声明与来源">
+    <p><strong>免责声明：</strong>本文为科研科普解读，不构成诊断、治疗或用药建议。研究为真实世界横断面观察，结论为组水平统计差异，不能证明因果关系，也不应用于个人自测或自行调整药物。任何治疗决策请咨询精神科医生。（证据：第9页局限性段）</p>
+    <p class="small">本页面示例仅使用论文中已报告的数据与结论；若需要更精细的重绘（如柱状图精确数值），需对论文图像进行数字化提取并标注“从图中提取”。</p>
+  </section>
+</main>
+
+<script id="content-json" type="application/json">{
+  "slug": "sz-antipsychotics-gmv-alff-realworld",
+  "seo_title": "长期抗精神病药会影响大脑吗？精神分裂症真实世界MRI研究解读",
+  "seo_description": "真实世界横断面MRI研究比较用药/未用药精神分裂症与健康对照的灰质体积(GMV)与静息态脑活动(ALFF)。结果提示：GMV更受用药状态影响，而ALFF异常模式在两类患者间相似，可能更像疾病本底。",
+  "keywords": [
+    "精神分裂症",
+    "抗精神病药",
+    "灰质体积",
+    "GMV",
+    "ALFF",
+    "静息态fMRI",
+    "真实世界研究",
+    "脑影像",
+    "voxel-based morphometry",
+    "resting-state"
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "heading": "长期抗精神病药会影响大脑吗？真实世界MRI给出线索",
+      "body_markdown": "**副标题：在精神分裂症中：灰质体积更受用药状态影响，静息态脑活动（ALFF）更像“疾病底色”**",
+      "citations": [
+        "第1页摘要",
+        "第2页Conclusion",
+        "第9页结论段"
+      ]
+    },
+    {
+      "id": "quick",
+      "heading": "30秒读懂",
+      "body_markdown": "问题：长期服用抗精神病药，会不会改变精神分裂症的大脑结构或自发活动？\n方法：比较89名用药患者、81名未用药患者与235名健康对照的GMV与ALFF。\n发现：用药组在多处脑区GMV更低；ALFF异常模式在两类患者间相似。\n意义：GMV更敏感于较长期用药状态，ALFF更像疾病本底。",
+      "citations": [
+        "第1页摘要",
+        "第3页表1",
+        "第5页图1/第6页表2",
+        "第7页图2/第8页表3",
+        "第2页Conclusion"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "论文指出，抗精神病药可能造成脑影像研究结果不一致的“混杂”，使得疾病差异与治疗影响难以区分；同时更长期（尤其>2年）的风险收益仍有争议，因此需要比较不同影像指标对较长期用药状态的敏感度。",
+      "citations": [
+        "第1页Background",
+        "第2-3页INTRODUCTION关于长期争议与0–2年证据段",
+        "第9页结论段"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的",
+      "body_markdown": "真实世界横断面研究；三组人群同扫结构MRI（VBM得到GMV）与静息态fMRI（计算0.01–0.08 Hz的ALFF）。统计控制年龄/性别，全脑FWE校正p<0.05（簇≥20体素）；患者两组对比纳入病程协变量；并做BPRS相关与年龄效应分析。",
+      "citations": [
+        "第4页Subjects段",
+        "第4页Structural MRI Data Processing段",
+        "第4页ALFF Calculation段",
+        "第4页Statistical Analysis段",
+        "第6页Correlation段"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么",
+      "body_markdown": "发现1：用药组在前额叶、颞叶、扣带回、岛叶等GMV更低；未用药患者相对健康对照在左上颞回与左梭状回也有GMV降低。\n发现2：ALFF异常模式在用药/未用药之间无差异，呈“前部纹状体↑、后部视觉皮层↓”。\n发现3：GMV与BPRS相关，ALFF与BPRS无显著相关；未检测到用药时间与GMV/ALFF关系。",
+      "citations": [
+        "第6页GMV Findings段；第5页图1；第6页表2",
+        "第6页ALFF Findings段；第7页图2；第8页表3",
+        "第6页Correlation段"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "局限性与下一步",
+      "body_markdown": "真实世界数据中剂量/依从性/持续时间信息不完整；未用药组并非全为从未用药；横断面设计无法因果推断。下一步需要纵向随访并记录更完整的用药暴露信息。",
+      "citations": [
+        "第9页局限性段",
+        "第4页Subjects段"
+      ]
+    },
+    {
+      "id": "takehome",
+      "heading": "一句话带走",
+      "body_markdown": "结构更受长期用药影响，功能异常更像本底。",
+      "citations": [
+        "第2页Conclusion",
+        "第9页结论段"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "fig1",
+      "title": "Figure 1：GMV差异",
+      "type": "论文原图复用",
+      "source_ref": "第5页图1",
+      "path": "assets/figures/figure1.png",
+      "alt_text": "脑表面图标出三组在灰质体积上的显著差异区域，主要分布在前额叶、颞叶、扣带回与左岛叶等；下方柱状图展示典型脑区三组GMV对比，并用星号标注显著性。"
+    },
+    {
+      "id": "fig2",
+      "title": "Figure 2：ALFF差异",
+      "type": "论文原图复用",
+      "source_ref": "第7页图2",
+      "path": "assets/figures/figure2.png",
+      "alt_text": "脑表面图标出三组在ALFF上的显著差异区域；患者相对健康对照在纹状体等前部区域ALFF升高，在枕叶视觉皮层ALFF降低；下方柱状图展示几个代表区域三组对比。"
+    },
+    {
+      "id": "svg_flow",
+      "title": "三组人群与两类MRI指标",
+      "type": "重绘示意图(SVG模板)",
+      "source_ref": "第1页摘要；第3页表1；第4页Statistical Analysis段",
+      "path": "assets/illustrations/flow_design.svg",
+      "alt_text": "示意图展示健康对照、用药患者、未用药患者三组均接受结构MRI与静息态fMRI，分别计算GMV与ALFF，并用全脑校正统计比较差异。"
+    },
+    {
+      "id": "svg_compare",
+      "title": "GMV与ALFF对照卡片",
+      "type": "重绘信息图(SVG模板)",
+      "source_ref": "第2页Conclusion；第9页结论段",
+      "path": "assets/illustrations/compare_gmv_alff.svg",
+      "alt_text": "左右两栏对照：GMV结构指标在用药组更低，较敏感于用药状态；ALFF功能指标在用药与未用药患者间模式相似，更像疾病特质。"
+    },
+    {
+      "id": "svg_limit",
+      "title": "三条关键局限",
+      "type": "重绘信息图(SVG模板)",
+      "source_ref": "第9页局限性段；第4页Subjects段",
+      "path": "assets/illustrations/limitations.svg",
+      "alt_text": "三条警示说明真实世界用药信息不完整、未用药组可能既往用药、研究为横断面，提示不能进行因果推断。"
+    },
+    {
+      "id": "svg_biomarkers",
+      "title": "潜在结构线索：左上颞回与左梭状回",
+      "type": "重绘信息图(SVG模板)",
+      "source_ref": "第6页GMV Findings段；第8页Discussion相关段",
+      "path": "assets/illustrations/potential_biomarkers.svg",
+      "alt_text": "信息图强调未用药患者相对健康对照在左上颞回与左梭状回的GMV降低，提示可能较少受药物影响。"
+    },
+    {
+      "id": "svg_corr",
+      "title": "BPRS与GMV/ALFF相关信息图",
+      "type": "重绘信息图(SVG模板)",
+      "source_ref": "第6页Correlation段；第9页Discussion相关段",
+      "path": "assets/illustrations/correlation_matrix.svg",
+      "alt_text": "表格式信息图指出GMV与BPRS多处正相关，而ALFF与BPRS无显著相关，并提醒相关不等于诊断或个体预测。"
+    },
+    {
+      "id": "svg_alff_pattern",
+      "title": "ALFF前高后低模式",
+      "type": "重绘信息图(SVG模板)",
+      "source_ref": "第6页ALFF Findings段；第8页表3",
+      "path": "assets/illustrations/alff_front_back.svg",
+      "alt_text": "信息图总结患者相对健康对照的ALFF异常：前部纹状体升高，后部视觉皮层降低，并强调用药与未用药患者之间无显著差异。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "im_gmv",
+      "title": "灰质体积脑区探索器",
+      "purpose": "点击/筛选查看GMV差异簇的坐标、簇大小、脑区标签及差异方向。",
+      "ui_controls": [
+        "对比选择（med_vs_unmed / med_vs_hc / unmed_vs_hc）",
+        "簇列表搜索",
+        "点击簇显示详细信息"
+      ],
+      "schema_path": "data/schemas/GMV_Cluster_Explorer.schema.json",
+      "data_path": "data/interactive/interactive_data.json#gmv_cluster_explorer",
+      "source_ref": "第5页图1；第6页表2；第6页GMV Findings段"
+    },
+    {
+      "id": "im_alff",
+      "title": "ALFF模式浏览器",
+      "purpose": "展示ALFF异常的“前高后低”空间分布，并强调用药与未用药之间无差异。",
+      "ui_controls": [
+        "模式切换（前部↑/后部↓）",
+        "簇列表与详情卡片"
+      ],
+      "schema_path": "data/schemas/ALFF_Cluster_Explorer.schema.json",
+      "data_path": "data/interactive/interactive_data.json#alff_cluster_explorer",
+      "source_ref": "第7页图2；第8页表3；第6页ALFF Findings段"
+    },
+    {
+      "id": "im_age",
+      "title": "年龄×用药的结构变化索引",
+      "purpose": "按论文文本把脑区分为“用药者下降更快/未用药者更快/无差异”等，帮助公众理解时间维度。",
+      "ui_controls": [
+        "分类筛选按钮",
+        "点击脑区查看说明"
+      ],
+      "schema_path": "data/schemas/Age_Medication_GMV_Index.schema.json",
+      "data_path": "data/interactive/interactive_data.json#age_medication_gmv_index",
+      "source_ref": "第6页Age-Related Differences段"
+    }
+  ],
+  "disclaimer": "本文为科研科普解读，不构成诊断、治疗或用药建议。研究为真实世界横断面观察，结论为组水平统计差异，不能证明因果关系，也不应用于个人自测或自行调整药物。任何治疗决策请咨询精神科医生。（证据：第9页局限性段）"
+}</script>
+<script id="interactive-json" type="application/json">{
+  "gmv_cluster_explorer": {
+    "modality": "GMV",
+    "clusters": [
+      {
+        "cluster_id": "A",
+        "cluster_size_voxels": 1873,
+        "mni_peak_mm": {
+          "x": -2,
+          "y": 50,
+          "z": 3
+        },
+        "f_value": 22.5416,
+        "subregions": [
+          "R rectus gyrus",
+          "L superior medial frontal gyrus",
+          "L rectus gyrus",
+          "R superior medial frontal gyrus",
+          "L anterior cingulum"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "B",
+        "cluster_size_voxels": 43,
+        "mni_peak_mm": {
+          "x": -33,
+          "y": -53,
+          "z": -11
+        },
+        "f_value": 15.7687,
+        "subregions": [
+          "L fusiform gyrus"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "decrease"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "C",
+        "cluster_size_voxels": 1011,
+        "mni_peak_mm": {
+          "x": -33,
+          "y": 48,
+          "z": 6
+        },
+        "f_value": 21.3453,
+        "subregions": [
+          "L middle frontal gyrus",
+          "L middle orbital frontal gyrus"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "D",
+        "cluster_size_voxels": 30,
+        "mni_peak_mm": {
+          "x": -35,
+          "y": 11,
+          "z": 6
+        },
+        "f_value": 14.5635,
+        "subregions": [
+          "L insula"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "E",
+        "cluster_size_voxels": 79,
+        "mni_peak_mm": {
+          "x": -47,
+          "y": 38,
+          "z": 12
+        },
+        "f_value": 15.7309,
+        "subregions": [
+          "L inferior pars triangularis"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "F",
+        "cluster_size_voxels": 43,
+        "mni_peak_mm": {
+          "x": -56,
+          "y": -14,
+          "z": 9
+        },
+        "f_value": 17.1504,
+        "subregions": [
+          "L superior temporal gyrus"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "decrease"
+        },
+        "survives_illness_duration_covariate": false,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "G",
+        "cluster_size_voxels": 78,
+        "mni_peak_mm": {
+          "x": 63,
+          "y": -17,
+          "z": 12
+        },
+        "f_value": 15.953,
+        "subregions": [
+          "R superior temporal gyrus",
+          "R Rolandic operculum"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "H",
+        "cluster_size_voxels": 57,
+        "mni_peak_mm": {
+          "x": 8,
+          "y": 36,
+          "z": 23
+        },
+        "f_value": 14.356,
+        "subregions": [
+          "R anterior cingulum"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "I",
+        "cluster_size_voxels": 314,
+        "mni_peak_mm": {
+          "x": 32,
+          "y": 54,
+          "z": 23
+        },
+        "f_value": 19.4355,
+        "subregions": [
+          "R middle frontal gyrus",
+          "R superior frontal gyrus"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      },
+      {
+        "cluster_id": "J",
+        "cluster_size_voxels": 109,
+        "mni_peak_mm": {
+          "x": 2,
+          "y": 15,
+          "z": 36
+        },
+        "f_value": 17.987,
+        "subregions": [
+          "R middle cingulum",
+          "L middle cingulum"
+        ],
+        "group_effects_direction": {
+          "med_vs_unmed": "decrease",
+          "med_vs_hc": "decrease",
+          "unmed_vs_hc": "not_reported"
+        },
+        "survives_illness_duration_covariate": true,
+        "source_ref": "p5 Figure 1; p6 Table 2; p6 GMV Findings"
+      }
+    ],
+    "significance_threshold": "p<0.05, FWE corrected; cluster>=20 voxels",
+    "source_ref": "p4 Statistical Analysis; p6 GMV Findings"
+  },
+  "alff_cluster_explorer": {
+    "modality": "ALFF",
+    "clusters": [
+      {
+        "cluster_id": "A",
+        "cluster_size_voxels": 100,
+        "mni_peak_mm": {
+          "x": -18,
+          "y": 21,
+          "z": -3
+        },
+        "f_value": 33.6157,
+        "subregions": [
+          "L caudate"
+        ],
+        "direction_vs_hc": "increase",
+        "med_vs_unmed_difference": "no_difference_reported",
+        "source_ref": "p7 Figure 2; p8 Table 3; p6 ALFF Findings"
+      },
+      {
+        "cluster_id": "B",
+        "cluster_size_voxels": 137,
+        "mni_peak_mm": {
+          "x": 15,
+          "y": 12,
+          "z": -15
+        },
+        "f_value": 24.0428,
+        "subregions": [
+          "R caudate",
+          "R putamen"
+        ],
+        "direction_vs_hc": "increase",
+        "med_vs_unmed_difference": "no_difference_reported",
+        "source_ref": "p7 Figure 2; p8 Table 3; p6 ALFF Findings"
+      },
+      {
+        "cluster_id": "C",
+        "cluster_size_voxels": 317,
+        "mni_peak_mm": {
+          "x": -15,
+          "y": -63,
+          "z": -3
+        },
+        "f_value": 24.2724,
+        "subregions": [
+          "L lingual gyrus",
+          "R lingual gyrus",
+          "L calcarine",
+          "R calcarine"
+        ],
+        "direction_vs_hc": "decrease",
+        "med_vs_unmed_difference": "no_difference_reported",
+        "source_ref": "p7 Figure 2; p8 Table 3; p6 ALFF Findings"
+      },
+      {
+        "cluster_id": "D",
+        "cluster_size_voxels": 22,
+        "mni_peak_mm": {
+          "x": -24,
+          "y": -6,
+          "z": 9
+        },
+        "f_value": 24.3612,
+        "subregions": [
+          "L putamen"
+        ],
+        "direction_vs_hc": "increase",
+        "med_vs_unmed_difference": "no_difference_reported",
+        "source_ref": "p7 Figure 2; p8 Table 3; p6 ALFF Findings"
+      }
+    ],
+    "frequency_band_hz": {
+      "low": 0.01,
+      "high": 0.08
+    },
+    "significance_threshold": "p<0.05, FWE corrected; cluster>=20 voxels",
+    "source_ref": "p4 ALFF Calculation; p4 Statistical Analysis; p6 ALFF Findings"
+  },
+  "age_medication_gmv_index": {
+    "age_range_years": {
+      "min": 15,
+      "max": 55
+    },
+    "items": [
+      {
+        "region_name": "bilateral middle frontal gyrus",
+        "modality": "GMV",
+        "age_effect_category": "med_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "left inferior pars triangularis",
+        "modality": "GMV",
+        "age_effect_category": "med_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "right middle cingulum",
+        "modality": "GMV",
+        "age_effect_category": "med_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "right rectus gyrus",
+        "modality": "GMV",
+        "age_effect_category": "unmed_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "left insula",
+        "modality": "GMV",
+        "age_effect_category": "unmed_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "bilateral superior temporal gyrus",
+        "modality": "GMV",
+        "age_effect_category": "unmed_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "right anterior cingulum",
+        "modality": "GMV",
+        "age_effect_category": "unmed_faster_decline",
+        "notes": "",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "fusiform gyrus",
+        "modality": "GMV",
+        "age_effect_category": "no_group_difference",
+        "notes": "论文指出：除梭状回外，所有显示组间差异的GMV区域都存在年龄相关的组别差异。",
+        "source_ref": "p6 Age-Related Differences"
+      },
+      {
+        "region_name": "ALFF (all regions tested)",
+        "modality": "ALFF",
+        "age_effect_category": "not_significant_after_fdr",
+        "notes": "论文报告：检查两组年龄与ALFF关系后，FDR校正后不再显著。",
+        "source_ref": "p6 Age-Related Differences"
+      }
+    ],
+    "source_ref": "p4 Subjects; p6 Age-Related Differences"
+  },
+  "clinical_correlations": {
+    "gmv_bprs_positive_regions": [
+      "bilateral middle frontal gyrus",
+      "bilateral superior medial frontal gyrus",
+      "right superior temporal gyrus",
+      "bilateral anterior cingulate gyri",
+      "bilateral middle cingulate gyri",
+      "right Rolandic operculum",
+      "right superior frontal gyrus",
+      "middle orbital frontal gyrus",
+      "left insula"
+    ],
+    "after_fdr_exceptions": [
+      "left fusiform gyrus",
+      "left superior temporal gyrus"
+    ],
+    "alff_bprs_relation": "no_significant_correlation_reported",
+    "medication_time_relation": "no_relation_detected",
+    "source_ref": "p6 Correlations With Clinical Variables and Medication Time"
+  }
+}</script>
+<script>
+  function el(id) { return document.getElementById(id); }
+  function mdToHtml(md) {
+    // very small markdown-ish: line breaks and code
+    return md
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/\n/g, "<br/>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+  const content = JSON.parse(el("content-json").textContent);
+  const interactive = JSON.parse(el("interactive-json").textContent);
+
+  // hero
+  el("hero-title").textContent = content.sections.find(s=>s.id==="hero").heading;
+  el("hero-subtitle").innerHTML = mdToHtml(content.sections.find(s=>s.id==="hero").body_markdown);
+
+  // quick
+  el("quick-body").innerHTML = "<p>" + mdToHtml(content.sections.find(s=>s.id==="quick").body_markdown) + "</p>";
+
+  // KPIs (from Table 1 & Methods)
+  const kpi = [
+    {num: "n=235", lab: "健康对照（HC）"},
+    {num: "n=89", lab: "用药患者（med-SZ）"},
+    {num: "n=81", lab: "未用药患者（unmed-SZ）"},
+    {num: "p<0.05 FWE", lab: "全脑校正阈值（簇≥20）"}
+  ];
+  el("kpi").innerHTML = kpi.map(x => `
+    <div class="item">
+      <div class="num">${x.num}</div>
+      <div class="lab">${x.lab}</div>
+    </div>`).join("");
+  el("kpi-cite").textContent = "证据：第1页摘要；第3页表1；第4页Statistical Analysis段";
+
+  // why/how/findings/limits
+  for (const id of ["why","how","findings","limits"]) {
+    const sec = content.sections.find(s=>s.id===id);
+    el(id+"-body").innerHTML = "<p>" + mdToHtml(sec.body_markdown) + "</p>";
+    el(id+"-cite").textContent = "证据：" + sec.citations.join("；");
+  }
+
+  // FAQ from bundled markdown file? Keep simple list for demo
+  const faqHtml = [
+    ["这是不是证明“抗精神病药会让大脑萎缩”？","不能。本研究为横断面真实世界观察，且用药信息不完整或未纳入，不能做因果推断。（证据：第9页局限性段）"],
+    ["ALFF能用来量化症状轻重吗？","本研究中ALFF与BPRS无显著相关；作者指出不适合作为症状定量指标。（证据：第6页Correlation段；第9页Discussion）"],
+    ["未用药组是不是都从没吃过药？","不是。未用药组仅38.27%为从未用药，61.73%为至少4周未用药。（证据：第4页Subjects段）"]
+  ].map(([q,a]) => `<div class="card" style="margin:12px 0;"><h3 style="margin:0 0 8px;">Q：${q}</h3><p style="margin:0;">A：${a}</p></div>`).join("");
+  el("faq-body").innerHTML = faqHtml;
+
+  // Interactive: GMV table
+  const gmv = interactive.gmv_cluster_explorer;
+  const gmvTbody = el("gmv-table").querySelector("tbody");
+  let gmvContrast = "med_vs_unmed";
+
+  function renderGmv() {
+    gmvTbody.innerHTML = gmv.clusters.map(c => {
+      const dir = c.group_effects_direction[gmvContrast] || "not_reported";
+      const dirText = (dir==="decrease") ? "用药组更低（decrease）" :
+                      (dir==="increase") ? "用药组更高（increase）" :
+                      (dir==="no_difference") ? "无差异" : "论文未报告/未显著";
+      const coord = `(${
+        c.mni_peak_mm.x},${c.mni_peak_mm.y},${c.mni_peak_mm.z})`;
+      const survived = (c.survives_illness_duration_covariate===true) ? "是" :
+                       (c.survives_illness_duration_covariate===false) ? "否" : "论文未报告";
+      return `<tr>
+        <td>${c.cluster_id}</td>
+        <td>${c.cluster_size_voxels}</td>
+        <td>${coord}</td>
+        <td>${c.f_value}</td>
+        <td>${c.subregions.join("; ")}</td>
+        <td>${dirText}</td>
+        <td>${survived}</td>
+      </tr>`;
+    }).join("");
+  }
+  renderGmv();
+
+  document.querySelectorAll("[data-gmv-contrast]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      gmvContrast = btn.getAttribute("data-gmv-contrast");
+      document.querySelectorAll("[data-gmv-contrast]").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      renderGmv();
+    });
+  });
+
+  // Interactive: ALFF table
+  const alff = interactive.alff_cluster_explorer;
+  const alffTbody = el("alff-table").querySelector("tbody");
+  let alffMode = "increase";
+  function renderAlff() {
+    const rows = alff.clusters
+      .filter(c => c.direction_vs_hc===alffMode)
+      .map(c => {
+        const coord = `(${
+          c.mni_peak_mm.x},${c.mni_peak_mm.y},${c.mni_peak_mm.z})`;
+        const dirText = (c.direction_vs_hc==="increase") ? "患者更高（↑）" : "患者更低（↓）";
+        const diff = (c.med_vs_unmed_difference==="no_difference_reported") ? "无差异（论文报告）" : "论文未报告";
+        return `<tr>
+          <td>${c.cluster_id}</td>
+          <td>${c.cluster_size_voxels}</td>
+          <td>${coord}</td>
+          <td>${c.f_value}</td>
+          <td>${c.subregions.join("; ")}</td>
+          <td>${dirText}</td>
+          <td>${diff}</td>
+        </tr>`;
+      });
+    alffTbody.innerHTML = rows.join("");
+  }
+  renderAlff();
+
+  document.querySelectorAll("[data-alff-mode]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alffMode = btn.getAttribute("data-alff-mode");
+      document.querySelectorAll("[data-alff-mode]").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      renderAlff();
+    });
+  });
+
+  // Interactive: Age list
+  const age = interactive.age_medication_gmv_index;
+  const ageList = el("age-list");
+  let ageFilter = "med_faster_decline";
+  function renderAge() {
+    const items = age.items.filter(x => x.age_effect_category === ageFilter);
+    ageList.innerHTML = items.map(x => `<li><strong>${x.region_name}</strong> <span class="small">— ${x.notes || ""}</span></li>`).join("");
+  }
+  renderAge();
+  document.querySelectorAll("[data-age-filter]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      ageFilter = btn.getAttribute("data-age-filter");
+      document.querySelectorAll("[data-age-filter]").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      renderAge();
+    });
+  });
+</script>
+</body>
+</html>

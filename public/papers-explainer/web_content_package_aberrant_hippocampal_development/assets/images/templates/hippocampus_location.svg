@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">海马体位置示意图</title>
+  <desc id="desc">简化大脑侧面轮廓，标出海马体所在的深部区域，并用文字说明其与记忆与情绪调节相关。</desc>
+  <rect width="1200" height="675" fill="white"/>
+  <!-- Brain outline -->
+  <path d="M260,380 C260,250 360,150 520,140 C620,80 760,100 860,180 C980,210 1040,300 1030,390 C1030,510 900,560 820,560 C720,610 520,600 420,560 C320,540 260,480 260,380 Z"
+        fill="none" stroke="#333" stroke-width="6"/>
+  <!-- Hippocampus blob -->
+  <path d="M560,370 C600,330 660,330 700,360 C740,390 740,440 700,470 C660,500 600,500 560,460 C530,430 530,400 560,370 Z"
+        fill="#ffcccb" stroke="#b22222" stroke-width="4"/>
+  <!-- Labels -->
+  <line x1="700" y1="420" x2="900" y2="300" stroke="#333" stroke-width="3"/>
+  <text x="910" y="295" font-size="28" font-family="Arial, sans-serif" fill="#111">海马体（深部结构）</text>
+  <text x="910" y="330" font-size="22" font-family="Arial, sans-serif" fill="#333">与记忆、情绪调节相关</text>
+  <text x="60" y="640" font-size="20" font-family="Arial, sans-serif" fill="#555">注：本图为概念示意，用于科普定位，不代表个体解剖差异。</text>
+</svg>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-labelledby="title desc">
+  <title id="title">Follow-up plan: every 6 months for 5 years</title>
+  <desc id="desc">A timeline from baseline to 60 months with markers every 6 months illustrates the planned repeated assessments in the SEARCH study.</desc>
+  <rect x="0" y="0" width="900" height="260" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="40" y="50" font-size="24" font-weight="bold">Follow-up plan</text>
+    <text x="40" y="78" font-size="16">Assess grades 4–12 at each school site every 6 months for 5 years</text>
+    <text x="40" y="104" font-size="14">Source: Methods/Findings (p.1–2) and baseline dates (p.3)</text>
+  </g>
+  <g stroke="black" stroke-width="3" fill="none">
+    <line x1="80" y1="170" x2="820" y2="170" />
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black" font-size="12">
+    <circle cx="80.0" cy="170" r="6" fill="black"/>
+    <text x="70.0" y="200">0m</text>
+    <circle cx="154.0" cy="170" r="6" fill="black"/>
+    <circle cx="228.0" cy="170" r="6" fill="black"/>
+    <text x="218.0" y="200">12m</text>
+    <circle cx="302.0" cy="170" r="6" fill="black"/>
+    <circle cx="376.0" cy="170" r="6" fill="black"/>
+    <text x="366.0" y="200">24m</text>
+    <circle cx="450.0" cy="170" r="6" fill="black"/>
+    <circle cx="524.0" cy="170" r="6" fill="black"/>
+    <text x="514.0" y="200">36m</text>
+    <circle cx="598.0" cy="170" r="6" fill="black"/>
+    <circle cx="672.0" cy="170" r="6" fill="black"/>
+    <text x="662.0" y="200">48m</text>
+    <circle cx="746.0" cy="170" r="6" fill="black"/>
+    <circle cx="820.0" cy="170" r="6" fill="black"/>
+    <text x="810.0" y="200">60m</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="78" y="150" font-size="12">Baseline</text>
+    <text x="770" y="150" font-size="12">5 years</text>
+  </g>
+</svg>

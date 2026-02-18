@@ -1,0 +1,325 @@
+{
+  "modules": [
+    {
+      "id": "timeline",
+      "title": "8周治疗旅程时间轴",
+      "purpose": "用时间顺序把‘扫描—治疗—评估—分析’串起来，帮助读者把证据放回研究设计里。",
+      "default_view": "baseline-to-post",
+      "risk_tip": "提示：时间轴展示的是研究流程，不代表个人治疗必须照此节奏进行。（证据：第3页局限性段落）",
+      "source_ref": [
+        "第2页2.1–2.2节",
+        "第2页4.1节",
+        "第3页局限性段落"
+      ],
+      "data": {
+        "groups": [
+          {
+            "id": "patients",
+            "label": "初治抑郁症患者",
+            "n_baseline": 34,
+            "n_completed": 25,
+            "source_ref": "第2页2.1节；第2页4.1节"
+          },
+          {
+            "id": "controls",
+            "label": "健康对照",
+            "n_baseline": 50,
+            "n_completed": null,
+            "source_ref": "第2页2.1节"
+          }
+        ],
+        "steps": [
+          {
+            "id": "baseline",
+            "week_start": 0,
+            "week_end": 0,
+            "title": "治疗前（基线）",
+            "what": "评估HAMD并进行静息态fMRI扫描，计算基线ReHo。",
+            "measures": [
+              {
+                "id": "HAMD",
+                "label": "HAMD评分",
+                "unit": "分"
+              },
+              {
+                "id": "rsfMRI",
+                "label": "静息态fMRI",
+                "unit": null
+              },
+              {
+                "id": "ReHo",
+                "label": "ReHo脑图",
+                "unit": "无量纲"
+              }
+            ],
+            "source_ref": "第2页2.1–2.2节"
+          },
+          {
+            "id": "cbt",
+            "week_start": 0,
+            "week_end": 8,
+            "title": "8周CBT（16次）",
+            "what": "完成16次认知行为治疗。",
+            "measures": [
+              {
+                "id": "CBT",
+                "label": "CBT疗程",
+                "unit": "次",
+                "value": 16
+              }
+            ],
+            "source_ref": "第2页2.1节"
+          },
+          {
+            "id": "post",
+            "week_start": 8,
+            "week_end": 8,
+            "title": "治疗后",
+            "what": "再次评估HAMD并进行静息态fMRI扫描，比较ReHo变化。",
+            "measures": [
+              {
+                "id": "HAMD",
+                "label": "HAMD评分",
+                "unit": "分"
+              },
+              {
+                "id": "rsfMRI",
+                "label": "静息态fMRI",
+                "unit": null
+              },
+              {
+                "id": "ReHo",
+                "label": "ReHo脑图",
+                "unit": "无量纲"
+              }
+            ],
+            "source_ref": "第2页2.1–2.2节；第2页4.1节"
+          },
+          {
+            "id": "analysis",
+            "week_start": null,
+            "week_end": null,
+            "title": "三步分析",
+            "what": "（1）ReHo与症状变化；（2）SVR预测治疗后HAMD；（3）AHBA+PLS影像转录组与通路/细胞类型富集。",
+            "measures": [
+              {
+                "id": "SVR",
+                "label": "支持向量回归预测",
+                "unit": null
+              },
+              {
+                "id": "PLS",
+                "label": "PLS影像转录组",
+                "unit": null
+              }
+            ],
+            "source_ref": "第2页2.3–2.4节；第2页4.2–4.3节"
+          }
+        ]
+      }
+    },
+    {
+      "id": "figure1_explorer",
+      "title": "图1互动导览：一张图读懂三条证据链",
+      "purpose": "在不改动原图的前提下，用可点击热区解释每个子图讲了什么、关键数字是什么、证据来自哪里。",
+      "risk_tip": "提示：相关与预测不等于因果；该指标尚不能用于个人诊断或自行选择治疗。（证据：第3页局限性段落）",
+      "source_ref": [
+        "第3页图1A–J图注",
+        "第2页4.1–4.3节",
+        "第3页局限性段落"
+      ],
+      "data": {
+        "image": {
+          "src": "assets/figure1.png",
+          "alt": "论文图1：CBT相关ReHo变化、症状变化、相关/预测、PLS基因表达权重与通路/细胞类型富集。",
+          "source_ref": "第3页图1A–J"
+        },
+        "hotspots": [
+          {
+            "id": "A",
+            "label": "A ReHo变化脑图",
+            "x": 0.0,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 0.23,
+            "summary": "CBT后双侧DLPFC的ReHo升高（GRF校正）。",
+            "evidence": "第2页4.1节；第3页图1A图注"
+          },
+          {
+            "id": "B",
+            "label": "B HAMD前后",
+            "x": 0.0,
+            "y": 0.23,
+            "w": 0.22,
+            "h": 0.17,
+            "summary": "完成CBT的患者HAMD显著下降（n=25）。",
+            "evidence": "第2页4.1节；第3页图1B图注"
+          },
+          {
+            "id": "C",
+            "label": "C 变化相关",
+            "x": 0.0,
+            "y": 0.4,
+            "w": 0.35,
+            "h": 0.3,
+            "summary": "左DLPFC ReHo变化与HAMD变化相关：r=0.53, p=0.0065。",
+            "evidence": "第2页4.2节；第3页图1C图注"
+          },
+          {
+            "id": "D",
+            "label": "D 预测表现",
+            "x": 0.0,
+            "y": 0.7,
+            "w": 0.35,
+            "h": 0.3,
+            "summary": "真实HAMD变化与预测HAMD变化正相关；模型误差MAE=4.44、MSE=33.88。",
+            "evidence": "第2页4.2节；第3页图1D图注"
+          },
+          {
+            "id": "E",
+            "label": "E PLS权重散点",
+            "x": 0.3,
+            "y": 0.0,
+            "w": 0.25,
+            "h": 0.23,
+            "summary": "PLS1基因表达权重与ReHo变化t图空间相关（示意为散点）。",
+            "evidence": "第2页4.3节；第3页图1E图注"
+          },
+          {
+            "id": "F",
+            "label": "F 基因列表",
+            "x": 0.35,
+            "y": 0.23,
+            "w": 0.2,
+            "h": 0.77,
+            "summary": "1901个相关基因；图中列出部分正/负载荷代表基因（如BDNF、HTR7等）。",
+            "evidence": "第2页4.3节；第3页图1F图注；第3页Discussion提及BDNF/HTR7/FKBP5/S100B"
+          },
+          {
+            "id": "G",
+            "label": "G 可塑性通路",
+            "x": 0.55,
+            "y": 0.0,
+            "w": 0.25,
+            "h": 0.45,
+            "summary": "PLS1+基因富集到神经可塑性相关通路（PFDR<0.05）。",
+            "evidence": "第3页图1G图注"
+          },
+          {
+            "id": "H",
+            "label": "H 韧性通路",
+            "x": 0.55,
+            "y": 0.45,
+            "w": 0.25,
+            "h": 0.55,
+            "summary": "PLS1−基因富集到细胞韧性相关通路（PFDR<0.05）。",
+            "evidence": "第3页图1H图注"
+          },
+          {
+            "id": "I",
+            "label": "I 神经元细胞类型",
+            "x": 0.8,
+            "y": 0.0,
+            "w": 0.2,
+            "h": 0.45,
+            "summary": "PLS1+基因在兴奋性神经元（n=201）与抑制性神经元（n=131）中更突出（FDR校正）。",
+            "evidence": "第3页图1I图注"
+          },
+          {
+            "id": "J",
+            "label": "J 胶质细胞类型",
+            "x": 0.8,
+            "y": 0.45,
+            "w": 0.2,
+            "h": 0.55,
+            "summary": "PLS1−基因在少突胶质细胞（n=67）与星形胶质细胞（n=48）中更突出（FDR校正）。",
+            "evidence": "第3页图1J图注"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transcriptomics",
+      "title": "影像转录组探索器：从脑区变化到‘可能的分子方向’",
+      "purpose": "用两层切换（通路分组/细胞类型）解释：这些结果来自公共图谱的空间匹配，是机制线索而非因果证明。",
+      "default_view": "neuroplasticity",
+      "risk_tip": "提示：转录组分析是空间关联，不等同于‘CBT改变了某个基因’。（证据：第3页局限性段落第3点；第2页2.4节）",
+      "source_ref": [
+        "第2页2.4节",
+        "第2页4.3节",
+        "第3页图1E–J图注",
+        "第3页局限性段落第3点"
+      ],
+      "data": {
+        "transcriptome": {
+          "dataset": "AHBA",
+          "genes_total": 10027,
+          "roi_left": 1304,
+          "source_ref": "第2页2.4节"
+        },
+        "gene_set": {
+          "n": 1901,
+          "source_ref": "第2页4.3节；第3页图1F图注"
+        },
+        "buckets": [
+          {
+            "id": "neuroplasticity",
+            "label": "神经可塑性相关通路",
+            "figure_ref": "图1G",
+            "source_ref": "第3页图1G图注"
+          },
+          {
+            "id": "cellular_resilience",
+            "label": "细胞韧性相关通路",
+            "figure_ref": "图1H",
+            "source_ref": "第3页图1H图注"
+          }
+        ],
+        "cell_types": [
+          {
+            "id": "excitatory_neuron",
+            "label": "兴奋性神经元",
+            "overlap_n": 201,
+            "p_fdr": "adjusted pperm < 0.001",
+            "bucket": "neuroplasticity",
+            "source_ref": "第3页图1I图注"
+          },
+          {
+            "id": "inhibitory_neuron",
+            "label": "抑制性神经元",
+            "overlap_n": 131,
+            "p_fdr": "adjusted pperm < 0.001",
+            "bucket": "neuroplasticity",
+            "source_ref": "第3页图1I图注"
+          },
+          {
+            "id": "oligodendrocyte",
+            "label": "少突胶质细胞",
+            "overlap_n": 67,
+            "p_fdr": "adjusted pperm < 0.001",
+            "bucket": "cellular_resilience",
+            "source_ref": "第3页图1J图注"
+          },
+          {
+            "id": "astrocyte",
+            "label": "星形胶质细胞",
+            "overlap_n": 48,
+            "p_fdr": "adjusted pperm = 0.012",
+            "bucket": "cellular_resilience",
+            "source_ref": "第3页图1J图注"
+          }
+        ],
+        "example_genes": {
+          "list": [
+            "BDNF",
+            "HTR7",
+            "FKBP5",
+            "S100B"
+          ],
+          "note": "论文讨论举例，并非完整清单。",
+          "source_ref": "第3页Discussion段落"
+        }
+      }
+    }
+  ]
+}

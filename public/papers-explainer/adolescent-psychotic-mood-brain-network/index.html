@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>青少年情绪障碍合并幻觉/妄想：大脑功能网络如何变化？</title>
+  <meta name="description" content="基于177名住院青少年静息态fMRI与图论网络分析：精神病性组整体更“聚团”，左上颞回等关键节点更弱，并与症状严重度与两周治疗变化相关。含交互式图表与可视化方案。" />
+  <meta name="keywords" content="青少年,情绪障碍,精神病性症状,幻觉,妄想,静息态fMRI,图论,脑网络,小世界性,上颞回,BPRS" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="青少年情绪障碍合并幻觉/妄想：大脑功能网络如何变化？" />
+  <meta property="og:description" content="基于177名住院青少年静息态fMRI与图论网络分析：精神病性组整体更“聚团”，左上颞回等关键节点更弱，并与症状严重度与两周治疗变化相关。含交互式图表与可视化方案。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="assets/images/og-image.png" />
+
+  <!-- Basic accessibility -->
+  <meta name="color-scheme" content="light" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-title">论文科普页面内容包</div>
+        <div class="brand-sub">面向公众 · 可追溯 · 可上线</div>
+      </div>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#hero">概览</a>
+        <a href="#why">为什么做</a>
+        <a href="#how">怎么做</a>
+        <a href="#findings">发现</a>
+        <a href="#use">有什么用</a>
+        <a href="#limits">局限与下一步</a>
+        <a href="#interactives">交互</a>
+        <a href="#glossary">术语</a>
+        <a href="#faq">FAQ</a>
+        <a href="#references">引用</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title"></h1>
+        <div class="hero-subtitle" id="hero-subtitle"></div>
+
+        <div class="paper-meta" id="paper-meta" aria-label="论文信息"></div>
+
+        <div class="callouts" aria-label="关键数字">
+          <div class="callout">
+            <div class="callout-k">样本量</div>
+            <div class="callout-v" id="kpi-sample"></div>
+            <div class="callout-s">（证据：第1页 摘要；第2页 Participants）</div>
+          </div>
+          <div class="callout">
+            <div class="callout-k">两周复扫</div>
+            <div class="callout-v" id="kpi-followup"></div>
+            <div class="callout-s">（证据：第3页 随访描述）</div>
+          </div>
+          <div class="callout">
+            <div class="callout-k">扫描时长</div>
+            <div class="callout-v" id="kpi-scan"></div>
+            <div class="callout-s">（证据：第3页 MRI acquisition）</div>
+          </div>
+          <div class="callout">
+            <div class="callout-k">分区与阈值</div>
+            <div class="callout-v" id="kpi-atlas"></div>
+            <div class="callout-s">（证据：第3页 Network construction；第4页 Network analysis）</div>
+          </div>
+          <div class="callout">
+            <div class="callout-k">关键相关</div>
+            <div class="callout-v" id="kpi-r"></div>
+            <div class="callout-s">（证据：第7页 Alteration…段落）</div>
+          </div>
+        </div>
+
+        <div class="notice">
+          <strong>阅读提示：</strong>本页为科普解读，不替代专业诊疗；研究结果为群体层面发现，个体差异很大。（证据：第9页 limitations；第7页 P未校正说明）
+        </div>
+      </div>
+    </section>
+
+    <section id="read_30s" class="section" aria-labelledby="read-30s-title">
+      <h2 id="read-30s-title">30秒读懂</h2>
+      <div class="card" id="read-30s-body"></div>
+    </section>
+
+    <section id="why" class="section" aria-labelledby="why-title">
+      <h2 id="why-title">为什么要做这个研究</h2>
+      <div id="why-body"></div>
+    </section>
+
+    <section id="how" class="section" aria-labelledby="how-title">
+      <h2 id="how-title">我们怎么做的</h2>
+      <div id="how-body"></div>
+    </section>
+
+    <section id="findings" class="section" aria-labelledby="findings-title">
+      <h2 id="findings-title">我们发现了什么</h2>
+      <div id="findings-body"></div>
+    </section>
+
+    <section id="use" class="section" aria-labelledby="use-title">
+      <h2 id="use-title">这项研究有什么用</h2>
+      <div id="use-body"></div>
+    </section>
+
+    <section id="limits" class="section" aria-labelledby="limits-title">
+      <h2 id="limits-title">局限性与下一步</h2>
+      <div id="limits-body"></div>
+    </section>
+
+    <section id="take_home" class="section" aria-labelledby="take-home-title">
+      <h2 id="take-home-title">一句话带走</h2>
+      <div class="card" id="take-home-body"></div>
+    </section>
+
+    <section id="interactives" class="section" aria-labelledby="interactives-title">
+      <h2 id="interactives-title">交互模块：把结论“玩明白”</h2>
+      <p class="section-lead">以下交互均只使用论文报告的可追溯数值或方向性信息；若论文未报告分布数据，我们不会凭空重建。（证据：第3页 表1；第7页 表2；第5页 相关段落；第7页 未校正提示）</p>
+
+      <!-- Module 1 -->
+      <div class="module" id="module-symptom" aria-labelledby="m1-title">
+        <div class="module-head">
+          <h3 id="m1-title">模块1｜两周症状变化对比器</h3>
+          <p class="module-purpose">看见“改善幅度”与“残余差异”，并随时查到表2出处。（证据：第7页 表2）</p>
+        </div>
+        <div class="module-controls">
+          <label>
+            选择量表：
+            <select id="m1-scale" aria-label="选择量表"></select>
+          </label>
+          <label class="inline">
+            <input type="checkbox" id="m1-show-table" />
+            显示表格
+          </label>
+        </div>
+        <div class="module-body">
+          <div class="viz" id="m1-chart" role="img" aria-label="量表前后对比图"></div>
+          <div class="table-wrap" id="m1-table" hidden></div>
+        </div>
+        <div class="module-foot">
+          <div class="risk">风险提示：图中为组平均变化，不能用于个体自测或自行调整治疗。（证据：第9页 limitations）</div>
+        </div>
+      </div>
+
+      <!-- Module 2 -->
+      <div class="module" id="module-corr" aria-labelledby="m2-title">
+        <div class="module-head">
+          <h3 id="m2-title">模块2｜网络指标 × 症状相关性探索器</h3>
+          <p class="module-purpose">把“术语”变成可理解的相关方向与强度，并强调“相关≠因果”。（证据：第5页 段落；第6页 图3；第7页 图4）</p>
+        </div>
+        <div class="module-controls">
+          <label>
+            症状指标：
+            <select id="m2-symptom" aria-label="选择症状指标"></select>
+          </label>
+          <label>
+            网络指标：
+            <select id="m2-metric" aria-label="选择网络指标"></select>
+          </label>
+        </div>
+        <div class="module-body">
+          <div class="viz" id="m2-bar" role="img" aria-label="相关系数示意条"></div>
+          <div class="card" id="m2-stats"></div>
+        </div>
+        <div class="module-foot">
+          <div class="risk">风险提示：相关系数不等于因果，也不等于可用于个人判断的阈值。（证据：第9页 limitations）</div>
+        </div>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="module" id="module-treatment" aria-labelledby="m3-title">
+        <div class="module-head">
+          <h3 id="m3-title">模块3｜两周治疗后网络变化仪表盘（P未校正）</h3>
+          <p class="module-purpose">先看“方向”，再看“证据等级”，避免把短期变化误读为临床结论。（证据：第7页 未校正说明；第8页 图5）</p>
+        </div>
+        <div class="module-controls">
+          <div class="tabs" role="tablist" aria-label="组别切换">
+            <button class="tab" id="m3-tab-mdp" role="tab" aria-selected="true">MDP</button>
+            <button class="tab" id="m3-tab-mdnp" role="tab" aria-selected="false">MDNP</button>
+          </div>
+          <label class="inline">
+            <input type="checkbox" id="m3-include-trend" />
+            含趋势（P&lt;0.10）
+          </label>
+        </div>
+        <div class="module-body">
+          <div class="card" id="m3-list"></div>
+          <div class="card" id="m3-extra"></div>
+        </div>
+        <div class="module-foot">
+          <div class="risk">风险提示：短期变化≠长期结局；且P未校正，需要更大样本重复验证。（证据：第7页；第9页 limitations）</div>
+        </div>
+      </div>
+
+      <!-- Module 4 -->
+      <div class="module" id="module-method" aria-labelledby="m4-title">
+        <div class="module-head">
+          <h3 id="m4-title">模块4｜阈值与AUC互动小课堂（概念演示）</h3>
+          <p class="module-purpose">用一个“假想路网”演示：网络太稠/太疏都会影响指标，所以作者用阈值范围并用AUC汇总。（证据：第4页 Network analysis）</p>
+        </div>
+        <div class="module-controls">
+          <label>
+            稀疏度 S：
+            <input type="range" id="m4-s" min="0.10" max="0.34" step="0.01" value="0.22" />
+            <span class="mono" id="m4-s-val">0.22</span>
+          </label>
+          <label class="inline">
+            <input type="checkbox" id="m4-detail" />
+            显示详细说明
+          </label>
+        </div>
+        <div class="module-body">
+          <canvas id="m4-canvas" width="820" height="360" aria-label="概念网络图（教学）"></canvas>
+          <div class="card" id="m4-text"></div>
+        </div>
+        <div class="module-foot">
+          <div class="risk">风险提示：这是概念演示，不对应论文真实脑网络或真实数值。（证据：第4页 方法仅描述计算流程）</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visuals" class="section" aria-labelledby="visuals-title">
+      <h2 id="visuals-title">图文并茂清单（制作与无障碍说明）</h2>
+      <p class="section-lead">这里列出本页面建议的可视化/示意图，含“唯一核心信息”、所需数据字段与alt文本。所有条目都可在 <code>content/page_content.json</code> 中找到并进一步开发。</p>
+      <div id="visuals-body"></div>
+      <figure class="figure">
+        <img src="assets/images/brain_regions.svg" alt="概念脑图：在左半球标出上颞回、赫氏回与内侧扣带回位置，用于解释关键节点区域；提示本图为概念定位，不是论文原始脑图。" />
+        <figcaption>概念定位图（非论文原图）：用于帮助公众理解STG/HG/MCG分别大致位于哪里。（证据：第4页 结果区域名称；第6页 图2注释）</figcaption>
+      </figure>
+    </section>
+
+    <section id="glossary" class="section" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">术语小词典</h2>
+      <p class="section-lead">遇到不熟的术语，先看一句话解释，再看一个类比。每个术语都标注论文出处。</p>
+      <div id="glossary-body"></div>
+    </section>
+
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <h2 id="faq-title">FAQ</h2>
+      <p class="section-lead">问题从公众视角提出；回答尽量克制，并明确“论文证据支持”与“论文未提供”。</p>
+      <div id="faq-body"></div>
+    </section>
+
+    <section id="disclaimer" class="section" aria-labelledby="disclaimer-title">
+      <h2 id="disclaimer-title">免责声明</h2>
+      <div class="card" id="disclaimer-body"></div>
+    </section>
+
+    <section id="references" class="section" aria-labelledby="ref-title">
+      <h2 id="ref-title">引用与证据锚点</h2>
+      <p class="section-lead">为方便前端/编辑核对，本页把关键证据锚点统一列在这里（页码/图号/表号）。</p>
+      <div id="references-body" class="card"></div>
+
+      <details class="download">
+        <summary>下载结构化内容与数据（给开发用）</summary>
+        <p>结构化文案：<a href="content/page_content.json" download>content/page_content.json</a></p>
+        <p>引用清单：<a href="content/citations.json" download>content/citations.json</a></p>
+        <p>交互数据：<a href="data/" >data/（目录）</a>（需要在服务器环境下浏览）</p>
+      </details>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>生成时间：2026-02-15</div>
+        <div>用途：科研科普页面原型（静态站点）</div>
+      </div>
+    </footer>
+  </main>
+
+  <script id="pageContent" type="application/json">
+{"slug": "adolescent-psychotic-mood-brain-network", "page_language": "zh-CN", "paper": {"title": "Functional network characteristics in adolescent psychotic mood disorder: associations with symptom severity and treatment effects", "journal": "European Child & Adolescent Psychiatry", "year": 2024, "volume_pages": "33:2319–2329", "doi": "10.1007/s00787-023-02314-5", "authors": ["Jingshuai Zhou", "Jia Duan", "Xiaoxue Liu", "Yang Wang", "Junjie Zheng", "Lili Tang", "Pengfei Zhao", "Xizhe Zhang", "Rongxin Zhu", "Fei Wang"], "source_ref": "第1页 题头与摘要"}, "seo": {"seo_title": "青少年情绪障碍合并幻觉/妄想：大脑功能网络如何变化？", "seo_description": "基于177名住院青少年静息态fMRI与图论网络分析：精神病性组整体更“聚团”，左上颞回等关键节点更弱，并与症状严重度与两周治疗变化相关。含交互式图表与可视化方案。", "keywords": ["青少年", "情绪障碍", "精神病性症状", "幻觉", "妄想", "静息态fMRI", "图论", "脑网络", "小世界性", "上颞回", "BPRS"]}, "sections": [{"id": "hero", "heading": "幻觉/妄想出现时，青少年情绪障碍的大脑“路网”发生了什么？", "body_markdown": "副标题：静息态 fMRI 的网络分析提示——整体更“聚团”，但左上颞回等关键节点更弱，并且这些指标会随两周治疗改善而变化。（证据：第1页 摘要；第4页 结果；第5页 图1；第6页 图2；第7页 治疗后变化段落；第8页 图5）", "citations": ["第1页 摘要", "第4页 结果", "第5页 图1", "第6页 图2", "第7页", "第8页 图5"]}, {"id": "read_30s", "heading": "30秒读懂", "body_markdown": "问题：为什么有幻觉/妄想的青少年情绪障碍往往更重、更难治？（证据：第1页 摘要；第1–2页 Introduction）\n\n方法：研究者让177名住院青少年做8分钟静息态fMRI，并用图论把大脑看成“点（脑区）—线（连接）”的路网，比较精神病性组（MDP）与非精神病性组（MDNP）。（证据：第1页 摘要；第2页 Participants；第3页 MRI参数；第3–4页 Network construction/analysis）\n\n发现：MDP组整体小世界性σ与聚类系数γ更高，但左上颞回等节点指标更低；这些指标与精神病性症状分数相关，并在两周治疗后发生变化。（证据：第4页 结果；第5页 图1；第6页 图2；第5页 相关段落；第7页；第8页 图5）\n\n意义：这些网络指标可能成为跟踪症状与早期疗效的“研究型量化线索”，但目前不能用于个体诊断或自测。（证据：第1页 摘要末句；第7页 P未校正说明；第9页 limitations与结论）", "citations": ["第1–2页 Introduction", "第2页 Participants", "第3页 MRI参数", "第4页 结果", "第5–8页 图表与段落", "第9页 limitations/结论"]}, {"id": "why_it_matters", "heading": "为什么要做这个研究", "body_markdown": "当青少年情绪障碍伴随幻觉或妄想时，研究与临床经验都提示：症状更重、病程更长、复发更频繁、风险也更高。（证据：第1–2页 Introduction 引用文献综述）\n\n但“更重”背后究竟发生了什么？如果只盯着某一个脑区，往往像只看一条马路的拥堵——你很难理解整座城市为什么会堵。因此作者把大脑当作一个整体网络来研究：既看全局结构（例如小世界性、聚团程度），也找关键枢纽节点（例如上颞回）是否异常，并进一步检验这些差异是否与症状严重度、以及两周短期治疗改善相关。（证据：第2页 Introduction 研究目的；第4页 Statistical analysis；第7页 治疗后变化段落）", "citations": ["第1–2页 Introduction", "第2页 研究目的", "第4页 Statistical analysis", "第7页"]}, {"id": "what_they_did", "heading": "我们怎么做的", "body_markdown": "把大脑想成一座城市。每个“城区”都在交换信息：有些区域像居民区（内部交流密），有些像交通枢纽（负责把远处连起来）。本研究用静息态fMRI记录大脑在“没有刻意做任务”时的自发活动同步性，然后用图论把这些同步关系画成路网。（证据：第3页 MRI acquisition；第2页 Introduction；第4页 Network analysis）\n\n具体做法是：研究者招募177名13–21岁的情绪障碍住院青少年，其中61人属于精神病性情绪障碍（MDP），116人为非精神病性（MDNP）。每位患者在治疗前2天完成量表评估与扫描，2周常规治疗后再次评估与复扫；最终完成两次扫描者为MDP 35人、MDNP 71人。（证据：第1页 摘要；第2页 Participants；第3页 随访描述）\n\n在数据处理上，作者将大脑按AAL图谱分成90个区域作为节点，计算任意两区之间的偏相关作为连接强度，得到90×90的加权连接矩阵。（证据：第3页 Network construction；第4页 Network construction延续段落）\n\n为了避免“网络太密或太稀”导致结论依赖某一个阈值，作者在稀疏度0.10–0.34范围内（步长0.01）计算多种指标，再用AUC把不同阈值下的结果汇总成一个更稳定的指标。全局指标包括：小世界性σ、聚类系数γ、特征路径λ、全局效率Eg、局部效率Eloc；节点指标包括：度中心性DC、介数中心性BC、节点效率NE。组间比较使用FDR校正多重比较，并在相关分析中控制年龄、性别与诊断。（证据：第4页 Network analysis；第4页 Statistical analysis）", "citations": ["第1页 摘要", "第2页 Participants", "第3页 MRI与随访", "第3–4页 Network construction", "第4页 Network analysis/Statistical analysis"]}, {"id": "findings", "heading": "我们发现了什么", "body_markdown": "发现一：整体网络更“聚团”。MDP组的小世界性σ更高（FDR q=0.003），聚类系数γ更高（FDR q=0.008），而Eg、Eloc、λ无显著差异。直观理解：信息更容易在局部“抱团循环”，但不一定更高效。（证据：第4页 全局结果段落；第5页 图1；第1页 摘要）\n\n发现二：关键“枢纽”变弱。与MDNP相比，MDP组左上颞回（STG_L）的度中心性DC更低（FDR q=0.028），并且STG_L、左赫氏回（HG_L）、左内侧扣带回（MCG_L）的节点效率NE更低（均FDR q=0.042）。直观理解：几个与听觉/语言加工及情绪调控相关的枢纽区，通达性下降。（证据：第4页 节点结果段落；第6页 图2；第1页 摘要）\n\n发现三：这些指标与症状、以及两周治疗改善“同步变化”。在所有患者中，BPRS总分与阳性症状分数与σ/γ呈正相关（例如σ：r=0.265，FDR q=0.001），与STG_L的DC及多处NE呈负相关（例如DC_STG_L：r=-0.296，FDR q<0.001）。两周后，MDP组σ下降（P=0.016），STG_L的DC上升（P=0.038），且阳性症状下降幅度与DC_STG_L上升幅度正相关（r=0.377，P=0.031）；论文提醒这些治疗前后P值未校正。（证据：第5页 相关段落；第6页 图3；第7页 图4与治疗后变化段落；第8页 图5）", "citations": ["第4页 结果", "第5页 图1与相关段落", "第6页 图2/图3", "第7页 图4/段落", "第8页 图5", "第1页 摘要"]}, {"id": "so_what", "heading": "这项研究有什么用", "body_markdown": "基于论文证据可以说：在群体层面，某些网络指标与精神病性症状严重度相关，并且会随两周治疗改善而变化；尤其是与左上颞回相关的指标，作者认为有望作为评估症状与疗效的“新兴量化指标”。（证据：第1页 摘要末句；第7页 治疗后变化段落；第9页 In conclusion）\n\n但必须划清边界：论文没有给出任何“个体诊断阈值”、预测准确率或可用于临床决策的评分规则；治疗后网络变化的统计也注明P值未做多重比较校正。因此它更适合用来推动后续研究与方法学改进，而不是直接变成个人自测工具。（证据：第7页 P未校正说明；第9页 limitations；第10页 Data availability）", "citations": ["第1页 摘要", "第7页 未校正", "第9页 结论与局限", "第10页 Data availability"]}, {"id": "limitations_next", "heading": "局限性与下一步", "body_markdown": "作者在论文中明确提出多项局限：\n\n1）未区分抑郁症（MDD）与双相（BD）亚型差异，可能掩盖不同亚群的网络特征。（证据：第9页 limitations 第1点）\n\n2）缺少匹配的健康对照会限制结果稳定性；论文虽提到与健康对照的补充分析方向一致，但仍认为“匹配对照不足”是限制。（证据：第2页 提及健康对照；第4页 Supplementary Fig S1；第9页 limitations 第2点）\n\n3）未采集T1结构像、使用成人模板分区可能对仍在发育的青少年引入偏差。（证据：第9页 limitations 第3点）\n\n4）未控制具体药物剂量，可能影响网络指标。（证据：第9页 limitations 最后一句；第3页 治疗描述与表1药物列表）\n\n5）治疗前后网络变化的P值未校正，且仅随访两周，无法回答长期结局。（证据：第7页；第3页 两周设计）\n\n下一步方向：纳入匹配健康对照、采用更适合青少年的模板/更精细的分区与结构像，记录并控制更详细的用药信息，并开展更长期随访以验证这些网络指标是否能稳定反映症状轨迹与治疗反应。（证据：第9页 limitations 总结句）", "citations": ["第9页 limitations", "第2页 健康对照", "第4页 Supplementary Fig S1", "第3页 治疗/两周设计", "第7页 未校正"]}, {"id": "take_home", "heading": "一句话带走", "body_markdown": "左上颞回的网络“枢纽度”变化，可能是精神病性症状改善的可量化线索。（证据：第1页 摘要；第7页 r=0.377；第9页 结论）", "citations": ["第1页 摘要", "第7页", "第9页 结论"]}], "glossary": [{"term": "精神病性情绪障碍（MDP）", "definition": "情绪障碍同时出现幻觉/妄想等精神病性症状的亚型。", "analogy": "像‘情绪风暴’里夹带了感知或信念的偏航。", "source_ref": "第1页 摘要；第2页 Participants"}, {"term": "非精神病性情绪障碍（MDNP）", "definition": "有情绪障碍但没有精神病性症状。", "analogy": "同样是情绪风暴，但没有‘听到/坚信不存在之物’的偏航。", "source_ref": "第1页 摘要；第2页 Participants"}, {"term": "静息态fMRI", "definition": "不做任务时记录大脑自发活动的同步变化，用于推测脑区间功能连接。", "analogy": "像观察城市夜间灯光明暗是否同步。", "source_ref": "第3页 MRI acquisition"}, {"term": "功能连接", "definition": "两个脑区活动起伏的同步程度，用来描述它们是否‘同频沟通’。", "analogy": "像两个城区用电曲线是否一起升降。", "source_ref": "第2页 Introduction；第3–4页 Network construction"}, {"term": "图论网络分析", "definition": "把脑区当节点、连接当边，用网络指标描述整体结构与枢纽。", "analogy": "把城市交通画成路网，再算‘绕不绕路’与‘枢纽’。", "source_ref": "第4页 Network analysis"}, {"term": "小世界性（σ）", "definition": "网络同时具有较高聚类与较短路径长度的特征。", "analogy": "社区里小路密，同时有几条高速把远处连起来。", "source_ref": "第4页 Network analysis"}, {"term": "聚类系数（γ）", "definition": "一个节点周围邻居彼此相连的程度，反映局部‘抱团’。", "analogy": "你的朋友之间也互相认识的程度。", "source_ref": "第4页 Network analysis"}, {"term": "度中心性（DC）", "definition": "一个节点连接了多少条边，反映它的连接数量。", "analogy": "一个交通枢纽有多少条线路经过。", "source_ref": "第4页 Network analysis"}, {"term": "节点效率（NE）", "definition": "从某节点到其他节点的平均通达性。", "analogy": "从某站出发到全城各处平均要转几次车。", "source_ref": "第4页 Network analysis"}, {"term": "稀疏度阈值（S）", "definition": "决定保留多少连接的比例范围，用于比较不同‘网络稠密度’下的稳定结果。", "analogy": "先保留最重要的道路，避免地图太拥挤或断路。", "source_ref": "第4页 Network analysis"}, {"term": "AUC（曲线下面积）", "definition": "把一段阈值范围内的指标曲线汇总成一个数，减少对单一阈值的依赖。", "analogy": "不只看某一天气温，而是把一周走势综合成一个指标。", "source_ref": "第4页 Network analysis"}, {"term": "阳性症状（BPRS 6条目）", "definition": "研究从BPRS选取6个条目汇总来表征精神病性症状严重度。", "analogy": "像用一组‘核心症状清单’给幻觉/妄想强度打分。", "source_ref": "第2页 Participants"}], "faq": [{"q": "这是不是说明做一次脑扫描就能诊断幻觉/妄想？", "a": "不能。论文报告的是组水平差异与相关性，并未提供个体诊断阈值或预测准确率；作者仅称其为“新兴指标/潜力线索”。（证据：第1页 摘要末句；第9页 In conclusion）", "source_ref": ["第1页 摘要", "第9页 结论"]}, {"q": "小世界性σ更高是好事还是坏事？", "a": "论文将其解释为与网络异常/脆弱性相关的模式之一，并指出与部分既往研究方向不一致，可能源于青少年样本的异质性与脑活动变异；因此不能简单等同于“更好/更差”。（证据：第8页 Discussion 关于σ/γ解释与对比）", "source_ref": ["第8页 Discussion"]}, {"q": "为什么特别关注左上颞回（STG）？", "a": "它同时出现在三条证据链：基线组间差异（DC更低）、与症状相关（DC与BPRS/阳性症状负相关）、以及两周治疗后变化并与症状改善相关（r=0.377）。（证据：第4页；第5–7页；第8页 图5）", "source_ref": ["第4页", "第5页", "第7页", "第8页 图5"]}, {"q": "两周后症状都改善了吗？", "a": "两组在HAMD-17、HAMA、YMRS、BPRS上均显著下降；但MDNP组“阳性症状”两周内变化不显著（P=0.486），且治疗后MDP组在BPRS与阳性症状仍高于MDNP组。（证据：第6页 段落；第7页 表2）", "source_ref": ["第6页", "第7页 表2"]}, {"q": "这项研究能告诉我哪种药最有效吗？", "a": "不能。论文描述的是常规临床治疗（如喹硫平、锂盐等），但未比较不同药物方案的疗效，也未控制剂量，作者指出剂量未控制可能影响网络指标。（证据：第3页 治疗描述与表1；第9页 limitations）", "source_ref": ["第3页", "第9页 limitations"]}, {"q": "治疗后网络指标变化可靠吗？", "a": "可以作为重要线索，但需要谨慎：论文明确说明治疗前后比较的P值未做多重比较校正（uncorrected），因此更适合等待更大样本与更严格设计的重复验证。（证据：第7页 未校正说明；第8页 图5）", "source_ref": ["第7页", "第8页 图5"]}, {"q": "研究有没有健康对照？", "a": "论文提到招募了22名健康对照，并在补充材料做了比较且方向一致；但作者仍强调缺少“匹配”的健康对照会限制结果稳定性。（证据：第2页 Participants；第4页 Supplementary Fig S1；第9页 limitations）", "source_ref": ["第2页", "第4页 Supplementary", "第9页 limitations"]}, {"q": "我能用这些结果给孩子做自测或调整治疗吗？", "a": "不能。本研究不提供个体阈值或临床决策规则，且两周网络变化P值未校正；若担心精神病性症状，请寻求专业评估与随访。（证据：第7页；第9页 limitations；第1页 摘要）", "source_ref": ["第1页", "第7页", "第9页 limitations"]}, {"q": "论文数据能公开下载吗？", "a": "论文写明：支持研究发现的数据可在“合理请求”下向通讯作者获取；并非随文公开下载。（证据：第10页 Data availability）", "source_ref": ["第10页 Data availability"]}], "disclaimer": "本页面用于科研科普解读，不能替代医生的诊断与治疗建议，也不能用于自测或自行调整药物。脑影像与网络指标为研究层面的群体发现，个体差异很大；若你或家人出现幻觉、妄想或情绪显著波动，请及时寻求精神科/心理健康专业帮助。（证据：第9页 limitations 对临床外推限制的提示；第7页 P未校正说明）", "visual_assets": [{"id": "va_baseline_table1", "title": "谁参与了研究：两组青少年及基线症状", "core_message": "精神病性组（MDP）基线症状总体更重。", "type": "重绘信息图（基于表1数据）", "source_ref": "第3页 表1", "data_fields_needed": ["group", "n", "HAMD-17_mean/sd", "HAMA_mean/sd", "YMRS_mean/sd", "BPRS_mean/sd", "positive_symptom_mean/sd"], "alt_text": "信息图比较两组基线量表。MDP组的HAMD-17、HAMA、YMRS、BPRS及阳性症状平均分均高于MDNP组，提示精神病性组入组时总体症状更重。"}, {"id": "va_workflow", "title": "研究流程：评估—扫描—建网—比较—两周复扫", "core_message": "用静息态fMRI把大脑活动转成网络，再比较两组并跟踪两周变化。", "type": "流程图/示意图（概念）", "source_ref": "第2–4页 方法", "data_fields_needed": ["sample_n", "scan_duration", "AAL-90", "partial_correlation", "sparsity_range", "AUC", "FDR", "follow_up_n"], "alt_text": "流程图展示研究从入组与量表评估开始，进行8分钟静息态fMRI；以AAL-90分区构建90节点功能网络，使用偏相关计算连接；在0.10–0.34稀疏度范围计算指标并用AUC汇总，再做FDR校正的组间比较与相关分析，最后两周后复扫。"}, {"id": "va_global_diff", "title": "整体网络差异：σ与γ更高", "core_message": "MDP组整体更“聚团”，表现为σ与γ显著更高。", "type": "重绘信息图（方向+q值，避免复用原小提琴图）", "source_ref": "第4页 结果；第5页 图1", "data_fields_needed": ["metric_id", "direction", "fdr_q"], "alt_text": "图示指出在全局指标中，精神病性组的“小世界性σ”和“聚类系数γ”高于非精神病性组，并标注FDR校正后的q值；其它效率与路径指标未见显著差异。"}, {"id": "va_nodal_diff", "title": "关键节点差异：STG/HG/MCG更弱", "core_message": "精神病性组在左上颞回等区域的枢纽性与通达性更低。", "type": "重绘信息图（方向+q值）", "source_ref": "第4页 结果；第6页 图2", "data_fields_needed": ["region", "metric_id", "direction", "fdr_q"], "alt_text": "图示标出三处关键区域：左上颞回、左赫氏回与左内侧扣带回。与非精神病性组相比，精神病性组在左上颞回的度中心性更低，并且三处区域的节点效率更低，提示这些枢纽区通达性下降。"}, {"id": "va_corr_heatmap", "title": "指标与症状：相关性矩阵", "core_message": "σ/γ与症状更重相关，而STG等节点指标越低症状越重。", "type": "重绘信息图（基于r、P与FDR q）", "source_ref": "第5页 段落；第6页 图3；第7页 图4", "data_fields_needed": ["symptom_measure", "metric_id", "r_partial", "p_value", "fdr_q"], "alt_text": "相关性矩阵用r值展示网络指标与症状严重度的关系：BPRS与阳性症状与σ、γ呈正相关；与左上颞回度中心性以及上颞回、赫氏回、内侧扣带回的节点效率呈负相关，并标注P值与FDR q值。"}, {"id": "va_symptom_change", "title": "两周症状变化：治疗前后对比", "core_message": "两组多数量表下降，但精神病性组治疗后仍更重（尤其BPRS与阳性症状）。", "type": "重绘信息图（基于表2）", "source_ref": "第7页 表2", "data_fields_needed": ["scale", "baseline_mean/sd", "post_mean/sd", "p_within", "between_group_post_p"], "alt_text": "图示比较两组在基线与两周后的量表均值。两组抑郁、焦虑、躁狂及BPRS均下降；非精神病性组的阳性症状变化不显著，而两周后精神病性组在BPRS与阳性症状仍显著高于对照组。"}, {"id": "va_treatment_change", "title": "两周后网络变化：方向与证据等级", "core_message": "MDP组σ下降、STG_L连接度上升；但治疗前后P值未校正。", "type": "重绘信息图（方向+P值+“未校正”标记）", "source_ref": "第7页 段落；第8页 图5", "data_fields_needed": ["group", "metric_id", "direction", "p_value_uncorrected"], "alt_text": "图示汇总两周治疗前后网络指标的方向性变化：精神病性组的小世界性σ下降且左上颞回度中心性上升；非精神病性组左上颞回度中心性下降且多个区域节点效率下降。图中强调这些P值均未做多重比较校正。"}, {"id": "va_brain_map", "title": "这三个区域在哪里：概念定位图", "core_message": "差异集中在听觉/语言相关区域与扣带回相关区域。", "type": "示意图（概念）", "source_ref": "第4页 结果（区域名称）；第6页 图2注释", "data_fields_needed": [], "alt_text": "概念脑图在左半球标出上颞回与赫氏回（听觉与语言处理相关皮层附近）以及内侧扣带回（情绪调节与自我监控相关）。这些区域在研究中呈现节点指标降低，并与精神病性症状相关。"}], "interactive_modules": [{"id": "im_symptom_change", "title": "两周症状变化对比器", "purpose": "让公众直观看到两组在多量表上的改善幅度与差异，并提供数值出处。", "ui_controls": [{"type": "dropdown", "label": "选择量表", "options": ["HAMD-17", "HAMA", "YMRS", "BPRS", "PositiveSymptoms_BPRS6"]}, {"type": "toggle", "label": "显示方式", "options": ["均值±SD", "变化量(Δ)"]}, {"type": "toggle", "label": "展示形式", "options": ["图形", "表格"]}], "schema": {"dataset": "symptom_change_summary", "fields": [{"name": "group", "type": "string", "unit": null, "allowed": ["MDP", "MDNP"]}, {"name": "n", "type": "integer", "unit": "人", "allowed_range": [1, 10000]}, {"name": "scale", "type": "string", "unit": "分", "allowed": ["HAMD-17", "HAMA", "YMRS", "BPRS", "PositiveSymptoms_BPRS6"]}, {"name": "timepoint", "type": "string", "unit": null, "allowed": ["baseline", "post_2weeks"]}, {"name": "mean", "type": "number", "unit": "分", "allowed_range": [0, 200]}, {"name": "sd", "type": "number", "unit": "分", "allowed_range": [0, 200]}, {"name": "p_within_group", "type": ["number", "string", "null"], "unit": null, "allowed_range": [0, 1]}, {"name": "between_group_post_p", "type": ["number", "string", "null"], "unit": null, "allowed_range": [0, 1]}, {"name": "source_ref", "type": "string", "unit": null, "allowed": ["第7页 表2"]}], "missing_value_rule": "若论文未报告，则置null并在前端显示“论文未报告”。"}, "default_view_copy": "默认展示BPRS与阳性症状：两组都在改善，但精神病性组两周后仍更重。（证据：第7页 表2）", "risk_note": "图中为组平均变化，不能用于个体自测或自行调整治疗。（证据：第9页 limitations）", "source_ref": ["第7页 表2", "第9页 limitations"]}, {"id": "im_correlation_explorer", "title": "网络指标 × 症状相关性探索器", "purpose": "把“网络术语”翻译成可比较的相关方向与强度，帮助公众理解‘相关≠因果’。", "ui_controls": [{"type": "dropdown", "label": "症状指标", "options": ["BPRS_total", "PositiveSymptoms_BPRS6"]}, {"type": "dropdown", "label": "网络指标", "options": ["gamma", "sigma", "DC_STG_L", "NE_STG_L", "NE_HG_L", "NE_MCG_L"]}, {"type": "toggle", "label": "显示统计", "options": ["r", "r+P", "r+P+FDR q"]}], "schema": {"dataset": "topology_symptom_correlations", "fields": [{"name": "symptom_measure", "type": "string", "unit": "分", "allowed": ["BPRS_total", "PositiveSymptoms_BPRS6"]}, {"name": "metric_id", "type": "string", "unit": null, "allowed": ["gamma", "sigma", "DC_STG_L", "NE_STG_L", "NE_HG_L", "NE_MCG_L"]}, {"name": "r_partial", "type": "number", "unit": null, "allowed_range": [-1, 1]}, {"name": "p_value", "type": ["number", "string", "null"], "unit": null}, {"name": "fdr_q", "type": ["number", "string", "null"], "unit": null}, {"name": "covariates_controlled", "type": "array", "unit": null}, {"name": "source_ref", "type": "array", "unit": null}], "missing_value_rule": "若某项只在图中或正文段落出现，则缺失项置null并显示来源差异。"}, "default_view_copy": "默认：阳性症状 × DC_STG_L。提示：STG_L越像‘枢纽’，阳性症状往往越轻；这是相关关系。（证据：第7页 图4；第5页 FDR q<0.001）", "risk_note": "相关系数不等于因果，也不等于可用于个人判断的阈值。（证据：第9页 limitations）", "source_ref": ["第5页 相关段落", "第6页 图3", "第7页 图4", "第9页 limitations"]}, {"id": "im_treatment_dashboard", "title": "两周治疗后网络变化仪表盘（含“未校正”提示）", "purpose": "展示两组网络指标的方向性变化，并把统计证据等级讲清楚。", "ui_controls": [{"type": "tabs", "label": "组别", "options": ["MDP", "MDNP"]}, {"type": "filter", "label": "只看显著/含趋势", "options": ["仅显著(P<0.05)", "含趋势(P<0.10)"]}, {"type": "toggle", "label": "显示", "options": ["列表", "图示"]}], "schema": {"dataset": "treatment_related_topology_changes", "fields": [{"name": "group", "type": "string", "allowed": ["MDP", "MDNP"]}, {"name": "metric_id", "type": "string"}, {"name": "direction", "type": "string", "allowed": ["increase", "decrease", "trend_decrease", "trend_increase"]}, {"name": "p_value_uncorrected", "type": "number", "allowed_range": [0, 1]}, {"name": "multiple_comparison_corrected", "type": "boolean", "allowed": [false]}, {"name": "source_ref", "type": "array"}], "missing_value_rule": "论文未报告变化幅度，仅报告方向与P；前端不展示幅度。"}, "default_view_copy": "默认打开MDP组：σ下降、STG_L的DC上升，并提示‘P未校正’。（证据：第7页；第8页 图5）", "risk_note": "短期变化≠长期结局；未校正P值意味着需要更严格研究重复验证。（证据：第7页 未校正说明；第9页 limitations）", "source_ref": ["第7页", "第8页 图5", "第9页 limitations"]}, {"id": "im_method_slider", "title": "阈值与AUC互动小课堂（概念演示）", "purpose": "让公众理解为什么作者不只选一个阈值，而是用0.10–0.34范围并用AUC汇总。", "ui_controls": [{"type": "slider", "label": "稀疏度 S", "min": 0.1, "max": 0.34, "step": 0.01, "default": 0.22}, {"type": "toggle", "label": "显示说明", "options": ["简洁", "详细"]}], "schema": {"dataset": "method_explainer_parameters", "fields": [{"name": "sparsity_min", "type": "number", "unit": null}, {"name": "sparsity_max", "type": "number", "unit": null}, {"name": "sparsity_step", "type": "number", "unit": null}, {"name": "summary_stat", "type": "string", "unit": null, "allowed": ["AUC"]}, {"name": "source_ref", "type": "string"}], "missing_value_rule": "教学模块无缺失值。"}, "default_view_copy": "默认S=0.22：连接数适中；解释AUC是把不同S下的曲线‘整体汇总’。（证据：第4页 Network analysis）", "risk_note": "此模块是概念演示，不代表论文中的真实脑网络形状或数值。（证据：第4页 方法仅描述计算流程）", "source_ref": ["第4页 Network analysis"]}]}
+</script>
+  <script id="citationsData" type="application/json">
+[{"id": "C1", "label": "摘要与核心结论", "ref": "第1页 摘要"}, {"id": "C2", "label": "研究目的与假设", "ref": "第2页 Introduction 末段"}, {"id": "C3", "label": "样本、分组与量表（含阳性症状条目）", "ref": "第2页 Participants"}, {"id": "C4", "label": "基线人口学与临床特征", "ref": "第3页 表1"}, {"id": "C5", "label": "静息态fMRI扫描与预处理参数", "ref": "第3页 MRI data acquisition and processing"}, {"id": "C6", "label": "网络构建与指标定义（σ、γ、DC、NE等）及阈值范围", "ref": "第3–4页 Network construction；第4页 Network analysis"}, {"id": "C7", "label": "全局指标组间差异（σ、γ）", "ref": "第4页 结果段落；第5页 图1"}, {"id": "C8", "label": "节点指标组间差异（STG/HG/MCG）", "ref": "第4页 结果段落；第6页 图2"}, {"id": "C9", "label": "网络指标与症状严重度的相关", "ref": "第5页 相关段落；第6页 图3；第7页 图4"}, {"id": "C10", "label": "两周后症状变化与组间差异", "ref": "第6页 段落；第7页 表2"}, {"id": "C11", "label": "两周后网络指标变化与症状改善相关（未校正P）", "ref": "第7页 Alteration…段落；第8页 图5"}, {"id": "C12", "label": "讨论、局限与下一步；结论", "ref": "第8–9页 Discussion；第9页 limitations；第9页 In conclusion"}, {"id": "C13", "label": "数据获取方式", "ref": "第10页 Data availability"}]
+</script>
+  <script id="baselineData" type="application/json">
+{"dataset": "baseline_characteristics", "description": "表1：两组（MDP/MDNP）基线人口学与临床特征（均值±SD或计数/比例）。", "source_ref": "第3页 表1", "groups": [{"group": "MDP", "n": 61, "age_mean": 15.3, "age_sd": 1.53, "sex_male": 15, "sex_female": 46, "diagnosis_MDD": 37, "diagnosis_BD": 24, "education_years_mean": 9.56, "education_years_sd": 1.68, "HAMD17_mean": 25.3, "HAMD17_sd": 5.04, "HAMA_mean": 25.7, "HAMA_sd": 6.05, "YMRS_mean": 10.2, "YMRS_sd": 7.42, "BPRS_mean": 54.32, "BPRS_sd": 10.81, "positive_symptom_mean": 16.11, "positive_symptom_sd": 4.56, "medications": {"lithium_carbonate_n": 49, "lithium_carbonate_pct": 80.33, "sodium_valproate_n": 6, "sodium_valproate_pct": 9.84, "quetiapine_n": 52, "quetiapine_pct": 85.25, "lorazepam_n": 18, "lorazepam_pct": 29.51}}, {"group": "MDNP", "n": 116, "age_mean": 15.65, "age_sd": 1.86, "sex_male": 31, "sex_female": 85, "diagnosis_MDD": 61, "diagnosis_BD": 55, "education_years_mean": 9.94, "education_years_sd": 2.02, "HAMD17_mean": 23.58, "HAMD17_sd": 3.98, "HAMA_mean": 22.77, "HAMA_sd": 6.28, "YMRS_mean": 7.51, "YMRS_sd": 4.36, "BPRS_mean": 39.67, "BPRS_sd": 7.59, "positive_symptom_mean": 7.29, "positive_symptom_sd": 1.1, "medications": {"lithium_carbonate_n": 100, "lithium_carbonate_pct": 86.21, "sodium_valproate_n": 18, "sodium_valproate_pct": 15.52, "quetiapine_n": 102, "quetiapine_pct": 87.93, "lorazepam_n": 41, "lorazepam_pct": 35.34}}], "between_group_tests": [{"variable": "age_years", "test": "t", "value": -1.268, "p": 0.206}, {"variable": "sex_male_female", "test": "chi2", "value": 0.239, "p": 0.41}, {"variable": "diagnosis_MDD_BD", "test": "chi2", "value": 1.053, "p": 0.305}, {"variable": "education_years", "test": "t", "value": -1.266, "p": 0.207}, {"variable": "HAMD17", "test": "t", "value": 2.483, "p": 0.014}, {"variable": "HAMA", "test": "t", "value": 2.995, "p": 0.003}, {"variable": "YMRS", "test": "t", "value": 3.034, "p": 0.003}, {"variable": "BPRS", "test": "t", "value": 10.502, "p": "<0.001"}, {"variable": "positive_symptom", "test": "t", "value": 19.789, "p": "<0.001"}], "notes": ["表1中药物部分只报告计数与比例，未提供组间统计检验值。", "positive_symptom 为作者从BPRS选取6个条目汇总的“阳性症状”得分（证据：第2页 Participants 段落；第3页 表1）。"]}
+</script>
+  <script id="symptomChangeData" type="application/json">
+{"dataset": "symptom_change_summary", "description": "表2：两周治疗前后量表变化（组水平均值±SD），包含组内配对t检验与治疗后组间比较。", "source_ref": "第7页 表2", "timepoints": ["baseline", "post_2weeks"], "groups": [{"group": "MDP", "n": 35}, {"group": "MDNP", "n": 71}], "measures": [{"scale": "HAMD-17", "unit": "分", "MDP": {"baseline_mean": 26.31, "baseline_sd": 5.33, "post_mean": 13.43, "post_sd": 7.11, "t_within": 8.348, "p_within": "<0.001"}, "MDNP": {"baseline_mean": 23.61, "baseline_sd": 3.92, "post_mean": 11.99, "post_sd": 5.19, "t_within": 12.703, "p_within": "<0.001"}, "between_group_post": {"t": 1.187, "p": 0.238}}, {"scale": "HAMA", "unit": "分", "MDP": {"baseline_mean": 27.4, "baseline_sd": 6.34, "post_mean": 14.49, "post_sd": 7.75, "t_within": 8.436, "p_within": "<0.001"}, "MDNP": {"baseline_mean": 22.65, "baseline_sd": 6.55, "post_mean": 12.97, "post_sd": 6.3, "t_within": 18.01, "p_within": "<0.001"}, "between_group_post": {"t": 1.077, "p": 0.284}}, {"scale": "YMRS", "unit": "分", "MDP": {"baseline_mean": 10.31, "baseline_sd": 7.1, "post_mean": 5.69, "post_sd": 5.37, "t_within": 3.941, "p_within": "<0.001"}, "MDNP": {"baseline_mean": 7.66, "baseline_sd": 4.14, "post_mean": 5.04, "post_sd": 3.84, "t_within": 4.654, "p_within": "<0.001"}, "between_group_post": {"t": 1.148, "p": 0.254}}, {"scale": "BPRS", "unit": "分", "MDP": {"baseline_mean": 55.66, "baseline_sd": 11.59, "post_mean": 37.77, "post_sd": 12.92, "t_within": 8.73, "p_within": "<0.001"}, "MDNP": {"baseline_mean": 39.38, "baseline_sd": 7.21, "post_mean": 32.38, "post_sd": 8.07, "t_within": 8.915, "p_within": "<0.001"}, "between_group_post": {"t": 3.105, "p": 0.002}}, {"scale": "PositiveSymptoms_BPRS6", "label_cn": "阳性症状（BPRS 6条目）", "unit": "分", "MDP": {"baseline_mean": 16.17, "baseline_sd": 4.94, "post_mean": 10.86, "post_sd": 4.83, "t_within": 8.105, "p_within": "<0.001"}, "MDNP": {"baseline_mean": 7.35, "baseline_sd": 1.11, "post_mean": 7.21, "post_sd": 1.63, "t_within": 0.701, "p_within": 0.486}, "between_group_post": {"t": 5.75, "p": "<0.001"}}], "notes": ["表2脚注：组内比较为配对t检验；治疗后组间比较为独立样本t检验（证据：第7页 表2脚注）。", "MDP与MDNP治疗后在BPRS与阳性症状仍存在显著差异（证据：第6页 段落；第7页 表2）。"]}
+</script>
+  <script id="correlationData" type="application/json">
+{"dataset": "topology_symptom_correlations", "description": "全体情绪障碍患者中，网络指标与症状严重度的偏相关（控制年龄、性别、诊断）。r与P值见图3/图4，FDR q值见正文段落。", "covariates_controlled": ["age", "sex", "diagnosis"], "source_ref": ["第5页 相关分析段落", "第6页 图3", "第7页 图4"], "entries": [{"symptom_measure": "BPRS_total", "metric_id": "gamma", "metric_label_cn": "标准化聚类系数 γ", "r_partial": 0.229, "p_value": 0.002, "fdr_q": 0.003}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "gamma", "metric_label_cn": "标准化聚类系数 γ", "r_partial": 0.263, "p_value": "<0.001", "fdr_q": "<0.001"}, {"symptom_measure": "BPRS_total", "metric_id": "sigma", "metric_label_cn": "小世界性 σ", "r_partial": 0.265, "p_value": "<0.001", "fdr_q": 0.001}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "sigma", "metric_label_cn": "小世界性 σ", "r_partial": 0.276, "p_value": "<0.001", "fdr_q": "<0.001"}, {"symptom_measure": "BPRS_total", "metric_id": "DC_STG_L", "metric_label_cn": "左上颞回 度中心性 DC", "r_partial": -0.296, "p_value": "<0.001", "fdr_q": "<0.001"}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "DC_STG_L", "metric_label_cn": "左上颞回 度中心性 DC", "r_partial": -0.285, "p_value": "<0.001", "fdr_q": "<0.001"}, {"symptom_measure": "BPRS_total", "metric_id": "NE_STG_L", "metric_label_cn": "左上颞回 节点效率 NE", "r_partial": -0.245, "p_value": 0.001, "fdr_q": 0.002}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "NE_STG_L", "metric_label_cn": "左上颞回 节点效率 NE", "r_partial": -0.228, "p_value": 0.002, "fdr_q": 0.003}, {"symptom_measure": "BPRS_total", "metric_id": "NE_HG_L", "metric_label_cn": "左赫氏回 节点效率 NE", "r_partial": -0.206, "p_value": 0.006, "fdr_q": 0.007}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "NE_HG_L", "metric_label_cn": "左赫氏回 节点效率 NE", "r_partial": -0.196, "p_value": 0.009, "fdr_q": 0.009}, {"symptom_measure": "BPRS_total", "metric_id": "NE_MCG_L", "metric_label_cn": "左内侧扣带回 节点效率 NE", "r_partial": -0.159, "p_value": 0.036, "fdr_q": 0.035}, {"symptom_measure": "PositiveSymptoms_BPRS6", "metric_id": "NE_MCG_L", "metric_label_cn": "左内侧扣带回 节点效率 NE", "r_partial": -0.205, "p_value": 0.007, "fdr_q": 0.008}], "missing_value_rule": "若出现“<0.001”等区间形式，按字符串存储；前端显示原样。"}
+</script>
+  <script id="treatmentChangeData" type="application/json">
+{"dataset": "treatment_related_topology_changes", "description": "两周治疗前后网络指标变化（组内配对t检验；论文注明P值未做多重校正）。", "source_ref": ["第7页 Alteration...段落", "第8页 图5"], "multiple_comparison_corrected": false, "entries": [{"group": "MDP", "n": 35, "metric_id": "sigma", "metric_label_cn": "小世界性 σ", "direction": "decrease", "p_value_uncorrected": 0.016}, {"group": "MDP", "n": 35, "metric_id": "gamma", "metric_label_cn": "标准化聚类系数 γ", "direction": "trend_decrease", "p_value_uncorrected": 0.056}, {"group": "MDP", "n": 35, "metric_id": "DC_STG_L", "metric_label_cn": "左上颞回 度中心性 DC", "direction": "increase", "p_value_uncorrected": 0.038}, {"group": "MDNP", "n": 71, "metric_id": "DC_STG_L", "metric_label_cn": "左上颞回 度中心性 DC", "direction": "decrease", "p_value_uncorrected": 0.024}, {"group": "MDNP", "n": 71, "metric_id": "NE_MCG_L", "metric_label_cn": "左内侧扣带回 节点效率 NE", "direction": "decrease", "p_value_uncorrected": 0.016}, {"group": "MDNP", "n": 71, "metric_id": "NE_HG_L", "metric_label_cn": "左赫氏回 节点效率 NE", "direction": "decrease", "p_value_uncorrected": 0.005}, {"group": "MDNP", "n": 71, "metric_id": "NE_STG_L", "metric_label_cn": "左上颞回 节点效率 NE", "direction": "decrease", "p_value_uncorrected": 0.033}], "notes": ["论文明确指出：治疗前后比较的所有P值均未校正（all P values were uncorrected）（证据：第7页；第8页 图5图注）。", "MDNP组报告为“全局指标无显著变化”，因此未列出对应条目（证据：第7页）。"]}
+</script>
+  <script id="treatmentCorrData" type="application/json">
+{"dataset": "symptom_network_change_correlation", "description": "MDP组：阳性症状改善与STG_L度中心性变化的相关。", "source_ref": "第7页 Alteration...段落", "entry": {"group": "MDP", "n": 35, "symptom_measure": "PositiveSymptoms_BPRS6_change", "metric_change": "DC_STG_L_change", "r": 0.377, "p": 0.031, "notes": "论文描述为“reduction in positive symptoms ... positively correlated with elevation in DC of STG_L”。"}}
+</script>
+  <script id="methodParamsData" type="application/json">
+{"dataset": "method_explainer_parameters", "description": "网络阈值与AUC方法教学参数（概念演示）。", "source_ref": "第4页 Network analysis", "sparsity_min": 0.1, "sparsity_max": 0.34, "sparsity_step": 0.01, "summary_stat": "AUC", "notes": ["论文用σ>1确保小世界性成立，并据此选取稀疏度范围0.10–0.34（证据：第4页 Network analysis）。", "AUC用于在阈值范围内汇总指标，论文称其具有较高敏感性（证据：第4页 Network analysis）。"]}
+</script>
+
+  <script src="script.js"></script>
+
+  <!-- JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "青少年情绪障碍合并幻觉/妄想：大脑功能网络如何变化？",
+    "description": "基于177名住院青少年静息态fMRI与图论网络分析：精神病性组整体更“聚团”，左上颞回等关键节点更弱，并与症状严重度与两周治疗变化相关。含交互式图表与可视化方案。",
+    "identifier": "doi:10.1007/s00787-023-02314-5",
+    "isBasedOn": "https://doi.org/10.1007/s00787-023-02314-5"
+  }
+  </script>
+</body>
+</html>

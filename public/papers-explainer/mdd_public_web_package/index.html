@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>同样是抑郁，身体里的“原因”可能不一样｜脑影像分型+多组学</title>
+  <meta name="description" content="研究用静息态fMRI（ALFF）把抑郁症分成3个脑影像亚型，并用炎症因子、DNA甲基化、代谢组与遗传数据追踪各亚型更像的生物机制线索。（证据：第1页摘要；第3–6页RESULTS）" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">科研成果公众解读（基于论文证据锚点）</p>
+      <h1>同样是抑郁，身体里的“原因”可能不一样</h1>
+      <p class="subtitle">用脑影像把抑郁症分成3个亚型，再用血液多组学追踪各自更像的生物机制<br/>
+        <span class="cite">（证据：第1页摘要；第3页RESULTS；第9页CONCLUSION）</span>
+      </p>
+
+      <section class="card" aria-labelledby="read30">
+        <h2 id="read30">30秒读懂</h2>
+        <div class="grid-2">
+          <div>
+            <p><strong>问题：</strong>为什么抑郁症症状相似，但生物原因与治疗反应可能差很多？<span class="cite">（证据：第1页INTRODUCTION第1段）</span></p>
+            <p><strong>方法：</strong>用静息态fMRI的ALFF对327名MDD患者做机器学习聚类分型，并结合炎症因子、DNA甲基化、代谢组与遗传数据验证差异。<span class="cite">（证据：第1页摘要；第2–3页方法）</span></p>
+          </div>
+          <div>
+            <p><strong>发现：</strong>得到3个脑影像亚型：亚型1偏遗传/突触通路且症状更重；亚型2偏免疫炎症‑代谢异常；亚型3未见清晰分子标志。<span class="cite">（证据：第1页摘要；第3–6页RESULTS；图2–图5）</span></p>
+            <p><strong>意义：</strong>为“按机制分层”研究与临床试验设计提供框架，但本研究未验证分型指导治疗效果。<span class="cite">（证据：第1页摘要“proof of concept”；第9页LIMITATION）</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="section" id="why">
+      <h2>为什么要做这个研究</h2>
+      <p>论文指出，MDD存在显著“异质性”：相同症状可能来自不同生物原因，不同症状也可能对应相似生物改变。<span class="cite">（证据：第1页INTRODUCTION第1段）</span>这会让诊断与治疗更像“试错”。论文举例：初始治疗后缓解比例不足三分之一；也有约三分之一患者即使经历一年内多轮、较长疗程抗抑郁药尝试仍难以达到临床恢复。<span class="cite">（证据：第1页INTRODUCTION关于缓解/恢复的量化表述）</span></p>
+      <p>因此研究提出：用客观生物信号把患者划分为更同质的亚型，再去追问每一型更像哪种机制，从而为精准研究与治疗探索铺路。<span class="cite">（证据：第1页INTRODUCTION末段；第9页CONCLUSION）</span></p>
+    </section>
+
+    <section class="section" id="how">
+      <h2>我们怎么做的（用类比解释）</h2>
+      <p>研究先用静息态fMRI提取<strong>ALFF</strong>（低频振幅）。论文解释：ALFF衡量静息状态下局部自发神经活动，且重复测量可靠性较好。<span class="cite">（证据：第2页ALFF定义与可靠性描述）</span>你可以把它理解为“大脑各区域在待机时的自然波动音量”。</p>
+      <p>接着，研究把全脑ALFF数据用<strong>SVD</strong>压缩到30维，再用<strong>K-means</strong>聚类，把327名MDD患者按相似的脑活动模式自动分组，并用Dunn Index选出最佳聚类数，最终得到3个亚型。<span class="cite">（证据：第2页Identification of neuroimaging subtypes；第3页RESULTS）</span></p>
+      <p>最后，研究把“分型”与“机制线索”拼到一起：同一天采血测促炎细胞因子（TNF‑α、IL‑6、IL‑1β），并采集遗传（PRS）、DNA甲基化（EIS与免疫细胞比例估计）、代谢组（669种代谢物）等多组学数据，分别将每个亚型与健康对照比较，寻找各自更突出的差异。<span class="cite">（证据：第2页采血与多组学平台；第3页EIS/DMs/PRS方法；第5–6页RESULTS）</span></p>
+    </section>
+
+    <section class="section" id="findings">
+      <h2>我们发现了什么（3个最重要发现）</h2>
+
+      <div class="cards-3">
+        <article class="card">
+          <h3>发现1：抑郁症的“脑活动指纹”可分三型</h3>
+          <p>327名MDD患者被聚类为亚型1/2/3（28%/28%/44%）。<span class="cite">（证据：第3页RESULTS；表1第4页）</span></p>
+          <p>三型在ALFF上的失衡方向不同：亚型1边缘系统更活跃、初级皮层更低；亚型2前额叶更活跃、初级感觉皮层更低；亚型3相反。<span class="cite">（证据：第3页RESULTS；图1第5页）</span></p>
+          <p class="meaning"><strong>这意味着：</strong>同一个诊断名下可能存在不同的“生物路径”，为机制分层提供入口。<span class="cite">（证据：第1页INTRODUCTION；第9页CONCLUSION）</span></p>
+        </article>
+
+        <article class="card">
+          <h3>发现2：亚型1更像“遗传/突触调控主导”，且更重</h3>
+          <p>亚型1的HAMD更高（21.1±10.1），并在WCST子样本中表现出更明显的认知受损。<span class="cite">（证据：表1第4页；第3页RESULTS）</span></p>
+          <p>PRS结果显示：只有亚型1在PT=0.001与0.01显著（解释方差约5.9%与8.1%），并富集到突触与神经发育相关GO条目。<span class="cite">（证据：第6页RESULTS；图5第8页）</span></p>
+          <p class="meaning"><strong>这意味着：</strong>亚型1可能更贴近遗传‑神经发育/突触调控通路，但本研究未检验任何按亚型定制治疗的疗效。<span class="cite">（证据：第1页摘要；第9页LIMITATION）</span></p>
+        </article>
+
+        <article class="card">
+          <h3>发现3：亚型2更像“免疫炎症‑代谢异常主导”</h3>
+          <p>亚型2的IL‑1β显著升高；IL‑6与TNF‑α仅为趋势。<span class="cite">（证据：第5页RESULTS；图2第5页）</span></p>
+          <p>亚型2 EIS更低（论文解释代表慢性炎症更高），中性粒细胞比例更高；且只有亚型2检出36个差异代谢物，16/36与IL‑1β相关。<span class="cite">（证据：第3页EIS定义；第5–6页RESULTS；图3第6页；图4第7页）</span></p>
+          <p class="meaning"><strong>这意味着：</strong>亚型2形成较完整的多层证据链；论文讨论认为抗炎治疗对该子群体可能是有前景的辅助方向，但需独立试验验证。<span class="cite">（证据：第9页DISCUSSION；第9页LIMITATION）</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="visuals">
+      <h2>论文原图（图1–图6，原样复用）</h2>
+      <p class="note">下方图片来自论文原图提取，未做改动（证据：第5–9页图1–图6）。许可与使用注意事项见根目录 LICENSE_NOTICE.md（证据：第11页许可说明）。</p>
+
+      <div class="gallery">
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig1_alff_subtypes.png" alt="图1：三种抑郁脑影像亚型的ALFF差异脑图（见alt_texts.json）" />
+          <figcaption>图1｜三亚型ALFF模式（第5页）</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig2_cytokines.png" alt="图2：IL-6、IL-1β、TNF-α在各亚型与健康对照间的小提琴图（见alt_texts.json）" />
+          <figcaption>图2｜炎症因子（第5页）</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig3_eis_immune_cells.png" alt="图3：EIS与免疫细胞比例（见alt_texts.json）" />
+          <figcaption>图3｜EIS与免疫细胞（第6页）</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig4_metabolites_il1b.png" alt="图4：差异代谢物与IL-1β相关（见alt_texts.json）" />
+          <figcaption>图4｜代谢组与IL‑1β（第7页）</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig5_prs_go.png" alt="图5：PRS与GO富集（见alt_texts.json）" />
+          <figcaption>图5｜遗传风险与通路（第8页）</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/paper_figures/fig6_correlations.png" alt="图6：分子-脑-症状相关性热图（见alt_texts.json）" />
+          <figcaption>图6｜相关性热图（第9页）</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="interactives">
+      <h2>交互模块：让公众“玩明白”结论</h2>
+
+      <section class="interactive card" id="brainmap_switcher" aria-labelledby="bm_title">
+        <div class="interactive-head">
+          <h3 id="bm_title">交互1｜三亚型脑图切换器</h3>
+          <p class="note">用同一张图1快速对比三种ALFF模式差异（研究层面展示，不能用于个人诊断）。<span class="cite">（证据：第3页；图1第5页；第9页LIMITATION）</span></p>
+        </div>
+        <div class="bm-controls" role="group" aria-label="选择亚型">
+          <button class="btn" data-subtype="S1" aria-pressed="true">亚型1</button>
+          <button class="btn" data-subtype="S2" aria-pressed="false">亚型2</button>
+          <button class="btn" data-subtype="S3" aria-pressed="false">亚型3</button>
+        </div>
+        <div class="bm-view" aria-label="图1视窗展示">
+          <div class="bm-canvas" role="img" aria-label="图1局部视窗（通过显示裁剪聚焦某个亚型）"></div>
+        </div>
+        <p class="bm-caption" id="bm_caption"></p>
+      </section>
+
+      <section class="interactive card" id="metric_dashboard" aria-labelledby="md_title">
+        <div class="interactive-head">
+          <h3 id="md_title">交互2｜亚型对比仪表板（症状与认知）</h3>
+          <p class="note">数据来自表1。WCST为子样本；图中展示均值±SD，不做额外统计推断。<span class="cite">（证据：表1第4页）</span></p>
+        </div>
+        <div class="md-controls">
+          <label for="metricSelect">选择指标：</label>
+          <select id="metricSelect" aria-label="选择指标">
+            <option value="hamd_total">HAMD抑郁严重度总分</option>
+            <option value="hama_total">HAMA焦虑严重度总分</option>
+            <option value="wcst_cr">WCST正确反应（CR）</option>
+            <option value="wcst_te">WCST总错误（TE）</option>
+            <option value="wcst_pe">WCST持续性错误（PE）</option>
+          </select>
+          <label class="checkbox">
+            <input type="checkbox" id="showErrorBars" checked />
+            显示标准差（SD）
+          </label>
+        </div>
+        <div class="md-chart" aria-label="指标对比图表">
+          <svg id="mdSvg" viewBox="0 0 900 340" role="img" aria-label="各亚型与健康对照的指标对比条形图"></svg>
+        </div>
+        <p class="md-footnote" id="md_note"></p>
+      </section>
+
+      <section class="interactive card" id="mechanism_puzzle" aria-labelledby="pz_title">
+        <div class="interactive-head">
+          <h3 id="pz_title">交互3｜机制证据拼图：把线索放回对应亚型</h3>
+          <p class="note">拖拽卡片到亚型栏位；完成后会显示正确答案与证据锚点（页码/图号/表号）。<span class="cite">（证据：第1页摘要；第3–6页RESULTS；图2–图5）</span></p>
+        </div>
+
+        <div class="puzzle">
+          <div class="tile-bin" aria-label="证据卡片区">
+            <h4>证据卡片</h4>
+            <div id="tileBin" class="tile-list" aria-label="可拖拽证据卡片列表"></div>
+            <div class="puzzle-controls">
+              <button class="btn secondary" id="pzHint">提示</button>
+              <button class="btn secondary" id="pzReset">重置</button>
+              <button class="btn" id="pzCheck">检查答案</button>
+            </div>
+            <p class="note" id="pzStatus" aria-live="polite"></p>
+          </div>
+
+          <div class="dropzones" aria-label="亚型投放区">
+            <div class="dropzone" data-subtype="S1" tabindex="0" aria-label="亚型1投放区">
+              <h4>亚型1</h4>
+              <p class="subnote">更像“遗传/突触调控主导”<span class="cite">（证据：第6页；图5第8页）</span></p>
+              <div class="zone-list"></div>
+            </div>
+            <div class="dropzone" data-subtype="S2" tabindex="0" aria-label="亚型2投放区">
+              <h4>亚型2</h4>
+              <p class="subnote">更像“免疫炎症‑代谢异常主导”<span class="cite">（证据：第5–6页；图2–图4）</span></p>
+              <div class="zone-list"></div>
+            </div>
+            <div class="dropzone" data-subtype="S3" tabindex="0" aria-label="亚型3投放区">
+              <h4>亚型3</h4>
+              <p class="subnote">分子线索尚不明确<span class="cite">（证据：第1页摘要；第9页DISCUSSION）</span></p>
+              <div class="zone-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <details class="sources">
+          <summary>查看该拼图所用的“证据锚点”来源</summary>
+          <p>证据卡片来源文件：<code>data/subtype_evidence_puzzle.json</code>（每张卡都有 source_ref 字段）。</p>
+        </details>
+      </section>
+    </section>
+
+    <section class="section" id="limitations">
+      <h2>局限性与下一步</h2>
+      <p>论文指出：遗传与表观遗传样本量有限；部分患者并非未用药（在表观遗传与代谢分析中用药状态作为协变量控制）；研究为横断面设计，无法推断因果，需要纵向研究。<span class="cite">（证据：第9页LIMITATION）</span>此外，WCST为子样本（表1注明各组样本量）。<span class="cite">（证据：表1第4页）</span></p>
+    </section>
+
+    <section class="section" id="glossary">
+      <h2>术语小词典与FAQ</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>术语（节选）</h3>
+          <ul id="glossaryList" class="list"></ul>
+          <p class="note">完整术语见 <code>content/glossary.json</code>。</p>
+        </div>
+        <div class="card">
+          <h3>FAQ（节选）</h3>
+          <div id="faqList"></div>
+          <p class="note">完整FAQ见 <code>content/faq.json</code>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="takehome">
+      <div class="takehome">
+        <p class="takehome-label">一句话带走</p>
+        <p class="takehome-text">抑郁症可能由不同生物机制驱动，分型是走向精准治疗的关键一步。<span class="cite">（证据：第1页摘要；第9页CONCLUSION）</span></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>统一免责声明：</strong>本页面为科普解读，不构成医疗建议或个体诊断依据。相关性不等于因果；任何潜在治疗方向需独立临床试验验证。<span class="cite">（证据：第9页LIMITATION；第9页DISCUSSION）</span></p>
+      <p><strong>许可提示：</strong>论文为 CC BY-NC-ND 4.0（见第11页）。本包中的论文图1–图6为原样复用；如需商业使用或改编/改绘，请先确认许可或获取授权（详见 LICENSE_NOTICE.md）。<span class="cite">（证据：第11页许可说明）</span></p>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

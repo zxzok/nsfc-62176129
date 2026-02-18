@@ -1,0 +1,131 @@
+{
+  "dataset": "baseline_characteristics",
+  "description": "表1：两组（MDP/MDNP）基线人口学与临床特征（均值±SD或计数/比例）。",
+  "source_ref": "第3页 表1",
+  "groups": [
+    {
+      "group": "MDP",
+      "n": 61,
+      "age_mean": 15.3,
+      "age_sd": 1.53,
+      "sex_male": 15,
+      "sex_female": 46,
+      "diagnosis_MDD": 37,
+      "diagnosis_BD": 24,
+      "education_years_mean": 9.56,
+      "education_years_sd": 1.68,
+      "HAMD17_mean": 25.3,
+      "HAMD17_sd": 5.04,
+      "HAMA_mean": 25.7,
+      "HAMA_sd": 6.05,
+      "YMRS_mean": 10.2,
+      "YMRS_sd": 7.42,
+      "BPRS_mean": 54.32,
+      "BPRS_sd": 10.81,
+      "positive_symptom_mean": 16.11,
+      "positive_symptom_sd": 4.56,
+      "medications": {
+        "lithium_carbonate_n": 49,
+        "lithium_carbonate_pct": 80.33,
+        "sodium_valproate_n": 6,
+        "sodium_valproate_pct": 9.84,
+        "quetiapine_n": 52,
+        "quetiapine_pct": 85.25,
+        "lorazepam_n": 18,
+        "lorazepam_pct": 29.51
+      }
+    },
+    {
+      "group": "MDNP",
+      "n": 116,
+      "age_mean": 15.65,
+      "age_sd": 1.86,
+      "sex_male": 31,
+      "sex_female": 85,
+      "diagnosis_MDD": 61,
+      "diagnosis_BD": 55,
+      "education_years_mean": 9.94,
+      "education_years_sd": 2.02,
+      "HAMD17_mean": 23.58,
+      "HAMD17_sd": 3.98,
+      "HAMA_mean": 22.77,
+      "HAMA_sd": 6.28,
+      "YMRS_mean": 7.51,
+      "YMRS_sd": 4.36,
+      "BPRS_mean": 39.67,
+      "BPRS_sd": 7.59,
+      "positive_symptom_mean": 7.29,
+      "positive_symptom_sd": 1.1,
+      "medications": {
+        "lithium_carbonate_n": 100,
+        "lithium_carbonate_pct": 86.21,
+        "sodium_valproate_n": 18,
+        "sodium_valproate_pct": 15.52,
+        "quetiapine_n": 102,
+        "quetiapine_pct": 87.93,
+        "lorazepam_n": 41,
+        "lorazepam_pct": 35.34
+      }
+    }
+  ],
+  "between_group_tests": [
+    {
+      "variable": "age_years",
+      "test": "t",
+      "value": -1.268,
+      "p": 0.206
+    },
+    {
+      "variable": "sex_male_female",
+      "test": "chi2",
+      "value": 0.239,
+      "p": 0.41
+    },
+    {
+      "variable": "diagnosis_MDD_BD",
+      "test": "chi2",
+      "value": 1.053,
+      "p": 0.305
+    },
+    {
+      "variable": "education_years",
+      "test": "t",
+      "value": -1.266,
+      "p": 0.207
+    },
+    {
+      "variable": "HAMD17",
+      "test": "t",
+      "value": 2.483,
+      "p": 0.014
+    },
+    {
+      "variable": "HAMA",
+      "test": "t",
+      "value": 2.995,
+      "p": 0.003
+    },
+    {
+      "variable": "YMRS",
+      "test": "t",
+      "value": 3.034,
+      "p": 0.003
+    },
+    {
+      "variable": "BPRS",
+      "test": "t",
+      "value": 10.502,
+      "p": "<0.001"
+    },
+    {
+      "variable": "positive_symptom",
+      "test": "t",
+      "value": 19.789,
+      "p": "<0.001"
+    }
+  ],
+  "notes": [
+    "表1中药物部分只报告计数与比例，未提供组间统计检验值。",
+    "positive_symptom 为作者从BPRS选取6个条目汇总的“阳性症状”得分（证据：第2页 Participants 段落；第3页 表1）。"
+  ]
+}

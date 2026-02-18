@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Beyond questionnaires: objective signals collected in SEARCH</title>
+  <desc id="desc">Three panels illustrate facial expression recording, voice recording, and response time intervals in online questionnaires as objective signals for future screening tools.</desc>
+  <rect x="0" y="0" width="900" height="420" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="40" y="50" font-size="26" font-weight="bold">Beyond questionnaires</text>
+    <text x="40" y="82" font-size="16">Objective signals: face, voice, and response time</text>
+    <text x="40" y="110" font-size="14">Source: Facial &amp; acoustic recording (p.4) and Response time intervals (p.4–5)</text>
+  </g>
+
+  <g stroke="black" stroke-width="3" fill="none">
+    <!-- Panel boxes -->
+    <rect x="60" y="140" width="240" height="220" rx="12"/>
+    <rect x="330" y="140" width="240" height="220" rx="12"/>
+    <rect x="600" y="140" width="240" height="220" rx="12"/>
+
+    <!-- Face icon -->
+    <circle cx="180" cy="240" r="55"/>
+    <circle cx="160" cy="225" r="6"/>
+    <circle cx="200" cy="225" r="6"/>
+    <path d="M160 265 Q180 285 200 265" />
+
+    <!-- Voice wave icon -->
+    <path d="M450 210 v60" />
+    <path d="M430 225 v30" />
+    <path d="M470 225 v30" />
+    <path d="M410 235 v10" />
+    <path d="M490 235 v10" />
+
+    <!-- Stopwatch icon -->
+    <circle cx="720" cy="245" r="55"/>
+    <rect x="710" y="165" width="20" height="20"/>
+    <path d="M720 245 L720 215" />
+    <path d="M720 245 L750 255" />
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="120" y="185" font-size="18" font-weight="bold">Facial expression</text>
+    <text x="90" y="320" font-size="13">Recorded while answering</text>
+    <text x="90" y="340" font-size="13">3 open-ended questions</text>
+
+    <text x="395" y="185" font-size="18" font-weight="bold">Voice / acoustics</text>
+    <text x="355" y="320" font-size="13">Open-ended answers +</text>
+    <text x="355" y="340" font-size="13">standardised text reading</text>
+
+    <text x="640" y="185" font-size="18" font-weight="bold">Response time</text>
+    <text x="620" y="320" font-size="13">Time between question</text>
+    <text x="620" y="340" font-size="13">display and submission</text>
+  </g>
+</svg>

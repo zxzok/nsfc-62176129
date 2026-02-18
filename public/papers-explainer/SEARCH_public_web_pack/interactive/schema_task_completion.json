@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEARCH_Wave1_TaskCompletion",
+  "type": "object",
+  "properties": {
+    "eligible_students_n": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "People"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "type": "string"
+          },
+          "task_label_cn": {
+            "type": "string"
+          },
+          "completed_records_n": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "completion_rate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "dropout_rate_range_reported": {
+            "type": "string"
+          },
+          "dropout_reasons_reported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "task_label_cn",
+          "completed_records_n",
+          "completion_rate",
+          "dropout_rate_range_reported",
+          "dropout_reasons_reported",
+          "source_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_value_policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "eligible_students_n",
+    "tasks",
+    "missing_value_policy"
+  ],
+  "additionalProperties": false
+}

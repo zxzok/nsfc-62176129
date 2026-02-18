@@ -1,0 +1,146 @@
+{
+  "dataset": "symptom_change_summary",
+  "description": "表2：两周治疗前后量表变化（组水平均值±SD），包含组内配对t检验与治疗后组间比较。",
+  "source_ref": "第7页 表2",
+  "timepoints": [
+    "baseline",
+    "post_2weeks"
+  ],
+  "groups": [
+    {
+      "group": "MDP",
+      "n": 35
+    },
+    {
+      "group": "MDNP",
+      "n": 71
+    }
+  ],
+  "measures": [
+    {
+      "scale": "HAMD-17",
+      "unit": "分",
+      "MDP": {
+        "baseline_mean": 26.31,
+        "baseline_sd": 5.33,
+        "post_mean": 13.43,
+        "post_sd": 7.11,
+        "t_within": 8.348,
+        "p_within": "<0.001"
+      },
+      "MDNP": {
+        "baseline_mean": 23.61,
+        "baseline_sd": 3.92,
+        "post_mean": 11.99,
+        "post_sd": 5.19,
+        "t_within": 12.703,
+        "p_within": "<0.001"
+      },
+      "between_group_post": {
+        "t": 1.187,
+        "p": 0.238
+      }
+    },
+    {
+      "scale": "HAMA",
+      "unit": "分",
+      "MDP": {
+        "baseline_mean": 27.4,
+        "baseline_sd": 6.34,
+        "post_mean": 14.49,
+        "post_sd": 7.75,
+        "t_within": 8.436,
+        "p_within": "<0.001"
+      },
+      "MDNP": {
+        "baseline_mean": 22.65,
+        "baseline_sd": 6.55,
+        "post_mean": 12.97,
+        "post_sd": 6.3,
+        "t_within": 18.01,
+        "p_within": "<0.001"
+      },
+      "between_group_post": {
+        "t": 1.077,
+        "p": 0.284
+      }
+    },
+    {
+      "scale": "YMRS",
+      "unit": "分",
+      "MDP": {
+        "baseline_mean": 10.31,
+        "baseline_sd": 7.1,
+        "post_mean": 5.69,
+        "post_sd": 5.37,
+        "t_within": 3.941,
+        "p_within": "<0.001"
+      },
+      "MDNP": {
+        "baseline_mean": 7.66,
+        "baseline_sd": 4.14,
+        "post_mean": 5.04,
+        "post_sd": 3.84,
+        "t_within": 4.654,
+        "p_within": "<0.001"
+      },
+      "between_group_post": {
+        "t": 1.148,
+        "p": 0.254
+      }
+    },
+    {
+      "scale": "BPRS",
+      "unit": "分",
+      "MDP": {
+        "baseline_mean": 55.66,
+        "baseline_sd": 11.59,
+        "post_mean": 37.77,
+        "post_sd": 12.92,
+        "t_within": 8.73,
+        "p_within": "<0.001"
+      },
+      "MDNP": {
+        "baseline_mean": 39.38,
+        "baseline_sd": 7.21,
+        "post_mean": 32.38,
+        "post_sd": 8.07,
+        "t_within": 8.915,
+        "p_within": "<0.001"
+      },
+      "between_group_post": {
+        "t": 3.105,
+        "p": 0.002
+      }
+    },
+    {
+      "scale": "PositiveSymptoms_BPRS6",
+      "label_cn": "阳性症状（BPRS 6条目）",
+      "unit": "分",
+      "MDP": {
+        "baseline_mean": 16.17,
+        "baseline_sd": 4.94,
+        "post_mean": 10.86,
+        "post_sd": 4.83,
+        "t_within": 8.105,
+        "p_within": "<0.001"
+      },
+      "MDNP": {
+        "baseline_mean": 7.35,
+        "baseline_sd": 1.11,
+        "post_mean": 7.21,
+        "post_sd": 1.63,
+        "t_within": 0.701,
+        "p_within": 0.486
+      },
+      "between_group_post": {
+        "t": 5.75,
+        "p": "<0.001"
+      }
+    }
+  ],
+  "notes": [
+    "表2脚注：组内比较为配对t检验；治疗后组间比较为独立样本t检验（证据：第7页 表2脚注）。",
+    "MDP与MDNP治疗后在BPRS与阳性症状仍存在显著差异（证据：第6页 段落；第7页 表2）。"
+  ]
+}

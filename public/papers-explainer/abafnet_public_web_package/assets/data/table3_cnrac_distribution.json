@@ -1,0 +1,33 @@
+{
+  "source_ref": "第13页，表3",
+  "data": [
+    {
+      "dataset": "CNRAC",
+      "scale": "HAMD-17",
+      "group": "NC",
+      "score_range": "0–7",
+      "n": 216
+    },
+    {
+      "dataset": "CNRAC",
+      "scale": "HAMD-17",
+      "group": "Mild",
+      "score_range": "8–16",
+      "n": 13
+    },
+    {
+      "dataset": "CNRAC",
+      "scale": "HAMD-17",
+      "group": "Moderate",
+      "score_range": "17–24",
+      "n": 62
+    },
+    {
+      "dataset": "CNRAC",
+      "scale": "HAMD-17",
+      "group": "Severe",
+      "score_range": "≥25",
+      "n": 80
+    }
+  ]
+}

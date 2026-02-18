@@ -1,0 +1,244 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "research": "Research",
+    "results": "Results",
+    "impact": "Impact",
+    "timeline": "Timeline",
+    "team": "Team",
+    "publications": "Publications",
+    "patents": "Patents",
+    "backHome": "Back to Home",
+    "researchDetail": "Research Details",
+    "subtyping": "Depression Subtyping",
+    "networkControl": "Network Control Theory",
+    "biomarkers": "Digital Biomarkers",
+    "translation": "Clinical Translation"
+  },
+  "hero": {
+    "title": "Personalized Target Selection and Efficacy Evaluation of Non-invasive Neuromodulation for Psychiatric Disorders",
+    "subtitle": "National Natural Science Foundation of China",
+    "grant": "Grant No. 62176129",
+    "duration": "Duration: Jan 2022 — Dec 2025",
+    "pi": "PI: Xizhe Zhang",
+    "scroll": "Scroll down to learn more",
+    "introDesc": "Leveraging brain imaging and AI to characterize individual differences, addressing three core questions — which brain region to stimulate, how to evaluate efficacy objectively, and how to translate findings into clinical practice — advancing non-invasive brain stimulation toward personalized precision."
+  },
+  "featured": {
+    "heading": "Featured Publications",
+    "desc": "Five representative papers spanning network control, precision subtyping, digital phenotyping, and clinical translation",
+    "viewDetail": "View Details",
+    "readExplainer": "Read Explainer",
+    "viewAll": "View All Publications"
+  },
+  "research": {
+    "heading": "Research Highlights",
+    "card1Title": "Depression Precision Subtyping",
+    "card1Desc": "Classifying depression into imaging-based subtypes with differentiated stimulation targets; typical subtype achieved 90% response rate.",
+    "card1Stat": "90%",
+    "card1StatLabel": "Typical Subtype Response",
+    "card1LearnMore": "Learn More",
+    "card2Title": "Brain Network Control Theory",
+    "card2Desc": "Proposing 'control hubs' from a network dynamics perspective to identify key brain nodes for widespread modulatory effects.",
+    "card2LearnMore": "Learn More",
+    "card3Title": "Digital Biomarkers",
+    "card3Desc": "Integrating speech, facial expression, and wearable data for rapid objective depression assessment; speech detection F1=87.3%.",
+    "card3Stat": "87.3%",
+    "card3StatLabel": "Speech Detection F1",
+    "card3LearnMore": "Learn More",
+    "card4Title": "Clinical Translation",
+    "card4Desc": "Building an end-to-end precision treatment pipeline at Nanjing Brain Hospital — from imaging subtyping to target recommendation, serving 3,000+ patients.",
+    "card4LearnMore": "Learn More"
+  },
+  "results": {
+    "heading": "Key Results",
+    "introDesc": "The project has produced systematic results across methodological innovation, clinical validation, and application deployment. Research has been published in IEEE TNSE, Neural Networks, BMC Medicine, BMJ Mental Health, Molecular Psychiatry, and other leading journals, spanning network science methods, machine learning, multi-modal digital phenotyping, and clinical translation.",
+    "papers": "Papers Published",
+    "papersUnit": "",
+    "patents": "Patents Granted",
+    "patentsUnit": "",
+    "patients": "Patients Served",
+    "patientsUnit": "",
+    "screening": "Individuals Screened",
+    "screeningUnit": "",
+    "journalLabel": "Published in IEEE TNSE, Neural Networks, BMC Medicine, BMJ Mental Health, Molecular Psychiatry, and other top-tier journals",
+    "patentNote": "Including 1 US patent",
+    "viewAll": "View All"
+  },
+  "impact": {
+    "heading": "Application Impact",
+    "clinicTitle": "Clinical Precision Treatment System",
+    "clinicDesc": "End-to-end personalized closed-loop system at Nanjing Brain Hospital — from imaging to precision treatment.",
+    "clinicPoint1": "Standardized acquisition → Auto analysis → Subtyping → Target recommendation → Precision treatment",
+    "clinicPoint2": "90% rTMS response rate for typical subtype, 70.73% for atypical",
+    "clinicPoint3": "Continuous 'Diagnosis → Intervention → Outcome' tracking and evaluation",
+    "schoolTitle": "School Mental Health Screening",
+    "schoolDesc": "Audio-visual objective signals enabling 'screening → stratification → referral → follow-up' closed-loop management.",
+    "schoolPoint1": "Covering 10+ primary/secondary schools in Jiangsu Province and multiple universities",
+    "schoolPoint2": "Screening coverage of over 200,000 individuals",
+    "schoolPoint3": "SEARCH cohort: initial survey of ~20,000 children and adolescents"
+  },
+  "contact": {
+    "heading": "Contact",
+    "piName": "Xizhe Zhang",
+    "piRole": "Southeast University · Principal Investigator",
+    "funding": "This research was supported by the National Natural Science Foundation of China (Grant No. 62176129)",
+    "copyright": "2025 NSFC 62176129 Project Team",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimer": "The content on this website is for scientific communication and research introduction only, and does not constitute medical diagnosis or treatment advice. Any intervention should be conducted under the guidance of professional medical institutions and qualified clinicians, with individualized recommendations based on comprehensive clinical evaluation."
+  },
+  "researchDetail": {
+    "backToHome": "Back to Home",
+    "relatedPapers": "Related Publications",
+    "viewPaper": "View paper details",
+    "subtyping": {
+      "title": "Depression Precision Subtyping",
+      "subtitle": "From 'Same Diagnosis' to 'Actionable Subtype-Based Decisions'",
+      "intro": "Depression is typically diagnosed using symptom scales, yet it exhibits marked heterogeneity in neural mechanisms and intervention responses. This project classifies patients into distinct subtypes based on brain imaging features and proposes differentiated stimulation target strategies.",
+      "section1Title": "Why Is Subtyping Needed?",
+      "section1Content": "Traditional diagnosis groups all patients meeting symptom criteria into a single category, but brain dysfunction patterns vary vastly under the 'same diagnosis.' This means uniform treatment parameters and targets may not achieve optimal outcomes for all patients. Precision subtyping aims to first determine which neurological phenotype a patient belongs to before establishing target and parameter selection on phenotypic evidence.",
+      "section2Title": "How Is Subtyping Achieved?",
+      "section2Content": "The project constructed two interpretable depression imaging subtypes based on resting-state fMRI ALFF patterns. The modeling phase included 238 depression patients and 66 healthy controls. In clinical application, 72 adolescent depression patients underwent subtype-based individualized rTMS target selection, using dorsomedial prefrontal cortex (dmPFC) and occipital cortex as differentiated stimulation targets.",
+      "section3Title": "Key Findings",
+      "section3Content": "The typical subtype achieved a 90% treatment response rate, with the atypical subtype at 70.73%. Subtype-specific ALFF abnormality patterns were observed to 'normalize' after treatment. This demonstrates that imaging subtyping is not only statistically separable but can directly guide target selection and improve outcomes, providing strong evidence for 'subtype-guided intervention.'",
+      "keyFinding": "The significance lies not only in improving overall efficacy, but in providing clinicians with an interpretable decision framework.",
+      "stat": "90%",
+      "statLabel": "Typical Subtype Treatment Response Rate"
+    },
+    "networkControl": {
+      "title": "Brain Network Control Theory",
+      "subtitle": "Proposing 'Control Hubs' for Interpretable Target Selection",
+      "intro": "Brain stimulation is essentially applying external perturbation to brain network dynamics. This project proposes the 'control hub' concept from network dynamics and controllability perspectives, elevating target selection from empirical rules to a testable theoretical framework.",
+      "section1Title": "What Are Control Hubs?",
+      "section1Content": "Under the structural controllability framework, control hubs are key nodes that are necessary in all minimum driver node sets and make stable contributions to system controllability. Unlike traditional approaches based on local connectivity strength or empirical localization, control hubs emphasize 'the ability to manipulate overall network states.'",
+      "section2Title": "Cross-Domain Validation",
+      "section2Content": "The method extends beyond brain network target identification to drug target discovery: identifying 65 druggable control hubs in COVID-19-related protein interaction networks, and proposing 'cancer-keeper genes' for identifying key genes maintaining cancer cell abnormal homeostasis. In psychopathological networks, a module control framework was proposed, identifying 'non-emotional modules' (sleep, stress) as having primary control roles.",
+      "section3Title": "Dynamic Network Control",
+      "section3Content": "For scenarios where network structure changes over time, the project proposed adaptive control strategies for dynamic networks, providing algorithmic solutions for frequent driver node switching, laying methodological foundations for feasible control in real-world complex systems.",
+      "keyFinding": "Transforming 'controllability' from abstract theory into an interpretable key node localization tool, demonstrating the universal value of network control in biomedical systems.",
+      "stat": "65",
+      "statLabel": "Druggable control hubs (COVID-19 study)"
+    },
+    "biomarkers": {
+      "title": "Digital Biomarkers",
+      "subtitle": "Rapid Assessment and Dynamic Monitoring via Multi-Modal Objective Signals",
+      "intro": "Clinical scales play an important role in psychiatric assessment but face limitations in high-frequency tracking, objective quantification, and large-scale application. This project built a multi-modal digital phenotyping system, transforming 'scalably collectible daily behavioral signals' into 'quantifiable indicators for clinical and public health management.'",
+      "section1Title": "Speech Digital Phenotyping",
+      "section1Content": "A speech depression detection model based on learnable filter banks and attention mechanisms achieved F1=87.3% on Chinese speech data, identifying the 600-700 Hz frequency band as a potential acoustic 'biomarker.' In longitudinal monitoring, 4 of 30 HAMD-related acoustic features significantly decreased after cognitive behavioral therapy, supporting speech for treatment follow-up and objective monitoring.",
+      "section2Title": "Behavioral and Physiological Indicators",
+      "section2Content": "Response time sequences were introduced into psychological assessment, with a dataset of 24,292 university students published. Response time was validated for insomnia prediction (AUROC=0.824). 'Digital dietary behavior' was also proposed as an objective depression marker: moderate-to-severe depression showed negative correlation with regular meal patterns (OR=0.467).",
+      "section3Title": "Large-Scale Cohort Foundation",
+      "section3Content": "The SEARCH mixed longitudinal cohort study was established across 11 schools in Jiangsu, with the first round surveying nearly 20,000 children and adolescents. Multi-dimensional collection of psychological scales, behavioral features, and objective process data provides a large-sample foundation for early identification and trajectory modeling of youth mental health.",
+      "keyFinding": "F1 is a comprehensive metric considering both precision and recall. The core value lies in providing technical foundations for continuous follow-up and early warning.",
+      "stat": "87.3%",
+      "statLabel": "Speech Depression Detection F1 Score"
+    },
+    "translation": {
+      "title": "Clinical Translation",
+      "subtitle": "From Algorithms to Systems: Closed-Loop Implementation",
+      "intro": "The project established a personalized precision treatment system at Nanjing Brain Hospital and a mental health screening system in school settings, ensuring research outcomes move beyond model metrics to form sustainable intervention and evaluation closed loops in real-world scenarios.",
+      "section1Title": "Clinical Precision Treatment System",
+      "section1Content": "Following a pipeline of 'standardized collection → automated analysis → subtyping decisions → target recommendation → precision treatment → follow-up reassessment': the front end handles multi-source data collection and quality control, the middle platform performs automated imaging preprocessing and individual subtyping, and clinical implementation supports individualized target selection. This transforms experience-dependent imaging interpretation into reproducible, auditable standard workflows, serving over 3,000 patients.",
+      "section2Title": "School Mental Health Services",
+      "section2Content": "Integrating audio-visual objective signals beyond traditional questionnaire assessment for screening and risk stratification, embedding screening into school organizational workflows to form 'screening → stratification → referral → follow-up' closed-loop management. Objective indicators improve reproducibility and interpretability, significantly expanding coverage to over 200,000 individuals.",
+      "section3Title": "Intervention Evaluation and RCTs",
+      "section3Content": "Completed biofeedback randomized controlled trials (52 per group), observing significant improvements in depression, anxiety, insomnia, and stress. Conducted university student anxiety GCBT randomized controlled trials showing long-term benefits. Built efficacy prediction models using speech energy parameters and MFCC features, achieving unified 'subjective scales → objective indicators → efficacy prediction.'",
+      "keyFinding": "The translation pathway emphasizes 'usable toolchains,' 'replicable workflows,' and 'trackable outcomes.'",
+      "stat": "3,000+",
+      "statLabel": "Cumulative patients served"
+    }
+  },
+  "publications": {
+    "heading": "Publications",
+    "introDesc": "This page presents representative publications from the project funding period, spanning brain network control theory, depression imaging subtype identification, multi-modal digital phenotyping, and clinical translation systems. Filter by research direction or publication year for efficient navigation.",
+    "total": "{count} papers in total",
+    "all": "All",
+    "networkControl": "Network Control",
+    "precisionMedicine": "Precision Medicine",
+    "digitalPhenotype": "Digital Phenotyping",
+    "clinical": "Clinical Translation",
+    "representative": "Representative Paper",
+    "search": "Search paper titles...",
+    "noResults": "No matching publications found"
+  },
+  "patentsPage": {
+    "heading": "Granted Patents",
+    "introDesc": "This page showcases the project's key technical achievements and engineering implementation pathways. Patent outputs reflect critical innovations from theory and algorithms to deployable systems, covering MRI multi-center correction, non-invasive neuromodulation target selection, and speech-based depression assessment, providing an intellectual property foundation for technology transfer and industry collaboration.",
+    "total": "{count} patents in total",
+    "invention": "Invention Patent",
+    "us": "US Patent",
+    "cn": "Chinese Patent"
+  },
+  "publicationDetail": {
+    "backToList": "Back to Publications",
+    "authorsLabel": "Authors",
+    "abstractLabel": "Abstract",
+    "viewPdf": "View PDF",
+    "downloadPdf": "Download PDF",
+    "representative": "Representative",
+    "relatedPubs": "Related Publications",
+    "pub1": {
+      "abstract": "Real-world network systems are inherently dynamic, with network topologies undergoing continuous changes over time. Previous works often focus on static networks or rely on complete prior knowledge of evolving topologies, whereas real-world networks typically undergo stochastic structural changes that are difficult to predict in advance. To address this challenge, we define the adaptive control problem and propose an adaptive control algorithm to reduce the extra control cost caused by driver node switching. We introduce a node-level adaptive control metric to capture both the stability and consistency of each node across historical topologies. By integrating this metric with a partial matching repair strategy, our algorithm adjusts the minimum driver node set in real time at each snapshot, while minimizing unnecessary reconfigurations between consecutive time steps. Extensive experiments on synthetic and real-world dynamic networks demonstrate that the proposed adaptive control algorithm significantly outperforms existing algorithms, reducing the switching cost by an average of 22% in synthetic networks and 19% in real-world networks, without requiring foreknowledge of the future evolution of the network."
+    },
+    "pub2": {
+      "abstract": "Mental disorders constitute an urgent and escalating global public-health concern. Recent advances in artificial intelligence (AI) have begun to transform both psychiatric theory and clinical practice, generating unprecedented opportunities for precision diagnosis, mechanistic insight and personalized intervention. Here, we present a narrative review that examines the current landscape of AI-enhanced psychiatry, evaluates AI's capacity to refine diagnostic nosology, elucidate etiological mechanisms, formalize diagnostic criteria and optimize treatment strategies, and delineates the concomitant ethical, legal and social challenges. In parallel, the review interrogates the implications of this technological inflection point for medical education, arguing that contemporary training programs must evolve through systematic curricular re-design, the incorporation of computational and data science competencies, and the reinforcement of bioethical literacy."
+    },
+    "pub3": {
+      "abstract": "Intermediate phenotypes, such as characteristic neuroimaging patterns, offer unique insights into the genetic and stress-related underpinnings of neuropsychiatric disorders like depression. This study aimed to identify neuroimaging intermediate phenotypes associated with depression, bridging etiological factors to behavioral manifestations and connecting insights from animal models to diverse clinical populations. We analyzed datasets from both rodents and humans, including a genetic model (P11 knockout) and an environmental stress model, while the human data comprised 748 participants from three cohorts. The genetic and environmental stress models exhibited distinct neuroimaging patterns in subcortical and sensorimotor regions. Consistent patterns emerged in two neuroimaging subtypes identified across three independent depressed cohorts. Notably, these distinct subcortical-sensorimotor neuroimaging patterns predicted anhedonia, a core symptom of depression, in both rodent models and depressed subtypes. This cross-species validation suggests that these neuroimaging patterns may serve as robust intermediate phenotypes, linking etiology to anhedonia and facilitating the translation of findings from animal models to humans."
+    },
+    "pub4": {
+      "abstract": "Anxiety disorders are highly prevalent worldwide and have significant comorbidities including depression and substance use disorders. This study tested the efficacy of group cognitive-behavioral therapy (GCBT) through a randomized controlled trial. College students with Generalized Anxiety Disorder Scale 7 scores \u2265 5 were randomized into GCBT (n=31) and wait-list control (n=28) groups, with symptom severity assessed at baseline and follow-up in weeks 4, 8, and 28. Continuous heart rate and step counts were captured by wearable sensors along with ecological momentary assessments. Compared to the control group, the GCBT group showed significant improvements in anxiety symptoms at week 28, with significantly increased step counts, faster heart rates, more stable moods, and better morning energy. Preliminary findings suggest that GCBT is associated with long-term improvements in anxiety symptoms in college students, and that physiological markers may be useful in assessing treatment response."
+    },
+    "pub5": {
+      "abstract": "This study developed a neuroimaging-based precision medicine framework for depression. The study was conducted in two stages at two sites: development of neuroimaging-based subtyping and precise rTMS strategy at Center 1, and clinical application at Center 2. Depression subtypes and subtype-specific rTMS targets were identified based on amplitude of low frequency fluctuation (ALFF) in 238 major depressive disorder patients and 66 healthy controls. Two neuroimaging subtypes were identified based on distinct frontal-posterior functional imbalance patterns. The dorsomedial prefrontal cortex was identified as the rTMS target for archetypal depression, and the occipital cortex for atypical depression. Following precise rTMS in 72 hospitalized depressed youths, ALFF alterations were normalized, with symptom response of 90.00% in archetypal depression and 70.73% in atypical depression."
+    },
+    "pub6": {
+      "abstract": "The prefrontal cortex (PFC) is a critical non-invasive brain stimulation (NIBS) target for treating depression. This study systematically reviewed the effectiveness of NIBS on depressive symptoms targeting PFC in fMRI studies through a combined activation likelihood estimation meta-analysis and meta-regression. Fourteen studies with a total sample size of 584 were included. After NIBS, four clusters in left cerebrum revealed significant activation while two clusters in right cerebrum revealed significant deactivation. The pooled effect size was very large (d = 1.82). NIBS targeting PFC balanced three core depressive-related neurocognitive networks (the salience network, the default mode network, and the central executive network); the striatum played a central role and might serve as a candidate treatment biomarker. Gender difference, treatment-resistant condition, comorbidity, treatment duration, and localization all contributed to moderating depressive symptoms during NIBS."
+    },
+    "pub7": {
+      "abstract": "Biofeedback therapy is mainly based on the analysis of physiological features to improve an individual's affective state. This study evaluated biofeedback efficacy using subjective symptom scales, objective speech, and physiological features in college students. A 4-week randomized controlled parallel biofeedback therapy study was conducted with college students with symptoms of anxiety or depression. Through biofeedback therapy, improvements in depression (p=0.001), anxiety (p=0.001), insomnia (p=0.013), and stress (p=0.004) severity were observed (n=52). The energy parameters and Mel-Frequency Cepstral Coefficients (MFCC) of speech features can predict whether biofeedback intervention effectively improves anxiety and insomnia symptoms. The study identified speech features as more accurate and objective indicators for tracking biofeedback therapy response and predicting efficacy."
+    },
+    "pub8": {
+      "abstract": "Depression and anxiety are common and disabling mental health problems in children and young adults. This study examined the predictive ability of heart rate variability (HRV) from consumer-grade wearable devices to detect group cognitive behavioral therapy (GCBT) effectiveness. In a study of 33 college students, participants were randomly assigned to GCBT or wait-list control groups wearing smart wearable devices. The study showed that GCBT participants had significant improvement in depression and anxiety symptoms after four weeks. Higher HRV was associated with greater symptom improvement following GCBT, and HRV played a noteworthy role in determining GCBT effectiveness for anxiety (P=0.002) and depression (P=0.020). HRV may be a useful predictor of GCBT treatment efficacy, helping to personalize treatment and improve outcomes."
+    },
+    "pub9": {
+      "abstract": "Depression is often accompanied by changes in behavior, including dietary behaviors. This study characterized digital dietary behaviors in depression using electronic device-based behavioral monitoring. A total of 3310 students (2222 healthy controls, 916 with mild depression, and 172 with moderate-severe depression) were studied via electronic records over a 1-month period. Individuals with moderate-severe depression had more irregular eating patterns, more fluctuated feeding times, and less diverse food choices. Moderate-severe depression was negatively associated with the daily 3 regular meals pattern (OR 0.467). Changes in digital dietary behaviors were able to detect mild and moderate-severe depression, with better accuracy for moderate-severe depression (accuracy=0.67). This is the first study to develop a profile of changes in digital dietary behaviors using real-world behavioral monitoring."
+    },
+    "pub10": {
+      "abstract": "Major Depressive Disorder (MDD) is a significant neurological condition associated with aberrations in brain functional networks. This research investigates the integration of network controllability and machine learning to pinpoint essential biomarkers for MDD using functional magnetic resonance imaging (fMRI) data. By employing network controllability methods, we identify crucial brain regions instrumental in facilitating transitions between brain states. These regions demonstrate the brain's ability to navigate various functional states, emphasizing the utility of network controllability metrics as potential biomarkers. Furthermore, these metrics elucidate the complex dynamics of MDD and support the development of precision medicine strategies that incorporate machine learning to improve diagnostics and treatment efficacy."
+    },
+    "pub11": {
+      "abstract": "The network approach to characterizing psychopathology departs from traditional latent categorical and dimensional approaches. We present a novel systematizing concept, module control, to analyze the control principle of the symptom network at a module level. We introduce Module Control Network (MCN) to identify key modules that regulate the network's behavior. By applying our approach to a multivariate psychological dataset, we discover that non-emotional modules, such as sleep-related and stress-related modules, are the primary controlling modules in the symptom network. Our findings indicate that module control can expose central symptom clusters governing psychopathology networks, offering novel insights into the underlying mechanisms of mental disorders and individualized approaches to psychological interventions."
+    },
+    "pub12": {
+      "abstract": "Utilizing computer-based scales for cognitive and psychological evaluations allows for the collection of objective data, such as response time. This cross-sectional study investigates the significance of response time data in cognitive and psychological measures, with a specific focus on evaluating sleep quality through the Insomnia Severity Index (ISI) scale. A mobile application collected response time data from 2729 participants. The result revealed a statistically significant difference (p < 0.01) in total response time between participants with or without insomnia symptoms. The machine learning model demonstrated a high predictive AUROC of 0.824 in predicting insomnia symptoms based on response time data, highlighting the potential utility of response time data for evaluating cognitive and psychological measures."
+    },
+    "pub13": {
+      "abstract": "Depression, a common mental disorder, significantly influences individuals and imposes considerable societal impacts. We present the novel Attention-Based Acoustic Feature Fusion Network (ABAFnet) for depression detection. ABAFnet combines four different acoustic features into a comprehensive deep learning model, effectively integrating and blending multi-tiered features with a novel weight adjustment module for late fusion. The effectiveness of our approach is confirmed via extensive validation on two clinical speech databases, CNRAC and CS-NRAC, outperforming previous methods in depression detection and subtype classification. Further analysis confirms the key role of each feature and highlights the importance of MFCC-related features in speech-based depression detection."
+    },
+    "pub14": {
+      "abstract": "The growing prevalence of mental health issues underscores the need for innovative screening methods. We compiled a novel dataset derived from an expansive screening initiative at Xinxiang Medical University, yielding responses from 24,292 students to four well-established psychological scales (PHQ-9, GAD-7, ISI, and PSS). A distinctive feature of this dataset is the inclusion of response time data, which captures the temporal dynamics of participants' interactions with the scales, offering valuable insights into response behaviour. The release of this dataset offers a substantial opportunity for researchers in psychology and public health to explore new insights into mental health, scale reliability, and the dynamics of psychological assessment."
+    },
+    "pub15": {
+      "abstract": "Finding cancer-driver genes has been a central theme of cancer research. We took a different perspective: focusing on cancerous cells and genes that maintained abnormal cell growth, which we named cancer-keeper genes (CKGs). We introduced control-hub genes and developed an efficient algorithm by extending network controllability theory. Control hubs are essential for maintaining cancerous states and thus can be taken as CKGs. We applied our CKG-based approach to bladder cancer (BLCA), where all genes on the cell-cycle and p53 pathways were identified as CKGs. We discovered that sensitive CKGs were particularly suitable therapeutic targets. Experiments on cell lines and a mouse model confirmed that six sensitive CKGs effectively suppressed cancer cell growth, demonstrating the immense therapeutic potential of CKGs."
+    },
+    "pub16": {
+      "abstract": "Depression, as a global mental health problem, is lacking effective screening methods for early detection. This paper presents a joint learning framework with attention-guided learnable time-domain filterbanks for depression classification (DALF), collaborating with the depression filterbanks features learning (DFBL) module and multi-scale spectral attention learning (MSSA) module. DALF achieves F1 scores of 87.3% and 81.7% on the NRAC dataset and outperforms state-of-the-art methods on the DAIC-woz dataset. The most important frequency range identified is 600\u2013700Hz, corresponding to specific Mandarin vowels, which can be considered an effective biomarker for speech depression detection."
+    },
+    "pub17": {
+      "abstract": "Network medicine has been actively pursued for repurposing drugs for Covid-19. We extended structural controllability theory to total controllability and introduced a new concept of control hubs. We developed an efficient algorithm for finding all control hubs and applied it to the largest homogenous human protein-protein interaction network. The final 65 druggable control hubs are enriched with functions of cell proliferation, cellular response to stress, regulation of apoptotic signaling, and response to nutrient levels, revealing critical pathways induced by SARS-CoV-2. These druggable control hubs gave rise to drugs in four major categories: antiviral and anti-inflammatory agents, drugs on central nerve systems, and dietary supplements and hormones. A remarkable example is Fostamatinib, originally approved for chronic immune thrombocytopenia but shown to lower mortality and reduce disease severity of hospitalized Covid-19 patients."
+    },
+    "pub18": {
+      "abstract": "Clear prognostic indicators of cognitive behavioural therapy (CBT) are lacking for depression. This study aims to identify a biomarker that predicts CBT outcomes. We developed a machine learning algorithm to predict post-CBT Hamilton Depression Rating Scale (HAMD) using pre-CBT regional homogeneity (ReHo). Twenty-five patients completed CBT and had increased ReHo in the dorsolateral prefrontal cortex (DLPFC) following CBT. Pre-CBT ReHo in left DLPFC was shown to be a predictor of post-HAMD scores. We identified left DLPFC ReHo as a neuroimaging biomarker for therapeutic effects of CBT in depression."
+    },
+    "pub19": {
+      "abstract": "Schools play a crucial role in providing mental health services to children and adolescents. We propose a large, mixed longitudinal cohort study, 'School-based Evaluation Advancing Response for Child Health (SEARCH)', aimed at addressing the increasing demand for mental healthcare services. SEARCH uses a digital platform and school-based protocol for comprehensive assessment of mental well-being of Chinese students in grades 4\u201312, incorporating individual, caregiver and teacher input, including capture of facial and acoustic features and response times. We completed first wave data collection from nearly 20,000 participants at 11 schools in 3 cities in Jiangsu province. SEARCH will provide important insight into the developmental trajectory of mental well-being in Chinese children and adolescents."
+    },
+    "pub20": {
+      "abstract": "Depression is a widespread mental disorder, but its assessment is often subjective. This study aimed to identify voice acoustic features that can effectively predict depression severity and investigate correlations with treatment options. We utilized voice acoustic features to train a prediction model based on artificial neural network. The model accurately predicted depression severity with an absolute mean error of 3.137 and a correlation coefficient of 0.684. Furthermore, four out of 30 features significantly decreased after Internet-based cognitive-behavioral therapy, indicating their potential correlation with treatment and depression improvement. Voice acoustic features can effectively and rapidly predict depression severity, providing a low-cost and efficient method for large-scale screening."
+    },
+    "pub21": {
+      "abstract": "This correspondence responds to comments by Winter and Hahn regarding our work on identifying subtypes of major psychiatric disorders based on neurobiological features using machine learning. We clarify key methodological distinctions between clustering and classification, address misconceptions about generalizability and overfitting in unsupervised subtyping, and discuss cluster validity, stability, and robustness. Our primary objective was to identify subtypes based on brain neuroimaging patterns (fMRI) to better understand functional brain patterns and improve treatment. Validation analyses showed significant alignment between the subtype results and biological features from four independent data sources, supporting the significance and robustness of the identified subtypes."
+    }
+  }
+}

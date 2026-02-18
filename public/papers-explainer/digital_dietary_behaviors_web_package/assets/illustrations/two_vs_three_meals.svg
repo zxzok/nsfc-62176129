@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260" role="img" aria-labelledby="title desc">
+  <title id="title">Two Meals vs Three Meals Illustration</title>
+  <desc id="desc">A simple comparison showing three-meal pattern versus lunch-dinner pattern.</desc>
+  <rect x="0" y="0" width="800" height="260" fill="white"/>
+  <g font-family="Arial, sans-serif" fill="#111">
+    <text x="40" y="48" font-size="26">一天吃几顿：三餐 vs 午+晚（概念图）</text>
+    <text x="40" y="80" font-size="16">用于解释“全天饮食模式”的含义，不代表个人建议</text>
+  </g>
+  <g transform="translate(90,120)">
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="18" fill="#111">三餐（Bre-Lun-Din）</text>
+    <circle cx="70" cy="50" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <circle cx="150" cy="50" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <circle cx="230" cy="50" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <text x="56" y="56" font-family="Arial, sans-serif" font-size="14" fill="#111">早</text>
+    <text x="136" y="56" font-family="Arial, sans-serif" font-size="14" fill="#111">午</text>
+    <text x="216" y="56" font-family="Arial, sans-serif" font-size="14" fill="#111">晚</text>
+  </g>
+  <g transform="translate(430,120)">
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="18" fill="#111">午+晚（Lun-Din）</text>
+    <circle cx="110" cy="50" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <circle cx="200" cy="50" r="28" fill="none" stroke="#111" stroke-width="3"/>
+    <text x="96" y="56" font-family="Arial, sans-serif" font-size="14" fill="#111">午</text>
+    <text x="186" y="56" font-family="Arial, sans-serif" font-size="14" fill="#111">晚</text>
+    <line x1="40" y1="50" x2="70" y2="50" stroke="#999" stroke-width="3" stroke-dasharray="6,6"/>
+    <text x="0" y="56" font-family="Arial, sans-serif" font-size="14" fill="#999">早餐缺席</text>
+  </g>
+</svg>

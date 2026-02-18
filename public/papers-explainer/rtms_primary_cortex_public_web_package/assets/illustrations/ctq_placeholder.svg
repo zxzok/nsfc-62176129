@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="CTQ维度对比占位示意图">
+  <rect width="1200" height="675" fill="#f7f7f7"/>
+  <text x="60" y="90" font-size="44" font-family="Arial, sans-serif" fill="#111">CTQ 五维度与总分（占位示意）</text>
+  <text x="60" y="140" font-size="22" font-family="Arial, sans-serif" fill="#333">数值来自表1（第5页）。正式版本建议用柱状图/雷达图呈现。</text>
+  <rect x="60" y="200" width="1080" height="400" fill="#fff" stroke="#ddd"/>
+  <text x="90" y="260" font-size="26" font-family="Arial, sans-serif" fill="#111">提示：网页已内置可交互柱状图（基于表1数据）。</text>
+  <text x="90" y="310" font-size="22" font-family="Arial, sans-serif" fill="#444">如果你想用设计软件重绘：字段=维度名、HC均值±SD、ELS均值±SD、P值。</text>
+  <text x="60" y="645" font-size="18" font-family="Arial, sans-serif" fill="#555">占位图：发布前可替换为正式视觉稿。</text>
+</svg>

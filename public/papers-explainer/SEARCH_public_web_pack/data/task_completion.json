@@ -1,0 +1,54 @@
+{
+  "eligible_students_n": 11427,
+  "tasks": [
+    {
+      "task_id": "standardised_text",
+      "task_label_cn": "统一文本朗读（The North Wind and the Sun）",
+      "completed_records_n": 8269,
+      "completion_rate": 0.7236,
+      "dropout_rate_range_reported": "27%–28%",
+      "dropout_reasons_reported": [
+        "部分学生未在应用中保存",
+        "宜兴与射阳点位COVID-19大规模暴发"
+      ],
+      "source_ref": "RESULTS, p.5; Table 1, p.5"
+    },
+    {
+      "task_id": "open_ended_q1",
+      "task_label_cn": "开放式问题1",
+      "completed_records_n": 8201,
+      "completion_rate": 0.7177,
+      "dropout_rate_range_reported": "27%–28%",
+      "dropout_reasons_reported": [
+        "部分学生未在应用中保存",
+        "宜兴与射阳点位COVID-19大规模暴发"
+      ],
+      "source_ref": "RESULTS, p.5; Table 1, p.5"
+    },
+    {
+      "task_id": "open_ended_q2",
+      "task_label_cn": "开放式问题2",
+      "completed_records_n": 8200,
+      "completion_rate": 0.7176,
+      "dropout_rate_range_reported": "27%–28%",
+      "dropout_reasons_reported": [
+        "部分学生未在应用中保存",
+        "宜兴与射阳点位COVID-19大规模暴发"
+      ],
+      "source_ref": "RESULTS, p.5; Table 1, p.5"
+    },
+    {
+      "task_id": "open_ended_q3",
+      "task_label_cn": "开放式问题3",
+      "completed_records_n": 8253,
+      "completion_rate": 0.7222,
+      "dropout_rate_range_reported": "27%–28%",
+      "dropout_reasons_reported": [
+        "部分学生未在应用中保存",
+        "宜兴与射阳点位COVID-19大规模暴发"
+      ],
+      "source_ref": "RESULTS, p.5; Table 1, p.5"
+    }
+  ],
+  "missing_value_policy": "The paper does not report completion rates by school/grade; do not offer those filters."
+}

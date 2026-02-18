@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>青春期海马体发育异常与早发精神障碍：跨物种MRI与枕叶rTMS研究解读</title>
+  <meta name="description" content="一项跨物种纵向MRI研究在MAM大鼠中发现：纹状体从童年起持续变小，海马体从青春期开始变小；青春期枕叶rTMS可提升海马体体积。青少年抑郁/双相患者治疗后双侧海马体增加，并与抑郁症状改善相关。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <header class="hero">
+    <div class="container">
+      <h1 id="top">青春期的海马体发育“掉队”，能被拉回吗？</h1>
+      <p class="subtitle">跨物种研究提示：枕叶rTMS与海马体体积增加相关</p>
+      <p class="meta">数据与引用来自论文：Yang 等，《Neuroscience Bulletin》（证据锚点见页面内引用）。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="quick">
+      <h2>30秒读懂</h2>
+      <p>本页为离线原型演示；正式上线建议由后端/构建工具渲染 Markdown 与引用弹窗。</p>
+      <div class="callout" id="quickRead"></div>
+    </section>
+
+    <section class="card" id="sections">
+      <h2>正文段落（由 content_bundle.json 驱动）</h2>
+      <div id="sectionList"></div>
+    </section>
+
+    <section class="card" id="figures">
+      <h2>图文（含论文原图与可重绘模板）</h2>
+      <div id="figureGrid" class="grid"></div>
+    </section>
+
+    <section class="card" id="interactives">
+      <h2>交互模块（可落地示例）</h2>
+
+      <div class="module" id="modDev">
+        <h3>模块1：发育时间轴探索器</h3>
+        <p class="guide">拖动阶段滑杆并切换脑区，观察“差异从什么时候开始显著”。</p>
+        <div class="controls">
+          <label>阶段：
+            <input id="stageSlider" type="range" min="0" max="2" step="1" value="1" />
+          </label>
+          <span id="stageLabel" class="pill"></span>
+          <label>脑区：
+            <select id="regionSelect">
+              <option value="hippocampus">海马体</option>
+              <option value="striatum">纹状体</option>
+            </select>
+          </label>
+        </div>
+        <div class="result" id="devResult"></div>
+        <p class="risk">风险提示：呈现的是组间差异与显著性阈值，不代表个体诊断或个人风险。</p>
+      </div>
+
+      <div class="module" id="modInter">
+        <h3>模块2：干预效果对比</h3>
+        <p class="guide">切换对象（大鼠/人）与脑区，查看rTMS关联到的结构变化方向与显著性阈值。</p>
+        <div class="controls">
+          <label>对象：
+            <select id="speciesSelect">
+              <option value="rat">大鼠（MAM模型）</option>
+              <option value="human">青少年患者</option>
+            </select>
+          </label>
+          <label>脑区：
+            <select id="interRegionSelect"></select>
+          </label>
+        </div>
+        <div class="result" id="interResult"></div>
+        <p class="risk">风险提示：临床为单组前后对比，缺少健康/假刺激对照，不能据此得出严格因果结论。</p>
+      </div>
+
+      <div class="module" id="modSym">
+        <h3>模块3：症状量表变化面板</h3>
+        <p class="guide">选择量表，查看治疗前后均值±标准差与变化幅度。</p>
+        <div class="controls">
+          <label>量表：
+            <select id="scaleSelect">
+              <option value="HAMD17">HAMD-17（抑郁）</option>
+              <option value="HAMA">HAMA（焦虑）</option>
+              <option value="YMRS">YMRS（躁狂）</option>
+              <option value="BPRS">BPRS（精神症状）</option>
+            </select>
+          </label>
+          <label>
+            <input type="checkbox" id="showSd" checked />
+            显示标准差
+          </label>
+        </div>
+        <div class="bars" id="symBars"></div>
+        <p class="risk">风险提示：量表变化为组平均结果，不能替代个体化评估；治疗决策应由专业医生做出。</p>
+      </div>
+
+      <div class="module" id="modProto">
+        <h3>模块4：rTMS方案拆解器</h3>
+        <p class="guide">同为10 Hz，动物与临床的节律、脉冲数与疗程并不相同。</p>
+        <div class="controls">
+          <label>选择方案：
+            <select id="protoSelect">
+              <option value="human_occipital_10hz_20sessions">临床：青少年 20次</option>
+              <option value="rat_occipital_10hz">动物：大鼠 2周</option>
+            </select>
+          </label>
+        </div>
+        <div class="result" id="protoResult"></div>
+        <p class="risk">风险提示：仅解释论文所用方案，不构成任何个人化治疗建议。</p>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <p>免责声明：本页面为科研科普解读，不构成医疗建议。需要帮助请联系专业医疗机构。</p>
+      <p><a href="#top">返回顶部</a></p>
+    </footer>
+  </main>
+
+  <!-- Embedded JSON data -->
+  <script id="bundleData" type="application/json">{
+  "slug": "aberrant-hippocampal-development-rtms-early-onset",
+  "seo_title": "青春期海马体发育异常与早发精神障碍：跨物种MRI与枕叶rTMS研究解读",
+  "seo_description": "一项跨物种纵向MRI研究在MAM大鼠中发现：纹状体从童年起持续变小，海马体从青春期开始变小；青春期枕叶rTMS可提升海马体体积。青少年抑郁/双相患者治疗后双侧海马体增加，并与抑郁症状改善相关。",
+  "keywords": [
+    "海马体",
+    "青春期",
+    "早发精神障碍",
+    "抑郁",
+    "双相障碍",
+    "rTMS",
+    "结构MRI",
+    "神经发育",
+    "MAM模型",
+    "枕叶刺激",
+    "跨物种研究",
+    "hippocampus",
+    "rTMS",
+    "structural MRI"
+  ],
+  "source_paper": {
+    "title": "Aberrant Hippocampal Development in Early-onset Mental Disorders and Promising Interventions: Evidence from a Translational Study",
+    "journal": "Neuroscience Bulletin",
+    "volume_issue_pages": "40(6):683–694",
+    "year_issue_month": "June 2024",
+    "published_online": "2023-12-23",
+    "doi": "10.1007/s12264-023-01162-2",
+    "authors": [
+      "Jingyu Yang",
+      "Huiling Guo",
+      "Aoling Cai",
+      "Junjie Zheng",
+      "Juan Liu",
+      "Yao Xiao",
+      "Sihua Ren",
+      "Dandan Sun",
+      "Jia Duan",
+      "Tongtong Zhao",
+      "Jingwei Tang",
+      "Xizhe Zhang",
+      "Rongxin Zhu",
+      "Jie Wang",
+      "Fei Wang"
+    ],
+    "license": "CC BY 4.0 (paper statement on p. 10)"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "heading": "青春期的海马体发育“掉队”，能被拉回吗？",
+      "body_markdown": "跨物种研究提示：枕叶rTMS与海马体体积增加相关。（证据：第1–2页 摘要；第7页 图3B；第9页 图4B）",
+      "citations": [
+        "p1_abstract",
+        "p7_fig3",
+        "p9_fig4"
+      ]
+    },
+    {
+      "id": "quick_read",
+      "heading": "30秒读懂",
+      "body_markdown": "问题—方法—发现—意义的超短摘要，适合快速了解全貌。",
+      "citations": [
+        "p1_abstract",
+        "p3_fig1",
+        "p7_fig2",
+        "p7_fig3",
+        "p9_fig4",
+        "p8_table2"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "多数精神障碍在青少年到青年早期首发，但缺少客观标志物与干预窗口线索；结构MRI与动物模型可帮助把“发育轨迹”拆解成时间轴。（证据：第2页 Introduction）",
+      "citations": [
+        "p2_intro"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的",
+      "body_markdown": "使用MAM大鼠纵向结构MRI（童年/青春期/成年）找出异常脑区与窗口；在青春期以枕叶为皮层靶点施加rTMS并复查MRI；再在13–18岁早发MDD/BD患者中做MRI前后对比验证。（证据：第3页 图1；第3–6页 方法）",
+      "citations": [
+        "p3_fig1",
+        "p4_animals_mri",
+        "p5_rtms_protocols"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么",
+      "body_markdown": "三条核心发现：1）纹状体从童年起异常；海马体从青春期开始异常。2）大鼠青春期枕叶rTMS提升海马体但不改变纹状体。3）青少年患者rTMS后双侧海马体增加，并与抑郁评分变化相关。（证据：图2–4）",
+      "citations": [
+        "p7_fig2",
+        "p7_fig3",
+        "p9_fig4",
+        "p8_table2"
+      ]
+    },
+    {
+      "id": "use",
+      "heading": "这项研究有什么用",
+      "body_markdown": "证据支持与合理推测分开呈现：目前可支持“海马体—青春期窗口—枕叶rTMS结构效应”的初步链条，但机制与长期效果仍需更严格对照试验。（证据：第8–10页 Discussion/Conclusion；第10页 局限性）",
+      "citations": [
+        "p9_discussion",
+        "p10_limitations"
+      ]
+    },
+    {
+      "id": "limitations",
+      "heading": "局限性与下一步",
+      "body_markdown": "动物麻醉、药物影响、性别效应、小样本、缺乏机制验证、刺激深度限制、缺少健康对照等。（证据：第9–10页 Limitation）",
+      "citations": [
+        "p10_limitations"
+      ]
+    },
+    {
+      "id": "take_home",
+      "heading": "一句话带走",
+      "body_markdown": "青春期海马体可能是早发精神障碍的可干预窗口。（证据：第8–10页 Discussion/Conclusion）",
+      "citations": [
+        "p9_discussion"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "va_fig1",
+      "title": "三段式研究路线：从动物追踪到临床验证",
+      "type": "paper_reuse",
+      "file_path": "assets/images/original_figures/fig1_overview.png",
+      "source_ref": [
+        "p3_fig1"
+      ],
+      "alt_text_zh": "图示分三部分：A 用MAM大鼠做纵向结构MRI，发现纹状体发育延迟早于海马体；B 在青春期对枕叶进行rTMS后，海马体异常轨迹被部分拉回；C 在青少年患者中，20次枕叶rTMS后海马体体积增加。"
+    },
+    {
+      "id": "va_fig2",
+      "title": "MAM大鼠的发育时间轴：纹状体更早异常，海马体从青春期开始异常",
+      "type": "paper_reuse",
+      "file_path": "assets/images/original_figures/fig2_longitudinal.png",
+      "source_ref": [
+        "p7_fig2"
+      ],
+      "alt_text_zh": "纵向MRI结果：与对照相比，MAM组纹状体在童年、青春期、成年均显著更低；海马体在童年无显著差异，但从青春期到成年显著更低。右侧柱状图用显著性标记展示差异随年龄阶段变化。"
+    },
+    {
+      "id": "va_fig3",
+      "title": "青春期枕叶rTMS在大鼠中提升海马体，但未显著改变纹状体",
+      "type": "paper_reuse",
+      "file_path": "assets/images/original_figures/fig3_rtms_rat.png",
+      "source_ref": [
+        "p7_fig3"
+      ],
+      "alt_text_zh": "横断面三组比较：对照假刺激、MAM假刺激、MAM-rTMS。柱状图显示MAM假刺激组海马体与纹状体均更低；rTMS后海马体显著上升并接近对照，而纹状体在rTMS与假刺激之间无显著差异。"
+    },
+    {
+      "id": "va_fig4",
+      "title": "青少年患者rTMS前后：双侧海马体增加，并与抑郁评分变化相关",
+      "type": "paper_reuse",
+      "file_path": "assets/images/original_figures/fig4_patient.png",
+      "source_ref": [
+        "p9_fig4"
+      ],
+      "alt_text_zh": "患者前后配对比较：A 显示治疗后海马体区域的显著变化；B 柱状图显示左右海马体体积均增加；C 散点图显示左海马体体积变化与HAMD-17变化呈负相关，体积增加越多，抑郁评分下降越明显。"
+    },
+    {
+      "id": "va_template_hippo",
+      "title": "海马体在哪里（概念示意）",
+      "type": "template_svg",
+      "file_path": "assets/images/templates/hippocampus_location.svg",
+      "source_ref": [
+        "p9_discussion"
+      ],
+      "alt_text_zh": "概念示意：简化的大脑侧面轮廓中，用粉色区域表示海马体位于大脑深部，并用指引线连接到文字标签，说明其与记忆形成和情绪调节相关。图下方提示此图仅用于科普定位，不用于诊断。"
+    },
+    {
+      "id": "va_template_connection",
+      "title": "为什么刺激枕叶能影响海马体（概念示意）",
+      "type": "template_svg",
+      "file_path": "assets/images/templates/occipital_to_hippocampus.svg",
+      "source_ref": [
+        "p9_discussion"
+      ],
+      "alt_text_zh": "概念示意：在大脑侧面轮廓上标出枕叶皮层与海马体位置，箭头表示二者存在解剖连接。图中强调rTMS主要直接作用皮层，研究因此选择枕叶作为可触达的入口来影响深部海马体。"
+    },
+    {
+      "id": "va_template_protocol",
+      "title": "动物与临床rTMS方案对照（模板）",
+      "type": "template_svg",
+      "file_path": "assets/images/templates/rtms_protocol_compare_template.svg",
+      "source_ref": [
+        "p5_rtms_protocols"
+      ],
+      "alt_text_zh": "对照模板：左栏为大鼠枕叶rTMS参数（10 Hz、6秒开15秒关、每次900脉冲、每天1次、2周）；右栏为青少年方案（10 Hz、100%RMT、4秒开10秒关、每次1200脉冲、每天2次、10天共20次）。"
+    },
+    {
+      "id": "va_template_timeline",
+      "title": "纹状体与海马体的异常出现时点（模板时间轴）",
+      "type": "template_svg",
+      "file_path": "assets/images/templates/development_timeline_template.svg",
+      "source_ref": [
+        "p7_fig2"
+      ],
+      "alt_text_zh": "时间轴模板：三阶段（童年、青春期、成年）。纹状体在三个阶段均标记为下降；海马体在童年标记为差异不显著，在青春期与成年标记为下降。用于帮助公众快速理解“不同脑区异常出现时间不同”。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "im_dev_timeline",
+      "title": "发育时间轴探索器：哪块脑区在哪个阶段开始“掉队”？",
+      "purpose": "用滑杆选择童年/青春期/成年，直观看到纹状体与海马体在MAM模型中的差异出现时点。",
+      "ui_controls": [
+        {
+          "type": "slider",
+          "field": "stage",
+          "label": "发育阶段",
+          "options": [
+            "childhood",
+            "adolescence",
+            "adulthood"
+          ],
+          "default": "adolescence"
+        },
+        {
+          "type": "toggle",
+          "field": "region",
+          "label": "脑区",
+          "options": [
+            "striatum",
+            "hippocampus"
+          ],
+          "default": "hippocampus"
+        }
+      ],
+      "schema": "data/schemas/DevelopmentTrajectoryDataset.schema.json",
+      "sample_data": "data/samples/development_trajectory.sample.json",
+      "source_ref": [
+        "p7_fig2",
+        "p3_fig1"
+      ],
+      "default_view_copy": "先选“海马体”，再把阶段从童年拖到青春期：你会看到差异从“无显著”变为“显著降低”，这就是论文强调的干预窗口线索。",
+      "risk_notice": "提示：本模块呈现的是组间差异与显著性阈值，不代表个体诊断或个人风险。"
+    },
+    {
+      "id": "im_intervention_compare",
+      "title": "干预效果对比：动物与临床的结果对上了吗？",
+      "purpose": "把大鼠与青少年患者的rTMS结构效应放到同一界面：海马体/纹状体分别发生了什么。",
+      "ui_controls": [
+        {
+          "type": "segmented",
+          "field": "species",
+          "label": "研究对象",
+          "options": [
+            "rat",
+            "human"
+          ],
+          "default": "rat"
+        },
+        {
+          "type": "toggle",
+          "field": "region",
+          "label": "脑区",
+          "options": [
+            "hippocampus",
+            "striatum",
+            "left_hippocampus",
+            "right_hippocampus"
+          ],
+          "default": "hippocampus"
+        }
+      ],
+      "schema": "data/schemas/InterventionEffectDataset.schema.json",
+      "sample_data": "data/samples/intervention_effects.sample.json",
+      "source_ref": [
+        "p7_fig3",
+        "p9_fig4"
+      ],
+      "default_view_copy": "默认展示“大鼠-海马体”：rTMS与海马体增加相关；切换到“纹状体”可看到无显著变化。",
+      "risk_notice": "提示：临床部分为单组前后对比，缺少健康/假刺激对照，不能据此得出严格因果结论。"
+    },
+    {
+      "id": "im_symptom_dashboard",
+      "title": "症状量表变化面板：改善幅度有多大？",
+      "purpose": "用条形图查看治疗前后量表均值与标准差，并提示研究设计边界。",
+      "ui_controls": [
+        {
+          "type": "dropdown",
+          "field": "scale_code",
+          "label": "选择量表",
+          "options": [
+            "HAMD17",
+            "HAMA",
+            "YMRS",
+            "BPRS"
+          ],
+          "default": "HAMD17"
+        },
+        {
+          "type": "toggle",
+          "field": "show_sd",
+          "label": "显示标准差",
+          "options": [
+            true,
+            false
+          ],
+          "default": true
+        }
+      ],
+      "schema": "data/schemas/SymptomScaleChangeDataset.schema.json",
+      "sample_data": "data/samples/symptom_scale_change.sample.json",
+      "source_ref": [
+        "p8_table2",
+        "p8_table1"
+      ],
+      "default_view_copy": "先看HAMD-17：均值从19.45降到11.05；再切换到HAMA/BPRS查看一致的改善方向。",
+      "risk_notice": "提示：量表变化是组平均结果，不能替代个体化评估；任何治疗决策应由专业医生做出。"
+    },
+    {
+      "id": "im_protocol_builder",
+      "title": "rTMS方案拆解器：动物与临床参数有什么不同？",
+      "purpose": "把频率、节律、脉冲数、疗程等参数拆开解释，帮助公众理解“同名rTMS并不等于同一剂量”。",
+      "ui_controls": [
+        {
+          "type": "segmented",
+          "field": "protocol_id",
+          "label": "选择方案",
+          "options": [
+            "rat_occipital_10hz",
+            "human_occipital_10hz_20sessions"
+          ],
+          "default": "human_occipital_10hz_20sessions"
+        }
+      ],
+      "schema": "data/schemas/rTMSProtocolDataset.schema.json",
+      "sample_data": "data/samples/rtms_protocols.sample.json",
+      "source_ref": [
+        "p5_rtms_protocols"
+      ],
+      "default_view_copy": "先选临床方案：每天2次、10天共20次；再切换到动物方案对比脉冲数与节律。",
+      "risk_notice": "提示：本模块仅解释论文所用方案，不构成任何个人化治疗方案建议。"
+    }
+  ],
+  "data_files": [
+    "data/tables/table1_demographics.json",
+    "data/tables/table2_symptoms.json",
+    "data/tables/rtms_protocols.json",
+    "data/samples/development_timeline_significance.json",
+    "data/samples/intervention_effects_summary.json"
+  ],
+  "disclaimer": "本页面为科研科普解读，旨在帮助公众理解论文结论，不构成医疗建议或诊断依据。rTMS等治疗须由专业医疗机构在评估适应证/禁忌证后实施；如有情绪或精神健康困扰，请及时寻求专业帮助。（依据：第5页 排除标准；第10页 局限性）",
+  "build_info": {
+    "generated_by": "GPT-5.2 Pro",
+    "generated_at": "2026-02-15T18:06:20"
+  }
+}</script>
+  <script id="citationMap" type="application/json">{
+  "p1_abstract": {
+    "label": "第1–2页 摘要",
+    "type": "section",
+    "page": 1,
+    "ref": "Abstract"
+  },
+  "p2_intro": {
+    "label": "第2页 Introduction",
+    "type": "section",
+    "page": 2,
+    "ref": "Introduction"
+  },
+  "p3_fig1": {
+    "label": "第3页 图1",
+    "type": "figure",
+    "page": 3,
+    "figure": 1,
+    "ref": "Fig. 1"
+  },
+  "p4_animals_mri": {
+    "label": "第4页 动物MRI方法",
+    "type": "section",
+    "page": 4,
+    "ref": "Study 1 Animals & MRI"
+  },
+  "p5_rtms_protocols": {
+    "label": "第5页 rTMS方案（动物/临床）",
+    "type": "section",
+    "page": 5,
+    "ref": "Animal rTMS / Patient rTMS"
+  },
+  "p6_stats_results": {
+    "label": "第6页 统计与结果概述",
+    "type": "section",
+    "page": 6,
+    "ref": "Statistical Analysis & Results"
+  },
+  "p7_fig2": {
+    "label": "第7页 图2",
+    "type": "figure",
+    "page": 7,
+    "figure": 2,
+    "ref": "Fig. 2"
+  },
+  "p7_fig3": {
+    "label": "第7页 图3",
+    "type": "figure",
+    "page": 7,
+    "figure": 3,
+    "ref": "Fig. 3"
+  },
+  "p8_table1": {
+    "label": "第8页 表1",
+    "type": "table",
+    "page": 8,
+    "table": 1,
+    "ref": "Table 1"
+  },
+  "p8_table2": {
+    "label": "第8页 表2",
+    "type": "table",
+    "page": 8,
+    "table": 2,
+    "ref": "Table 2"
+  },
+  "p9_fig4": {
+    "label": "第9页 图4",
+    "type": "figure",
+    "page": 9,
+    "figure": 4,
+    "ref": "Fig. 4"
+  },
+  "p9_discussion": {
+    "label": "第8–9页 Discussion",
+    "type": "section",
+    "page": 9,
+    "ref": "Discussion"
+  },
+  "p10_limitations": {
+    "label": "第9–10页 局限性",
+    "type": "section",
+    "page": 10,
+    "ref": "Limitations"
+  },
+  "p10_license": {
+    "label": "第10页 Open Access / CC BY 4.0",
+    "type": "license",
+    "page": 10,
+    "ref": "Open Access statement"
+  }
+}</script>
+  <script id="sampleDevelopment" type="application/json">{
+  "metadata": {
+    "species": "rat",
+    "model": "MAM",
+    "metric_note": "图2B为GM signal density（mean±SD）；正文描述为GM volume。样例数据仅用于前端展示显著性与方向。",
+    "stage_definition": {
+      "childhood": "PD21–25",
+      "adolescence": "PD42–46",
+      "adulthood": "PD63–67"
+    }
+  },
+  "records": [
+    {
+      "stage": "childhood",
+      "region": "hippocampus",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P>0.05",
+      "effect_direction": "no_significant_difference"
+    },
+    {
+      "stage": "childhood",
+      "region": "hippocampus",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P>0.05",
+      "effect_direction": "no_significant_difference"
+    },
+    {
+      "stage": "adolescence",
+      "region": "hippocampus",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adolescence",
+      "region": "hippocampus",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adulthood",
+      "region": "hippocampus",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adulthood",
+      "region": "hippocampus",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "childhood",
+      "region": "striatum",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "childhood",
+      "region": "striatum",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adolescence",
+      "region": "striatum",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adolescence",
+      "region": "striatum",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adulthood",
+      "region": "striatum",
+      "group": "CON",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    },
+    {
+      "stage": "adulthood",
+      "region": "striatum",
+      "group": "MAM",
+      "n": null,
+      "mean": null,
+      "sd": null,
+      "group_diff_p_text": "P<0.001",
+      "effect_direction": "MAM_lower"
+    }
+  ]
+}</script>
+  <script id="sampleIntervention" type="application/json">{
+  "effects": [
+    {
+      "species": "rat",
+      "target_site": "occipital_cortex",
+      "region": "hippocampus",
+      "comparison_type": "between_groups",
+      "comparison_label": "MAM-rTMS vs MAM-sham",
+      "n": {
+        "CON_sham": 10,
+        "MAM_sham": 9,
+        "MAM_rTMS": 7
+      },
+      "effect_direction": "increase",
+      "p_text": "P<0.01",
+      "notes": "对应图3B：海马体在MAM-rTMS组较MAM-sham组增加；纹状体无显著差异。"
+    },
+    {
+      "species": "rat",
+      "target_site": "occipital_cortex",
+      "region": "striatum",
+      "comparison_type": "between_groups",
+      "comparison_label": "MAM-rTMS vs MAM-sham",
+      "n": {
+        "CON_sham": 10,
+        "MAM_sham": 9,
+        "MAM_rTMS": 7
+      },
+      "effect_direction": "no_significant_change",
+      "p_text": "P>0.05",
+      "notes": "对应图3B：纹状体在MAM-rTMS与MAM-sham之间无显著差异。"
+    },
+    {
+      "species": "human",
+      "target_site": "occipital_cortex",
+      "region": "left_hippocampus",
+      "comparison_type": "pre_post",
+      "comparison_label": "post_rTMS vs pre_rTMS",
+      "n": 20,
+      "effect_direction": "increase",
+      "p_text": "P<0.01",
+      "notes": "对应图4B：左海马体体积（GM）增加。"
+    },
+    {
+      "species": "human",
+      "target_site": "occipital_cortex",
+      "region": "right_hippocampus",
+      "comparison_type": "pre_post",
+      "comparison_label": "post_rTMS vs pre_rTMS",
+      "n": 20,
+      "effect_direction": "increase",
+      "p_text": "P<0.01",
+      "notes": "对应图4B：右海马体体积（GM）增加。"
+    }
+  ]
+}</script>
+  <script id="sampleSymptoms" type="application/json">{
+  "n": 20,
+  "scales": [
+    {
+      "scale_code": "HAMA",
+      "scale_name_cn": "汉密尔顿焦虑量表",
+      "pre_mean": 21.3,
+      "pre_sd": 7.86,
+      "post_mean": 13.3,
+      "post_sd": 6.15,
+      "p_threshold": "P<0.001",
+      "source": "第8页 表2；第8页 Results"
+    },
+    {
+      "scale_code": "HAMD17",
+      "scale_name_cn": "汉密尔顿抑郁量表（17项）",
+      "pre_mean": 19.45,
+      "pre_sd": 5.11,
+      "post_mean": 11.05,
+      "post_sd": 5.04,
+      "p_threshold": "P<0.001",
+      "source": "第8页 表2；第8页 Results"
+    },
+    {
+      "scale_code": "YMRS",
+      "scale_name_cn": "杨氏躁狂量表",
+      "pre_mean": 9.1,
+      "pre_sd": 5.6,
+      "post_mean": 5.95,
+      "post_sd": 4.05,
+      "p_threshold": "P<0.01",
+      "source": "第8页 表2；第8页 Results"
+    },
+    {
+      "scale_code": "BPRS",
+      "scale_name_cn": "简明精神病评定量表",
+      "pre_mean": 43.3,
+      "pre_sd": 10.26,
+      "post_mean": 35.0,
+      "post_sd": 8.57,
+      "p_threshold": "P<0.001",
+      "source": "第8页 表2；第8页 Results"
+    }
+  ],
+  "design_note": "单组前后对比；论文未设置健康青少年对照组（局限性见第10页）。"
+}</script>
+  <script id="sampleProtocols" type="application/json">{
+  "protocols": [
+    {
+      "protocol_id": "rat_occipital_10hz",
+      "species": "rat",
+      "target_site": "occipital_cortex",
+      "frequency_hz": 10,
+      "train_on_seconds": 6,
+      "train_off_seconds": 15,
+      "pulses_per_session": 900,
+      "session_duration_seconds": 315,
+      "sessions_per_day": 1,
+      "total_days": null,
+      "total_sessions": null,
+      "intensity_percent_rmt": null,
+      "notes": "2周；青春期PD43–58；有7天适应期；圆形线圈；假刺激为线圈离头皮10 cm。"
+    },
+    {
+      "protocol_id": "human_occipital_10hz_20sessions",
+      "species": "human",
+      "target_site": "occipital_cortex",
+      "frequency_hz": 10,
+      "train_on_seconds": 4,
+      "train_off_seconds": 10,
+      "pulses_per_session": 1200,
+      "session_duration_seconds": 410,
+      "sessions_per_day": 2,
+      "total_days": 10,
+      "total_sessions": 20,
+      "intensity_percent_rmt": 100,
+      "notes": "10–10系统+个体结构MRI定位；8通道头线圈MRI前后扫描；记录不良事件。"
+    }
+  ]
+}</script>
+
+  <script src="app.js"></script>
+</body>
+</html>

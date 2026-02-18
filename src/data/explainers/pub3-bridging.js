@@ -1,0 +1,685 @@
+export default {
+  meta: {
+    slug: 'bridging-animal-models-and-humans-neuroimaging-as-intermediate-phenotypes-linking-genetic-or-stress-factors-to-anhedonia',
+    publicationId: 3,
+    title: {
+      zh: '抑郁的"快感缺失"，可能不是一条路',
+      en: 'Anhedonia in Depression May Follow Two Opposite Brain Pathways',
+    },
+    subtitle: {
+      zh: '动物模型 + 748名受试者 · 跨物种神经影像中间表型研究',
+      en: 'Animal Models + 748 Participants · Cross-species Neuroimaging Intermediate Phenotype Study',
+    },
+    description: {
+      zh: '本研究通过动物模型与人类队列的跨物种对比，发现"快感缺失"这一抑郁核心症状背后存在两条相反的脑活动路径——遗传驱动型与压力驱动型，为精准治疗提供新方向。',
+      en: 'This study reveals two opposite brain activity pathways behind anhedonia — a core depression symptom — through cross-species comparison of animal models and human cohorts, offering new directions for precision treatment.',
+    },
+    keywords: ['depression', 'anhedonia', 'neuroimaging', 'subtypes', 'cross-species', 'intermediate phenotype'],
+    paperReference: 'Guo et al. BMC Medicine (2025) 23:38',
+    doi: '10.1186/s12916-025-03850-4',
+    license: 'CC BY-NC-ND 4.0',
+  },
+
+  sections: {
+    hero: {
+      title: {
+        zh: '抑郁的"快感缺失"，可能不是一条路',
+        en: 'Anhedonia in Depression May Follow Two Opposite Brain Pathways',
+      },
+      subtitle: {
+        zh: '动物模型 + 748名受试者 · 跨物种神经影像中间表型研究',
+        en: 'Animal Models + 748 Participants · Cross-species Neuroimaging Intermediate Phenotype Study',
+      },
+      takeaway: {
+        zh: '同一"快感缺失"，可能来自两条相反脑路径。',
+        en: 'The same "anhedonia" may arise from two opposite brain pathways.',
+      },
+    },
+
+    quickRead: {
+      content: {
+        zh: '问题：抑郁的"快感缺失"背后，是否只有一种脑机制？\n\n方法：团队对比遗传型（P11基因敲除）和压力型（CUMS）两种动物模型，结合三地748名受试者脑影像，用机器学习识别出两种抑郁亚型。\n\n发现：两种模型在皮层下-感觉运动区表现出方向相反的脑活动变化，该对立模式在人类亚型中被复现。两种亚型在遗传风险、基因表达和代谢物谱上也截然不同。\n\n意义："快感缺失"并非单一机制，不同病因可能需要不同干预靶点，为精准治疗指明方向。',
+        en: 'Question: Is there only one brain mechanism behind anhedonia in depression?\n\nMethod: The team compared genetic (P11 knockout) and stress (CUMS) animal models, combined with brain imaging from 748 participants across three sites, using machine learning to identify two depression subtypes.\n\nFinding: The two models showed opposite brain activity changes in subcortical-sensorimotor regions — a pattern replicated in human subtypes. The subtypes also differed in genetic risk, gene expression, and metabolite profiles.\n\nSignificance: Anhedonia is not one mechanism — different causes may need different treatment targets, pointing toward precision medicine.',
+      },
+    },
+
+    why: {
+      title: {
+        zh: '为什么要做这个研究',
+        en: 'Why This Research Matters',
+      },
+      items: [
+        {
+          subtitle: { zh: '抑郁不是"一种病"', en: 'Depression Is Not One Disease' },
+          content: {
+            zh: '患者的症状、病程和治疗反应差异巨大，同一方案常导致不同结局。亟需客观标志物区分不同抑郁类型。',
+            en: 'Patients differ enormously in symptoms, course, and treatment response. Objective biomarkers are urgently needed to distinguish depression subtypes.',
+          },
+        },
+        {
+          subtitle: { zh: '动物与人之间的"翻译鸿沟"', en: 'The Translation Gap' },
+          content: {
+            zh: '动物模型中发现的机制难以直接应用于人。单靠动物或人类研究都不完整，需要一座跨物种的"桥梁"。',
+            en: 'Mechanisms from animal models rarely translate directly to humans. Neither approach alone is complete — a cross-species bridge is needed.',
+          },
+        },
+        {
+          subtitle: { zh: '"快感缺失"是最佳切入点', en: 'Anhedonia as Entry Point' },
+          content: {
+            zh: '快感缺失是抑郁的核心症状，也是动物模型能可靠模拟的指标（如糖水偏好测试），是跨物种对比的理想靶标。',
+            en: 'Anhedonia is a core depression symptom that animal models can reliably simulate (e.g., sucrose preference test), making it ideal for cross-species comparison.',
+          },
+        },
+        {
+          subtitle: { zh: '脑影像作为"中间表型"', en: 'Neuroimaging as Bridge' },
+          content: {
+            zh: '脑影像（fMRI脑活动模式）是介于基因/环境原因与行为症状之间的客观指标。动物和人都可做脑扫描，使直接比较成为可能。',
+            en: 'Brain imaging (fMRI activity patterns) is an objective indicator between genes/environment and behavior. Both animals and humans can be scanned, enabling direct comparison.',
+          },
+        },
+      ],
+    },
+
+    how: {
+      title: {
+        zh: '我们怎么做的',
+        en: 'How We Did It',
+      },
+      steps: [
+        {
+          label: { zh: '第一步', en: 'Step 1' },
+          title: { zh: '建立两种动物模型', en: 'Two Animal Models' },
+          content: {
+            zh: '分别使用遗传型（P11基因敲除小鼠）和压力型（CUMS应激大鼠）模型，对两组动物行脑fMRI扫描，测量全脑低频振幅（ALFF）——可理解为脑区的"自发活动强度"。',
+            en: 'Used a genetic model (P11 knockout mice) and a stress model (CUMS rats), scanning both with fMRI to measure whole-brain ALFF — the "spontaneous activity intensity" of brain regions.',
+          },
+        },
+        {
+          label: { zh: '第二步', en: 'Step 2' },
+          title: { zh: '三地748名人类数据', en: '748 Participants, Three Sites' },
+          content: {
+            zh: '在武汉（WHU, 225+65）、北京（PKU, 75+73）、沈阳（CMU, 112+198）三个中心招募受试者，行脑fMRI扫描和临床评估（HAMD-17、SHAPS量表）。',
+            en: 'Recruited from Wuhan (WHU, 225+65), Beijing (PKU, 75+73), and Shenyang (CMU, 112+198), with fMRI scanning and clinical assessment (HAMD-17, SHAPS scales).',
+          },
+        },
+        {
+          label: { zh: '第三步', en: 'Step 3' },
+          title: { zh: '机器学习识别亚型', en: 'ML-based Subtyping' },
+          content: {
+            zh: '用t-SNE+层次聚类对WHU队列无监督分型，识别两种亚型；再用3D残差网络在PKU和CMU独立队列验证，分类准确率84%。',
+            en: 'Applied t-SNE + hierarchical clustering on WHU data to identify two subtypes, then validated with a 3D ResNet classifier on PKU and CMU cohorts (84% accuracy).',
+          },
+        },
+        {
+          label: { zh: '第四步', en: 'Step 4' },
+          title: { zh: '多层次生物学验证', en: 'Multi-level Validation' },
+          content: {
+            zh: '从遗传（PRS-MDD）、基因组织表达（53种组织）、代谢组学（270种代谢物）三个层面验证两种亚型的生物学差异。',
+            en: 'Validated subtype differences at three levels: genetics (PRS-MDD), gene tissue expression (53 tissues), and metabolomics (270 metabolites).',
+          },
+        },
+        {
+          label: { zh: '第五步', en: 'Step 5' },
+          title: { zh: '跨物种预测', en: 'Cross-species Prediction' },
+          content: {
+            zh: '用线性回归检验皮层下与感觉运动ALFF能否预测快感缺失——在动物（SPT评分）和人类（SHAPS评分）中均验证。',
+            en: 'Tested whether subcortical-sensorimotor ALFF predicts anhedonia in both animals (SPT scores) and humans (SHAPS scores) via linear regression.',
+          },
+        },
+      ],
+    },
+
+    findings: [
+      {
+        id: 'finding-1',
+        title: {
+          zh: '遗传与压力模型的脑活动方向相反，人类亚型复现了这一模式',
+          en: 'Genetic and Stress Models Show Opposite Brain Activity — Replicated in Humans',
+        },
+        content: {
+          zh: 'P11敲除小鼠：皮层下（海马、杏仁核、纹状体）活动↑，感觉运动区活动↓。CUMS大鼠恰好相反。人类亚型1类似P11 KO模式，亚型2类似CUMS模式。两种模式的脑影像差异图显著负相关（WHU: R = -0.568; PKU: R = -0.849）。',
+          en: 'P11 KO mice: subcortical (hippocampus, amygdala, striatum) activity ↑, sensorimotor ↓. CUMS rats: the exact opposite. Human subtype 1 mirrors P11 KO; subtype 2 mirrors CUMS. Difference maps showed significant negative correlation (WHU: R = -0.568; PKU: R = -0.849).',
+        },
+        highlight: {
+          zh: '两种模型脑活动方向完全相反，却都导致快感缺失',
+          en: 'Opposite brain activity changes, yet both lead to anhedonia',
+        },
+      },
+      {
+        id: 'finding-2',
+        title: {
+          zh: '两种亚型的生物学"证据链"截然不同',
+          en: 'Two Subtypes Have Fundamentally Different Biology',
+        },
+        content: {
+          zh: '亚型1（遗传驱动型）：PRS-MDD显著升高，179个风险基因在脑组织高表达，代谢物异常集中于色氨酸/犬尿氨酸通路（5-HT代谢相关）。\n\n亚型2（压力驱动型）：PRS-MDD无显著变化，227个风险基因主要在外周组织表达，代谢异常涉及TCA循环和氧化应激（L-乙酰肉碱等）。',
+          en: 'Subtype 1 (genetic): Elevated PRS-MDD, 179 risk genes enriched in brain tissues, metabolite disruptions in tryptophan/kynurenine (5-HT related).\n\nSubtype 2 (stress): No significant PRS-MDD change, 227 risk genes in peripheral tissues, disrupted TCA cycle and oxidative stress markers (L-acetylcarnitine).',
+        },
+        highlight: {
+          zh: '同一症状，背后的遗传-分子机制完全不同',
+          en: 'Same symptom, completely different genetic-molecular mechanisms',
+        },
+      },
+      {
+        id: 'finding-3',
+        title: {
+          zh: '皮层下-感觉运动"天平"能跨物种预测快感缺失',
+          en: 'Subcortical-Sensorimotor Balance Predicts Anhedonia Across Species',
+        },
+        content: {
+          zh: '纹状体+感觉运动ALFF组合预测快感缺失：P11 KO (R=0.8, P=0.003)、CUMS (R=0.6, P=0.018)、亚型1 (R=0.25, P=0.005)、亚型2 (R=0.23, P=0.028)。效应量从动物到人递减（符合预期），但方向一致且均显著，表明这是跨物种保守的神经标志物。',
+          en: 'Striatum + sensorimotor ALFF predicted anhedonia: P11 KO (R=0.8, P=0.003), CUMS (R=0.6, P=0.018), Subtype 1 (R=0.25, P=0.005), Subtype 2 (R=0.23, P=0.028). Effect sizes decreased from animals to humans (as expected), but direction was consistent — a cross-species conserved neural marker.',
+        },
+        highlight: {
+          zh: 'P11 KO: R=0.8 · CUMS: R=0.6 · 亚型1: R=0.25 · 亚型2: R=0.23',
+          en: 'P11 KO: R=0.8 · CUMS: R=0.6 · Subtype 1: R=0.25 · Subtype 2: R=0.23',
+        },
+      },
+    ],
+
+    soWhat: {
+      title: {
+        zh: '这项研究有什么用',
+        en: 'What This Research Means',
+      },
+      evidence: {
+        title: { zh: '有证据支持', en: 'Evidence-Supported' },
+        items: [
+          {
+            zh: '首个连接遗传与压力两条病因通路的跨物种神经影像"桥梁"',
+            en: 'First cross-species neuroimaging bridge connecting genetic and stress depression pathways',
+          },
+          {
+            zh: '同一症状可由不同脑回路实现，支持按病因而非症状分型',
+            en: 'Same symptom can arise from different circuits — supports etiology-based classification',
+          },
+          {
+            zh: '为个性化治疗靶点选择提供客观依据',
+            en: 'Provides objective basis for personalized treatment targeting',
+          },
+        ],
+      },
+      speculative: {
+        title: { zh: '有待验证', en: 'Needs Validation' },
+        items: [
+          {
+            zh: '脑影像亚型或可指导TMS/tDCS无创脑刺激靶点选择',
+            en: 'Subtypes may guide TMS/tDCS brain stimulation targeting',
+          },
+          {
+            zh: '代谢物差异或可转化为辅助分型的血液标志物',
+            en: 'Metabolite differences may yield blood-based subtyping biomarkers',
+          },
+          {
+            zh: '跨物种分型框架或可推广到焦虑、精神分裂症等',
+            en: 'Framework may extend to anxiety, schizophrenia, and other disorders',
+          },
+        ],
+      },
+    },
+
+    limitations: {
+      title: {
+        zh: '局限性与下一步',
+        en: 'Limitations and Next Steps',
+      },
+      items: [
+        {
+          zh: '仅使用雄性动物，未纳入性别差异分析',
+          en: 'Only male animals used; sex differences not examined',
+        },
+        {
+          zh: '动物需麻醉扫描，可能引入混杂因素',
+          en: 'Animals require anesthesia for scanning, a potential confound',
+        },
+        {
+          zh: '糖水偏好测试仅捕捉快感缺失的部分维度',
+          en: 'Sucrose preference captures only partial aspects of anhedonia',
+        },
+        {
+          zh: '人类队列缺乏详细的遗传×环境因素数据',
+          en: 'Human cohorts lacked detailed gene-environment interaction data',
+        },
+        {
+          zh: '前额叶皮层的进化差异可能解释部分跨物种不一致',
+          en: 'Prefrontal cortex evolution may explain some cross-species discrepancies',
+        },
+      ],
+    },
+
+    takeHome: {
+      text: {
+        zh: '同一"快感缺失"，可能来自两条相反脑路径。',
+        en: 'The same "anhedonia" may arise from two opposite brain pathways.',
+      },
+    },
+  },
+
+  visuals: [
+    {
+      id: 'fig1-pipeline',
+      figureName: { zh: '研究流程总览', en: 'Study Pipeline Overview' },
+      coreMessage: {
+        zh: '从动物模型到人类亚型验证的完整研究路线图',
+        en: 'Complete roadmap from animal models to human subtype validation',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig1-pipeline.webp',
+      alt: {
+        zh: '研究流程图：左侧为两种动物模型（P11敲除和CUMS），中间为机器学习分型和跨物种验证，右侧为两种人类抑郁亚型',
+        en: 'Study pipeline: left shows two animal models (P11 KO and CUMS), center shows machine learning subtyping and cross-species validation, right shows two human depression subtypes',
+      },
+      paperFigure: 'Fig. 1',
+    },
+    {
+      id: 'fig2a-animal',
+      figureName: { zh: '两种动物模型的相反脑活动模式', en: 'Opposite Brain Activity Patterns in Two Animal Models' },
+      coreMessage: {
+        zh: 'P11敲除小鼠皮层下活动增强/感觉运动减弱，CUMS大鼠方向相反',
+        en: 'P11 KO mice show increased subcortical/decreased sensorimotor activity; CUMS rats show the opposite',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig2a-animal-models.webp',
+      alt: {
+        zh: '动物脑影像对比：P11敲除小鼠皮层下区域呈暖色（活动增强），感觉运动区域呈冷色（活动减弱）；CUMS大鼠模式相反',
+        en: 'Animal brain imaging comparison: P11 KO mice show warm colors in subcortical regions (increased activity), cool colors in sensorimotor regions (decreased); CUMS rats show the opposite pattern',
+      },
+      paperFigure: 'Fig. 2a',
+    },
+    {
+      id: 'fig2bc-subtypes',
+      figureName: { zh: '人类两种抑郁亚型的脑活动模式', en: 'Brain Activity Patterns of Two Human Depression Subtypes' },
+      coreMessage: {
+        zh: '亚型1类似P11敲除、亚型2类似CUMS，跨物种对应关系被验证',
+        en: 'Subtype 1 resembles P11 KO, subtype 2 resembles CUMS — cross-species correspondence validated',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig2bc-subtypes.webp',
+      alt: {
+        zh: '人类脑影像亚型：亚型1额叶-皮层下活动增强、感觉运动减弱；亚型2模式相反，分别在WHU和PKU队列中展示',
+        en: 'Human brain imaging subtypes: Subtype 1 shows increased frontal-subcortical and decreased sensorimotor activity; Subtype 2 shows the opposite, displayed in both WHU and PKU cohorts',
+      },
+      paperFigure: 'Fig. 2b-c',
+    },
+    {
+      id: 'fig3-prs',
+      figureName: { zh: '多基因风险评分对比', en: 'Polygenic Risk Score Comparison' },
+      coreMessage: {
+        zh: '亚型1的遗传风险显著升高，亚型2无显著遗传差异',
+        en: 'Subtype 1 shows significantly elevated genetic risk, subtype 2 shows no significant genetic differences',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig3-prs.webp',
+      alt: {
+        zh: '柱状图对比：亚型1在多个P值阈值下PRS-MDD的方差解释量（R²）显著高于亚型2',
+        en: 'Bar chart comparison: Subtype 1 shows significantly higher PRS-MDD variance explained (R²) than Subtype 2 across multiple P-value thresholds',
+      },
+      paperFigure: 'Fig. 3',
+    },
+    {
+      id: 'fig4-tissue',
+      figureName: { zh: '风险基因的组织表达谱', en: 'Risk Gene Tissue Expression Profiles' },
+      coreMessage: {
+        zh: '亚型1风险基因集中在脑组织表达，亚型2集中在外周组织',
+        en: 'Subtype 1 risk genes are concentrated in brain tissue expression, subtype 2 in peripheral tissues',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig4-tissue.webp',
+      alt: {
+        zh: '点图展示53种组织中风险基因表达：亚型1顶部为脑区域（杏仁核、壳核等绿色显著点），亚型2顶部为胰腺、垂体等非脑组织',
+        en: 'Dot plot showing risk gene expression across 53 tissues: Subtype 1 top entries are brain regions (amygdala, putamen with significant green dots), Subtype 2 top entries are non-brain tissues like pancreas and pituitary',
+      },
+      paperFigure: 'Fig. 4',
+    },
+    {
+      id: 'fig5-metabolites',
+      figureName: { zh: '代谢物谱差异', en: 'Metabolite Profile Differences' },
+      coreMessage: {
+        zh: '亚型1涉及色氨酸/犬尿氨酸代谢，亚型2涉及TCA循环和氧化应激',
+        en: 'Subtype 1 involves tryptophan/kynurenine metabolism, subtype 2 involves TCA cycle and oxidative stress',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig5-metabolites.webp',
+      alt: {
+        zh: '火山图和通路分析：亚型1差异代谢物56种，亚型2差异代谢物78种，亚型2通路分析突出TCA循环和丙氨酸-天冬氨酸-谷氨酸代谢',
+        en: 'Volcano plots and pathway analysis: Subtype 1 has 56 differential metabolites, Subtype 2 has 78, with pathway analysis highlighting TCA cycle and alanine-aspartate-glutamate metabolism for Subtype 2',
+      },
+      paperFigure: 'Fig. 5',
+    },
+    {
+      id: 'fig6cd-roi',
+      figureName: { zh: '皮层下vs感觉运动ROI活动天平', en: 'Subcortical vs Sensorimotor ROI Activity Balance' },
+      coreMessage: {
+        zh: '皮层下与感觉运动区域的相反变化方向在动物模型和人类亚型中一致',
+        en: 'Opposite change directions between subcortical and sensorimotor regions are consistent across animal models and human subtypes',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig6cd-roi.webp',
+      alt: {
+        zh: '小提琴图对比：P11敲除/亚型1皮层下升高、感觉运动降低；CUMS/亚型2皮层下降低、感觉运动升高',
+        en: 'Violin plot comparison: P11 KO/Subtype 1 show elevated subcortical and reduced sensorimotor; CUMS/Subtype 2 show reduced subcortical and elevated sensorimotor',
+      },
+      paperFigure: 'Fig. 6c-d',
+    },
+    {
+      id: 'fig6ef-prediction',
+      figureName: { zh: '跨物种快感缺失预测', en: 'Cross-species Anhedonia Prediction' },
+      coreMessage: {
+        zh: '纹状体+感觉运动ALFF可在动物和人类中预测快感缺失严重度',
+        en: 'Striatum + sensorimotor ALFF predicts anhedonia severity in both animals and humans',
+      },
+      type: 'reuse',
+      src: '/images/explainers/pub3/fig6ef-prediction.webp',
+      alt: {
+        zh: '散点图：四组预测结果展示纹状体和感觉运动区域ALFF与快感缺失评分的相关性',
+        en: 'Scatter plots: Four prediction results showing correlation between striatum and sensorimotor ALFF values and anhedonia scores',
+      },
+      paperFigure: 'Fig. 6e-f',
+    },
+  ],
+
+  interactives: {
+    balanceExplorer: {
+      title: {
+        zh: '脑区"天平"探索器',
+        en: 'Brain Region Balance Explorer',
+      },
+      description: {
+        zh: '查看四种模型/亚型中，皮层下和感觉运动区域的活动方向对比',
+        en: 'Explore subcortical vs sensorimotor activity direction across four models/subtypes',
+      },
+      disclaimer: {
+        zh: '数据来自论文Fig.6c-d，方向箭头为定性示意，具体T值和P值见论文原文。',
+        en: 'Data from paper Fig.6c-d. Direction arrows are qualitative illustrations; specific T and P values can be found in the original paper.',
+      },
+      data: [
+        {
+          id: 'p11ko',
+          label: { zh: 'P11基因敲除小鼠', en: 'P11 KO Mice' },
+          type: { zh: '遗传模型', en: 'Genetic Model' },
+          subcortical: { direction: 'up', t: 2.254, p: 0.041 },
+          sensorimotor: { direction: 'down', t: -2.441, p: 0.029 },
+          color: 'ocean',
+        },
+        {
+          id: 'cums',
+          label: { zh: 'CUMS应激大鼠', en: 'CUMS Stress Rats' },
+          type: { zh: '压力模型', en: 'Stress Model' },
+          subcortical: { direction: 'down', t: -2.758, p: 0.010 },
+          sensorimotor: { direction: 'up', t: 2.396, p: 0.023 },
+          color: 'coral',
+        },
+        {
+          id: 'subtype1',
+          label: { zh: '人类亚型1', en: 'Human Subtype 1' },
+          type: { zh: '遗传驱动型', en: 'Genetically Driven' },
+          subcortical: { direction: 'up', t: 4.025, p: '<0.001' },
+          sensorimotor: { direction: 'down', t: -8.572, p: '<0.001' },
+          color: 'ocean',
+        },
+        {
+          id: 'subtype2',
+          label: { zh: '人类亚型2', en: 'Human Subtype 2' },
+          type: { zh: '压力驱动型', en: 'Stress Driven' },
+          subcortical: { direction: 'down', t: -2.560, p: 0.011 },
+          sensorimotor: { direction: 'up', t: 5.027, p: '<0.001' },
+          color: 'coral',
+        },
+      ],
+    },
+
+    evidenceCards: {
+      title: {
+        zh: '两亚型"证据链"对比',
+        en: 'Two Subtypes Evidence Chain Comparison',
+      },
+      description: {
+        zh: '从脑影像、遗传、基因表达、代谢物四个维度对比两种亚型',
+        en: 'Compare two subtypes across four dimensions: neuroimaging, genetics, gene expression, metabolites',
+      },
+      dimensions: [
+        { id: 'neuroimaging', label: { zh: '脑影像模式', en: 'Neuroimaging Pattern' }, icon: 'brain' },
+        { id: 'genetics', label: { zh: '多基因风险', en: 'Polygenic Risk' }, icon: 'dna' },
+        { id: 'expression', label: { zh: '基因组织表达', en: 'Gene Tissue Expression' }, icon: 'microscope' },
+        { id: 'metabolites', label: { zh: '代谢物特征', en: 'Metabolite Features' }, icon: 'flask' },
+      ],
+      subtypes: [
+        {
+          id: 'subtype1',
+          name: { zh: '亚型1（遗传驱动型）', en: 'Subtype 1 (Genetically Driven)' },
+          color: 'ocean',
+          animalModel: { zh: '对应P11基因敲除小鼠', en: 'Corresponds to P11 KO mice' },
+          evidence: {
+            neuroimaging: {
+              zh: '额叶-皮层下区域ALFF升高，感觉运动区域ALFF降低',
+              en: 'Elevated ALFF in frontal-subcortical regions, decreased ALFF in sensorimotor regions',
+            },
+            genetics: {
+              zh: 'PRS-MDD显著升高（P_T=10⁻⁶时R²=0.029，解释2.9%方差）',
+              en: 'PRS-MDD significantly elevated (R²=0.029 at P_T=10⁻⁶, explaining 2.9% variance)',
+            },
+            expression: {
+              zh: '179个风险基因在脑组织高表达（杏仁核、壳核、额叶皮层等）',
+              en: '179 risk genes highly expressed in brain tissues (amygdala, putamen, frontal cortex, etc.)',
+            },
+            metabolites: {
+              zh: '56种差异代谢物，色氨酸和犬尿氨酸显著升高——与5-HT代谢和神经发育相关',
+              en: '56 differential metabolites, notably elevated tryptophan and kynurenine — related to 5-HT metabolism and neurodevelopment',
+            },
+          },
+        },
+        {
+          id: 'subtype2',
+          name: { zh: '亚型2（压力驱动型）', en: 'Subtype 2 (Stress Driven)' },
+          color: 'coral',
+          animalModel: { zh: '对应CUMS慢性应激大鼠', en: 'Corresponds to CUMS stress rats' },
+          evidence: {
+            neuroimaging: {
+              zh: '额叶-皮层下区域ALFF降低，感觉运动区域ALFF升高',
+              en: 'Decreased ALFF in frontal-subcortical regions, elevated ALFF in sensorimotor regions',
+            },
+            genetics: {
+              zh: 'PRS-MDD无显著变化',
+              en: 'No significant PRS-MDD changes',
+            },
+            expression: {
+              zh: '227个风险基因主要在外周组织表达（胰腺、垂体等非脑组织）',
+              en: '227 risk genes predominantly expressed in peripheral tissues (pancreas, pituitary, etc.)',
+            },
+            metabolites: {
+              zh: '78种差异代谢物，TCA循环和丙氨酸-天冬氨酸代谢异常，L-乙酰肉碱升高——与线粒体功能和氧化应激相关',
+              en: '78 differential metabolites, disrupted TCA cycle and alanine-aspartate metabolism, elevated L-acetylcarnitine — related to mitochondrial function and oxidative stress',
+            },
+          },
+        },
+      ],
+    },
+
+    predictionDashboard: {
+      title: {
+        zh: '快感缺失预测仪表盘',
+        en: 'Anhedonia Prediction Dashboard',
+      },
+      description: {
+        zh: '查看皮层下-感觉运动脑区ALFF组合在不同模型/亚型中预测快感缺失的能力',
+        en: 'See how subcortical-sensorimotor ALFF combinations predict anhedonia across models/subtypes',
+      },
+      disclaimer: {
+        zh: '仪表盘中的R值来自论文Fig.6e-f的线性回归分析，仅为相关性指标，不代表因果关系或临床诊断效能。',
+        en: 'R values in this dashboard are from linear regression analyses in Fig.6e-f of the paper. They represent correlation only, not causation or clinical diagnostic performance.',
+      },
+      scenarios: [
+        {
+          id: 'p11ko-spt',
+          label: { zh: 'P11 KO → 糖水偏好', en: 'P11 KO → Sucrose Preference' },
+          species: { zh: '动物', en: 'Animal' },
+          model: { zh: 'P11基因敲除小鼠', en: 'P11 KO Mice' },
+          target: { zh: 'SPT (糖水偏好测试)', en: 'SPT (Sucrose Preference Test)' },
+          predictors: { zh: '纹状体 + 体感皮层', en: 'Striatum + Somatosensory Cortex' },
+          r: 0.8,
+          p: 0.003,
+          color: 'ocean',
+        },
+        {
+          id: 'cums-spt',
+          label: { zh: 'CUMS → 糖水偏好', en: 'CUMS → Sucrose Preference' },
+          species: { zh: '动物', en: 'Animal' },
+          model: { zh: 'CUMS应激大鼠', en: 'CUMS Stress Rats' },
+          target: { zh: 'SPT (糖水偏好测试)', en: 'SPT (Sucrose Preference Test)' },
+          predictors: { zh: '纹状体 + 体感皮层', en: 'Striatum + Somatosensory Cortex' },
+          r: 0.6,
+          p: 0.018,
+          color: 'coral',
+        },
+        {
+          id: 'subtype1-shaps',
+          label: { zh: '亚型1 → SHAPS', en: 'Subtype 1 → SHAPS' },
+          species: { zh: '人类', en: 'Human' },
+          model: { zh: '人类亚型1（遗传驱动型）', en: 'Human Subtype 1 (Genetically Driven)' },
+          target: { zh: 'SHAPS (快感缺失量表)', en: 'SHAPS (Anhedonia Scale)' },
+          predictors: { zh: '纹状体 + 体感皮层', en: 'Striatum + Somatosensory Cortex' },
+          r: 0.25,
+          p: 0.005,
+          color: 'ocean',
+        },
+        {
+          id: 'subtype2-shaps',
+          label: { zh: '亚型2 → SHAPS', en: 'Subtype 2 → SHAPS' },
+          species: { zh: '人类', en: 'Human' },
+          model: { zh: '人类亚型2（压力驱动型）', en: 'Human Subtype 2 (Stress Driven)' },
+          target: { zh: 'SHAPS (快感缺失量表)', en: 'SHAPS (Anhedonia Scale)' },
+          predictors: { zh: '纹状体 + 体感皮层', en: 'Striatum + Somatosensory Cortex' },
+          r: 0.23,
+          p: 0.028,
+          color: 'coral',
+        },
+      ],
+    },
+  },
+
+  glossary: [
+    {
+      term: { zh: '快感缺失', en: 'Anhedonia' },
+      definition: { zh: '对曾经喜欢的事物失去兴趣和快乐，抑郁的核心症状。', en: 'Loss of interest/pleasure in things once enjoyed; a core depression symptom.' },
+      analogy: { zh: '像味觉消失——食物还在，但什么都没味道。', en: 'Like losing your sense of taste — food is there, but nothing tastes.' },
+    },
+    {
+      term: { zh: '中间表型', en: 'Intermediate Phenotype' },
+      definition: { zh: '介于基因/环境与行为症状之间的可测量生物指标。', en: 'A measurable biological indicator between genes/environment and behavioral symptoms.' },
+      analogy: { zh: '基因是"剧本"，行为是"演出"，中间表型是"排练"。', en: 'If genes are the "script" and behavior the "performance," this is the "rehearsal."' },
+    },
+    {
+      term: { zh: 'ALFF（低频振幅）', en: 'ALFF' },
+      definition: { zh: 'fMRI测量的脑区自发活动强度指标。', en: 'Spontaneous neural activity intensity measured by fMRI.' },
+      analogy: { zh: '从卫星看城市夜景，灯光越亮的区域越"活跃"。', en: 'Like measuring how busy city districts are by their nighttime lights.' },
+    },
+    {
+      term: { zh: 'P11基因敲除', en: 'P11 Knockout' },
+      definition: { zh: '去除调节5-HT受体的P11蛋白的小鼠模型，模拟遗传型抑郁。', en: 'Mouse model lacking P11 protein (5-HT receptor regulator), simulating genetic depression.' },
+      analogy: { zh: '拿掉电话总机的接线员——线路在，但信号传不通。', en: 'Removing the switchboard operator — lines work, but signals go wrong.' },
+    },
+    {
+      term: { zh: 'CUMS', en: 'CUMS' },
+      definition: { zh: '慢性不可预测温和应激，通过长期随机轻度压力诱导类抑郁行为的动物模型。', en: 'Chronic unpredictable mild stress — an animal model inducing depression-like behavior via prolonged random stressors.' },
+      analogy: { zh: '每天不同的小烦心事，单次不严重，日积月累就"心力交瘁"。', en: 'Daily small hassles — individually minor, but cumulatively overwhelming.' },
+    },
+    {
+      term: { zh: '多基因风险评分', en: 'PRS' },
+      definition: { zh: '综合多个遗传变异累积效应评估疾病遗传风险的评分。', en: 'A score aggregating multiple genetic variants to assess disease risk.' },
+      analogy: { zh: '每个变异像一张彩票——单张概率小，但越多越容易"中奖"。', en: 'Each variant is a lottery ticket — one has low odds, but many increase probability.' },
+    },
+    {
+      term: { zh: '皮层下区域', en: 'Subcortical Regions' },
+      definition: { zh: '皮层下深部结构（海马、杏仁核、纹状体等），负责情绪、记忆和奖赏。', en: 'Deep structures (hippocampus, amygdala, striatum) for emotion, memory, and reward.' },
+      analogy: { zh: '皮层是管理层，皮层下是驱动情绪和动机的核心引擎。', en: 'If cortex is management, subcortical is the core engine driving emotion and motivation.' },
+    },
+    {
+      term: { zh: '感觉运动区域', en: 'Sensorimotor Regions' },
+      definition: { zh: '皮层中接收感觉输入和控制运动输出的区域。', en: 'Cortical regions receiving sensory input and controlling motor output.' },
+      analogy: { zh: '大脑的"感知-行动"前线。', en: 'The brain\'s "sense-and-act" frontline.' },
+    },
+    {
+      term: { zh: 't-SNE', en: 't-SNE' },
+      definition: { zh: '将高维数据压缩到二维的降维可视化算法。', en: 'Dimensionality reduction algorithm compressing high-dimensional data to 2D.' },
+      analogy: { zh: '按相似度给一群人排座位——多维关系"投影"到一张平面图上。', en: 'Seating people by similarity — projecting multi-dimensional relationships onto a flat map.' },
+    },
+    {
+      term: { zh: '代谢组学', en: 'Metabolomics' },
+      definition: { zh: '系统分析生物样本中全部小分子代谢物的方法。', en: 'Systematic analysis of all small-molecule metabolites in biological samples.' },
+      analogy: { zh: '基因组是"菜谱"，蛋白质组是"厨师"，代谢组是"餐桌上的菜"。', en: 'Genome is the "recipe," proteome the "chef," metabolome the "dishes on the table."' },
+    },
+  ],
+
+  faq: [
+    {
+      question: { zh: '抑郁症只有两种类型吗？', en: 'Are there only two types of depression?' },
+      answer: {
+        zh: '不是。本研究识别了两种亚型，但抑郁的异质性远不止两种。纳入更多数据维度后可能发现更多亚型。',
+        en: 'No. This study identified two subtypes, but depression heterogeneity is far more complex. More subtypes may emerge with additional data.',
+      },
+    },
+    {
+      question: { zh: '能做脑扫描来判断自己是哪种亚型吗？', en: 'Can I get scanned to find my subtype?' },
+      answer: {
+        zh: '目前不能。研究处于基础科学阶段，距临床应用还需大量验证和审批。如有抑郁症状，请直接就医。',
+        en: 'Not yet. This is basic research; clinical application requires extensive validation. If experiencing depression, please consult a doctor.',
+      },
+    },
+    {
+      question: { zh: '抑郁是基因决定的吗？', en: 'Is depression genetically determined?' },
+      answer: {
+        zh: '不是。研究表明抑郁可通过遗传（亚型1）或压力（亚型2）不同路径产生。即使"遗传驱动型"，PRS也仅解释约2-3%的方差。',
+        en: 'No. Depression arises through different pathways — genetic (subtype 1) or stress (subtype 2). Even "genetically driven" PRS explains only ~2-3% of variance.',
+      },
+    },
+    {
+      question: { zh: '动物结果能直接用到人身上吗？', en: 'Do animal results apply directly to humans?' },
+      answer: {
+        zh: '不能直接等同，但提供重要线索。本研究用脑影像"中间表型"搭建了跨物种桥梁，不过仍存在麻醉扫描、行为测试对应性等局限。',
+        en: 'Not directly, but they provide important clues. This study bridged the gap via neuroimaging "intermediate phenotypes," though limitations like anesthesia and behavioral test correspondence remain.',
+      },
+    },
+    {
+      question: { zh: '相关性等于因果性吗？', en: 'Does correlation equal causation?' },
+      answer: {
+        zh: '不等于。R值表示统计相关而非因果。动物模型中因果推断较强（有实验操控），人类队列仍为观察性关联。',
+        en: 'No. R values show correlation, not causation. Causal inference is stronger in animal models (experimental manipulation); human findings are observational.',
+      },
+    },
+    {
+      question: { zh: '为什么只用了雄性动物？', en: 'Why only male animals?' },
+      answer: {
+        zh: '这是研究的局限之一。传统上用雄性减少激素变异，但性别差异在抑郁中很重要，未来需纳入雌性。',
+        en: 'A study limitation. Males were used to reduce hormonal variability, but sex differences matter in depression — future work should include females.',
+      },
+    },
+    {
+      question: { zh: '对目前的治疗有什么启示？', en: 'What does this mean for treatment?' },
+      answer: {
+        zh: '理论启示：不同病因的抑郁可能需要不同干预策略（如遗传型针对5-HT系统，压力型关注氧化应激）。但仍需临床试验验证，不应改变现有方案。',
+        en: 'Theoretically, different etiologies may need different strategies (e.g., 5-HT targeting for genetic type, oxidative stress for stress type). Clinical trials are needed before changing treatment.',
+      },
+    },
+    {
+      question: { zh: '748名受试者够吗？', en: 'Are 748 participants enough?' },
+      answer: {
+        zh: '对发现阶段而言，三中心独立验证设计较强。但转化为临床工具还需更大规模多中心研究。',
+        en: 'For discovery-stage research, three independent centers is a strong design. Clinical translation needs larger, more diverse studies.',
+      },
+    },
+    {
+      question: { zh: '如何看待科研新闻中的"突破性发现"？', en: 'How to view "breakthroughs" in science news?' },
+      answer: {
+        zh: '理性乐观。这是扎实的基础研究，但从实验室到临床通常需要多年验证。好的报道应同时呈现发现和局限。',
+        en: 'Stay rationally optimistic. Solid basic research, but lab-to-clinic takes years. Good reporting presents both findings and limitations.',
+      },
+    },
+  ],
+
+  disclaimer: {
+    text: {
+      zh: '本页面为科研论文的公众科普解读，不构成任何医学诊断或治疗建议。如果您正在经历抑郁或其他心理健康问题，请寻求专业医疗帮助。',
+      en: 'This page is a public science communication interpretation of a research paper and does not constitute any medical diagnosis or treatment advice. If you are experiencing depression or other mental health issues, please seek professional medical help.',
+    },
+  },
+}

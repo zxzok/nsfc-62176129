@@ -1,0 +1,43 @@
+{
+  "dataset": "group_differences_global_baseline",
+  "description": "基线两组全局网络指标差异（AUC比较，FDR校正q值）。",
+  "source_ref": [
+    "第4页 结果段落",
+    "第5页 图1"
+  ],
+  "entries": [
+    {
+      "metric_id": "sigma",
+      "metric_label_cn": "小世界性 σ",
+      "direction_MDP_vs_MDNP": "higher",
+      "fdr_q": 0.003
+    },
+    {
+      "metric_id": "gamma",
+      "metric_label_cn": "标准化聚类系数 γ",
+      "direction_MDP_vs_MDNP": "higher",
+      "fdr_q": 0.008
+    },
+    {
+      "metric_id": "lambda",
+      "metric_label_cn": "标准化特征路径长度 λ",
+      "direction_MDP_vs_MDNP": "no_significant_difference",
+      "fdr_q": null
+    },
+    {
+      "metric_id": "Eg",
+      "metric_label_cn": "全局效率 Eg",
+      "direction_MDP_vs_MDNP": "no_significant_difference",
+      "fdr_q": null
+    },
+    {
+      "metric_id": "Eloc",
+      "metric_label_cn": "局部效率 Eloc",
+      "direction_MDP_vs_MDNP": "no_significant_difference",
+      "fdr_q": null
+    }
+  ],
+  "notes": [
+    "论文未在正文表格中提供各指标AUC的均值±SD，仅在图1以小提琴图展示分布；因此本数据集仅记录显著性与方向，无法提供数值差值。"
+  ]
+}

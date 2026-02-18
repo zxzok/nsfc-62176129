@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>两周内会不会好转？小脑蚓部-颞叶连接与青少年抑郁早期响应</title>
+  <meta name="description" content="基于132名青少年重性抑郁发作的静息态MRI研究：治疗前小脑蚓部与左颞叶功能连接更强者更可能两周内显著缓解；模型AUC=0.760。含交互计算器、脑区簇数据与可复用网页组件。"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">🧠</div>
+      <div>
+        <div class="brand-title">论文公众传播内容包</div>
+        <div class="brand-sub">可直接上站 · 含交互与结构化数据</div>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="页面导航">
+      <a href="#read30">30秒读懂</a>
+      <a href="#why">为什么做</a>
+      <a href="#how">怎么做</a>
+      <a href="#findings">发现</a>
+      <a href="#interactives">交互</a>
+      <a href="#visuals">图文</a>
+      <a href="#limits_next">局限</a>
+      <a href="#citations">证据</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 id="hero-title">加载中…</h1>
+        <p class="hero-sub" id="hero-subtitle"></p>
+
+        <div class="hero-kpis" role="list">
+          <div class="kpi" role="listitem">
+            <div class="kpi-value" id="kpi-n">—</div>
+            <div class="kpi-label">样本量</div>
+          </div>
+          <div class="kpi" role="listitem">
+            <div class="kpi-value" id="kpi-window">2周</div>
+            <div class="kpi-label">观察窗口</div>
+          </div>
+          <div class="kpi" role="listitem">
+            <div class="kpi-value" id="kpi-auc">0.760</div>
+            <div class="kpi-label">模型AUC</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>重要提醒：</strong>本页为科普解读，不构成医疗建议；研究为住院青少年样本，且需要更大样本验证（见“局限性”）。
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#interactives">先玩交互，再读论文</a>
+          <a class="btn" href="../source/paper.pdf" download>下载论文PDF</a>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="assets/images/paper_fig1.png" alt="论文图1：基线差异脑图。早期响应组相比未响应组，小脑蚓部与左侧颞叶及颞极等区域功能连接更高；显著性经GRF校正。"/>
+        <figcaption>
+          论文图1（节选）：基线差异。<span class="cite">（证据：PDF第3页表2；PDF第4页图1）</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="container content" id="dynamic-content">
+    <!-- sections injected by JS -->
+  </section>
+
+  <section class="container content" id="visual-gallery">
+    <!-- visuals injected by JS -->
+  </section>
+
+  <section class="container content" id="interactive-area">
+    <!-- interactives injected by JS -->
+  </section>
+
+  <section class="container content" id="glossary-area">
+    <!-- glossary injected by JS -->
+  </section>
+
+  <section class="container content" id="faq-area">
+    <!-- FAQ injected by JS -->
+  </section>
+
+  <section class="container content" id="citations">
+    <h2>证据与引用（C编号对照表）</h2>
+    <p class="muted">为便于网页实现与核查，正文用C编号标注关键证据锚点；这里列出每个编号对应的论文位置。</p>
+    <div id="citations-list" class="citations-list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">免责声明</div>
+        <p class="muted" id="disclaimer-text">—</p>
+      </div>
+      <div>
+        <div class="footer-title">如何本地预览</div>
+        <ol class="muted">
+          <li>解压后进入 <code>site/</code> 目录。</li>
+          <li>运行 <code>python -m http.server 8000</code>。</li>
+          <li>浏览器打开 <code>http://localhost:8000</code>。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="muted small">内容包生成时间：<span id="build-time"></span></div>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

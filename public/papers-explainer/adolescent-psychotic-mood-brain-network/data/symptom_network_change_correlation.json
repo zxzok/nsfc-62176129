@@ -1,0 +1,14 @@
+{
+  "dataset": "symptom_network_change_correlation",
+  "description": "MDP组：阳性症状改善与STG_L度中心性变化的相关。",
+  "source_ref": "第7页 Alteration...段落",
+  "entry": {
+    "group": "MDP",
+    "n": 35,
+    "symptom_measure": "PositiveSymptoms_BPRS6_change",
+    "metric_change": "DC_STG_L_change",
+    "r": 0.377,
+    "p": 0.031,
+    "notes": "论文描述为“reduction in positive symptoms ... positively correlated with elevation in DC of STG_L”。"
+  }
+}

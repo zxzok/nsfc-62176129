@@ -1,0 +1,13 @@
+[
+  {
+    "Experiment":"Transfer Validation",
+    "ACC_mean":0.89,
+    "ACC_sd":0.02,
+    "Precision_mean":0.85,
+    "Precision_sd":0.04,
+    "Recall_mean":0.92,
+    "Recall_sd":0.0,
+    "F1_mean":0.89,
+    "F1_sd":0.03
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "source_ref": "第15页，表7（消融实验）",
+  "data": [
+    {
+      "excluded_feature": "upper_envelope",
+      "excluded_label": "Upper Envelope",
+      "acc_mean": 0.62,
+      "acc_sd": 0.021,
+      "precision_mean": 0.35,
+      "precision_sd": 0.186,
+      "recall_mean": 0.613,
+      "recall_sd": 0.448,
+      "f1_mean": 0.398,
+      "f1_sd": 0.249,
+      "auc_mean": 0.548,
+      "auc_sd": 0.04
+    },
+    {
+      "excluded_feature": "spectrogram",
+      "excluded_label": "Spectrogram",
+      "acc_mean": 0.615,
+      "acc_sd": 0.011,
+      "precision_mean": 0.405,
+      "precision_sd": 0.035,
+      "recall_mean": 0.671,
+      "recall_sd": 0.304,
+      "f1_mean": 0.475,
+      "f1_sd": 0.144,
+      "auc_mean": 0.499,
+      "auc_sd": 0.059
+    },
+    {
+      "excluded_feature": "mel_spectrogram",
+      "excluded_label": "Mel-spectrogram",
+      "acc_mean": 0.609,
+      "acc_sd": 0.02,
+      "precision_mean": 0.243,
+      "precision_sd": 0.207,
+      "recall_mean": 0.4,
+      "recall_sd": 0.4,
+      "f1_mean": 0.282,
+      "f1_sd": 0.252,
+      "auc_mean": 0.501,
+      "auc_sd": 0.1
+    },
+    {
+      "excluded_feature": "hsfs",
+      "excluded_label": "HSFs",
+      "acc_mean": 0.769,
+      "acc_sd": 0.062,
+      "precision_mean": 0.721,
+      "precision_sd": 0.223,
+      "recall_mean": 0.6,
+      "recall_sd": 0.321,
+      "f1_mean": 0.549,
+      "f1_sd": 0.084,
+      "auc_mean": 0.775,
+      "auc_sd": 0.149
+    }
+  ]
+}

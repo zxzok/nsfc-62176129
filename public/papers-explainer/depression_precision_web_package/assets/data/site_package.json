@@ -1,0 +1,491 @@
+{
+  "slug": "neuroimaging-precision-rtms-depression-alff",
+  "seo_title": "用脑影像把抑郁分型：精准rTMS靶点dmPFC与OCC | 公众版解读",
+  "seo_description": "论文提出一种基于静息态fMRI（ALFF）与机器学习的抑郁分型框架：把抑郁分成原型与非典型两类，并为不同亚型选择不同rTMS靶点（dmPFC或枕叶OCC）。在住院青少年/青年样本中观察到影像回调与症状改善，但仍需随机对照试验验证。",
+  "keywords": [
+    "抑郁症",
+    "精准医疗",
+    "脑影像分型",
+    "静息态fMRI",
+    "ALFF",
+    "机器学习",
+    "rTMS",
+    "dmPFC",
+    "枕叶OCC",
+    "青少年抑郁",
+    "precision medicine"
+  ],
+  "sections": [
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "抑郁影响的人很多，也影响得很深。论文在背景中给出三个现实信号：\n\n1）它的终生患病率约 **15%–18%**，全球约 **3.5亿** 人受到影响；\n2）即使持续 **3–6个月** 的抗抑郁药单药治疗，达到缓解的人也“最多约 **40%**”；\n3）与一些其他疾病不同，抑郁的全球疾病负担在过去 **30年** 没有明显下降。\n\n这意味着：我们不仅需要“更多治疗”，也需要“更对症的治疗”。作者指出，基于症状的诊断标准容易带来抑郁的**异质性**（看起来同一种病，背后机制可能不同）与**主观性**，从而阻碍精准医疗。于是他们提出：能否用更客观的神经影像指标把人群先分得更像，再谈靶点与参数？",
+      "citations": [
+        "第1页 Background（15%–18%、3.5亿、≤40%、30年负担）",
+        "第1页 摘要Background（症状标准导致异质性/主观性）",
+        "第2页 Background（精准医疗与分型动机）"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的：把大脑当作“背景电台”来调台",
+      "body_markdown": "研究分两阶段、两个中心完成：\n\n**第一阶段（中心1）：先分型，再选靶点。** 研究招募 **238名门诊MDD** 与 **66名健康对照（HC）**（13–55岁），进行静息态fMRI。静息态fMRI可以理解为：人在不做任何任务时，大脑各区域仍会有自发活动；作者用 **ALFF** 来量化这种“低频波动的振幅”，把它当作每个脑区的“背景音量起伏”。\n\n接着他们用两步机器学习把人群分成两团：先用 **t‑SNE** 把高维ALFF模式压到二维（像把复杂地形投影成平面图，方便看聚集），再用 **高斯混合模型（GMM）** 进行聚类；同时用一致性聚类检验分型是否稳定，并用SVM评估分型后的可区分性。\n\n然后是“选靶点”：研究把大脑按AAL‑90分成90个脑区，逐脑区训练分类器区分“某亚型 vs 健康对照”，把每型区分能力最强的前10个脑区挑出来，看它们主要集中在哪个解剖区域，从而确定该亚型的rTMS刺激靶点。\n\n**第二阶段（中心2）：把分型策略用到真实住院青年，并做两周精准rTMS。** 中心2纳入 **72名住院青少年/青年（13–24岁）** 的抑郁发作个体（38 MDD、34 双相II型抑郁发作）。研究使用中心1训练的分类器给他们分型后，进行两周20次rTMS：原型亚型刺激 **dmPFC**（10 Hz、每次1200脉冲），非典型亚型刺激 **枕叶皮层OCC**（1 Hz、每次1000脉冲），两者均为100%静息运动阈值；并在治疗前（T0）、1周（T1）、2周（T2）采集MRI与量表（HAMD‑17、HAMA及自杀意念条目）评估变化。",
+      "citations": [
+        "第2页 2.1（样本）",
+        "第2–3页 2.2–2.4（ALFF、t‑SNE、GMM、SVM、选靶点方法）",
+        "第3页 2.5（rTMS参数）",
+        "第3页 图1（两阶段流程）",
+        "第3页 2.7（响应/缓解定义）"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么：三条最重要结论",
+      "body_markdown": "### 发现1：抑郁在脑影像上可分两类，“前脑—后脑”失衡方向相反\n\n在中心1的238名MDD中，算法分出两类亚型：**原型（n=143）** 与 **非典型（n=95）**。两者共同主题是“前额叶—后部（尤其枕叶/视觉皮层）功能不平衡”，但方向相反：原型表现为前部ALFF更高、后部更低；非典型则相反。分型稳定性指标m1=0.93、m2=0.73。\n\n更关键的是：把抑郁分型后再建模，比把所有抑郁混在一起更能区分健康对照——原型与非典型对HC的分类性能（F1≈0.70–0.71、AUC≈0.77）高于“总MDD vs HC”（F1=0.44、AUC=0.60），置换检验p<0.002支持其可靠性。\n\n### 发现2：两类亚型对应两个不同的刺激靶点：dmPFC vs 枕叶OCC\n\n作者不是沿用最常见的左侧dlPFC经验靶点，而是从“最能区分亚型与健康对照”的候选脑区分布推导靶点：原型亚型前10候选中 **6/10** 主要位于额叶，因此选 **dmPFC**；非典型亚型前10候选中 **6/10** 主要位于枕叶，因此选 **OCC**。\n\n### 发现3：在住院青少年/青年中，精准rTMS后出现影像回调与症状改善\n\n中心2把72人分成原型 **16人**、非典型 **56人** 后进行两周精准rTMS；两亚型均未出现严重不良事件。影像上，两亚型在治疗1周后就出现显著的前后失衡变化并维持至2周；作者指出多数变化发生在第一周。\n\n临床上，T2时总体响应率为：原型 **90.00%**、非典型 **70.73%**；缓解率为：原型 **30.00%**、非典型 **46.34%**。在基线自杀意念条目>0者中，T2时自杀意念响应率：原型 **100%**、非典型 **81.25%**。\n\n> 重要提醒：论文明确指出本试验缺少假刺激对照且未完全盲法，因此这些改善不能直接等同于“完全由rTMS导致”的因果结论，需要更严格的随机对照试验验证。",
+      "citations": [
+        "第4页 第3.1节；图2",
+        "第4页 第3.2节；图3",
+        "第4–5页 第3.3节（样本分型与完成情况、不良事件、第一周变化）",
+        "第5页 第3.4节（响应/缓解与自杀意念百分比）",
+        "第7页 Discussion（无假刺激对照、未完全盲法、样本量）"
+      ]
+    },
+    {
+      "id": "so-what",
+      "heading": "这项研究有什么用：已证据支持 vs 合理推测",
+      "body_markdown": "**论文证据直接支持的价值**：\n\n1）它演示了一条可操作的“闭环”路径：用客观影像指标（ALFF）分型 → 为不同亚型选不同rTMS靶点 → 用影像与量表在T0/T1/T2回看是否回调。作者把这称为“subtyping‑treatment‑evaluation closed loop”。\n\n2）在住院青少年/青年抑郁发作样本中，这条路径与较高的总体响应率、以及自杀意念条目的改善同时出现，提示该框架具备可行性。\n\n**合理推测（但论文尚未证明）**：\n\n如果未来在更大样本、双盲随机对照试验中再次验证有效，这种分型‑选靶策略可能减少“试错式”治疗，让rTMS更像按机制对症。\n\n**论文目前不支持的用法**：\n\n它不能用于个人自测或自行决定治疗靶点：论文未提供可供个体使用的简化规则/阈值；且临床应用仍缺乏假刺激对照与长期随访。",
+      "citations": [
+        "第1页 摘要Conclusions",
+        "第3页 图1",
+        "第5页 第3.4节",
+        "第7页 Discussion（RCT需要、局限性）",
+        "第2–3页 方法（流程依赖MRI与算法，非自测）"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "局限性与下一步：作者自己最在意的三件事",
+      "body_markdown": "论文在讨论中清楚指出：\n\n1）**没有假刺激（sham）对照**：由于探索性试验，未设置假刺激组。\n2）**未完全盲法**：参与者知道自己刺激的靶点，安慰剂效应可能混杂。\n3）**样本量与疗程限制**：样本量较小；“高响应但相对较低的缓解率”提示可能需要超过两周的更长疗程。\n\n作者给出的下一步方向是：开展更大样本、双盲、随机对照试验（文中提到正在进行，ClinicalTrials.gov：**NCT05465928**），并探索更长疗程以提升缓解率。",
+      "citations": [
+        "第7页 Discussion（无假刺激对照、未盲法、样本量、小疗程与下一步）"
+      ]
+    },
+    {
+      "id": "take-home",
+      "heading": "一句话带走",
+      "body_markdown": "**用脑影像先分型，让rTMS更“对症”。**",
+      "citations": [
+        "第1页 摘要Conclusions",
+        "第3页 图1"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "va-01-motivation",
+      "title": "为什么需要更精准的抑郁治疗",
+      "type": "redraw_infographic",
+      "source_ref": "第1页 Background",
+      "alt_text": "信息图用四个事实说明研究动机：抑郁终生患病率约15到18%；全球约3.5亿人受影响；单用抗抑郁药3到6个月缓解率最多约40%；全球疾病负担过去30年未明显下降。",
+      "file": "assets/images/motivation.svg"
+    },
+    {
+      "id": "va-02-sample",
+      "title": "两中心样本一览",
+      "type": "redraw_infographic",
+      "source_ref": "第2页 2.1；第1页 摘要Methods",
+      "alt_text": "信息图对比中心1与中心2：中心1为238名门诊MDD与66名健康对照，年龄13到55；中心2为72名住院青少年/青年抑郁发作，年龄13到24，其中38名MDD、34名双相II型抑郁发作，并注明入组量表阈值。",
+      "file": "assets/images/sample.svg"
+    },
+    {
+      "id": "va-03-fig1",
+      "title": "闭环流程图：分型—选靶—评估",
+      "type": "reuse_paper_figure",
+      "source_ref": "图1（第3页）",
+      "alt_text": "论文图1：流程图展示研究分两阶段两中心。中心1用静息态fMRI的ALFF与机器学习识别两种抑郁亚型并确定亚型特异rTMS靶点；中心2用分类器给住院抑郁青年分型后进行两周精准rTMS，并在T0、T1、T2进行MRI与临床评估。",
+      "file": "assets/images/fig1_p3.jpg"
+    },
+    {
+      "id": "va-04-seesaw",
+      "title": "前后“跷跷板”示意",
+      "type": "schematic",
+      "source_ref": "第4页 第3.1节；图2A",
+      "alt_text": "示意图把两种抑郁亚型理解为前部与后部脑区活动的相对高低：原型亚型前额叶更高、后部更低；非典型亚型相反。该类比对应论文图2A的前后失衡模式。",
+      "file": "assets/images/seesaw.svg"
+    },
+    {
+      "id": "va-05-fig2",
+      "title": "两亚型的脑影像差异（论文图2）",
+      "type": "reuse_paper_figure",
+      "source_ref": "图2（第4页）",
+      "alt_text": "论文图2：展示原型与非典型抑郁的ALFF差异脑图（前额叶与后部区域方向相反），并给出聚类稳定性指标以及分类器ROC/性能对比，说明分型后识别健康对照更准。",
+      "file": "assets/images/fig2_p4.jpg"
+    },
+    {
+      "id": "va-06-performance",
+      "title": "分型后识别更准：F1与AUC对比（重绘）",
+      "type": "redraw_infographic",
+      "source_ref": "第4页 图2C；第4页 第3.1节",
+      "alt_text": "柱状图对比三种模型：总体MDD对健康对照F1为0.44、AUC为0.60；原型亚型对健康对照F1为0.70、AUC为0.77；非典型亚型对健康对照F1为0.71、AUC为0.77，提示分型提升可区分性。",
+      "file": "assets/images/performance.svg"
+    },
+    {
+      "id": "va-07-fig3",
+      "title": "从90个脑区到2个靶点（论文图3）",
+      "type": "reuse_paper_figure",
+      "source_ref": "图3（第5页）",
+      "alt_text": "论文图3：展示作者如何从AAL-90的90脑区逐区训练分类器，挑出每个亚型最能区分健康对照的前10候选脑区，并据候选集中分布确定原型靶点dmPFC、非典型靶点枕叶OCC。",
+      "file": "assets/images/fig3_p5.jpg"
+    },
+    {
+      "id": "va-08-fig4",
+      "title": "两周精准rTMS后的影像与症状变化（论文图4）",
+      "type": "reuse_paper_figure",
+      "source_ref": "图4（第6页）",
+      "alt_text": "论文图4：上半部分显示两亚型在T1与T2相对基线的ALFF变化脑图，呈现前后失衡的逆转/回调；下半部分用柱状图展示随时间的量表变化，提示影像改变与症状改善相伴出现。",
+      "file": "assets/images/fig4_p6.jpg"
+    },
+    {
+      "id": "va-09-outcomes",
+      "title": "两周后症状改善：响应率与缓解率（重绘）",
+      "type": "redraw_infographic",
+      "source_ref": "第5页 第3.4节；图4B（第6页）",
+      "alt_text": "信息图汇总中心2两周后的关键百分比：总体响应率T2为原型90.00%、非典型70.73%；总体缓解率T2为原型30.00%、非典型46.34%，并提示论文缺少假刺激对照。",
+      "file": "assets/images/outcomes.svg"
+    },
+    {
+      "id": "va-10-boundary",
+      "title": "证据边界：别把“可能”当“已经”",
+      "type": "concept_infographic",
+      "source_ref": "第1页 摘要；第4–5页 结果；第7页 Discussion",
+      "alt_text": "概念图把结论分成三类：论文直接证据包括两种亚型、亚型特异靶点与两周内的影像回调和响应百分比；合理推测是未来若随机对照试验证实可能提升选靶精准度；论文未报告包括假刺激对照因果效果、个体自测阈值与长期随访。",
+      "file": "assets/images/boundary.svg"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "im-01-subtype-toggle",
+      "title": "选择亚型：前后“跷跷板”怎么倾斜？",
+      "purpose": "帮助公众用一个直觉模型理解两亚型的相反失衡。",
+      "ui_controls": [
+        "tab:原型|非典型",
+        "hover_tooltip:证据锚点"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Subtype_Imbalance_Summary",
+        "type": "object",
+        "properties": {
+          "subtype_id": {
+            "type": "string",
+            "enum": [
+              "archetypal",
+              "atypical"
+            ]
+          },
+          "subtype_name_zh": {
+            "type": "string"
+          },
+          "comparison": {
+            "type": "string",
+            "enum": [
+              "vs_HC"
+            ]
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "group_id": {
+                  "type": "string",
+                  "enum": [
+                    "frontal",
+                    "posterior"
+                  ]
+                },
+                "label_zh": {
+                  "type": "string"
+                },
+                "alff_direction": {
+                  "type": "string",
+                  "enum": [
+                    "increase",
+                    "decrease"
+                  ]
+                },
+                "examples": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "group_id",
+                "alff_direction"
+              ]
+            }
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subtype_id",
+          "groups",
+          "evidence"
+        ]
+      },
+      "source_ref": "第4页 第3.1节；图2A"
+    },
+    {
+      "id": "im-02-target-compare",
+      "title": "靶点对对碰：为什么一个刺激dmPFC，一个刺激OCC？",
+      "purpose": "解释“靶点来自数据驱动的候选分布”，并展示两亚型的rTMS参数。",
+      "ui_controls": [
+        "toggle:原型|非典型",
+        "side_by_side_compare",
+        "expand:参数解释"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Subtype_rTMS_Protocol",
+        "type": "object",
+        "properties": {
+          "subtype_id": {
+            "type": "string",
+            "enum": [
+              "archetypal",
+              "atypical"
+            ]
+          },
+          "target": {
+            "type": "string",
+            "enum": [
+              "dmPFC",
+              "OCC"
+            ]
+          },
+          "frequency_hz": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 50,
+            "unit": "Hz"
+          },
+          "pulses_per_session": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5000,
+            "unit": "pulses/session"
+          },
+          "sessions_total": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60,
+            "unit": "sessions"
+          },
+          "motor_threshold_percent": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200,
+            "unit": "%RMT"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subtype_id",
+          "target",
+          "frequency_hz",
+          "pulses_per_session",
+          "sessions_total",
+          "motor_threshold_percent",
+          "evidence"
+        ]
+      },
+      "source_ref": "第3页 2.4–2.5；第4页 3.2；图3"
+    },
+    {
+      "id": "im-03-timeline",
+      "title": "两周时间轴：T0→T1→T2发生了什么？",
+      "purpose": "用滑杆把“影像回调”和“量表改善”的时间关系讲清楚。",
+      "ui_controls": [
+        "slider:T0|T1|T2",
+        "toggle:原型|非典型",
+        "tooltip:定义与证据"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Subtype_Timeline_Outcomes",
+        "type": "object",
+        "properties": {
+          "subtype_id": {
+            "type": "string",
+            "enum": [
+              "archetypal",
+              "atypical"
+            ]
+          },
+          "participants": {
+            "type": "object",
+            "properties": {
+              "n_assigned": {
+                "type": "integer",
+                "unit": "persons"
+              },
+              "n_completed_week1": {
+                "type": "integer",
+                "unit": "persons"
+              },
+              "n_completed_week2": {
+                "type": "integer",
+                "unit": "persons"
+              },
+              "dropout_reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "n_assigned",
+              "n_completed_week2"
+            ]
+          },
+          "baseline": {
+            "type": "object",
+            "properties": {
+              "hamd17_mean": {
+                "type": "number",
+                "unit": "score"
+              },
+              "hamd17_sd": {
+                "type": "number",
+                "unit": "score"
+              },
+              "hama_mean": {
+                "type": "number",
+                "unit": "score"
+              },
+              "hama_sd": {
+                "type": "number",
+                "unit": "score"
+              }
+            }
+          },
+          "timepoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "T0",
+                    "T1",
+                    "T2"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "overall_response_percent": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 100,
+                  "unit": "%"
+                },
+                "overall_remission_percent": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 100,
+                  "unit": "%"
+                },
+                "suicidality_response_percent": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 100,
+                  "unit": "%"
+                },
+                "suicidality_remission_percent": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 100,
+                  "unit": "%"
+                },
+                "imaging_note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ]
+            }
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subtype_id",
+          "participants",
+          "timepoints",
+          "evidence"
+        ]
+      },
+      "source_ref": "第4–5页 3.3–3.4；图4；表1"
+    },
+    {
+      "id": "im-04-glossary-search",
+      "title": "术语查一查：把论文术语翻译成日常语言",
+      "purpose": "让读者在阅读中随时搜索术语，降低理解门槛。",
+      "ui_controls": [
+        "search_box",
+        "highlight_matches",
+        "expand_card"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Glossary_Item",
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "explain": {
+            "type": "string"
+          },
+          "analogy": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "term",
+          "explain",
+          "analogy"
+        ]
+      },
+      "source_ref": "第2–3页 Methods（术语来源）；第4–7页 Results/Discussion（术语使用情境）"
+    }
+  ],
+  "disclaimer": "本网页内容为科研成果科普解读，非医疗建议、亦不用于诊断或自测。rTMS为医疗操作，需由具备资质的临床团队评估与实施。论文中的临床应用为探索性研究，且未设置假刺激对照、未完全盲法、样本量有限；任何疗效外推需以未来更大样本、双盲随机对照试验为准。（证据：第7页Discussion；第1页摘要Conclusions）"
+}

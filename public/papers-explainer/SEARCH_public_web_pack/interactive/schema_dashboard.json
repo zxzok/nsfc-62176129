@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEARCH_Wave1_ParticipantDashboard",
+  "type": "object",
+  "properties": {
+    "wave": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "respondent_group": {
+            "type": "string",
+            "enum": [
+              "students",
+              "caregivers",
+              "teachers"
+            ]
+          },
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "location",
+              "education_level",
+              "sex",
+              "race"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unit": {
+            "type": "string",
+            "const": "people"
+          },
+          "source_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "respondent_group",
+          "dimension",
+          "label",
+          "count",
+          "unit",
+          "source_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_value_policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "wave",
+    "records",
+    "missing_value_policy"
+  ],
+  "additionalProperties": false
+}

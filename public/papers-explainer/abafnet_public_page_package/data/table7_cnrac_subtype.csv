@@ -1,0 +1,7 @@
+Task_Group,Task,ACC_mean,ACC_sd,Precision_mean,Precision_sd,Recall_mean,Recall_sd,F1_mean,F1_sd,AUC_mean,AUC_sd
+NC-Subtype,NC vs Mild,0.98,0.02,0.25,0.27,0.86,0.24,0.31,0.24,0.86,0.18
+NC-Subtype,NC vs Moderate,0.93,0.03,0.7,0.18,0.85,0.19,0.75,0.16,0.95,0.04
+NC-Subtype,NC vs Severe,0.94,0.03,0.72,0.22,0.85,0.19,0.73,0.16,0.94,0.08
+Inter-Subtype,Mild vs Moderate,0.86,0.19,0.76,0.35,0.64,0.39,0.66,0.36,0.79,0.22
+Inter-Subtype,Mild vs Severe,0.94,0.05,0.85,0.27,0.65,0.36,0.7,0.32,0.81,0.21
+Inter-Subtype,Moderate vs Severe,0.86,0.06,0.83,0.08,0.82,0.16,0.81,0.11,0.9,0.07

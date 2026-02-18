@@ -1,0 +1,67 @@
+[
+  {
+    "id": "C1",
+    "label": "摘要与核心结论",
+    "ref": "第1页 摘要"
+  },
+  {
+    "id": "C2",
+    "label": "研究目的与假设",
+    "ref": "第2页 Introduction 末段"
+  },
+  {
+    "id": "C3",
+    "label": "样本、分组与量表（含阳性症状条目）",
+    "ref": "第2页 Participants"
+  },
+  {
+    "id": "C4",
+    "label": "基线人口学与临床特征",
+    "ref": "第3页 表1"
+  },
+  {
+    "id": "C5",
+    "label": "静息态fMRI扫描与预处理参数",
+    "ref": "第3页 MRI data acquisition and processing"
+  },
+  {
+    "id": "C6",
+    "label": "网络构建与指标定义（σ、γ、DC、NE等）及阈值范围",
+    "ref": "第3–4页 Network construction；第4页 Network analysis"
+  },
+  {
+    "id": "C7",
+    "label": "全局指标组间差异（σ、γ）",
+    "ref": "第4页 结果段落；第5页 图1"
+  },
+  {
+    "id": "C8",
+    "label": "节点指标组间差异（STG/HG/MCG）",
+    "ref": "第4页 结果段落；第6页 图2"
+  },
+  {
+    "id": "C9",
+    "label": "网络指标与症状严重度的相关",
+    "ref": "第5页 相关段落；第6页 图3；第7页 图4"
+  },
+  {
+    "id": "C10",
+    "label": "两周后症状变化与组间差异",
+    "ref": "第6页 段落；第7页 表2"
+  },
+  {
+    "id": "C11",
+    "label": "两周后网络指标变化与症状改善相关（未校正P）",
+    "ref": "第7页 Alteration…段落；第8页 图5"
+  },
+  {
+    "id": "C12",
+    "label": "讨论、局限与下一步；结论",
+    "ref": "第8–9页 Discussion；第9页 limitations；第9页 In conclusion"
+  },
+  {
+    "id": "C13",
+    "label": "数据获取方式",
+    "ref": "第10页 Data availability"
+  }
+]

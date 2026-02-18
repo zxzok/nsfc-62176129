@@ -1,0 +1,71 @@
+{
+  "dataset": "treatment_related_topology_changes",
+  "description": "两周治疗前后网络指标变化（组内配对t检验；论文注明P值未做多重校正）。",
+  "source_ref": [
+    "第7页 Alteration...段落",
+    "第8页 图5"
+  ],
+  "multiple_comparison_corrected": false,
+  "entries": [
+    {
+      "group": "MDP",
+      "n": 35,
+      "metric_id": "sigma",
+      "metric_label_cn": "小世界性 σ",
+      "direction": "decrease",
+      "p_value_uncorrected": 0.016
+    },
+    {
+      "group": "MDP",
+      "n": 35,
+      "metric_id": "gamma",
+      "metric_label_cn": "标准化聚类系数 γ",
+      "direction": "trend_decrease",
+      "p_value_uncorrected": 0.056
+    },
+    {
+      "group": "MDP",
+      "n": 35,
+      "metric_id": "DC_STG_L",
+      "metric_label_cn": "左上颞回 度中心性 DC",
+      "direction": "increase",
+      "p_value_uncorrected": 0.038
+    },
+    {
+      "group": "MDNP",
+      "n": 71,
+      "metric_id": "DC_STG_L",
+      "metric_label_cn": "左上颞回 度中心性 DC",
+      "direction": "decrease",
+      "p_value_uncorrected": 0.024
+    },
+    {
+      "group": "MDNP",
+      "n": 71,
+      "metric_id": "NE_MCG_L",
+      "metric_label_cn": "左内侧扣带回 节点效率 NE",
+      "direction": "decrease",
+      "p_value_uncorrected": 0.016
+    },
+    {
+      "group": "MDNP",
+      "n": 71,
+      "metric_id": "NE_HG_L",
+      "metric_label_cn": "左赫氏回 节点效率 NE",
+      "direction": "decrease",
+      "p_value_uncorrected": 0.005
+    },
+    {
+      "group": "MDNP",
+      "n": 71,
+      "metric_id": "NE_STG_L",
+      "metric_label_cn": "左上颞回 节点效率 NE",
+      "direction": "decrease",
+      "p_value_uncorrected": 0.033
+    }
+  ],
+  "notes": [
+    "论文明确指出：治疗前后比较的所有P值均未校正（all P values were uncorrected）（证据：第7页；第8页 图5图注）。",
+    "MDNP组报告为“全局指标无显著变化”，因此未列出对应条目（证据：第7页）。"
+  ]
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>在开始心理治疗前，能预测抑郁症的改善吗？</title>
+  <meta name="description" content="初步研究：静息态fMRI里左侧DLPFC的ReHo与CBT后HAMD相关，并用SVR给出预测误差（MAE=4.44）。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🧠</div>
+        <div class="brand-text">
+          <div class="kicker">科研成果公众传播 · 交互式解读</div>
+          <h1 id="pageTitle">在开始心理治疗前，能预测抑郁症的改善吗？</h1>
+          <p class="subtitle" id="pageSubtitle">加载中…</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btnToggleTOC" class="btn btn-secondary" type="button" aria-expanded="false" aria-controls="toc">目录</button>
+        <a class="btn btn-primary" href="#interactive">先看互动</a>
+      </div>
+    </div>
+  </header>
+
+  <nav id="toc" class="toc" aria-label="页面目录">
+    <div class="container">
+      <ol id="tocList"></ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <h2>这篇论文想回答什么？</h2>
+            <p class="lead">能不能在治疗开始前，用一个客观的脑影像线索，提示谁更可能从CBT中获益？</p>
+            <div class="evidence">
+              <span class="tag">证据锚点</span>
+              <span class="evidence-text">第1页摘要；第2页4.2节；图1C–D</span>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>你会在页面里看到什么</h2>
+            <ul class="clean">
+              <li>一张图（图1）带你读懂：变化、相关、预测、分子线索</li>
+              <li>三个互动：研究时间轴、图1导览、影像转录组探索器</li>
+              <li>克制的“能用/不能用”边界与局限性</li>
+            </ul>
+            <p class="small muted">提示：本页为科普解读，不构成医疗建议。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interactive" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>互动区：玩明白这项研究</h2>
+          <p class="muted">交互只展示论文已报告信息；无原始个体数据的部分，会以“概念解释”呈现。</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card" id="timelineCard">
+            <div class="card-head">
+              <h3>① 8周治疗旅程时间轴</h3>
+              <p class="muted">把扫描—治疗—评估—分析串起来</p>
+            </div>
+            <div id="timeline" class="timeline" role="region" aria-label="研究时间轴"></div>
+            <div class="card-foot">
+              <p class="small muted" id="timelineRisk"></p>
+            </div>
+          </article>
+
+          <article class="card" id="transcriptCard">
+            <div class="card-head">
+              <h3>② 影像转录组探索器</h3>
+              <p class="muted">通路分组 × 细胞类型（只展示论文给出的数字）</p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="通路分组切换">
+              <button class="tab" role="tab" aria-selected="true" data-bucket="neuroplasticity">神经可塑性</button>
+              <button class="tab" role="tab" aria-selected="false" data-bucket="cellular_resilience">细胞韧性</button>
+            </div>
+
+            <div id="transcriptSummary" class="callout"></div>
+            <div id="cellBars" class="bars" aria-label="细胞类型重叠基因数量条形图"></div>
+
+            <div class="card-foot">
+              <p class="small muted" id="transcriptRisk"></p>
+            </div>
+          </article>
+        </div>
+
+        <article class="card" id="fig1Card">
+          <div class="card-head">
+            <h3>③ 图1互动导览：点击任意子图</h3>
+            <p class="muted">不改动原图文件，只用热区解释每个子图想表达的“唯一信息”。</p>
+          </div>
+
+          <div class="figure-explorer">
+            <figure class="figure">
+              <img id="figure1" src="assets/figure1.png" alt="论文图1：CBT相关ReHo变化、症状变化、相关/预测、PLS基因表达权重与通路/细胞类型富集。" />
+              <div id="hotspots" class="hotspots" aria-hidden="true"></div>
+            </figure>
+
+            <aside class="drawer" aria-live="polite">
+              <div class="drawer-head">
+                <div>
+                  <div class="pill" id="panelLabel">点击图中热区</div>
+                  <h4 id="panelTitle">图1导览</h4>
+                </div>
+                <button id="btnCloseDrawer" class="btn btn-ghost" type="button" aria-label="关闭说明">✕</button>
+              </div>
+              <p id="panelSummary" class="lead">选择一个子图后，这里会显示一句话解释与证据锚点。</p>
+              <div class="evidence">
+                <span class="tag">证据锚点</span>
+                <span class="evidence-text" id="panelEvidence">—</span>
+              </div>
+              <button id="btnCopyEvidence" class="btn btn-secondary" type="button">复制证据锚点</button>
+              <p class="small muted" id="fig1Risk"></p>
+            </aside>
+          </div>
+
+          <div class="card-foot">
+            <p class="small muted">图像来源：论文图1（第3页）。论文为CC BY-NC-ND 4.0开放许可（第1页）。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="visuals">
+      <div class="container">
+        <div class="section-head">
+          <h2>可复用的视觉素材（含无障碍alt）</h2>
+          <p class="muted">除论文原图外，其余为概念信息图：只使用论文已报告信息，不引入未报告数值。</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-head">
+              <h3>ReHo概念示意</h3>
+              <p class="muted">核心信息：ReHo衡量“中心体素与周围26邻居是否同节拍”。（证据：第2页2.2节）</p>
+            </div>
+            <img src="assets/diagram_reho.svg" alt="示意图对比两种情况：同步时中心体素与邻居一起起落，ReHo更高；不同步时各自变化，ReHo更低。图强调ReHo来自比较中心体素与周围26个邻居体素的时间序列一致性，是概念解释不含真实数据。" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16)"/>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>研究流程概念图</h3>
+              <p class="muted">核心信息：基线扫描→8周16次CBT→治疗后复测→三步分析。（证据：第2页2.1–2.4节；第2页4.1–4.3节）</p>
+            </div>
+            <img src="assets/diagram_pipeline.svg" alt="流程图显示四步：基线阶段进行静息态fMRI与HAMD评估并计算ReHo；随后8周内完成16次CBT；治疗后再次扫描与评估；最后进行三步分析：ReHo变化与症状变化、SVR预测治疗后HAMD、AHBA+PLS影像转录组与通路/细胞类型富集。" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16)"/>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>预测指标怎么读</h3>
+              <p class="muted">核心信息：MAE=4.44是“平均误差”，不是命中率。（证据：第2页4.2节；第3页局限性段落）</p>
+            </div>
+            <img src="assets/diagram_prediction.svg" alt="信息图解释机器学习预测指标：左侧给出论文报告的MAE=4.44与MSE=33.88，并说明使用留一交叉验证；右侧强调别误读：MAE不是对错命中率，个体误差可能更大，且论文未报告外部验证与随机对照，因此当前只能作为候选线索。" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16)"/>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>证据阶梯</h3>
+              <p class="muted">核心信息：从“变化→相关→预测→机制线索”，越往上越需要更严格验证。（证据：第2页4.1–4.3节；第3页局限性）</p>
+            </div>
+            <img src="assets/diagram_evidence_ladder.svg" alt="阶梯图分四层：层1显示CBT后DLPFC ReHo升高且HAMD下降；层2显示左DLPFC变化与症状改善相关；层3显示治疗前ReHo可预测治疗后HAMD并给出MAE；层4显示影像转录组提示可塑性与细胞韧性通路但仅为关联，并标注小样本、缺少随机对照等局限。" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16)"/>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div id="contentRoot"></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>术语小词典</h2>
+          <p class="muted">遇到术语别慌：每个词一句话解释 + 一个类比。</p>
+        </div>
+        <div id="glossary" class="glossary"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p class="muted">从公众视角提出的问题；回答只依据论文内容。</p>
+        </div>
+        <div id="faq" class="faq"></div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>引用</h3>
+            <p class="small">
+              Wei Y, Zhang R, Wang Y, et al. <em>Towards a neuroimaging biomarker for predicting cognitive behavioural therapy outcomes in treatment-naive depression: Preliminary findings</em>.
+              <span class="muted">Psychiatry Research</span> 329 (2023) 115542. DOI: <span id="doi">10.1016/j.psychres.2023.115542</span>.
+            </p>
+          </div>
+          <div>
+            <h3>免责声明</h3>
+            <p class="small muted">
+              本页面为科研成果公众科普解读，不构成医疗建议或诊断依据。抑郁症评估与治疗请咨询专业人员。研究为初步发现（样本小、缺少随机对照等），相关与预测不等于因果。（证据：第3页局限性段落）
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

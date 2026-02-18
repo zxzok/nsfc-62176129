@@ -1,0 +1,62 @@
+[
+  {
+    "term": "SEARCH（School-based Evaluation Advancing Response for Child Health）",
+    "definition": "一项以学校为中心、使用数字平台评估并长期追踪4–12年级学生心理健康的队列研究。",
+    "analogy": "像把“心理健康体检系统”装进学校，并定期复查。",
+    "source_ref": "Title/Abstract, p.1; Methods, p.1–2"
+  },
+  {
+    "term": "学校为中心（school-based）",
+    "definition": "把评估与数据收集主要放在学校场景中完成，而不是只依赖医院或门诊。",
+    "analogy": "像把常规体检车开到社区，让更多人更方便参与。",
+    "source_ref": "Background/Introduction, p.1–2"
+  },
+  {
+    "term": "混合纵向队列（mixed longitudinal cohort）",
+    "definition": "每一轮邀请每校当时在读的4–12年级学生参与，因此既能追踪部分学生的变化，也会有新入学与毕业带来的“动态更替”。",
+    "analogy": "像同一所学校每半年做一次“年级群体合影”，有人长大离开，也有人新加入。",
+    "source_ref": "Study design, p.2"
+  },
+  {
+    "term": "数字平台（digital platform）",
+    "definition": "用网页、手机小程序和安卓平板应用统一完成问卷、录音采集与数据进度监测。",
+    "analogy": "像一个把不同窗口的数据自动汇总到同一后台的系统。",
+    "source_ref": "Methods/Procedure, p.1, p.3; Figure 2, p.4"
+  },
+  {
+    "term": "DASS-21",
+    "definition": "一个包含抑郁、焦虑、压力三部分的自评量表，用于评估近期情绪压力水平；在本研究中还用于触发教师补充评估。",
+    "analogy": "像体检里的初筛指标：提示可能需要进一步关注，但不等于诊断。",
+    "source_ref": "Procedure, p.3"
+  },
+  {
+    "term": "阈值触发（threshold-triggered teacher assessment）",
+    "definition": "只有当学生DASS-21分量表超过指定分数（抑郁>9/焦虑>7/压力>14）时，教师才需要填写问卷。",
+    "analogy": "像把老师的精力优先用在“警报亮起”的学生上。",
+    "source_ref": "Procedure, p.3"
+  },
+  {
+    "term": "SDQ（Strengths and Difficulties Questionnaire）",
+    "definition": "从情绪、行为、人际等方面评估儿童青少年优势与困难的量表，可由学生/照护者/教师填写。",
+    "analogy": "像三方各写一份“观察记录”，拼出更完整的画像。",
+    "source_ref": "Measures, p.3"
+  },
+  {
+    "term": "开放式问题（open-ended questions）",
+    "definition": "让学生用自己的话描述经历与感受，本研究用3个开放式问题采集自然语言与表达方式。",
+    "analogy": "不是勾选题，而是让你“说一句自己的故事”。",
+    "source_ref": "Facial and acoustic recording, p.4"
+  },
+  {
+    "term": "标准化朗读文本（standardised text）",
+    "definition": "要求所有学生朗读同一段文本《The North Wind and the Sun》，方便后续进行语音分析比较。",
+    "analogy": "像用同一段“读稿”来比较不同人的语速、停顿与语调变化。",
+    "source_ref": "Facial and acoustic recording, p.4; Table 1, p.5"
+  },
+  {
+    "term": "作答反应时（response time intervals）",
+    "definition": "系统记录每题从页面出现到提交答案的时间差，用于识别草率作答等质量问题，并增强数字化筛查可信度。",
+    "analogy": "像考试看答题用时：太快可能没认真读题。",
+    "source_ref": "Response time intervals, p.4–5; Table 1, p.5"
+  }
+]

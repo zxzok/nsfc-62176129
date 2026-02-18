@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260" role="img" aria-labelledby="title desc">
+  <title id="title">What the data cannot tell</title>
+  <desc id="desc">A plate icon with a question mark, indicating that nutrient intake and food structure were not assessed.</desc>
+  <rect x="0" y="0" width="800" height="260" fill="white"/>
+  <g font-family="Arial, sans-serif" fill="#111">
+    <text x="40" y="48" font-size="26">这份数据“看不到”的东西（概念图）</text>
+    <text x="40" y="80" font-size="16">论文未评估营养结构与摄入量：只能分析时间、花费、频率、模式等</text>
+  </g>
+  <g transform="translate(320,90)">
+    <circle cx="90" cy="70" r="65" fill="none" stroke="#111" stroke-width="4"/>
+    <circle cx="90" cy="70" r="35" fill="none" stroke="#999" stroke-width="3" stroke-dasharray="6,6"/>
+    <text x="80" y="78" font-family="Arial, sans-serif" font-size="34" fill="#111">?</text>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#111">
+    <text x="520" y="135" font-size="16">能看到：几点吃、吃几顿、花多少钱</text>
+    <text x="520" y="160" font-size="16">看不到：营养素、食物成分、家庭外就餐</text>
+    <text x="520" y="185" font-size="16">（证据：PDF第9页 Limitations）</text>
+  </g>
+</svg>

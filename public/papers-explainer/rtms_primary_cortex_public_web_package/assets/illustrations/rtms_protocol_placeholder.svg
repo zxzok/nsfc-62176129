@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="rTMS参数对照示意图占位">
+  <rect width="1200" height="675" fill="#f7f7f7"/>
+  <text x="60" y="90" font-size="44" font-family="Arial, sans-serif" fill="#111">rTMS 参数对照（占位示意）</text>
+  <text x="60" y="140" font-size="22" font-family="Arial, sans-serif" fill="#333">用于网页制作：请用论文方法学参数填充卡片（动物 2.2.2；临床 2.3.3）。</text>
+  <rect x="60" y="190" width="520" height="420" fill="#ffffff" stroke="#dddddd"/>
+  <rect x="620" y="190" width="520" height="420" fill="#ffffff" stroke="#dddddd"/>
+  <text x="90" y="240" font-size="30" font-family="Arial, sans-serif" fill="#111">动物（CUMS）</text>
+  <text x="650" y="240" font-size="30" font-family="Arial, sans-serif" fill="#111">临床（17–25岁）</text>
+  <g font-family="Arial, sans-serif" font-size="22" fill="#111">
+    <text x="90" y="290">频率：1 Hz</text>
+    <text x="90" y="330">脉冲：900 / 次</text>
+    <text x="90" y="370">次数：1 次/天 × 14 天</text>
+    <text x="90" y="410">节奏：1s on / 0s off</text>
+    <text x="90" y="450">靶点：初级皮层</text>
+    <text x="650" y="290">频率：1 Hz</text>
+    <text x="650" y="330">脉冲：1000 / 次</text>
+    <text x="650" y="370">次数：2 次/天 × 5 天（共10次）</text>
+    <text x="650" y="410">节奏：10s on / 2s off</text>
+    <text x="650" y="450">靶点：视觉皮层（初级皮层关键区）</text>
+  </g>
+  <text x="60" y="645" font-size="18" font-family="Arial, sans-serif" fill="#555">占位图：发布前请替换为正式信息图（保留来源标注）。</text>
+</svg>

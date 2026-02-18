@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "module_id": "brain_deviation_map",
+  "title": "脑偏离地图：一键切换两种亚型",
+  "description": "用于展示两种亚型在皮层灰质体积（GMV）偏离方向上的差异，并支持按脑区查看偏高/偏低比例与阈值规则。该schema描述前端所需的数据字段与约束。",
+  "data_note": "正文图2给出方向与可视化比例，但逐脑区精确z50与比例数表未在正文逐项列出；若需ROI级别数据，建议从作者公开仓库导出（证据：PDF第9页 Data and code availability；PDF第5页 图2）。",
+  "fields": [
+    {
+      "name": "granularity",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "lobe_group",
+        "dk68_roi"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第3页：DK 68 cortical regions"
+    },
+    {
+      "name": "region_id",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "DK atlas ROI id (dk68) 或自定义分组id(lobe_group)",
+      "missing": "not_allowed",
+      "source_ref": "PDF第3页：DK parcellation"
+    },
+    {
+      "name": "region_name_cn",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "文本",
+      "missing": "not_allowed",
+      "source_ref": "PDF第5页：结果段落点名的额叶/扣带/旁中央/颞顶/枕叶等"
+    },
+    {
+      "name": "hemisphere",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "L",
+        "R",
+        "Both"
+      ],
+      "missing": "allowed; missing=>Both",
+      "source_ref": "PDF第5页 图2"
+    },
+    {
+      "name": "subtype",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "subtype_1",
+        "subtype_2"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：两亚型人数；PDF第5页 图2"
+    },
+    {
+      "name": "deviation_direction",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "supra_normal",
+        "infra_normal",
+        "within_normative_range"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：supra/infra阈值；PDF第5页 图2A"
+    },
+    {
+      "name": "threshold_rule",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "例如 'z95>1.96 => supra, z5<-1.96 => infra'",
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：阈值定义"
+    },
+    {
+      "name": "mean_z50",
+      "type": "number",
+      "unit": "z-score",
+      "allowed_range": [
+        -10,
+        10
+      ],
+      "missing": "allowed; 缺失则仅展示方向",
+      "source_ref": "PDF第3页：z50 maps用于聚类（逐ROI数值正文未逐项列出）"
+    },
+    {
+      "name": "subject_rate_supra",
+      "type": "number",
+      "unit": "proportion",
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "allowed; 缺失则不展示比例层",
+      "source_ref": "PDF第5页 图2B-2C"
+    },
+    {
+      "name": "subject_rate_infra",
+      "type": "number",
+      "unit": "proportion",
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "allowed; 缺失则不展示比例层",
+      "source_ref": "PDF第5页 图2B-2C"
+    },
+    {
+      "name": "cohort",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "discovery_drug_free",
+        "replication_medicated"
+      ],
+      "missing": "allowed; default=discovery_drug_free",
+      "source_ref": "PDF第2页：两队列；PDF第5页：两队列相关"
+    }
+  ],
+  "derived_fields": [
+    {
+      "name": "overall_pattern_note",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "文本",
+      "missing": "allowed",
+      "source_ref": "PDF第5页：57.4%脑区偏高更常见；90%脑区偏低更常见"
+    }
+  ]
+}

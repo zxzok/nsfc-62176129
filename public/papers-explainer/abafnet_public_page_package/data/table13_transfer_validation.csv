@@ -1,0 +1,2 @@
+Experiment,ACC_mean,ACC_sd,Precision_mean,Precision_sd,Recall_mean,Recall_sd,F1_mean,F1_sd
+Transfer Validation,0.89,0.02,0.85,0.04,0.92,0.0,0.89,0.03

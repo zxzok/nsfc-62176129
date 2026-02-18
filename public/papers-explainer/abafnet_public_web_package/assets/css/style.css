@@ -1,0 +1,171 @@
+/* Simple, accessible styling for the ABAFnet public page */
+:root{
+  --maxw: 980px;
+  --fg: #111;
+  --muted: #555;
+  --bg: #fff;
+  --card: #f6f7f8;
+  --border: #e2e6ea;
+  --link: #0b66c3;
+}
+
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; line-height: 1.65; }
+
+a{ color: var(--link); }
+a:hover{ text-decoration: underline; }
+
+header{
+  padding: 32px 16px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+main{ max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 48px; }
+
+h1{ font-size: 2rem; margin: 0 0 8px; }
+h2{ font-size: 1.2rem; margin: 0 0 8px; color: var(--muted); font-weight: 600; }
+
+nav{
+  max-width: var(--maxw);
+  margin: 12px auto 0;
+  padding: 0 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+nav a{
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+  padding-bottom: 2px;
+}
+
+section{
+  margin: 28px 0;
+}
+
+section > h3{
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+}
+
+.lead{
+  font-size: 1.05rem;
+}
+
+.cite{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.figure{
+  margin: 14px 0 4px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.figure img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.figure figcaption{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.callout{
+  background: #fff8db;
+  border: 1px solid #f0e1a0;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.module{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px 0;
+}
+
+.module h4{
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.controls{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  margin: 8px 0 12px;
+}
+
+.controls label{
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.controls select, .controls input[type="range"]{
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.kpi{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.kpi .box{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.kpi .box .label{ color: var(--muted); font-size: 0.9rem; }
+.kpi .box .value{ font-size: 1.3rem; font-weight: 700; }
+
+.table-wrap{ overflow-x: auto; }
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td{
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th{ background: #fbfbfc; }
+tr:last-child td{ border-bottom: none; }
+
+.small{
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+footer{
+  border-top: 1px solid var(--border);
+  padding: 18px 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}

@@ -1,0 +1,311 @@
+{
+  "slug": "mood-disorders-brain-maturational-subtypes",
+  "seo_title": "MRI“脑成长曲线”揭示情绪障碍两种亚型：症状、认知与遗传风险的不同方向",
+  "seo_description": "研究用健康人MRI建立灰质体积正常范围，计算情绪障碍患者的个体偏离并聚类出两种亚型：一型额叶等偏高且执行功能更受损并伴更高阿尔茨海默遗传风险；另一型广泛偏低且抑郁更重并伴更高抑郁遗传风险。科普解读附图与交互设计。",
+  "keywords": [
+    "情绪障碍",
+    "抑郁症",
+    "双相障碍",
+    "MRI",
+    "灰质体积",
+    "规范化建模",
+    "分位数回归",
+    "亚型",
+    "多基因风险评分",
+    "PRS",
+    "转录组",
+    "小胶质细胞",
+    "阿尔茨海默病",
+    "Alzheimer's disease",
+    "Major depressive disorder"
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "heading": "同样的抑郁/双相，为什么大脑“长得不一样”？",
+      "body_markdown": "**副标题：**用MRI“脑成长曲线”把情绪障碍分成两种亚型，并连接到症状、认知与遗传风险\n\n**论文信息：**Zheng J. 等，*Psychological Medicine*（2024），DOI: 10.1017/S0033291724000886。",
+      "citations": [
+        "PDF第1页：文章信息与摘要"
+      ]
+    },
+    {
+      "id": "read_30s",
+      "heading": "30秒读懂",
+      "body_markdown": "问题：同是抑郁症或双相障碍，为什么症状差异巨大、缺少客观分型？\n\n方法：用404名健康者MRI建立随年龄变化的灰质“参考曲线”，计算174名未用药患者的偏离值并聚类。\n\n发现：两种亚型——前额叶偏大且执行功能更差并伴更高阿尔茨海默遗传风险；以及全脑偏小且抑郁更重并伴更高抑郁遗传风险。\n\n意义：影像+症状+基因三条证据拼在一起，揭示情绪障碍的生物学异质性。",
+      "citations": [
+        "PDF第1页：摘要",
+        "PDF第2页：Participants",
+        "PDF第5–8页：图2–5"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "抑郁症（MDD）与双相障碍（BD）在抑郁发作上表现重叠，早期诊断与干预困难；同时缺少客观生物标志物。传统病例–对照平均比较容易忽视个体差异，而个体差异可能对应不同病理路径。\n\n研究者提出用“健康人正常范围”作为参照：先建立同龄健康人的大脑结构参考曲线，再看每位患者偏离多少，并据此寻找更有生物学意义的亚型。",
+      "citations": [
+        "PDF第1–2页：Introduction",
+        "PDF第3页：图1"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的",
+      "body_markdown": "研究招募114名MDD、60名BD未用药/停药患者（合计174）与404名健康对照，并另有268名用药患者用于复现。\n\n方法上，先用健康对照的T1结构MRI在68个皮层脑区建立随年龄与性别变化的GMV“正常范围”（分位数回归得到5/50/95百分位曲线），再计算每位患者在每个脑区的偏离值（z5/z50/z95）。\n\n随后用患者的z50偏离谱做层次聚类（Ward），并用ARI稳定性选择最稳的分组数，得到两亚型。最后比较两亚型在症状量表（HAMD/HAMA/BPRS）、执行功能（WCST）、症状网络指标、影像—转录组空间匹配（AHBA+PLS）与多基因风险评分（PRS‑AD、PRS‑MDD）上的差异，并在复现队列中检验偏离模式的可复现性。",
+      "citations": [
+        "PDF第1页：摘要",
+        "PDF第2页：Participants",
+        "PDF第3–4页：方法与阈值定义",
+        "PDF第3页：图1",
+        "PDF第5页：两队列相关"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么",
+      "body_markdown": "**发现1：两种“相反方向”的脑偏离模式可复现。**亚型1更偏向额叶/扣带等偏高，亚型2更偏向全局偏低；亚型1在57.4%脑区更常见偏高，亚型2在约90%脑区更常见偏低，并在复现队列中呈显著相关。\n\n**发现2：亚型2更“抑郁重”，亚型1更“执行功能吃力”。**亚型2的HAMD总分显著高于亚型1；亚型1在多项WCST指标上显著差于健康对照，而亚型2与健康对照无显著差异。症状网络方面，亚型2网络更密更强。\n\n**发现3：两型的转录组与遗传风险线索方向不同。**亚型1相关基因富集于阿尔茨海默相关通路，并更偏向内皮细胞/少突胶质细胞信号；亚型2相关基因富集于离子转运、钙信号、跨突触信号与应激反应，并显著富集小胶质细胞相关基因。PRS上，亚型1更高PRS‑AD而亚型2更高PRS‑MDD（相对健康对照）。",
+      "citations": [
+        "PDF第5页：图2与57.4%/90%描述",
+        "PDF第5–6页：图3与t/pFDR",
+        "PDF第6页：网络指标与t=10.17",
+        "PDF第6–7页：PLS与富集、图4",
+        "PDF第6–8页：PRS结果与图5"
+      ]
+    },
+    {
+      "id": "use",
+      "heading": "这项研究有什么用",
+      "body_markdown": "**证据支持：**论文提供了一个把“个体放回正常范围”来刻画异质性的影像分型框架，并用症状、认知、转录组与PRS多维数据交叉印证两亚型差异。\n\n**合理推测（需更多验证）：**如果未来在更大样本、多中心、纵向随访与治疗反应数据中复现，该分型可能用于研究分层、提升机制研究与临床试验的同质性，并推动用客观生物学指标细化诊断框架。但论文未提供临床可用的个体判别阈值或治疗预测能力，因此不能直接用于临床决策。",
+      "citations": [
+        "PDF第3页：图1",
+        "PDF第7–9页：Discussion关于诊断与个体化方向",
+        "PDF第9页：局限性"
+      ]
+    },
+    {
+      "id": "limits_next",
+      "heading": "局限性与下一步",
+      "body_markdown": "论文明确指出：AHBA为健康人转录组且右半球样本有限；遗传样本量小；认知评估仅用WCST；缺少未用药患者首次发作严重度等信息，限制了进一步关联分析。未来需要更大、更全面的数据与更多认知测验验证。",
+      "citations": [
+        "PDF第9页：Limitation段落",
+        "PDF第6页：PRS样本量"
+      ]
+    },
+    {
+      "id": "take_home",
+      "heading": "一句话带走",
+      "body_markdown": "情绪障碍可能包含两种相反的脑成熟轨迹。",
+      "citations": [
+        "PDF第1页：摘要",
+        "PDF第7页：Discussion首段"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "fig1_workflow",
+      "title": "图1 研究路线图（workflow）",
+      "type": "论文原图复用",
+      "file": "assets/figures/fig1_workflow.png",
+      "source_ref": "PDF第3页 图1",
+      "alt_text": "一张流程图：研究招募174名未用药情绪障碍患者与404名健康对照；用健康对照建立GMV随年龄的正常曲线并计算个体偏离；据偏离谱聚类出两亚型；再用症状、认知、转录组与多基因风险进行验证与复现。"
+    },
+    {
+      "id": "fig2_gmv_deviation",
+      "title": "图2 两亚型GMV偏离方向与比例",
+      "type": "论文原图复用",
+      "file": "assets/figures/fig2_gmv_deviation.png",
+      "source_ref": "PDF第5页 图2",
+      "alt_text": "两组大脑皮层图对比两亚型的GMV偏离方向：亚型1在额叶、扣带等多处偏高，亚型2在额叶、颞顶与扣带等广泛偏低；下方柱状图显示各脑区偏高或偏低在患者中的比例分布，整体对比清晰。"
+    },
+    {
+      "id": "fig3_clinical_profiles",
+      "title": "图3 临床与认知差异（HAMD/WCST/症状网络）",
+      "type": "论文原图复用",
+      "file": "assets/figures/fig3_clinical_profiles.png",
+      "source_ref": "PDF第6页 图3",
+      "alt_text": "四个面板对比两亚型的临床与认知：亚型2的抑郁量表HAMD总分更高；亚型1在WCST多项指标表现更差；症状网络图显示亚型2网络更密更强；折线图显示相同阈值下亚型2全局强度更高。"
+    },
+    {
+      "id": "fig4_transcriptomics",
+      "title": "图4 影像—转录组与细胞类型线索",
+      "type": "论文原图复用",
+      "file": "assets/figures/fig4_transcriptomics.png",
+      "source_ref": "PDF第7页 图4",
+      "alt_text": "多面板图展示影像与基因表达的空间匹配：两亚型的GMV偏离图分别对应不同的PLS1基因表达模式；富集结果显示亚型1更靠近阿尔茨海默相关通路与内皮/少突胶质细胞信号，亚型2更靠近离子转运等过程并富集小胶质细胞信号。"
+    },
+    {
+      "id": "fig5_prs",
+      "title": "图5 多基因风险评分（PRS）差异",
+      "type": "论文原图复用",
+      "file": "assets/figures/fig5_prs.png",
+      "source_ref": "PDF第8页 图5",
+      "alt_text": "四个柱状图比较多基因风险评分：亚型1在多个阈值下PRS-AD模型显著拟合，而亚型2不显著；相反亚型2在特定阈值下PRS-MDD模型显著拟合，提示两亚型遗传易感方向不同。"
+    },
+    {
+      "id": "infographic_subtypes_compare",
+      "title": "信息图：两种亚型一句话对照",
+      "type": "重绘信息图（占位SVG已提供）",
+      "file": "assets/figures/infographic_subtypes_compare.svg",
+      "source_ref": "PDF第5页 图2B–2C；文中57.4%与90%描述",
+      "alt_text": "一张对照信息图：左侧亚型1以红色表示偏高更常见，右侧亚型2以蓝色表示偏低更常见；并标注亚型1约57.4%脑区更常见偏高、亚型2约90%脑区更常见偏低，强调两种相反方向。"
+    },
+    {
+      "id": "schematic_normative_curve",
+      "title": "示意图：像身高曲线一样看大脑",
+      "type": "示意图（占位SVG已提供）",
+      "file": "assets/figures/schematic_normative_curve.svg",
+      "source_ref": "PDF第3–4页 方法；PDF第3页 图1",
+      "alt_text": "示意图把大脑GMV当作“身高”，用健康人5/50/95百分位画出正常范围；患者点落在曲线外代表偏离，超出阈值（如±1.96）标记为偏高或偏低；再把多脑区偏离谱聚类得到两种亚型。"
+    },
+    {
+      "id": "infographic_evidence_chain",
+      "title": "信息图：三层证据链拼图",
+      "type": "重绘信息图/交互主视觉（占位SVG已提供）",
+      "file": "assets/figures/infographic_evidence_chain.svg",
+      "source_ref": "PDF第5–8页 图2–5；PDF第9页 局限性",
+      "alt_text": "信息图把三层证据放在一张图：影像上两亚型偏离方向相反；转录组上分别富集于不同通路与细胞类型；遗传上亚型1更高PRS-AD、亚型2更高PRS-MDD，并提醒这些是关联线索非因果。"
+    },
+    {
+      "id": "infographic_sample_flow",
+      "title": "信息图：研究样本与分型人数",
+      "type": "信息图（占位SVG已提供）",
+      "file": "assets/figures/infographic_sample_flow.svg",
+      "source_ref": "PDF第1–2页 样本；PDF第4页 两亚型构成；PDF第2页 复现队列",
+      "alt_text": "信息图用简洁数字概括研究样本：174名未用药/停药患者（114抑郁症、60双相）与404名健康对照；聚类得到亚型1与亚型2并标注各自人数；另有268名用药患者用于复现检验。"
+    },
+    {
+      "id": "infographic_limitations_next",
+      "title": "信息图：局限性与下一步",
+      "type": "信息图/清单图（占位SVG已提供）",
+      "file": "assets/figures/infographic_limitations_next.svg",
+      "source_ref": "PDF第9页 Limitation段落",
+      "alt_text": "清单式信息图列出论文局限：转录组来自健康人AHBA且右半球样本有限；遗传样本量小；认知仅用WCST；缺少首次发作严重度等临床信息。末尾给出下一步：更大样本、多认知测验与纵向随访。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "brain_deviation_map",
+      "title": "脑偏离地图：一键切换两种亚型",
+      "purpose": "帮助公众直观看到两亚型在GMV偏离方向上的差异，并理解偏离阈值与“群体平均”含义。",
+      "ui_controls": [
+        {
+          "control": "toggle",
+          "label": "亚型选择",
+          "options": [
+            "subtype_1",
+            "subtype_2"
+          ],
+          "default": "subtype_1"
+        },
+        {
+          "control": "hover_or_click",
+          "label": "脑区信息卡",
+          "options": "按脑区显示",
+          "default": "hover"
+        },
+        {
+          "control": "toggle",
+          "label": "队列选择（若数据可得）",
+          "options": [
+            "discovery_drug_free",
+            "replication_medicated"
+          ],
+          "default": "discovery_drug_free"
+        }
+      ],
+      "schema": {
+        "$ref": "./interactive_schemas/brain_deviation_map.schema.json"
+      },
+      "source_ref": [
+        "PDF第3–5页 方法与阈值",
+        "PDF第5页 图2",
+        "PDF第5页 两队列相关",
+        "PDF第9页 Data and code availability"
+      ]
+    },
+    {
+      "id": "clinical_cognition_dashboard",
+      "title": "情绪—认知对照仪表盘",
+      "purpose": "把HAMD、WCST与症状网络指标放到同一界面，展示两亚型的不同侧重点。",
+      "ui_controls": [
+        {
+          "control": "dropdown",
+          "label": "对比组A",
+          "options": [
+            "subtype_1",
+            "subtype_2",
+            "HC"
+          ],
+          "default": "subtype_2"
+        },
+        {
+          "control": "dropdown",
+          "label": "对比组B",
+          "options": [
+            "subtype_1",
+            "subtype_2",
+            "HC"
+          ],
+          "default": "subtype_1"
+        },
+        {
+          "control": "tabs",
+          "label": "指标",
+          "options": [
+            "HAMD_total",
+            "WCST_*",
+            "symptom_network_*"
+          ],
+          "default": "HAMD_total"
+        }
+      ],
+      "schema": {
+        "$ref": "./interactive_schemas/clinical_cognition_dashboard.schema.json"
+      },
+      "source_ref": [
+        "PDF第5–6页 图3",
+        "PDF第4页 统计方法"
+      ]
+    },
+    {
+      "id": "evidence_chain_puzzle",
+      "title": "三层证据拼图：影像→细胞/通路→遗传风险",
+      "purpose": "让公众理解“多维证据链”如何支持亚型差异，同时强调关联≠因果。",
+      "ui_controls": [
+        {
+          "control": "toggle",
+          "label": "亚型",
+          "options": [
+            "subtype_1",
+            "subtype_2"
+          ],
+          "default": "subtype_1"
+        },
+        {
+          "control": "stepper",
+          "label": "证据层级",
+          "options": [
+            "imaging",
+            "transcriptomics",
+            "genetics"
+          ],
+          "default": "imaging"
+        },
+        {
+          "control": "info",
+          "label": "我们能说什么/不能说什么",
+          "options": "每层末尾提示",
+          "default": "show"
+        }
+      ],
+      "schema": {
+        "$ref": "./interactive_schemas/evidence_chain_puzzle.schema.json"
+      },
+      "source_ref": [
+        "PDF第5–8页 图2–5",
+        "PDF第9页 局限性"
+      ]
+    }
+  ],
+  "disclaimer": "本页面为科研科普解读，旨在帮助公众理解论文结论，不构成医疗建议或诊断依据。研究结果来自群体统计与模型分型，不能用于个人自测、个体诊断或未来风险预测；PRS等遗传指标仅反映群体层面的易感度线索。若你有情绪困扰或认知问题，请咨询专业医疗人员。（证据：PDF第3–4页 分型方法；PDF第9页 局限性）"
+}

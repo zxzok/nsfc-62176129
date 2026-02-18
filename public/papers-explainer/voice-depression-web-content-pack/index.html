@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>声音与抑郁评估｜网页内容包演示</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+    <header class="hero">
+      <div class="wrap">
+        <h1 id="title">加载中…</h1>
+        <p class="subtitle" id="subtitle"></p>
+        <p class="meta" id="meta"></p>
+      </div>
+    </header>
+
+    <main class="wrap" id="main" aria-live="polite">
+      <section class="card" aria-labelledby="sec-30s">
+        <h2 id="sec-30s">30秒读懂</h2>
+        <p id="blurb"></p>
+      </section>
+
+      <section class="grid">
+        <section class="card" aria-labelledby="sec-runtime">
+          <h2 id="sec-runtime">互动演示①：耗时拆解</h2>
+          <p class="hint">数据来自论文表2（第7页）。</p>
+          <div id="runtime-bars" class="bars" role="img" aria-label="流程耗时拆解柱状图"></div>
+        </section>
+
+        <section class="card" aria-labelledby="sec-icbt">
+          <h2 id="sec-icbt">互动演示②：ICBT前后关键数字</h2>
+          <p class="hint">HAMD均值±SD来自论文结果（第6页）。</p>
+          <div id="hamd-card" class="kpi"></div>
+          <div id="icbt-features" class="feature-list"></div>
+        </section>
+      </section>
+
+      <section class="card" aria-labelledby="sec-disclaimer">
+        <h2 id="sec-disclaimer">提示</h2>
+        <p><strong>本演示仅为科普，不构成医疗建议或诊断依据。</strong>研究样本量小且无健康对照，结果需进一步验证（见论文第8页）。</p>
+      </section>
+    </main>
+
+    <footer class="wrap" style="padding:28px 0 40px">
+      <small>数据与方法来源：Wang et al., Frontiers in Psychiatry (2023). CC BY.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "dataset": "group_differences_nodal_baseline",
+  "description": "基线两组节点指标差异（AUC比较，FDR校正q值）。",
+  "source_ref": [
+    "第4页 结果段落",
+    "第6页 图2"
+  ],
+  "entries": [
+    {
+      "metric_id": "DC_STG_L",
+      "metric_label_cn": "左上颞回 度中心性 DC",
+      "direction_MDP_vs_MDNP": "lower",
+      "fdr_q": 0.028
+    },
+    {
+      "metric_id": "NE_STG_L",
+      "metric_label_cn": "左上颞回 节点效率 NE",
+      "direction_MDP_vs_MDNP": "lower",
+      "fdr_q": 0.042
+    },
+    {
+      "metric_id": "NE_HG_L",
+      "metric_label_cn": "左赫氏回 节点效率 NE",
+      "direction_MDP_vs_MDNP": "lower",
+      "fdr_q": 0.042
+    },
+    {
+      "metric_id": "NE_MCG_L",
+      "metric_label_cn": "左内侧扣带回 节点效率 NE",
+      "direction_MDP_vs_MDNP": "lower",
+      "fdr_q": 0.042
+    },
+    {
+      "metric_id": "BC_any",
+      "metric_label_cn": "介数中心性 BC",
+      "direction_MDP_vs_MDNP": "no_significant_difference",
+      "fdr_q": null
+    }
+  ],
+  "notes": [
+    "论文未报告节点指标的均值±SD，仅在图2以小提琴图展示分布；本数据集仅记录显著性与方向。",
+    "差异主要位于左侧颞叶与扣带回相关区域（证据：第4页；第6页 图2）。"
+  ]
+}

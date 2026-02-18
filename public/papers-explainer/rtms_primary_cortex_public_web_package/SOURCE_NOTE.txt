@@ -1,0 +1,3 @@
+论文PDF：Repetitive Transcranial Magnetic Stimulation Reversing Abnormal Brain .pdf
+- 本包中的裁切图像来自该PDF的页面区域（Fig.1: 第2页；Fig.2: 第4页；Fig.3: 第6页；Table 1: 第5页）。
+- 页面引用格式：示例“（证据：第5页 表1）”。

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>网页内容包预览</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <header>
+    <div class="subtitle">网页内容包预览（静态）</div>
+    <h1 id="title"></h1>
+    <div class="subtitle" id="subtitle"></div>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>说明</h2>
+      <div>本预览页用于快速浏览文案、证据锚点与图像占位。正式上线请使用 <code>data/page_data.json</code> 与 <code>data/schemas/</code> 中结构化数据进行组件化实现。</div>
+    </section>
+
+    <div id="sections"></div>
+
+    <h2>视觉元素</h2>
+    <div id="visuals"></div>
+
+    <h2>交互模块</h2>
+    <div id="modules"></div>
+
+    <section class="card">
+      <h2>统一免责声明</h2>
+      <div id="disclaimer"></div>
+    </section>
+
+    <div class="footer">
+      生成说明：本包基于用户提供的论文PDF内容制作，证据锚点以PDF页码/图表为准。
+    </div>
+  </main>
+
+  <script src="page-data.js"></script>
+  <script src="render.js"></script>
+</body>
+</html>

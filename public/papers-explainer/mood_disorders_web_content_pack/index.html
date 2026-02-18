@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>同样的抑郁/双相，为什么大脑“长得不一样”？｜用MRI“脑成长曲线”把情绪障碍分成两种亚型，并连接到症状、认知与遗传风险</title>
+  <meta name="description" content="研究用健康人MRI建立灰质体积正常范围，计算情绪障碍患者的个体偏离并聚类出两种亚型：一型额叶等偏高且执行功能更受损并伴更高阿尔茨海默遗传风险；另一型广泛偏低且抑郁更重并伴更高抑郁遗传风险。科普解读附图与交互设计。" />
+  <meta name="keywords" content="情绪障碍,抑郁症,双相障碍,MRI,灰质体积,规范化建模,分位数回归,亚型,多基因风险评分,PRS,转录组,小胶质细胞,阿尔茨海默病,Alzheimer&#39;s disease,Major depressive disorder" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <header class="hero">
+    <div class="container">
+      <h1>同样的抑郁/双相，为什么大脑“长得不一样”？</h1>
+      <p class="subtitle">用MRI“脑成长曲线”把情绪障碍分成两种亚型，并连接到症状、认知与遗传风险</p>
+      <div class="meta">
+        <div>论文：Zheng J. 等，<em>Psychological Medicine</em>（2024），DOI: 10.1017/S0033291724000886 <span class="citation">（证据：PDF第1页）</span></div>
+        <div>样本：174名未用药/停药患者 + 404名健康对照；另有268名用药患者用于复现 <span class="citation">（证据：PDF第1–2页）</span></div>
+        <div><a id="json-download" href="./data/site_content.json">下载结构化JSON（site_content.json）</a></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="container">
+      <a href="#read30s">30秒读懂</a>
+      <a href="#why">为什么做</a>
+      <a href="#how">怎么做</a>
+      <a href="#findings">三大发现</a>
+      <a href="#figures">图解</a>
+      <a href="#interactives">交互模块</a>
+      <a href="#glossary">术语</a>
+      <a href="#faq">FAQ</a>
+      <a href="#limits">局限</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <section id="read30s">
+        <h2>30秒读懂</h2>
+        <div class="callout">
+          <p><strong>问题：</strong>同是抑郁症或双相障碍，为什么症状差异巨大、缺少客观分型？</p>
+          <p><strong>方法：</strong>用404名健康者MRI建立随年龄变化的灰质“参考曲线”，计算174名未用药患者的偏离值并聚类。</p>
+          <p><strong>发现：</strong>两种亚型——前额叶偏大且执行功能更差并伴更高阿尔茨海默遗传风险；以及全脑偏小且抑郁更重并伴更高抑郁遗传风险。</p>
+          <p><strong>意义：</strong>影像+症状+基因三条证据拼在一起，揭示情绪障碍的生物学异质性。</p>
+          <p class="citation">（证据：PDF第1页 摘要；PDF第2页 Participants；PDF第5–8页 图2–5）</p>
+        </div>
+      </section>
+
+      <section id="why">
+        <h2>为什么要做这个研究</h2>
+        <p>论文指出：抑郁症（MDD）与双相障碍（BD）在抑郁发作的临床表现上高度重叠，早期诊断与干预面临挑战，同时缺少明确的客观生物标志物。<span class="citation">（证据：PDF第1–2页 Introduction）</span></p>
+        <p>更关键的是，传统“病例–对照平均比较”容易把不同患者的差异平均掉，而个体差异可能对应不同的病理路径。于是研究者采用“先有正常范围、再看个体偏离”的思路来寻找亚型。<span class="citation">（证据：PDF第2页 Introduction；PDF第3页 图1）</span></p>
+      </section>
+
+      <section id="how">
+        <h2>我们怎么做的（用类比解释）</h2>
+        <p>把这项研究想象成给大脑画“成长曲线”。先用健康对照者的MRI建立灰质体积/密度（GMV）随年龄变化的正常范围（5/50/95百分位），再计算每位患者在每个脑区偏离正常范围多少。<span class="citation">（证据：PDF第3页 方法；PDF第4页 偏离阈值）</span></p>
+        <p>然后把每位患者68个脑区的偏离谱当作“指纹”，用层次聚类把指纹相似的人分组，并用ARI稳定性选择最稳的分组数，最终得到两种亚型。研究还把症状、认知（WCST）、转录组线索（AHBA+PLS）与多基因风险（PRS‑AD、PRS‑MDD）一起用于解释两亚型差异，并在另一批用药患者中检查可复现性。<span class="citation">（证据：PDF第3–6页；图1与图3；PDF第5页 两队列相关）</span></p>
+        <div class="kpi-grid">
+          <div class="card">
+            <h3>“偏离”怎么判？</h3>
+            <p class="small">z95&gt;1.96 视为显著偏高（supra-normal）；z5&lt;-1.96 视为显著偏低（infra-normal）。</p>
+            <p class="citation">（证据：PDF第4页）</p>
+          </div>
+          <div class="card">
+            <h3>为什么要复现？</h3>
+            <p class="small">用另一批268名用药患者检查两亚型偏离模式是否仍相关，减少“偶然分组”的担忧。</p>
+            <p class="citation">（证据：PDF第2页；PDF第5页）</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="findings">
+        <h2>我们发现了什么（最重要的3点）</h2>
+
+        <div class="kpi-grid">
+          <div class="card">
+            <h3>发现1：两种方向相反的脑偏离模式，可复现</h3>
+            <p>亚型1更偏向额叶/扣带等偏高；亚型2更偏向广泛偏低。亚型1在57.4%脑区更常见偏高，亚型2在约90%脑区更常见偏低，并在复现队列中相关。</p>
+            <p class="citation">（证据：PDF第5页 图2与文字；online Supplementary Fig. S4）</p>
+          </div>
+
+          <div class="card">
+            <h3>发现2：亚型2更“抑郁重”，亚型1更“执行功能吃力”</h3>
+            <p>亚型2的HAMD总分更高（t=2.67，pFDR=0.025）；亚型1在多项WCST指标更差；症状网络上亚型2更密更强。</p>
+            <p class="citation">（证据：PDF第5–6页 图3）</p>
+          </div>
+
+          <div class="card">
+            <h3>发现3：基因与遗传风险线索方向不同</h3>
+            <p>亚型1相关基因富集于阿尔茨海默相关通路，并更偏向内皮/少突胶质细胞信号；亚型2富集于离子/突触/应激过程并显著富集小胶质细胞信号。PRS上，亚型1更高PRS‑AD；亚型2更高PRS‑MDD。</p>
+            <p class="citation">（证据：PDF第6–8页 图4–5）</p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:0.9rem;">
+          <p><strong>重要边界：</strong>这些结果是多维度的“关联线索”，论文未证明因果，也未提供个人层面的诊断阈值或纵向预测能力。</p>
+          <p class="citation">（证据：PDF第6–8页 结果；PDF第9页 局限性）</p>
+        </div>
+      </section>
+
+      <section id="figures">
+        <h2>图解（本包已包含论文原图裁剪版）</h2>
+
+        <figure>
+          <img src="./assets/figures/fig1_workflow.png" alt="一张流程图：研究招募174名未用药情绪障碍患者与404名健康对照；用健康对照建立GMV随年龄的正常曲线并计算个体偏离；据偏离谱聚类出两亚型；再用症状、认知、转录组与多基因风险进行验证与复现。" />
+          <figcaption>图1 研究路线图（workflow）。<span class="citation">（证据：PDF第3页 图1）</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/figures/fig2_gmv_deviation.png" alt="两组大脑皮层图对比两亚型的GMV偏离方向：亚型1在额叶、扣带等多处偏高，亚型2在额叶、颞顶与扣带等广泛偏低；下方柱状图显示各脑区偏高或偏低在患者中的比例分布，整体对比清晰。" />
+          <figcaption>图2 两亚型GMV偏离方向与偏高/偏低比例。<span class="citation">（证据：PDF第5页 图2）</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/figures/fig3_clinical_profiles.png" alt="四个面板对比两亚型的临床与认知：亚型2的抑郁量表HAMD总分更高；亚型1在WCST多项指标表现更差；症状网络图显示亚型2网络更密更强；折线图显示相同阈值下亚型2全局强度更高。" />
+          <figcaption>图3 临床与认知对比（HAMD、WCST与症状网络）。<span class="citation">（证据：PDF第6页 图3）</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/figures/fig4_transcriptomics.png" alt="多面板图展示影像与基因表达的空间匹配：两亚型的GMV偏离图分别对应不同的PLS1基因表达模式；富集结果显示亚型1更靠近阿尔茨海默相关通路与内皮/少突胶质细胞信号，亚型2更靠近离子转运等过程并富集小胶质细胞信号。" />
+          <figcaption>图4 影像—转录组与细胞类型线索。<span class="citation">（证据：PDF第7页 图4）</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/figures/fig5_prs.png" alt="四个柱状图比较多基因风险评分：亚型1在多个阈值下PRS-AD模型显著拟合，而亚型2不显著；相反亚型2在特定阈值下PRS-MDD模型显著拟合，提示两亚型遗传易感方向不同。" />
+          <figcaption>图5 多基因风险评分（PRS）差异。<span class="citation">（证据：PDF第8页 图5）</span></figcaption>
+        </figure>
+
+        <p class="small">更多可重绘的信息图方案见 <code>content/visual_assets_plan.md</code>。</p>
+      </section>
+
+      <section id="interactives">
+        <h2>交互模块（设计稿+数据结构已提供）</h2>
+
+        <div class="kpi-grid">
+          <div class="card">
+            <h3>1）脑偏离地图：一键切换两种亚型</h3>
+            <p class="small">切换亚型，点击脑区弹出解释卡；可选队列（发现/复现）。</p>
+            <p class="citation">（证据：PDF第5页 图2；PDF第3–4页 阈值与聚类）</p>
+            <p><a href="./data/interactive_schemas/brain_deviation_map.schema.json">查看 JSON schema</a></p>
+          </div>
+
+          <div class="card">
+            <h3>2）情绪—认知对照仪表盘</h3>
+            <p class="small">把HAMD、WCST与症状网络放到一页，回答“情绪更重还是执行更难”。</p>
+            <p class="citation">（证据：PDF第6页 图3）</p>
+            <p><a href="./data/interactive_schemas/clinical_cognition_dashboard.schema.json">查看 JSON schema</a></p>
+          </div>
+
+          <div class="card">
+            <h3>3）三层证据拼图：影像→细胞/通路→遗传风险</h3>
+            <p class="small">逐层展开，帮助理解多维证据如何支持亚型差异，并提示“关联≠因果”。</p>
+            <p class="citation">（证据：PDF第7–8页 图4–5；PDF第9页 局限性）</p>
+            <p><a href="./data/interactive_schemas/evidence_chain_puzzle.schema.json">查看 JSON schema</a></p>
+          </div>
+        </div>
+
+        <p class="small">完整交互说明见 <code>content/interactive_modules_plan.md</code>。</p>
+      </section>
+
+      <section id="glossary">
+        <h2>术语小词典（公众版）</h2>
+        <p class="small">已同时提供结构化版本：<code>data/glossary_faq.json</code>。</p>
+        <dl>
+          <dt>规范化建模（Normative modeling）</dt><dd>用健康人数据建立“正常范围”，再计算个体偏离程度。 <span class='small'>类比：像儿童身高体重生长曲线。</span><br><span class='citation'>（证据：PDF第2页：Introduction；PDF第3页：GMV normative modeling方法）</span></dd>
+<dt>分位数回归（Quantile regression）</dt><dd>估计不同百分位（如5/50/95）的参考曲线，而不只是一条平均线。 <span class='small'>类比：同时给出“偏矮/中等/偏高”三条生长线。</span><br><span class='citation'>（证据：PDF第3页：Quantile regression建立5/50/95百分位）</span></dd>
+<dt>GMV（灰质体积/密度）</dt><dd>从结构MRI得到的脑区灰质指标，用于描述形态差异。 <span class='small'>类比：某片“功能区土地”的面积或密度。</span><br><span class='citation'>（证据：PDF第3页：ROI-wise gray matter density/GMV）</span></dd>
+<dt>z5/z50/z95偏离值</dt><dd>衡量个体相对健康参考范围的偏离程度；z50用于聚类，z5/z95用于判断显著偏低/偏高。 <span class='small'>类比：像标准分，离正常越远偏离越大。</span><br><span class='citation'>（证据：PDF第3–4页：z5/z50/z95定义与用途）</span></dd>
+<dt>supra-normal / infra-normal</dt><dd>分别指显著偏高或显著偏低于健康参考范围的脑区偏离。 <span class='small'>类比：像把身高落在第95百分位以上或第5百分位以下标记出来。</span><br><span class='citation'>（证据：PDF第4页：z95&gt;1.96与z5&lt;-1.96阈值）</span></dd>
+<dt>层次聚类（Hierarchical clustering, Ward）</dt><dd>按个体偏离谱相似度自动分组，得到亚型。 <span class='small'>类比：按口味相似把人分成不同“食谱圈”。</span><br><span class='citation'>（证据：PDF第3页：Ward linkage与层次聚类）</span></dd>
+<dt>WCST（威斯康星卡片分类测验）</dt><dd>衡量执行功能：换规则、抑制旧策略与灵活调整能力。 <span class='small'>类比：临时改道时能否快速换路线。</span><br><span class='citation'>（证据：PDF第2页：WCST评估；PDF第5–6页：WCST结果与图3B）</span></dd>
+<dt>症状网络（Symptom network）</dt><dd>把症状条目当节点、相关性当连线，比较症状之间相互影响的密度与强度。 <span class='small'>类比：社交网络里连线越密，互相影响越大。</span><br><span class='citation'>（证据：PDF第4页：symptoms network方法；PDF第6页：图3C–3D）</span></dd>
+<dt>AHBA（Allen Human Brain Atlas）</dt><dd>公开的人脑基因表达图谱，用于把影像空间模式与基因表达空间模式做匹配。 <span class='small'>类比：把城市热力图与产业分布图叠加找对应。</span><br><span class='citation'>（证据：PDF第4页：AHBA数据来源）</span></dd>
+<dt>PLS（Partial Least Squares）</dt><dd>一种多变量方法，用来找出最能解释影像空间变化的基因表达组合。 <span class='small'>类比：从很多基因里提炼出最“跟影像同走向”的主轴。</span><br><span class='citation'>（证据：PDF第4页：PLS方法；PDF第6页：PLS1解释与相关）</span></dd>
+<dt>虚拟组织学（Virtual histology）</dt><dd>用细胞类型特异基因列表，与影像相关基因集合求重叠，推测哪些细胞类型信号更相关。 <span class='small'>类比：用“职业标签词典”去匹配文章词汇，估计文章更像哪类人写的。</span><br><span class='citation'>（证据：PDF第4页：virtual histology方法；PDF第6–7页：图4E–4F）</span></dd>
+<dt>PRS（多基因风险评分）</dt><dd>把大量遗传位点的小效应加总成群体层面的易感度指标。 <span class='small'>类比：很多张小概率彩票的累计分数。</span><br><span class='citation'>（证据：PDF第4页：PRS方法；PDF第6页：PRS结果；PDF第8页：图5）</span></dd>
+
+        </dl>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ（克制回答版）</h2>
+        <details><summary>做一次MRI就能知道自己属于哪一型吗？</summary><p>不能。论文分型依赖健康对照参考曲线、68脑区偏离谱与聚类算法；论文未提供临床可用的单人判别阈值或诊断准确率。</p><p class='citation'>（证据：PDF第3–4页：方法与聚类框架；PDF第9页：Discussion）</p></details>
+<details><summary>亚型1和阿尔茨海默有什么关系？是不是意味着会得阿尔茨海默？</summary><p>论文报告亚型1在PRS‑AD上相对健康对照更高，并且相关基因富集于阿尔茨海默相关通路，这是关联线索；论文未做纵向随访，不能用于预测个人是否会发展为阿尔茨海默病。</p><p class='citation'>（证据：PDF第6–8页：图4–5；PDF第9页：局限性）</p></details>
+<details><summary>亚型2是不是更“严重”？</summary><p>在抑郁严重度（HAMD总分）上亚型2更高，但在执行功能（WCST）上亚型1更差。严重与否取决于你关注的维度，不能用一个词概括。</p><p class='citation'>（证据：PDF第5–6页：图3）</p></details>
+<details><summary>药物会不会影响这些发现？</summary><p>发现队列使用未用药/停药&gt;2个月患者以减少药物混杂，并在用药患者队列中复现了区域偏离模式的相关性。</p><p class='citation'>（证据：PDF第2页：药物与队列；PDF第5页：两队列相关）</p></details>
+<details><summary>“灰质偏高/偏低”是不是好坏评价？</summary><p>不是。这里的偏高/偏低是相对同龄健康人的统计偏离，不是价值判断，也不直接代表功能更好或更差。</p><p class='citation'>（证据：PDF第3–4页：偏离定义与阈值）</p></details>
+<details><summary>这项研究能直接指导用药或治疗选择吗？</summary><p>目前不能。论文提出未来可能用于更个体化治疗框架，但尚未提供治疗反应预测或临床决策阈值。</p><p class='citation'>（证据：PDF第9页：Discussion）</p></details>
+<details><summary>两种亚型在MDD和BD之间如何分布？</summary><p>论文报告两亚型中MDD与BD的比例分布无显著差异（χ²=0.04，p=0.83），提示亚型跨越传统诊断边界。</p><p class='citation'>（证据：PDF第4页：分布检验）</p></details>
+<details><summary>这些转录组/细胞类型结论可靠吗？</summary><p>论文指出转录组来自健康人AHBA且右半球样本有限，患者真实转录水平可能不同，因此这些解释属于支持性线索，需要更大、更全面数据验证。</p><p class='citation'>（证据：PDF第9页：局限性第1点）</p></details>
+<details><summary>PRS是什么意思？我能用它自测风险吗？</summary><p>PRS是群体统计意义上的遗传易感度指标，不等于个人必然会患病；论文也未提供个人层面的自测阈值或临床解释方式。</p><p class='citation'>（证据：PDF第4页：PRS方法；PDF第9页：局限性与讨论）</p></details>
+<details><summary>这项研究的数据和代码能获取吗？</summary><p>论文写明：AHBA数据可下载；基因表达预处理代码与本研究分析代码/结果在作者仓库公开；部分额外数据可联系作者获取。</p><p class='citation'>（证据：PDF第9页：Data and code availability）</p></details>
+
+      </section>
+
+      <section id="limits">
+        <h2>局限性与下一步（论文明确提出）</h2>
+        <p>论文指出：AHBA转录组来自健康人且右半球样本有限；遗传样本量小；认知评估仅用WCST；缺少未用药患者首次发作严重度等信息。未来需要更大样本、更多认知测验与更全面数据验证。<span class="citation">（证据：PDF第9页 Limitation段落）</span></p>
+      </section>
+
+      <section id="disclaimer">
+        <h2>免责声明</h2>
+        <p>本页面为科研科普解读，旨在帮助公众理解论文结论，不构成医疗建议或诊断依据。研究结果来自群体统计与模型分型，不能用于个人自测、个体诊断或未来风险预测；PRS等遗传指标仅反映群体层面的易感度线索。若你有情绪困扰或认知问题，请咨询专业医疗人员。（证据：PDF第3–4页 分型方法；PDF第9页 局限性）</p>
+        <p class="small">版权：论文为 CC BY-NC-ND 4.0（署名-非商业-禁止演绎）。商业用途或改编/再创作需额外许可。<span class="citation">（证据：PDF第1页 版权声明）</span></p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>文件结构：<code>index.html</code>（可直接打开预览）｜<code>content/</code>（文案与策划）｜<code>assets/</code>（图片/CSS/JS）｜<code>data/</code>（结构化JSON与schema）。</p>
+      <p>建议上线时使用Web服务器以便正常加载JSON（避免浏览器file://限制）。</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

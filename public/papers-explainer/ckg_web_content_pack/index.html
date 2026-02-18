@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CKG网页内容包离线预览</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 id="hero-title"></h1>
+      <p id="hero-subtitle" class="subtitle"></p>
+      <figure class="hero__figure">
+        <img id="hero-image" alt="" />
+        <figcaption id="hero-caption"></figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav id="toc" class="toc" aria-label="页面目录"></nav>
+    <article id="content"></article>
+
+    <section class="assets">
+      <h2>图文资产清单</h2>
+      <div id="assets-grid" class="grid"></div>
+    </section>
+
+    <section class="modules">
+      <h2>交互模块概览</h2>
+      <div id="modules-grid" class="grid"></div>
+    </section>
+
+    <section class="glossary">
+      <h2>术语小词典</h2>
+      <div id="glossary-list"></div>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      <div id="faq-list"></div>
+    </section>
+
+    <section class="disclaimer">
+      <h2>免责声明</h2>
+      <p id="disclaimer-text"></p>
+    </section>
+
+    <footer class="footer">
+      <p>离线预览页｜数据与文案来源：论文 iScience (2023) “Cancer-keeper genes as therapeutic targets”。</p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

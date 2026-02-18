@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260" role="img" aria-labelledby="title desc">
+  <title id="title">Privacy and Consent Illustration</title>
+  <desc id="desc">A shield icon with a checkmark representing informed consent and privacy protection.</desc>
+  <rect x="0" y="0" width="800" height="260" fill="white"/>
+  <g font-family="Arial, sans-serif" fill="#111">
+    <text x="40" y="48" font-size="26">隐私与知情同意（概念图）</text>
+    <text x="40" y="80" font-size="16">数字化行为数据的应用必须建立在严格治理之上</text>
+  </g>
+  <g transform="translate(330,85)">
+    <path d="M70,0 L140,25 L140,95 C140,145 110,185 70,205 C30,185 0,145 0,95 L0,25 Z" fill="none" stroke="#111" stroke-width="4"/>
+    <path d="M35,105 L60,130 L110,75" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#111">
+    <text x="520" y="150" font-size="16">仅用于科普与研究讨论</text>
+    <text x="520" y="175" font-size="16">不做个人诊断</text>
+    <text x="520" y="200" font-size="16">最小化收集与去标识化</text>
+  </g>
+</svg>

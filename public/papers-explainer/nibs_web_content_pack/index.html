@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>无创脑刺激能缓解抑郁吗？｜网页Demo</title>
+  <meta name="description" content="基于系统综述与元分析的科普页面Demo（含证据锚点与交互模块）。" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <a class="small" href="#main" style="position:absolute;left:-999px;top:0;">跳到正文</a>
+  <header>
+    <div class="container hero">
+      <div>
+        <h1 class="h-title" id="pageTitle">加载中…</h1>
+        <p class="h-sub" id="pageSubtitle"></p>
+        <div class="card" aria-label="30秒读懂">
+          <h3>30秒读懂</h3>
+          <p id="thirty"></p>
+          <p class="small" id="thirtyCite"></p>
+        </div>
+        <div class="badges" id="badges"></div>
+      </div>
+      <div class="kpi" id="kpi"></div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section id="why">
+      <h2>为什么要做这个研究</h2>
+      <div id="whyBody"></div>
+      <p class="small" id="whyCite"></p>
+    </section>
+
+    <section id="evidence">
+      <h2>证据从哪里来</h2>
+      <div class="figure">
+        <img src="assets/img/fig1_prisma.png" alt="流程图展示从938到14的筛选过程。" />
+        <div class="cap">图1：PRISMA筛选流程（证据：第4页 图1）</div>
+      </div>
+      <details class="details">
+        <summary>展开：文字版筛选流程（无障碍）</summary>
+        <p>数据库共识别938篇，去重后609篇进入标题摘要筛查，全文评估42篇，排除28篇，最终纳入14项研究进入定量合成。（证据：第3页Study Selection；第4页图1）</p>
+      </details>
+    </section>
+
+    <section id="how">
+      <h2>我们怎么做的</h2>
+      <div class="split">
+        <div>
+          <div class="figure">
+            <img src="assets/img/concept_ale_workflow.svg" alt="ALE流程示意图。" />
+            <div class="cap">自制：ALE流程示意（来源：第3页方法；第1页摘要）</div>
+          </div>
+        </div>
+        <div>
+          <div id="howBody"></div>
+          <p class="small" id="howCite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="findings">
+      <h2>我们发现了什么</h2>
+      <div class="tabs" role="tablist" aria-label="三个最重要发现">
+        <button class="tab" role="tab" id="tabA" aria-controls="panelA" aria-selected="true">发现1：症状改善</button>
+        <button class="tab" role="tab" id="tabB" aria-controls="panelB" aria-selected="false">发现2：大脑变化</button>
+        <button class="tab" role="tab" id="tabC" aria-controls="panelC" aria-selected="false">发现3：差异来源</button>
+      </div>
+
+      <div id="panelA" class="panel active" role="tabpanel" aria-labelledby="tabA">
+        <div class="split">
+          <div>
+            <div class="figure">
+              <img src="assets/img/fig5_forest.png" alt="森林图显示11项研究的效应量及合并结果。" />
+              <div class="cap">图5：终点效果森林图（证据：第8页 图5）</div>
+            </div>
+          </div>
+          <div>
+            <div class="card" id="effectSummary"></div>
+            <details class="details" style="margin-top:10px;">
+              <summary>展开：逐研究数值表（从图5提取）</summary>
+              <div id="effectTable"></div>
+            </details>
+          </div>
+        </div>
+        <div class="figure">
+          <img src="assets/img/fig3_funnel.png" alt="漏斗图显示可能的发表偏倚。" />
+          <div class="cap">图3：发表偏倚漏斗图（证据：第6页 图3；第4页 Egger检验）</div>
+        </div>
+      </div>
+
+      <div id="panelB" class="panel" role="tabpanel" aria-labelledby="tabB">
+        <div class="split">
+          <div>
+            <div class="figure">
+              <img src="assets/img/fig4_brain_clusters.png" alt="脑图标出上调与下调簇。" />
+              <div class="cap">图4：一致的脑区变化（证据：第7页 图4）</div>
+            </div>
+          </div>
+          <div>
+            <div class="controls">
+              <select id="clusterDirection" aria-label="选择上调或下调">
+                <option value="increase">上调（increase）</option>
+                <option value="decrease">下调（decrease）</option>
+              </select>
+              <select id="clusterNetwork" aria-label="按网络筛选">
+                <option value="all">全部网络</option>
+                <option value="SN">SN</option>
+                <option value="CEN">CEN</option>
+                <option value="DMN">DMN</option>
+                <option value="Reward/Striatum">Reward/Striatum</option>
+              </select>
+            </div>
+            <div id="clusterList"></div>
+            <div class="figure">
+              <img src="assets/img/concept_networks.svg" alt="三大网络调度系统示意图。" />
+              <div class="cap">自制：三网络示意（证据：第7页讨论）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panelC" class="panel" role="tabpanel" aria-labelledby="tabC">
+        <div class="split">
+          <div>
+            <div class="figure">
+              <img src="assets/img/table3_moderators.png" alt="表3列出调节因素检验与回归结果。" />
+              <div class="cap">表3：调节因素（证据：第8页 表3）</div>
+            </div>
+          </div>
+          <div>
+            <p>点击一个因素，查看它在“分组比较”和“单变量元回归”里的结果（仅展示论文表3提供的信息）。</p>
+            <div id="moderatorCards"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="studies">
+      <h2>14项研究探索器（表1数据）</h2>
+      <div class="controls">
+        <select id="filterNibs" aria-label="按刺激类型筛选">
+          <option value="all">全部刺激类型</option>
+        </select>
+        <select id="filterScale" aria-label="按量表筛选">
+          <option value="all">全部量表</option>
+        </select>
+        <input id="searchStudy" type="search" placeholder="搜索作者/国家/年份" aria-label="搜索研究" />
+      </div>
+      <div id="studiesTable"></div>
+      <p class="small">数据来源：论文表1（第5页）。</p>
+    </section>
+
+    <section id="limits">
+      <h2>局限性与下一步</h2>
+      <div id="limitsBody"></div>
+      <p class="small" id="limitsCite"></p>
+    </section>
+
+    <section id="glossary">
+      <h2>术语小词典</h2>
+      <div id="glossaryBody"></div>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <div id="faqBody"></div>
+    </section>
+
+    <details class="details">
+      <summary>统一免责声明</summary>
+      <p id="disclaimer"></p>
+    </details>
+  </main>
+
+  <footer>
+    <div class="container small">
+      <div>本Demo只演示信息结构与交互方式；所有数字结论均来自论文页码/图表（见每段“证据”）。</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

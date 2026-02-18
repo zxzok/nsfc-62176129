@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="研究局限与下一步占位示意图">
+  <rect width="1200" height="675" fill="#f7f7f7"/>
+  <text x="60" y="90" font-size="44" font-family="Arial, sans-serif" fill="#111">局限与下一步（占位示意）</text>
+  <text x="60" y="140" font-size="22" font-family="Arial, sans-serif" fill="#333">内容来自论文限制段落（第7页）。</text>
+  <g font-family="Arial, sans-serif" font-size="26" fill="#111">
+    <rect x="60" y="190" width="520" height="170" fill="#fff" stroke="#ddd"/>
+    <text x="90" y="245">1) 机制未明：缺少环路/分子证据</text>
+    <text x="90" y="295" font-size="20" fill="#444">→ 下一步：机制与通路研究</text>
+    <rect x="620" y="190" width="520" height="170" fill="#fff" stroke="#ddd"/>
+    <text x="650" y="245">2) 动物线圈精度受限</text>
+    <text x="650" y="295" font-size="20" fill="#444">→ 下一步：更高空间分辨率与定位</text>
+    <rect x="60" y="390" width="520" height="170" fill="#fff" stroke="#ddd"/>
+    <text x="90" y="445">3) 患者持续用药：混杂难排除</text>
+    <text x="90" y="495" font-size="20" fill="#444">→ 下一步：更严格对照/分层</text>
+    <rect x="620" y="390" width="520" height="170" fill="#fff" stroke="#ddd"/>
+    <text x="650" y="445">4) 需更大样本临床试验复现</text>
+    <text x="650" y="495" font-size="20" fill="#444">→ 下一步：更大规模、可重复设计</text>
+  </g>
+  <text x="60" y="645" font-size="18" font-family="Arial, sans-serif" fill="#555">占位图：发布前可替换为更精美的图标版信息图。</text>
+</svg>

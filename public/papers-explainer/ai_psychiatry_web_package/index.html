@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI走进精神科：能让诊断更客观、治疗更精准吗？</title>
+  <meta name="description" content="面向公众解读Zheng & Zhang（2025）综述：AI如何影响精神障碍分类、临床与医学教育，并梳理隐私、公平与可解释等边界。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="container">
+    <p class="kicker">科研成果公众传播 · 论文解读</p>
+    <h1 id="page-title">AI走进精神科：能让诊断更客观、治疗更精准吗？</h1>
+    <p id="page-subtitle" class="subtitle"></p>
+    <div class="meta" id="paper-meta"></div>
+  </header>
+
+  <nav class="container nav" aria-label="页面目录">
+    <ol id="toc"></ol>
+  </nav>
+
+  <main id="main" class="container">
+    <section class="card" id="sec-30s">
+      <h2>30秒读懂</h2>
+      <div id="sec-30s-body"></div>
+    </section>
+
+    <section class="card" id="sec-content">
+      <h2>全文解读</h2>
+      <div id="sections"></div>
+    </section>
+
+    <section class="card" id="sec-visuals">
+      <h2>配图与信息图清单</h2>
+      <div class="grid" id="visual-grid"></div>
+    </section>
+
+    <section class="card" id="sec-interactives">
+      <h2>交互模块（演示版）</h2>
+      <p class="muted">本目录附带可运行的轻量演示，方便你把“数据结构 + 文案”直接交给前端落地。</p>
+
+      <div class="interactive" id="im-maturity">
+        <h3>1）AI应用成熟度筛选器</h3>
+        <div class="controls">
+          <label>临床领域
+            <select id="mf-domain" aria-label="按临床领域筛选"></select>
+          </label>
+          <label>证据成熟度
+            <select id="mf-maturity" aria-label="按证据成熟度筛选">
+              <option value="">全部</option>
+              <option value="Pilot phase">Pilot phase</option>
+              <option value="Validation phase">Validation phase</option>
+              <option value="Deployment phase">Deployment phase</option>
+              <option value="Pilot/validation phase">Pilot/validation phase</option>
+            </select>
+          </label>
+          <label>关键词
+            <input id="mf-q" type="search" placeholder="例如：EHR / wearables / VR" aria-label="关键词搜索" />
+          </label>
+        </div>
+        <div class="note" id="mf-note"></div>
+        <ul class="list" id="mf-list" aria-live="polite"></ul>
+      </div>
+
+      <div class="interactive" id="im-dp">
+        <h3>2）数字表型信号实验台</h3>
+        <p class="note">提示：这些是“相关线索”，不能替代诊断或自测。（见页内证据标注）</p>
+        <div class="dp-layout">
+          <div>
+            <h4>选择信号来源</h4>
+            <div id="dp-checks" class="checks"></div>
+          </div>
+          <div>
+            <h4>你选的信号会生成什么“特征”</h4>
+            <div id="dp-features" class="chips"></div>
+            <h4>可能支持的任务（研究/辅助）</h4>
+            <ul id="dp-tasks" class="list"></ul>
+            <h4>边界与风险</h4>
+            <p id="dp-boundary" class="warn"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="interactive" id="im-gov">
+        <h3>3）AI治理与伦理决策盘</h3>
+        <label>选择场景
+          <select id="gov-select" aria-label="选择使用场景"></select>
+        </label>
+        <div class="gov-grid">
+          <div>
+            <h4>需要重点关注</h4>
+            <ul id="gov-flags" class="list"></ul>
+          </div>
+          <div>
+            <h4>建议护栏（可落地清单）</h4>
+            <ul id="gov-guards" class="list"></ul>
+          </div>
+        </div>
+        <p id="gov-explain" class="note"></p>
+      </div>
+
+      <div class="interactive" id="im-conflict">
+        <h3>4）AI冲突情景模拟器（教育用途）</h3>
+        <p class="note">这是“思维方式”演示，不提供任何个人风险处置建议。</p>
+        <div id="sim-box" class="sim"></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-glossary">
+      <h2>术语小词典</h2>
+      <div id="glossary"></div>
+    </section>
+
+    <section class="card" id="sec-faq">
+      <h2>FAQ</h2>
+      <div id="faq"></div>
+    </section>
+
+    <footer class="container footer">
+      <p id="disclaimer" class="muted"></p>
+      <p class="muted">内容包内含论文Figure 1截图（原文为CC BY开放获取，转载请遵守署名要求）</p>
+    </footer>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

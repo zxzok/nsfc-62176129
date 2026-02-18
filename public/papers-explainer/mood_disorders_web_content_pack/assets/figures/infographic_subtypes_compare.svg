@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="两种亚型一句话对照">
+  <rect x="0" y="0" width="1200" height="675" fill="#f6f7f9"/>
+  <rect x="60" y="60" width="1080" height="555" rx="24" fill="#ffffff" stroke="#e6e8eb" stroke-width="3"/>
+  <text x="100" y="170" font-size="46" font-family="Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="#111">两种亚型一句话对照</text>
+  <text x="100" y="240" font-size="24" font-family="Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="#555">红=偏高更常见；蓝=偏低更常见（基于图2与文中57.4%/90%）</text>
+  <text x="100" y="600" font-size="20" font-family="Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="#777">占位图：请按“制作说明”重绘为信息图/示意图（见 content/visual_assets_plan.md）</text>
+</svg>

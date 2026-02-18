@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">证据边界：哪些是论文直接支持，哪些只是推测</title>
+  <desc id="desc">概念图把结论分成三类：论文直接证据包括两种亚型、亚型特异靶点与两周内的影像回调和百分比响应；合理推测是未来若随机对照试验证实，可能提升选靶精准度；论文未报告包括个体自测阈值、长期随访与假刺激对照效果。来源：论文第1页摘要、第4到5页结果、第7页局限性。</desc>
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+  <text x="48" y="70" font-family="system-ui" font-size="34" font-weight="700">证据边界：别把“可能”当“已经”</text>
+  <text x="48" y="110" font-family="system-ui" font-size="18" fill="#333333">这张图帮助读者区分：论文说到了什么、没说到什么。（证据：第1页摘要；第7页Discussion）</text>
+
+  <g transform="translate(48,150)">
+    <rect x="0" y="0" width="272" height="330" rx="18" fill="#ecfeff" stroke="#67e8f9"/>
+    <text x="20" y="40" font-family="system-ui" font-size="18" font-weight="800">论文直接证据</text>
+    <text x="20" y="78" font-family="system-ui" font-size="14" fill="#111827">• 两种亚型：原型/非典型</text>
+    <text x="20" y="106" font-family="system-ui" font-size="14" fill="#111827">• 失衡方向相反（图2）</text>
+    <text x="20" y="134" font-family="system-ui" font-size="14" fill="#111827">• 靶点：dmPFC vs OCC（图3）</text>
+    <text x="20" y="162" font-family="system-ui" font-size="14" fill="#111827">• 两周内影像“回调”（图4A）</text>
+    <text x="20" y="190" font-family="system-ui" font-size="14" fill="#111827">• 响应/缓解百分比（第5页）</text>
+    <text x="20" y="232" font-family="system-ui" font-size="12" fill="#4b5563">证据：第4–6页图2–4；第5页第3.4节</text>
+  </g>
+
+  <g transform="translate(344,150)">
+    <rect x="0" y="0" width="272" height="330" rx="18" fill="#fefce8" stroke="#fde68a"/>
+    <text x="20" y="40" font-family="system-ui" font-size="18" font-weight="800">合理推测（待验证）</text>
+    <text x="20" y="78" font-family="system-ui" font-size="14" fill="#111827">• 若RCT证实有效，</text>
+    <text x="20" y="106" font-family="system-ui" font-size="14" fill="#111827">  可能减少“试错式”选靶</text>
+    <text x="20" y="134" font-family="system-ui" font-size="14" fill="#111827">• 可能拓展到更多人群</text>
+    <text x="20" y="162" font-family="system-ui" font-size="14" fill="#111827">  （需新样本复现）</text>
+    <text x="20" y="204" font-family="system-ui" font-size="12" fill="#4b5563">依据：论文强调需随机对照试验验证</text>
+    <text x="20" y="232" font-family="system-ui" font-size="12" fill="#4b5563">证据：第1页摘要Conclusions；第7页Discussion</text>
+  </g>
+
+  <g transform="translate(640,150)">
+    <rect x="0" y="0" width="272" height="330" rx="18" fill="#fdf2f8" stroke="#f9a8d4"/>
+    <text x="20" y="40" font-family="system-ui" font-size="18" font-weight="800">论文未报告/不足</text>
+    <text x="20" y="78" font-family="system-ui" font-size="14" fill="#111827">• 假刺激对照的因果效应</text>
+    <text x="20" y="106" font-family="system-ui" font-size="14" fill="#111827">• 个体层面的“自测阈值”</text>
+    <text x="20" y="134" font-family="system-ui" font-size="14" fill="#111827">• 长期随访与复发情况</text>
+    <text x="20" y="162" font-family="system-ui" font-size="14" fill="#111827">• 更大样本的外部验证细节</text>
+    <text x="20" y="204" font-family="system-ui" font-size="12" fill="#4b5563">证据：第7页Discussion（无假刺激对照、未盲法、样本量较小）</text>
+  </g>
+
+  <text x="48" y="520" font-family="system-ui" font-size="13" fill="#4b5563">
+    注：本图为科普梳理，不新增论文外事实；“合理推测”仅用于帮助读者理解研究下一步方向。
+  </text>
+</svg>

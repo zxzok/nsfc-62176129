@@ -1,0 +1,36 @@
+{
+  "protocols": [
+    {
+      "id": "rat_primary_cortex_rtms",
+      "species": "rat",
+      "target_region": "primary cortex（初级皮层）",
+      "frequency_hz": 1,
+      "on_s": 1,
+      "off_s": 0,
+      "pulses_per_session": 900,
+      "session_duration": "15 min",
+      "sessions_per_day": 1,
+      "total_days": 14,
+      "total_sessions": 14,
+      "intensity_note": "论文方法部分未报告动物刺激强度（证据：第3页 2.2.2）",
+      "device_note": "50 mm air-cooled animal circular coil（证据：第3页 2.2.2）",
+      "source_ref": "第3页 2.2.2"
+    },
+    {
+      "id": "human_visual_cortex_rtms",
+      "species": "human",
+      "target_region": "visual cortex（视觉皮层；初级皮层关键脑区）",
+      "frequency_hz": 1,
+      "on_s": 10,
+      "off_s": 2,
+      "pulses_per_session": 1000,
+      "session_duration": "19 min 58 s",
+      "sessions_per_day": 2,
+      "total_days": 5,
+      "total_sessions": 10,
+      "intensity_note": "100% resting motor threshold（证据：第3页 2.3.3）",
+      "device_note": "Magneuro 60 + figure-of-eight coil；10–10系统+个体3D结构MRI定位（证据：第3页 2.3.3）",
+      "source_ref": "第3页 2.3.3"
+    }
+  ]
+}

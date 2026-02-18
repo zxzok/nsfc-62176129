@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "module_id": "clinical_cognition_dashboard",
+  "title": "情绪更重还是执行更难？两型表现对照",
+  "description": "用于展示两亚型在抑郁严重度（HAMD）、执行功能（WCST）与症状网络指标上的统计差异。该schema描述前端需要呈现的指标、比较方式与统计证据。",
+  "fields": [
+    {
+      "name": "metric_id",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "HAMD_total",
+        "HAMA_total",
+        "BPRS_total",
+        "WCST_CR",
+        "WCST_CC",
+        "WCST_TE",
+        "WCST_PE",
+        "WCST_NPE",
+        "symptom_network_density",
+        "symptom_network_strength",
+        "global_strength_same_density_threshold"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第2页：量表与WCST；PDF第6页 图3"
+    },
+    {
+      "name": "group_a",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "subtype_1",
+        "subtype_2",
+        "HC"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：两亚型；PDF第2页：HC"
+    },
+    {
+      "name": "group_b",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "subtype_1",
+        "subtype_2",
+        "HC"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：两亚型；PDF第2页：HC"
+    },
+    {
+      "name": "stat_test",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "two_sample_t_test",
+        "paired_t_test",
+        "other"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：t检验与FDR；PDF第4页：网络paired t test"
+    },
+    {
+      "name": "t_value",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        -100,
+        100
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第5页：t值（HAMD与WCST）；PDF第6页：t=10.17"
+    },
+    {
+      "name": "p_value",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "allowed; 若缺失写'论文未报告'",
+      "source_ref": "PDF第5–6页 结果"
+    },
+    {
+      "name": "pFDR",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "allowed; 若缺失写'论文未报告'",
+      "source_ref": "PDF第4页：pFDR<0.05；PDF第5页：HAMD pFDR=0.025等"
+    },
+    {
+      "name": "direction",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "higher_in_group_a",
+        "higher_in_group_b",
+        "no_significant_difference_reported"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第5–6页；图3"
+    },
+    {
+      "name": "effect_summary_cn",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "文本",
+      "missing": "not_allowed",
+      "source_ref": "PDF第5–6页 结果段落"
+    }
+  ],
+  "example_records": [
+    {
+      "metric_id": "HAMD_total",
+      "group_a": "subtype_2",
+      "group_b": "subtype_1",
+      "stat_test": "two_sample_t_test",
+      "t_value": 2.67,
+      "p_value": null,
+      "pFDR": 0.025,
+      "direction": "higher_in_group_a",
+      "effect_summary_cn": "亚型2的HAMD总分显著高于亚型1。",
+      "source_ref": "PDF第5页；PDF第6页 图3A"
+    },
+    {
+      "metric_id": "WCST_PE",
+      "group_a": "subtype_1",
+      "group_b": "HC",
+      "stat_test": "two_sample_t_test",
+      "t_value": 4.0,
+      "p_value": null,
+      "pFDR": 0.001,
+      "direction": "higher_in_group_a",
+      "effect_summary_cn": "亚型1持续性错误（PE）高于健康对照，提示执行功能受损。",
+      "source_ref": "PDF第5页；PDF第6页 图3B"
+    },
+    {
+      "metric_id": "symptom_network_density",
+      "group_a": "subtype_2",
+      "group_b": "subtype_1",
+      "stat_test": "other",
+      "t_value": null,
+      "p_value": null,
+      "pFDR": null,
+      "direction": "higher_in_group_a",
+      "effect_summary_cn": "症状网络密度：亚型2=0.51，高于亚型1=0.42。",
+      "source_ref": "PDF第6页；PDF第6页 图3C"
+    },
+    {
+      "metric_id": "global_strength_same_density_threshold",
+      "group_a": "subtype_2",
+      "group_b": "subtype_1",
+      "stat_test": "two_sample_t_test",
+      "t_value": 10.17,
+      "p_value": 1e-06,
+      "pFDR": null,
+      "direction": "higher_in_group_a",
+      "effect_summary_cn": "相同密度阈值下，亚型2全局强度更高（t=10.17，p=1.0e-06）。",
+      "source_ref": "PDF第6页；PDF第6页 图3D"
+    }
+  ]
+}
