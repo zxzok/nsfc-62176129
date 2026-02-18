@@ -2,208 +2,192 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>青春期的海马体发育“掉队”，能被拉回吗？</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>青春期的海马体发育"掉队"，能被拉回吗？</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#ca8a04;--accent-light:#fde68a;--accent-bg:rgba(202,138,4,.08);--grad-start:#713f12;--grad-end:#a16207}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(253,230,138,.12),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7}
+    .hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .timeline-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+    .tl-card{background:#fff;border-radius:12px;padding:1.3rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .tl-card .age{font-size:1.3rem;font-weight:800;color:var(--accent)}
+    .tl-card h4{font-size:.92rem;font-weight:700;color:#1e293b;margin:.3rem 0}
+    .tl-card p{font-size:.82rem;color:#475569;line-height:1.5}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#dc2626}
+    .finding-card.alt2{border-left-color:#2563eb}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.timeline-row{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    返回主站
+
+<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.55rem 1.5rem;background:rgba(113,63,18,.92);backdrop-filter:blur(6px)">
+  <a href="../../#/" style="color:#fde68a;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span style="color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+</nav>
 
-<div class="reading-progress" id="readingProgress"></div>
+<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:101;transition:width .1s"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">青春期的海马体发育“掉队”，能被拉回吗？</h1>
-    <p class="hero-subtitle">主标题：</p>
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">纵向结构 MRI</span>
+      <span class="hero-chip">海马体发育轨迹</span>
+      <span class="hero-chip">跨物种 rTMS 验证</span>
+    </div>
+    <h1>青春期的海马体发育"掉队"，能被拉回吗？</h1>
+    <p class="subtitle">纵向 MRI 追踪 + 青春期枕叶 rTMS 干预，大鼠海马体体积上升，青少年患者也观察到类似变化</p>
   </div>
-</section>
+</header>
 
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（120–180字）</h2>
-    <div class="reveal"><p>问题：很多精神障碍在24岁前出现，但我们缺少能指向“什么时候、该干预哪里”的客观线索。  <br>方法：研究者用MAM大鼠做纵向结构MRI追踪（童年/青春期/成年），锁定异常发育脑区与窗口；再在青春期对枕叶做rTMS，并在青少年患者中验证。  <br>发现：大鼠纹状体从童年起持续变小；海马体从青春期开始变小。青春期枕叶rTMS能让大鼠海马体体积上升；青少年患者治疗后双侧海马体也增加，且左海马体变化与抑郁症状改善相关。  <br>意义：提示“青春期—海马体”可能是早发精神障碍的可干预窗口，结构MRI或可用于更精准的干预定位。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig2_longitudinal.png" alt="30秒读懂（120–180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>多数精神障碍的首发集中在青少年到青年早期阶段，但临床诊断主要依赖症状；在青少年群体中，不同诊断之间症状重叠较高，缺少客观生物标志物，导致“什么时候介入、介入哪里”难以精准回答。  <br>与此同时，既往研究提示：多类早发精神障碍都可能伴随脑结构发育轨迹偏离，例如海马体、纹状体等体积下降，而且这些改变在病程早期就可能出现，并与症状变化有关。  <br>因此，一个更“可操作”的问题是：能否用可控的动物模型把发育过程拆解成时间轴，找出关键脑区与关键窗口，再把这个窗口上的干预策略带回到临床青少年人群中验证？</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig1_overview.png" alt="为什么要做这个研究" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的（500–800字，含类比）</h2>
-    <div class="reveal"><p>可以把大脑的发育想象成一座城市的“分区建设”：不同功能区（脑区）有各自的施工进度表，某些区如果在关键时期“停工或减速”，后面很难补上。研究者用两个步骤去找“哪一区、哪一段工期最关键”。</p><p>第一步，他们用一种叫MAM的动物模型：在大鼠胚胎第17天给孕鼠注射MAM（一种会干扰神经发生的物质），让后代出现类似“神经发育受扰”的起点。随后对同一批大鼠在三个年龄段反复做结构MRI：童年期（PD21–25）、青春期（PD42–46）和成年期（PD63–67），把灰质（GM）体积/密度的变化当作“城市分区的建设进度”。</p><p>第二步，当他们发现某些脑区在青春期开始出现明显“掉队”后，就在青春期尝试干预。由于rTMS的作用主要在大脑皮层表面，研究者选择与海马体存在解剖连接的枕叶皮层作为刺激靶点，相当于从“交通枢纽”去影响更深部的“核心区”。在大鼠中，青春期连续2周给予10 Hz的rTMS（对照为假刺激），干预后再做MRI对比海马体与纹状体。</p><p>第三步，他们把同样的“枕叶rTMS—结构MRI前后对比”方案带到临床：招募13–18岁的早发精神障碍住院青少年（重性抑郁障碍或双相障碍），完成基线评估与MRI后接受共20次枕叶rTMS治疗，再复查MRI并评估症状量表变化。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现1：纹状体“从童年起掉队”，海马体“从青春期开始掉队”</h2>
-    <div class="reveal"><p>通俗表述：在MAM大鼠里，两块关键脑区的发育失衡不是同时发生的——纹状体更早，海马体更晚。  <br>关键证据：与对照相比，MAM组纹状体在童年、青春期、成年三阶段都显著更低（均P<0.001）；海马体在童年差异不显著（P>0.05），但从青春期到成年显著更低（均P<0.001）。  <br>这意味着什么：如果把“可干预窗口”理解为偏离刚出现或正在加速的阶段，海马体在青春期开始出现差异，可能更适合在临床可识别的年龄段进行干预尝试。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现2：在大鼠中，青春期枕叶rTMS能提升海马体，但对纹状体无明显效果</h2>
-    <div class="reveal"><p>通俗表述：同样在青春期做rTMS，海马体像是“能被拉一把”，纹状体则没有明显改变。  <br>关键证据：与MAM-sham相比，MAM-rTMS组海马体体积显著增加（P<0.01）；纹状体在两组间差异不显著（P>0.05）。  <br>这意味着什么：这支持了“干预要踩在窗口上”的思路：如果海马体的异常主要从青春期开始，青春期干预更可能看到结构层面的可塑性变化。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现3：在青少年患者中，枕叶rTMS后双侧海马体体积增加，并与抑郁症状改善相关</h2>
-    <div class="reveal"><p>通俗表述：把同一思路用于临床青少年，MRI也看到海马体“变大了”，而且海马体变化越明显，抑郁评分下降越多（相关关系）。  <br>关键证据：20名13–18岁患者接受20次枕叶rTMS后，左右海马体体积均显著增加（均P<0.01）。左海马体体积变化与HAMD-17变化呈负相关（r=-0.524，P=0.018）。同时，症状量表在治疗后显著下降/改善：HAMD-17由19.45±5.11降至11.05±5.04；HAMA由21.30±7.86降至13.30±6.15等。  <br>这意味着什么：这为“用结构MRI寻找靶点—用rTMS调节发育轨迹”的跨物种路径提供了初步的人体可行性证据，但仍需更严格的对照试验确认因果与长期效应。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
-    <div class="reveal"><p><strong>证据支持的：</strong>  <br><ul><li>在MAM大鼠中，海马体异常从青春期开始出现且持续；青春期枕叶rTMS可增加海马体体积，而纹状体无显著变化。  </li><br><li>在一组早发精神障碍青少年患者中，枕叶rTMS后双侧海马体体积增加，且左海马体变化与抑郁症状改善相关。</li><br></ul><br><strong>合理推测的（论文讨论提出但仍需验证）：</strong>  <br><ul><li>青春期可能是针对海马体发育异常进行早期干预的关键窗口；未来结构MRI可能作为“定位线索”帮助提高rTMS靶点特异性。  </li><br><li>rTMS可能通过影响神经可塑性（如突触修剪/可塑性相关过程）间接改变海马体结构，但论文强调机制尚不清楚，需要进一步研究。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步（必须写）</h2>
-    <div class="reveal"><p>论文明确提出/可直接推得的局限性包括：  <br><ul><li>动物MRI需要麻醉以减少运动与应激，麻醉可能影响结果解释。  </li><br><li>临床样本在治疗期间使用稳定的精神科药物方案，药物可能影响rTMS效果；作者提示解读需谨慎。  </li><br><li>性别可能影响结果，但本研究为初步临床试验，样本量较小，未来需更大样本检验性别效应。  </li><br><li>研究未探索分子机制及rTMS对异常神经发育的分子层面干预效应。  </li><br><li>现有rTMS主要刺激皮层，未来可探索更深部刺激技术（如可直接刺激深部核团的线圈或经颅聚焦超声）以更直接作用海马体。  </li><br><li>临床研究缺少健康青少年对照组，因此难以在本队列内直接判断“海马体是否异常偏小”；作者指出以往研究提示这些患者海马体更小。</li><br></ul><br>下一步建议（基于论文讨论）：  <br>继续扩大临床样本并引入更严格的对照设计（例如健康对照、假刺激对照、长期随访），同时结合生物学机制研究，以确认“结构变化—症状改善”的因果链条。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">一句话带走（≤30字）</h2>
-    <div class="reveal"><p><strong>青春期海马体可能是早发精神障碍的可干预窗口。</strong></p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/fig4_patient.png" alt="fig4 patient" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig4 patient</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig2_longitudinal.png" alt="fig2 longitudinal" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig2 longitudinal</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig1_overview.png" alt="fig1 overview" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig1 overview</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig3_rtms_rat.png" alt="fig3 rtms rat" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig3 rtms rat</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/hippocampus_location.svg" alt="hippocampus location" loading="lazy">
-          <div class="visual-card-body">
-            <p>hippocampus location</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/rtms_protocol_compare_template.svg" alt="rtms protocol compare template" loading="lazy">
-          <div class="visual-card-body">
-            <p>rtms protocol compare template</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/development_timeline_template.svg" alt="development timeline template" loading="lazy">
-          <div class="visual-card-body">
-            <p>development timeline template</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/occipital_to_hippocampus.svg" alt="occipital to hippocampus" loading="lazy">
-          <div class="visual-card-body">
-            <p>occipital to hippocampus</p>
-          </div>
-        </div>
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">3 时间点</div><div class="label">童年→青春期→成年</div></div>
+      <div class="kpi-card reveal"><div class="num">20</div><div class="label">青少年患者（13-18岁）</div></div>
+      <div class="kpi-card reveal"><div class="num">P&lt;0.01</div><div class="label">海马体体积增加</div></div>
+      <div class="kpi-card reveal"><div class="num">r=-0.524</div><div class="label">左海马与 HAMD 相关</div></div>
     </div>
   </div>
 </section>
 
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-label reveal">常见问题</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
-    
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          术语小词典（8–12个）
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>1. <strong>海马体（hippocampus）</strong>：位于大脑深部、与记忆与情绪调节相关的结构。类比：像“记忆与情绪的整理中心”。  <br>2. <strong>纹状体（striatum）</strong>：参与奖赏、执行与情绪加工的脑区。类比：像“行动与动力的调度台”。  <br>3. <strong>神经发育（neurodevelopment）</strong>：从胚胎到成年，大脑结构与功能逐步成熟的过程。类比：像城市从规划到完工的长期建设。  <br>4. <strong>MAM模型（methylazoxymethanol acetate model）</strong>：在胚胎期用MAM干扰神经发生，产生发育受扰的动物模型。类比：像在“施工早期”出现材料/工序问题，导致后续进度异常。  <br>5. <strong>结构MRI（structural MRI）</strong>：用磁共振成像获取大脑解剖结构（如灰质体积）的技术。类比：像给大脑拍“高分辨率的三维建筑照片”。  <br>6. <strong>灰质（GM, gray matter）</strong>：富含神经元胞体的脑组织，结构MRI可估计其体积/密度变化。类比：像城市里“功能建筑密集区”。  <br>7. <strong>rTMS（repetitive transcranial magnetic stimulation）</strong>：经颅重复磁刺激，用磁场在大脑皮层诱发电流以调节神经活动。类比：像用“可重复的外部开关”调节电路的兴奋性。  <br>8. <strong>假刺激（sham）</strong>：看起来像在刺激，但实际不产生有效刺激的对照条件。类比：像“按了按钮但机器没真的运行”，用于排除安慰效应/噪声影响。  <br>9. <strong>关键窗口（critical window）</strong>：在发育过程中，某些阶段对外界影响更敏感，干预可能更有效。类比：像施工的“关键工期”，错过后返工成本高。  <br>10. <strong>相关（correlation）</strong>：两个指标一起变化，但不等于因果关系。类比：像“雨伞销量”和“降雨量”常一起升高，但雨伞不导致下雨。</p><p><ul><li>--</li></ul></p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          FAQ（8–10问答，公众视角）
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p><strong>Q1：这是不是在说“早发抑郁/双相就是海马体变小导致的”？</strong>  <br>A：论文展示的是结构差异与症状变化之间的关联与时间窗口线索：在动物模型中海马体从青春期开始变小，在患者中治疗后海马体增加并与抑郁评分变化相关。但这不能直接证明“海马体变小是唯一原因”或“必然因果”。</p><p><strong>Q2：我能不能做个MRI看看海马体大小来判断风险？</strong>  <br>A：论文并未提供可用于个体诊断/预测的阈值或准确率，也没有健康青少年对照组来建立“正常范围”。因此不能据此自测或做个人风险判断。</p><p><strong>Q3：rTMS是不是安全？青少年能做吗？</strong>  <br>A：论文记录了“每次治疗后记录自报不良事件”，但在本文中未报告不良事件的发生率与类型细节。安全性评估需要结合更大样本和专门的安全性报告，且应由专业医生评估适应证与禁忌证。</p><p><strong>Q4：为什么刺激枕叶（视觉皮层），而不是直接刺激海马体？</strong>  <br>A：作者解释：rTMS的直接作用范围主要在皮层；枕叶与海马体存在解剖连接，因此选择枕叶作为“可触达的皮层入口”来影响海马体。</p><p><strong>Q5：动物结果能直接推到人吗？</strong>  <br>A：论文的核心就是用“结构MRI作为跨物种表型”来提高可比性，并在青少年患者中做了前后对比验证。但临床部分是初步试验，缺少健康对照/假刺激对照，仍需更严格研究。</p><p><strong>Q6：治疗后海马体变大，是不是表示大脑“恢复正常”了？</strong>  <br>A：在动物中作者使用“逆转异常发育轨迹”的表述，并显示MAM-rTMS与对照无显著差异。但在人类研究中没有健康对照，因此无法在本文内判定“是否恢复到正常范围”。</p><p><strong>Q7：症状改善一定是因为海马体变大吗？</strong>  <br>A：论文只报告了左海马体变化与HAMD-17变化的相关（r=-0.524），相关不等于因果。需要随机对照、长期随访等设计来验证因果链条。</p><p><strong>Q8：这项研究对普通人有什么启示？</strong>  <br>A：它更多提供“科研与临床如何更精准找窗口与靶点”的思路：青春期可能是干预海马体发育异常的关键期，未来可能帮助提升干预的靶点特异性。但并不提供个人层面的自测或替代治疗建议。</p><p><strong>Q9：下一步最需要补哪块证据？</strong>  <br>A：作者提到需要更大样本以检验性别等因素、补充分子机制研究，并探索可作用深部结构的新技术；临床上也需要更严格的对照设计。</p></div>
-      </div>
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      大脑发育像城市建设：不同功能区有各自的"施工进度表"。纹状体（动力调度台）从童年起就偏小，海马体（记忆与情绪整理中心）从青春期才开始"掉队"。研究者在青春期这个"关键工期"给枕叶做 rTMS，相当于从"交通枢纽"影响深部"核心区"——大鼠海马体被"拉回来"了，而纹状体没动。
+    </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+<!-- Development timeline -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">发育时间线：哪个脑区什么时候"掉队"？</h2>
+    <div class="timeline-row reveal">
+      <div class="tl-card" style="border-top:3px solid #dc2626">
+        <div class="age">PD21-25</div>
+        <h4>童年期</h4>
+        <p>纹状体已显著偏小（P&lt;0.001）<br>海马体差异不显著</p>
+      </div>
+      <div class="tl-card" style="border-top:3px solid var(--accent)">
+        <div class="age">PD42-46</div>
+        <h4>青春期</h4>
+        <p>纹状体持续偏小<br><strong>海马体开始偏小</strong>（P&lt;0.001）</p>
+      </div>
+      <div class="tl-card" style="border-top:3px solid #6366f1">
+        <div class="age">PD63-67</div>
+        <h4>成年期</h4>
+        <p>两者均持续偏小<br>海马体差异进一步扩大</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig2_longitudinal.png" alt="纵向发育轨迹" loading="lazy">
+      <div class="caption">图 2 · MAM 大鼠三时间点灰质体积变化：海马体从青春期开始出现显著差异</div>
+    </div>
   </div>
+</section>
+
+<!-- Findings -->
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 纹状体"从童年掉队"，海马体"从青春期掉队"</h4>
+        <p>两块关键脑区的发育失衡不同时发生。如果"可干预窗口"是偏离刚出现的阶段，海马体在青春期更适合尝试干预。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · 大鼠青春期 rTMS 提升海马体，纹状体无效</h4>
+        <p>MAM-rTMS 组海马体体积显著增加（P&lt;0.01），纹状体无变化。支持"干预要踩在窗口上"的思路。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 患者双侧海马体增加，与抑郁改善相关</h4>
+        <p>20 名患者 rTMS 后双侧海马体均显著增加（P&lt;0.01）。左海马变化与 HAMD-17 变化负相关（r=-0.524, P=0.018）。HAMD 从 19.45±5.11 降至 11.05±5.04。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig4_patient.png" alt="患者治疗前后海马体变化" loading="lazy">
+      <div class="caption">图 4 · 青少年患者 rTMS 后海马体体积变化及与症状的相关</div>
+    </div>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>青春期海马体可能是早发精神障碍的可干预窗口 — 但因果链条仍需更严格试验确认。</p>
+  </div>
+</div>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>做个 MRI 看海马体大小能判断风险吗？</summary><div class="faq-body">论文未提供个体诊断阈值，也没有健康对照来建立"正常范围"，不能用于个人自测。</div></details>
+    <details class="reveal"><summary>为什么刺激枕叶而不直接刺激海马体？</summary><div class="faq-body">rTMS 的直接作用范围主要在皮层，枕叶与海马存在解剖连接，是可触达的"皮层入口"。</div></details>
+    <details class="reveal"><summary>海马体变大就等于"恢复正常"了吗？</summary><div class="faq-body">动物中 MAM-rTMS 与对照无显著差异，但人类研究没有健康对照，无法在本文内判定是否回到正常范围。</div></details>
+    <details class="reveal"><summary>症状改善一定是因为海马体变大吗？</summary><div class="faq-body">论文只报告了相关（r=-0.524），相关不等于因果，需要随机对照和长期随访验证。</div></details>
+  </div>
+</section>
+
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>海马体</dt><dd>位于大脑深部，与记忆和情绪调节相关 — 像"记忆与情绪的整理中心"。</dd></div>
+      <div class="glossary-card reveal"><dt>纹状体</dt><dd>参与奖赏、执行与情绪加工 — 像"行动与动力的调度台"。</dd></div>
+      <div class="glossary-card reveal"><dt>MAM 模型</dt><dd>胚胎期用 MAM 干扰神经发生，产生发育受扰的动物模型。</dd></div>
+      <div class="glossary-card reveal"><dt>关键窗口</dt><dd>发育中某些阶段对干预更敏感 — 像"关键工期"，错过后返工成本高。</dd></div>
+      <div class="glossary-card reveal"><dt>结构 MRI</dt><dd>获取大脑解剖结构的成像技术 — 像给大脑拍"三维建筑照片"。</dd></div>
+      <div class="glossary-card reveal"><dt>rTMS</dt><dd>经颅重复磁刺激 — 用"可重复的外部开关"调节神经电路。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0f172a;color:rgba(255,255,255,.5);text-align:center;padding:2rem 1rem;font-size:.82rem">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <p style="margin-top:.5rem"><a href="../../#/" style="color:#fde68a">NSFC 62176129 项目主站</a></p>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-}, { passive: true });
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
 </script>
 </body>
 </html>
