@@ -1,341 +1,443 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>癌细胞的“维持开关”：癌症维持基因（CKG）可能成为新的治疗靶点线索</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>癌细胞的"维持开关"：癌症维持基因（CKG）可能成为新的治疗靶点线索</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../unified-style.css">
+<style>
+:root{--accent:#0e7490;--accent-light:#06b6d4;--accent-bg:rgba(14,116,144,.08);--accent-bg2:rgba(14,116,144,.14);--grad-start:#042f2e;--grad-end:#0e7490}
+
+/* ── hero ─────────────────────────────── */
+.hero-custom{background:linear-gradient(135deg,var(--grad-start) 0%,var(--grad-end) 100%);padding:5rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero-custom::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 70%);top:-180px;right:-120px}
+.hero-custom .sec-inner{max-width:820px;position:relative;z-index:1}
+.hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.hero-chip{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);padding:4px 14px;border-radius:999px;font-size:.82rem;color:rgba(255,255,255,.88);letter-spacing:.3px}
+.hero-custom h1{font-size:clamp(1.65rem,4vw,2.6rem);font-weight:800;line-height:1.35;color:#fff;margin:0 0 1rem}
+.hero-custom .subtitle{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;max-width:640px}
+
+/* ── kpi strip ────────────────────────── */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0}
+.kpi-item{text-align:center;padding:1.2rem .5rem;background:var(--accent-bg);border-radius:14px;border:1px solid var(--accent-bg2)}
+.kpi-num{font-size:1.85rem;font-weight:800;color:var(--accent);line-height:1.1}
+.kpi-label{font-size:.82rem;color:#64748b;margin-top:.35rem}
+
+/* ── analogy ──────────────────────────── */
+.analogy{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0;font-size:.97rem;line-height:1.75;color:#334155}
+
+/* ── steps ────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+.step{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem;position:relative}
+.step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-title{font-weight:700;font-size:.93rem;color:var(--accent);margin-top:.5rem;margin-bottom:.35rem}
+.step p{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
+
+/* ── finding cards ────────────────────── */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.feat-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid #e2e8f0;border-top:4px solid var(--accent)}
+.feat-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0 0 .6rem}
+.feat-card p{font-size:.88rem;color:#475569;line-height:1.7;margin:0}
+
+/* ── funnel chart ─────────────────────── */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:.5rem;margin:2rem 0}
+.funnel-bar{height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem;transition:width .6s}
+
+/* ── figure inline ────────────────────── */
+.fig-inline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin:2rem 0}
+.fig-inline img{width:100%;display:block}
+.fig-inline figcaption{padding:1rem 1.2rem;font-size:.85rem;color:#64748b;line-height:1.6}
+
+/* ── bar chart ────────────────────────── */
+.bar-chart{margin:2rem 0}
+.bar-row{display:flex;align-items:center;margin-bottom:.65rem}
+.bar-label{width:140px;font-size:.82rem;color:#334155;font-weight:500;flex-shrink:0}
+.bar-track{flex:1;height:26px;background:#f1f5f9;border-radius:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-size:.75rem;font-weight:700;color:#fff;transition:width .8s}
+.bar-val{font-size:.82rem;color:#64748b;width:50px;text-align:right;margin-left:8px}
+
+/* ── vs cards ─────────────────────────── */
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0}
+.vs-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem;text-align:center}
+.vs-card h4{font-weight:700;font-size:.95rem;margin:0 0 .5rem}
+.vs-card p{font-size:.85rem;color:#475569;line-height:1.65;margin:.3rem 0}
+.vs-cdg{border-top:4px solid #f97316}
+.vs-ckg{border-top:4px solid var(--accent)}
+
+/* ── takeaway banner ──────────────────── */
+.takeaway-banner{background:linear-gradient(135deg,#042f2e 0%,#164e63 100%);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:2.5rem 0;color:#fff}
+.takeaway-banner .emoji{font-size:2.2rem;margin-bottom:.8rem}
+.takeaway-banner h3{font-size:1.25rem;font-weight:800;margin:0 0 .6rem}
+.takeaway-banner p{font-size:.95rem;color:rgba(255,255,255,.78);max-width:540px;margin:0 auto;line-height:1.7}
+
+/* ── glossary ─────────────────────────── */
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0}
+.gloss-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.2rem}
+.gloss-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+.gloss-card dd{font-size:.84rem;color:#475569;margin:0;line-height:1.6}
+
+/* ── FAQ ──────────────────────────────── */
+.faq-wrap{max-width:720px;margin:2rem auto}
+.faq-wrap details{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:.75rem;overflow:hidden}
+.faq-wrap summary{padding:1rem 1.2rem;font-weight:600;font-size:.93rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#0f172a}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:700;transition:transform .2s}
+.faq-wrap details[open] summary::after{content:'−'}
+.faq-wrap .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+
+/* ── responsive ───────────────────────── */
+@media(max-width:640px){
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .vs-row{grid-template-columns:1fr}
+  .bar-label{width:100px;font-size:.75rem}
+}
+</style>
 </head>
 <body>
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    返回主站
+
+<!-- nav -->
+<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1.5rem;background:rgba(4,47,46,.92);backdrop-filter:blur(6px)">
+  <a href="../../#/" style="color:#06b6d4;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span style="color:rgba(255,255,255,.45);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+</nav>
 
-<div class="reading-progress" id="readingProgress"></div>
+<!-- progress bar -->
+<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent-light);width:0;z-index:200;transition:width .15s"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">癌细胞的“维持开关”：癌症维持基因（CKG）可能成为新的治疗靶点线索</h1>
-    <p class="hero-subtitle">副标题：</p>
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero-custom">
+  <div class="sec-inner">
+    <div class="hero-chip-row">
+      <span class="hero-chip">Cell Reports</span>
+      <span class="hero-chip">网络结构可控性</span>
+      <span class="hero-chip">癌症维持基因</span>
+      <span class="hero-chip">膀胱癌验证</span>
+    </div>
+    <h1>癌细胞的"维持开关"：网络控制论揭示癌症维持基因（CKG）</h1>
+    <p class="subtitle">传统研究聚焦"点燃"癌变的驱动基因——这项研究反过来问：哪些基因在持续维持癌状态？通过网络结构可控性分析，作者找到660个"控制枢纽"基因，并在膀胱癌实验中验证其功能。</p>
   </div>
-</section>
+</header>
 
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">30秒读懂</h2>
-    <div class="reveal"><p>问题：很多研究在找“把细胞推向癌变”的驱动基因（CDG），但癌细胞一旦形成，哪些基因在<strong>持续维持</strong>它的异常生长？</p><p>方法：作者把癌相关基因与调控关系做成一个有向网络，用“网络结构可控性”寻找所有控制方案都绕不开的“控制枢纽”，把它们定义为癌症维持基因（CKG）；再用“删掉一条连接”的方式定义更易被扰动的敏感CKG（sCKG）。</p><p>发现：在包含7,030个基因、103,360条有向连接的网络中，识别出660个CKG与173个sCKG；并在膀胱癌细胞系与小鼠移植瘤模型中验证部分sCKG干预会显著改变增殖/迁移与肿瘤生长。</p><p>意义：这提供了一条不同于“只看突变频率”的靶点发现路线——去找维持癌状态的关键“续航开关”。</p><p><blockquote>证据锚点：Summary提出CKG概念与总体思路（第2页，SUMMARY)；网络构建规模：7,030节点与103,360有向边（第3页，Figure 1A)；CKG与sCKG数量（660与173）（第5页，Figure 2B)；细胞与小鼠验证（第9页，Figure 4)；sCKG定义：删一条边使枢纽失效（第4页，Figure 1D)</blockquote></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/figure3.png" alt="30秒读懂" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>传统癌症研究常把重点放在“癌症驱动基因（CDG）”上：这些基因因为突变或改变，可能触发肿瘤发生或促进异常增殖。</p><p>但作者指出两个现实痛点：</p><p><ul><li>从突变出发找CDG，随着样本量增加，新发现的驱动基因可能出现“趋于饱和”的现象。</li><br></ul><br><ul><li>用网络可控性直接找“驱动节点”也不容易：复杂网络往往存在大量不同的控制方案（control schemes），对应不同的驱动节点集合；枚举所有控制方案在计算上是#P-hard，且单个方案可能需要同时控制很多基因，治疗上不现实。</li><br></ul><br>因此作者提出换一个问题：<strong>不追问“谁点燃了癌变”，而追问“谁让癌状态持续运转”</strong>。他们把那些维持癌细胞状态、从网络控制角度看“所有方案都绕不开”的基因，命名为“癌症维持基因（CKG）”，并把它们视作潜在治疗靶点。</p><p><blockquote>证据锚点：CDG定义与饱和现象（第2页，INTRODUCTION)；控制方案不唯一与#P-hard（第2页，INTRODUCTION)；控制路径/控制方案解释（第4页，Figure 1C)；将控制枢纽命名为CKG（第5页，Sensitive control hub nodes as cancer-keeper genes)</blockquote></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/figure2.png" alt="为什么要做这个研究" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的</h2>
-    <div class="reveal"><p>可以把作者的方法想成“在一张城市交通网里找出维持拥堵的关键路口”。这里的“路口”是基因，“道路”是调控关系，方向表示谁影响谁。</p><p><ul><li>先建一张尽可能系统的“癌症调控地图”。作者从5个高质量通路/相互作用数据库中抽取10类调控关系（例如控制磷酸化、控制表达等），再以95个膀胱癌种子基因（45个已知BLCA驱动基因 + 50个最高突变基因）为起点做广度优先搜索，得到一个包含7,030个基因与103,360条有向连接的基因调控网络（GRN）。作者还观察到网络几乎是一个巨大的连通组件，因此用不同癌种的种子基因，网络也几乎不变，提示它更像“泛癌（pan-cancer）”网络。</li><br></ul><br><ul><li>再用“网络结构可控性”找关键节点。结构可控性关心：在只知道网络连接结构的情况下，是否存在一组最少的“外部输入点”（驱动节点）把系统从任意状态驱动到目标状态。一个控制方案由若干条控制路径（control paths）及其驱动节点组成；但复杂网络的最大匹配不唯一，因此控制方案也不唯一。</li><br></ul><br><ul><li>核心创新：不选某一套控制方案，而是找“所有方案都绕不开的中段节点”。作者定义：如果一个节点在所有控制方案里都处在控制路径的中间位置，它就是控制枢纽（control hub）。他们提出多项式时间算法，无需枚举所有方案就能找出全部控制枢纽。</li><br></ul><br><ul><li>把控制枢纽当作CKG，并进一步定义sCKG。作者把控制枢纽视作维持网络整体可控性的“薄弱点”，因此把控制枢纽基因命名为癌症维持基因（CKG）。如果删除网络中的一条边就能让某个控制枢纽变成非枢纽，则称为敏感CKG（sCKG）。作者用“删边”类比药物阻断蛋白相互作用/通路连接，认为sCKG可能更可被药物“撬动”。</li><br></ul><br><ul><li>最后用实验验证。作者在两种膀胱癌细胞系（T24、UMUC3）中用siRNA敲低6个sCKG，检测增殖（CCK-8）与迁移（Transwell）；并在小鼠移植瘤模型中验证RPS6KA3敲低对肿瘤生长的影响。</li><br></ul></p><p><blockquote>证据锚点：建网：5数据库、10类相互作用、95种子基因、BFS、7030/103360（第3页，Figure 1A)；控制路径与控制方案不唯一（第4页，Figure 1C)；结构可控性与线性近似假设（第17页，Structural controllability of cancer gene regulatory network)；控制枢纽算法复杂度O(n^3 m)（第5页，However, identifying all control hubs...)；control hub定义与求法（头/尾节点集合）（第18页，Control schemes and control hubs...)；sCKG定义与识别（第5页，Figure 1D)；删边类比药物阻断（第7页，Sensitive cancer-keeper genes have oncogenic functions...)；体外/体内实验（第9页，Figure 4)；小鼠模型方法细节（n=5每组，3周后处死取瘤）（第16页，Xenograft mouse model)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">数据一览</h2>
-    <div class="reveal"><p>为了让读者快速把握“这项研究到底算了什么、验证了什么”，这里把关键量化信息集中列出：</p><p><ul><li>网络规模：7,030个基因节点、103,360条有向连接。</li><br></ul><br><ul><li>候选集合大小：单一控制方案的驱动基因3,115个（44.3%）；所有方案合并的驱动基因5,052个（71.9%）；CKG 660个（9.4%）；sCKG 173个（2.5%）。</li><br></ul><br><ul><li>算法复杂度：识别全部控制枢纽的算法复杂度为O(n^3 m)（n为节点数，m为边数）；识别全部敏感控制枢纽的算法最坏复杂度为O(n^0.5 m^2)。</li><br></ul><br><ul><li>实验验证：在T24与UMUC3两种膀胱癌细胞中敲低6个sCKG并检测增殖/迁移；在小鼠移植瘤模型中验证RPS6KA3。</li><br></ul></p><p><blockquote>证据锚点：网络规模（第3页，Figure 1A)；图2A网络拓扑规模说明（第6页，Figure 2A)；驱动基因/CKG/sCKG比例与数量（第6页，Figure 2B)；控制枢纽算法复杂度O(n^3 m)（第5页，However, identifying all control hubs...)；sCKG识别复杂度O(n^0.5 m^2)（第18页，Identification of sensitive control hub nodes...)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么</h2>
-    <div class="reveal"><p>这篇论文的结果可以按“从方法产出 → 生物学含义 → 实验验证”三层来理解。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现1：CKG把“候选靶点清单”从几千缩到几百，并且集中在关键癌症通路</h2>
-    <div class="reveal"><p>如果只按结构可控性找驱动节点，那么在这个网络里，驱动基因会非常多：单一控制方案就有3,115个驱动基因（44.3%），所有控制方案合并更达到5,052个（71.9%）。而作者的CKG只有660个（9.4%），sCKG更只有173个（2.5%）。</p><p>更重要的是：CKG不是随机挑出来的一群“少数派”。在TCGA分析的10条癌症信号通路中，细胞周期（cell cycle）与p53通路的基因<strong>100%都是CKG</strong>；TGFβ通路80%、RTK/RAS通路58.3%也是CKG。这说明CKG与癌细胞“持续分裂/持续存活”的核心机制强相关。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现2：CKG在功能上更像“系统级关键节点”，并与药物/免疫相关网络有连接</h2>
-    <div class="reveal"><p>作者用多种功能数据集检验CKG的富集情况，发现控制枢纽在必需性、进化保守性、细胞信号、蛋白丰度、翻译后修饰（PTM）、疾病基因、病毒靶点、药物靶点、免疫调控等维度上呈现富集（图2D）。此外，作者还分析了肿瘤免疫治疗相关的基因集合：共有27个CKG是已知免疫治疗靶点，其中20个属于核心CTL逃逸基因（coreCTL），7个属于CAR治疗/免疫检查点相关；并指出即便有437个CKG本身不直接与免疫相关，它们在网络中的直接邻居却是免疫调控基因（Data S2）。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现3：sCKG可能提示更“可撬动”的候选靶点，而且它们自己未必显眼</h2>
-    <div class="reveal"><p>在660个CKG中，173个（26.2%）被定义为sCKG；其中35.8%（62/173）与不止一条“敏感边”相关。图3B显示：sCKG本身的遗传改变频率与mRNA表达偏低，但它们的目标邻居基因在遗传改变与表达上更高，这意味着只看突变频率可能会漏掉sCKG。</p><p>作者进一步把173个sCKG映射到人类蛋白互作网络的“不可缺少基因”，得到35个更优先的sCKG候选。在这35个候选中：26个与已知癌症驱动基因直接相连；30个（85.7%）与癌症治疗靶点直接相连；27个（77.1%）与免疫基因直接相连。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现4：在细胞与小鼠模型中，干预部分sCKG会显著改变增殖/迁移与肿瘤生长（但方向因基因而异）</h2>
-    <div class="reveal"><p>作者在T24与UMUC3细胞中敲低6个sCKG：RPS6KA3、CDH2、CASP1、FN1（这些在文中强调“不是BLCA或其他恶性肿瘤的已知CDG”）以及FGFR3、EP300（作为已知BLCA CDG对照）。</p><p>结果显示：RPS6KA3、FGFR3、CDH2敲低会显著降低两种细胞的增殖；EP300与FN1敲低会显著促进UMUC3增殖但对T24增殖影响不大；CASP1敲低会促进增殖与生存。在迁移方面，FGFR3、RPS6KA3、EP300、FN1、CDH2敲低会降低迁移，而CASP1敲低会促进迁移。在小鼠移植瘤模型中，RPS6KA3敲低组肿瘤体积与重量更低。</p><p>这组结果很关键，因为它提醒公众和研究者：CKG/sCKG是一种“维持关键性”的结构定义，并不保证任何一个基因在所有情境下都呈现同方向的肿瘤抑制效应；后续需要机制研究与癌种/模型特异验证。</p><p><blockquote>证据锚点：驱动基因/CKG/sCKG比例与数量（第6页，Figure 2B)；10条通路CKG比例与cell cycle/p53 100%（第6页，Figure 2E)；CKG功能富集热图（第6页，Figure 2D)；免疫治疗靶点27个CKG、coreCTL等（第5页，We further analyzed the CKGs against...)；sCKG数量与敏感边分布（第8页，Figure 3A)；sCKG与邻居的遗传改变/表达差异（第8页，Figure 3B)；35个优先sCKG与邻居连接统计（第7页，Figure 3D)；体外实验结果总结（第10页，The absence of RPS6KA3...)；体外实验图（第9页，Figure 4A-D)；体内实验图（第10页，Figure 4E)；局限性：需更多验证与机制（第11页，Limitations of the study)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用</h2>
-    <div class="reveal"><p>从公众角度，“有用”往往意味着两件事：能不能帮助找到更好的治疗靶点？能不能帮助更准确地理解/分层疾病？这篇论文给出的证据主要支持“作为线索与框架”，而不是直接可用的临床工具。</p><p><ul><li><strong>作为靶点发现的筛选框架</strong>：作者展示了一个从“网络结构关键性”出发的筛选管线，把候选集合从几千个驱动基因收敛到660个CKG，再到173个sCKG与35个优先候选。</li><br></ul><br><ul><li><strong>作为实验验证的起点</strong>：作者在膀胱癌细胞系与小鼠模型中验证了部分sCKG的功能影响，说明这套筛选不只是数学游戏。但实验只覆盖少量基因与模型，且不同基因的效应方向并不一致，提示后续需要更系统的机制与药物层面研究。</li><br></ul><br><ul><li><strong>作为预后/分层线索</strong>：在TCGA/cBioPortal的411例膀胱尿路上皮癌样本中，作者按35个sCKG的“同时改变数量”分组做Kaplan–Meier生存分析：未改变组中位生存期28.41个月；≥1、≥2、≥3组分别为59.31、66.41、104.65个月，并给出logrank检验p值。这是一种统计关联，不能直接推断因果，也不能直接用于个人化预测或治疗决策。</li><br></ul><br><ul><li><strong>合理推测但论文尚未直接证明的方向</strong>：作者用“删边”类比药物阻断相互作用，提出sCKG可能更“可药”；并认为方法可扩展到其他癌种甚至其他复杂疾病。但这些属于方法潜力的展望，仍需独立验证。</li><br></ul></p><p><blockquote>证据锚点：筛选收敛：图2B与图3D（第6页，Figure 2B)；35优先sCKG（第8页，Figure 3D)；实验验证（第9页，Figure 4)；生存分析分组与中位生存（第8页，Figure 3E)；生存分析方法与alteration定义（第19页，Survival analysis)；删边类比药物阻断（第7页，The rationale for edge removal...)；局限性与未来扩展（第11页，Limitations of the study)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步</h2>
-    <div class="reveal"><p>作者在论文中明确写出了多条局限性，这里用公众能理解的方式转述，并指出可能的下一步。</p><p><ul><li>网络数据未必完整：GRN来自癌症相关通路与蛋白互作数据，可能漏掉真实存在的相互作用。</li><br></ul><br><ul><li>“泛癌网络”可能掩盖癌种差异：网络设计用于pan-cancer研究，可能混入不同条件发生的相互作用，从而遮蔽某一特定癌种真正关键的调控边。</li><br></ul><br><ul><li>生物因素纳入不足：作者指出尚未充分考虑mRNA表达、翻译后与表观遗传修饰、非编码RNA调控、以及肿瘤微环境等因素。</li><br></ul><br><ul><li>仍需更多实验与机制解释：尤其需要解释为何不同sCKG在不同细胞系中呈现不同方向的效应，以及这些效应在更接近临床的模型中是否成立。</li><br></ul><br>作者也提出了直接可做的改进路线：把基因表达数据作为证据“修剪”网络，移除不被某癌种表达支持的节点与连接，从而把pan-cancer网络改造成癌种特异网络。</p><p><blockquote>证据锚点：Limitations段落（第11页，Limitations of the study)；pan-cancer网络推断（第3页，Construction of cancer gene regulatory network)；用表达数据修剪成癌种特异网络（第11页，Our approach can be improved by incorporating gene expression...)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">一句话带走</h2>
-    <div class="reveal"><p>不只找“点火键”，也要找维持癌状态的“续航开关”。</p><p><blockquote>证据锚点：CKG与CDG概念对比（第10页，DISCUSSION)；CKG定义于癌细胞维持状态（第2页，SUMMARY)</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">统一免责声明</h2>
-    <div class="reveal"><p>本页面用于科研科普与方法解读，不构成医疗建议或个人诊断/治疗依据。论文证据主要来自计算网络分析、细胞系实验与小鼠移植瘤模型，以及TCGA/cBioPortal的回顾性生存分组关联；对人体临床疗效与安全性尚未验证。任何健康决策请咨询专业医生。</p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/cover_main.png" alt="cover main" loading="lazy">
-          <div class="visual-card-body">
-            <p>cover main</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure3</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure2.png" alt="figure2" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure2</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure1.png" alt="figure1" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure1</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure4.png" alt="figure4" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure4</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/candidate_funnel.svg" alt="candidate funnel" loading="lazy">
-          <div class="visual-card-body">
-            <p>candidate funnel</p>
-          </div>
-        </div>
+<!-- ═══════════════ KPI ═══════════════ -->
+<section class="sec" style="padding-top:0;margin-top:-1.5rem;position:relative;z-index:2">
+  <div class="sec-inner">
+    <div class="kpi-strip">
+      <div class="kpi-item"><div class="kpi-num">7,030</div><div class="kpi-label">基因节点</div></div>
+      <div class="kpi-item"><div class="kpi-num">103K</div><div class="kpi-label">有向连接</div></div>
+      <div class="kpi-item"><div class="kpi-num">660</div><div class="kpi-label">CKG 维持基因</div></div>
+      <div class="kpi-item"><div class="kpi-num">173</div><div class="kpi-label">sCKG 敏感维持基因</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--surface);" id="glossary">
-  <div class="container">
-    <div class="section-label reveal">术语词典</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
-    
-      <div class="glossary-item reveal">
-        <div class="glossary-term">癌症维持基因（CKG, cancer-keeper gene）</div>
-        <div class="glossary-def">解释：在论文中指“控制枢纽”对应的基因：在所有控制方案里都位于控制路径中段，被认为维持癌细胞异常状态的关键节点。</div>
-        <div class="glossary-analogy">像城市交通网里无论怎么绕行都必须经过的关键立交桥，决定整体通行能力。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">敏感癌症维持基因（sCKG, sensitive cancer-keeper gene）</div>
-        <div class="glossary-def">解释：如果删除网络中的一条边就能让某个控制枢纽变成非枢纽，论文称该基因为敏感控制枢纽，并作为sCKG。</div>
-        <div class="glossary-analogy">像一个关键路口只要封掉一条匝道就会失去“必经地位”，更容易被小改动影响。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">癌症驱动基因（CDG, cancer driver gene）</div>
-        <div class="glossary-def">解释：通常指突变/改变会推动肿瘤发生或促进异常生长的基因，是传统癌症基因研究的重点对象。</div>
-        <div class="glossary-analogy">像点燃火的火星或打火机，负责“启动”异常过程。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">基因调控网络（GRN, gene regulatory network）</div>
-        <div class="glossary-def">解释：把基因之间“谁影响谁”的关系画成有方向的网络：节点是基因，箭头是调控/作用关系。</div>
-        <div class="glossary-analogy">像社交网络里谁影响谁，但这里影响的是基因的表达与信号传递。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">网络结构可控性（structural controllability）</div>
-        <div class="glossary-def">解释：只根据网络连接结构判断：是否存在一组外部输入点，让系统从任意状态被驱动到目标状态的一种理论框架。</div>
-        <div class="glossary-analogy">只看电路图，不看元件具体参数，也能判断电路是否“可被外部按钮控制”。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">控制方案（control scheme）</div>
-        <div class="glossary-def">解释：在结构可控性里，一套控制方案由若干条控制路径组成，并对应一组驱动节点；复杂网络中控制方案通常不唯一。</div>
-        <div class="glossary-analogy">像同一张城市地图可以有多套“最佳疏导方案”，每套方案选择不同入口来调度车流。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">控制路径（control path）</div>
-        <div class="glossary-def">解释：在某个控制方案下，驱动信号沿着网络的有向边传递形成的路径集合，描述控制如何在网络中“传下去”。</div>
-        <div class="glossary-analogy">像交通疏导时车流从入口沿固定路线分流到不同区域。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">最大匹配（maximum matching）</div>
-        <div class="glossary-def">解释：把有向网络转换为二分图后的一种匹配关系；由于最大匹配可能不唯一，会导致驱动节点集合不唯一。</div>
-        <div class="glossary-analogy">像给一群人配对，能配出的“最多对数”可能有多种配法，从而影响谁被选为关键角色。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">驱动节点/驱动基因（driver nodes/driver genes）</div>
-        <div class="glossary-def">解释：在结构可控性框架中，被外部输入直接控制的一组节点；在基因网络里对应需要直接干预的一组基因。</div>
-        <div class="glossary-analogy">像总控室里必须直接按下的那几个按钮，才能带动整个系统到目标状态。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">拷贝数变异（CNV：CNV_AMP/CNV_DEL）</div>
-        <div class="glossary-def">解释：基因在基因组中的拷贝数增加（扩增）或减少（缺失），是肿瘤常见的遗传改变类型之一。</div>
-        <div class="glossary-analogy">像一本说明书被复印了很多份（扩增）或被撕掉几页（缺失），会改变系统输出。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">Kaplan–Meier生存曲线</div>
-        <div class="glossary-def">解释：把不同人群随时间的生存概率画成阶梯曲线，用于比较分组差异。</div>
-        <div class="glossary-analogy">像把“100个人还剩多少人没出局”随时间画成曲线，便于比较两组走势。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">siRNA敲低（knockdown）</div>
-        <div class="glossary-def">解释：用小干扰RNA降低某个基因的表达量，从而观察细胞表型变化，是常用的功能验证手段。</div>
-        <div class="glossary-analogy">像把某个零件的电源调低，看看机器运行会不会变慢或改变方向。</div>
-      </div>
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/cover_main.png" alt="CKG graphical abstract">
+      <figcaption>论文图形摘要：从基因调控网络出发，通过结构可控性分析识别癌症维持基因（CKG）与敏感CKG（sCKG），并在膀胱癌细胞系和小鼠模型中验证。</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-label reveal">常见问题</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
-    
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q1. 这是不是又发现了一批新的“致癌基因”？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不完全是。论文强调的CKG（癌症维持基因）来自<strong>网络控制位置</strong>的定义：它们是所有控制方案都绕不开的“控制枢纽”，未必因为突变频率高而被发现。</p><p>作者在实验中还特意选择了4个并非已知BLCA或其他恶性肿瘤CDG的sCKG（RPS6KA3、CDH2、CASP1、FN1）做验证，说明这条路线确实可能补充传统“驱动基因”视角。</p><p>来源：第5-6页；第10页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q2. CKG和癌症驱动基因（CDG）到底有什么区别？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>CDG更像“点火键”：它们的改变可能触发或推动肿瘤发生。CKG更像“续航开关”：作者关注的是癌细胞状态形成后，哪些基因在网络控制上维持异常状态，使系统持续运行。</p><p>需要注意：论文并不声称CKG一定不是CDG——两者可以重叠。它的贡献是提供了一个不同的筛选维度。</p><p>来源：第2页；第10页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q3. 为什么“控制枢纽”听起来比“驱动节点”更有用？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>因为驱动节点集合太大且不唯一：在这张网络里，一个控制方案就需要3,115个驱动基因，所有方案合并要5,052个，几乎覆盖大多数基因；而CKG只有660个，sCKG只有173个，更便于后续验证与聚焦。</p><p>另外，复杂网络的控制方案不唯一且枚举困难（#P-hard），作者用“控制枢纽=所有方案必经的中段节点”绕开了枚举难题。</p><p>来源：第2页；第5-6页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q4. sCKG为什么可能更适合做药物靶点？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>作者的理由是一个类比：药物常常相当于阻断某种相互作用或通路连接，而不是“删除一个基因”。因此他们用“删掉一条边”来模拟这种结构扰动；如果删边就能让控制枢纽失效，这个枢纽可能更容易被“撬动”，因此被定义为sCKG。</p><p>但这仍是方法层面的推断：是否真的可成药，还需要药物化学、毒性与临床研究，论文没有直接给出。</p><p>来源：第5页；第7页；第11页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q5. 我能根据这篇论文做自测或决定治疗方案吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不能。论文的验证主要来自计算网络分析、两种膀胱癌细胞系的siRNA敲低实验、以及小鼠移植瘤模型；并做了公开队列的回顾性生存分组关联。这些证据不足以支持个人化诊断或治疗决策。</p><p>如果你关心相关基因的检测或靶向治疗，请咨询临床医生并参考临床指南；论文并未提供可直接用于临床的检测阈值或决策流程。</p><p>来源：第8-10页；第19页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q6. 图3E里“改变越多生存越长”是不是说明突变越多越好？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不是。首先，这里的“改变”是对35个sCKG的alteration计数，包含突变、融合、拷贝数扩增与纯合缺失等多类改变。其次，分组是回顾性关联分析，只能说明“在这个队列里两者相关”，不能推出因果，更不能反向建议“增加突变”。</p><p>此外，“≥1/≥2/≥3”是嵌套分组，解读时应避免把它当作互斥分层。</p><p>来源：第8页；第19页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q7. 为什么有些基因敲低会抑制增殖，有些反而促进增殖？这不是矛盾吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>这恰恰说明CKG/sCKG是一种<strong>结构位置</strong>定义，而不是“必然促癌/抑癌”的单一功能标签。论文中，RPS6KA3/FGFR3/CDH2敲低降低增殖，但EP300/FN1在UMUC3中敲低反而促进增殖，CASP1敲低促进增殖与迁移。</p><p>作者在局限性中也指出，需要更多实验与机制研究来解释这些差异，并验证在更多模型与真实肿瘤环境中是否一致。</p><p>来源：第9-11页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q8. 这套方法能推广到其他癌种吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>作者认为有潜力。因为他们构建的网络几乎是一个巨型连通组件，用不同癌种种子基因做BFS得到的网络“几乎不变”，因此更像一个pan-cancer网络。他们也在讨论中把CKG概念扩展到“维持疾病状态”的一般思路。</p><p>但论文同时强调局限：pan-cancer网络可能遮蔽癌种特异的相互作用，需要结合表达等数据把网络“改装”为癌种特异网络。</p><p>来源：第3页；第10-11页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q9. 离真正的新药还有多远？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文提供的是“发现线索与优先级列表”，还不是药物本身。它识别出173个sCKG，并用外部网络筛到35个优先候选，同时对6个基因做了功能验证。</p><p>要走到新药，通常还需要：明确机制、找到可抑制/可激活的分子位点、做药效与毒性评估、再进入临床试验。论文没有覆盖这些步骤。</p><p>来源：第8-11页</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Q10. 作者自己认为最大局限是什么？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文列出的局限包括：网络可能不完整；pan-cancer网络可能混入不同条件下的相互作用、遮蔽癌种特异性；尚未充分纳入表达、表观遗传、非编码RNA与微环境等因素；需要更多实验与机制解释。</p><p>作者也给出改进方向：用基因表达数据作为证据修剪网络，构建更癌种特异的版本。</p><p>来源：第11页</p></div>
-      </div>
+<!-- ═══════════════ ANALOGY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">通俗理解</div>
+    <h2 class="reveal">像城市交通网找"关键路口"</h2>
+    <div class="analogy reveal">
+      把7,030个癌症相关基因想象成一座城市的路口，10万多条调控关系是单行道。传统研究在找"谁最先引发拥堵"（驱动基因），而这项研究问的是：<strong>无论你怎么规划疏导方案，总有哪些路口绕不开？</strong>——这些"必经路口"就是癌症维持基因（CKG）。更进一步，如果只封一条匝道就能让某个"必经路口"失去关键地位，它就是敏感CKG（sCKG），可能更容易被药物"撬动"。
+    </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+<!-- ═══════════════ CDG vs CKG ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">核心区别</div>
+    <h2 class="reveal">驱动基因 vs. 维持基因</h2>
+    <div class="vs-row reveal">
+      <div class="vs-card vs-cdg">
+        <h4>癌症驱动基因 CDG</h4>
+        <p>"点火键"</p>
+        <p>因突变/改变推动肿瘤发生</p>
+        <p>按突变频率筛选 → 候选趋于饱和</p>
+      </div>
+      <div class="vs-card vs-ckg">
+        <h4>癌症维持基因 CKG</h4>
+        <p>"续航开关"</p>
+        <p>从网络控制结构看维持癌状态</p>
+        <p>按结构必经性筛选 → 新维度补充</p>
+      </div>
+    </div>
+    <p class="reveal" style="font-size:.88rem;color:#64748b;text-align:center">两者可以重叠——CKG提供的是不同于"看突变频率"的筛选视角。</p>
   </div>
+</section>
+
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">方法流程</div>
+    <h2 class="reveal">四步找到"癌细胞续航开关"</h2>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-title">构建基因调控网络</div>
+        <p>从5个数据库、10类调控关系出发，以95个膀胱癌种子基因做广度优先搜索，得到 7,030 节点 × 103,360 有向边的 GRN。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-title">找"所有方案必经"节点</div>
+        <p>用结构可控性理论，不枚举所有控制方案，而用多项式算法（O(n³m)）直接找出全部"控制枢纽"——660 个 CKG。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-title">定义"敏感"CKG</div>
+        <p>如果删除一条网络边就能让某个控制枢纽失效，则为 sCKG。共识别 173 个，类比"封一条匝道就变普通路口"。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div class="step-title">实验验证</div>
+        <p>在 T24 与 UMUC3 膀胱癌细胞中敲低 6 个 sCKG，检测增殖/迁移；在小鼠移植瘤模型中验证 RPS6KA3。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FIGURE 1 ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure1.png" alt="Figure 1 — 网络构建与控制枢纽识别">
+      <figcaption>Figure 1：(A) 从数据库出发构建 GRN；(B-C) 结构可控性与控制路径示意；(D) sCKG 定义——删边使控制枢纽失效。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ FUNNEL ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">候选收敛</div>
+    <h2 class="reveal">从数千到数百——逐级筛选候选靶点</h2>
+    <div class="funnel reveal">
+      <div class="funnel-bar" style="width:100%;background:#94a3b8">所有方案合并驱动基因 5,052（71.9%）</div>
+      <div class="funnel-bar" style="width:62%;background:#64748b">单一方案驱动基因 3,115（44.3%）</div>
+      <div class="funnel-bar" style="width:22%;background:var(--accent)">CKG 660（9.4%）</div>
+      <div class="funnel-bar" style="width:9%;background:#042f2e">sCKG 173（2.5%）</div>
+    </div>
+    <figure class="fig-inline reveal" style="margin-top:1.5rem">
+      <img src="visuals/candidate_funnel.svg" alt="候选漏斗示意">
+      <figcaption>从全体基因到 sCKG 的逐级收敛示意。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ FINDINGS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">核心发现</div>
+    <h2 class="reveal">四项关键结果</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>发现 1｜CKG 集中在关键癌症通路</h3>
+        <p>在 TCGA 的 10 条癌症信号通路中，细胞周期与 p53 通路基因 <strong>100%</strong> 都是 CKG；TGFβ 通路 80%、RTK/RAS 通路 58.3% 也是 CKG。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 2｜CKG 是"系统级关键节点"</h3>
+        <p>控制枢纽在必需性、保守性、信号传导、药物靶点、免疫调控等维度富集。27 个 CKG 为已知免疫治疗靶点。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 3｜sCKG 本身可能"不显眼"</h3>
+        <p>sCKG 自身的突变频率和表达偏低，但其邻居基因的遗传改变与表达更高——只看突变频率容易漏掉它们。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 4｜实验验证功能影响</h3>
+        <p>在膀胱癌细胞中敲低 sCKG 显著改变增殖/迁移，方向因基因而异。RPS6KA3 在小鼠模型中减小肿瘤体积与重量。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FIGURE 2 ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure2.png" alt="Figure 2 — CKG特征分析">
+      <figcaption>Figure 2：(A) 网络拓扑；(B) CKG/sCKG 比例；(D) 功能富集热图；(E) 10 条 TCGA 通路中 CKG 占比。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ PATHWAY BAR ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">通路覆盖</div>
+    <h2 class="reveal">CKG 在 TCGA 癌症通路中的占比</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><span class="bar-label">Cell Cycle</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent)">100%</div></div><div class="bar-val">100%</div></div>
+      <div class="bar-row"><span class="bar-label">p53</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent)">100%</div></div><div class="bar-val">100%</div></div>
+      <div class="bar-row"><span class="bar-label">TGFβ</span><div class="bar-track"><div class="bar-fill" style="width:80%;background:#0891b2">80%</div></div><div class="bar-val">80%</div></div>
+      <div class="bar-row"><span class="bar-label">RTK/RAS</span><div class="bar-track"><div class="bar-fill" style="width:58.3%;background:#22d3ee">58.3%</div></div><div class="bar-val">58.3%</div></div>
+      <div class="bar-row"><span class="bar-label">Hippo</span><div class="bar-track"><div class="bar-fill" style="width:52%;background:#67e8f9">52%</div></div><div class="bar-val">~52%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FIGURE 3 ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure3.png" alt="Figure 3 — sCKG分析">
+      <figcaption>Figure 3：(A) sCKG 与敏感边分布；(B) sCKG 与邻居的遗传改变/表达差异；(D) 35 个优先 sCKG 候选；(E) 生存分析。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ EXPERIMENT ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">实验验证</div>
+    <h2 class="reveal">细胞系 × 小鼠模型：sCKG 功能影响</h2>
+    <p class="reveal" style="font-size:.92rem;color:#475569;line-height:1.7;margin-bottom:1.5rem">
+      作者在 T24 与 UMUC3 膀胱癌细胞中敲低 6 个 sCKG，其中 4 个（RPS6KA3、CDH2、CASP1、FN1）并非已知癌症驱动基因。结果显示效应方向因基因而异——CKG 是一种<strong>结构位置</strong>定义，不保证单一方向的功能。
+    </p>
+    <figure class="fig-inline reveal">
+      <img src="visuals/figure4.png" alt="Figure 4 — 实验验证">
+      <figcaption>Figure 4：(A-B) 增殖实验（CCK-8）；(C-D) 迁移实验（Transwell）；(E) 小鼠移植瘤模型——RPS6KA3 敲低显著减小肿瘤。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ TAKEAWAY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="takeaway-banner reveal">
+      <div class="emoji">&#128300;</div>
+      <h3>不只找"点火键"，也要找维持癌状态的"续航开关"</h3>
+      <p>CKG 提供了一条不同于"只看突变频率"的靶点发现路线——从网络结构的必经性出发，把几千个候选收敛到几百个，再到可实验验证的优先列表。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SIGNIFICANCE ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究意义</div>
+    <h2 class="reveal">这项研究有什么用</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>靶点发现框架</h3>
+        <p>从数千个驱动基因 → 660 CKG → 173 sCKG → 35 优先候选，提供系统化的筛选管线。</p>
+      </div>
+      <div class="feat-card">
+        <h3>实验验证起点</h3>
+        <p>在膀胱癌细胞系与小鼠模型中验证了部分 sCKG 的功能影响，说明筛选并非纯数学游戏。</p>
+      </div>
+      <div class="feat-card">
+        <h3>预后分层线索</h3>
+        <p>TCGA 411 例膀胱癌中，35 个 sCKG 的 alteration 数量与生存期呈统计关联（回顾性，非因果）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LIMITATIONS ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">局限性与展望</div>
+    <h2 class="reveal">需要注意什么</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>网络未必完整</h3>
+        <p>GRN 来自已知通路与蛋白互作数据，可能遗漏真实存在但尚未收录的调控关系。</p>
+      </div>
+      <div class="feat-card">
+        <h3>泛癌 ≠ 癌种特异</h3>
+        <p>pan-cancer 网络可能遮蔽特定癌种的关键调控，后续可用表达数据修剪为癌种特异网络。</p>
+      </div>
+      <div class="feat-card">
+        <h3>生物因素有待纳入</h3>
+        <p>尚未充分考虑 mRNA 表达、表观遗传、非编码 RNA 与肿瘤微环境等因素。</p>
+      </div>
+      <div class="feat-card">
+        <h3>需要更多验证</h3>
+        <p>不同 sCKG 效应方向不一致，需机制研究与更多癌种/模型验证。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">常见问题</div>
+    <h2 class="reveal">FAQ</h2>
+    <div class="faq-wrap reveal">
+      <details>
+        <summary>CKG 和传统驱动基因的本质区别？</summary>
+        <div class="faq-body">CDG 由突变频率或功能实验鉴定——"谁点燃了癌变"；CKG 由网络控制结构鉴定——"谁让癌状态持续运转"。两者可以重叠，但 CKG 能发现那些突变频率不高却在控制结构上不可绕过的基因。</div>
+      </details>
+      <details>
+        <summary>为什么有的基因敲低反而促进增殖？</summary>
+        <div class="faq-body">CKG/sCKG 是结构位置定义，不是"一定促癌/抑癌"的功能标签。CASP1 敲低促进增殖与迁移，EP300/FN1 在 UMUC3 中也促进增殖。这提醒需要逐个验证机制与方向。</div>
+      </details>
+      <details>
+        <summary>sCKG 为什么可能更适合做药物靶点？</summary>
+        <div class="faq-body">药物常相当于阻断某种蛋白相互作用，而非"删除基因"。sCKG 的定义就是"删一条边就让控制枢纽失效"，类比药物阻断一条通路连接。但是否真正可成药还需药物化学与临床验证。</div>
+      </details>
+      <details>
+        <summary>能推广到其他癌种吗？</summary>
+        <div class="faq-body">作者构建的 GRN 近乎 pan-cancer（换不同癌种种子基因，网络几乎不变）。方法可扩展，但 pan-cancer 网络可能遮蔽癌种差异，需结合表达数据做修剪。</div>
+      </details>
+      <details>
+        <summary>能用于个人化诊断或治疗决策吗？</summary>
+        <div class="faq-body">不能。证据主要来自计算分析、两种细胞系 siRNA 实验和小鼠模型。论文未提供临床检测阈值或决策流程。任何健康决策请咨询专业医生。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GLOSSARY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">术语速查</div>
+    <h2 class="reveal">关键概念</h2>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card"><dt>CKG（癌症维持基因）</dt><dd>在所有控制方案中都位于控制路径中段的"控制枢纽"基因，维持癌细胞异常状态。</dd></dl>
+      <dl class="gloss-card"><dt>sCKG（敏感维持基因）</dt><dd>删除一条网络边就能失去控制枢纽地位的 CKG，可能更易被药物扰动。</dd></dl>
+      <dl class="gloss-card"><dt>GRN（基因调控网络）</dt><dd>节点=基因，有向边=调控关系的网络图，本研究中含 7,030 节点与 103,360 条边。</dd></dl>
+      <dl class="gloss-card"><dt>结构可控性</dt><dd>只根据网络连接结构判断系统是否可被外部输入从任意状态驱动到目标状态。</dd></dl>
+      <dl class="gloss-card"><dt>控制枢纽</dt><dd>在所有控制方案中都处于控制路径中间位置的节点，是 CKG 的数学定义来源。</dd></dl>
+      <dl class="gloss-card"><dt>siRNA 敲低</dt><dd>用小干扰 RNA 降低特定基因表达，观察细胞功能变化的常用实验手段。</dd></dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISCLAIMER ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <p class="reveal" style="font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.7;max-width:600px;margin:0 auto">
+      本页面用于科研科普与方法解读，不构成医疗建议或诊断/治疗依据。论文证据主要来自计算分析、细胞系实验与小鼠模型，对人体临床疗效与安全性尚未验证。任何健康决策请咨询专业医生。
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer style="background:#042f2e;padding:2rem 1.5rem;text-align:center">
+  <p style="color:rgba(255,255,255,.45);font-size:.82rem">本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/" style="color:#06b6d4;font-size:.85rem;text-decoration:none;display:inline-block;margin-top:.5rem">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-}, { passive: true });
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 </script>
 </body>
 </html>
