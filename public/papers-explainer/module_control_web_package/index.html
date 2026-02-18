@@ -3,173 +3,844 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>谁在“操盘”心理症状网络？用模块控制找出关键症状群</title>
+  <title>谁在"操盘"心理症状网络？模块控制找出关键症状群</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    /* === Page-specific layout overrides === */
+    .kpi-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 1rem !important;
+      margin: 2rem 0 !important;
+    }
+    @media (max-width: 640px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    .kpi-card {
+      background: linear-gradient(135deg, #0f2b46, #1a3a5c) !important;
+      border-radius: 12px !important;
+      padding: 1.25rem 1rem !important;
+      text-align: center !important;
+      box-shadow: 0 4px 12px rgba(15,43,70,0.2) !important;
+    }
+    .kpi-card .num {
+      display: block !important;
+      font-size: 2rem !important;
+      font-weight: 800 !important;
+      color: #48cae4 !important;
+      line-height: 1.2 !important;
+    }
+    .kpi-card .label {
+      display: block !important;
+      font-size: 0.8rem !important;
+      color: rgba(255,255,255,0.65) !important;
+      margin-top: 4px !important;
+    }
+
+    /* Takeaway banner */
+    .takeaway {
+      background: linear-gradient(135deg, rgba(0,180,216,0.08), rgba(72,202,228,0.04)) !important;
+      border: 2px solid rgba(0,180,216,0.2) !important;
+      border-radius: 16px !important;
+      padding: 1.5rem 2rem !important;
+      text-align: center !important;
+      margin: 2rem 0 !important;
+    }
+    .takeaway p {
+      font-size: 1.15rem !important;
+      font-weight: 600 !important;
+      color: #0f2b46 !important;
+      margin: 0 !important;
+    }
+
+    /* Flow steps */
+    .flow-steps {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 0 !important;
+      margin: 2rem 0 !important;
+      position: relative !important;
+    }
+    @media (max-width: 768px) {
+      .flow-steps { grid-template-columns: 1fr !important; gap: 1rem !important; }
+      .flow-step::after { display: none !important; }
+    }
+    .flow-step {
+      text-align: center !important;
+      padding: 1rem !important;
+      position: relative !important;
+    }
+    .flow-step::after {
+      content: '\2192' !important;
+      position: absolute !important;
+      right: -8px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      font-size: 1.5rem !important;
+      color: #00b4d8 !important;
+      z-index: 2 !important;
+    }
+    .flow-step:last-child::after { display: none !important; }
+    .flow-icon {
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #00b4d8, #48cae4) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto 0.75rem !important;
+      font-size: 1.5rem !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(0,180,216,0.3) !important;
+    }
+    .flow-step h4 {
+      font-size: 0.85rem !important;
+      color: #0f2b46 !important;
+      margin: 0 0 4px !important;
+    }
+    .flow-step p {
+      font-size: 0.78rem !important;
+      color: #64748b !important;
+      margin: 0 !important;
+      line-height: 1.5 !important;
+    }
+
+    /* Findings cards */
+    .findings-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      margin: 2rem 0 !important;
+    }
+    .finding-card {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07) !important;
+      transition: all 0.3s ease !important;
+    }
+    .finding-card:hover {
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1) !important;
+      transform: translateY(-2px) !important;
+    }
+    .finding-header {
+      background: linear-gradient(135deg, #0f2b46, #1e6091) !important;
+      padding: 1rem 1.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+    }
+    .finding-num {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      background: rgba(72,202,228,0.2) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-weight: 800 !important;
+      color: #48cae4 !important;
+      font-size: 1rem !important;
+      flex-shrink: 0 !important;
+    }
+    .finding-header h3 {
+      color: #ffffff !important;
+      font-size: 1rem !important;
+      margin: 0 !important;
+      font-weight: 600 !important;
+      line-height: 1.4 !important;
+    }
+    .finding-body {
+      padding: 1.5rem !important;
+    }
+    .finding-body p {
+      margin: 0 0 1rem !important;
+    }
+
+    /* Module control bars */
+    .control-bar-group {
+      margin: 1.5rem 0 !important;
+    }
+    .control-bar-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      margin-bottom: 0.6rem !important;
+    }
+    .control-bar-label {
+      width: 48px !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      color: #0f2b46 !important;
+      text-align: right !important;
+      flex-shrink: 0 !important;
+    }
+    .control-bar-track {
+      flex: 1 !important;
+      height: 22px !important;
+      background: #f1f5f9 !important;
+      border-radius: 11px !important;
+      overflow: hidden !important;
+      position: relative !important;
+    }
+    .control-bar-fill {
+      height: 100% !important;
+      border-radius: 11px !important;
+      transition: width 0.8s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      padding-right: 8px !important;
+      font-size: 0.7rem !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      min-width: 40px !important;
+    }
+    .bar-out { background: linear-gradient(90deg, #00b4d8, #0ea5e9) !important; }
+    .bar-in { background: linear-gradient(90deg, #f77f6b, #ef4444) !important; }
+
+    /* Compare layout */
+    .compare-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1.5rem !important;
+      margin: 1.5rem 0 !important;
+    }
+    @media (max-width: 640px) {
+      .compare-grid { grid-template-columns: 1fr !important; }
+    }
+    .compare-box {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 1.25rem !important;
+    }
+    .compare-box h4 {
+      font-size: 0.85rem !important;
+      color: #64748b !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      margin: 0 0 0.75rem !important;
+    }
+
+    /* Edge table */
+    .edge-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .edge-list li {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 0.5rem 0 !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+      font-size: 0.88rem !important;
+    }
+    .edge-list li:last-child { border-bottom: none !important; }
+    .edge-from { font-weight: 600 !important; color: #0f2b46 !important; }
+    .edge-arrow { color: #00b4d8 !important; margin: 0 0.5rem !important; }
+    .edge-to { font-weight: 600 !important; color: #1e6091 !important; }
+    .edge-val {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      color: #0f2b46 !important;
+      background: #f1f5f9 !important;
+      padding: 2px 8px !important;
+      border-radius: 6px !important;
+    }
+
+    /* Module pills */
+    .module-pills {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.5rem !important;
+      margin: 1rem 0 !important;
+    }
+    .module-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      padding: 6px 14px !important;
+      border-radius: 20px !important;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      border: 1px solid !important;
+    }
+    .mp-sleep { background: rgba(59,130,246,0.08) !important; color: #2563eb !important; border-color: rgba(59,130,246,0.2) !important; }
+    .mp-stress { background: rgba(245,158,11,0.08) !important; color: #d97706 !important; border-color: rgba(245,158,11,0.2) !important; }
+    .mp-depression { background: rgba(139,92,246,0.08) !important; color: #7c3aed !important; border-color: rgba(139,92,246,0.2) !important; }
+    .mp-anxiety { background: rgba(236,72,153,0.08) !important; color: #db2777 !important; border-color: rgba(236,72,153,0.2) !important; }
+    .mp-suicide { background: rgba(239,68,68,0.08) !important; color: #dc2626 !important; border-color: rgba(239,68,68,0.2) !important; }
+    .mp-positive { background: rgba(16,185,129,0.08) !important; color: #059669 !important; border-color: rgba(16,185,129,0.2) !important; }
+
+    /* Section anchors */
+    .section-anchor {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      color: #00b4d8 !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    /* Figure with caption */
+    .fig-block {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 1rem !important;
+      margin: 1.5rem 0 !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+    }
+    .fig-block img {
+      max-width: 100% !important;
+      height: auto !important;
+      border-radius: 8px !important;
+      display: block !important;
+      margin: 0 auto !important;
+    }
+    .fig-caption {
+      text-align: center !important;
+      color: #64748b !important;
+      font-size: 0.82rem !important;
+      margin-top: 0.75rem !important;
+      font-style: italic !important;
+    }
+
+    /* TOC */
+    .toc-inline {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.5rem !important;
+      margin: 1.5rem 0 !important;
+      justify-content: center !important;
+    }
+    .toc-inline a {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      padding: 6px 14px !important;
+      border-radius: 20px !important;
+      background: rgba(0,180,216,0.06) !important;
+      border: 1px solid rgba(0,180,216,0.15) !important;
+      font-size: 0.82rem !important;
+      font-weight: 500 !important;
+      color: #1e6091 !important;
+      text-decoration: none !important;
+    }
+    .toc-inline a:hover {
+      background: rgba(0,180,216,0.12) !important;
+      text-decoration: none !important;
+    }
+
+    /* Disclaimer chip */
+    .disclaimer-chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      background: rgba(245,158,11,0.08) !important;
+      border: 1px solid rgba(245,158,11,0.2) !important;
+      color: #92400e !important;
+      font-size: 0.78rem !important;
+      font-weight: 500 !important;
+      padding: 6px 14px !important;
+      border-radius: 8px !important;
+      margin-top: 1rem !important;
+    }
+  </style>
 </head>
 <body>
+<!-- Nav -->
 <div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+  <a href="../../#/">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+  <span>NSFC 62176129</span>
 </div>
 
+<!-- Reading progress -->
 <div class="reading-progress" id="readingProgress"></div>
 
+<!-- ==================== HERO ==================== -->
 <section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">谁在“操盘”心理症状网络？用模块控制找出关键症状群</h1>
-    <p class="hero-subtitle">副标题：在2773名大学新生的问卷网络中，睡眠与压力相关模块比抑郁/焦虑模块更像“控制枢纽”</p>
-  </div>
-</section>
-
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（120–180字）</h2>
-    <div class="reveal"><p>问题：心理困扰常以一串症状同时出现，我们难判断该先动哪一类症状。方法：把4份常用量表的37个条目连成症状网络，并用“最小支配集”推算各模块的控制力。发现：睡眠与压力等非情绪模块的外向控制更强，情绪模块更易被影响。意义：干预不必只盯情绪本身，也应把睡眠与压力作为关键入口。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/figure3.png" alt="30秒读懂（120–180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>心理健康问题往往不是单一症状：失眠、紧张、注意力下降、情绪低落等可能一起出现、互相强化。网络心理病理学（network approach）把这些症状看作彼此相连的系统，而不是某个“隐藏疾病”单向造成的结果。<br>但在现实干预中，一个难题是：当症状像一张网一样牵一发而动全身，我们应该优先处理哪一类症状？传统网络分析常用“中心性”找最重要的单个节点，可是一些基于“路径”的指标（如接近度、介数）在症状网络这类相关网络里可能不稳定、也不容易解释。因此，作者把问题提升到“症状群/模块”层面：不是只问“哪个症状最中心”，而是问“哪个模块更能带动或约束其他模块”，希望为更贴近实际的干预策略提供线索。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/figure1.png" alt="为什么要做这个研究" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的</h2>
-    <div class="reveal"><p>研究者先收集一批大学新生填写的四份自评问卷：抑郁（PHQ‑9）、焦虑（GAD‑7）、失眠（ISI）与压力量表（PSS‑14），把每一道题当作一个“症状节点”（总共37个节点）。接着，他们用一种常见的网络建模方法“Graphical LASSO”（可以理解为：在很多可能的连线里，自动保留最可靠、最少但最关键的连接），把题目之间的关联估计成一张稀疏网络；连线的权重来自偏相关强度，并取绝对值来关注“关联有多强”，不区分正负。然后用Louvain算法自动把关联更紧的一组节点归到同一“模块”（就像把经常一起出现的症状归成“症状群”），最终得到6个模块：抑郁、焦虑、睡眠、压力（正/负两类）以及一个“自杀”单题模块。<br>这篇论文的关键创新在于“模块控制”。传统做法常找网络里最“中心”的单个症状；而模块控制更像问：如果把网络当作一台有很多联动零件的机器，最少需要按下哪些“启动按钮”，就能让整台机器都被带动？这个最少按钮集合在控制理论里叫“最小支配集（MDSet）”：每个按钮能直接影响自己和相邻节点，多个按钮合起来要覆盖全网。作者在这张37节点网络里枚举出全部27个MDSet，并统计每个模块在这些MDSet里“当按钮”的频率（CF/ACF），以及一个模块的按钮覆盖到另一个模块的比例（MCS/AMCS）。最后，他们把模块当作新网络的节点、把模块间平均控制强度（AMCS）当作有向边，得到“模块控制网络（MCN）”，并用自助法重复抽样验证结果稳定。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现1：睡眠与压力模块更像“外向控制者”，情绪模块更像“被影响者”</h2>
-    <div class="reveal"><p>在模块控制网络（MCN）里，非情绪模块（睡眠SRM、压力NSM/PSM）的“出向控制强度”（out-degree strength）整体高于情绪模块：SRM=1.442、NSM=1.221、PSM=1.19，而ARM=0.598、DRM=0.207。相反，情绪模块更容易被其他模块“控制”（in-degree strength更高）：DRM=1.36、ARM=1.265，高于SRM=0.431、NSM=0.375。  <br>这意味着：在这个样本的症状网络结构中，“睡眠/压力相关症状群”更可能处在影响其他症状群的位置，而抑郁/焦虑相关症状群更可能处在被联动的位置。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现2：最强的模块间控制连线，集中在“睡眠→压力/抑郁”“压力→焦虑/抑郁”</h2>
-    <div class="reveal"><p>作者报告MCN中权重最高的三条连线分别是：SRM→PSM 的AMCS=0.586、PSM→ARM 的AMCS=0.497、SRM→DRM 的AMCS=0.444。图4A还标注了 NSM→ARM=0.40、NSM→PSM=0.35、PSM→DRM=0.35 等较强连线（数值为图中显示的四舍五入）。  <br>相对地，作者也给出三条最弱连线：DRM→SRM=0.042、ARM→NSM=0.042、DRM→NSM=0.019。  <br>这意味着：如果把模块看作“症状群”，网络的控制方向更像从睡眠/压力相关群落流向焦虑/抑郁相关群落，而反向较弱。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现3：少数“驱动症状”频繁出现在最小支配集中，其中非情绪模块的平均频率更高</h2>
-    <div class="reveal"><p>在37个症状节点中，有24个节点至少在一个最小支配集（MDSet）里当过“驱动节点”。作者枚举出全部27个MDSet，并计算每个节点作为驱动节点出现的频率CF。出现频率最高的前五个节点是：PHQ9（CF=1.000）、ISI4（CF=0.778）、PSS2（CF=0.444）、PSS7（CF=0.370）、GAD6（CF=0.222）。这些高CF节点分布在5个不同模块，作者据此认为各模块都存在“核心驱动点”，有助于控制结构的稳定。  <br>在模块层面，非情绪模块的平均控制频率ACF更高：NSM=0.125、SRM=0.125、PSM=0.086，高于情绪模块ARM=0.048、DRM=0.021。作者进一步讨论了睡眠模块中的ISI4、压力模块中的PSS2与PSS7等，可能是网络中更关键的控制症状。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用</h2>
-    <div class="reveal"><p>这项研究的直接产出是一个可复用的方法框架：把症状网络先分成模块，再用“模块控制”量化模块之间的控制关系，并构建模块控制网络（MCN）。在论文演示的数据里，这个框架确实识别出睡眠与压力相关模块的更强控制角色，并在自助法检验中表现稳定。</p><p>从“已被论文证据支持”的角度，它可以用于：<br><ul><li>在多量表、多人群的筛查数据中，把复杂的“共病现象”压缩成模块之间的关系图，帮助研究者用更接近临床语言的“症状群”来讨论系统结构。</li><br><li>为后续研究提供优先级线索：例如在同一张网络里，哪些模块更像“外向控制者”、哪些模块更像“被影响者”。</li><br></ul><br>从“合理推测但需要额外验证”的角度，作者提出：如果非情绪模块更能控制情绪模块，那么把干预入口放在睡眠与压力相关症状群，可能更有机会带动情绪相关症状群的改善。但需要强调：论文并未实施任何干预实验，也无法仅凭横断面相关网络证明真实因果方向；因此这应被视为“生成假设”，而不是可直接用于临床决策的结论。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步</h2>
-    <div class="reveal"><p>作者在论文中明确指出，模块控制结论的适用范围会受到样本与方法选择的影响：本研究样本来自单一学校的新生群体，所用量表与输入组合不同，可能导致网络边的出现/消失或权重波动，从而改变最小支配集与模块控制结果。此外，作者的控制分析还基于“不同MDSet权重相近”等设定；当网络估计方式变化或稳定性不足时，控制指标也可能随之不稳定，因此需要更有效的网络估计方法来从根本上缓解稳定性问题。</p><p>下一步方向方面，作者提出三条较清晰的路线：  <br><ul><li>把模块控制放到更多精神病理学框架中比较与讨论，例如与现象学或时空精神病理学等路径对话，以增强实际意义。  </li><br><li>结合神经影像等生物学数据做联合分析，而不仅停留在症状层面。  </li><br><li>从横断面走向纵向数据：作者认为纵向更贴近网络理论“个体内变化”的假设，并计划把模块控制扩展到随时间变化的动态控制问题。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">一句话带走</h2>
-    <div class="reveal"><p><strong>睡眠与压力模块可能是关键入口</strong></p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/graphical_abstract_full.png" alt="graphical abstract full" loading="lazy">
-          <div class="visual-card-body">
-            <p>graphical abstract full</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure3</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure1.png" alt="figure1" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure1</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure5.png" alt="figure5" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure5</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/figure4.png" alt="figure4" loading="lazy">
-          <div class="visual-card-body">
-            <p>figure4</p>
-          </div>
-        </div>
+  <div class="container" style="text-align:center;">
+    <span class="badge" style="background:rgba(255,255,255,0.12)!important;color:#fff!important;border-color:rgba(255,255,255,0.2)!important;margin-bottom:1rem;display:inline-block;">iScience &middot; 2024</span>
+    <h1>谁在"操盘"心理症状网络？<br>用模块控制找出关键症状群</h1>
+    <p style="color:rgba(255,255,255,0.75)!important;max-width:60ch;margin:1rem auto 0;font-size:1rem;">
+      在 2773 名大学新生的症状网络中，睡眠与压力模块比抑郁/焦虑模块更像"控制枢纽"
+    </p>
+    <!-- Quick jump TOC -->
+    <div class="toc-inline" style="margin-top:1.5rem;">
+      <a href="#summary" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">30秒读懂</a>
+      <a href="#method" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">研究方法</a>
+      <a href="#findings" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">核心发现</a>
+      <a href="#implications" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">意义与局限</a>
+      <a href="#faq" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">FAQ</a>
     </div>
   </div>
 </section>
 
-
-<section class="section" id="faq">
+<!-- ==================== KPI DASHBOARD ==================== -->
+<section id="summary">
   <div class="container">
-    <div class="section-label reveal">常见问题</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
-    
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          术语小词典（8–12条）
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p><strong>症状网络（symptom network）</strong>：把每个症状/问卷条目当作节点，用连线表示它们之间的统计关联强度。 类比：像一张“症状关系地图”，看哪些症状常一起出现并互相牵动。</p><p><strong>模块（module）</strong>：网络里连接更紧密的一群节点，可理解为一个症状群/症状簇。 类比：像把一堆零件按“经常一起运转”的方式分成几个子组件。</p><p><strong>模块控制（module control）</strong>：在模块层面分析“哪个模块更能带动/覆盖其他模块”的控制关系框架。 类比：不只找单个关键按钮，而是找“哪个功能区的按钮更能带动整机”。</p><p><strong>驱动节点（driver node）</strong>：在控制模型中接收外部信号、能直接影响自身与邻居节点的节点。 类比：像能按下去就点亮周围一圈灯的开关。</p><p><strong>支配集 / 最小支配集（dominating set / MDSet）</strong>：一组节点的控制范围合起来覆盖全网；其中规模最小的一组叫最小支配集。 类比：像用最少数量的路灯照亮整条街，覆盖所有角落。</p><p><strong>控制范围（control area）</strong>：在支配集模型里，一个驱动节点能覆盖“自己+直接相连的邻居”。 类比：像一个Wi‑Fi路由器能覆盖自己所在房间和隔壁房间。</p><p><strong>模块控制强度（MCS/AMCS）</strong>：某模块的驱动节点覆盖到另一个模块节点的比例；在所有MDSet上取平均得到AMCS。 类比：像A区的工作人员能覆盖到B区多少岗位，比例越高代表影响力越强。</p><p><strong>模块控制网络（MCN）</strong>：把“模块”当作新网络的节点，用模块间AMCS作为有向边权，得到模块尺度网络。 类比：像把城市的街区当节点，用“影响力箭头”画出街区之间的方向关系。</p><p><strong>控制频率（CF）/ 平均控制频率（ACF）</strong>：CF表示某节点在所有MDSet里成为驱动节点的比例；ACF是一个模块内CF的平均。 类比：像某个岗位在所有值班表里出现为“值班负责人”的次数比例。</p><p><strong>Graphical LASSO</strong>：一种构建稀疏相关网络的方法：在众多可能连线中保留最必要的连接。 类比：像在嘈杂对话里只抓住最关键的几条线索，避免“全都连上”的噪声。</p><p><strong>Louvain算法</strong>：一种常用的社区/模块发现算法，目标是让模块内连接密、模块间连接稀。 类比：像自动把社交圈按“谁跟谁更常互动”分群。</p><p><strong>自助法（bootstrapping）</strong>：反复从样本中抽取子样本重建网络，用分布与相关性检验结果稳定性。 类比：像反复从一锅汤里舀几勺尝味道，看结论是否每次都差不多。</p></div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <span class="num">2773</span>
+        <span class="label">大学新生样本</span>
       </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          FAQ（8–10问答）
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p><strong>Q：这是不是证明“睡眠或压力会导致抑郁/焦虑”？</strong></p><p>A：不能直接这样说。网络由Graphical LASSO估计的偏相关构成，属于统计关联网络；模块控制是基于支配集的结构可控性分析，并不等同于真实因果机制。论文也强调本研究为横断面分析，结论需在纵向与更多数据中验证。</p><p><strong>Q：我能用这套方法给自己做诊断或自测吗？</strong></p><p>A：不建议。研究使用的是群体层面的筛查问卷网络，目的在于理解症状结构与控制关系，而不是用于个体诊断。问卷分级阈值与用途在方法部分有说明，但论文没有给出个人层面可直接应用的“控制指数”。</p><p><strong>Q：为什么作者不只用“中心性”找关键症状？</strong></p><p>A：作者指出，在症状网络这种相关网络里，“路径”概念可能不可靠，因此一些基于最短路径的中心性（如接近度、介数）可能不稳定；他们更重视节点与直接邻居的关系，而支配集理论正基于这种直接邻域关系。</p><p><strong>Q：研究数据来自哪些人？样本有多大？</strong></p><p>A：数据来自南京医科大学新生的横断面线上调查，共2773份有效问卷；年龄范围15–24岁，18–20岁占90%以上。</p><p><strong>Q：论文里的“控制”是什么意思？听起来像真的能控制人？</strong></p><p>A：这里的“控制”是网络控制理论中的概念：在给定的结构假设下，哪些节点或模块更可能作为外部输入点影响系统状态。它是一种结构层面的分析语言，不等同于临床上的直接操控或因果断言。</p><p><strong>Q：为什么要在‘模块’层面分析，而不是逐条症状？</strong></p><p>A：作者强调，临床干预往往面向更大的症状类别（如睡眠问题、压力、情绪问题）而非逐条题目；同时量表之间存在功能重叠，用数据驱动的模块可更贴近真实症状簇。</p><p><strong>Q：结果稳不稳定？会不会换一批人就变了？</strong></p><p>A：作者用80%样本、重复1000次的自助法重建网络并检验：边权分布、边数、模块数与MDSet大小等指标与全样本一致性较好；但也指出不同样本与输入组合可能改变网络结构，因此需要在更多人群与设置中复现。</p><p><strong>Q：代码和数据能获取吗？</strong></p><p>A：代码在GitHub公开仓库提供；数据需要向通讯作者提出申请获取。</p><p><strong>Q：‘自杀模块（SUM）’为什么只有一个节点？</strong></p><p>A：模块#2（SUM）只包含PHQ9这一条关于自杀意念的条目，属于单题模块；论文在模块识别结果中明确列出。</p><p><strong>Q：下一步研究会怎么做？</strong></p><p>A：作者计划在三方面推进：与其他精神病理学框架对话、与神经影像等数据联合分析、以及从横断面走向纵向与动态控制研究。</p></div>
+      <div class="kpi-card">
+        <span class="num">37</span>
+        <span class="label">症状节点</span>
       </div>
+      <div class="kpi-card">
+        <span class="num">6</span>
+        <span class="label">症状模块</span>
+      </div>
+      <div class="kpi-card">
+        <span class="num">27</span>
+        <span class="label">最小支配集</span>
+      </div>
+    </div>
+
+    <!-- Takeaway -->
+    <div class="takeaway">
+      <p>核心结论：睡眠与压力相关症状群更像"上游控制源"，抑郁与焦虑症状群更像"被影响者"</p>
+      <div class="disclaimer-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        横断面关联分析 &middot; 不等同于因果结论 &middot; 需纵向验证
+      </div>
+    </div>
+
+    <!-- Graphical Abstract -->
+    <div class="fig-block">
+      <img src="visuals/graphical_abstract_full.png" alt="Graphical Abstract" loading="lazy">
+      <div class="fig-caption">图形摘要：从症状问卷到模块控制网络的完整分析流程</div>
+    </div>
   </div>
 </section>
 
+<!-- ==================== 6 MODULES OVERVIEW ==================== -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m-7-7h6m6 0h6"/></svg>
+      6 个症状模块
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">37个症状条目被自动分成6个"功能群"</h2>
+    <p>Louvain 算法根据关联紧密度将症状节点聚类。以下是各模块的核心特征：</p>
+
+    <div class="module-pills">
+      <span class="module-pill mp-sleep">SRM &middot; 睡眠相关（ISI 4题）</span>
+      <span class="module-pill mp-stress">NSM &middot; 负向压力（PSS 7题）</span>
+      <span class="module-pill mp-positive">PSM &middot; 正向压力（PSS 7题）</span>
+      <span class="module-pill mp-depression">DRM &middot; 抑郁相关（PHQ 8题）</span>
+      <span class="module-pill mp-anxiety">ARM &middot; 焦虑相关（GAD 7题）</span>
+      <span class="module-pill mp-suicide">SUM &middot; 自杀意念（PHQ9 单题）</span>
+    </div>
+
+    <div class="fig-block">
+      <img src="visuals/figure3.png" alt="症状网络与模块划分" loading="lazy">
+      <div class="fig-caption">Figure 3 — 37 个症状节点的网络图，不同颜色代表不同模块</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== METHOD FLOW ==================== -->
+<section id="method">
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      研究方法
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">四步构建"模块控制网络"</h2>
+
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <div class="flow-icon">1</div>
+        <h4>收集问卷</h4>
+        <p>4 份量表 (PHQ-9, GAD-7, ISI, PSS-14)，共 37 题</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">2</div>
+        <h4>建症状网络</h4>
+        <p>Graphical LASSO 估计偏相关，保留最可靠的连接</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">3</div>
+        <h4>模块划分</h4>
+        <p>Louvain 算法自动聚类为 6 个症状模块</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon">4</div>
+        <h4>模块控制分析</h4>
+        <p>枚举 27 个最小支配集，计算模块间控制强度</p>
+      </div>
+    </div>
+
+    <!-- Collapsible: detailed method -->
+    <details style="margin-top:1.5rem;">
+      <summary>展开查看详细方法说明</summary>
+      <div style="padding:1rem 0;">
+        <p><strong>最小支配集（MDSet）</strong>是关键概念。想象你想用最少的"开关"点亮整栋楼——每个开关能点亮自己和相邻房间。如果一组开关合起来覆盖整栋楼且数量最少，就是一个 MDSet。</p>
+        <p>论文在 37 节点网络中穷举出全部 <strong>27 个 MDSet</strong>（每个大小约为 4 个节点），然后对每个 MDSet 计算：</p>
+        <ul>
+          <li><strong>MCS</strong>（模块控制强度）：一个模块的驱动节点覆盖到另一个模块的比例</li>
+          <li><strong>AMCS</strong>（平均 MCS）：在所有 27 个 MDSet 上取均值</li>
+          <li><strong>CF</strong>（控制频率）：某节点在 27 个 MDSet 中出现的比例</li>
+          <li><strong>ACF</strong>（平均 CF）：一个模块内所有节点 CF 的均值</li>
+        </ul>
+        <p>把模块作为新网络节点、AMCS 作为有向边，即得到 <strong>模块控制网络（MCN）</strong>。最后用 80% 抽样、1000 次 bootstrap 检验稳定性。</p>
+      </div>
+    </details>
+
+    <div class="fig-block">
+      <img src="visuals/figure1.png" alt="分析流程图" loading="lazy">
+      <div class="fig-caption">Figure 1 — 从症状网络到模块控制网络的分析流程</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KEY FINDINGS ==================== -->
+<section id="findings" style="background:#fff;">
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      核心发现
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">三大发现</h2>
+
+    <div class="findings-grid">
+      <!-- Finding 1 -->
+      <div class="finding-card reveal">
+        <div class="finding-header">
+          <div class="finding-num">1</div>
+          <h3>睡眠/压力 = 外向控制源，情绪 = 被影响者</h3>
+        </div>
+        <div class="finding-body">
+          <p>非情绪模块的<strong>出向控制强度</strong>远高于情绪模块，而情绪模块的<strong>入向强度</strong>更高——意味着睡眠和压力更可能处于"影响别人"的位置。</p>
+
+          <div class="compare-grid">
+            <div class="compare-box">
+              <h4 style="color:#00b4d8!important;">出向控制强度（越高 = 越像控制源）</h4>
+              <div class="control-bar-group">
+                <div class="control-bar-item">
+                  <span class="control-bar-label">SRM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">1.442</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">NSM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:84.7%">1.221</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">PSM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:82.5%">1.190</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">ARM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:41.5%">0.598</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">DRM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:14.4%">0.207</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="compare-box">
+              <h4 style="color:#f77f6b!important;">入向控制强度（越高 = 越容易被影响）</h4>
+              <div class="control-bar-group">
+                <div class="control-bar-item">
+                  <span class="control-bar-label">DRM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:100%">1.360</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">ARM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:93%">1.265</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">PSM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:49.2%">0.669</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">SRM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:31.7%">0.431</div></div>
+                </div>
+                <div class="control-bar-item">
+                  <span class="control-bar-label">NSM</span>
+                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:27.6%">0.375</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finding 2 -->
+      <div class="finding-card reveal">
+        <div class="finding-header">
+          <div class="finding-num">2</div>
+          <h3>最强控制连线：睡眠 → 压力 / 抑郁，压力 → 焦虑 / 抑郁</h3>
+        </div>
+        <div class="finding-body">
+          <div class="compare-grid">
+            <div class="compare-box">
+              <h4 style="color:#059669!important;">最强三条连线 (AMCS)</h4>
+              <ul class="edge-list">
+                <li>
+                  <span><span class="edge-from">SRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">PSM</span></span>
+                  <span class="edge-val">0.586</span>
+                </li>
+                <li>
+                  <span><span class="edge-from">PSM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">ARM</span></span>
+                  <span class="edge-val">0.497</span>
+                </li>
+                <li>
+                  <span><span class="edge-from">SRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">DRM</span></span>
+                  <span class="edge-val">0.444</span>
+                </li>
+              </ul>
+            </div>
+            <div class="compare-box">
+              <h4 style="color:#dc2626!important;">最弱三条连线 (AMCS)</h4>
+              <ul class="edge-list">
+                <li>
+                  <span><span class="edge-from">DRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">SRM</span></span>
+                  <span class="edge-val">0.042</span>
+                </li>
+                <li>
+                  <span><span class="edge-from">ARM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">NSM</span></span>
+                  <span class="edge-val">0.042</span>
+                </li>
+                <li>
+                  <span><span class="edge-from">DRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">NSM</span></span>
+                  <span class="edge-val">0.019</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top:1rem;">控制方向是<strong>单向不对称</strong>的：从睡眠/压力到情绪方向很强，反向极弱。</p>
+
+          <div class="fig-block">
+            <img src="visuals/figure4.png" alt="模块控制网络" loading="lazy">
+            <div class="fig-caption">Figure 4 — 模块控制网络（MCN），箭头粗细代表 AMCS 强度</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finding 3 -->
+      <div class="finding-card reveal">
+        <div class="finding-header">
+          <div class="finding-num">3</div>
+          <h3>非情绪模块包含更多"关键驱动症状"</h3>
+        </div>
+        <div class="finding-body">
+          <p>24/37 个节点至少在一个 MDSet 里出现过。出现频率（CF）最高的 5 个症状：</p>
+
+          <table class="table" style="margin:1rem 0!important;">
+            <thead>
+              <tr><th>排名</th><th>症状条目</th><th>所属模块</th><th>CF</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>PHQ9（自杀意念）</td><td><span class="module-pill mp-suicide" style="font-size:0.72rem!important;padding:2px 8px!important;">SUM</span></td><td><strong>1.000</strong></td></tr>
+              <tr><td>2</td><td>ISI4（对睡眠不满）</td><td><span class="module-pill mp-sleep" style="font-size:0.72rem!important;padding:2px 8px!important;">SRM</span></td><td><strong>0.778</strong></td></tr>
+              <tr><td>3</td><td>PSS2（无法控制重要事情）</td><td><span class="module-pill mp-stress" style="font-size:0.72rem!important;padding:2px 8px!important;">NSM</span></td><td>0.444</td></tr>
+              <tr><td>4</td><td>PSS7（无法控制恼怒）</td><td><span class="module-pill mp-stress" style="font-size:0.72rem!important;padding:2px 8px!important;">NSM</span></td><td>0.370</td></tr>
+              <tr><td>5</td><td>GAD6（容易烦躁）</td><td><span class="module-pill mp-anxiety" style="font-size:0.72rem!important;padding:2px 8px!important;">ARM</span></td><td>0.222</td></tr>
+            </tbody>
+          </table>
+
+          <p>在模块层面，非情绪模块的平均控制频率（ACF）也更高：</p>
+          <div class="control-bar-group">
+            <div class="control-bar-item">
+              <span class="control-bar-label">NSM</span>
+              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">0.125</div></div>
+            </div>
+            <div class="control-bar-item">
+              <span class="control-bar-label">SRM</span>
+              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">0.125</div></div>
+            </div>
+            <div class="control-bar-item">
+              <span class="control-bar-label">PSM</span>
+              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:68.8%">0.086</div></div>
+            </div>
+            <div class="control-bar-item">
+              <span class="control-bar-label">ARM</span>
+              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:38.4%">0.048</div></div>
+            </div>
+            <div class="control-bar-item">
+              <span class="control-bar-label">DRM</span>
+              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:16.8%">0.021</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fig-block">
+      <img src="visuals/figure5.png" alt="稳定性分析" loading="lazy">
+      <div class="fig-caption">Figure 5 — Bootstrap 稳定性分析：1000 次 80% 抽样重建，模块数与 MDSet 大小分布一致</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IMPLICATIONS ==================== -->
+<section id="implications">
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      意义与局限
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">这项研究有什么用？</h2>
+
+    <div class="compare-grid">
+      <div class="compare-box" style="border-left:4px solid #059669!important;">
+        <h4 style="color:#059669!important;">已有证据支持</h4>
+        <ul style="padding-left:1.2em!important;">
+          <li>提出一套可复用的"模块控制"分析框架（MDSet → MCS/AMCS → MCN）</li>
+          <li>在本数据中成功识别出非情绪模块的更强控制角色</li>
+          <li>Bootstrap 检验表明结果在大多数重抽样中稳定</li>
+        </ul>
+      </div>
+      <div class="compare-box" style="border-left:4px solid #f59e0b!important;">
+        <h4 style="color:#d97706!important;">合理推测，待验证</h4>
+        <ul style="padding-left:1.2em!important;">
+          <li>如果控制方向在纵向研究中复现，针对睡眠/压力的干预可能更有效</li>
+          <li>横断面设计无法证明因果方向</li>
+          <li>来自单一学校的样本，不同人群与量表组合可能改变结论</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>局限性</h3>
+    <ul>
+      <li>单一学校新生样本，年龄集中在 18-20 岁</li>
+      <li>量表和输入组合不同可能改变网络结构和 MDSet</li>
+      <li>ACF 在抽样比例 &lt;50% 时平均相关降至 &lt;0.5</li>
+      <li>模块控制基于"不同 MDSet 权重相近"的假设</li>
+    </ul>
+
+    <h3>下一步方向</h3>
+    <div class="flow-steps" style="grid-template-columns:repeat(3,1fr)!important;">
+      <div class="flow-step reveal">
+        <div class="flow-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)!important;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <h4>框架对话</h4>
+        <p>与现象学、时空精神病理学等其他路径比较</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon" style="background:linear-gradient(135deg,#059669,#34d399)!important;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h4>生物学联合</h4>
+        <p>结合神经影像数据，不仅限于症状层面</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-icon" style="background:linear-gradient(135deg,#d97706,#fbbf24)!important;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>纵向动态</h4>
+        <p>从横断面扩展到随时间变化的动态控制</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq" style="background:#fff;">
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      常见问题
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">FAQ</h2>
+
+    <details>
+      <summary>这是不是证明"睡眠或压力会导致抑郁/焦虑"？</summary>
+      <p>不能直接这样说。网络由偏相关构成，属于统计关联网络；模块控制是结构可控性分析，不等同于因果。论文强调为横断面分析，需在纵向数据中验证。</p>
+    </details>
+
+    <details>
+      <summary>论文里的"控制"是什么意思？不是真的控制人吧？</summary>
+      <p>"控制"是网络控制理论概念：在给定结构下，哪些节点/模块更可能作为外部输入点影响系统状态。是结构分析语言，不等于临床操控或因果断言。</p>
+    </details>
+
+    <details>
+      <summary>为什么不用"中心性"找关键症状，而用支配集？</summary>
+      <p>基于"路径"的中心性指标（接近度、介数）在症状网络这类相关网络里可能不稳定。支配集理论只依赖"直接邻居关系"，更适合这类数据。</p>
+    </details>
+
+    <details>
+      <summary>为什么在"模块"层面分析，而不是逐条症状？</summary>
+      <p>临床干预通常面向更大的症状类别（如"睡眠问题""压力管理"）而非逐条题目。数据驱动的模块更贴近实际决策单元。</p>
+    </details>
+
+    <details>
+      <summary>结果稳定吗？换一批人会变吗？</summary>
+      <p>作者用 80% 抽样 &times; 1000 次 bootstrap 检验：边权分布一致、多数网络仍为 6 模块、MDSet 大小约 4。但不同样本/量表组合可能改变网络结构，需更多人群复现。</p>
+    </details>
+
+    <details>
+      <summary>"自杀模块（SUM）"为什么只有一个节点？</summary>
+      <p>模块 #2 只包含 PHQ9（关于自杀意念的条目），属于单题模块，在 Louvain 聚类中自动形成独立社区。</p>
+    </details>
+
+    <details>
+      <summary>代码和数据能获取吗？</summary>
+      <p>代码在 GitHub 公开仓库提供；数据需向通讯作者提出申请。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ==================== GLOSSARY ==================== -->
+<section>
+  <div class="container">
+    <div class="section-anchor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      术语词典
+    </div>
+    <h2 style="margin-top:0.5rem!important;border:none!important;">关键术语速查</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem;">
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">症状网络</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">每个症状/条目 = 节点，连线 = 统计关联强度。像一张"症状关系地图"。</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">最小支配集 (MDSet)</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">覆盖全网所需的最少"开关"集合。每个开关点亮自己和相邻节点。</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">模块控制强度 (AMCS)</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">一个模块的驱动节点覆盖另一模块的平均比例。越高 = 控制力越强。</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">模块控制网络 (MCN)</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">模块 = 节点，AMCS = 有向边。像把街区用"影响力箭头"连起来。</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">控制频率 (CF / ACF)</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">节点在所有 MDSet 中做"开关"的比例。ACF 是模块内均值。</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0!important;font-size:0.95rem!important;">Graphical LASSO</h4>
+        <p style="font-size:0.85rem!important;margin:0!important;">从众多可能连线中只保留最关键的连接，避免"全都连上"的噪声。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
 <footer class="site-footer">
   <div class="container">
     <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
@@ -177,15 +848,30 @@
   </div>
 </footer>
 
+<!-- Scripts -->
 <script>
+// Reading progress
 window.addEventListener('scroll', function() {
   var h = document.documentElement.scrollHeight - window.innerHeight;
   document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
 }, { passive: true });
+
+// Scroll reveal
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
 </body>
 </html>

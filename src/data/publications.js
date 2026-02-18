@@ -52,7 +52,6 @@ export const publications = [
     slug: slugify('Bridging animal models and humans neuroimaging as intermediate phenotypes linking genetic or stress factors to anhedonia'),
     pdf: 'bridging-animal-models-and-humans.pdf',
     hasExplainer: true,
-    explainerUrl: 'papers-explainer/guo2025_anhedonia_web_content_pack/',
   },
   {
     id: 4,
