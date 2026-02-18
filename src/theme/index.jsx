@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 
-const THEMES = ['modern', 'academic', 'dark', 'tesla', 'nature', 'rose', 'lavender', 'sunset']
+const THEMES = ['modern']
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {

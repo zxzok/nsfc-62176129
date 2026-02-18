@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback } from 'react'
 
-const LAYOUTS = ['classic', 'magazine', 'dashboard']
+const LAYOUTS = ['classic']
 const LayoutContext = createContext()
 
 export function LayoutProvider({ children }) {
