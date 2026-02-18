@@ -58,7 +58,7 @@ export default function Footer() {
               {t('contact.heading')}
             </div>
             <p className="text-[13px] leading-relaxed">
-              Southeast University, Nanjing, China
+              Nanjing Medical University, Nanjing, China
             </p>
           </div>
         </div>
