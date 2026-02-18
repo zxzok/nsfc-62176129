@@ -1,408 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>同样的抑郁/双相，为什么大脑“长得不一样”？</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>同样的抑郁/双相，为什么大脑"长得不一样"？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../unified-style.css">
+<style>
+:root{--accent:#6d28d9;--accent-light:#a78bfa;--accent-bg:rgba(109,40,217,.08);--accent-bg2:rgba(109,40,217,.14);--grad-start:#0f051a;--grad-end:#5b21b6}
+
+.hero-custom{background:linear-gradient(135deg,var(--grad-start) 0%,var(--grad-end) 100%);padding:5rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero-custom::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.18),transparent 70%);top:-180px;right:-120px}
+.hero-custom .sec-inner{max-width:820px;position:relative;z-index:1}
+.hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.hero-chip{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);padding:4px 14px;border-radius:999px;font-size:.82rem;color:rgba(255,255,255,.88)}
+.hero-custom h1{font-size:clamp(1.65rem,4vw,2.6rem);font-weight:800;line-height:1.35;color:#fff;margin:0 0 1rem}
+.hero-custom .subtitle{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;max-width:640px}
+
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0}
+.kpi-item{text-align:center;padding:1.2rem .5rem;background:var(--accent-bg);border-radius:14px;border:1px solid var(--accent-bg2)}
+.kpi-num{font-size:1.85rem;font-weight:800;color:var(--accent);line-height:1.1}
+.kpi-label{font-size:.82rem;color:#64748b;margin-top:.35rem}
+
+.analogy{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0;font-size:.97rem;line-height:1.75;color:#334155}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+.step{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem;position:relative}
+.step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-title{font-weight:700;font-size:.93rem;color:var(--accent);margin-top:.5rem;margin-bottom:.35rem}
+.step p{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.feat-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid #e2e8f0;border-top:4px solid var(--accent)}
+.feat-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0 0 .6rem}
+.feat-card p{font-size:.88rem;color:#475569;line-height:1.7;margin:0}
+
+.fig-inline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin:2rem 0}
+.fig-inline img{width:100%;display:block}
+.fig-inline figcaption{padding:1rem 1.2rem;font-size:.85rem;color:#64748b;line-height:1.6}
+
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0}
+.vs-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem}
+.vs-card h4{font-weight:700;font-size:.95rem;margin:0 0 .5rem}
+.vs-card p{font-size:.85rem;color:#475569;line-height:1.65;margin:.3rem 0}
+.vs-s1{border-top:4px solid #f59e0b}
+.vs-s2{border-top:4px solid var(--accent)}
+
+.takeaway-banner{background:linear-gradient(135deg,#0f051a 0%,#4c1d95 100%);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:2.5rem 0;color:#fff}
+.takeaway-banner .emoji{font-size:2.2rem;margin-bottom:.8rem}
+.takeaway-banner h3{font-size:1.25rem;font-weight:800;margin:0 0 .6rem}
+.takeaway-banner p{font-size:.95rem;color:rgba(255,255,255,.78);max-width:540px;margin:0 auto;line-height:1.7}
+
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0}
+.gloss-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.2rem}
+.gloss-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+.gloss-card dd{font-size:.84rem;color:#475569;margin:0;line-height:1.6}
+
+.faq-wrap{max-width:720px;margin:2rem auto}
+.faq-wrap details{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:.75rem;overflow:hidden}
+.faq-wrap summary{padding:1rem 1.2rem;font-weight:600;font-size:.93rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#0f172a}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:700}
+.faq-wrap details[open] summary::after{content:'−'}
+.faq-wrap .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+
+@media(max-width:640px){
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .vs-row{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    返回主站
+
+<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1.5rem;background:rgba(15,5,26,.92);backdrop-filter:blur(6px)">
+  <a href="../../#/" style="color:#a78bfa;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span style="color:rgba(255,255,255,.45);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+</nav>
 
-<div class="reading-progress" id="readingProgress"></div>
+<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent-light);width:0;z-index:200;transition:width .15s"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">同样的抑郁/双相，为什么大脑“长得不一样”？</h1>
-    
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero-custom">
+  <div class="sec-inner">
+    <div class="hero-chip-row">
+      <span class="hero-chip">Psychological Medicine 2024</span>
+      <span class="hero-chip">规范化建模</span>
+      <span class="hero-chip">灰质亚型</span>
+      <span class="hero-chip">MDD / BD</span>
+    </div>
+    <h1>同样的抑郁/双相，为什么大脑"长得不一样"？</h1>
+    <p class="subtitle">用 MRI "脑成长曲线"把 174 名未用药情绪障碍患者分成两种亚型——前额偏高 + 执行功能差 + AD 遗传风险 vs. 全脑偏低 + 抑郁更重 + MDD 遗传风险——揭示同一诊断标签下截然不同的生物学路径。</p>
   </div>
-</section>
+</header>
 
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">用MRI“脑成长曲线”把情绪障碍分成两种亚型，并连接到症状、认知与遗传风险</h2>
-    <div class="reveal"><p><strong>论文信息</strong>：Zheng J. 等，<em>Characterizing the distinct imaging phenotypes, clinical behavior, and genetic vulnerability of brain maturational subtypes in mood disorders</em>，<em>Psychological Medicine</em>（2024）。DOI: 10.1017/S0033291724000886。</p><p><blockquote><strong>阅读提醒</strong>：这篇研究讨论的是“群体层面的亚型差异”，不是用来给个人做诊断或预测未来风险的工具。</blockquote></p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig3_clinical_profiles.png" alt="用MRI“脑成长曲线”把情绪障碍分成两种亚型，并连接到症状、认知与遗传风险" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（120–180字）</h2>
-    <div class="reveal"><p>问题：同是抑郁症或双相障碍，为什么症状差异巨大、缺少客观分型？  <br>方法：用404名健康者MRI建立随年龄变化的灰质“参考曲线”，计算174名未用药患者的偏离值并聚类。  <br>发现：两种亚型——前额叶偏大且执行功能更差并伴更高阿尔茨海默遗传风险；以及全脑偏小且抑郁更重并伴更高抑郁遗传风险。  <br>意义：影像+症状+基因三条证据拼在一起，揭示情绪障碍的生物学异质性。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig4_transcriptomics.png" alt="30秒读懂（120–180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>在精神科，诊断往往主要依赖症状描述。问题在于：抑郁症（MDD）与双相障碍（BD）在“抑郁发作”的表现上高度重叠，早期诊断与干预一直很难；同时，领域里仍缺少像“化验单”一样明确的客观生物标志物。</p><p>更现实的一点是：很多研究把所有患者平均成一个“总体”，再和健康人做对比。但论文指出，这种传统病例–对照平均比较容易忽视个体差异，而个体差异恰恰可能对应不同的病理路径。</p><p>所以研究者提出一个更贴近公众直觉的问题：<strong>能不能像儿科的身高体重曲线那样，先建立“同龄健康人的大脑正常范围”，再看每个患者偏离多少，并据此找出更有生物学意义的亚型？</strong></p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的（方法用类比解释）</h2>
-    <div class="reveal"><p>你可以把这项研究理解为给大脑画“成长曲线”。</p><p><ul><li><strong>先画出“健康参考曲线”</strong>  </li><br></ul>研究者收集了404名健康对照者的T1结构MRI。T1结构MRI更像一张“脑的高清结构照片”，主要看形态而不是活动。  <br>他们把大脑皮层用 Desikan–Killiany（DK）图谱分成68个区域，并计算每个区域的灰质体积/密度指标（GMV）。GMV可以粗略理解为某个脑区灰质组织的“量/密度”（不是“聪明程度”）。</p><p>接着用<strong>分位数回归（quantile regression）</strong>建模GMV随年龄与性别变化的“正常范围”。分位数回归的直观好处是：它不只给你一条“平均线”，还能给出5%、50%、95%等不同百分位的参考线，就像儿童生长曲线里的“第5百分位–第95百分位”。</p><p><ul><li><strong>再算出每位患者“偏离正常多少”</strong>  </li><br></ul>研究者把174名未用药或停药>2个月的MDD/BD患者放回这张“脑成长曲线”里，计算每个脑区相对健康参考线的偏离值（z5、z50、z95）。其中 z50 更像“离同龄健康人中位数有多远”，z5/z95 用来判断是否“明显低于/高于正常范围”。论文把 z95>1.96 定义为“显著偏高（supra-normal）”，把 z5<-1.96 定义为“显著偏低（infra-normal）”。</p><p><ul><li><strong>让数据自己“分组”：找出两种亚型</strong>  </li><br></ul>把每个患者的68脑区偏离谱（z50 maps）看作一张“指纹图”，研究者用层次聚类（hierarchical clustering，Ward方法）把指纹相似的人归为同一组，并用交叉验证的ARI稳定性指标从2–5类里选择最稳的分组数。最后得到两类，也就是两种亚型。</p><p><ul><li><strong>不止看影像：把症状、认知、基因也拉进来做交叉验证</strong>  </li><br></ul>研究者比较两亚型的抑郁/焦虑/精神病性症状量表（HAMD、HAMA、BPRS）与执行功能测验（WCST），还把症状条目之间的相关性画成网络来比较“症状互相牵扯”的强度。  <br>此外，他们把影像偏离图与公开的人脑基因表达图谱（Allen Human Brain Atlas, AHBA）做空间匹配（PLS），并用“虚拟组织学（virtual histology）”看哪些细胞类型相关基因更匹配两种偏离模式。最后还比较了两种多基因风险评分（PRS）：抑郁（PRS‑MDD）与阿尔茨海默（PRS‑AD）。</p><p><ul><li><strong>复现检查：换一批患者还能看到类似模式吗？</strong>  </li><br></ul>为检验可复现性，研究者用另一组268名用药患者作为复现队列，比较两亚型的区域偏离模式在两队列之间是否相关。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现1：同一诊断标签下，存在两种“相反方向”的脑偏离模式，并且可复现</h2>
-    <div class="reveal"><p>亚型1更像“某些关键区域偏高”，亚型2更像“多数区域偏低”。</p><p>更具体地说：  <br>亚型1在额叶（眶额、额中回前部）、扣带、旁中央等出现显著偏高，同时在颞顶联合区出现偏低；亚型2在额叶、颞叶、顶叶、扣带等呈广泛偏低，在枕叶出现偏高。</p><p>从“异常更常见的方向”看：亚型1在超过一半脑区（57.4%）更常见偏高，而亚型2在约90%皮层脑区更常见偏低。</p><p>这些模式在复现队列中也呈显著相关：亚型1两队列相关 r=0.29（p<0.05），亚型2相关 r=0.45（p<0.0001）。</p><p><strong>这意味着什么</strong>：情绪障碍的“异质性”不仅是症状轻重不同，还可能对应两条方向相反的脑结构偏离轨迹，而且这种轨迹能在另一批患者中再现。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现2：亚型2更“抑郁重”，亚型1更“执行功能吃力”，症状之间的纠缠程度也不同</h2>
-    <div class="reveal"><p>抑郁严重度方面，亚型2的HAMD总分显著高于亚型1（t=2.67，pFDR=0.025）。</p><p>认知执行方面，亚型1相对健康对照在多项WCST指标上更差，例如持续性错误（PE）t=4.00、pFDR=0.001，正确反应（CR）t=-3.65、pFDR=0.001，完成类别（CC）t=-3.63、pFDR=0.001，总错误（TE）t=3.61、pFDR=0.001；而亚型2的WCST表现与健康对照无显著差异。</p><p>症状网络方面，亚型2的网络密度0.51、强度6.76，高于亚型1的密度0.42、强度5.24；并且在相同密度阈值下，亚型2全局强度更高（t=10.17，p=1.0e−06）。</p><p><strong>这意味着什么</strong>：两型差异不是“同一条线上的轻重”，而是“情绪症状突出”与“执行功能突出”的不同侧重点。对公众来说，一个重要信息是：同样的诊断名里，有人主要被情绪拖住，有人主要被‘换规则、转弯、抑制冲动’这类执行能力拖住。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现3：两型的基因与遗传风险线索方向不同：一型更靠近AD线索，另一型更靠近抑郁线索</h2>
-    <div class="reveal"><p>影像—转录组匹配方面：亚型1的PLS1解释了全皮层GMV偏离与基因表达的协方差26.38%，其PLS1分数与GMV偏离图相关 r=0.52（p=0.0017）；亚型2对应相关 r=0.48（p=0.0039）。</p><p>通路与细胞线索方面：亚型1相关基因富集于阿尔茨海默病相关通路等（pFDR<0.05），并与内皮细胞、少突胶质细胞相关基因的重叠更多；亚型2相关基因富集于离子转运、钙信号、跨突触信号、应激反应等过程（pFDR<0.05），并显著富集于小胶质细胞相关基因（重叠基因数117，置换检验 pFDR=0.005）。</p><p>遗传风险方面：亚型1相对健康对照在多个阈值下PRS‑AD显著更高（例如p阈值1e−06/1e−03/1e−02/0.1；解释变异约4.1%–5.9%），而亚型2未见PRS‑AD显著差异；相反，亚型2在PRS‑MDD（p阈值1e−03）相对健康对照显著更高（解释变异10.8%），亚型1未见PRS‑MDD显著差异。</p><p><strong>这意味着什么</strong>：研究把三条证据链拼在一起（影像→转录组→PRS），提示两型可能对应不同的生物学路径。但这些结果是<strong>关联线索</strong>，论文没有证明因果，也没有提供纵向随访来预测个人未来结局。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用（不夸大）</h2>
-    <div class="reveal"><p><strong>证据支持的用途</strong>：  <br>这项研究提供了一种“把个体放回正常范围里看”的影像分型框架，并且把分型与症状、认知、转录组线索与遗传风险方向连接起来，帮助解释为什么同一诊断名下会出现差异巨大的表现。</p><p><strong>合理推测但仍需验证的方向</strong>：  <br>如果未来能在更大样本、更多中心、并且有纵向随访与治疗反应信息的数据中复现，这种分型可能用于：  <br>（1）把临床试验或机制研究人群分得更同质，提升发现有效干预的机会；  <br>（2）推动用客观生物学指标细化现有诊断框架，走向更个体化的评估与干预。  <br>但论文目前未提供可用于临床的个体判别阈值、敏感度/特异度或治疗预测能力，因此不能直接用于临床决策。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步（论文明确提出）</h2>
-    <div class="reveal"><p><ul><li>转录组解释使用健康人AHBA数据，患者实际转录水平可能不同；且AHBA右半球样本来自两位供体，限制了空间相关的代表性，未来需要更大、更全面的数据集。  </li><br><li>遗传数据样本量小（亚型1 n=19、亚型2 n=29、HC n=160），未来需要更大遗传样本验证。  </li><br><li>认知评估只用WCST，未来应加入更多认知测验电池。  </li><br><li>缺少未用药患者首次发作严重度等信息，无法检验GMV改变与既往症状史的更细关联。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">一句话带走</h2>
-    <div class="reveal"><p><strong>情绪障碍可能包含两种相反的脑成熟轨迹。</strong></p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">图解（论文原图复用）</h2>
-    <div class="reveal"><p><blockquote>本页面随包提供论文图1–图5的截图裁剪版本，便于网页展示与讨论。</blockquote></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">图1 研究路线图（workflow）</h2>
-    <div class="reveal"><p>![流程图展示从招募样本到影像分型、再到症状/认知/转录组/PRS验证的完整路径。](../assets/figures/fig1_workflow.png)<br></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">图2 两亚型的GMV偏离地图与偏高/偏低比例</h2>
-    <div class="reveal"><p>![两亚型大脑皮层偏离方向对比，并展示各脑区偏高/偏低在患者中的比例分布。](../assets/figures/fig2_gmv_deviation.png)<br></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">图3 临床与认知对比：HAMD、WCST与症状网络</h2>
-    <div class="reveal"><p>![亚型2抑郁严重度更高；亚型1执行功能更差；亚型2症状网络更密更强。](../assets/figures/fig3_clinical_profiles.png)<br></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">图4 影像—转录组（PLS）与细胞类型富集</h2>
-    <div class="reveal"><p>![两亚型的GMV偏离图与基因表达空间模式相匹配，并呈现不同通路与细胞类型富集。](../assets/figures/fig4_transcriptomics.png)<br></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">图5 多基因风险评分（PRS）差异</h2>
-    <div class="reveal"><p>![亚型1在多个阈值下PRS-AD显著拟合；亚型2在特定阈值下PRS-MDD显著拟合。](../assets/figures/fig5_prs.png)<br></p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">术语小词典（公众版）</h2>
-    <div class="reveal"><p><blockquote>术语出现时，建议在网页端做成“悬浮解释/点击展开”。</blockquote></p><p><ul><li><strong>规范化建模（Normative modeling）</strong>：用健康人建立“正常范围”，再看个体偏离多少。类比：儿童生长曲线。  </li><br><li><strong>分位数回归（Quantile regression）</strong>：直接估计不同百分位的参考线（5/50/95）。类比：不只给平均线，还给“偏矮/中等/偏高”三条线。  </li><br><li><strong>GMV（灰质体积/密度）</strong>：MRI得到的脑区灰质指标，用来描述结构差异。类比：某片“功能区土地”的面积或密度。  </li><br><li><strong>z5/z50/z95偏离值</strong>：衡量个体相对正常范围的偏离程度；z95>1.96为偏高，z5<-1.96为偏低。类比：标准分。  </li><br><li><strong>层次聚类（Hierarchical clustering, Ward）</strong>：按“偏离谱相似度”自动分组得到亚型。类比：按口味相似把人分成不同“食谱圈”。  </li><br><li><strong>WCST执行功能</strong>：测试换规则与灵活调整能力。类比：遇到临时改道能不能迅速换路线。  </li><br><li><strong>症状网络（Symptom network）</strong>：把症状条目当节点，相关性当连线，观察症状之间“互相牵扯”的强度。类比：社交网络的连线越密，互相影响越大。  </li><br><li><strong>影像转录组学（Imaging transcriptomics）</strong>：把影像空间图与AHBA基因表达空间图匹配，寻找可能相关的基因/通路。类比：把城市热力图与产业分布图叠加找对应。  </li><br><li><strong>小胶质细胞（Microglia）</strong>：脑内免疫细胞，参与炎症与突触修剪；亚型2相关基因显著富集于microglia。类比：城市里的巡逻与清洁系统。  </li><br><li><strong>多基因风险评分（PRS）</strong>：把许多遗传位点的小影响加总成“易感总分”。类比：很多张小概率彩票的累计。  </li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">FAQ（克制回答版）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">1）做一次MRI就能知道自己属于哪一型吗？</h2>
-    <div class="reveal"><p>不能。论文的分型依赖健康对照参考曲线、68脑区偏离谱与聚类算法；论文未提供可临床使用的单人判别阈值或诊断准确率。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">2）亚型1和阿尔茨海默有什么关系？是不是意味着会得阿尔茨海默？</h2>
-    <div class="reveal"><p>论文只报告亚型1在PRS‑AD上相对健康对照更高、并且转录组富集于AD相关通路，这是关联线索；论文未做纵向随访，不能用于预测个人是否会发展为阿尔茨海默病。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">3）亚型2是不是更“严重”？</h2>
-    <div class="reveal"><p>在抑郁严重度（HAMD总分）上亚型2更高，但在执行功能（WCST）上亚型1更差。严重与否取决于你关注的维度，不能用一个词概括。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">4）药物会不会影响这些发现？</h2>
-    <div class="reveal"><p>发现队列使用未用药/停药>2个月患者以减少药物混杂；并在用药患者队列中复现了部分区域偏离模式。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">5）“灰质偏高/偏低”是不是好坏评价？</h2>
-    <div class="reveal"><p>不是。这里的偏高/偏低是相对同龄健康人的统计偏离，不是价值判断。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">6）这项研究能直接指导用药或治疗选择吗？</h2>
-    <div class="reveal"><p>目前不能。论文提出未来可能用于更个体化的治疗框架，但尚未提供治疗反应预测或临床决策阈值。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">数据与代码（论文提供）</h2>
-    <div class="reveal"><p>论文写明：AHBA数据可下载；基因表达预处理代码与本研究分析代码/结果在作者仓库公开；部分数据可联系作者获取。</p><p><ul><li>AHBA: https://human.brainmap.org/static/download  </li><br><li>AHBA preprocessing: https://github.com/BMHLab/AHBAprocessing  </li><br><li>Study code/results: https://github.com/zhengjunjie1234/Mood_Disorders_subtypeing.git  </li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">版权与使用说明（请务必阅读）</h2>
-    <div class="reveal"><p>本文论文为开放获取，但采用 <strong>CC BY-NC-ND 4.0（署名-非商业-禁止演绎）</strong>许可：允许非商业传播且不得改编；商业用途或改编/再创作需获得出版社书面许可。</p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/fig5_prs.png" alt="fig5 prs" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig5 prs</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig3_clinical_profiles.png" alt="fig3 clinical profiles" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig3 clinical profiles</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig4_transcriptomics.png" alt="fig4 transcriptomics" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig4 transcriptomics</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/p8.png" alt="p8" loading="lazy">
-          <div class="visual-card-body">
-            <p>p8</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/p3.png" alt="p3" loading="lazy">
-          <div class="visual-card-body">
-            <p>p3</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/p5.png" alt="p5" loading="lazy">
-          <div class="visual-card-body">
-            <p>p5</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/p6.png" alt="p6" loading="lazy">
-          <div class="visual-card-body">
-            <p>p6</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/p7.png" alt="p7" loading="lazy">
-          <div class="visual-card-body">
-            <p>p7</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig1_workflow.png" alt="fig1 workflow" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig1 workflow</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig2_gmv_deviation.png" alt="fig2 gmv deviation" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig2 gmv deviation</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/infographic_limitations_next.svg" alt="infographic limitations next" loading="lazy">
-          <div class="visual-card-body">
-            <p>infographic limitations next</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/schematic_normative_curve.svg" alt="schematic normative curve" loading="lazy">
-          <div class="visual-card-body">
-            <p>schematic normative curve</p>
-          </div>
-        </div>
+<!-- ═══════════════ KPI ═══════════════ -->
+<section class="sec" style="padding-top:0;margin-top:-1.5rem;position:relative;z-index:2">
+  <div class="sec-inner">
+    <div class="kpi-strip">
+      <div class="kpi-item"><div class="kpi-num">404</div><div class="kpi-label">健康对照</div></div>
+      <div class="kpi-item"><div class="kpi-num">174</div><div class="kpi-label">未用药患者</div></div>
+      <div class="kpi-item"><div class="kpi-num">68</div><div class="kpi-label">脑区（DK 图谱）</div></div>
+      <div class="kpi-item"><div class="kpi-num">2</div><div class="kpi-label">灰质偏离亚型</div></div>
     </div>
   </div>
 </section>
 
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-label reveal">常见问题</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
-    
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          做一次MRI就能知道自己属于哪一型吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不能。论文分型依赖健康对照参考曲线、68脑区偏离谱与聚类算法；论文未提供临床可用的单人判别阈值或诊断准确率。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          亚型1和阿尔茨海默有什么关系？是不是意味着会得阿尔茨海默？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文报告亚型1在PRS‑AD上相对健康对照更高，并且相关基因富集于阿尔茨海默相关通路，这是关联线索；论文未做纵向随访，不能用于预测个人是否会发展为阿尔茨海默病。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          亚型2是不是更“严重”？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>在抑郁严重度（HAMD总分）上亚型2更高，但在执行功能（WCST）上亚型1更差。严重与否取决于你关注的维度，不能用一个词概括。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          药物会不会影响这些发现？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>发现队列使用未用药/停药>2个月患者以减少药物混杂，并在用药患者队列中复现了区域偏离模式的相关性。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          “灰质偏高/偏低”是不是好坏评价？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不是。这里的偏高/偏低是相对同龄健康人的统计偏离，不是价值判断，也不直接代表功能更好或更差。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          这项研究能直接指导用药或治疗选择吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>目前不能。论文提出未来可能用于更个体化治疗框架，但尚未提供治疗反应预测或临床决策阈值。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          两种亚型在MDD和BD之间如何分布？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文报告两亚型中MDD与BD的比例分布无显著差异（χ²=0.04，p=0.83），提示亚型跨越传统诊断边界。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          这些转录组/细胞类型结论可靠吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文指出转录组来自健康人AHBA且右半球样本有限，患者真实转录水平可能不同，因此这些解释属于支持性线索，需要更大、更全面数据验证。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          PRS是什么意思？我能用它自测风险吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>PRS是群体统计意义上的遗传易感度指标，不等于个人必然会患病；论文也未提供个人层面的自测阈值或临床解释方式。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          这项研究的数据和代码能获取吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文写明：AHBA数据可下载；基因表达预处理代码与本研究分析代码/结果在作者仓库公开；部分额外数据可联系作者获取。</p></div>
-      </div>
+<!-- ═══════════════ ANALOGY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">通俗理解</div>
+    <h2 class="reveal">像儿科"身高曲线"一样给大脑画参考线</h2>
+    <div class="analogy reveal">
+      儿科用身高体重曲线判断"偏高/偏矮"。这项研究做了类似的事：用 404 名健康人的 MRI 建立每个脑区随年龄变化的"正常范围"，再把每位患者的脑结构放回这张曲线里——<strong>看你的大脑在 68 个区域分别偏离"正常"多少</strong>，然后按偏离谱的相似性把患者分成亚型。
+    </div>
+    <figure class="fig-inline reveal">
+      <img src="visuals/schematic_normative_curve.svg" alt="规范化建模示意">
+      <figcaption>规范化建模示意：用分位数回归建立灰质体积的年龄参考曲线（5%/50%/95%百分位），再计算个体偏离值。</figcaption>
+    </figure>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究流程</div>
+    <h2 class="reveal">四步从 MRI 到亚型</h2>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-title">建参考曲线</div>
+        <p>404 名健康人 T1 MRI → DK 图谱 68 区域 GMV → 分位数回归建立年龄 × 性别参考线。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-title">算偏离值</div>
+        <p>174 名未用药 MDD/BD 患者 → 每脑区计算 z5/z50/z95 偏离值（相对参考线）。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-title">聚类分型</div>
+        <p>以 z50 偏离谱做层次聚类（Ward 方法），ARI 稳定性选出 2 个亚型。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div class="step-title">多维验证</div>
+        <p>比较症状（HAMD/HAMA/BPRS）、认知（WCST）、转录组（AHBA/PLS）、PRS（AD/MDD），并在 268 名用药患者中复现。</p>
+      </div>
+    </div>
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig1_workflow.png" alt="Figure 1 — 研究流程图">
+      <figcaption>Figure 1：完整研究路线——从样本招募到影像分型、再到症状/认知/转录组/PRS 验证。</figcaption>
+    </figure>
   </div>
+</section>
+
+<!-- ═══════════════ TWO SUBTYPES ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">两种亚型</div>
+    <h2 class="reveal">方向相反的脑偏离模式</h2>
+    <div class="vs-row reveal">
+      <div class="vs-card vs-s1">
+        <h4>亚型 1 ——"关键区域偏高"</h4>
+        <p>额叶（眶额、额中回）、扣带、旁中央等区域灰质 <strong>偏高</strong></p>
+        <p>57.4% 脑区更常见偏高</p>
+        <p>执行功能（WCST）明显更差</p>
+        <p>PRS-AD 显著更高</p>
+      </div>
+      <div class="vs-card vs-s2">
+        <h4>亚型 2 ——"广泛偏低"</h4>
+        <p>额叶、颞叶、顶叶、扣带等灰质 <strong>广泛偏低</strong></p>
+        <p>~90% 脑区更常见偏低</p>
+        <p>HAMD 抑郁评分显著更高</p>
+        <p>PRS-MDD 显著更高</p>
+      </div>
+    </div>
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig2_gmv_deviation.png" alt="Figure 2 — GMV 偏离地图">
+      <figcaption>Figure 2：两亚型大脑皮层 GMV 偏离方向对比（红 = 偏高，蓝 = 偏低），及各脑区偏离比例分布。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ FINDINGS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">三条证据链</div>
+    <h2 class="reveal">核心发现</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>发现 1｜两种相反轨迹，可复现</h3>
+        <p>亚型 1 前额偏高 + 颞顶偏低；亚型 2 广泛偏低 + 枕叶偏高。在 268 名用药患者复现队列中模式相关显著（r = 0.29–0.45）。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 2｜不同侧重：情绪 vs. 执行</h3>
+        <p>亚型 2 抑郁更重（HAMD, t = 2.67, pFDR = 0.025）；亚型 1 执行功能更差（WCST 多项 pFDR = 0.001），症状网络密度也不同。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 3｜不同遗传风险方向</h3>
+        <p>亚型 1: PRS-AD 更高（~5% 解释变异），转录组富集 AD 通路。亚型 2: PRS-MDD 更高（10.8%），小胶质细胞基因富集（p = 0.005）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FIGURES ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig3_clinical_profiles.png" alt="Figure 3 — 临床与认知对比">
+      <figcaption>Figure 3：亚型间临床（HAMD）与认知（WCST）差异，以及症状网络密度/强度比较。</figcaption>
+    </figure>
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig4_transcriptomics.png" alt="Figure 4 — 转录组分析">
+      <figcaption>Figure 4：影像-转录组 PLS 分析——两亚型的 GMV 偏离与不同基因/通路/细胞类型关联。</figcaption>
+    </figure>
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig5_prs.png" alt="Figure 5 — 多基因风险评分">
+      <figcaption>Figure 5：亚型 1 在多个阈值下 PRS-AD 显著；亚型 2 在特定阈值下 PRS-MDD 显著。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ TAKEAWAY ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="takeaway-banner reveal">
+      <div class="emoji">&#129504;</div>
+      <h3>情绪障碍可能包含两种相反的脑成熟轨迹</h3>
+      <p>同一诊断标签下，有人主要被情绪拖住（广泛偏低 + MDD 风险），有人主要被执行功能拖住（前额偏高 + AD 风险）。影像 + 症状 + 基因三条线揭示生物学异质性。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LIMITS ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">局限性</div>
+    <h2 class="reveal">需要注意什么</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card"><h3>转录组来自健康人</h3><p>AHBA 数据非患者实际表达，右半球样本有限，解释为支持性线索。</p></div>
+      <div class="feat-card"><h3>遗传样本量小</h3><p>亚型 1 n=19、亚型 2 n=29、HC n=160，需更大遗传样本验证。</p></div>
+      <div class="feat-card"><h3>认知评估单一</h3><p>仅用 WCST，未来应加入更多认知测验电池。</p></div>
+      <div class="feat-card"><h3>无个体诊断阈值</h3><p>论文未提供可用于临床的个体判别阈值或敏感度/特异度。</p></div>
+    </div>
+    <figure class="fig-inline reveal">
+      <img src="visuals/infographic_limitations_next.svg" alt="局限性与展望">
+      <figcaption>局限性与下一步研究方向。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">常见问题</div>
+    <h2 class="reveal">FAQ</h2>
+    <div class="faq-wrap reveal">
+      <details>
+        <summary>做一次 MRI 就能知道自己属于哪一型吗？</summary>
+        <div class="faq-body">不能。分型依赖参考曲线、68 脑区偏离谱与聚类算法，论文未提供个体判别阈值或诊断准确率。</div>
+      </details>
+      <details>
+        <summary>亚型 1 和阿尔茨海默有什么关系？</summary>
+        <div class="faq-body">PRS-AD 更高 + 转录组富集 AD 通路是关联线索，不代表会发展为阿尔茨海默病。论文无纵向随访。</div>
+      </details>
+      <details>
+        <summary>亚型 2 更"严重"吗？</summary>
+        <div class="faq-body">抑郁评分更高，但执行功能无显著差异；亚型 1 则执行功能更差。"严重"取决于关注维度。</div>
+      </details>
+      <details>
+        <summary>"灰质偏高/偏低"是好坏评价吗？</summary>
+        <div class="faq-body">不是。这是相对同龄健康人的统计偏离，不是价值判断，不直接代表功能更好或更差。</div>
+      </details>
+      <details>
+        <summary>两亚型在 MDD 和 BD 之间如何分布？</summary>
+        <div class="faq-body">论文报告两亚型中 MDD 与 BD 比例无显著差异（χ² = 0.04, p = 0.83），提示亚型跨越传统诊断边界。</div>
+      </details>
+      <details>
+        <summary>能直接指导用药或治疗选择吗？</summary>
+        <div class="faq-body">目前不能。论文提出未来可能用于个体化框架，但尚未提供治疗反应预测或临床决策阈值。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GLOSSARY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">术语速查</div>
+    <h2 class="reveal">关键概念</h2>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card"><dt>规范化建模</dt><dd>用健康人建立"正常范围"，再看个体偏离多少——像儿科身高曲线。</dd></dl>
+      <dl class="gloss-card"><dt>分位数回归</dt><dd>直接估计不同百分位参考线（5/50/95），不只给平均线。</dd></dl>
+      <dl class="gloss-card"><dt>GMV</dt><dd>灰质体积/密度指标，描述某脑区灰质组织的"量"，非"聪明程度"。</dd></dl>
+      <dl class="gloss-card"><dt>WCST</dt><dd>Wisconsin 卡片分类测验，测试换规则、灵活调整的执行功能。</dd></dl>
+      <dl class="gloss-card"><dt>PRS</dt><dd>多基因风险评分——把许多遗传位点的小影响加总成"易感总分"。</dd></dl>
+      <dl class="gloss-card"><dt>小胶质细胞</dt><dd>脑内免疫细胞，参与炎症与突触修剪；亚型 2 相关基因显著富集。</dd></dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISCLAIMER ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <p class="reveal" style="font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.7;max-width:600px;margin:0 auto">
+      本页面用于科研科普与方法解读，不构成医疗建议。论文讨论群体层面亚型差异，不可用于个人诊断或自测。论文按 CC BY-NC-ND 4.0 许可发表。任何健康决策请咨询专业医生。
+    </p>
+  </div>
+</section>
+
+<footer style="background:#0f051a;padding:2rem 1.5rem;text-align:center">
+  <p style="color:rgba(255,255,255,.45);font-size:.82rem">本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/" style="color:#a78bfa;font-size:.85rem;text-decoration:none;display:inline-block;margin-top:.5rem">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-}, { passive: true });
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 </script>
 </body>
 </html>

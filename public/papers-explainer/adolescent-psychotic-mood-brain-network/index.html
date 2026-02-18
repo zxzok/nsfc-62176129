@@ -1,233 +1,304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>幻觉/妄想出现时，青少年情绪障碍的大脑“路网”发生了什么？</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>幻觉/妄想出现时，青少年情绪障碍的大脑"路网"发生了什么？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../unified-style.css">
+<style>
+:root{--accent:#b91c1c;--accent-light:#f87171;--accent-bg:rgba(185,28,28,.08);--accent-bg2:rgba(185,28,28,.14);--grad-start:#1a0505;--grad-end:#991b1b}
+
+.hero-custom{background:linear-gradient(135deg,var(--grad-start) 0%,var(--grad-end) 100%);padding:5rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero-custom::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(248,113,113,.18),transparent 70%);top:-180px;right:-120px}
+.hero-custom .sec-inner{max-width:820px;position:relative;z-index:1}
+.hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.hero-chip{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);padding:4px 14px;border-radius:999px;font-size:.82rem;color:rgba(255,255,255,.88)}
+.hero-custom h1{font-size:clamp(1.65rem,4vw,2.6rem);font-weight:800;line-height:1.35;color:#fff;margin:0 0 1rem}
+.hero-custom .subtitle{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;max-width:640px}
+
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0}
+.kpi-item{text-align:center;padding:1.2rem .5rem;background:var(--accent-bg);border-radius:14px;border:1px solid var(--accent-bg2)}
+.kpi-num{font-size:1.85rem;font-weight:800;color:var(--accent);line-height:1.1}
+.kpi-label{font-size:.82rem;color:#64748b;margin-top:.35rem}
+
+.analogy{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0;font-size:.97rem;line-height:1.75;color:#334155}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+.step{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem;position:relative}
+.step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-title{font-weight:700;font-size:.93rem;color:var(--accent);margin-top:.5rem;margin-bottom:.35rem}
+.step p{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.feat-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid #e2e8f0;border-top:4px solid var(--accent)}
+.feat-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0 0 .6rem}
+.feat-card p{font-size:.88rem;color:#475569;line-height:1.7;margin:0}
+
+.fig-inline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin:2rem 0}
+.fig-inline img{width:100%;display:block}
+.fig-inline figcaption{padding:1rem 1.2rem;font-size:.85rem;color:#64748b;line-height:1.6}
+
+.bar-chart{margin:2rem 0}
+.bar-row{display:flex;align-items:center;margin-bottom:.65rem}
+.bar-label{width:120px;font-size:.82rem;color:#334155;font-weight:500;flex-shrink:0}
+.bar-track{flex:1;height:26px;background:#f1f5f9;border-radius:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-size:.75rem;font-weight:700;color:#fff;transition:width .8s}
+.bar-val{font-size:.82rem;color:#64748b;width:70px;text-align:right;margin-left:8px}
+
+.takeaway-banner{background:linear-gradient(135deg,#1a0505 0%,#7f1d1d 100%);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:2.5rem 0;color:#fff}
+.takeaway-banner .emoji{font-size:2.2rem;margin-bottom:.8rem}
+.takeaway-banner h3{font-size:1.25rem;font-weight:800;margin:0 0 .6rem}
+.takeaway-banner p{font-size:.95rem;color:rgba(255,255,255,.78);max-width:540px;margin:0 auto;line-height:1.7}
+
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0}
+.gloss-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.2rem}
+.gloss-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+.gloss-card dd{font-size:.84rem;color:#475569;margin:0;line-height:1.6}
+
+.faq-wrap{max-width:720px;margin:2rem auto}
+.faq-wrap details{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:.75rem;overflow:hidden}
+.faq-wrap summary{padding:1rem 1.2rem;font-weight:600;font-size:.93rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#0f172a}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:700}
+.faq-wrap details[open] summary::after{content:'−'}
+.faq-wrap .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+
+@media(max-width:640px){
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .bar-label{width:90px;font-size:.75rem}
+}
+</style>
 </head>
 <body>
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    返回主站
+
+<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1.5rem;background:rgba(26,5,5,.92);backdrop-filter:blur(6px)">
+  <a href="../../#/" style="color:#f87171;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span style="color:rgba(255,255,255,.45);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+</nav>
 
-<div class="reading-progress" id="readingProgress"></div>
+<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent-light);width:0;z-index:200;transition:width .15s"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">幻觉/妄想出现时，青少年情绪障碍的大脑“路网”发生了什么？</h1>
-    <p class="hero-subtitle">静息态 fMRI 的网络分析提示——整体更“聚团”，但左上颞回等关键节点更弱，并且这些指标会随两周治疗改善而变化。</p>
-    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-top:1rem;">European Child & Adolescent Psychiatry, 2024</p>
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero-custom">
+  <div class="sec-inner">
+    <div class="hero-chip-row">
+      <span class="hero-chip">Eur Child Adolesc Psychiatry 2024</span>
+      <span class="hero-chip">静息态 fMRI</span>
+      <span class="hero-chip">图论网络分析</span>
+      <span class="hero-chip">青少年住院</span>
+    </div>
+    <h1>幻觉/妄想出现时，青少年情绪障碍的大脑"路网"发生了什么？</h1>
+    <p class="subtitle">177 名住院青少年的脑网络分析发现：精神病性组整体更"聚团"，但左上颞回等关键枢纽变弱——而且这些指标会随两周治疗改善而变化。</p>
   </div>
-</section>
+</header>
 
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">30秒读懂</h2>
-    <div class="reveal"><p>问题：为什么有幻觉/妄想的青少年情绪障碍往往更重、更难治？</p><p>方法：研究者让177名住院青少年做8分钟静息态fMRI，并用图论把大脑看成“点（脑区）—线（连接）”的路网，比较精神病性组（MDP）与非精神病性组（MDNP）。</p><p>发现：MDP组整体小世界性σ与聚类系数γ更高，但左上颞回等节点指标更低；这些指标与精神病性症状分数相关，并在两周治疗后发生变化。</p><p>意义：这些网络指标可能成为跟踪症状与早期疗效的“研究型量化线索”，但目前不能用于个体诊断或自测。</p></div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>当青少年情绪障碍伴随幻觉或妄想时，研究与临床经验都提示：症状更重、病程更长、复发更频繁、风险也更高。</p><p>但“更重”背后究竟发生了什么？如果只盯着某一个脑区，往往像只看一条马路的拥堵——你很难理解整座城市为什么会堵。因此作者把大脑当作一个整体网络来研究：既看全局结构（例如小世界性、聚团程度），也找关键枢纽节点（例如上颞回）是否异常，并进一步检验这些差异是否与症状严重度、以及两周短期治疗改善相关。</p></div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的</h2>
-    <div class="reveal"><p>把大脑想成一座城市。每个“城区”都在交换信息：有些区域像居民区（内部交流密），有些像交通枢纽（负责把远处连起来）。本研究用静息态fMRI记录大脑在“没有刻意做任务”时的自发活动同步性，然后用图论把这些同步关系画成路网。</p><p>具体做法是：研究者招募177名13–21岁的情绪障碍住院青少年，其中61人属于精神病性情绪障碍（MDP），116人为非精神病性（MDNP）。每位患者在治疗前2天完成量表评估与扫描，2周常规治疗后再次评估与复扫；最终完成两次扫描者为MDP 35人、MDNP 71人。</p><p>在数据处理上，作者将大脑按AAL图谱分成90个区域作为节点，计算任意两区之间的偏相关作为连接强度，得到90×90的加权连接矩阵。</p><p>为了避免“网络太密或太稀”导致结论依赖某一个阈值，作者在稀疏度0.10–0.34范围内（步长0.01）计算多种指标，再用AUC把不同阈值下的结果汇总成一个更稳定的指标。全局指标包括：小世界性σ、聚类系数γ、特征路径λ、全局效率Eg、局部效率Eloc；节点指标包括：度中心性DC、介数中心性BC、节点效率NE。组间比较使用FDR校正多重比较，并在相关分析中控制年龄、性别与诊断。</p></div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么</h2>
-    <div class="reveal"><p>发现一：整体网络更“聚团”。MDP组的小世界性σ更高（FDR q=0.003），聚类系数γ更高（FDR q=0.008），而Eg、Eloc、λ无显著差异。直观理解：信息更容易在局部“抱团循环”，但不一定更高效。</p><p>发现二：关键“枢纽”变弱。与MDNP相比，MDP组左上颞回（STG_L）的度中心性DC更低（FDR q=0.028），并且STG_L、左赫氏回（HG_L）、左内侧扣带回（MCG_L）的节点效率NE更低（均FDR q=0.042）。直观理解：几个与听觉/语言加工及情绪调控相关的枢纽区，通达性下降。</p><p>发现三：这些指标与症状、以及两周治疗改善“同步变化”。在所有患者中，BPRS总分与阳性症状分数与σ/γ呈正相关（例如σ：r=0.265，FDR q=0.001），与STG_L的DC及多处NE呈负相关（例如DC_STG_L：r=-0.296，FDR q<0.001）。两周后，MDP组σ下降（P=0.016），STG_L的DC上升（P=0.038），且阳性症状下降幅度与DC_STG_L上升幅度正相关（r=0.377，P=0.031）；论文提醒这些治疗前后P值未校正。</p></div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用</h2>
-    <div class="reveal"><p>基于论文证据可以说：在群体层面，某些网络指标与精神病性症状严重度相关，并且会随两周治疗改善而变化；尤其是与左上颞回相关的指标，作者认为有望作为评估症状与疗效的“新兴量化指标”。</p><p>但必须划清边界：论文没有给出任何“个体诊断阈值”、预测准确率或可用于临床决策的评分规则；治疗后网络变化的统计也注明P值未做多重比较校正。因此它更适合用来推动后续研究与方法学改进，而不是直接变成个人自测工具。</p></div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步</h2>
-    <div class="reveal"><p>作者在论文中明确提出多项局限：</p><p>1）未区分抑郁症（MDD）与双相（BD）亚型差异，可能掩盖不同亚群的网络特征。</p><p>2）缺少匹配的健康对照会限制结果稳定性；论文虽提到与健康对照的补充分析方向一致，但仍认为“匹配对照不足”是限制。</p><p>3）未采集T1结构像、使用成人模板分区可能对仍在发育的青少年引入偏差。</p><p>4）未控制具体药物剂量，可能影响网络指标。</p><p>5）治疗前后网络变化的P值未校正，且仅随访两周，无法回答长期结局。</p><p>下一步方向：纳入匹配健康对照、采用更适合青少年的模板/更精细的分区与结构像，记录并控制更详细的用药信息，并开展更长期随访以验证这些网络指标是否能稳定反映症状轨迹与治疗反应。</p></div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">一句话带走</h2>
-    <div class="reveal"><p>左上颞回的网络“枢纽度”变化，可能是精神病性症状改善的可量化线索。</p></div>
+<!-- ═══════════════ KPI ═══════════════ -->
+<section class="sec" style="padding-top:0;margin-top:-1.5rem;position:relative;z-index:2">
+  <div class="sec-inner">
+    <div class="kpi-strip">
+      <div class="kpi-item"><div class="kpi-num">177</div><div class="kpi-label">住院青少年</div></div>
+      <div class="kpi-item"><div class="kpi-num">61</div><div class="kpi-label">精神病性组（MDP）</div></div>
+      <div class="kpi-item"><div class="kpi-num">90</div><div class="kpi-label">脑区节点（AAL）</div></div>
+      <div class="kpi-item"><div class="kpi-num">2 周</div><div class="kpi-label">治疗后复扫</div></div>
+    </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--surface);" id="glossary">
-  <div class="container">
-    <div class="section-label reveal">术语词典</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
-    
-      <div class="glossary-item reveal">
-        <div class="glossary-term">精神病性情绪障碍（MDP）</div>
-        <div class="glossary-def">情绪障碍同时出现幻觉/妄想等精神病性症状的亚型。</div>
-        <div class="glossary-analogy">像‘情绪风暴’里夹带了感知或信念的偏航。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">非精神病性情绪障碍（MDNP）</div>
-        <div class="glossary-def">有情绪障碍但没有精神病性症状。</div>
-        <div class="glossary-analogy">同样是情绪风暴，但没有‘听到/坚信不存在之物’的偏航。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">静息态fMRI</div>
-        <div class="glossary-def">不做任务时记录大脑自发活动的同步变化，用于推测脑区间功能连接。</div>
-        <div class="glossary-analogy">像观察城市夜间灯光明暗是否同步。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">功能连接</div>
-        <div class="glossary-def">两个脑区活动起伏的同步程度，用来描述它们是否‘同频沟通’。</div>
-        <div class="glossary-analogy">像两个城区用电曲线是否一起升降。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">图论网络分析</div>
-        <div class="glossary-def">把脑区当节点、连接当边，用网络指标描述整体结构与枢纽。</div>
-        <div class="glossary-analogy">把城市交通画成路网，再算‘绕不绕路’与‘枢纽’。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">小世界性（σ）</div>
-        <div class="glossary-def">网络同时具有较高聚类与较短路径长度的特征。</div>
-        <div class="glossary-analogy">社区里小路密，同时有几条高速把远处连起来。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">聚类系数（γ）</div>
-        <div class="glossary-def">一个节点周围邻居彼此相连的程度，反映局部‘抱团’。</div>
-        <div class="glossary-analogy">你的朋友之间也互相认识的程度。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">度中心性（DC）</div>
-        <div class="glossary-def">一个节点连接了多少条边，反映它的连接数量。</div>
-        <div class="glossary-analogy">一个交通枢纽有多少条线路经过。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">节点效率（NE）</div>
-        <div class="glossary-def">从某节点到其他节点的平均通达性。</div>
-        <div class="glossary-analogy">从某站出发到全城各处平均要转几次车。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">稀疏度阈值（S）</div>
-        <div class="glossary-def">决定保留多少连接的比例范围，用于比较不同‘网络稠密度’下的稳定结果。</div>
-        <div class="glossary-analogy">先保留最重要的道路，避免地图太拥挤或断路。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">AUC（曲线下面积）</div>
-        <div class="glossary-def">把一段阈值范围内的指标曲线汇总成一个数，减少对单一阈值的依赖。</div>
-        <div class="glossary-analogy">不只看某一天气温，而是把一周走势综合成一个指标。</div>
-      </div>
-      <div class="glossary-item reveal">
-        <div class="glossary-term">阳性症状（BPRS 6条目）</div>
-        <div class="glossary-def">研究从BPRS选取6个条目汇总来表征精神病性症状严重度。</div>
-        <div class="glossary-analogy">像用一组‘核心症状清单’给幻觉/妄想强度打分。</div>
-      </div>
+<!-- ═══════════════ ANALOGY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">通俗理解</div>
+    <h2 class="reveal">把大脑当一座城市的"路网"</h2>
+    <div class="analogy reveal">
+      每个脑区是一个城区，脑区间的同步活动是道路。<strong>精神病性情绪障碍</strong>的大脑路网呈现一种特殊模式：局部道路更密（"聚团"更高），但某些关键交通枢纽——特别是与听觉/语言加工相关的<strong>左上颞回</strong>——反而连接更少、通达性更差。治疗后，枢纽的连接数回升，症状也改善。
+    </div>
   </div>
 </section>
 
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-label reveal">常见问题</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
-    
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          这是不是说明做一次脑扫描就能诊断幻觉/妄想？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不能。论文报告的是组水平差异与相关性，并未提供个体诊断阈值或预测准确率；作者仅称其为“新兴指标/潜力线索”。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          小世界性σ更高是好事还是坏事？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文将其解释为与网络异常/脆弱性相关的模式之一，并指出与部分既往研究方向不一致，可能源于青少年样本的异质性与脑活动变异；因此不能简单等同于“更好/更差”。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          为什么特别关注左上颞回（STG）？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>它同时出现在三条证据链：基线组间差异（DC更低）、与症状相关（DC与BPRS/阳性症状负相关）、以及两周治疗后变化并与症状改善相关（r=0.377）。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          两周后症状都改善了吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>两组在HAMD-17、HAMA、YMRS、BPRS上均显著下降；但MDNP组“阳性症状”两周内变化不显著（P=0.486），且治疗后MDP组在BPRS与阳性症状仍高于MDNP组。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          这项研究能告诉我哪种药最有效吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不能。论文描述的是常规临床治疗（如喹硫平、锂盐等），但未比较不同药物方案的疗效，也未控制剂量，作者指出剂量未控制可能影响网络指标。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          治疗后网络指标变化可靠吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>可以作为重要线索，但需要谨慎：论文明确说明治疗前后比较的P值未做多重比较校正（uncorrected），因此更适合等待更大样本与更严格设计的重复验证。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          研究有没有健康对照？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文提到招募了22名健康对照，并在补充材料做了比较且方向一致；但作者仍强调缺少“匹配”的健康对照会限制结果稳定性。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          我能用这些结果给孩子做自测或调整治疗吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>不能。本研究不提供个体阈值或临床决策规则，且两周网络变化P值未校正；若担心精神病性症状，请寻求专业评估与随访。</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          论文数据能公开下载吗？
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>论文写明：支持研究发现的数据可在“合理请求”下向通讯作者获取；并非随文公开下载。</p></div>
-      </div>
+<!-- ═══════════════ BRAIN REGIONS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <figure class="fig-inline reveal">
+      <img src="visuals/brain_regions.svg" alt="关键脑区示意">
+      <figcaption>研究中的关键脑区：左上颞回（STG_L）、左赫氏回（HG_L）、左内侧扣带回（MCG_L）——这些区域与听觉加工、语言理解和情绪调控相关。</figcaption>
+    </figure>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究流程</div>
+    <h2 class="reveal">四步从 fMRI 到网络指标</h2>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-title">招募与分组</div>
+        <p>177 名 13–21 岁住院青少年，61 人 MDP（伴幻觉/妄想），116 人 MDNP。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-title">fMRI 扫描</div>
+        <p>治疗前 2 天 + 2 周常规治疗后各做 8 分钟静息态 fMRI。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-title">构建脑网络</div>
+        <p>AAL 图谱 90 节点 × 偏相关连接矩阵，多阈值（S = 0.10–0.34）+ AUC 汇总。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div class="step-title">图论分析</div>
+        <p>计算全局指标（σ, γ, λ, Eg, Eloc）与节点指标（DC, BC, NE），FDR 校正组间比较。</p>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- ═══════════════ FINDINGS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">三条证据链</div>
+    <h2 class="reveal">核心发现</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>发现 1｜整体更"聚团"</h3>
+        <p>MDP 组小世界性 σ 更高（FDR q = 0.003），聚类系数 γ 更高（q = 0.008）——信息更容易在局部"抱团循环"，但不一定更高效。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 2｜关键枢纽变弱</h3>
+        <p>左上颞回 DC 更低（q = 0.028）；STG_L、HG_L、MCG_L 节点效率 NE 更低（q = 0.042）——听觉/语言/情绪调控枢纽通达性下降。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 3｜指标与症状同步变化</h3>
+        <p>σ 与 BPRS 阳性症状正相关（r = 0.265, q = 0.001）；STG_L DC 与症状负相关。治疗 2 周后 σ 下降、DC 上升（P 值未校正）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NETWORK METRICS ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">关键统计</div>
+    <h2 class="reveal">MDP vs MDNP 网络指标差异</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><span class="bar-label">小世界性 σ</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent)">MDP > MDNP</div></div><div class="bar-val">q = 0.003</div></div>
+      <div class="bar-row"><span class="bar-label">聚类系数 γ</span><div class="bar-track"><div class="bar-fill" style="width:75%;background:#dc2626">MDP > MDNP</div></div><div class="bar-val">q = 0.008</div></div>
+      <div class="bar-row"><span class="bar-label">STG_L DC</span><div class="bar-track"><div class="bar-fill" style="width:60%;background:#ef4444">MDP < MDNP</div></div><div class="bar-val">q = 0.028</div></div>
+      <div class="bar-row"><span class="bar-label">STG_L NE</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:#f87171">MDP < MDNP</div></div><div class="bar-val">q = 0.042</div></div>
+    </div>
+    <p class="reveal" style="font-size:.84rem;color:#94a3b8;text-align:center">所有 q 值为 FDR 校正后；治疗后变化 P 值未校正</p>
+  </div>
+</section>
+
+<!-- ═══════════════ TAKEAWAY ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="takeaway-banner reveal">
+      <div class="emoji">&#129504;</div>
+      <h3>左上颞回的网络"枢纽度"变化，可能是精神病性症状改善的可量化线索</h3>
+      <p>在群体层面，脑网络指标与精神病性症状严重度相关，并随治疗变化。但尚无个体诊断阈值——这是研究型线索，不是自测工具。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LIMITS ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">局限性</div>
+    <h2 class="reveal">需要注意什么</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>未区分 MDD/BD 亚型</h3>
+        <p>可能掩盖不同亚群的网络特征差异。</p>
+      </div>
+      <div class="feat-card">
+        <h3>缺匹配健康对照</h3>
+        <p>虽有 22 名补充分析，但作者仍认为"不足"。</p>
+      </div>
+      <div class="feat-card">
+        <h3>治疗后 P 值未校正</h3>
+        <p>两周治疗前后比较的统计量为 uncorrected P。</p>
+      </div>
+      <div class="feat-card">
+        <h3>未控制药物剂量</h3>
+        <p>常规治疗含喹硫平、锂盐等，但未控制具体剂量。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">常见问题</div>
+    <h2 class="reveal">FAQ</h2>
+    <div class="faq-wrap reveal">
+      <details>
+        <summary>做一次脑扫描就能诊断幻觉/妄想吗？</summary>
+        <div class="faq-body">不能。论文报告的是组水平差异与相关性，未提供个体诊断阈值或预测准确率。</div>
+      </details>
+      <details>
+        <summary>σ 更高是好事还是坏事？</summary>
+        <div class="faq-body">论文将其解释为与网络异常/脆弱性相关的模式之一，不能简单等同于"好/坏"。</div>
+      </details>
+      <details>
+        <summary>为什么特别关注左上颞回？</summary>
+        <div class="faq-body">它同时出现在三条证据链：基线组间差异（DC 更低）、与症状相关、治疗后变化并与症状改善正相关（r = 0.377）。</div>
+      </details>
+      <details>
+        <summary>能告诉我哪种药最有效吗？</summary>
+        <div class="faq-body">不能。论文描述常规治疗，未比较不同药物方案疗效，也未控制剂量。</div>
+      </details>
+      <details>
+        <summary>能用结果给孩子自测或调整治疗吗？</summary>
+        <div class="faq-body">不能。本研究不提供个体阈值或临床决策规则。若担心精神病性症状，请寻求专业评估。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GLOSSARY ═══════════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label reveal">术语速查</div>
+    <h2 class="reveal">关键概念</h2>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card"><dt>MDP（精神病性情绪障碍）</dt><dd>情绪障碍同时出现幻觉/妄想——像"情绪风暴"里夹带了感知偏航。</dd></dl>
+      <dl class="gloss-card"><dt>小世界性 σ</dt><dd>网络同时具有高聚类与短路径的特征。σ 升高可能意味着局部"抱团"增强。</dd></dl>
+      <dl class="gloss-card"><dt>度中心性 DC</dt><dd>一个节点连接了多少条边——交通枢纽有多少线路经过。</dd></dl>
+      <dl class="gloss-card"><dt>节点效率 NE</dt><dd>从某节点到其他节点的平均通达性——从某站出发到全城平均转几次车。</dd></dl>
+      <dl class="gloss-card"><dt>左上颞回 STG_L</dt><dd>与听觉加工、语言理解相关的脑区，在本研究中是关键枢纽。</dd></dl>
+      <dl class="gloss-card"><dt>AUC 汇总</dt><dd>在多个稀疏度阈值下计算指标，用曲线下面积汇总，减少对单一阈值的依赖。</dd></dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISCLAIMER ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <p class="reveal" style="font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.7;max-width:600px;margin:0 auto">
+      本页面用于科研科普与方法解读，不构成医疗建议。论文报告的是群体水平的网络差异与相关性，不可用于个体诊断或自测。任何心理健康问题请咨询专业医生。
+    </p>
+  </div>
+</section>
+
+<footer style="background:#1a0505;padding:2rem 1.5rem;text-align:center">
+  <p style="color:rgba(255,255,255,.45);font-size:.82rem">本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/" style="color:#f87171;font-size:.85rem;text-decoration:none;display:inline-block;margin-top:.5rem">← NSFC 62176129 项目主站</a>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-}, { passive: true });
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 </script>
 </body>
 </html>
