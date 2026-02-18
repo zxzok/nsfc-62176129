@@ -2,182 +2,207 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>高风险≠必然发病：大脑同一处区域走出两条轨迹</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高风险≠必然发病 — 大脑同一处区域走出两条轨迹</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#2563eb;--accent-light:#93c5fd;--accent-bg:rgba(37,99,235,.08);--accent-bg2:rgba(37,99,235,.04);--grad-start:#1e3a5f;--grad-end:#1e40af}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(147,197,253,.12),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7}
+    .hero-chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .step-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:2rem 0}
+    .step-card{background:#fff;border-radius:12px;padding:1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative;padding-top:2.2rem}
+    .step-card .step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+    .step-card h4{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#1e293b}
+    .step-card p{font-size:.85rem;color:#475569;line-height:1.6}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#10b981}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .trajectory-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin:2rem 0}
+    .traj-card{background:#fff;border-radius:12px;padding:1.3rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .traj-card .emoji{font-size:2rem;margin-bottom:.5rem}
+    .traj-card h4{font-size:.92rem;font-weight:700;color:#1e293b}
+    .traj-card p{font-size:.82rem;color:#64748b;margin-top:.3rem;line-height:1.5}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.trajectory-row{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    返回主站
+
+<nav class="nsfc-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.55rem 1.5rem;background:rgba(30,58,95,.92);backdrop-filter:blur(6px)">
+  <a href="../../#/" style="color:#93c5fd;text-decoration:none;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站
   </a>
-  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
-</div>
+  <span style="color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.5px">NSFC 62176129</span>
+</nav>
 
-<div class="reading-progress" id="readingProgress"></div>
+<div class="reading-progress" id="readingProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:101;transition:width .1s"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">高风险≠必然发病：大脑同一处区域走出两条轨迹</h1>
-    
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">BMC Psychiatry · 2023</span>
+      <span class="hero-chip">纵向 fMRI 追踪</span>
+      <span class="hero-chip">多基因风险 + 脂质组学</span>
+    </div>
+    <h1>高风险 ≠ 必然发病：大脑同一处区域走出两条轨迹</h1>
+    <p class="subtitle">纵向静息态 MRI 追踪"脑自发活动"，结合多基因风险与血脂线索理解精神分裂症的脆弱性与韧性 — Duan et al., 2023</p>
   </div>
-</section>
+</header>
 
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">纵向静息态MRI追踪“脑自发活动”，并结合多基因风险与血脂线索理解精神分裂症的脆弱性与韧性</h2>
-    <div class="reveal"><p><blockquote>论文来源：Duan J, Gong X, Womer FY, et al. <em>BMC Psychiatry</em> (2023) 23:153. DOI: 10.1186/s12888-023-04597-z</blockquote></p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig3_enrichment.png" alt="纵向静息态MRI追踪“脑自发活动”，并结合多基因风险与血脂线索理解精神分裂症的脆弱性与韧性" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（120–180字）</h2>
-    <div class="reveal"><p>精神分裂症为何在一些家族高风险者身上不会发展成疾病？研究者用两次静息态MRI追踪患者、遗传高风险者与健康者的脑自发活动（ALFF），并在更大样本中结合多基因风险分数（PRS）与血脂做分析。结果显示：左内侧眶额皮层活动在患者持续偏高，而高风险者随时间回归接近健康水平。提示“脆弱性”和“韧性”可能在同一脑区呈现，但背后的遗传与脂质线索不同。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/table3_predictive_lipids_only.png" alt="30秒读懂（120–180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究</h2>
-    <div class="reveal"><p>精神分裂症通常被认为与大脑发育过程中的长期变化有关，往往在青春期后出现明显症状；如果能更早识别“哪些变化更像走向发病的轨迹”，以及“哪些变化会自行回到相对正常”，就可能为更早的观察与干预研究提供方向。</p><p>更现实的问题在于：<strong>有精神分裂症家族史的人（遗传高风险者）确实风险更高</strong>，论文指出这类人群“几乎增加近十倍风险”；但同时也强调<strong>绝大多数遗传高风险者一生并不会发展为精神分裂症</strong>，而且一些早期的大脑相似改变会随着年龄“正常化”。这就引出关键科学问题：同样的“风险背景”，为什么有人走向发病，有人走向不发病？</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的（类比解释）</h2>
-    <div class="reveal"><p>你可以把大脑想成一座城市：即使什么都不做，城市也有持续的“背景运转声”（交通流、供电、信息流）。这项研究用静息态功能MRI去测量这种“背景运转声”的强弱，指标叫 <strong>ALFF（低频波动幅度）</strong>：它关注的是BOLD信号在低频范围（0.01–0.08 Hz）的波动幅度，用来反映某一区域在休息状态下的自发神经活动强度。</p><p>研究分两步走：</p><p><ul><li><strong>先做“追踪”（纵向）</strong>  </li><br></ul>研究者对三组人做了两次扫描：精神分裂症患者21人、遗传高风险者26人、健康对照39人；两次扫描至少间隔10个月，范围11–67个月，平均约26个月。这样就能看到同一批人、同一脑区，随时间是“持续偏离”还是“回到接近正常”。</p><p><ul><li><strong>再做“拼图”（横断面多模态整合）</strong>  </li><br></ul>在更大的样本中（精神分裂症78人、遗传高风险者75人，健康对照145人），研究者在扫描前后24小时内采血，做两件事：  <br><ul><li>算“多基因风险分数（PRS）”：把许多与精神分裂症相关的遗传变异效应加总得到总体风险指标；论文基于PGC精神分裂症GWAS汇总数据，并在12个p值阈值下计算PRS。  </li><br><li>做“脂质组学”：从非靶向代谢组数据里筛出脂质及相关代谢物，共474个分子，归为19类脂质“物种”。</li><br></ul><br>最后，研究者用一种“让很多小决策树一起投票”的机器学习方法（随机森林），分别在患者组与高风险组里，看哪些PRS阈值、哪些脂质类别最能预测关键脑区（纵向中找到的左内侧眶额皮层）的ALFF，并用五折交叉验证评估预测效果（MAE与相关系数r）。随后再做相关分析，检验“预测得好”的因素与脑活动是否存在统计相关。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现1：同一脑区出现“两条轨迹”</h2>
-    <div class="reveal"><p><strong>通俗表述：</strong> 研究锁定一个关键脑区——<strong>左内侧眶额皮层（left MOF）</strong>。第一次扫描时，患者和遗传高风险者该脑区ALFF都更高；但随时间推移，患者的偏高持续存在，而高风险者的偏高不再显著，整体趋势是“回到接近健康对照”。</p><p><strong>关键证据：</strong>  <br><ul><li>左MOF出现显著“组别×时间”交互效应（峰值坐标x,y,z = -18, 48, -12；F=8.27；簇大小=172；GRF校正）。  </li><br><li>图2B显示：随访时SZ仍高于HC，而GHR与HC差异不显著；且SZ随时间无显著变化（P>0.05），GHR显著下降，HC显著上升。</li><br></ul><br><strong>这意味着什么：</strong> 家族高风险并不等于注定发病：同一脑区可以在早期表现出相似偏离，但后续走向可能分化，提示“脆弱性与韧性”可能在大脑发育/进程中被区分出来。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现2：在患者中，遗传总体风险与该脑区活动同向关联</h2>
-    <div class="reveal"><p><strong>通俗表述：</strong> 在精神分裂症患者中，更高的PRS在某些阈值下与左MOF更高的ALFF相关；而在遗传高风险但未发病者中，论文未观察到PRS与ALFF的显著相关。</p><p><strong>关键证据：</strong>  <br><ul><li>患者组：PRS在pT=0.0001的预测模型表现较好（MAE=0.153，r=0.25，P<0.05），且与左MOF ALFF显著正相关（r=0.349，P<0.005）。  </li><br><li>高风险组：pT=0.001的预测模型表现较好（MAE=0.121，r=0.31，P<0.05），但与左MOF ALFF相关不显著（P>0.05）。</li><br></ul><br><strong>这意味着什么：</strong> 这提示“遗传风险”可能与患者的脑功能状态更直接地同向关联；但论文呈现的是统计关联与预测性能，并不等于因果关系。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现3：血脂线索在两组人群中“指向不同”</h2>
-    <div class="reveal"><p><strong>通俗表述：</strong> 用血脂预测左MOF脑活动时，患者组更像“膜相关脂质”在起作用；高风险组中“脂肪酸”预测力最高，并与左MOF ALFF呈显著负相关。</p><p><strong>关键证据：</strong>  <br><ul><li>表3显示：患者组Top 5为辅酶、磷脂酰肌醇、溶血磷脂酰胆碱、鞘磷脂、神经酰胺（均给出MAE、预测r与P）。  </li><br><li>高风险组Top 5中脂肪酸预测表现最好（MAE=0.128，r=0.853，P=1.92E-13），且脂肪酸平均水平与左MOF ALFF负相关（r=-0.302，P=0.028）。</li><br></ul><br><strong>这意味着什么：</strong> 论文提出一个需要进一步验证的解释：高风险组的ALFF“正常化”与脂肪酸线索可能有关，但目前只能说“相关”，不能下因果结论。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用（谨慎边界）</h2>
-    <div class="reveal"><p><strong>已证据支持的：</strong>  <br><ul><li>左MOF的ALFF纵向分化可作为研究层面的线索，帮助理解脆弱性与韧性的分岔。  </li><br><li>PRS与脂质类别在患者与高风险者中呈现不同的关联与预测模式。</li><br></ul><br><strong>合理推测但论文未验证的：</strong>  <br><ul><li>未来可以在更大样本、多时间点研究中，探索“纵向脑功能 + 遗传 + 血脂”是否能用于更精细的风险分层或病程监测；但本文未提供临床可用阈值，不能用于个人判断。  </li><br><li>“补充脂肪酸可预防”不是本文结论；本文没有做补充干预试验。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步</h2>
-    <div class="reveal"><p><ul><li>多数患者用药，而高风险者未用药，可能存在药物混杂。  </li><br><li>纵向样本量中等（21 SZ/26 GHR/39 HC），需要更大样本尤其未用药样本复现。  </li><br><li>招募时年龄与性别未严格匹配，可能混杂；作者做了交互检验但仍需谨慎。  </li><br><li>预测与线性相关不一致提示关系可能复杂，需要进一步研究多因素相互作用。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">一句话带走（≤30字）</h2>
-    <div class="reveal"><p><strong>高风险≠必然发病：脑活动也可能“归一化”。</strong></p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/fig1_flowchart.png" alt="fig1 flowchart" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig1 flowchart</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig3_enrichment.png" alt="fig3 enrichment" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig3 enrichment</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/table3_predictive_lipids_only.png" alt="table3 predictive lipids only" loading="lazy">
-          <div class="visual-card-body">
-            <p>table3 predictive lipids only</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig2_mof_interaction.png" alt="fig2 mof interaction" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig2 mof interaction</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/page8_full.png" alt="page8 full" loading="lazy">
-          <div class="visual-card-body">
-            <p>page8 full</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig4_fatty_acid_corr.png" alt="fig4 fatty acid corr" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig4 fatty acid corr</p>
-          </div>
-        </div>
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">86</div><div class="label">纵向追踪样本</div></div>
+      <div class="kpi-card reveal"><div class="num">298</div><div class="label">横断面多模态样本</div></div>
+      <div class="kpi-card reveal"><div class="num">~26月</div><div class="label">平均随访间隔</div></div>
+      <div class="kpi-card reveal"><div class="num">474</div><div class="label">脂质分子特征</div></div>
     </div>
   </div>
 </section>
 
-
-
-<footer class="site-footer">
-  <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
-    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      把大脑想成一座城市。即使什么都不做，城市也有"背景运转声"。研究发现：有家族遗传风险的人和真正发病的人，在同一个"路口"（左内侧眶额皮层）的运转声一开始都偏高。但随时间推移，患者的偏高持续不退，而高风险者逐渐"回到正常车流量"。同一起点，两条岔路。
+    </div>
   </div>
+</section>
+
+<!-- Three trajectories -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三组人、两次扫描、一个关键脑区</h2>
+    <div class="trajectory-row reveal">
+      <div class="traj-card" style="border-top:3px solid #dc2626">
+        <div class="emoji" style="font-size:1.5rem;color:#dc2626;font-weight:800">SZ</div>
+        <h4>患者组 (n=21)</h4>
+        <p>左 MOF ALFF 持续偏高，随时间无显著变化</p>
+      </div>
+      <div class="traj-card" style="border-top:3px solid #f59e0b">
+        <div class="emoji" style="font-size:1.5rem;color:#f59e0b;font-weight:800">GHR</div>
+        <h4>遗传高风险组 (n=26)</h4>
+        <p>初始偏高，随时间显著下降，趋近健康对照</p>
+      </div>
+      <div class="traj-card" style="border-top:3px solid #10b981">
+        <div class="emoji" style="font-size:1.5rem;color:#10b981;font-weight:800">HC</div>
+        <h4>健康对照 (n=39)</h4>
+        <p>基线正常，随时间显著上升</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig2_mof_interaction.png" alt="左MOF的组别×时间交互效应" loading="lazy">
+      <div class="caption">图 2 · 左内侧眶额皮层的"组别 × 时间"交互效应（F=8.27, GRF 校正）</div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 同一脑区出现"两条轨迹"</h4>
+        <p>左 MOF 出现显著"组别×时间"交互。患者持续偏高，高风险者逐渐回落。提示家族高风险并不等于注定发病——"脆弱性与韧性"可能在大脑发育过程中被区分出来。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · 患者组 PRS 与脑活动同向关联</h4>
+        <p>在患者中，PRS（pT=0.0001）与左 MOF ALFF 正相关（r=0.349, P&lt;0.005）；高风险组中未观察到显著相关。提示遗传风险可能与患者脑功能更直接关联。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 血脂线索在两组"指向不同"</h4>
+        <p>患者组预测力最高的是膜相关脂质（辅酶、磷脂酰肌醇等）；高风险组中脂肪酸预测力最高（r=0.853），且与左 MOF ALFF 负相关（r=-0.302），提示高风险者的"正常化"可能与脂肪酸线索有关。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig4_fatty_acid_corr.png" alt="脂肪酸与脑活动的相关" loading="lazy">
+      <div class="caption">图 4 · 高风险组脂肪酸水平与左 MOF ALFF 的负相关关系</div>
+    </div>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>高风险 ≠ 必然发病：脑活动也可能"归一化"，遗传风险与血脂在两类人群中的关联方向不同。</p>
+  </div>
+</div>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">局限性</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal"><h4>用药混杂</h4><p>多数患者用药，高风险者未用药，可能存在药物混杂。</p></div>
+      <div class="finding-card alt reveal"><h4>样本量中等</h4><p>纵向 21 SZ / 26 GHR / 39 HC，需要更大样本尤其未用药样本复现。</p></div>
+      <div class="finding-card alt2 reveal"><h4>匹配不严格</h4><p>年龄与性别未严格匹配，需谨慎解读。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>这是不是说高风险的人不用担心了？</summary><div class="faq-body">不是。论文显示高风险者的脑活动有"回归趋势"，但这是群体统计结果，不代表个人一定不会发病。风险仍比一般人群高近十倍。</div></details>
+    <details class="reveal"><summary>补充脂肪酸可以预防精神分裂症吗？</summary><div class="faq-body">论文没有做补充干预试验，只发现相关性。"脂肪酸与正常化"是统计关联，不是因果结论。</div></details>
+    <details class="reveal"><summary>PRS 能用来预测个人是否会发病吗？</summary><div class="faq-body">PRS 解释的变异很小，且论文未提供个人层面判别阈值，不能用于个人预测。</div></details>
+  </div>
+</section>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>ALFF</dt><dd>低频波动幅度 — 测量脑区在静息状态下的自发活动强度，像城市"背景运转声"的强弱。</dd></div>
+      <div class="glossary-card reveal"><dt>左 MOF</dt><dd>左内侧眶额皮层 — 本研究的关键脑区，三组人在此分化。</dd></div>
+      <div class="glossary-card reveal"><dt>PRS</dt><dd>多基因风险分数 — 汇总许多遗传变异的效应得到总体风险指标。</dd></div>
+      <div class="glossary-card reveal"><dt>GHR</dt><dd>遗传高风险者 — 有精神分裂症家族史但本人未发病。</dd></div>
+      <div class="glossary-card reveal"><dt>随机森林</dt><dd>"很多小决策树一起投票"的机器学习方法，用于预测脑活动。</dd></div>
+      <div class="glossary-card reveal"><dt>脂质组学</dt><dd>从血液中一次测量数百种脂质分子的技术。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0f172a;color:rgba(255,255,255,.5);text-align:center;padding:2rem 1rem;font-size:.82rem">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <p style="margin-top:.5rem"><a href="../../#/" style="color:#93c5fd">NSFC 62176129 项目主站</a></p>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-}, { passive: true });
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
 </script>
 </body>
 </html>
