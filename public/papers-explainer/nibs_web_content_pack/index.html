@@ -1,185 +1,238 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>无创脑刺激能缓解抑郁吗？｜网页Demo</title>
-  <meta name="description" content="基于系统综述与元分析的科普页面Demo（含证据锚点与交互模块）。" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="small" href="#main" style="position:absolute;left:-999px;top:0;">跳到正文</a>
-  <header>
-    <div class="container hero">
-      <div>
-        <h1 class="h-title" id="pageTitle">加载中…</h1>
-        <p class="h-sub" id="pageSubtitle"></p>
-        <div class="card" aria-label="30秒读懂">
-          <h3>30秒读懂</h3>
-          <p id="thirty"></p>
-          <p class="small" id="thirtyCite"></p>
-        </div>
-        <div class="badges" id="badges"></div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>无创“脑刺激”真的能缓解抑郁吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">无创“脑刺激”真的能缓解抑郁吗？</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
+
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂</h2>
+    <div class="reveal"><p>抑郁很常见且药物疗效并不理想，能否用无创方式“调一调大脑回路”？研究者系统检索至2020年11月，纳入14项以前额叶为靶点的NIBS-fMRI研究（总样本584人），做了ALE坐标元分析与症状效应量合并。结果显示抑郁症状总体改善很大（d=1.82），并在奖励/情绪与三大核心网络节点出现可重复的上调与下调；疗效差异与性别比例、难治性、共病、疗程和定位方式等因素相关。</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig7_mid_forest.png" alt="30秒读懂" loading="lazy">
       </div>
-      <div class="kpi" id="kpi"></div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>论文指出抑郁的患病率可达15–18%，而传统药物治疗“效果并不理想”、机制也未完全明确。无创脑刺激（NIBS）通过磁刺激（TMS）或电刺激（tES/tDCS）从头皮外影响大脑，患者治疗时保持清醒、无需植入装置且相对有较少安全顾虑。</p><p>然而，已有fMRI研究对干预后脑活动变化的结论并不一致，而且哪些临床或方案因素会让疗效更好仍不清楚。作者因此将“症状是否改善”与“脑影像是否出现一致变化”放在同一框架里检验。</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig2_rob.png" alt="为什么要做这个研究" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（用类比解释）</h2>
+    <div class="reveal"><p>可以把每篇fMRI论文想成一张“城市热力图”：它告诉你治疗后哪些路段更拥挤、哪些更空，但不同城市、不同测量方式会让地图看起来不一样。</p><p>作者先按PRISMA流程在三大数据库检索至2020年11月，从938篇记录筛到14项符合条件的研究。</p><p>接着做两件事：</p><p><ul><li><strong>把坐标叠到同一张大脑地图上（ALE）</strong>。很多fMRI研究会报告“显著变化点”的三维坐标。作者把不同坐标系统统一到MNI空间，把“激活增加”和“激活降低”分开分析；再按样本量把每个坐标点模糊成一个‘热斑’，用随机效应模型叠加成总体ALE图，最后用P<0.001且簇>150 mm³的阈值筛出最一致的变化区域。</li><br></ul><br><ul><li><strong>把量表分数换成统一的‘改善尺度’（效应量）</strong>。对11项能提供抑郁量表前后数据的研究，作者计算标准化均差（Cohen’s d），在随机效应模型下合并，并用I²评估研究之间差异有多大。</li><br></ul><br>最后，作者用分组分析与元回归寻找“为什么不同研究差异这么大”，包括性别比例、是否难治性抑郁（TRD）、是否共病、治疗时长、以及定位方法等。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：症状平均改善很大，但研究之间差异也很大</h2>
+    <div class="reveal"><p>合并11项研究后，抑郁症状从治疗前到治疗后显著下降，合并效应量为d=1.82（95%CI 1.23–2.40），但异质性很高（I²=87%），意味着不同研究的改善幅度差别很大。</p><p>论文还报告漏斗图不对称且Egger检验显著（t=2.57，P=0.03），提示可能存在发表偏倚，需要谨慎解读“平均效应”可能被高估的风险。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：大脑层面出现可重复的上调与下调，落在奖励系统与核心网络节点</h2>
+    <div class="reveal"><p>ALE结果显示：干预后<strong>上调</strong>集中在左侧壳核/纹状体、眶额皮层与背侧前扣带、岛叶，以及左dlPFC；<strong>下调</strong>集中在右侧纹状体相关区与右背侧后扣带皮层。</p><p>论文在讨论中把这些变化解释为：显著性网络SN与中央执行网络CEN的关键节点上调，而默认模式网络DMN关键节点下调，可能体现“纠正三网络失衡”的机制。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：疗效差异与‘人群特征+治疗细节’相关，提示个体化很关键</h2>
+    <div class="reveal"><p>表3显示，性别比例、是否TRD、是否共病、治疗时长、定位方法在分组比较中呈现显著的组间差异信号，并被纳入多变量元回归模型。</p><p>在多变量模型中，作者报告性别（女性比例）、TRD、共病、治疗时长与定位方式等均与疗效相关；模型检验Q=42.32（P<0.01），解释了49%的研究间方差（R²=0.49）。</p><p>作者在讨论中进一步指出：女性比例更高与更负向的治疗反应相关；TRD患者总体更好；共病者更差；并提到F3 Beam定位方法在他们的比较中表现最好。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
+    <div class="reveal"><p>证据支持：在纳入的fMRI研究中，前额叶NIBS与症状改善相关，并伴随可重复的脑区/网络变化；疗效差异与多种临床与方案因素相关，提示需要优化定位与个体化。</p><p>合理推测：论文提出纹状体可能成为候选生物标志物，用于未来预测或监测疗效，但目前仍需要更多高质量、多中心、同质化RCT进行前瞻性验证，不能用于个人诊断或自测。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>论文明确指出：fMRI研究数量相对少，难以比较不同刺激技术（TMS vs tES）或不同PFC子区靶点；多数研究采用功能连接等指标并依赖种子区/ROI报告方式，仍可能引入偏倚；异质性依旧显著，且需要更及时的更新综述纳入最新研究。</p><p>作者呼吁开展更高质量、多中心RCT，并推进个体化NIBS；同时倡导把心理评估与生物学指标结合，扩展到多模态影像以建立更客观的精确医疗闭环框架。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>无创刺激前额叶可能有效，但更需要‘挑人+挑参数+挑定位’。</p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/table1_studies.png" alt="table1 studies" loading="lazy">
+          <div class="visual-card-body">
+            <p>table1 studies</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig7_mid_forest.png" alt="fig7 mid forest" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig7 mid forest</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2_rob.png" alt="fig2 rob" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2 rob</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig1_prisma.png" alt="fig1 prisma" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1 prisma</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig5_forest.png" alt="fig5 forest" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig5 forest</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table3_moderators.png" alt="table3 moderators" loading="lazy">
+          <div class="visual-card-body">
+            <p>table3 moderators</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig6_scatter.png" alt="fig6 scatter" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig6 scatter</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table2_clusters.png" alt="table2 clusters" loading="lazy">
+          <div class="visual-card-body">
+            <p>table2 clusters</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3_funnel.png" alt="fig3 funnel" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3 funnel</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig4_brain_clusters.png" alt="fig4 brain clusters" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig4 brain clusters</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/concept_nibs.svg" alt="concept nibs" loading="lazy">
+          <div class="visual-card-body">
+            <p>concept nibs</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/concept_networks.svg" alt="concept networks" loading="lazy">
+          <div class="visual-card-body">
+            <p>concept networks</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main" class="container">
-    <section id="why">
-      <h2>为什么要做这个研究</h2>
-      <div id="whyBody"></div>
-      <p class="small" id="whyCite"></p>
-    </section>
-
-    <section id="evidence">
-      <h2>证据从哪里来</h2>
-      <div class="figure">
-        <img src="assets/img/fig1_prisma.png" alt="流程图展示从938到14的筛选过程。" />
-        <div class="cap">图1：PRISMA筛选流程（证据：第4页 图1）</div>
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">术语小词典（面向公众）</div>
+        <div class="glossary-def">1）无创脑刺激（NIBS）：用磁场或微弱电流从头皮外影响大脑活动，不需要手术植入。（类比：外接“遥控器”调节系统，而不是拆机换零件。）（证据：第1页Introduction）</div>
+        
       </div>
-      <details class="details">
-        <summary>展开：文字版筛选流程（无障碍）</summary>
-        <p>数据库共识别938篇，去重后609篇进入标题摘要筛查，全文评估42篇，排除28篇，最终纳入14项研究进入定量合成。（证据：第3页Study Selection；第4页图1）</p>
-      </details>
-    </section>
+  </div>
+</section>
 
-    <section id="how">
-      <h2>我们怎么做的</h2>
-      <div class="split">
-        <div>
-          <div class="figure">
-            <img src="assets/img/concept_ale_workflow.svg" alt="ALE流程示意图。" />
-            <div class="cap">自制：ALE流程示意（来源：第3页方法；第1页摘要）</div>
-          </div>
-        </div>
-        <div>
-          <div id="howBody"></div>
-          <p class="small" id="howCite"></p>
-        </div>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（公众常问）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><ul><li>这是不是说无创脑刺激一定能治好抑郁？</li><br></ul>不是。合并效应量很大（d=1.82），但研究间异质性也很高（I²=87%），且存在发表偏倚信号，因此不能理解为人人都必然获益或获益相同。</p><p><ul><li>我能在家用设备自测或自疗吗？</li><br></ul>论文未提供任何家庭自用的安全有效结论，也未给出公众可自行操作的剂量处方；作者反而强调需要更多高质量、多中心RCT与个体化方案。</p><p><ul><li>为什么会提到“网络再平衡”？</li><br></ul>论文讨论将干预后上调的SN/CEN节点与下调的DMN节点解释为“纠正三网络失衡”，用于理解可能的机制框架。</p><p><ul><li>为什么说纹状体可能是候选标志物？</li><br></ul>ALE结果在纹状体相关区域出现收敛变化，论文据此提出其可能用于未来预测或评估疗效，但属于候选假设，需要前瞻性验证。</p><p><ul><li>疗效差异和哪些因素有关？</li><br></ul>表3提示性别比例、TRD、共病、疗程、定位方法等与疗效差异相关，并在多变量模型中解释了49%的研究间方差。</p><p><ul><li>为什么作者还要强调局限？</li><br></ul>因为fMRI研究数量少、指标与报告方式差异大、异质性显著且存在偏倚风险，可能影响结论稳健性，因此需要更同质、更高质量的多中心RCT。</p></div>
       </div>
-    </section>
+  </div>
+</section>
 
-    <section id="findings">
-      <h2>我们发现了什么</h2>
-      <div class="tabs" role="tablist" aria-label="三个最重要发现">
-        <button class="tab" role="tab" id="tabA" aria-controls="panelA" aria-selected="true">发现1：症状改善</button>
-        <button class="tab" role="tab" id="tabB" aria-controls="panelB" aria-selected="false">发现2：大脑变化</button>
-        <button class="tab" role="tab" id="tabC" aria-controls="panelC" aria-selected="false">发现3：差异来源</button>
-      </div>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-      <div id="panelA" class="panel active" role="tabpanel" aria-labelledby="tabA">
-        <div class="split">
-          <div>
-            <div class="figure">
-              <img src="assets/img/fig5_forest.png" alt="森林图显示11项研究的效应量及合并结果。" />
-              <div class="cap">图5：终点效果森林图（证据：第8页 图5）</div>
-            </div>
-          </div>
-          <div>
-            <div class="card" id="effectSummary"></div>
-            <details class="details" style="margin-top:10px;">
-              <summary>展开：逐研究数值表（从图5提取）</summary>
-              <div id="effectTable"></div>
-            </details>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="assets/img/fig3_funnel.png" alt="漏斗图显示可能的发表偏倚。" />
-          <div class="cap">图3：发表偏倚漏斗图（证据：第6页 图3；第4页 Egger检验）</div>
-        </div>
-      </div>
-
-      <div id="panelB" class="panel" role="tabpanel" aria-labelledby="tabB">
-        <div class="split">
-          <div>
-            <div class="figure">
-              <img src="assets/img/fig4_brain_clusters.png" alt="脑图标出上调与下调簇。" />
-              <div class="cap">图4：一致的脑区变化（证据：第7页 图4）</div>
-            </div>
-          </div>
-          <div>
-            <div class="controls">
-              <select id="clusterDirection" aria-label="选择上调或下调">
-                <option value="increase">上调（increase）</option>
-                <option value="decrease">下调（decrease）</option>
-              </select>
-              <select id="clusterNetwork" aria-label="按网络筛选">
-                <option value="all">全部网络</option>
-                <option value="SN">SN</option>
-                <option value="CEN">CEN</option>
-                <option value="DMN">DMN</option>
-                <option value="Reward/Striatum">Reward/Striatum</option>
-              </select>
-            </div>
-            <div id="clusterList"></div>
-            <div class="figure">
-              <img src="assets/img/concept_networks.svg" alt="三大网络调度系统示意图。" />
-              <div class="cap">自制：三网络示意（证据：第7页讨论）</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="panelC" class="panel" role="tabpanel" aria-labelledby="tabC">
-        <div class="split">
-          <div>
-            <div class="figure">
-              <img src="assets/img/table3_moderators.png" alt="表3列出调节因素检验与回归结果。" />
-              <div class="cap">表3：调节因素（证据：第8页 表3）</div>
-            </div>
-          </div>
-          <div>
-            <p>点击一个因素，查看它在“分组比较”和“单变量元回归”里的结果（仅展示论文表3提供的信息）。</p>
-            <div id="moderatorCards"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="studies">
-      <h2>14项研究探索器（表1数据）</h2>
-      <div class="controls">
-        <select id="filterNibs" aria-label="按刺激类型筛选">
-          <option value="all">全部刺激类型</option>
-        </select>
-        <select id="filterScale" aria-label="按量表筛选">
-          <option value="all">全部量表</option>
-        </select>
-        <input id="searchStudy" type="search" placeholder="搜索作者/国家/年份" aria-label="搜索研究" />
-      </div>
-      <div id="studiesTable"></div>
-      <p class="small">数据来源：论文表1（第5页）。</p>
-    </section>
-
-    <section id="limits">
-      <h2>局限性与下一步</h2>
-      <div id="limitsBody"></div>
-      <p class="small" id="limitsCite"></p>
-    </section>
-
-    <section id="glossary">
-      <h2>术语小词典</h2>
-      <div id="glossaryBody"></div>
-    </section>
-
-    <section id="faq">
-      <h2>FAQ</h2>
-      <div id="faqBody"></div>
-    </section>
-
-    <details class="details">
-      <summary>统一免责声明</summary>
-      <p id="disclaimer"></p>
-    </details>
-  </main>
-
-  <footer>
-    <div class="container small">
-      <div>本Demo只演示信息结构与交互方式；所有数字结论均来自论文页码/图表（见每段“证据”）。</div>
-    </div>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

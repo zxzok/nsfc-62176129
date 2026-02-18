@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">ALFF前高后低模式</title>
+<desc id="desc">信息图总结患者相对健康对照的ALFF异常：前部纹状体升高，后部视觉皮层降低，并强调用药与未用药患者之间无显著差异。</desc>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<text x="60" y="80" font-size="36" font-family="Arial" font-weight="700">ALFF“前高后低”模式一眼记住</text>
+<rect x="60" y="140" width="1080" height="470" rx="18" fill="#F9FAFB" stroke="#98A2B3" stroke-width="2"/>
+<text x="110" y="220" font-size="30" font-family="Arial" font-weight="700">前部（纹状体）↑</text>
+<text x="110" y="270" font-size="22" font-family="Arial">尾状核/壳核等区域ALFF更高</text>
+<text x="110" y="340" font-size="30" font-family="Arial" font-weight="700">后部（视觉皮层）↓</text>
+<text x="110" y="390" font-size="22" font-family="Arial">舌回/距状沟等区域ALFF更低</text>
+<text x="110" y="475" font-size="22" font-family="Arial">用药 vs 未用药：论文未观察到差异</text>
+<line x1="820" y1="230" x2="1040" y2="230" stroke="#12B76A" stroke-width="10"/>
+<polygon points="1040,230 1005,210 1005,250" fill="#12B76A"/>
+<line x1="820" y1="360" x2="1040" y2="360" stroke="#F04438" stroke-width="10"/>
+<polygon points="1040,360 1005,340 1005,380" fill="#F04438"/>
+</svg>

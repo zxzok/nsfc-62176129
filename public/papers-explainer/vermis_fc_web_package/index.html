@@ -1,127 +1,258 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>两周内会不会好转？小脑蚓部-颞叶连接与青少年抑郁早期响应</title>
-  <meta name="description" content="基于132名青少年重性抑郁发作的静息态MRI研究：治疗前小脑蚓部与左颞叶功能连接更强者更可能两周内显著缓解；模型AUC=0.760。含交互计算器、脑区簇数据与可复用网页组件。"/>
-  <meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" href="assets/styles.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-<a class="skip-link" href="#main">跳到正文</a>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>两周内会不会好转？一条“小脑—大脑”连接给出线索</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-<header class="site-header">
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
   <div class="container">
-    <div class="brand">
-      <div class="brand-mark" aria-hidden="true">🧠</div>
-      <div>
-        <div class="brand-title">论文公众传播内容包</div>
-        <div class="brand-sub">可直接上站 · 含交互与结构化数据</div>
-      </div>
-    </div>
-
-    <nav class="site-nav" aria-label="页面导航">
-      <a href="#read30">30秒读懂</a>
-      <a href="#why">为什么做</a>
-      <a href="#how">怎么做</a>
-      <a href="#findings">发现</a>
-      <a href="#interactives">交互</a>
-      <a href="#visuals">图文</a>
-      <a href="#limits_next">局限</a>
-      <a href="#citations">证据</a>
-    </nav>
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">两周内会不会好转？一条“小脑—大脑”连接给出线索</h1>
+    <p class="hero-subtitle">静息态MRI提示：小脑蚓部与左颞叶的功能连接，可区分青少年抑郁发作的早期治疗响应</p>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-top:1rem;">Wang L, Zhao P, Zhang J, et al. Journal of Affective Disorders 339 (2023) 256–263.</p>
   </div>
-</header>
+</section>
 
-<main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 id="hero-title">加载中…</h1>
-        <p class="hero-sub" id="hero-subtitle"></p>
 
-        <div class="hero-kpis" role="list">
-          <div class="kpi" role="listitem">
-            <div class="kpi-value" id="kpi-n">—</div>
-            <div class="kpi-label">样本量</div>
-          </div>
-          <div class="kpi" role="listitem">
-            <div class="kpi-value" id="kpi-window">2周</div>
-            <div class="kpi-label">观察窗口</div>
-          </div>
-          <div class="kpi" role="listitem">
-            <div class="kpi-value" id="kpi-auc">0.760</div>
-            <div class="kpi-label">模型AUC</div>
-          </div>
-        </div>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂</h2>
+    <div class="reveal"><p>问题：青少年抑郁发作住院治疗后，谁会在<strong>两周内</strong>出现明显缓解，很难提前判断。</p><p>方法：研究者对132名青少年在治疗前与两周后各做一次静息态MRI，并用HAMD评估症状；以HAMD下降≥50%定义“早期响应”。</p><p>发现：治疗前小脑蚓部与左侧颞叶/颞极等区域的功能连接更高者更可能早期响应；该连接与HAMD、HAMA下降比例正相关，模型AUC=0.760。</p><p>意义：这条“小脑—颞叶”通路可能成为未来更早调整治疗策略的候选线索，但仍需更大样本验证。</p></div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>临床上，儿童青少年情绪障碍的治疗并非人人都能很快见效。论文指出，约30%–40%的儿童青少年对一线干预达不到常用疗效标准（通常要求症状至少减少50%），而治疗又耗时且成本高，因此需要能更早提示疗效的生物标志物。</p><p>作者选择“前两周”作为关键窗口，因为既往研究显示，两周内的早期改善对后续响应与缓解具有预测意义；本研究也明确只报告基线与第2周的结局。</p></div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（用类比解释）</h2>
+    <div class="reveal"><p>可以把大脑想成一座城市：每个脑区像不同街区，各自有活动节奏。静息态fMRI记录你安静躺着时脑内BOLD信号的自然起伏；如果两个区域的起伏经常同频同相，就像两支乐队不用指挥也能合拍演奏，我们说它们的“功能连接（FC）”更强。</p><p>研究对象是132名处于重性抑郁发作的青少年（重性抑郁障碍或双相障碍的抑郁发作），治疗前后各进行一次静息态MRI扫描（扫描时长8分07秒），并用HAMD评估抑郁症状；两周后HAMD下降≥50%定义为早期响应（75人），其余为未响应（57人）。</p><p>在影像处理上，研究者丢弃最开始10个时间点，进行切片时序与头动校正，并排除头动过大的数据（位移>3毫米或旋转>3度）；之后把影像标准化到MNI空间并做空间平滑（FWHM=6毫米），再用0.01–0.08Hz的带通滤波与线性回归减少噪声。</p><p>随后他们把“小脑蚓部”（小脑正中线区域）设为种子ROI：用AAL图谱定义蚓部范围，将ROI内BOLD时间序列取平均作为参考曲线；再与大脑每个体素的BOLD序列做相关，得到“蚓部—全脑”的连接图，并把相关系数用Fisher r-to-z转换成Z值便于比较。</p><p>最后，统计分析分三步：1）比较基线时响应组与未响应组的连接差异；2）分别比较两组治疗前后连接变化；3）用逻辑回归建立区分模型，并用ROC/AUC评估其区分能力。分析中把年龄与性别作为协变量，并使用GRF校正控制多重比较。</p></div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"><p><strong>发现1：治疗开始前，蚓部—左颞叶连接更强的人，更可能两周内好转。</strong></p><p>基线时，响应组在“小脑蚓部—左侧颞叶/颞极”等区域的FC显著高于未响应组（GRF校正p<0.05）。表2给出该差异簇体素数429、峰值坐标（−36, 18, −24）及F=3.701，图1展示了空间位置。</p><p>这意味着：在治疗刚开始时，某些脑网络状态已经包含了“谁更容易早期改善”的信息——至少在这项样本中可以区分两组。</p><p><strong>发现2：这条连接与症状改善幅度相关，并能组成AUC=0.760的区分模型。</strong></p><p>基线蚓部—左颞叶FC与HAMD下降比例正相关（r=0.264, p=0.002），与HAMA下降比例也正相关（r=0.189, p=0.030）。将FC值与年龄、性别变量纳入逻辑回归，模型AUC=0.760（95%CI 0.678–0.843, p<0.001），并给出方程：Log Odds = 6.071 + 0.312×FC − 0.308×age − 0.707×gender。</p><p>这意味着：模型具备一定区分度，但作者强调样本量与单中心限制，仍需更大更多少样本的验证，且论文没有提供可用于个人决策的临床阈值。</p><p><strong>发现3：两周治疗后，蚓部—额叶等连接在两组都增强，提示存在与结局无关的治疗相关改变。</strong></p><p>论文摘要指出，治疗后在所有患者中观察到蚓部—右额叶连接显著增加，提示其与治疗结局无关。分组看，响应组治疗后增强涉及右额叶、中央沟等（表3；图2A），未响应组也出现包含右额叶等的大簇增强（表4；图2B）。</p><p>这意味着：用于“预测谁会好转”的连接差异（颞叶通路）可能与“治疗带来共同变化”的通路（额叶通路）并不相同。</p></div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一个容易忽略的细节：基线症状更重的人反而更常早期响应</h2>
+    <div class="reveal"><p>表1显示，基线HAMD在响应组（25.28±4.999）高于未响应组（23.33±4.393），差异达到统计学显著（p=0.021）。</p><p>这并不意味着“越严重越容易好”，因为研究没有证明因果；它只是提醒我们：临床早期改善可能受到多种因素共同影响，影像指标只是其中之一。</p></div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
+    <div class="reveal"><p><strong>证据支持：</strong></p><p>1）提供一个可量化的候选影像线索：基线蚓部—左颞叶FC更高与两周早期响应相关，并与症状下降比例相关。</p><p>2）给出可复现的预测模型形式与性能指标（AUC与方程），方便后续研究做外部验证与模型改进。</p><p>3）提示治疗可能带来与结局无关的连接增强（蚓部—额叶等），有助于理解治疗影响到哪些网络。</p><p><strong>合理推测（论文未直接验证）：</strong></p><p>如果未来在更大多中心样本中复现，并建立明确的阈值与外部验证流程，这类连接指标可能用于辅助更早的疗效评估与治疗调整；但目前论文未提供可用于单个患者的临床决策阈值。</p></div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">图文速览（可复用原图 + 可重绘示意）</h2>
+    <div class="reveal"><p>本页提供两张论文原图（图1、图2）与6张可重绘SVG示意（时间线、概念解释、ROC读法、方程方向、流程图、局限性）。所有图像均在打包文件中可直接引用；每张图都附带alt文本与证据锚点（见“视觉素材清单”）。</p></div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">交互模块：把研究“玩明白”</h2>
+    <div class="reveal"><p>为避免把统计结论误当成个人诊断，本页交互都以“理解规则与方向”为目标：1）早期响应计算器；2）模型探索器（教育版）；3）脑区簇浏览器（表2/3/4）。每个模块都在数据层标注来源与缺失值处理。</p></div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>论文在Limitations中列出：样本量相对较小、单中心、统计校正可能较宽、需要更大更多少样本验证并探索调节/中介因素；此外AAL图谱分区与空间平滑也可能带来分区不一致与局部信息被“抹平”的问题。</p><p>范围限制：研究只报告基线与第2周结局，因此无法从论文确定其对更长期疗效（例如数月后的缓解、复发）的预测能力。</p><p>下一步：扩大样本并做多中心验证；改进小脑分区（更个体化勾画/图谱）；在保证严谨的前提下优化统计策略。</p></div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>蚓部—颞叶越“合拍”，两周越可能好转。</p></div>
+  </div>
+</section>
 
-        <div class="callout">
-          <strong>重要提醒：</strong>本页为科普解读，不构成医疗建议；研究为住院青少年样本，且需要更大样本验证（见“局限性”）。
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#interactives">先玩交互，再读论文</a>
-          <a class="btn" href="../source/paper.pdf" download>下载论文PDF</a>
-        </div>
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">小脑蚓部（cerebellar vermis）</div>
+        <div class="glossary-def">小脑正中线的一段结构，论文将其作为研究的“种子”区域来计算与大脑的功能连接。</div>
+        <div class="glossary-analogy">像城市的“中轴线”，从这里出发看它和哪些街区更常同步。</div>
       </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">功能连接（FC, functional connectivity）</div>
+        <div class="glossary-def">在静息态fMRI中，用脑区信号自发起伏的同步程度描述两个区域是否“合拍”。</div>
+        <div class="glossary-analogy">两支乐队不用排练也能同时进入高潮，说明它们更合拍。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">静息态fMRI</div>
+        <div class="glossary-def">在不做任务、安静休息时采集的fMRI，用于观察大脑“后台网络”的自发活动。</div>
+        <div class="glossary-analogy">手机不打开任何App时，后台仍有进程在运行。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">BOLD信号</div>
+        <div class="glossary-def">fMRI记录的血氧水平相关信号，用其时间序列来计算功能连接。</div>
+        <div class="glossary-analogy">用“车流量变化”间接反映某片区域的活动热度。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">种子点分析（seed-based FC）</div>
+        <div class="glossary-def">先选定一个脑区（这里是蚓部）作为“种子”，再计算它与全脑每个位置的连接强度。</div>
+        <div class="glossary-analogy">先选一个人，再统计他最常与谁同步出现。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">Fisher r-to-z转换</div>
+        <div class="glossary-def">把相关系数r转换为更适合统计比较的z值。</div>
+        <div class="glossary-analogy">把不同单位的度量换到同一把尺子上比较。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">GRF校正（Gaussian random field correction）</div>
+        <div class="glossary-def">在全脑大量体素上做统计时，用来控制多重比较带来的误报。</div>
+        <div class="glossary-analogy">同时检查很多地方是否漏水，需要更严格标准避免“虚惊一场”。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">HAMD（汉密尔顿抑郁量表）</div>
+        <div class="glossary-def">评估抑郁严重程度的临床量表，论文用其两周下降≥50%定义早期响应。</div>
+        <div class="glossary-analogy">医生使用的标准化“症状打分表”。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">HAMA（汉密尔顿焦虑量表）</div>
+        <div class="glossary-def">评估焦虑症状的量表，论文分析了其下降比例与FC的相关。</div>
+        <div class="glossary-analogy">专门测量“焦虑维度”的另一张评分表。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">ROC/AUC</div>
+        <div class="glossary-def">评估二分类模型区分能力的指标；AUC越大通常代表区分越好。论文报告AUC=0.760。</div>
+        <div class="glossary-analogy">把苹果与梨分开装箱，AUC越高越不容易分错。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">AAL图谱</div>
+        <div class="glossary-def">一种预定义的大脑解剖分区“地图”，论文用它来定义蚓部ROI。</div>
+        <div class="glossary-analogy">按行政区划划分城市，方便统计但不一定最精细。</div>
+      </div>
+      <div class="glossary-item reveal">
+        <div class="glossary-term">经颅磁刺激（TMS）</div>
+        <div class="glossary-def">一种非侵入性脑刺激治疗，论文中住院患者每天进行两次，疗程约两周。</div>
+        <div class="glossary-analogy">像从头皮外给神经回路“轻敲”，尝试改变网络状态。</div>
+      </div>
+  </div>
+</section>
 
-      <figure class="hero-figure">
-        <img src="assets/images/paper_fig1.png" alt="论文图1：基线差异脑图。早期响应组相比未响应组，小脑蚓部与左侧颞叶及颞极等区域功能连接更高；显著性经GRF校正。"/>
-        <figcaption>
-          论文图1（节选）：基线差异。<span class="cite">（证据：PDF第3页表2；PDF第4页图1）</span>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="container content" id="dynamic-content">
-    <!-- sections injected by JS -->
-  </section>
-
-  <section class="container content" id="visual-gallery">
-    <!-- visuals injected by JS -->
-  </section>
-
-  <section class="container content" id="interactive-area">
-    <!-- interactives injected by JS -->
-  </section>
-
-  <section class="container content" id="glossary-area">
-    <!-- glossary injected by JS -->
-  </section>
-
-  <section class="container content" id="faq-area">
-    <!-- FAQ injected by JS -->
-  </section>
-
-  <section class="container content" id="citations">
-    <h2>证据与引用（C编号对照表）</h2>
-    <p class="muted">为便于网页实现与核查，正文用C编号标注关键证据锚点；这里列出每个编号对应的论文位置。</p>
-    <div id="citations-list" class="citations-list"></div>
-  </section>
-</main>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          这项研究研究的是哪类“抑郁”？适用于所有青少年吗？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>研究对象是处于重性抑郁发作的青少年，诊断为重性抑郁障碍或双相障碍的抑郁发作；样本平均年龄15.76岁，女性100/132。论文在局限中指出样本量较小且为单中心，因此不应直接外推到所有青少年或不同就诊场景。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          为什么用“两周”和“下降50%”来定义早期响应？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>论文以HAMD下降≥50%定义早期响应，并只报告基线与第2周结局。引言引用既往研究指出前两周的早期改善对后续响应/缓解具有预测意义，因此两周是一个有临床意义的观察窗。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          治疗具体做了什么？是只吃药吗？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不是。论文描述住院患者在药物治疗基础上，还接受经颅磁刺激（TMS）每天两次，疗程约两周，同时进行常规检查监测安全性。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          我能不能做一次MRI就知道自己会不会好转？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不能。研究结果来自群体统计，论文强调样本量与单中心限制、需要更大样本验证；也没有给出可直接用于个人的临床阈值。此外“连接值”需要特定预处理流程获得，并非普通影像检查能直接读出的指标。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          AUC=0.760是不是已经很准了？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>AUC=0.760表示在本研究样本里模型具有一定区分能力，并给出95%CI 0.678–0.843。但作者强调需要更大、更多少样本验证，因此仍不能当作临床成熟工具。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          治疗后蚓部—额叶连接增强，是否意味着症状一定会好？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不一定。摘要指出治疗后蚓部—右额叶连接的增加出现在所有患者中，提示其与治疗结局无关。论文也提到未观察到某些连接变化与临床症状的显著相关性。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          这能证明“蚓部—颞叶连接导致好转”吗？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不能。本文用的是相关性功能连接与回归建模，可说明关联与区分能力，但不能证明因果机制。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          响应组与未响应组在基线有哪些不同？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>表1显示两组在性别、年龄、药物使用、HAMA、YMRS等差异不显著，但响应组基线HAMD更高（p=0.021）。论文未提供更细的临床分层解释，因此不能进一步推断原因。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          下一步最该验证什么？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>论文提出需要在更大更多少样本中验证并探索调节/中介因素，同时改进小脑分区（更个体化勾画）以提高定位精度。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          论文有没有提供ROC曲线或原始数据可下载？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>正文说明ROC曲线图在补充材料；本文PDF未包含补充材料具体内容，也未提供可下载的原始连接数据。因此本内容包只整理了正文表2–4的簇级信息与论文图像截图。</p></div>
+      </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-title">免责声明</div>
-        <p class="muted" id="disclaimer-text">—</p>
-      </div>
-      <div>
-        <div class="footer-title">如何本地预览</div>
-        <ol class="muted">
-          <li>解压后进入 <code>site/</code> 目录。</li>
-          <li>运行 <code>python -m http.server 8000</code>。</li>
-          <li>浏览器打开 <code>http://localhost:8000</code>。</li>
-        </ol>
-      </div>
-    </div>
-    <div class="muted small">内容包生成时间：<span id="build-time"></span></div>
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
   </div>
 </footer>
 
-<script src="assets/app.js" defer></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

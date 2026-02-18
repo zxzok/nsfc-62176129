@@ -1,65 +1,228 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>用声音识别抑郁：ABAFnet多特征融合模型（语音抑郁检测）</title>
-  <meta name="description" content="ABAFnet融合包络、声谱图、Mel声谱图与OpenSMILE统计特征，用注意力机制与动态加权提升语音抑郁检测。在临床中文朗读语音CNRAC上AUC达0.85±0.04，并分析关键模块与MFCC/Mel相关线索。"/>
-  <link rel="stylesheet" href="styles.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用声音识别抑郁：AI在“听”什么？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <div class="brand">
-        <div class="brand-title">论文科普内容包</div>
-        <div class="brand-subtitle">Attention-based acoustic feature fusion network for depression detection (2024)</div>
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">用声音识别抑郁：AI在“听”什么？</h1>
+    <p class="hero-subtitle">副标题：ABAFnet融合4类声学特征，在临床中文朗读语音上达到AUC 0.85±0.04</p>
+  </div>
+</section>
+
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>抑郁的评估常依赖访谈与量表，既耗时也可能受主观因素影响。研究团队让受试者朗读统一文本，提取4类声音特征，并用注意力机制与“动态加权”把它们融合成一个判断。在临床数据集CNRAC上，融合模型AUC 0.85±0.04、ACC 0.81±0.04，优于任何单一特征。这提示：把“不同角度的声音线索”放在一起，可能更适合做语音辅助筛查。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/table15_accuracy.png" alt="30秒读懂（120–180字）" loading="lazy">
       </div>
-      <nav id="toc" class="toc" aria-label="页面目录"></nav>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>抑郁是一种常见精神障碍，会显著影响身心健康，严重时甚至危及生命。论文指出，在COVID-19暴发后抑郁病例上升，并带来额外的社会经济负担。</p><p>现实临床中，抑郁的评估往往依赖医生访谈与量表，例如HAMD（汉密尔顿抑郁量表）。这些方法虽然重要，但流程可能耗时，结果也可能受到主观因素、医生经验等影响。因此，作者提出需要一种更客观、可扩展的辅助检测方式，尤其是在病例增多、医疗资源紧张时。</p><p>论文将“语音”视为一种有潜力的行为标记：抑郁人群的声音可能在单调度、语速、韵律等方面表现出差异（文中引用多项研究作为背景）。但作者也指出，很多已有方法依赖单一维度的语音特征，可能忽略了语音里“多层次”的信息；而不同特征的形态与尺寸差异很大，直接拼在一起并不容易。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/table5_acc.png" alt="为什么要做这个研究" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（用类比解释方法，约500–800字）</h2>
+    <div class="reveal"><p>可以把一段朗读语音想象成一部“电影”：它既有随时间变化的剧情，也有不同频率上的“画面纹理”。作者的策略是：不要只看电影的一个切面，而是同时从四个角度“截屏”，再让模型学会在不同情境下给每个角度分配合适的权重。</p><p>第一步是把原始录音“剪辑干净”。作者使用语音活动检测（VAD）去掉静音和非人声片段，并把临床录音从44.1 kHz重采样到16 kHz，以降低计算量并保持人声所需频段。</p><p>第二步是做四种特征提取：  <br>(1) <strong>包络（Envelope）</strong>：像“声音能量随时间的起伏曲线”，能反映节奏与能量变化。  <br>(2) <strong>声谱图（Spectrogram）</strong>：把声音变成“时间×频率”的热力图，捕捉频率结构如何随时间变化。  <br>(3) <strong>Mel声谱图（Mel-spectrogram）</strong>：与声谱图类似，但频率刻度更贴近人耳感知，更容易抓到细微变化。  <br>(4) <strong>HSFs（OpenSMILE emoLarge统计特征）</strong>：用OpenSMILE提取大量人类语音学常用指标，并做统计汇总；论文提到该特征集共提取6552维特征。</p><p>第三步是把不同形态的特征“分别用合适的工具加工”，再融合。作者提出的模型ABAFnet包含三块关键模块：  <br>(1) <strong>TAC（Type-Adaptive CNN）</strong>：针对“图像型特征”（声谱图、Mel声谱图等）与“数值向量型特征”（HSFs）用不同卷积方式处理，相当于给不同材料选不同刀具。  <br>(2) <strong>LAM（LSTM + Attention）</strong>：语音是时间序列，LAM用LSTM捕捉长短期依赖，再用注意力机制对不同时间片段分配关注度。  <br>(3) <strong>LLFN + DWA（线性后融合 + 动态权重调整）</strong>：最后把四路特征线性融合，但权重不是固定的，而是由DWA根据训练过程中的评价指标动态调整（公式14–17）。</p><p>训练与评估方面，作者在CNRAC上采用7:2:1划分训练/验证/测试，并用10折交叉验证降低随机划分带来的波动；训练使用早停策略（patience=5），在Tesla A100上运行。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：把四种特征“合在一起”，效果明显优于单一特征</h2>
+    <div class="reveal"><p>通俗说法：只看一种“声音线索”不够稳；把多种线索融合，模型更能区分“抑郁 vs 非抑郁”。  <br>关键证据：在CNRAC二分类任务上，融合模型ACC 0.81±0.04、AUC 0.85±0.04；而单一特征中表现最好的是Mel-spectrogram（ACC 0.75±0.05、AUC 0.80±0.03）。  <br>这意味着什么：不同特征携带的信息互补；融合策略可能更适合真实语音里复杂、异质的抑郁线索。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：模型不仅能做“有没有抑郁”，也能区分一定程度的严重度，但任务难度不一样</h2>
+    <div class="reveal"><p>通俗说法：把“健康 vs 不同严重度”分开来看，模型在一些对比上非常强；但“不同严重度之间互相区分”更难。  <br>关键证据：在CNRAC的亚型任务中，“NC vs Moderate”的AUC达到0.95±0.04；而“Inter-Subtype（如Mild vs Moderate）”的AUC为0.79±0.22，且标准差更大。  <br>这意味着什么：语音线索对“健康与中重度差异”可能更明显，但在相邻严重度之间，差异更细微、模型更容易不稳定。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：关键模块与关键特征都“确实起作用”，其中MFCC/Mel相关线索被反复指向</h2>
+    <div class="reveal"><p>通俗说法：模型里并不是每一块都可有可无；同时，跟Mel谱与MFCC相关的特征，在解释性分析里占了大头。  <br>关键证据（模型模块）：消融实验中，去掉LSTM后ACC从0.81下降到0.65，F1从0.70下降到0.48；去掉Attention或DWA也会使指标下降，尤其DWA会让Precision与F1降到约0.5。  <br>关键证据（特征层面）：作者对HSFs做统计检验与随机森林重要性分析后，32个显著差异特征中，MFCC相关与Mel谱相关各占43.75%，合计87.5%。  <br>这意味着什么：时间序列建模（LSTM）与动态加权融合（DWA）是提升性能的重要原因；而与人耳感知相关的Mel/MFCC线索，可能是语音抑郁检测里更稳定的“信号来源”。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（区分“证据支持”与“合理推测”）</h2>
+    <div class="reveal"><p>证据支持的：  <br>(1) 在作者的临床朗读语音场景（CNRAC）中，这套多特征融合模型比多种对比深度模型表现更好（例如相对DepAudioNet的F1提升，论文给出对比结果）。这说明它在该数据与任务设置下有效。  <br>(2) 模型权重迁移验证显示：在“先用CNRAC训练、再到CS-NRAC测试”的设置下，Transfer Validation达到ACC 0.89±0.02、F1 0.89±0.03。</p><p>合理推测但论文未直接验证的：  <br>(1) 若结合标准化录音流程（安静环境、统一朗读文本），ABAFnet可能用于大规模筛查的初筛环节，帮助把“需要进一步评估的人群”更快找出来；但这需要更多多中心数据与真实应用流程验证。  <br>(2) 若未来加入更自然的对话、电话语音、不同口音/设备，模型是否仍稳定，论文未给出结论。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步（必须写）</h2>
+    <div class="reveal"><p>(1) <strong>外部验证受数据分布影响</strong>：作者指出CS-NRAC中“抑郁样本较少”，不足以全面验证二分类能力；并且PHQ-9阈值划分本身存在可靠性讨论，因此作者采用“阈值区间”做更细评估。  <br>(2) <strong>训练与特征提取更耗时</strong>：与端到端模型相比，ABAFnet因为要提取并处理四类特征，训练耗时更长；论文在复杂度分析中讨论了这一点。  <br>(3) <strong>人群差异与潜在偏倚仍需关注</strong>：附录B给出了性别与年龄相关的补充实验结果，显示不同子群体指标存在差异（例如G-C male与female的Accuracy不同）。  <br>下一步：论文强调使用更高质量数据与更全面的验证来推进语音抑郁检测的发展，但具体的多场景落地路径仍需后续研究补齐。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">隐私与伦理（公众关心但常被忽略）</h2>
+    <div class="reveal"><p>论文声明：两套数据（CNRAC与CS-NRAC）均取得参与者知情同意，并分别通过伦理审批（给出伦理批号）。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p><strong>多特征融合，让语音抑郁检测更稳。</strong></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">术语小词典（公众版）</h2>
+    <div class="reveal"><p>1. <strong>VAD（语音活动检测）</strong>：自动找到“有人说话”的片段并剪掉静音/噪声；像给录音做“粗剪辑”。  <br>2. <strong>重采样（Resampling）</strong>：把录音的采样率从高到低统一，减少计算量；像把高清视频压缩到合适分辨率。  <br>3. <strong>声谱图（Spectrogram）</strong>：把声音变成“时间×频率”的图；像把音乐变成一张随时间变化的“指纹图”。  <br>4. <strong>Mel声谱图</strong>：声谱图的“人耳版”频率刻度；像把尺子换成更符合人类听觉的刻度。  <br>5. <strong>MFCC</strong>：从Mel谱提取的压缩表征，常用于语音识别；像把复杂图案压缩成一串更好比较的数字。  <br>6. <strong>OpenSMILE</strong>：一个提取语音特征的开源工具箱；像“语音体检仪”，一次能输出很多指标。  <br>7. <strong>LSTM</strong>：擅长处理序列数据的神经网络；像能记住“前文剧情”的读者。  <br>8. <strong>注意力机制（Attention）</strong>：让模型自动更关注关键片段；像在长对话里用荧光笔标出重点。  <br>9. <strong>特征融合（Feature Fusion）</strong>：把多种信息合成一个判断；像把体温、血压、心率一起看。  <br>10. <strong>AUC</strong>：衡量模型区分两类的整体能力，0.5≈随机，1≈完美；像“把两类拉开距离”的程度。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">FAQ（从公众角度提问）</h2>
+    <div class="reveal"><p><strong>Q1：这是不是说“只要说话就能诊断抑郁”？</strong>  <br>A：不是。论文做的是在特定录音与朗读任务下的机器学习分类实验，且CS-NRAC部分也强调PHQ-9只是筛查工具而非临床诊断。</p><p><strong>Q2：我能不能用它给自己做自测？</strong>  <br>A：论文未提供可用于个人自测的产品或阈值，也未报告在家庭/手机随录场景的可靠性。更重要的是，抑郁评估需要专业人士综合判断。</p><p><strong>Q3：模型为什么要用4种特征，不能只用一种吗？</strong>  <br>A：论文显示融合模型优于任何单一特征；例如AUC 0.85±0.04（融合）高于0.80±0.03（Mel-spectrogram单独）。作者也从引言提出“单一特征可能忽略多层信息”。</p><p><strong>Q4：哪一种特征最关键？</strong>  <br>A：不同实验侧重点不同。作者的特征贡献分析显示，去掉Mel-spectrogram会带来最大性能下降之一，并且在HSFs解释性分析里，MFCC与Mel谱相关特征占87.5%。</p><p><strong>Q5：为什么“NC vs Mild”的Precision很低？是不是模型不行？</strong>  <br>A：表7显示“NC vs Mild”Precision均值较低且标准差很大（0.25±0.27），说明该任务可能更难或数据分布不稳定；论文同时指出样本分布不平衡会影响亚型实验，需要随机下采样平衡。</p><p><strong>Q6：模型在不同性别/年龄上公平吗？</strong>  <br>A：论文做了补充实验，分别在男性、女性、以及13–25岁人群上报告指标；结果显示不同组的Accuracy等指标不同，因此仍需更多验证与更均衡数据。</p><p><strong>Q7：这项工作会不会侵犯隐私？</strong>  <br>A：论文说明数据采集获得知情同意并通过伦理审批；但如果未来落地到真实产品，仍需要额外的隐私保护与合规设计（论文未展开）。</p><p><strong>Q8：为什么还要讨论PHQ-9阈值？</strong>  <br>A：作者在CS-NRAC上做“迁移/筛查”评估时指出PHQ-9阈值划分存在可靠性争议，因此在阈值区间（如3–5与8–10）做了对比，并报告不同阈值下的指标。</p><p><strong>Q9：模型跑得快吗？</strong>  <br>A：论文的复杂度分析显示，ABAFnet训练耗时更长，原因是需要提取并处理四种特征；这在真实部署中可能带来成本，需要权衡。</p><p><strong>Q10：论文的代码或数据在哪里？</strong>  <br>A：论文提供了代码仓库地址，并说明“语音统计特征可在合理请求下获取”。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">统一免责声明（科普用途）</h2>
+    <div class="reveal"><p>本页面仅用于科研科普与方法解读，不构成医疗建议或诊断依据。若你或身边的人正在经历情绪困扰，请及时联系专业医疗机构或心理健康服务。</p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/table12_recall.png" alt="table12 recall" loading="lazy">
+          <div class="visual-card-body">
+            <p>table12 recall</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table15_accuracy.png" alt="table15 accuracy" loading="lazy">
+          <div class="visual-card-body">
+            <p>table15 accuracy</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table5_acc.png" alt="table5 acc" loading="lazy">
+          <div class="visual-card-body">
+            <p>table5 acc</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table9_f1.png" alt="table9 f1" loading="lazy">
+          <div class="visual-card-body">
+            <p>table9 f1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table5_auc.png" alt="table5 auc" loading="lazy">
+          <div class="visual-card-body">
+            <p>table5 auc</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table7_auc.png" alt="table7 auc" loading="lazy">
+          <div class="visual-card-body">
+            <p>table7 auc</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/datasets_cards.svg" alt="datasets cards" loading="lazy">
+          <div class="visual-card-body">
+            <p>datasets cards</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/abafnet_schematic.svg" alt="abafnet schematic" loading="lazy">
+          <div class="visual-card-body">
+            <p>abafnet schematic</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/metrics_explainer.svg" alt="metrics explainer" loading="lazy">
+          <div class="visual-card-body">
+            <p>metrics explainer</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/pipeline_schematic.svg" alt="pipeline schematic" loading="lazy">
+          <div class="visual-card-body">
+            <p>pipeline schematic</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main" class="container" role="main">
-    <section id="hero" class="hero" aria-label="页面标题区">
-      <h1 id="page-title"></h1>
-      <p id="page-subtitle" class="subtitle"></p>
-      <p class="meta" id="page-meta"></p>
-    </section>
 
-    <section id="sections" aria-label="正文内容"></section>
 
-    <section id="visuals" aria-label="图文并茂">
-      <h2>图文并茂</h2>
-      <p class="hint">本页包含“概念重绘”示意图与基于论文表格重绘的图表。论文原图（如Fig.1–6）如需复用，请确认版权与许可。</p>
-      <div id="visual-grid" class="grid"></div>
-    </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-    <section id="interactives" aria-label="交互模块">
-      <h2>交互模块</h2>
-      <p class="hint">这些交互仅用于帮助理解论文结果，不构成医疗建议或诊断依据。</p>
-      <div id="modules"></div>
-    </section>
-
-    <section id="downloads" aria-label="下载与数据">
-      <h2>数据文件</h2>
-      <p>站点同目录下 <code>data/</code> 提供论文表格重排后的CSV/JSON，可直接用于可视化或二次开发（数据来源见各文件名与页面引用）。</p>
-      <ul>
-        <li><code>data/table5_cnrac_metrics.csv</code> / <code>.json</code>（第8页表5）</li>
-        <li><code>data/table7_cnrac_subtype.csv</code> / <code>.json</code>（第9页表7）</li>
-        <li><code>data/table9_ablation.csv</code> / <code>.json</code>（第9页表9）</li>
-        <li><code>data/table12_csnrac_thresholds.csv</code> / <code>.json</code>（第11页表12）</li>
-      </ul>
-    </section>
-
-    <footer class="site-footer" role="contentinfo">
-      <p id="disclaimer"></p>
-      <p class="small">Generated package: static site + content JSON + data tables + original illustrations.</p>
-    </footer>
-  </main>
-
-  <script src="content.js"></script>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

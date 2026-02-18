@@ -1,56 +1,245 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>页面预览</title>
-  <meta name="description" content="" />
-  <link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>心理问卷不只看答案：把“作答时间”也变成数据</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <p class="kicker">科研成果公众传播 · 网页内容包预览</p>
-      <h1 id="page-title">加载中…</h1>
-      <p id="page-subtitle" class="subtitle"></p>
-      <p id="page-evidence" class="evidence"></p>
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">心理问卷不只看答案：把“作答时间”也变成数据</h1>
+    <p class="hero-subtitle">_24,292名大学生的PHQ-9、GAD-7、ISI、PSS作答记录与逐题秒级作答时间开放数据集（Scientific Data, 2024）_</p>
+  </div>
+</section>
+
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>线上心理筛查很方便，但在“自由环境”里，有人可能不认真作答，导致结果失真。  <br>这篇论文发布一份来自校园筛查的开放数据集：不仅保存四个常用量表的逐题答案，还记录每一题用了多少秒。  <br>作者报告：ISI与PSS的总作答时间分布呈明显双峰，并在约12秒（ISI）与23秒（PSS）附近出现拐点；题目字数每多1个词，作答时间平均约多0.075秒。  <br>这让研究者能用更客观的行为线索识别潜在无效问卷，并改进线上筛查与量表设计。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/dataset_files.svg" alt="30秒读懂（120–180字）" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究：线上筛查“快”，但也容易“失真”</h2>
+    <div class="reveal"><p>心理健康问题上升，使大规模、互联网化的心理筛查越来越常见：它能让更多人快速获得“初步线索”，也有助于更早介入与治疗。  <br>但论文也指出：互联网评估结果与临床诊断之间仍可能存在差距；在自由环境下，部分参与者可能不认真作答。文献中“粗心作答”（careless responding, CR）的比例可从1%到50%不等，足以改变变量关系、影响研究结论。  <br>因此，作者希望引入一种更客观的补充信号：<strong>作答时间（response time, RT）</strong>——每道题从出现到点击选项之间的秒数。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/rt_logging.svg" alt="为什么要做这个研究：线上筛查“快”，但也容易“失真”" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的：把问卷变成“带秒表的答题轨迹”</h2>
+    <div class="reveal"><p>你可以把一份线上量表想成一条“站点路线”：每道题是一站。你在这一站停留多久（作答时间），就像你在站台上等车的时间——它不等同于你“答了什么”，但能提示你“怎么答的”。</p><p>这项研究基于新乡医学院一次覆盖全校的心理筛查项目。研究在2021年2月27日至3月17日进行，学生自愿参加；研究通过伦理审批，并在问卷开始前在线获取知情同意（含数据共享同意）。  <br></p><p><strong>问卷内容与顺序：</strong>参与者先填写人口学信息，再按固定顺序完成四个量表：PHQ-9、GAD-7、PSS、ISI，用于评估抑郁、焦虑、压力与睡眠相关维度。论文说明使用的是量表的中文版本；量表题目文本与计分细节在补充材料与GitHub仓库中提供。  <br></p><p><strong>作答时间如何记录：</strong>研究使用一个网页版应用（可通过二维码或URL在浏览器打开）。系统在参与者进入新题目时记录一次时间戳，在参与者选择答案时再记录一次时间戳，两者差值即该题作答时间RT；单位为秒，精确到小数点后两位。  <br></p><p><strong>数据整理与质量控制：</strong>共有24,367人完成问卷，其中75份因缺失值被剔除，最终纳入24,292人。论文也提醒：网络条件可能影响作答时间记录，但采集发生在同一校园内，地域差异被认为较小。  <br></p><p><strong>数据以5个CSV发布：</strong>1个人口学文件 + 4个量表文件。每个量表文件同时包含总分（score）、逐题得分（questionX）和逐题作答时间（timeX，秒），并可通过export_id与人口学文件联表。论文说明原始与清洗后的数据均已匿名化，并在Zenodo平台发布。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么：三个最重要的观察</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：大多数人处在较低症状/压力区间，但仍存在“长尾”的更高等级人群</h2>
+    <div class="reveal"><p>论文给出了四个量表的等级分布。例如：PHQ-9中“最轻”占69.51%（16,886人）；GAD-7中“最轻”占83.03%（20,170人）；ISI中“无临床意义失眠”占90.94%（22,090人）；PSS中“中等压力”占61.27%（14,884人），同时仍有“高/很高压力”等更高等级人群。  <br>这意味着：即使在同一校园的大样本中，心理状态也呈现明显异质性。对筛查系统而言，既要关注“少数更高风险”的尾部，也要保证整体数据可靠，避免无效作答把分布“扭曲”。  <br></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：把“总作答时间”加进来后，ISI与PSS出现明显双峰，并在约12秒/23秒附近出现拐点</h2>
+    <div class="reveal"><p>论文在Fig.1中展示了四个量表的总分分布与总作答时间分布，并指出：ISI与PSS的作答时间分布呈明显双峰；作者观察到约12秒（ISI）与23秒（PSS）附近的拐点，并倾向把更短作答时间人群视为可能存在粗心作答，需要在分析中谨慎对待。  <br>这意味着：仅看分数，可能分不清“真的没问题”与“随便点了几下”。作答时间提供了一个额外维度，用来提示“哪些回答可能更不可靠”。  <br></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：题目字数越多，平均作答越慢：每多1个词≈多0.075秒</h2>
+    <div class="reveal"><p>论文用广义线性混合模型（GLMM）检验“字数—作答时间”的关系，报告word count的系数为0.075（SE=0.001，p<0.001），并解释为“每增加一个词，作答时间约增加0.075秒”。  <br>这意味着：作答时间不仅与认真程度相关，也会被题干长度与阅读负担影响。对于量表设计者来说，这提供了一个可量化的“时间成本”线索：题目更长，平均会更费时间。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用：证据支持的应用与需要克制的边界</h2>
+    <div class="reveal"><p><strong>论文明确提出的潜在应用：</strong>  <br><ul><li>研究COVID-19背景下大学生心理状态；2）用作答时间异常识别无效/粗心作答；3）基于作答行为模式分型；4）为量表与问卷改版提供依据、提升线上筛查效率与准确性。  </li><br></ul></p><p><strong>需要保持克制的边界：</strong>  <br>论文强调作答时间的影响因素复杂，可能来自认真思考，也可能来自分心或外界干扰；同时自评问卷存在社会称许性与回忆偏差。  <br>因此，作答时间不应被当作“个人诊断”依据，更不应单独用来判断某个个体是否“真实”或“异常”。它更适合用于群体研究与数据质量控制。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">数据与代码在哪里：如何复用这份资源</h2>
+    <div class="reveal"><p>论文说明数据以5个CSV文件（含原始与清洗版本）发布在Zenodo平台；并提供用于格式化、清洗与质控的Python代码仓库。  <br></p><p>在本内容包中，我们<strong>不直接附带原始数据</strong>（体量较大，且建议以论文提供的官方仓库为准），但附带：  <br><ul><li>可直接上线的页面文案与结构化JSON；  </li><br><li>论文Fig.1与Fig.2的可复用图片；  </li><br><li>可执行的交互模块与数据结构（JSON schema）；  </li><br><li>一个可选的脚本模板：读入CSV后自动生成交互所需的“直方图分箱”和“逐题中位数/标准差”等衍生数据文件。  </li><br></ul></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步：论文自己说了什么</h2>
+    <div class="reveal"><p>论文在局限性部分明确指出三点：  <br>其一，自评问卷存在社会称许性与回忆偏差；其二，样本主要来自单一学校，限制推广性；其三，作答时间的变化原因复杂，需要审慎处理并考虑潜在变量。  <br>由此推得的下一步通常包括：在更多地区/人群重复采集类似数据，检验“作答时间—可靠性”的稳定性；并发展方法区分“慢是认真”还是“慢是被打断”，降低误判风险。  <br></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p><strong>把“作答时间”加入问卷，让线上筛查更可靠。</strong>  <br></p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/fig1.png" alt="fig1" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/dataset_files.svg" alt="dataset files" loading="lazy">
+          <div class="visual-card-body">
+            <p>dataset files</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/rt_logging.svg" alt="rt logging" loading="lazy">
+          <div class="visual-card-body">
+            <p>rt logging</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/cr_rt_concept.svg" alt="cr rt concept" loading="lazy">
+          <div class="visual-card-body">
+            <p>cr rt concept</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/wordcount_effect.svg" alt="wordcount effect" loading="lazy">
+          <div class="visual-card-body">
+            <p>wordcount effect</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/cleaning_flow.svg" alt="cleaning flow" loading="lazy">
+          <div class="visual-card-body">
+            <p>cleaning flow</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/four_scales.svg" alt="four scales" loading="lazy">
+          <div class="visual-card-body">
+            <p>four scales</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/reuse_pipeline.svg" alt="reuse pipeline" loading="lazy">
+          <div class="visual-card-body">
+            <p>reuse pipeline</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/participants_profile.svg" alt="participants profile" loading="lazy">
+          <div class="visual-card-body">
+            <p>participants profile</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig1_thumb.jpg" alt="fig1 thumb" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1 thumb</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2_thumb.jpg" alt="fig2 thumb" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2 thumb</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2.jpeg" alt="fig2" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <nav class="site-nav" aria-label="页面目录">
-    <div class="container">
-      <ul id="toc"></ul>
-    </div>
-  </nav>
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">术语小词典（面向公众）</div>
+        <div class="glossary-def">> 说明：每个术语都尽量用“一句话解释 + 一个类比”来帮助非专业读者理解；并给出论文证据位置。</div>
+        
+      </div>
+  </div>
+</section>
 
-  <main id="main" class="container" role="main">
-    <section id="sections-root" aria-label="页面正文"></section>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（公众常见问题）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>1. <strong>这是不是在做“临床诊断”？</strong>  <br>不是。论文指出互联网评估系统与临床诊断之间仍可能存在差距；线上量表更适合用于初筛与研究，而非替代临床诊断。  <br></p><p>2. <strong>作答时间很短，就一定是在乱填吗？</strong>  <br>不一定。论文在分布图中观察到短作答时间群体，并“倾向”将其视作可能存在粗心作答，需要谨慎处理；但论文也强调作答时间受多因素影响，从认真思考到分心干扰都可能导致变化，因此不能把“快/慢”简单等同于“真/假”。  <br></p><p>3. <strong>这份数据里的人是谁？能代表所有人吗？</strong>  <br>数据来自新乡医学院一次校园筛查，最终纳入24,292名学生。论文明确提示：样本主要来自单一学校，可能限制结论推广到更广泛人群或不同文化、社会经济背景。  <br></p><p>4. <strong>数据是什么时候收集的？为什么提到COVID-19？</strong>  <br>数据收集时间为2021年2月27日至3月17日。论文说明在COVID-19限制下采集活动限于校园内，并认为该背景为研究疫情期间学生心理状态提供了情境。  <br></p><p>5. <strong>数据文件里到底有什么？我能拿来做什么？</strong>  <br>论文以5个CSV发布：人口学信息一个文件，四个量表各一个文件。量表文件含总分score、逐题得分questionX与逐题作答时间timeX（秒），可用export_id联表。论文提出的用途包括：心理状态画像、识别无效/粗心作答、按作答模式分型、改进问卷设计。  <br></p><p>6. <strong>研究怎么处理缺失数据？</strong>  <br>共有24,367人完成问卷，其中75人因缺失值被排除，最终数据集为24,292人。  <br></p><p>7. <strong>论文提到“12秒/23秒拐点”，我可以把它当成筛查阈值吗？</strong>  <br>不建议直接当作通用阈值。论文是在描述该数据集中ISI与PSS总作答时间的分布形态与拐点，并提醒更短作答时间群体可能存在粗心作答、需要谨慎处理；不同平台、人群与场景下分布可能不同。  <br></p><p>8. <strong>题目字数影响0.075秒/词，是不是说明“想得久就更有问题”？</strong>  <br>不是。这个结果说明“题干更长会让人花更多时间阅读与作答”，属于问卷设计与阅读负担层面的统计关系，不能等同于心理问题严重程度。  <br></p><p>9. <strong>数据有隐私风险吗？研究合规吗？</strong>  <br>论文说明研究通过伦理审批、在线获取知情同意，并在发布前对数据进行匿名化处理。  <br></p><p>10. <strong>我能用这份数据做自测或替代咨询吗？</strong>  <br>不能。论文讨论的是数据集与群体层面的统计观察，不构成对个人的诊断建议；有心理困扰应寻求专业医疗或心理服务。  <br></p></div>
+      </div>
+  </div>
+</section>
 
-    <section id="visuals" aria-label="视觉元素">
-      <h2>图文并茂</h2>
-      <p class="hint">说明：SVG示意图可直接上线使用；Fig.1/Fig.2来自论文原图复用（请按CC BY 4.0署名）。</p>
-      <div id="visual-grid" class="grid"></div>
-    </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-    <section id="interactions" aria-label="交互模块">
-      <h2>交互模块（示例）</h2>
-      <p class="hint">这里展示“可落地交互”的信息结构与一个可直接运行的小计算器示例。</p>
-      <div id="modules-root" class="stack"></div>
-    </section>
-
-    <section id="disclaimer" aria-label="免责声明">
-      <h2>免责声明</h2>
-      <p id="disclaimer-text" class="disclaimer"></p>
-    </section>
-
-    <footer class="site-footer" role="contentinfo">
-      <p class="small">本预览页用于快速检查文案结构与引用锚点；正式上线请接入你的网站组件与数据管线。</p>
-    </footer>
-  </main>
-
-  <script src="page_data.js"></script>
-  <script src="app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

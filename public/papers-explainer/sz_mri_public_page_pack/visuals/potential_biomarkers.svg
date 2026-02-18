@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">潜在结构线索：左上颞回与左梭状回</title>
+<desc id="desc">信息图强调未用药患者相对健康对照在左上颞回与左梭状回的GMV降低，提示可能较少受药物影响。</desc>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<text x="60" y="80" font-size="36" font-family="Arial" font-weight="700">未用药也能看到的结构差异线索</text>
+<text x="60" y="125" font-size="22" font-family="Arial">论文报告：未用药患者相对健康对照在两个区域GMV降低</text>
+<rect x="60" y="170" width="520" height="420" rx="16" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+<text x="90" y="240" font-size="28" font-family="Arial" font-weight="700">左上颞回</text>
+<text x="90" y="285" font-size="22" font-family="Arial">与语言/听觉加工相关的区域之一</text>
+<text x="90" y="335" font-size="22" font-family="Arial">未用药 vs 健康：GMV降低（论文报告）</text>
+<rect x="620" y="170" width="520" height="420" rx="16" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+<text x="650" y="240" font-size="28" font-family="Arial" font-weight="700">左梭状回</text>
+<text x="650" y="285" font-size="22" font-family="Arial">与视觉识别（如面孔/物体）相关的区域之一</text>
+<text x="650" y="335" font-size="22" font-family="Arial">未用药 vs 健康：GMV降低（论文报告）</text>
+<text x="60" y="630" font-size="20" font-family="Arial">注：这些是“潜在线索”，不是已验证的临床诊断工具。</text>
+</svg>

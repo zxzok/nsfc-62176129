@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
+<rect width="100%" height="100%" fill="white"/>
+<text x="20" y="40" font-size="20" font-family="Arial" font-weight="bold">ABAFnet overview (Fig.2 concept)</text>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L10,3 L0,6 Z" fill="#333" />
+  </marker>
+</defs>
+<rect x="20" y="70" width="180" height="55" fill="#ffffff" stroke="#333" rx="10"/>
+<text x="110" y="102" font-size="14" font-family="Arial" text-anchor="middle">Envelope</text>
+<rect x="20" y="140" width="180" height="55" fill="#ffffff" stroke="#333" rx="10"/>
+<text x="110" y="172" font-size="14" font-family="Arial" text-anchor="middle">Spectrogram</text>
+<rect x="20" y="210" width="180" height="55" fill="#ffffff" stroke="#333" rx="10"/>
+<text x="110" y="242" font-size="14" font-family="Arial" text-anchor="middle">Mel-spectrogram</text>
+<rect x="20" y="280" width="180" height="55" fill="#ffffff" stroke="#333" rx="10"/>
+<text x="110" y="312" font-size="14" font-family="Arial" text-anchor="middle">HSFs (OpenSMILE)</text>
+<rect x="240" y="110" width="160" height="180" fill="#f5f5f5" stroke="#333" rx="12"/>
+<text x="320" y="145" font-size="16" font-family="Arial" font-weight="bold" text-anchor="middle">TAC</text>
+<text x="320" y="170" font-size="12" font-family="Arial" text-anchor="middle">Type-Adaptive CNN</text>
+<text x="320" y="190" font-size="12" font-family="Arial" text-anchor="middle">feature extraction</text>
+<rect x="440" y="110" width="160" height="180" fill="#f5f5f5" stroke="#333" rx="12"/>
+<text x="520" y="145" font-size="16" font-family="Arial" font-weight="bold" text-anchor="middle">LAM</text>
+<text x="520" y="170" font-size="12" font-family="Arial" text-anchor="middle">LSTM + Attention</text>
+<text x="520" y="190" font-size="12" font-family="Arial" text-anchor="middle">temporal modeling</text>
+<rect x="640" y="130" width="140" height="140" fill="#f5f5f5" stroke="#333" rx="12"/>
+<text x="710" y="165" font-size="16" font-family="Arial" font-weight="bold" text-anchor="middle">LLFN</text>
+<text x="710" y="190" font-size="12" font-family="Arial" text-anchor="middle">Linear late fusion</text>
+<text x="710" y="210" font-size="12" font-family="Arial" text-anchor="middle">+ DWA weights</text>
+<rect x="640" y="300" width="140" height="55" fill="#ffffff" stroke="#333" rx="10"/>
+<text x="710" y="332" font-size="14" font-family="Arial" text-anchor="middle">Depression / Control</text>
+<line x1="200" y1="97" x2="240" y2="97" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="200" y1="167" x2="240" y2="167" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="200" y1="237" x2="240" y2="237" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="200" y1="307" x2="240" y2="307" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="400" y1="200" x2="440" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="600" y1="200" x2="640" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="710" y1="270" x2="710" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

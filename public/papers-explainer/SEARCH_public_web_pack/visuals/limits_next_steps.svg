@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Limitations and next steps</title>
+  <desc id="desc">Two-column summary lists key limitations of the SEARCH first-wave report and the next steps proposed in the discussion.</desc>
+  <rect x="0" y="0" width="900" height="520" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="40" y="55" font-size="26" font-weight="bold">Limitations &amp; next steps</text>
+    <text x="40" y="85" font-size="14">Source: Discussion (p.5–6)</text>
+  </g>
+  <g stroke="black" stroke-width="3" fill="none">
+    <rect x="60" y="120" width="360" height="360" rx="14"/>
+    <rect x="480" y="120" width="360" height="360" rx="14"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="black">
+    <text x="90" y="160" font-size="20" font-weight="bold">Limitations</text>
+    <text x="90" y="200" font-size="14">• Localised recruitment in Jiangsu</text>
+    <text x="90" y="228" font-size="14">• ~98% Han Chinese in initial sample</text>
+    <text x="90" y="256" font-size="14">• General school population (not clinical)</text>
+    <text x="90" y="284" font-size="14">• No biological samples reported in early stage</text>
+    <text x="90" y="312" font-size="14">• COVID-19 impacts differed across sites</text>
+
+    <text x="510" y="160" font-size="20" font-weight="bold">Next steps</text>
+    <text x="510" y="200" font-size="14">• Nationwide validation with broader pool</text>
+    <text x="510" y="228" font-size="14">• Design saliva sample collection protocol</text>
+    <text x="510" y="256" font-size="14">• Analyses consider COVID timing effects</text>
+  </g>
+</svg>

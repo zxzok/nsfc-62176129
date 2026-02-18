@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">BPRS与GMV/ALFF相关信息图</title>
+<desc id="desc">表格式信息图指出GMV与BPRS多处正相关，而ALFF与BPRS无显著相关，并提醒相关不等于诊断或个体预测。</desc>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<text x="60" y="80" font-size="36" font-family="Arial" font-weight="700">症状（BPRS）与影像指标：相关≠诊断</text>
+<text x="60" y="125" font-size="22" font-family="Arial">论文：GMV与BPRS多处正相关；ALFF与BPRS无显著相关</text>
+<rect x="60" y="180" width="420" height="60" fill="#F2F4F7" stroke="#98A2B3"/>
+<rect x="480" y="180" width="420" height="60" fill="#F2F4F7" stroke="#98A2B3"/>
+<rect x="900" y="180" width="420" height="60" fill="#F2F4F7" stroke="#98A2B3"/>
+<text x="80" y="220" font-size="22" font-family="Arial" font-weight="700">指标</text>
+<text x="500" y="220" font-size="22" font-family="Arial" font-weight="700">与BPRS相关？</text>
+<text x="920" y="220" font-size="22" font-family="Arial" font-weight="700">说明</text>
+<rect x="60" y="240" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="80" y="278" font-size="20" font-family="Arial">GMV（灰质体积）</text>
+<rect x="480" y="240" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="500" y="278" font-size="20" font-family="Arial">是（多处正相关）</text>
+<rect x="900" y="240" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="920" y="278" font-size="20" font-family="Arial">更像随“状态/治疗”变化的结构指标</text>
+<rect x="60" y="300" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="80" y="338" font-size="20" font-family="Arial">ALFF（低频振幅）</text>
+<rect x="480" y="300" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="500" y="338" font-size="20" font-family="Arial">否（无显著相关）</text>
+<rect x="900" y="300" width="420" height="60" fill="#ffffff" stroke="#98A2B3"/>
+<text x="920" y="338" font-size="20" font-family="Arial">更像稳定特质；不能做症状定量评估</text>
+<text x="60" y="640" font-size="20" font-family="Arial">提示：相关来自组水平统计，不等于个人预测或临床结论。</text>
+</svg>

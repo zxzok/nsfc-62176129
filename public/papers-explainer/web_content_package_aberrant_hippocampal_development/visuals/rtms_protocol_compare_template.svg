@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">rTMS方案对照模板</title>
+  <desc id="desc">左右两栏分别用于填写动物与临床rTMS参数，包括频率、on/off、脉冲数、时长与疗程。</desc>
+  <rect width="1200" height="675" fill="white"/>
+  <text x="60" y="70" font-size="34" font-family="Arial, sans-serif" fill="#111">rTMS方案对照（模板）</text>
+  <!-- Cards -->
+  <rect x="60" y="120" width="520" height="480" rx="18" fill="#f7f7f7" stroke="#333" stroke-width="3"/>
+  <rect x="620" y="120" width="520" height="480" rx="18" fill="#f7f7f7" stroke="#333" stroke-width="3"/>
+  <text x="90" y="170" font-size="28" font-family="Arial, sans-serif" fill="#111">动物（大鼠）</text>
+  <text x="650" y="170" font-size="28" font-family="Arial, sans-serif" fill="#111">临床（青少年）</text>
+
+  <!-- Placeholder lines -->
+  <g font-family="Arial, sans-serif" font-size="22" fill="#333">
+    <text x="90" y="220">频率：10 Hz</text>
+    <text x="90" y="260">节律：6 s on / 15 s off</text>
+    <text x="90" y="300">每次脉冲：900</text>
+    <text x="90" y="340">单次时长：5 min 15 s</text>
+    <text x="90" y="380">每日次数：1</text>
+    <text x="90" y="420">疗程：2周（青春期）</text>
+
+    <text x="650" y="220">频率：10 Hz</text>
+    <text x="650" y="260">强度：100% RMT</text>
+    <text x="650" y="300">节律：4 s on / 10 s off</text>
+    <text x="650" y="340">每次脉冲：1200</text>
+    <text x="650" y="380">单次时长：6 min 50 s</text>
+    <text x="650" y="420">每日次数：2 × 10天（共20次）</text>
+  </g>
+
+  <text x="60" y="640" font-size="20" font-family="Arial, sans-serif" fill="#555">注：模板内容已按论文参数预填；如需改版可在此基础上重绘信息图。</text>
+</svg>

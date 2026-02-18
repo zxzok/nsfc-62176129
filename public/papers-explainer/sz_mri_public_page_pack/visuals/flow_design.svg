@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">研究设计：三组比较与两类MRI指标</title>
+<desc id="desc">示意图显示健康对照、用药患者、未用药患者三组均接受结构MRI与静息态fMRI，分别计算GMV与ALFF，并用全脑校正统计比较差异。</desc>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<text x="60" y="80" font-size="36" font-family="Arial" font-weight="700">研究怎么比：三组人 + 两类MRI指标</text>
+<rect x="60" y="150" width="320" height="150" rx="12" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+<text x="80" y="195" font-size="26" font-family="Arial">健康对照 HC</text>
+<text x="80" y="229" font-size="26" font-family="Arial">n=235</text>
+<rect x="420" y="150" width="320" height="150" rx="12" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+<text x="440" y="195" font-size="26" font-family="Arial">用药患者 med-SZ</text>
+<text x="440" y="229" font-size="26" font-family="Arial">n=89</text>
+<text x="440" y="263" font-size="26" font-family="Arial">≥8周用药</text>
+<rect x="780" y="150" width="320" height="150" rx="12" fill="#F2F4F7" stroke="#98A2B3" stroke-width="2"/>
+<text x="800" y="195" font-size="26" font-family="Arial">未用药患者 unmed-SZ</text>
+<text x="800" y="229" font-size="26" font-family="Arial">n=81</text>
+<text x="800" y="263" font-size="26" font-family="Arial">从未用药或≥4周停药</text>
+<text x="60" y="355" font-size="24" font-family="Arial" font-weight="700">同一扫描：</text>
+<rect x="60" y="380" width="520" height="120" rx="12" fill="#E7F0FF" stroke="#2E90FA" stroke-width="2"/>
+<text x="80" y="425" font-size="26" font-family="Arial" font-weight="700">结构MRI → GMV（灰质体积）</text>
+<text x="80" y="465" font-size="22" font-family="Arial">像“材料量”，体素逐块比较（VBM）</text>
+<rect x="620" y="380" width="520" height="120" rx="12" fill="#ECFDF3" stroke="#12B76A" stroke-width="2"/>
+<text x="640" y="425" font-size="26" font-family="Arial" font-weight="700">静息态fMRI → ALFF（低频振幅）</text>
+<text x="640" y="465" font-size="22" font-family="Arial">像“背景嗡鸣强度”，0.01–0.08 Hz</text>
+<rect x="60" y="530" width="1080" height="105" rx="12" fill="#FFF7ED" stroke="#F79009" stroke-width="2"/>
+<text x="80" y="575" font-size="24" font-family="Arial" font-weight="700">统计：全脑比较 + 年龄/性别协变量；p&lt;0.05 FWE校正；簇≥20体素</text>
+<text x="80" y="610" font-size="22" font-family="Arial">患者组对比另加入病程协变量</text>
+</svg>

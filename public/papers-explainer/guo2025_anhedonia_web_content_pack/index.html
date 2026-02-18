@@ -1,208 +1,192 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>抑郁的“快感缺失”，可能不是一条路</title>
-  <meta name="description" content="动物模型 + 748名受试者脑成像：两种相反的“皮层下—感觉运动”模式，能跨物种预测快感缺失。" />
-  <meta name="keywords" content="抑郁,快感缺失,anhedonia,静息态fMRI,ALFF,中间表型,动物模型,P11 KO,CUMS,机器学习分型,PRS,代谢组" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <link rel="stylesheet" href="./styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
+<div class="reading-progress" id="readingProgress"></div>
 
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">抑郁的“快感缺失”，可能不是一条路</h1>
+    <p class="hero-subtitle">副标题：</p>
+  </div>
+</section>
 
-  <header class="site-header">
-    <div class="container">
-      <p class="kicker">科研成果公众传播 · 科研可视化 · 交互式网页内容包</p>
-      <h1>抑郁的“快感缺失”，可能不是一条路</h1>
-      <p class="subtitle">动物模型 + 748名受试者脑成像：两种相反的“皮层下—感觉运动”模式，能跨物种预测快感缺失（证据：第1–2页摘要；第3页 Participants；第6–11页 图2、图6）</p>
 
-      <div class="meta">
-        <p><strong>论文信息：</strong>Guo et al., <em>BMC Medicine</em> (2025) · DOI: 10.1186/s12916-025-03850-4（证据：第1页）</p>
-        <p><strong>阅读提示：</strong>本页面为科普解读，基于论文报告的队列层面统计结果；不构成医疗建议或个人自测工具。（证据：第4–5页方法；第13页 Limitation）</p>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>问题：同样是抑郁里的“快感缺失”，背后更像遗传驱动还是压力驱动？  <br>方法：研究者把两种啮齿动物抑郁模型（P11基因敲除、CUMS慢性应激）与三地共748人的静息态fMRI放到同一把尺子（ALFF）上，用机器学习分出两型。  <br>发现：出现两种相反的皮层下—感觉运动脑活动模式，并能在动物与人类中预测快感缺失。  <br>意义：这些模式可作为跨物种“中间表型”，让动物研究更精准对接到不同人群。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>抑郁症并不是一个“所有人都同一种原因”的疾病。论文指出，它受到遗传与环境压力等多因素影响，因此症状、病程与治疗反应差异很大。</p><p>动物模型能帮助研究抑郁机制，但任何单一模型都不可能完整复刻人类抑郁的全部面貌，这造成从动物到临床的“翻译鸿沟”。这也是为什么很多在动物上有效的线索，到了人群研究和临床试验里并不总能复现。</p><p>作者选择“快感缺失（anhedonia）”作为切口：它是抑郁核心症状之一，既能在遗传模型（P11 KO小鼠）里出现，也能在压力模型（CUMS慢性应激）里出现，但两者背后的神经机制是否一致、与人类抑郁如何对应仍不清楚。</p><p>因此，研究需要一种桥梁：既能在动物和人都测到，又能把“病因线索（基因/压力）—大脑机制—症状体验”串起来。论文把这种桥梁称为“神经影像中间表型”（intermediate phenotype）。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（用类比解释）</h2>
+    <div class="reveal"><p>你可以把静息态fMRI想象成大脑的“后台运行日志”：即使你什么都不做，大脑各区域仍会有缓慢起伏的自发活动。论文用ALFF（低频振幅）来量化这种起伏强度，并把它作为跨物种比较的核心指标。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">1）动物侧：两条“病因路线”的代表</h2>
+    <div class="reveal"><p>研究建立两种常用的抑郁动物模型：  <br>（1）偏遗传路线：P11基因敲除小鼠（11只），对照为野生型小鼠（12只）。  <br>（2）偏压力路线：CUMS慢性不可预期轻度应激大鼠（15只），对照为非应激大鼠（15只）。  <br></p><p>动物行为方面，论文使用蔗糖偏好测试（SPT）、强迫游泳（FST）、旷场测试（OFT）评估抑郁样行为，其中SPT常用于反映“快感缺失”相关的偏好变化。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">2）人类侧：三地748人、同一套量表</h2>
+    <div class="reveal"><p>人类数据来自三地共748名参与者（抑郁412、健康对照336），并用SHAPS量表评估快感缺失、HAMD‑17评估抑郁严重度。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">3）用机器学习分型：让“脑活动指纹”自动聚成两群</h2>
+    <div class="reveal"><p>每位受试者的全脑ALFF都可以看成一串很长的“指纹编码”。研究先用t‑SNE把高维指纹压缩成二维“地图”，再用层次聚类把点分成两群（两个亚型）。  <br>他们先在武汉队列（WHU）分型，再在北京队列（PKU）用同样流程复现；还训练分类器把PKU患者分配到两亚型，报告分类准确率平均84%。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">4）多层验证：用遗传与代谢看两型“像不像两条路线”</h2>
+    <div class="reveal"><p>研究在第三队列（CMU）比较两亚型的：  <br>（1）PRS‑MDD（抑郁多基因风险评分）；  <br>（2）风险基因表达富集的组织分布；  <br>（3）代谢组差异（270种代谢物与通路分析）。  <br>这些分析用于检验两型是否对应不同的遗传易感与压力相关机制。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">5）跨物种对齐：共同ROI能否预测快感缺失？</h2>
+    <div class="reveal"><p>作者将动物与人类共同异常的脑区汇总为共同ROI，并用分步线性回归检验这些ROI的ALFF能否预测快感缺失：动物用SPT，人类用SHAPS。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么：3个最重要发现</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现1：遗传模型与压力模型呈“相反的脑活动天平”，人类抑郁也能分成两型对应它们</h2>
+    <div class="reveal"><p>在动物中，P11 KO小鼠相对对照在海马、杏仁核、纹状体、丘脑等皮层下区域ALFF升高，同时在初级运动/躯体感觉等感觉运动皮层降低；CUMS大鼠则在这些区域呈相反方向。</p><p>在人类中，亚型1表现为额叶‑皮层下区域ALFF升高、感觉运动区域降低；亚型2则相反，并在独立队列复现。</p><p><strong>这意味着：</strong> 同样的临床诊断下，可能存在至少两套可量化、方向相反的大脑活动模式，为理解抑郁异质性提供了一个“可操作的切分方式”。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现2：两亚型的“证据链”不同：一型更像遗传易感，一型更像压力/代谢压力相关</h2>
+    <div class="reveal"><p>亚型1在PRS‑MDD上显著更高：在PT=10^-6（NSNPs=27）与10^-5（NSNPs=83）时分别解释2.7%与2.9%变异。其179个风险基因在11种组织中富集表达，其中7种为脑组织。代谢上，亚型1有56种差异代谢物，色氨酸与犬尿氨酸升高。</p><p>亚型2与健康对照相比PRS不显著。其227个风险基因的表达富集更多见于胰腺、垂体等非脑组织。代谢上，亚型2有78种差异代谢物；通路分析提示TCA循环以及丙氨酸/天冬氨酸/谷氨酸代谢受扰，论文据此讨论其与线粒体功能与氧化应激相关。</p><p><strong>这意味着：</strong> 至少在这项研究的样本中，抑郁的不同亚型可能对应不同“偏重”的机制：一型更偏遗传‑神经发育相关，一型更偏压力‑代谢压力相关。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现3：跨物种共享的关键在“皮层下—感觉运动”的功能平衡，并能预测快感缺失</h2>
+    <div class="reveal"><p>共同ROI分析把差异区域归为三类：皮层下ROI、感觉运动ROI、颞‑嗅觉ROI。  <br>P11 KO与亚型1在皮层下ROI显著升高、感觉运动ROI显著降低；CUMS与亚型2则方向相反，论文给出T与P。</p><p>更重要的是：用纹状体与躯体感觉皮层的ALFF预测快感缺失时，四种场景都显著相关——P11 KO：R=0.8（P=0.003）；亚型1：R=0.25（P=0.005）；CUMS：R=0.6（P=0.018）；亚型2：R=0.23（P=0.028）。</p><p><strong>这意味着：</strong> 快感缺失可能更像是“系统平衡问题”，而不是单个脑区的孤立问题；并且同一症状可以在两种相反的整体模式下出现，这提示仅按症状治疗可能会遇到机制不匹配的情况。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（证据边界清晰）</h2>
+    <div class="reveal"><p><strong>论文证据支持：</strong>  <br>（1）皮层下—感觉运动的ALFF平衡可作为跨物种中间表型，连接病因线索与快感缺失。  <br>（2）两亚型在脑影像、遗传、组织表达与代谢层面呈现不同侧重，为理解抑郁异质性提供多层证据链。  </p><p><strong>合理推测但论文未直接验证：</strong>  <br>未来这些亚型可能用于临床研究分层或动物模型选择，但论文未进行任何干预试验，因此不能据此判断治疗推荐。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步（来自论文）</h2>
+    <div class="reveal"><p>（1）动物研究使用年轻雄性，可能限制推广性；未来应纳入雌雄两性。  <br>（2）动物与人类fMRI麻醉状态差异可能引入混杂；清醒动物扫描也可能因适应过程引入应激。  <br>（3）SPT等动物行为不能完全覆盖人类快感缺失的全部维度；建议加入更多临床量表。  <br>（4）队列未收集与遗传/环境因素直接相关的人口学信息，未来应补充更多维度测量。  <br>（5）啮齿动物未见显著额叶改变而人类有，可能与进化差异有关。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p>同一“快感缺失”，可能来自两条相反脑路径。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">版权与数据可得性</h2>
+    <div class="reveal"><p>论文为开放获取，许可为 CC BY‑NC‑ND 4.0，允许非商业转载原始材料并署名，但不允许分享改编材料。  <br>论文说明：fMRI队列数据可“按请求提供”，并“免费提供生成数据的代码”。</p></div>
+    
+  </div>
+</section>
+
+
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">术语小词典（面向公众）</div>
+        <div class="glossary-def">> 注：每个术语的“论文证据锚点”用于说明论文中如何使用该术语；类比为科普表达（非论文数据）。</div>
+        
       </div>
+  </div>
+</section>
 
-      <nav class="toc" aria-label="页面目录">
-        <a href="#sec-30s">30秒读懂</a>
-        <a href="#sec-why">为什么要做</a>
-        <a href="#sec-how">我们怎么做</a>
-        <a href="#sec-findings">我们发现了什么</a>
-        <a href="#sec-visuals">图解与配图</a>
-        <a href="#sec-interactives">交互模块</a>
-        <a href="#sec-limits">局限与下一步</a>
-        <a href="#sec-glossary">术语小词典</a>
-        <a href="#sec-faq">FAQ</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="container">
-    <section id="sec-30s" class="panel">
-      <h2>30秒读懂</h2>
-      <p><strong>问题：</strong>同样是抑郁里的“快感缺失”，背后更像遗传驱动还是压力驱动？</p>
-      <p><strong>方法：</strong>把两种啮齿动物抑郁模型（P11基因敲除、CUMS慢性应激）与三地共748人的静息态fMRI放到同一把尺子（ALFF）上，用机器学习分出两型。</p>
-      <p><strong>发现：</strong>出现两种相反的皮层下—感觉运动脑活动模式，并能在动物与人类中预测快感缺失。</p>
-      <p><strong>意义：</strong>这些模式可作为跨物种“中间表型”，让动物研究更精准对接到不同人群。（证据：第1–2页摘要；第3–5页方法；第6–11页 图2、图6；第10页预测结果）</p>
-    </section>
-
-    <section id="sec-why">
-      <h2>为什么要做这个研究</h2>
-      <p>抑郁症并不是一个“所有人都同一种原因”的疾病。论文指出，它受到遗传与环境压力等多因素影响，因此症状、病程与治疗反应差异很大（证据：第2页 Background）。</p>
-      <p>动物模型能帮助研究抑郁机制，但任何单一模型都不可能完整复刻人类抑郁的全部面貌，这造成从动物到临床的“翻译鸿沟”（证据：第2页 Background）。</p>
-      <p>作者选择“快感缺失（anhedonia）”作为切口：它是抑郁核心症状之一，既能在遗传模型（P11 KO小鼠）里出现，也能在压力模型（CUMS慢性应激）里出现，但两者背后的神经机制是否一致、与人类抑郁如何对应仍不清楚（证据：第2页 Background）。</p>
-      <p>因此，研究需要一种桥梁：既能在动物和人都测到，又能把“病因线索（基因/压力）—大脑机制—症状体验”串起来。论文把这种桥梁称为“神经影像中间表型”（证据：第1–2页摘要；第13页 Conclusions）。</p>
-    </section>
-
-    <section id="sec-how">
-      <h2>我们怎么做的</h2>
-
-      <p>你可以把静息态fMRI想象成大脑的“后台运行日志”：即使你什么都不做，大脑各区域仍会有缓慢起伏的自发活动。论文用ALFF（低频振幅）来量化这种起伏强度，并把它作为跨物种比较的核心指标（证据：第3页 Animal MRI acquisition；第4页 Human MRI acquisition）。</p>
-
-      <h3>动物侧：两条“病因路线”的代表</h3>
-      <p>研究建立两种常用的抑郁动物模型：偏遗传路线的P11基因敲除小鼠（11只，对照12只），以及偏压力路线的CUMS慢性应激大鼠（15只，对照15只）（证据：第3页 Animals；第6页 图2a图注）。</p>
-      <p>动物行为方面，论文使用蔗糖偏好测试（SPT）等评估抑郁样行为，其中SPT常用于反映“快感缺失”相关的偏好变化（证据：第3页 Animal behavioral assessments；第11页 Fig.6图注出现SPT）。</p>
-
-      <h3>人类侧：三地748人、同一套量表</h3>
-      <p>人类数据来自三地共748名参与者（抑郁412、健康对照336），并用SHAPS量表评估快感缺失、HAMD‑17评估抑郁严重度（证据：第3页 Participants；第4页 Clinical assessments）。</p>
-
-      <h3>用机器学习分型：让“脑活动指纹”自动聚成两群</h3>
-      <p>研究先用t‑SNE把全脑ALFF“压缩成二维地图”，再用层次聚类分出两个亚型；在武汉队列分型后，在北京队列复现，并报告跨队列分类准确率平均84%（证据：第4页 Identifying neuroimaging subtypes；第7页 84%）。</p>
-
-      <h3>多层验证与跨物种对齐</h3>
-      <p>在第三队列中，作者比较了两亚型的PRS‑MDD、风险基因表达组织富集与代谢组差异，并进一步用共同ROI的ALFF预测快感缺失（证据：第4–5页方法；第7–10页 图3–图5；第8–11页 图6）。</p>
-    </section>
-
-    <section id="sec-findings" class="panel">
-      <h2>我们发现了什么：3个最重要发现</h2>
-
-      <h3>发现1：两条相反的“脑活动天平”</h3>
-      <p>在动物中，P11 KO表现为皮层下ALFF升高、感觉运动ALFF降低；CUMS则相反（证据：第5页 Results；第6页 图2a）。在人类中也能分出两种相反模式：亚型1更像P11 KO，亚型2更像CUMS，并在独立队列复现（证据：第6–7页 图2b–c；第7页 复现相关系数）。</p>
-
-      <h3>发现2：两亚型的“证据链”不同</h3>
-      <p>亚型1：PRS‑MDD在PT=10^-6与10^-5时显著更高（NSNPs=27与83；R2=2.7%与2.9%），风险基因表达富集更偏脑组织，代谢上色氨酸与犬尿氨酸升高（证据：第7页；第8页 图3a；第9页 图4a；第10页 图5a）。</p>
-      <p>亚型2：PRS不显著，风险基因表达富集更偏胰腺/垂体等非脑组织；代谢通路提示TCA循环等能量代谢受扰并伴随氧化应激相关异常（证据：第7页；第8页 图3b；第9页 图4b；第10页 图5b–c；第12页 Discussion）。</p>
-
-      <h3>发现3：共同ROI能预测快感缺失</h3>
-      <p>共同ROI分析显示：P11 KO与亚型1在皮层下ROI升高、感觉运动ROI降低；CUMS与亚型2方向相反，论文给出T与P（证据：第8页；第11页 Fig.6c–d）。</p>
-      <p>用纹状体与躯体感觉皮层的ALFF预测快感缺失时，四种场景都显著相关（证据：第10页；第11页 Fig.6e–f）。</p>
-    </section>
-
-    <section id="sec-visuals">
-      <h2>图解与配图</h2>
-      <p class="note">以下图片来自论文PDF页面渲染，未改动。论文许可为 CC BY‑NC‑ND 4.0（证据：第1页版权声明）。</p>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p03.png" alt="页面图示展示研究流程：先建立P11基因敲除与CUMS应激两类动物模型，提取静息态fMRI的ALFF模式；再用机器学习把人类抑郁分成两种脑影像亚型；最后用遗传、代谢与症状预测验证跨物种对应关系。" loading="lazy" />
-        <figcaption>Fig.1 所在页（第3页）：研究框架与跨物种桥接流程。</figcaption>
-      </figure>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p06.png" alt="图展示P11敲除小鼠与CUMS应激大鼠在皮层下和感觉运动区呈相反ALFF变化；下方展示人类抑郁两亚型在武汉队列与北京队列的对应模式：亚型1更像P11敲除，亚型2更像CUMS。" loading="lazy" />
-        <figcaption>Fig.2 所在页（第6页）：动物模型与人类亚型的相反ALFF模式（证据：第5–7页；图2）。</figcaption>
-      </figure>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p08.png" alt="条形图比较两亚型的抑郁多基因风险评分模型拟合度。结果显示亚型1在部分阈值下显著并解释约2.7–2.9%变异，而亚型2与健康对照相比不显著。" loading="lazy" />
-        <figcaption>Fig.3 所在页（第8页）：PRS‑MDD差异（证据：第7–8页；图3）。</figcaption>
-      </figure>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p09.png" alt="点图按组织列出风险基因表达富集强度。亚型1在多种脑组织中富集更明显；亚型2更偏向胰腺、垂体等非脑组织的富集。" loading="lazy" />
-        <figcaption>Fig.4 所在页（第9页）：风险基因表达组织富集（证据：第7页；图4）。</figcaption>
-      </figure>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p10.png" alt="火山图展示两亚型与健康对照的代谢差异，并标注代表性代谢物；通路图显示亚型2在TCA循环等通路受扰，讨论提示与线粒体功能与氧化应激相关。" loading="lazy" />
-        <figcaption>Fig.5 所在页（第10页）：代谢差异与通路（证据：第7页；图5；第12页讨论）。</figcaption>
-      </figure>
-
-      <figure>
-        <img src="../assets/paper_pages/paper_p11.png" alt="图展示动物模型与对应人类亚型的共同异常脑区，并在ROI层面比较皮层下与感觉运动活动的方向；右侧散点图显示使用纹状体与躯体感觉皮层ALFF预测快感缺失分数在四种场景均显著相关。" loading="lazy" />
-        <figcaption>Fig.6 所在页（第11页）：共同ROI与快感缺失预测（证据：第8页；第10–11页；图6）。</figcaption>
-      </figure>
-    </section>
-
-    <section id="sec-interactives" class="panel">
-      <h2>交互模块（可落地 Demo）</h2>
-      <p class="note">交互模块使用的是论文正文已报告的统计量（T/P、R/P等），不包含个体级数据。（证据：第8页；第10页）</p>
-
-      <div class="grid-2">
-        <section class="interactive-card" aria-labelledby="m1-title">
-          <h3 id="m1-title">模块1：脑区“天平”探索器</h3>
-          <div id="balance-explorer" class="interactive-box" data-module="balance"></div>
-          <p class="risk">风险提示：这是群体层面的统计趋势，不能用于个人分型或诊断。</p>
-        </section>
-
-        <section class="interactive-card" aria-labelledby="m2-title">
-          <h3 id="m2-title">模块2：两亚型“证据链”对比卡</h3>
-          <div id="evidence-cards" class="interactive-box" data-module="cards"></div>
-          <p class="risk">风险提示：“更像遗传/更像压力”是研究层面的机制推断，不等于个人层面的归因。</p>
-        </section>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（公众常见问题）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><ul><li><strong>这是不是说明抑郁只有“两种类型”？</strong>  </li><br></ul>不是。论文在三个人类队列中用ALFF分出了两种稳定可复现的亚型，但作者同时强调抑郁高度异质，且研究只覆盖两种动物模型与有限测量维度；未来可能出现更多亚型或更细分结构。</p><p><ul><li><strong>我能做一次脑扫描就知道自己属于哪一型吗？</strong>  </li><br></ul>论文没有把该方法作为临床诊断工具来验证，也没有提供个人层面的可用阈值或临床流程；目前证据来自研究队列层面的分型与分类验证。因此不建议用于个人自测或自我诊断（论文未提供此用途）。</p><p><ul><li><strong>为什么研究重点放在“快感缺失”，而不是所有抑郁症状？</strong>  </li><br></ul>作者把快感缺失视为跨模型可共享的核心症状：动物用SPT、人类用SHAPS都能表征，并进一步检验脑影像特征能否预测这一症状。</p><p><ul><li><strong>“预测快感缺失”是不是意味着找到了原因？</strong>  </li><br></ul>不是。论文使用的是回归预测与相关检验，说明某些脑影像特征与症状分数存在统计关联；相关不等于因果。论文也在讨论中强调同一症状可能来自不同生理过程。</p><p><ul><li><strong>亚型1遗传风险更高，是不是就一定更严重？</strong>  </li><br></ul>论文讨论的是“遗传易感倾向差异”，不是“严重程度”结论；而且PRS在亚型1中显著但解释的变异比例仅2.7–2.9%，提示遗传只是众多因素之一。</p><p><ul><li><strong>亚型2更像压力相关，那我只要减压就能好？</strong>  </li><br></ul>论文并未测试任何治疗或干预效果，只是从脑影像、组织表达富集与代谢通路变化推测亚型2更符合压力/代谢压力相关机制，因此不能据此给出个人治疗建议。</p><p><ul><li><strong>动物模型和人类真的能对上吗，会不会“强行类比”？</strong>  </li><br></ul>论文给出支持与边界两方面证据：支持在于动物模型与对应人类亚型在皮层下—感觉运动模式上方向一致，并能预测快感缺失；边界在于额叶改变等跨物种差异、麻醉差异与动物行为指标等价性不足。</p><p><ul><li><strong>为什么论文还分析了功能连接（FC），不是只看ALFF吗？</strong>  </li><br></ul>ALFF用于分型与跨物种对齐；论文也用FC分析检验亚型在另一指标上是否呈一致趋势，并将相关结果放在补充材料中。</p><p><ul><li><strong>我能拿到数据或代码来复现吗？</strong>  </li><br></ul>论文写明：fMRI队列数据可按请求提供，并免费提供生成数据的代码，但正文未给出直接下载链接。</p><p><ul><li><strong>这项研究能直接指导临床用药或治疗选择吗？</strong>  </li><br></ul>不能直接。论文提出这些神经影像亚型“可能”为个体化治疗提供潜在靶点线索，但未做任何治疗对照试验。</p></div>
       </div>
+  </div>
+</section>
 
-      <section class="interactive-card" aria-labelledby="m3-title">
-        <h3 id="m3-title">模块3：快感缺失预测仪表盘</h3>
-        <div id="prediction-dashboard" class="interactive-box" data-module="prediction"></div>
-        <p class="risk">风险提示：预测相关≠因果，也不等于可用于自测。</p>
-      </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-      <noscript>
-        <p><strong>提示：</strong>你的浏览器禁用了 JavaScript。交互模块将不可用；你仍可阅读上方正文与图解。</p>
-      </noscript>
-    </section>
-
-    <section id="sec-limits">
-      <h2>局限性与下一步</h2>
-      <p>作者指出：动物研究使用年轻雄性、麻醉差异、动物行为指标与人类体验并非完全等价、以及缺少更直接的遗传/环境人口学测量，都会限制推广；未来需纳入雌雄两性、探索清醒动物扫描、引入更多量表与更多维度测量（证据：第13页 Limitation）。</p>
-      <p>讨论中也指出：啮齿动物未见显著额叶改变而人类亚型额叶改变明显，可能与进化差异有关（证据：第12页 Discussion）。</p>
-    </section>
-
-    <section id="sec-glossary">
-      <h2>术语小词典（节选）</h2>
-      <p>完整版本见 <code>content/glossary.zh.md</code>。这里给出4个最常被卡住的词：</p>
-      <dl class="glossary">
-        <dt>快感缺失（Anhedonia）</dt>
-        <dd>对原本喜欢的事物感到“没意思/没快感”；论文用SHAPS（人）与SPT（动物）表征（证据：第4页；第3页）。类比：像音量旋钮被拧小。</dd>
-
-        <dt>ALFF</dt>
-        <dd>静息态脑活动低频起伏的幅度指标，是本研究跨物种比较的核心尺子（证据：第3–4页）。类比：看海面慢浪的浪高。</dd>
-
-        <dt>PRS‑MDD</dt>
-        <dd>把很多遗传位点影响加总成风险分数，用于群体层面的遗传易感比较（证据：第7–8页 图3）。类比：许多“小加分项”的总和。</dd>
-
-        <dt>中间表型</dt>
-        <dd>连接病因线索与症状表现的可测量桥梁特征；论文认为神经影像模式可承担此角色（证据：第1–2页摘要；第13页）。类比：发动机故障码。</dd>
-      </dl>
-    </section>
-
-    <section id="sec-faq" class="panel">
-      <h2>FAQ（节选）</h2>
-      <p>完整版本见 <code>content/faq.zh.md</code>。这里给出3个最常见问答：</p>
-
-      <h3>这是不是说明抑郁只有“两种类型”？</h3>
-      <p>不是。论文在三个人类队列中发现两种稳定可复现的亚型，但也强调抑郁高度异质、研究维度有限，未来可能出现更多亚型（证据：第2页；第13页）。</p>
-
-      <h3>我能做一次脑扫描就知道自己属于哪一型吗？</h3>
-      <p>论文未将该方法验证为临床诊断工具，也未提供个人可用阈值或流程；目前证据来自研究队列分型与跨队列分类（证据：第4页；第7页；第13页）。因此不建议个人自测。</p>
-
-      <h3>“预测快感缺失”是不是意味着找到了原因？</h3>
-      <p>不是。论文报告的是回归预测与相关，说明存在统计关联；相关不等于因果（证据：第5页方法；第10页结果）。</p>
-    </section>
-
-    <footer class="site-footer">
-      <h2>统一免责声明</h2>
-      <p>本页面为科研科普解读，基于论文报告的队列层面统计结果整理，不构成医疗建议、诊断或个人风险评估工具。抑郁及快感缺失属于复杂的临床问题，如有持续情绪困扰或功能受损，请寻求专业医疗帮助。论文结果不等同于对个人进行“亚型判定”，也不应据此自行选择或停止治疗。（证据：第4–5页方法；第13页 Limitation）</p>
-
-      <h2>图像与许可</h2>
-      <p>论文许可为 CC BY‑NC‑ND 4.0；本包中论文页面PNG为“未改动的页面渲染”，仅用于非商业复用与快速编辑参考。商业用途或对原图的改编/重绘请先确认许可。（证据：第1页版权声明）</p>
-
-      <p class="small">Content pack generated for public communication & web implementation. No external libraries required.</p>
-    </footer>
-  </main>
-
-  <script src="./app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

@@ -1,32 +1,232 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HRV × 团体CBT：公众解读（Demo）</title>
-  <link rel="stylesheet" href="./styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <main class="container">
-    <header class="hero">
-      <h1 id="title">加载中…</h1>
-      <p id="subtitle" class="subtitle"></p>
-      <p class="meta">数据与图片来自论文（assets/paper.pdf）。请以站点最终设计为准。</p>
-    </header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>心跳的“微波动”，能提示谁更受益于团体CBT？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-    <section id="sections"></section>
+<div class="reading-progress" id="readingProgress"></div>
 
-    <section class="module">
-      <h2>交互模块（示例入口）</h2>
-      <p>本Demo不实现完整交互，仅把数据文件与schema挂载到页面，方便开发接入。</p>
-      <div id="modules"></div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">心跳的“微波动”，能提示谁更受益于团体CBT？</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-    <footer class="footer">
-      <p id="disclaimer"></p>
-    </footer>
-  </main>
 
-  <script src="./app.js"></script>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂</h2>
+    <div class="reveal"><p>同样参加团体认知行为治疗（GCBT），为什么有人改善明显、有人变化不大？这项随机对照研究让33名有抑郁/焦虑症状的大学生随机进入4周GCBT或等待组，并用华为Band 6手环在日常生活中记录心率变异性（HRV）。结果显示：GCBT组的抑郁、焦虑与压力量表分数下降，而且基线HRV越高，改善幅度往往越大。意义在于：可穿戴HRV或可作为早期、低成本的反应预测线索，帮助把干预资源用在更合适的人身上。</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/corr_heatmap_table5.png" alt="30秒读懂" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究（公众视角）</h2>
+    <div class="reveal"><p>大学阶段是心理健康风险上升的时期。论文引用既往调查指出，青少年与青年人群中抑郁/焦虑的患病率可达23%–39%。不少学生处在“症状已经影响生活，但还不够满足诊断标准”的亚阈值状态，因此更难及时获得有效帮助，却可能发展成更严重的抑郁障碍或广泛性焦虑障碍，并带来更高的自杀风险与功能受损。</p><p>团体认知行为治疗（GCBT）是一种“把CBT以小组形式开展”的方式，通常更省人力、可同时帮助更多人。但现实问题是：不是所有人都同样受益。论文因此提出需要寻找更客观的指标，帮助提前识别“谁更可能从GCBT获益”，从而更高效地配置有限的心理健康资源。</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/symptom_change_pss.png" alt="为什么要做这个研究（公众视角）" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（用类比解释方法）</h2>
+    <div class="reveal"><p>你可以把这项研究理解为一次“把手环当作日常生理监测仪”的随机试验。研究在中国新乡医学院招募16–25岁的大学生，要求PHQ-9（抑郁）或GAD-7（焦虑）筛查得分>5，且近3个月未接受药物或心理治疗。合格者通过网络随机分组：一组立刻参加4周团体CBT；另一组先等待4周作为对照。</p><p>干预本身是“手册化”的四次课程，每次90分钟，共四周；其中两次线下、两次线上。课程按四个模块推进：从理解抑郁/焦虑与CBT模型开始，再到识别自动化负性思维与行为、学习纠正技巧、最后巩固并应用到日常。类比来说，它更像一门结构化训练课：先教你看懂“情绪—想法—行为”的连锁反应，再带你练习如何在关键节点上“换一个更可行的想法/动作”。</p><p>同时，两组在日常生活中都佩戴华为Band 6手环。手环用PPG（光学脉搏信号）以100Hz采样记录心跳间隔与心率，并在夜间上传数据；研究还用步数作为活动水平的代理变量。研究从心跳间隔计算心率变异性（HRV）——也就是心跳间隔的自然“微波动”。在论文里，HRV被视为自主神经功能的一种客观指标。</p><p>为了让大家“比的是同一种状态”，研究按指南用连续5分钟的心跳间隔作为一个计算片段，并要求至少85%为窦性心搏；发现异常或缺失心搏会用相邻间隔的均值进行替换修正。考虑到HRV受昼夜节律影响，研究统计每个小时可用的5分钟片段数量（Fig.1），最终选择数据最完整的13:00–14:00作为统一分析窗口。他们把第1周该时段的平均HRV作为“基线HRV”，第4周同法计算干预后HRV。</p><p>疗效评估采用三个自评量表：PHQ-9、GAD-7与PSS-14（压力），在干预前与4周后测量。统计上，研究用重复测量方差分析比较两组变化，并用Spearman相关与多元线性回归测试“基线HRV能否预测改善幅度”，回归中控制性别、年龄、BMI与活动水平。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：4周团体CBT让量表分数出现更明显下降（相对等待组）</h2>
+    <div class="reveal"><p>GCBT组的抑郁（PHQ-9）、焦虑（GAD-7）和压力（PSS-14）均值在4周后下降，而等待组变化较小，PSS甚至上升。  <br>以PHQ-9为例：GCBT从5.75±3.088降到3.75±2.324；等待组从4.12±2.233到4.47±2.324，组×时间交互P=0.03。  <br>这意味着：在这项随机对照试验里，短程（4周）GCBT在组水平上与更好的结局相关，但仍存在个体差异，因此需要进一步探索“谁更可能受益”。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：基线HRV与抑郁/压力相关，但与焦虑量表不显著</h2>
+    <div class="reveal"><p>相关分析显示：HFnu与PHQ-9、PSS-14为负相关；LF/HF与LFnu为正相关。论文同时明确指出：HRV/心率与GAD-7之间未发现统计学显著相关。  <br>这意味着：在这个样本里，HRV更像是与“抑郁与压力维度”更同步的客观信号；而焦虑量表在基线相关性上没有呈现同样清晰的模式。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：基线HRV越高，往往改善越多；回归模型能显著预测改善幅度</h2>
+    <div class="reveal"><p>研究进一步把“改善幅度”与“基线HRV”对应起来：抑郁改善与NN20、PNN20等呈正相关，与Mean/Min HR呈负相关；焦虑改善与SDNN、RMSSD、Triangular index等呈正相关，与Min HR呈负相关。  <br>在控制性别、年龄、BMI与活动水平后，HRV特征仍能显著预测改善：抑郁改善模型F=7.308、P=0.02、R²=0.936（Fig.3）；焦虑改善模型F=13.849、P=0.002、R²=0.954（Fig.4）。  <br>需要注意：论文指出模型中具体HRV特征与回归系数详见补充表3，但本PDF未包含补充材料，因此本包无法提供模型系数级别的可复现参数。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
+    <div class="reveal"><p>证据支持：论文结论认为HRV可能是预测GCBT疗效的客观指标，可穿戴设备提供低成本、非侵入的监测方式，值得在资源有限且需要早期干预的场景中考虑。  <br>合理推测（论文未直接验证）：未来可在校园心理服务中用HRV做“分层参考”，例如把可能获益更大的学生优先推荐进入团体课程，并为可能获益较小者提供更密集的支持或不同方案。但这需要更大样本与真实世界验证，不能据本研究直接用于个体决策。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>论文讨论部分强调：样本量小；部分参与者因佩戴依从性等被排除，可能引入偏倚；无法保证绝对静息状态；数据非连续等。下一步包括扩大样本、探索不同治疗方式（如tDCS、rTMS），并评估低HRV是否能提示人群异质性以推进个性化干预。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>手环HRV或可提示团体CBT疗效，但仍需更大样本验证。</p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/baseline_predictors_depression.png" alt="baseline predictors depression" loading="lazy">
+          <div class="visual-card-body">
+            <p>baseline predictors depression</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/corr_heatmap_table5.png" alt="corr heatmap table5" loading="lazy">
+          <div class="visual-card-body">
+            <p>corr heatmap table5</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/symptom_change_pss.png" alt="symptom change pss" loading="lazy">
+          <div class="visual-card-body">
+            <p>symptom change pss</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/baseline_predictors_anxiety.png" alt="baseline predictors anxiety" loading="lazy">
+          <div class="visual-card-body">
+            <p>baseline predictors anxiety</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/symptom_change_phq.png" alt="symptom change phq" loading="lazy">
+          <div class="visual-card-body">
+            <p>symptom change phq</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/symptom_change_gad.png" alt="symptom change gad" loading="lazy">
+          <div class="visual-card-body">
+            <p>symptom change gad</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/page07_tables_3_4_5.png" alt="page07 tables 3 4 5" loading="lazy">
+          <div class="visual-card-body">
+            <p>page07 tables 3 4 5</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig4_anxiety_prediction.png" alt="fig4 anxiety prediction" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig4 anxiety prediction</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig1_hourly_samples.png" alt="fig1 hourly samples" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1 hourly samples</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2_participant_flow.png" alt="fig2 participant flow" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2 participant flow</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3_depression_prediction.png" alt="fig3 depression prediction" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3 depression prediction</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">术语小词典（公众版）</div>
+        <div class="glossary-def">1）心率变异性（HRV）：相邻两次心跳间隔的自然波动，用来反映自主神经功能的“调节灵活度”。类比：像走路步距的自然变化，越能随环境调整越灵活。（证据：p2 HRV定义；p5 HRV指标计算）</div>
+        
+      </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（基于论文证据，克制回答）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><strong>Q1：这是不是说明团体CBT对所有人都有效？</strong>  <br>A：论文显示GCBT组在PHQ/GAD/PSS上出现更明显下降（组×时间交互显著），但并不意味着“人人都一定有效”。研究动机之一就是寻找预测指标来识别差异。</p><p><strong>Q2：我戴手环就能判断自己要不要做心理治疗吗？</strong>  <br>A：不能。论文为探索性试点研究，小样本且存在筛选与依从性偏倚；HRV只能作为研究层面的候选线索，不能替代专业评估。</p><p><strong>Q3：HRV越高就代表越不抑郁/越不焦虑吗？</strong>  <br>A：论文在基线相关分析中发现HRV与PHQ/PSS相关，但与GAD未见显著相关；并且“相关不等于因果”。</p><p><strong>Q4：为什么只用下午1点到2点的HRV？</strong>  <br>A：研究统计每小时有效5分钟片段数（Fig.1），选择数据完整性最高的13:00–14:00作为统一窗口，以减少昼夜节律等干扰。</p><p><strong>Q5：论文的回归模型到底用了哪些HRV指标？</strong>  <br>A：正文只报告了模型整体统计量，并说明具体参数见补充表3；本PDF未包含补充材料，因此无法提供系数级别细节。</p><p><strong>Q6：研究对象是谁？我不是大学生也适用吗？</strong>  <br>A：对象为16–25岁的大学生且筛查分数>5。论文指出样本量小、可推广性有限，外推需谨慎。</p><p><strong>Q7：这项研究有没有公开原始数据？</strong>  <br>A：论文说明因伦理规定无法公开，但可在合理请求下向通讯作者申请。</p><p><strong>Q8：Table 3 里等待组干预后Min HR为27.96可信吗？</strong>  <br>A：该数值确实印在论文Table 3中，但论文未对其异常性作解释。本包按原表录入，并建议在再分析/复现时谨慎核对。</p></div>
+      </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

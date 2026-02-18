@@ -1,44 +1,213 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>网页内容包预览</title>
-  <link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <header>
-    <div class="subtitle">网页内容包预览（静态）</div>
-    <h1 id="title"></h1>
-    <div class="subtitle" id="subtitle"></div>
-    <div class="meta" id="meta"></div>
-  </header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抑郁、双相、精神分裂背后，可能有两种“炎症底色”的大脑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <main>
-    <section class="card">
-      <h2>说明</h2>
-      <div>本预览页用于快速浏览文案、证据锚点与图像占位。正式上线请使用 <code>data/page_data.json</code> 与 <code>data/schemas/</code> 中结构化数据进行组件化实现。</div>
-    </section>
+<div class="reading-progress" id="readingProgress"></div>
 
-    <div id="sections"></div>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">抑郁、双相、精神分裂背后，可能有两种“炎症底色”的大脑</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-    <h2>视觉元素</h2>
-    <div id="visuals"></div>
 
-    <h2>交互模块</h2>
-    <div id="modules"></div>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">抑郁、双相、精神分裂背后，可能有两种“炎症底色”的大脑</h2>
+    <div class="reveal"><p><strong>把血液DNA甲基化与静息态脑连接结合，研究识别并验证了“免疫-炎症型”神经影像标记（Tang 等，Biological Psychiatry，2025）</strong></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/figure2.png" alt="抑郁、双相、精神分裂背后，可能有两种“炎症底色”的大脑" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>为什么同样被诊断为抑郁、双相或精神分裂的人，对治疗反应差异很大？研究用外周血DNA甲基化算炎症评分EIS，并把患者分成两类生物型；再在静息态fMRI脑连接里筛出443条稳定连接，形成“炎症指纹”。在独立青少年队列中，免疫-炎症型中性粒细胞更高、淋巴细胞更低，症状改善更慢。该标记可用于分层研究，但抗炎辅助治疗仍需随机试验验证。</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/figure1.png" alt="30秒读懂（120–180字）" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">关键数字速览</h2>
+    <div class="reveal"><p><ul><li>样本与队列：沈阳队列329名患者+169名健康对照（13–50岁）；南京队列554名住院青少年患者（12–18岁）。  </li><br><li>两类生物型比例：Biotype-1 52.6%，Biotype-2 47.4%。  </li><br><li>甲基化差异规模：Biotype-1相对对照2,189个DMPs；Biotype-2仅2个）。  </li><br><li>脑连接“炎症指纹”：443条稳定连接边（正子网络210、负子网络233））。  </li><br><li>分类器在沈阳队列表现：ROC=0.78，准确率71.11%，F1=70.88%，Precision=75.68%，Recall=62.22%。  </li><br><li>南京队列分层后人数：免疫-炎症型308人，非免疫-炎症型246人。  </li><br><li>南京队列关键效应（表2）：免疫-炎症型NEUT%更高（β=2.88）、LYM%更低（β=-0.58）、NLR更高（β=0.34）、SII更高（β=93.76）。  </li><br><li>住院期症状改善差异：HAMD、HAMA、YMRS、BPRS存在“组别×时间”交互）。</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>很多精神疾病的诊断主要依据症状，但论文指出：症状相似的人，背后的生物学差异可能很大，这种异质性会带来“同病不同疗效”的现实困境。近年来，人们用脑影像在不同诊断之间找到了共享的脑网络特征，也提出了多种影像亚型；但这些亚型的生物学基础常常不清楚，因此很难真正用于“按机制分层”的治疗决策。</p><p>免疫-炎症失衡是一个被反复提到的候选机制：在抑郁（MDD）、双相（BD）和精神分裂症（SZ）等障碍中，外周和中枢都能观察到炎症相关改变的证据；同时，论文强调“只有一部分患者”可能被免疫-炎症异常驱动。如果能把这部分人可靠地识别出来，就可能减少“试错式治疗”，并为未来验证“抗炎辅助治疗是否对特定亚群更有效”提供更明确的入组与分层工具。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的</h2>
+    <div class="reveal"><p>研究分两阶段、两队列进行，逻辑像“先用血液把人群按生物学特征分组，再在大脑网络里找能复现的指纹”。</p><p>第一阶段（沈阳队列）纳入329名主要精神障碍患者（SZ、BD、MDD）和169名健康对照，采集外周血做全基因组DNA甲基化（850K芯片），并做静息态fMRI来构建脑功能连接图（360个皮层脑区两两相关）。DNA甲基化可类比为“基因说明书上的便签”，研究聚焦启动子区域（基因“开关面板”）；论文解释启动子甲基化升高可能下调基因表达，因此甲基化模式可提示通路状态。研究者用启动子区域差异最大的1万个甲基化位点做聚类（NMF+K-means，并用共识聚类评估稳定性），把患者分成两类生物型。同时计算表观遗传炎症评分EIS：由6个与CRP相关CpG位点的甲基化加权得到，用作慢性低度炎症代理指标。</p><p>第二阶段（南京队列）纳入554名12–18岁住院青少年MDD/BD患者，收集基线静息态fMRI，并在入院、第2周、出院记录症状量表与血常规免疫指标（含中性粒细胞、淋巴细胞比例及NLR、SII等）。关键方法是连接组预测模型CPM：它像“从海量脑连接中挑出最能预测EIS的连线组合”。研究通过交叉验证与1,000次置换检验筛出稳定连接，并把在>95%模型中反复出现的连接做成mask，用于独立队列提取同款影像特征；随后训练分类器，把患者分层为免疫-炎症型与非免疫-炎症型，比较两组外周免疫与症状轨迹差异。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么</h2>
+    <div class="reveal"><p><strong>发现1：用血液甲基化可以把患者分成两类生物型，其中一类呈现清晰的免疫-炎症特征。</strong>  <br>研究在沈阳队列的启动子甲基化数据上得到两类：Biotype-1占52.6%，Biotype-2占47.4%。与健康对照相比，Biotype-1出现2,189个差异甲基化位点，而Biotype-2几乎没有（仅2个））。在Biotype-1中，启动子高甲基化相关基因富集于适应性免疫功能、启动子低甲基化相关基因富集于先天免疫功能；论文据此解释为“适应性免疫被抑制、先天免疫增强”的慢性炎症不平衡）。外部验证指标也一致：Biotype-1的EIS更低（作者解释提示更高慢性低度炎症），且中性粒细胞比例更高、多个淋巴细胞亚群比例更低）。  <br><strong>这意味着什么：</strong> “免疫-炎症相关的生物差异”并非所有患者共享，分层可能是提高后续机制研究与干预验证效率的前提。</p><p><strong>发现2：研究在脑功能连接中识别出可复用的“免疫-炎症连接指纹”。</strong>  <br>在免疫-炎症型中，CPM可用脑连接预测EIS：正子网络预测相关r=0.22（p<0.01），负子网络r=0.34（p<0.001），置换检验p=0.03与0.002）。稳定性分析得到443条稳定连接边：正子网络210条（0.32%），负子网络233条（0.36%），合计443条作为免疫-炎症功能连接）。这些连接主要涉及视觉网络（VIS）、默认网络（DMN）与额顶网络（FPN）；其中正子网络多为初级皮层内连接（VIS/SMN），负子网络多为视觉皮层与高阶认知系统（DMN/FPN）之间连接）。  <br><strong>这意味着什么：</strong> 在“外周炎症代理指标—脑网络”之间，论文给出了一组可在新队列提取的影像特征（mask），为跨样本比较与分层验证提供了工具基础。</p><p><strong>发现3：在独立青少年队列中，该指纹能把患者分层；免疫-炎症型外周炎症更高且症状改善更慢。</strong>  <br>南京队列554名患者被分为免疫-炎症型308人、非免疫-炎症型246人。外周免疫指标上，免疫-炎症型NEUT%、NLR、SII更高、LYM%更低；图3A-D（第30页，图例第25页））。症状轨迹上，HAMD、HAMA、YMRS、BPRS均存在“组别×时间”交互效应，论文解释为免疫-炎症型住院期症状下降更不明显；图3E-H（第30页））。  <br><strong>这意味着什么：</strong> 该影像标记在独立队列中显示出一定可推广性，并与“对常规治疗反应较差”的群体趋势相关，支持其作为分层研究候选标记。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用</h2>
+    <div class="reveal"><p>这项研究的“可用之处”，需要分清论文已经给出的证据与仍待检验的推断边界。</p><p><ul><li><strong>论文证据支持的用途：用于分层研究与机制验证。</strong>  </li><br></ul>论文已经在独立队列中验证：用免疫-炎症功能连接特征训练的分类器，能把住院青少年MDD/BD患者分成两组；分层后两组在外周免疫指标（NEUT%、LYM%、NLR、SII）与住院期症状变化轨迹上存在系统性差异。这意味着该标记至少具备“跨队列可迁移、能关联到临床过程”的研究价值。</p><p><ul><li><strong>论文提出但明确仍需验证的方向：面向免疫-炎症亚群的分层干预。</strong>  </li><br></ul>讨论部分指出：炎症水平较高的患者更可能对常规药物反应不足，因此抗炎辅助治疗在理论上可能提高疗效；但论文也明确强调，本研究只能提示“需要”，并未检验“加抗炎治疗是否更好”，其潜在获益仍属推测，必须通过前瞻性随机对照试验验证。因此，这些结果更适合用于设计下一步临床试验的分层策略，而不是直接改变个人治疗方案。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>论文在讨论中明确指出两类关键局限：</p><p><ul><li><strong>随访时间短，无法回答长期问题。</strong> 研究的纵向观察主要限于住院期间（入院、第2周、出院），因此不能评估出院后的长期结局与分型稳定性。  </li><br><li><strong>治疗推断尚不成立。</strong> 虽然免疫-炎症型住院期症状改善更慢，但论文强调“抗炎辅助治疗是否能带来额外获益仍属推测”，需要前瞻性随机对照试验检验。</li><br></ul><br>从论文样本构成可以明确推出的适用范围边界（非臆测）是：南京验证队列为12–18岁青少年且仅含MDD/BD，未包含SZ，因此把“疗效轨迹差异”直接外推到成人或SZ仍需更多证据。  </p><p>下一步研究最直接的方向，是在更长随访与更广人群中检验该分层是否稳定，并在随机试验中评估“针对免疫-炎症型的抗炎辅助策略”是否真正改善结局。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>用脑连接“炎症指纹”分层精神障碍患者。</p></div>
+    
+  </div>
+</section>
 
-    <section class="card">
-      <h2>统一免责声明</h2>
-      <div id="disclaimer"></div>
-    </section>
-
-    <div class="footer">
-      生成说明：本包基于用户提供的论文PDF内容制作，证据锚点以PDF页码/图表为准。
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure3</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure2.png" alt="figure2" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure2</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure1.png" alt="figure1" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure1_web.jpg" alt="figure1 web" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1 web</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure2_web.jpg" alt="figure2 web" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure2 web</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure3_web.jpg" alt="figure3 web" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure3 web</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure1_thumb.jpg" alt="figure1 thumb" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1 thumb</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure2_thumb.jpg" alt="figure2 thumb" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure2 thumb</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure3_thumb.jpg" alt="figure3 thumb" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure3 thumb</p>
+          </div>
+        </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <script src="page-data.js"></script>
-  <script src="render.js"></script>
+<section class="section" style="background:var(--surface);" id="glossary">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心术语</h2>
+    
+      <div class="glossary-item reveal">
+        <div class="glossary-term">术语小词典（面向公众）</div>
+        <div class="glossary-def">> 说明：每个术语均给出“一句话解释 + 一个类比”，并标注论文证据位置；若论文未提供某术语的严格定义，则以论文语境解释并注明。</div>
+        <div class="glossary-analogy">把“不同类型队员的数量”组合成比值或综合指数，更便于比较趋势。</div>
+      </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（公众常见问题）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><ul><li><strong>这是不是说明抑郁、双相、精神分裂“本质都是炎症病”？</strong>  </li><br></ul>不是。论文强调免疫-炎症异常可能只驱动“部分比例”的患者，并据此分成两类生物型。</p><p><ul><li><strong>我能不能做个血常规（看NLR/SII）就判断自己属于哪一型？</strong>  </li><br></ul>论文没有提供个人层面的判别阈值或自测规则。南京队列的分型来自脑功能连接分类器，血常规用于分层后的外部验证。</p><p><ul><li><strong>做一次fMRI就能知道我是不是“免疫-炎症型”吗？</strong>  </li><br></ul>论文展示的是研究级分层工具：在沈阳队列中报告了分类器性能（ROC等），并在南京队列用于分层验证，但论文未给出临床应用所需的多中心标准化流程与个体级重复测量稳定性。</p><p><ul><li><strong>研究里的“炎症”是怎么定义的？是直接测到脑里发炎了吗？</strong>  </li><br></ul>论文用外周血DNA甲基化计算EIS作为慢性低度炎症代理指标，并寻找与EIS相关的脑功能连接特征；这不是直接测量脑内炎症分子。</p><p><ul><li><strong>为什么EIS“更低”反而提示“更高慢性炎症”？</strong>  </li><br></ul>论文在结果中直接这样解释：Biotype-1 的 EIS 显著更低，“hinting at a higher level of low-grade chronic inflammation”。论文未在正文进一步展开该方向性的机制细节。</p><p><ul><li><strong>“炎症连接指纹”主要涉及哪些脑网络？</strong>  </li><br></ul>论文在网络层面报告主要涉及视觉网络（VIS）、默认网络（DMN）与额顶网络（FPN），并区分正/负子网络连接类型。</p><p><ul><li><strong>免疫-炎症型症状改善更慢，是否意味着需要立刻加抗炎药？</strong>  </li><br></ul>不能这样推断。论文明确写到：抗炎辅助治疗的潜在获益仍属推测，必须通过前瞻性随机对照试验检验。</p><p><ul><li><strong>研究对象是谁？结论适用于所有年龄与所有诊断吗？</strong>  </li><br></ul>沈阳队列13–50岁，含SZ/BD/MDD；南京验证队列12–18岁青少年，仅含MDD/BD。对成人或SZ的疗效外推需要更多证据。</p><p><ul><li><strong>论文有没有给出443条连接的完整列表？</strong>  </li><br></ul>正文报告了边数与涉及网络，但未给出逐条连接清单与坐标（需要补充材料或原始数据支持；正文未报告）。</p><p><ul><li><strong>这项工作离“临床可用”还有多远？</strong>  </li><br></ul>论文完成了跨队列验证与住院期疗效轨迹关联，但作者指出随访受限、抗炎疗法仍需随机试验验证。</p></div>
+      </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

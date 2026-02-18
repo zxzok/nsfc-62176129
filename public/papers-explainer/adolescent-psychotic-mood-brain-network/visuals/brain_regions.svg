@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="概念脑图：标出STG、HG、MCG">
+  <title>概念定位图：STG、HG、MCG</title>
+  <desc>示意脑图在左半球标出上颞回、赫氏回与内侧扣带回的位置，用于解释论文中出现的关键节点区域。</desc>
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+  <!-- brain silhouette (abstract) -->
+  <path d="M190,260
+           C160,170 210,110 300,110
+           C340,70 420,70 460,105
+           C520,95 580,130 600,190
+           C660,220 660,310 600,340
+           C585,410 520,445 450,430
+           C410,465 330,470 290,435
+           C220,425 190,360 190,260 Z"
+        fill="#f2f4f7" stroke="#cfd6df" stroke-width="3"/>
+  <!-- midline hint -->
+  <path d="M430,120 C410,200 420,300 440,410" fill="none" stroke="#d7dde6" stroke-width="3" stroke-dasharray="8 8"/>
+  <!-- labels -->
+  <g font-family="Arial, sans-serif" font-size="20" fill="#1f2937">
+    <!-- STG dot -->
+    <circle cx="350" cy="300" r="10" fill="#2563eb"/>
+    <text x="370" y="306">STG（上颞回）</text>
+
+    <!-- HG dot -->
+    <circle cx="320" cy="325" r="10" fill="#16a34a"/>
+    <text x="340" y="331">HG（赫氏回）</text>
+
+    <!-- MCG dot -->
+    <circle cx="460" cy="250" r="10" fill="#dc2626"/>
+    <text x="480" y="256">MCG（内侧扣带回）</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#4b5563">
+    <text x="190" y="490">提示：本图为概念定位，不是论文原始脑图或真实坐标。</text>
+  </g>
+</svg>

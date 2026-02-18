@@ -1,385 +1,306 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>网页内容包本地预览</title>
-  <link rel="stylesheet" href="./styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <header class="header">
-    <div class="container">
-      <h1 id="page-title">网页内容包本地预览</h1>
-      <p class="muted" id="page-subtitle">（无需联网；内容与结构来自 data/site_package.json 的内嵌副本）</p>
-      <p class="badge" id="doc-meta"></p>
-    </div>
-  </header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>给主要精神障碍找“亚型”：聚类不是分类</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <main class="container">
-    <section class="card">
-      <h2>如何使用这份内容包</h2>
-      <p>你可以把 <code>data/site_package.json</code> 交给前端/后端渲染；也可以直接复制 <code>content/page.md</code> 上站。下方仅为快速预览与资源清单。</p>
-    </section>
+<div class="reading-progress" id="readingProgress"></div>
 
-    <section class="card" id="sections">
-      <h2>页面 Sections 预览</h2>
-      <div id="sections-list" class="stack"></div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">给主要精神障碍找“亚型”：聚类不是分类</h1>
+    <p class="hero-subtitle">副标题：作者回应争议——为何交叉验证、“过拟合”评估不一定适用于无标签分型</p>
+  </div>
+</section>
 
-    <section class="card" id="visuals">
-      <h2>视觉元素（占位 SVG）</h2>
-      <div id="visuals-grid" class="grid"></div>
-    </section>
 
-    <section class="card" id="interactives">
-      <h2>交互模块（规格与示例数据）</h2>
-      <div id="modules-list" class="stack"></div>
-    </section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>精神障碍患者差异巨大：能否从脑影像里找出更细的“亚型”？作者指出这属于无标签“聚类”，不是有标准答案的“分类”，因此交叉验证和“过拟合”概念不能直接套用。他们主张用“扰动数据”检验分群稳定性，并用自编码器做多次低维投影来增强鲁棒性。分群再用结构影像、遗传、基因表达与临床用药-症状关系交叉印证，为后续临床复现与分层研究提供线索。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究（公众视角）</h2>
+    <div class="reveal"><p>“主要精神障碍”（文中简称 MPDs）并不是一张“同款标签”的集合：不同人可能在症状表现、脑功能模式、遗传风险等方面差异很大。作者的目标是通过数据驱动的方法识别更细的“亚型”，以便理解大脑功能模式，并最终服务于更合适的治疗与研究分层。</p><p>但一旦把机器学习引入“分型”，就容易发生一个常见误读：把“分型/分群（聚类）”当成“诊断分类（分类）”，从而把本来用于“有标准答案的任务”的评估流程（例如交叉验证、泛化、过拟合）不加区分地套上来。作者写这篇回应文章，核心就是把这件事讲清楚：<strong>分型是聚类问题，评价思路应围绕稳定性/鲁棒性与外部证据链</strong>。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（类比解释，500–800字）</h2>
+    <div class="reveal"><p>可以把这项“分型”想成更像“整理”而不是“考试”的工作：研究者手里只有患者的数据，但没人事先提供“正确的亚型标签”，也不知道应该分成几类——这就是无监督学习里的“聚类”，按相似性把个体分堆。分类则不同：它用带标签的训练数据学规则，再在测试数据上预测标签，并把预测与真值对照来衡量泛化能力。因此作者认为，交叉验证、过拟合等概念在聚类里难以成立，因为缺少标签来量化“分得对不对”。</p><p>作者主张用两条线提高聚类可信度。</p><p>第一条是“稳定性/鲁棒性”：对同一份数据做合理的小扰动，分群结构是否仍大体一致。扰动数据可通过随机抽样子集，或把高维数据投影到低维空间生成；他们选择后者，并用自编码器做多次投影得到“扰动表示”，以提取更稳定的潜在特征、促进更稳健的分群。</p><p>第二条是“外部证据链”：聚类的价值取决于能否被独立数据源验证。作者列出四类验证来源——结构影像（DTI的皮层厚度/白质完整性）、遗传（多基因风险评分）、基因表达（风险基因组织表达谱）与临床数据（用药-症状关系），并报告这些分析与分型结果“显著对齐”。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（最重要的3点）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：分型是“聚类”，不是“分类”，所以别用“答案本逻辑”来评估</h2>
+    <div class="reveal"><p>通俗说法：如果没有预先定义好的亚型标签，任务就不是“判断对错”，而是“从数据里找模式”。因此，交叉验证/泛化/过拟合等概念在这里很难按分类的方式成立。</p><p>关键证据：作者明确指出“Subtyping diseases…is a task of clustering…unlabeled data”，并解释分类的泛化评估依赖“预测标签 vs 真实标签”的比较；而聚类“no class label is provided”。</p><p>这意味着什么：公众在看到“AI分亚型”时，需要先问：这是探索性分群（聚类）还是带标签判别（分类）？两者能回答的问题、能使用的评估工具并不相同。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：聚类的“有效性/显著性”没有通用裁判；空模型假设会左右结论</h2>
+    <div class="reveal"><p>通俗说法：聚类缺少统一“正确答案”，同一数据可以出现多种“看起来合理”的分群；要说哪种更好，取决于用途与领域解释。</p><p>关键证据（显著性部分）：作者指出，为聚类定义统计“空模型”非常困难，因为“no structure”的概念并不清晰；若把“簇=单一高斯分布”作为前提，会把未经证实的数据分布假设注入分析，统计检验也不能保证分型有效。</p><p>这意味着什么：在无标签分型中，“显著”不应被简化成“算出一个p值就算数”。更稳妥的路径是：看分群能否在合理扰动下保持稳定，并能否被独立数据源重复印证。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：作者把可信度建立在两点上——“稳不稳”与“证据链”</h2>
+    <div class="reveal"><p>通俗说法：先看分群在扰动下是否稳定，再看其他独立测量是否也呈现一致差异。</p><p>关键证据：作者说明用扰动数据评估稳定性/鲁棒性，并采用自编码器做多次投影；同时列出结构影像、遗传、基因表达、临床用药-症状等四类外部验证来源，并称与分型结果“significant alignment”。</p><p>这意味着什么：即便聚类是探索性的，也可以通过“稳定性+多模态验证”的证据链把结果推向更可用的科学知识；但作者也强调需要进一步临床研究复现。</p><p><blockquote>注：本通讯文章未提供分型数量、样本规模、效应量或统计数值，以上“关键证据”以文字主张与验证路径为主。</blockquote></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（不夸大，区分证据与推测）</h2>
+    <div class="reveal"><p><ul><li><strong>已证据支持的价值</strong>：这篇文章最直接的贡献，是澄清“分型=聚类”的问题属性，并说明为什么把交叉验证/过拟合等分类评估框架直接搬到聚类上会产生概念错误；同时给出更贴近聚类任务的可信度思路：稳定性/鲁棒性 + 外部多模态验证。</li><br></ul><br><ul><li><strong>合理推测的潜在影响（需更多研究）</strong>：如果未来研究能在独立人群中稳定复现这些亚型，并证明不同亚型与治疗反应、预后等临床结局确实相关，那么分型可能用于临床研究分层、药物试验设计或机制研究。</li><br></ul><br><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步（必须写）</h2>
+    <div class="reveal"><p><ul><li><strong>本文是回应性短文，信息粒度有限</strong>：全文仅两页，未给出原研究中的样本量、模型细节、分型数量、效果大小或图表，因此无法仅凭本文评估分型的“量化强度”。</li><br></ul><br><ul><li><strong>聚类解释依赖用途与领域知识，容易被误用或过度外推</strong>：作者强调聚类不存在通用“最佳结构”，也缺乏统一空模型；因此把分群直接当作“疾病本体类别”或直接转化为个人诊断结论，都不符合本文的表述边界。</li><br></ul><br><ul><li><strong>下一步：临床复现与进一步验证</strong>：作者在结尾明确指出，这些亚型发现“should be replicated in further clinical studies”。</li><br></ul><br><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p><strong>聚类先看“稳不稳”，再看“证据链”。</strong></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这篇论文是什么（便于媒体/公众理解）</h2>
+    <div class="reveal"><p>这是一篇对评论文章的回应（correspondence），作者回应 Winter & Hahn 对其 2021 年分型研究的质疑，重点在于机器学习概念澄清与聚类评估思路，而非呈现新的实验结果。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">许可与署名（用于网页合规）</h2>
+    <div class="reveal"><p>本文在 PDF 第2页注明为 Open Access，并使用 <strong>Creative Commons Attribution 4.0 International License（CC BY 4.0）</strong>；但也提示“第三方材料可能不在该许可之内”，使用时需核对版权行。</p><p>建议网页署名方式（示例，供实现时使用）：  <br>“内容改写与可视化基于 Zhang X, Wang F, Zhang W. <em>Molecular Psychiatry</em> (2022) 27:3569–3570，CC BY 4.0（来源：作者通讯文章）。”</p></div>
+    
+  </div>
+</section>
 
-    <section class="card" id="disclaimer">
-      <h2>统一免责声明</h2>
-      <p id="disclaimer-text"></p>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p class="muted">本页面为本地预览，不代表最终上线视觉与交互实现。</p>
-    </div>
-  </footer>
 
-  <!-- 内嵌数据：打开本文件即可预览（避免 file:// 下 fetch 受限） -->
-  <script id="site-data" type="application/json">
-{
-  "slug": "clustering-not-classification-psychiatric-subtyping-response",
-  "seo_title": "主要精神障碍分型争议：聚类不是分类｜稳定性与多模态验证如何让结果更可信",
-  "seo_description": "基于《Molecular Psychiatry》(2022) 的通讯回应文章：作者解释为何交叉验证、过拟合与“泛化”不一定适用于无标签聚类分型，并强调以稳定性/鲁棒性和多模态外部数据构建证据链；本文不含图表与具体数值结果。",
-  "keywords": [
-    "主要精神障碍",
-    "精神障碍分型",
-    "聚类",
-    "分类",
-    "交叉验证",
-    "过拟合",
-    "泛化",
-    "稳定性",
-    "鲁棒性",
-    "自编码器",
-    "fMRI",
-    "DTI",
-    "多模态验证",
-    "null model"
-  ],
-  "sections": [
-    {
-      "id": "hero",
-      "heading": "给主要精神障碍找“亚型”：聚类不是分类",
-      "body_markdown": "副标题：作者回应争议——为何交叉验证、“过拟合”评估不一定适用于无标签分型。",
-      "citations": [
-        "第1页，Subtyping diseases 小节首段",
-        "第1页，Generalization and overfitting 小节"
-      ]
-    },
-    {
-      "id": "30s",
-      "heading": "30秒读懂",
-      "body_markdown": "精神障碍患者差异巨大：能否从脑影像里找出更细的“亚型”？作者指出这属于无标签“聚类”，不是有标准答案的“分类”，因此交叉验证和“过拟合”概念不能直接套用。他们主张用“扰动数据”检验分群稳定性，并用自编码器做多次低维投影来增强鲁棒性。分群再用结构影像、遗传、基因表达与临床用药-症状关系交叉印证，为后续临床复现与分层研究提供线索。",
-      "citations": [
-        "第1页，TO THE EDITOR 段",
-        "第1页，Subtyping diseases 小节",
-        "第2页，Stability and robustness 小节",
-        "第1页，Cluster validity 小节",
-        "第2页，Concluding remarks 段"
-      ]
-    },
-    {
-      "id": "why",
-      "heading": "为什么要做这个研究",
-      "body_markdown": "主要精神障碍（MPDs）患者差异很大，作者希望通过数据驱动的方法识别更细的“亚型”，以理解功能脑模式并服务于更合适的治疗与研究分层。同时，他们澄清一个关键误区：把“分型/分群（聚类）”误当成“诊断分类（分类）”，会导致使用不合适的评估框架（如交叉验证、泛化、过拟合）。",
-      "citations": [
-        "第1页，TO THE EDITOR 段",
-        "第2页，Concluding remarks 段",
-        "第1页，Subtyping diseases 小节",
-        "第1页，Generalization and overfitting 小节"
-      ]
-    },
-    {
-      "id": "how",
-      "heading": "我们怎么做的",
-      "body_markdown": "可以把这项“分型”想成更像“整理”而不是“考试”的工作：研究者手里只有患者的数据，但没人事先提供“正确的亚型标签”，也不知道应该分成几类——这就是无监督学习里的“聚类”，按相似性把个体分堆（证据：第1页，Subtyping diseases 小节首段）。分类则不同：它用带标签的训练数据学规则，再在测试数据上预测标签，并把预测与真值对照来衡量泛化能力（证据：第1页，Generalization and overfitting 小节首段）。因此作者认为，交叉验证、过拟合等概念在聚类里难以成立，因为缺少标签来量化“分得对不对”（证据：第1页，Generalization and overfitting 小节第2段）。\n\n作者主张用两条线提高聚类可信度。\n\n第一条是“稳定性/鲁棒性”：对同一份数据做合理的小扰动，分群结构是否仍大体一致（证据：第2页，Stability and robustness 小节首段）。扰动数据可通过随机抽样子集，或把高维数据投影到低维空间生成；他们选择后者，并用自编码器做多次投影得到“扰动表示”，以提取更稳定的潜在特征、促进更稳健的分群（证据：第2页，Stability and robustness 小节第1–2段；第1页，Generalization and overfitting 小节末段）。\n\n第二条是“外部证据链”：聚类的价值取决于能否被独立数据源验证（证据：第1页，Cluster validity 小节中后段）。作者列出四类验证来源——结构影像（DTI的皮层厚度/白质完整性）、遗传（多基因风险评分）、基因表达（风险基因组织表达谱）与临床数据（用药-症状关系），并报告这些分析与分型结果“显著对齐”（证据：第1页，Cluster validity 小节末段）。",
-      "citations": [
-        "第1页，Subtyping diseases 小节",
-        "第1页，Generalization and overfitting 小节",
-        "第2页，Stability and robustness 小节",
-        "第1页，Cluster validity 小节"
-      ]
-    },
-    {
-      "id": "findings",
-      "heading": "我们发现了什么",
-      "body_markdown": "发现1：分型任务属于无标签聚类而非分类，交叉验证/泛化/过拟合等分类评估概念不能直接套用。\n\n发现2：聚类的有效性与显著性缺少通用裁判；空模型与分布假设会左右统计结论。\n\n发现3：作者强调用扰动数据评估稳定性/鲁棒性，并通过结构影像、遗传、基因表达与临床数据等多模态外部证据链支持分群意义；仍需进一步临床复现。",
-      "citations": [
-        "第1页，Subtyping diseases 小节",
-        "第1页，Generalization and overfitting 小节",
-        "第1–2页，Statistical significance 小节",
-        "第2页，Stability and robustness 小节",
-        "第1页，Cluster validity 小节",
-        "第2页，Concluding remarks 段"
-      ]
-    },
-    {
-      "id": "use",
-      "heading": "这项研究有什么用",
-      "body_markdown": "已证据支持：澄清聚类与分类边界，提出更贴近聚类任务的可信度路径——稳定性/鲁棒性 + 多模态外部验证。\n\n合理推测：若未来在独立人群中复现并与临床结局/治疗反应相关，分型可用于研究分层与试验设计；本文未给出个人诊断或用药规则。",
-      "citations": [
-        "第1页，Subtyping diseases 小节",
-        "第1页，Generalization and overfitting 小节",
-        "第2页，Stability and robustness 小节",
-        "第1页，Cluster validity 小节",
-        "第2页，Concluding remarks 段"
-      ]
-    },
-    {
-      "id": "limits_next",
-      "heading": "局限性与下一步",
-      "body_markdown": "局限性：本文为回应性短文（2页），不含图表与具体数值；聚类缺少统一最佳答案与通用空模型，解释依赖用途与领域知识。\n\n下一步：作者明确提出需在进一步临床研究中复现，并持续用不同数据源验证分群意义。",
-      "citations": [
-        "第1页标题与文体（CORRESPONDENCE/Response to…）",
-        "全文第1–2页无图表与数值结果",
-        "第1页，Cluster validity 小节",
-        "第1–2页，Statistical significance 小节",
-        "第2页，Concluding remarks 段"
-      ]
-    },
-    {
-      "id": "takehome",
-      "heading": "一句话带走",
-      "body_markdown": "聚类先看“稳不稳”，再看“证据链”。",
-      "citations": [
-        "第2页，Stability and robustness 小节",
-        "第1页，Cluster validity 小节"
-      ]
-    }
-  ],
-  "visual_assets": [
-    {
-      "id": "viz-01",
-      "title": "聚类 vs 分类：有没有“答案本”",
-      "type": "重绘信息图（概念对比）",
-      "source_ref": "第1页，Subtyping diseases 小节",
-      "alt_text": "两栏对比图：左栏‘聚类’强调无标签、目标是发现潜在亚型，评估看稳定性与外部证据；右栏‘分类’强调有标签、目标是预测对错，评估看泛化与交叉验证。底部用图标提示‘无答案本/有答案本’。",
-      "placeholder_path": "visuals/placeholders/viz-01.svg"
-    },
-    {
-      "id": "viz-02",
-      "title": "为什么交叉验证适合分类，不适合无标签分型",
-      "type": "流程图（概念流程）",
-      "source_ref": "第1页，Generalization and overfitting 小节",
-      "alt_text": "流程图展示分类的训练-测试闭环：训练→预测→与真值对比→算准确率；另一侧是聚类流程：输入→分群→稳定性检验→外部验证。图中用醒目标记指出聚类缺少真值标签，因此交叉验证不适用。",
-      "placeholder_path": "visuals/placeholders/viz-02.svg"
-    },
-    {
-      "id": "viz-03",
-      "title": "聚类有效性：为什么没有唯一“最佳分群”",
-      "type": "示意图（同一数据→多种分群）",
-      "source_ref": "第1页，Cluster validity 小节",
-      "alt_text": "同一批散点被两种方式着色分群：一种分成两团，另一种分成三团。右侧文字强调：无标签聚类不存在唯一‘正确’簇结构，结果的解释与价值取决于最终用途和领域知识（如研究分层或机制解释）。",
-      "placeholder_path": "visuals/placeholders/viz-03.svg"
-    },
-    {
-      "id": "viz-04",
-      "title": "统计显著性难题：空模型为何难定义？",
-      "type": "重绘信息图（问答式解释）",
-      "source_ref": "第1–2页，Statistical significance 小节",
-      "alt_text": "问答式信息图：先提出‘如何证明簇真的存在？’再指出显著性检验需要空模型，但聚类里‘无结构’定义不清。图中以‘单一高斯分布’为例说明：若强行设定分布，会把未经验证的假设注入结论。",
-      "placeholder_path": "visuals/placeholders/viz-04.svg"
-    },
-    {
-      "id": "viz-05",
-      "title": "稳定性/鲁棒性：把数据“轻轻晃一晃”",
-      "type": "示意图（扰动前后对比）",
-      "source_ref": "第2页，Stability and robustness 小节",
-      "alt_text": "对比示意：同一数据被‘轻微扰动’后，若分群几乎不变则更稳定。图中展示两种扰动：随机抽样子集与投影到低维空间。旁注说明作者偏好投影，因为小样本高维抽样容易漏掉潜在模式。",
-      "placeholder_path": "visuals/placeholders/viz-05.svg"
-    },
-    {
-      "id": "viz-06",
-      "title": "自编码器做多次投影：如何生成扰动表示",
-      "type": "流程图（方法示意）",
-      "source_ref": "第2页，Stability and robustness 小节；第1页，Generalization and overfitting 小节末段",
-      "alt_text": "流程图展示自编码器：高维数据进入编码器被压缩为低维潜在表示，再由解码器重构。图中用多条并行路径表示多次投影生成‘扰动表示’，用于提取更稳定的特征并促进更鲁棒的分群。",
-      "placeholder_path": "visuals/placeholders/viz-06.svg"
-    },
-    {
-      "id": "viz-07",
-      "title": "多模态验证地图：证据链从哪里来？",
-      "type": "重绘信息图（证据链辐射图）",
-      "source_ref": "第1页，Cluster validity 小节末段",
-      "alt_text": "辐射图中心写‘fMRI分群得到的亚型’，四周四个节点分别代表DTI结构指标、遗传多基因风险评分、风险基因表达谱与临床用药-症状关系。节点与中心的连线表示用这些正交数据源交叉验证分群是否一致。",
-      "placeholder_path": "visuals/placeholders/viz-07.svg"
-    },
-    {
-      "id": "viz-08",
-      "title": "从探索到可用：需要复现与应用评估",
-      "type": "时间线信息图",
-      "source_ref": "第2页，Concluding remarks 段",
-      "alt_text": "时间线从左到右展示三步：先做探索性聚类得到候选亚型，再通过稳定性/鲁棒性与多模态外部数据验证其意义，最后在进一步临床研究中复现并评估应用价值。尾端强调避免过度外推。",
-      "placeholder_path": "visuals/placeholders/viz-08.svg"
-    }
-  ],
-  "interactive_modules": [
-    {
-      "id": "im-01",
-      "title": "分群还是分类？一分钟概念小游戏",
-      "purpose": "理解无标签聚类与有标签分类的差别，以及评估方式为何不同。",
-      "ui_controls": [
-        "模式切换：分类/聚类（按钮）",
-        "噪声强度（滑杆0–1）",
-        "运行（按钮）"
-      ],
-      "schema_path": "data/interactive/im-01.schema.json",
-      "source_ref": "第1页，Subtyping diseases；第1页，Generalization and overfitting"
-    },
-    {
-      "id": "im-02",
-      "title": "扰动实验台：分群稳不稳？",
-      "purpose": "用扰动数据直观理解‘稳定性/鲁棒性’在聚类中的意义。",
-      "ui_controls": [
-        "扰动方式：随机抽样/低维投影（下拉）",
-        "扰动次数2–50（输入）",
-        "生成并比较（按钮）"
-      ],
-      "schema_path": "data/interactive/im-02.schema.json",
-      "source_ref": "第2页，Stability and robustness"
-    },
-    {
-      "id": "im-03",
-      "title": "多模态验证拼图：证据从哪里来？",
-      "purpose": "理解作者所说的‘正交模态验证’：用独立数据源交叉印证分群意义。",
-      "ui_controls": [
-        "模态图标点击：fMRI/DTI/遗传/基因表达/临床",
-        "展开/收起卡片"
-      ],
-      "schema_path": "data/interactive/im-03.schema.json",
-      "source_ref": "第1页，Cluster validity；第2页，Concluding remarks"
-    },
-    {
-      "id": "im-04",
-      "title": "显著性沙盒：空模型假设如何改变结论？",
-      "purpose": "用合成示例解释：聚类显著性检验依赖空模型与分布假设，空模型难普适定义。",
-      "ui_controls": [
-        "空模型选择（按钮组）",
-        "合成数据参数（滑杆/输入）",
-        "查看解释（按钮）"
-      ],
-      "schema_path": "data/interactive/im-04.schema.json",
-      "source_ref": "第1–2页，Statistical significance"
-    }
-  ],
-  "disclaimer": "本页面为科普解读，依据所提供的 2022 年通讯回应文章制作（不含原始数据与数值结果）。内容不构成医疗建议或个人诊断/用药依据；任何健康决策请咨询专业医生。聚类/分型结论需在独立队列复现并经临床研究验证后方可讨论应用。（证据：第2页，Concluding remarks；全文第1–2页无数值/阈值）",
-  "source_document": {
-    "title": "Response to: Significance and stability of deep learning-based identification of subtypes within major psychiatric disorders.",
-    "journal": "Molecular Psychiatry",
-    "year": 2022,
-    "pages": "3569–3570",
-    "doi": "10.1038/s41380-022-01613-8",
-    "license": "CC BY 4.0（Open Access）",
-    "source_ref": "第1页论文信息；第2页 Open Access 段落"
-  }
-}
-  </script>
-
-  <script>
-  function escapeHtml(str){
-    return String(str).replace(/[&<>"]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]));
-  }
-  function mdToHtml(md){
-    // 极简转换：按空行分段；保留换行；支持行内 code
-    const safe = escapeHtml(md || '');
-    const withCode = safe.replace(/`([^`]+)`/g, '<code>$1</code>');
-    const paras = withCode.split(/\n\n+/).map(p => p.replace(/\n/g, '<br/>'));
-    return paras.map(p => `<p>${p}</p>`).join('');
-  }
-
-  const data = JSON.parse(document.getElementById('site-data').textContent);
-
-  // header
-  document.getElementById('page-title').textContent = data.sections?.[0]?.heading || '网页内容包预览';
-  document.getElementById('page-subtitle').textContent = data.sections?.[0]?.body_markdown || '';
-  const meta = data.source_document || {};
-  document.getElementById('doc-meta').textContent = `${meta.journal || ''} ${meta.year || ''} · DOI: ${meta.doi || ''} · 许可: ${meta.license || ''}`;
-
-  // sections
-  const secWrap = document.getElementById('sections-list');
-  (data.sections || []).forEach(sec => {
-    const div = document.createElement('div');
-    div.className = 'section';
-    div.innerHTML = `
-      <h3>${escapeHtml(sec.heading)}</h3>
-      <div class="md">${mdToHtml(sec.body_markdown)}</div>
-      <details class="citations">
-        <summary>证据锚点（点击展开）</summary>
-        <ul>${(sec.citations||[]).map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul>
-      </details>
-    `;
-    secWrap.appendChild(div);
-  });
-
-  // visuals
-  const visGrid = document.getElementById('visuals-grid');
-  (data.visual_assets || []).forEach(v => {
-    const card = document.createElement('div');
-    card.className = 'viz';
-    const imgPath = v.placeholder_path || '';
-    card.innerHTML = `
-      <img src="../${escapeHtml(imgPath)}" alt="${escapeHtml(v.alt_text || '')}" />
-      <div class="viz-body">
-        <h3>${escapeHtml(v.title)}</h3>
-        <p class="muted">${escapeHtml(v.type || '')}</p>
-        <p><strong>来源锚点：</strong>${escapeHtml(v.source_ref || '')}</p>
-        <details>
-          <summary>无障碍 alt 文本</summary>
-          <p>${escapeHtml(v.alt_text || '')}</p>
-        </details>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          术语小词典（公众版）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><blockquote>说明：术语解释以论文文本为依据；若是常见机器学习概念（如“监督/无监督”），会在论文语境中用“有无标签”来解释。</blockquote></p></div>
       </div>
-    `;
-    visGrid.appendChild(card);
-  });
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          1. 聚类（Clustering）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：在没有预先标签时，按照相似性把个体“分堆”的方法。  <br>类比：把一筐混合纽扣按大小、颜色、孔数分成几盒。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          2. 分类（Classification）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：在有标签答案时，学习规则把新样本归到已知类别，并能用真值比较来评估表现。  <br>类比：有座位表的考场，把每个考生分到对应座位。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          3. 无标签数据（Unlabeled data）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：数据里没有“正确类别/亚型”这一列，算法无法直接对照“对错”。  <br>类比：只有照片，没有背面写着“这是A类/这是B类”的说明。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          4. 监督学习 vs 无监督学习（Supervised vs Unsupervised）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文用“分类=监督学习（有标签）”“聚类=无标签”来区分两类任务。  <br>类比：监督学习像有答案本的练习；无监督学习像自己整理资料、总结规律。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          5. 泛化（Generalization）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：在分类任务里，指模型在没见过的新样本上还能否预测正确。  <br>类比：不靠死记题型，换道题也能做对。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          6. 过拟合（Overfitting）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文指出，分类里可用标签比较来评估过拟合；但在聚类里缺少标签，过拟合“很难评估”。  <br>类比：只背会某套例题的步骤，换个说法就不会。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          7. 交叉验证（Cross-validation）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文将交叉验证描述为用于分类任务、衡量泛化并对抗过拟合的技术；在无标签聚类中“irrelevant”。  <br>类比：多次模拟考试轮换题目来估计水平——前提是有标准答案。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          8. 聚类有效性/有效簇（Cluster validity）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文强调聚类没有统一“最佳簇结构”，结果解释依赖领域知识与最终用途。  <br>类比：把城市分“商圈/住宅/工业区”，怎么分取决于你要解决的问题。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          9. 空模型/零假设（Null model）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：用于显著性检验的参照模型；论文指出在聚类里“no structure”的概念并不清晰，因此很难有通用空模型。  <br>类比：先规定“完全随机分组”是什么样，才能比较“我们分得是否更像有规律”。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          10. 自编码器（Autoencoder）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文中自编码器被用于做多次投影，生成扰动表示以增强鲁棒性。  <br>类比：把长文压缩成摘要（潜在表示），再尽量还原原文；多次摘要方式略有不同。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          11. 稳定性与鲁棒性（Stability & Robustness）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文认为这是聚类的关键性质，可通过对数据做扰动来检验。  <br>类比：轻轻摇一摇拼图，图案还能大体保持，就更“稳”。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          12. 正交模态/多模态验证（Orthogonal modalities）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>一句话解释：论文建议用不同来源的数据（影像、遗传、临床等）验证分群结果，而不是只看一个算法输出。  <br>类比：同一事件既看监控、也看票据、再听证词——信息来源越独立，证据链越强。</p><p><ul><li>--</li></ul></p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（公众常问）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q1：这是不是说“聚类不需要验证”？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不是。作者反而强调：聚类缺少标签参照，更需要用“不同数据源的外部证据”验证其意义。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q2：为什么不能像分类一样做交叉验证？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>作者的理由是：交叉验证依赖真实标签来比较预测对错，用于衡量分类泛化与过拟合；聚类没有标签，无法按同样方式定义“泛化误差”，因此交叉验证在这里不相关。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q3：作者说“过拟合不适用于聚类”，是不是意味着聚类永远不会错？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>不是“不会错”，而是作者认为在无标签场景下很难用分类式的“过拟合”定义来量化错误；更合适的做法是看稳定性/鲁棒性，并做外部验证。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q4：聚类结果能不能用一个统计检验来证明“群确实存在”？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>作者认为很难。因为要做显著性检验必须先定义“没有群时数据应长什么样”的空模型，但聚类里“no structure”的概念并不清晰；强行假设单一高斯分布会引入未经证实的前提，检验也不能保证分型有效。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q5：自编码器在这里到底做什么？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>作者说明其自编码器用途是生成更多“扰动数据/扰动表示”，用于增强结果鲁棒性，并通过多次投影提取潜在特征以促进稳健分群。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q6：论文说用哪些独立数据来“交叉印证”分群？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>作者列出：结构影像（皮层厚度与白质完整性，DTI）、遗传（多基因风险评分）、基因表达（风险基因组织表达谱）以及临床数据（用药对症状严重度的影响）。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q7：这些亚型能直接用于个人诊断或指导用药吗？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>本文没有给出可用于个人层面的诊断阈值、决策规则或用药建议；作者也强调需要进一步临床研究复现。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q8：这篇文章有没有报告“效果有多大”的数字？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>没有。本文为回应性短文，主要用文字表述“显著对齐/一致”，未报告效应量、p值、样本量等具体数值。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Q9：下一步最重要的事是什么？
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>作者明确提出需要在进一步临床研究中复现；同时持续用多源数据验证分群意义，也是论文反复强调的方向。</p></div>
+      </div>
+  </div>
+</section>
 
-  // modules
-  const modWrap = document.getElementById('modules-list');
-  (data.interactive_modules || []).forEach(m => {
-    const div = document.createElement('div');
-    div.className = 'module';
-    const schemaLink = `../${m.schema_path}`;
-    const sampleCandidates = [
-      `../data/demo-data/${m.id}.sample.json`,
-      `../data/demo-data/${m.id}-clustering.sample.json`,
-      `../data/demo-data/${m.id}-classification.sample.json`,
-      `../data/demo-data/im-01-clustering.sample.json`,
-      `../data/demo-data/im-01-classification.sample.json`,
-      `../data/demo-data/im-02.sample.json`,
-      `../data/demo-data/im-03.sample.json`,
-      `../data/demo-data/im-04.sample.json`
-    ];
-    const sampleLinks = sampleCandidates
-      .filter(p => p.includes(m.id) || (m.id==='im-01' && p.includes('im-01')) || (m.id==='im-02' && p.includes('im-02')) || (m.id==='im-03' && p.includes('im-03')) || (m.id==='im-04' && p.includes('im-04')))
-      .map(p => `<a href="${p}">示例数据</a>`);
-    div.innerHTML = `
-      <h3>${escapeHtml(m.title)}</h3>
-      <p>${escapeHtml(m.purpose || '')}</p>
-      <p><strong>交互控件：</strong>${escapeHtml((m.ui_controls||[]).join('；'))}</p>
-      <p><strong>来源锚点：</strong>${escapeHtml(m.source_ref || '')}</p>
-      <p>
-        <a href="${schemaLink}">打开 JSON Schema</a>
-        ${sampleLinks.length ? ' · ' + sampleLinks.join(' · ') : ''}
-      </p>
-    `;
-    modWrap.appendChild(div);
-  });
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-  // disclaimer
-  document.getElementById('disclaimer-text').textContent = data.disclaimer || '';
-  </script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

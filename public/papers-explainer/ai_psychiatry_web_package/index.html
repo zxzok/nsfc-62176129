@@ -1,128 +1,140 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI走进精神科：能让诊断更客观、治疗更精准吗？</title>
-  <meta name="description" content="面向公众解读Zheng & Zhang（2025）综述：AI如何影响精神障碍分类、临床与医学教育，并梳理隐私、公平与可解释等边界。" />
-  <link rel="stylesheet" href="./styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="container">
-    <p class="kicker">科研成果公众传播 · 论文解读</p>
-    <h1 id="page-title">AI走进精神科：能让诊断更客观、治疗更精准吗？</h1>
-    <p id="page-subtitle" class="subtitle"></p>
-    <div class="meta" id="paper-meta"></div>
-  </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <nav class="container nav" aria-label="页面目录">
-    <ol id="toc"></ol>
-  </nav>
+<div class="reading-progress" id="readingProgress"></div>
 
-  <main id="main" class="container">
-    <section class="card" id="sec-30s">
-      <h2>30秒读懂</h2>
-      <div id="sec-30s-body"></div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">AI走进精神科：能让诊断更客观、治疗更精准吗？</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-    <section class="card" id="sec-content">
-      <h2>全文解读</h2>
-      <div id="sections"></div>
-    </section>
 
-    <section class="card" id="sec-visuals">
-      <h2>配图与信息图清单</h2>
-      <div class="grid" id="visual-grid"></div>
-    </section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（约150字）</h2>
+    <div class="reveal"><p>问题：精神科诊断与用药常依赖主观访谈与“试错”，难以及早、精准地匹配到个人。  <br>方法：作者在三大数据库检索2005–2025年文献并做叙事性综述，不做meta-analysis。  <br>发现：AI可整合脑影像、病历、手机/穿戴与语音等数据，帮助划分亚型、预测风险与疗效，但隐私、偏见、可解释性与外部验证不足是落地门槛。  <br>意义：把AI变成可靠助手，关键在治理规则与医学教育同步升级。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究：现实困境是什么？</h2>
+    <div class="reveal"><p>精神健康问题正在升级为全球公共卫生压力。论文引述WHO预测：到2030年，精神疾病可能成为全球疾病负担的主要贡献者之一。跨国人群研究也提示：约半数人在75岁前可能经历至少一种可诊断精神障碍。当需求上升，诊疗体系却仍被两类“老问题”卡住：</p><p>第一，诊断体系主要依赖症状访谈。论文指出DSM/ICD等分类缺少稳定客观生物标志物支撑，因此容易出现误诊、漏诊和干预延迟。同一诊断内部差异巨大、不同诊断之间又高度重叠，这会让“同名不同病/不同名同病”的情况更常见。</p><p>第二，治疗常常走“试错路径”。论文用抑郁症举例：在STARD一级治疗中，西酞普兰缓解率约28–33%，不少患者需要进入后续治疗步骤。这意味着时间成本、经济成本与症状持续本身都可能叠加。</p><p>因此作者提出：AI在高维数据整合与模式识别上的能力，可能为“更客观的诊断线索、更可解释的机制假设、更个体化的治疗决策”提供新工具，但它必须与伦理治理与教育改革同步推进。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的：这篇综述如何整理证据？</h2>
+    <div class="reveal"><p>这是一篇叙事性综述：作者用结构化检索确保覆盖面，然后以“主题—证据—边界”的方式综合研究，不把所有研究硬凑成一个平均值。  <br>检索范围包括PubMed、Web of Science与IEEE Xplore，时间为2005年1月1日至2025年5月15日；关键词覆盖精神医学/心理健康、AI/机器学习（含深度学习、图神经网络与大语言模型）以及诊断、治疗反应、脑影像、EHR、可穿戴、数字表型与医学教育等应用场景。两位作者独立筛选，分歧讨论一致；纳入有人群数据的实证研究、方法学论文、系统综述与政策/课程框架文献，排除纯技术、单病例与动物研究。</p><p>作者为每项研究记录“材料与做法”：研究设计、场景、样本、数据模态、AI方法、任务、验证方式与量化结果。但由于研究异质性大，论文明确不做meta-analysis，并特别强调要关注外部有效性与真实世界可推广性。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么：三条最重要的结论（证据锚点齐全）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：AI有机会把“症状分箱”变成“数据更一致的亚型”，并提前预测部分治疗反应</h2>
+    <div class="reveal"><p>精神科传统分类像按“外观症状”分箱。论文指出这种方式会导致“同诊断异质、跨诊断同质”，影响对生物机制的把握。作者总结，多模态机器学习可整合神经影像、遗传、神经心理测评与量表等数据，提出更细粒度甚至新的分类方案；初步研究提示多模态模型在区分患者与健康对照方面优于单模态模型。</p><p>更直观的例子来自抑郁症治疗反应预测：论文引用一项多模态深度图学习研究，整合静息态fMRI与EEG的基线脑网络特征来预测舍曲林与安慰剂的差异性结局，模型平均R²约0.24（舍曲林）与0.20（安慰剂），最佳运行可达0.31与0.28，并报告置换检验P<0.001。与之对照，常规一线治疗缓解率并不高（STARD一级约28–33%）。  <br>这意味着：如果这些“数据亚型/预测线索”能在更多独立队列中稳定复现并具备临床可解释性，精神科有望减少一部分试错。但论文也提醒：亚型可重复性、临床意义与可解释性仍是主要障碍。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：数字表型把“门诊快照”变成“生活影片”，但它不是自动确诊器</h2>
+    <div class="reveal"><p>论文给出定义：数字表型是利用个人数字设备持续量化个体行为与生理状态。它的可行性来自普及的手机与可穿戴：加速度计/陀螺仪活动、GPS移动、麦克风韵律特征，以及通信频率、社交媒体使用、打字动态等交互痕迹，都可能提供高频的精神状态相关线索。论文还总结语音方向：抑郁或焦虑者可能出现语速变慢、语调单一、负性词汇更多等特征，AI模型可捕捉这些变化，并有研究报告较高识别准确度。</p><p>但作者特别强调“边界”：早期平台工作并未评估临床疗效，不应被视为已经能在常规医疗中实现客观诊断或连续监测的证据；还需要隐私同意、数据安全、技术标准化与大规模前瞻验证。在临床应用章节，作者同样强调这些信号“补充门诊评估而不是替代”，并指出社交媒体/可穿戴用于风险分层仍需稳健外部验证与治理护栏。  <br>这意味着：数字表型更像“趋势线”，帮助发现变化与触发进一步评估，而不是替代医生的诊断。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：AI能否“安全地有用”，取决于伦理治理与医学教育是否同步升级</h2>
+    <div class="reveal"><p>论文把核心挑战清晰指向：数据隐私、算法偏见与不平等获取。在伦理部分，作者强调精神健康数据高度敏感，涉及病历、治疗史乃至日常行为；即使能获得数据，也需要去标识化与加密，并防止被不当用于商业营销或保险风险评估。关于偏见，论文指出若训练数据在种族、性别、社会经济地位等方面不均衡，模型可能对某些群体系统性不利，并举例说明跨文化迁移可能准确性下降。在可解释性方面，论文指出深度学习常是黑箱，高风险决策尤其需要XAI或更可解释模型，同时要有清晰的责任框架。</p><p>监管层面，论文综述了三套框架：WHO 2021伦理治理六原则；欧盟AI法案的风险分级（精神健康AI被归为高风险，要求上市前合规评估、人类监督与上市后监测）；FDA对可更新模型提出“预设变更控制计划”（SPS/ACP）的生命周期监管思路。  <br>教育层面，论文指出多数医学院课程尚未系统纳入AI相关内容，需以分层培养（工具使用者/临床翻译者/开发者）与“四支柱课程”（技术概念、模型验证、伦理指南、结果评估）推进，同时强化人文沟通与治疗联盟等AI难以替代能力。  <br>这意味着：精神科AI不是“装上就好”，而是“要在制度与能力上一起升级”的系统工程。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用：哪些是“已被综述支持”的，哪些是“合理推测”？</h2>
+    <div class="reveal"><p>已被综述支持的方向，是把AI当作“辅助工具”，并对成熟度做区分。论文将应用按临床领域与证据成熟度分级（表1），并给出试点/验证/部署的定义。例如：EHR文本抽取多在试点阶段；抗抑郁药反应预测多在验证阶段；数字表型与实时追踪被归为部署阶段但仍需持续监测。在资源受限地区，AI辅助筛查可能作为补充工具提升早期识别效率。</p><p>合理推测的方向，是在“外部验证 + 治理护栏 + 教育升级”都到位后，AI可能减少部分试错、提升连续管理能力并改善可及性；但论文同时强调外部有效性与真实世界表现仍是不确定项，必须用更广泛人群与更长随访验证。因此本页不将任何单项技术描述为“已经证明能普遍替代临床诊断/治疗”。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步：论文自己怎么说？</h2>
+    <div class="reveal"><p>局限性一：本文为叙事性综述，研究异质性大，因此不做meta-analysis，也不提供统一的总体准确率/效应量结论。  <br>局限性二：许多AI模型在封闭数据集表现好，但在独立真实世界数据集上可能明显下降，需要外部验证与可推广性评估。  <br>局限性三：AI驱动的新亚型可能缺乏跨队列复现，临床意义与可解释性仍不清。  <br>下一步：论文建议提升模型可解释性与稳健性、用多中心数据提高适用性、并建立全生命周期监管与上市后监测；同时推动医学教育系统改革，培养“会用也会质疑”的AI素养。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>AI能让精神科更精准，但必须守住隐私、公平与人文。</p></div>
+    
+  </div>
+</section>
 
-    <section class="card" id="sec-interactives">
-      <h2>交互模块（演示版）</h2>
-      <p class="muted">本目录附带可运行的轻量演示，方便你把“数据结构 + 文案”直接交给前端落地。</p>
-
-      <div class="interactive" id="im-maturity">
-        <h3>1）AI应用成熟度筛选器</h3>
-        <div class="controls">
-          <label>临床领域
-            <select id="mf-domain" aria-label="按临床领域筛选"></select>
-          </label>
-          <label>证据成熟度
-            <select id="mf-maturity" aria-label="按证据成熟度筛选">
-              <option value="">全部</option>
-              <option value="Pilot phase">Pilot phase</option>
-              <option value="Validation phase">Validation phase</option>
-              <option value="Deployment phase">Deployment phase</option>
-              <option value="Pilot/validation phase">Pilot/validation phase</option>
-            </select>
-          </label>
-          <label>关键词
-            <input id="mf-q" type="search" placeholder="例如：EHR / wearables / VR" aria-label="关键词搜索" />
-          </label>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/figure1.png" alt="figure1" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1</p>
+          </div>
         </div>
-        <div class="note" id="mf-note"></div>
-        <ul class="list" id="mf-list" aria-live="polite"></ul>
-      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="interactive" id="im-dp">
-        <h3>2）数字表型信号实验台</h3>
-        <p class="note">提示：这些是“相关线索”，不能替代诊断或自测。（见页内证据标注）</p>
-        <div class="dp-layout">
-          <div>
-            <h4>选择信号来源</h4>
-            <div id="dp-checks" class="checks"></div>
-          </div>
-          <div>
-            <h4>你选的信号会生成什么“特征”</h4>
-            <div id="dp-features" class="chips"></div>
-            <h4>可能支持的任务（研究/辅助）</h4>
-            <ul id="dp-tasks" class="list"></ul>
-            <h4>边界与风险</h4>
-            <p id="dp-boundary" class="warn"></p>
-          </div>
-        </div>
-      </div>
 
-      <div class="interactive" id="im-gov">
-        <h3>3）AI治理与伦理决策盘</h3>
-        <label>选择场景
-          <select id="gov-select" aria-label="选择使用场景"></select>
-        </label>
-        <div class="gov-grid">
-          <div>
-            <h4>需要重点关注</h4>
-            <ul id="gov-flags" class="list"></ul>
-          </div>
-          <div>
-            <h4>建议护栏（可落地清单）</h4>
-            <ul id="gov-guards" class="list"></ul>
-          </div>
-        </div>
-        <p id="gov-explain" class="note"></p>
-      </div>
 
-      <div class="interactive" id="im-conflict">
-        <h3>4）AI冲突情景模拟器（教育用途）</h3>
-        <p class="note">这是“思维方式”演示，不提供任何个人风险处置建议。</p>
-        <div id="sim-box" class="sim"></div>
-      </div>
-    </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-    <section class="card" id="sec-glossary">
-      <h2>术语小词典</h2>
-      <div id="glossary"></div>
-    </section>
-
-    <section class="card" id="sec-faq">
-      <h2>FAQ</h2>
-      <div id="faq"></div>
-    </section>
-
-    <footer class="container footer">
-      <p id="disclaimer" class="muted"></p>
-      <p class="muted">内容包内含论文Figure 1截图（原文为CC BY开放获取，转载请遵守署名要求）</p>
-    </footer>
-  </main>
-
-  <script src="./app.js" defer></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

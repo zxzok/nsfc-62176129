@@ -1,387 +1,217 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>视觉皮层rTMS能否帮助青少年精神障碍？一项从大鼠到人的跨物种研究</title>
-  <meta name="description" content="科普解读：研究将10Hz重复经颅磁刺激（rTMS）对准视觉皮层，在MAM大鼠与21名青少年重性精神障碍患者中观察到前额ReHo下降及量表下降，并讨论机制线索与局限。"/>
-  <meta name="keywords" content="rTMS,视觉皮层,青少年,重性精神障碍,MPDs,fMRI,ReHo,跨物种,蛋白质组学,神经可塑性"/>
-  <link rel="stylesheet" href="assets/css/styles.css"/>
-  <script defer src="assets/js/main.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>把磁刺激“对准视觉皮层”，能否帮青少年精神障碍的大脑找回发育节奏？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-<header>
-  <div class="nav">
-    <div class="brand">论文科普网页包</div>
-    <nav aria-label="页面导航">
-      <a href="#quick">30秒读懂</a>
-      <a href="#why">为什么做</a>
-      <a href="#how">怎么做</a>
-      <a href="#findings">3个发现</a>
-      <a href="#use">有什么用</a>
-      <a href="#interact">交互模块</a>
-      <a href="#glossary">术语</a>
-      <a href="#faq">FAQ</a>
-      <a href="#limits">局限</a>
-    </nav>
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">把磁刺激“对准视觉皮层”，能否帮青少年精神障碍的大脑找回发育节奏？</h1>
+    
   </div>
-</header>
+</section>
 
-<main>
-  <div class="hero">
-    <h1>把磁刺激“对准视觉皮层”，能否帮青少年精神障碍的大脑找回发育节奏？</h1>
-    <div class="subtitle">一项“从大鼠到人”的研究观察到：视觉皮层 rTMS 后前额叶异常同步性下降，并伴随症状量表下降 <span class="cite">（证据：第1页 摘要；第6–8页 结果与图2–3）</span></div>
-    <div class="meta">
-      <span class="badge">研究类型：跨物种转化研究 <span class="cite">（证据：第1页 摘要；第2页 引言）</span></span>
-      <span class="badge">对象：MAM大鼠 + 21名青少年患者 <span class="cite">（证据：第3页 方法2.1；第4页 2.7）</span></span>
-      <span class="badge">核心指标：静息态fMRI ReHo <span class="cite">（证据：第4–5页 2.5/2.10）</span></span>
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">页面标题</h2>
+    <div class="reveal"><p><strong>主标题：</strong> 把磁刺激“对准视觉皮层”，能否帮青少年精神障碍的大脑找回发育节奏？  <br><strong>副标题：</strong> 一项“从大鼠到人”的研究观察到：视觉皮层 rTMS 后前额叶异常同步性下降，并伴随症状量表下降</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig3C.png" alt="页面标题" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>问题：青少年重性精神障碍常在大脑发育关键期出现，但青少年 rTMS “刺激哪里更有证据”仍不确定。  <br>方法：研究把 10Hz rTMS 对准视觉皮层，在 MAM 大鼠与 21 名青少年患者中，用静息态 fMRI 的 ReHo 指标比较刺激前后变化。  <br>发现：两种物种均出现“前额 ReHo 降低”；患者 BPRS/HAMD/HAMA 评分显著下降。  <br>意义：提示“从视觉入口”也许能牵动前额叶功能，但仍需更大对照试验与机制研究验证。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig3B.png" alt="30秒读懂（120–180字）" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究（公众视角）</h2>
+    <div class="reveal"><p>重性精神障碍（如精神分裂症、双相障碍、重度抑郁）常在青少年期首次出现，而这段时期也是大脑仍在快速发育和重塑的窗口。作者指出，青春期具有更高的神经可塑性，是可能改变疾病发展轨迹的关键干预期。  <br>rTMS 是一种非侵入式脑刺激技术，已被用于精神科治疗探索，但作者强调：在青少年 MPDs 的 rTMS 研究中，“证据支持的刺激部位仍不确定”。  <br>团队提出一个不同寻常的靶点：视觉皮层。理由是皮层发育通常呈“从后到前”的梯度，枕叶视觉皮层更早成熟，而额叶成熟最晚；调节视觉系统与全脑连接，可能在发育关键期带动整体可塑性。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（含类比解释，500–800字）</h2>
+    <div class="reveal"><p>这项研究像做一场“跨物种的同题测验”：先在可控的大鼠模型里测出“发育失衡长什么样”，再把同样的刺激靶点和同样的脑影像量尺带到青少年患者，看看结果是否一致。</p><p><strong>1）大鼠：构建“发育受扰动”的版本。</strong>  <br>研究使用 MAM 模型：在孕鼠妊娠第 17 天注射 MAM（22 mg/kg）扰动胚胎期发育。30 只大鼠分三组：vehicle-sham（10只）、MAM-sham（10只）、MAM-rTMS（10只）。</p><p><strong>2）把“节拍器”打在视觉皮层上。</strong>  <br>rTMS 可以理解为把线圈当作“非接触式节拍器”，用规律的磁脉冲影响神经元活动与可塑性。大鼠在青春期接受 2 周刺激：10Hz，6秒开/15秒关，每次 900 脉冲、约 5 分钟，每天 1 次；假刺激则把线圈移到头皮外侧 10 cm。  <br>青少年患者来自一个前瞻性、开放标签、单臂研究：21 名 13–18 岁住院青少年，诊断包括 SZ（2）、BD（12）、MDD（7），研究期间维持稳定用药。患者接受 10 次视觉皮层 rTMS：10Hz，强度为静息运动阈值 100%，4秒开/10秒关，每次 1200 脉冲、约 6分50秒，每天 2 次连续 5 天；靶点由 10–10 系统与个体 MRI 共同确定。</p><p><strong>3）用同一把“脑活动尺子”来量：ReHo。</strong>  <br>研究用静息态 fMRI 的 ReHo（区域同质性）衡量局部脑信号是否“齐步走”。技术上，它用 Kendall 协同系数比较一个体素与周围 26 个体素的时间序列一致性。  <br>大鼠还额外采集前额叶与后部皮层的蛋白质组学数据，用于寻找可能的分子机制线索。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现1：模型大鼠出现“前强后弱”的功能失衡</h2>
+    <div class="reveal"><p>通俗表述：MAM 大鼠的大脑像把“前额叶总指挥”音量开得太大，而后部感觉区反而偏弱。  <br>关键证据：与 vehicle-sham 相比，MAM-sham 前额多个区域 ReHo 显著升高、后部多个感觉相关区域 ReHo 显著降低。  <br>这意味着什么：研究把“神经发育受损”落到可测的脑影像模式，为后续判断干预是否“纠偏”提供量尺。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现2：刺激视觉皮层后，大鼠的前额叶异常活动回落，并伴随前额叶突触相关蛋白变化</h2>
+    <div class="reveal"><p>通俗表述：刺激点在“视觉入口”，但最明显的变化出现在更前端的“执行中心”（前额叶）。  <br>关键证据（影像）：MAM-rTMS 相比 MAM-sham 在前额区域出现 ReHo 降低；后部区域未见显著 ReHo 改变。  <br>关键证据（分子）：蛋白质组共获得 3382 种蛋白；模型vs对照：前额 510 个异常蛋白、后部 105 个；rTMSvs模型：前额 159 个、后部 53 个；两次比较重叠：前额 81 个、后部 8 个。前额叶重叠蛋白的 GO 富集指向 presynapse、vesicle、intracellular transport 等。  <br>这意味着什么：研究提供“影像—分子”两层线索，提示视觉皮层 rTMS 的效应可能通过影响前额叶突触与细胞内运输相关过程实现。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现3：在21名青少年患者中，治疗后出现“前降后升”，量表显著下降，且前额ReHo与症状相关</h2>
+    <div class="reveal"><p>通俗表述：患者治疗后脑图变了，量表也同步下降；并且“前额同步性越高，症状评分越高”的关系在治疗后可观察到。  <br>关键证据（影像）：治疗后前额与边缘系统 ReHo 下降，后部（枕叶、舌回）ReHo 上升。  <br>关键证据（量表）：BPRS、HAMD、HAMA 治疗后均显著降低（均 p<0.0001）。  <br>关键证据（关联）：治疗后左额叶 ReHo 与 BPRS 正相关（r=0.554，p=0.036，FDR 校正）。  <br>这意味着什么：在本研究设计下，临床改善与前额功能指标变化“同向出现”，支持前额叶在症状改善中的关键地位，但相关不等于因果。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（不夸大，划清边界）</h2>
+    <div class="reveal"><p><strong>已证据支持的：</strong>  <br><ul><li>提出视觉皮层作为青少年 MPDs 的候选 rTMS 靶点，并在大鼠与患者中都观察到前额 ReHo 下降这一相似方向变化。  </li><br><li>展示一种“可转译的中间表型”策略：用同一个 fMRI 指标（ReHo）把动物的分子机制线索与人的症状量表连接起来。  </li><br><li>提供机制线索：前额叶突触相关蛋白与细胞内运输相关过程可能参与 rTMS 作用。</li><br></ul><br><strong>合理推测（论文提出方向，但本研究未能严格验证）：</strong>  <br><ul><li>未来或可探索用“前额—后部功能平衡”作为治疗监测/分型线索，但本研究未提供预测模型与随机对照证据。  </li><br><li>视觉皮层到前额叶的具体环路可能是关键，但作者明确指出“环路仍不清楚”，需要电路层面实验。</li><br></ul><br><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步（必须写）</h2>
+    <div class="reveal"><p><ul><li>机制层面：视觉到前额的神经环路仍不明确，需要电路层面的基础实验。  </li><br><li>临床设计：样本量小；缺少健康对照，无法确认患者基线是否存在作者假设的“前后失衡”。  </li><br><li>混杂因素：患者研究期间维持稳定药物，但仍不能排除药物影响临床结局。  </li><br><li>动物行为：NOR/OFT 多项指标上，MAM-rTMS 与 MAM-sham 没有显著差异。  </li><br><li>数据可得性：论文声明数据可向通讯作者申请，但因隐私/伦理限制不公开。  </li><br></ul>下一步：作者建议更大样本临床试验与更深入机制研究来验证与复现。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p><strong>从视觉皮层入手，可能“牵动”前额叶功能。</strong></p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/fig1.png" alt="fig1" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3C.png" alt="fig3C" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3C</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3B.png" alt="fig3B" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3B</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3A.png" alt="fig3A" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3A</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/mechanism_unknown.svg" alt="mechanism unknown" loading="lazy">
+          <div class="visual-card-body">
+            <p>mechanism unknown</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2BC.jpg" alt="fig2BC" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2BC</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2A.jpg" alt="fig2A" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2A</p>
+          </div>
+        </div>
     </div>
   </div>
+</section>
 
-  <section id="quick">
-    <h2>30秒读懂</h2>
-    <div class="callout">
-      <p><strong>问题：</strong>青少年重性精神障碍常在大脑发育关键期出现，但青少年 rTMS “刺激哪里更有证据”仍不确定。<span class="cite">（证据：第2页 引言）</span></p>
-      <p><strong>方法：</strong>研究把 10Hz rTMS 对准视觉皮层，在 MAM 大鼠与 21 名青少年患者中，用静息态 fMRI 的 ReHo 指标比较刺激前后变化。<span class="cite">（证据：第3页 图1；第4–5页 2.3/2.7/2.8/2.10）</span></p>
-      <p><strong>发现：</strong>两种物种均出现“前额 ReHo 降低”；患者 BPRS/HAMD/HAMA 评分显著下降。<span class="cite">（证据：第6页 3.2–3.4；第7–8页 图2–3）</span></p>
-      <p><strong>意义：</strong>提示“从视觉入口”也许能牵动前额叶功能，但仍需更大对照试验与机制研究验证。<span class="cite">（证据：第9页 局限与结论）</span></p>
-    </div>
 
-    <div class="kpi" aria-label="研究对象与干预一览">
-      <div class="item">
-        <div class="label">大鼠样本</div>
-        <div class="value">30只（3组×10）</div>
-        <div class="smallprint">vehicle-sham、MAM-sham、MAM-rTMS <span class="cite">（证据：第3页 方法2.1）</span></div>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          术语小词典与FAQ（可直接上站）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><ul><li>--</li></ul></p></div>
       </div>
-      <div class="item">
-        <div class="label">患者样本</div>
-        <div class="value">21名（13–18岁）</div>
-        <div class="smallprint">SZ 2、BD 12、MDD 7 <span class="cite">（证据：第4页 2.7）</span></div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          术语小词典（建议 10–12 个）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><ul><li><strong>rTMS（重复经颅磁刺激）</strong>：用线圈产生重复磁脉冲，非侵入式影响大脑活动与可塑性。类比：像给某个脑区“打节拍”。  </li><br><li><strong>视觉皮层（occipital visual cortex）</strong>：位于枕叶、负责处理视觉信息的皮层，被认为在皮层发育中较早成熟。类比：大脑信息输入的“第一道门”。  </li><br><li><strong>神经可塑性（neuroplasticity）</strong>：大脑连接与功能可被经验或刺激改变的能力；作者认为青春期可塑性更强，是干预窗口。类比：湿水泥，早期更容易塑形。  </li><br><li><strong>重性精神障碍（MPDs）</strong>：论文用来指一组青少年早发、影响显著的精神障碍，包括精神分裂症、双相障碍、重度抑郁等。类比：不是单一疾病，而是“多种重型故障的集合”。  </li><br><li><strong>跨物种转化研究（cross-species translational study）</strong>：用动物与人的共同指标对齐结果，帮助把机制线索转化到临床。类比：用同一把尺量两种材料。  </li><br><li><strong>MAM 大鼠模型</strong>：在孕鼠妊娠第17天给药扰动胚胎期发育，后代呈现精神障碍相关的发育风险特征。类比：在“施工图”关键步骤上做了干预。  </li><br><li><strong>静息态 fMRI</strong>：被试不做任务、安静休息时采集的fMRI，用于观察大脑自发活动。类比：看城市“日常运转”的背景灯光。  </li><br><li><strong>ReHo（区域同质性）</strong>：衡量一个小区域内信号变化是否同步；本研究用 Kendall 协同系数比较一个体素与周围26体素时间序列一致性。类比：一个街区的人是不是“齐步走”。  </li><br><li><strong>前额叶（frontal cortex）</strong>：作者称其为大脑的“高级执行者”，与多种精神症状相关。类比：公司的“总调度中心”。  </li><br><li><strong>蛋白质组学（proteomics）</strong>：一次测很多蛋白的表达变化，帮助寻找潜在机制线索。类比：盘点工厂里哪些零件产量变了。  </li><br><li><strong>GO 富集（Gene Ontology enrichment）</strong>：把变化的蛋白按功能类别归类统计，看哪些功能被集中影响。类比：把变动零件按“运输/包装/连接”等部门分类。  </li><br><li><strong>开放标签、单臂研究</strong>：所有人都知道自己接受了治疗，且没有随机对照组。类比：只有“上课前后测试”，没有“没上课的人”对照。</li><br></ul><br><ul><li>--</li></ul></p></div>
       </div>
-      <div class="item">
-        <div class="label">刺激方案（共同点）</div>
-        <div class="value">视觉皮层 + 10Hz</div>
-        <div class="smallprint">大鼠2周；患者10次/5天 <span class="cite">（证据：第4页 2.3；第5页 2.8）</span></div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（建议 10 问）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><strong>Q1：这是不是说明“刺激视觉皮层就能治疗青少年精神障碍”？</strong>  <br>A：不能这样下结论。患者研究是开放标签、单臂设计，样本量也较小；作者明确需要更大临床试验验证。</p><p><strong>Q2：为什么不直接刺激前额叶，而选择视觉皮层？</strong>  <br>A：作者基于皮层发育“从后到前”的梯度：视觉皮层更早成熟，可能在发育关键期更适合“撬动”整体可塑性。</p><p><strong>Q3：研究里“变好”的证据是什么？</strong>  <br>A：患者在BPRS/HAMD/HAMA上治疗后显著下降（均 p<0.0001）。但因为缺少对照组，不能排除时间/安慰等因素。</p><p><strong>Q4：ReHo 上升/下降代表更好/更坏吗？</strong>  <br>A：论文并未把 ReHo 简化为好坏，而是关注“前后失衡是否被纠偏”。患者中观察到“前降后升”。</p><p><strong>Q5：前额ReHo与BPRS相关，是否证明“前额变化导致症状改善”？</strong>  <br>A：不能。相关不等于因果；论文报告治疗后相关（r=0.554, p=0.036, FDR校正），但未提供因果检验设计。</p><p><strong>Q6：大鼠实验里行为改善了吗？</strong>  <br>A：在NOR/OFT多项指标上，MAM-rTMS 与 MAM-sham 无显著差异（p>0.05）。提示影像/分子层面的改变不一定直接转化为行为改善，需要更多研究。</p><p><strong>Q7：患者都是什么诊断？论文有分亚组比较吗？</strong>  <br>A：患者诊断包含SZ 2例、BD 12例、MDD 7例。论文未报告按诊断亚组的疗效差异（论文未提供）。</p><p><strong>Q8：刺激方案安全吗？有没有副作用数据？</strong>  <br>A：论文在方法中说明每次治疗后记录自报不良事件，但主文结果部分未报告不良事件发生率或类型。因此无法从论文判断安全性细节。</p><p><strong>Q9：我能据此自测或自行使用设备吗？</strong>  <br>A：不能。rTMS 属专业医疗干预，应由合规医疗机构与专业人员评估与操作；本研究的脑影像结果是组水平统计，不能用于个人诊断。</p><p><strong>Q10：如果我想复现或进一步研究，需要哪些数据？能公开获取吗？</strong>  <br>A：论文声明数据可向通讯作者申请，但因隐私/伦理限制不公开。</p></div>
       </div>
-    </div>
-  </section>
-
-  <section id="why">
-    <h2>为什么要做这个研究</h2>
-    <p>重性精神障碍（如精神分裂症、双相障碍、重度抑郁）常在青少年期首次出现，而这段时期也是大脑仍在快速发育和重塑的窗口。作者指出，青春期具有更高的神经可塑性，是可能改变疾病发展轨迹的关键干预期。<span class="cite">（证据：第2页 引言）</span></p>
-    <p>rTMS 是一种非侵入式脑刺激技术，已用于精神科治疗探索，但作者强调：在青少年 MPDs 的 rTMS 研究中，“证据支持的刺激部位仍不确定”。<span class="cite">（证据：第2页 引言）</span></p>
-    <p>团队提出一个不同寻常的靶点：视觉皮层。理由是皮层发育通常呈“从后到前”的梯度，枕叶视觉皮层更早成熟，而额叶成熟最晚；调节视觉系统与全脑连接，可能在发育关键期带动整体可塑性。<span class="cite">（证据：第2页 引言）</span></p>
-  </section>
-
-  <section id="how">
-    <h2>我们怎么做的</h2>
-    <p>这项研究像做一场“跨物种的同题测验”：先在可控的大鼠模型里测出“发育失衡长什么样”，再把同样的刺激靶点和同样的脑影像量尺带到青少年患者，看看结果是否一致。<span class="cite">（证据：第3页 图1与方法2.1；第2页 引言）</span></p>
-
-    <div class="grid two">
-      <div class="callout">
-        <h3>大鼠：可控模型 + 影像 + 蛋白质组</h3>
-        <p>研究使用 MAM 模型：在孕鼠妊娠第17天注射 MAM（22 mg/kg）扰动胚胎期发育；30只大鼠分三组，青春期进行2周 rTMS 或假刺激，成年早期采集行为、fMRI，并取前额与后部皮层做蛋白质组分析。<span class="cite">（证据：第3页 2.1–2.2；第4页 2.3；第6页 3.3）</span></p>
-      </div>
-      <div class="callout">
-        <h3>青少年：单臂开放标签 + 治疗前后对比</h3>
-        <p>21名13–18岁住院青少年患者接受10次视觉皮层 rTMS（5天内每天2次）。研究在治疗前后采集静息态fMRI并评估BPRS/HAMD/HAMA。患者维持稳定用药，但缺少健康对照与随机对照组。<span class="cite">（证据：第4–5页 2.7–2.10；第9页 局限）</span></p>
-      </div>
-    </div>
-
-    <div class="callout">
-      <h3>关键“尺子”：ReHo 是什么？</h3>
-      <p>ReHo（区域同质性）衡量一个小区域里脑信号变化是否“齐步走”。本研究用 Kendall 协同系数比较一个体素与周围26个体素的时间序列一致性，并把结果标准化成 zReHo。<span class="cite">（证据：第4页 2.5；第5页 2.10）</span></p>
-      <p class="smallprint">类比：如果把一个脑区看成“街区”，ReHo 越高代表街区里的人更像在同一节拍里行动；越低则更不同步。</p>
-    </div>
-
-    <div class="figure" aria-label="研究流程图">
-      <img src="assets/img/fig1.png" alt="研究流程图：上为大鼠三组实验与采集流程，下为21名青少年患者治疗前后采集fMRI与量表评估。"/>
-      <div class="cap">Figure 1（裁切复用）：研究流程与跨物种设计 <span class="cite">（证据：第3页 图1）</span></div>
-    </div>
-  </section>
-
-  <section id="findings">
-    <h2>我们发现了什么：3个最重要发现</h2>
-
-    <h3>发现1：模型大鼠出现“前强后弱”的功能失衡</h3>
-    <p>通俗说：MAM 大鼠的大脑像把“前额叶总指挥”音量开得太大，而后部感觉区反而偏弱。<span class="cite">（证据：第6页 结果3.2；第7页 图2A）</span></p>
-    <p><strong>关键证据：</strong>与 vehicle-sham 相比，MAM-sham 前额多个区域 ReHo 显著升高、后部多个感觉相关区域 ReHo 显著降低。<span class="cite">（证据：第6页 3.2；第7页 图2A；Table S2）</span></p>
-    <p><strong>这意味着：</strong>研究把“神经发育受损”落到可测的影像模式，为判断干预是否“纠偏”提供量尺。<span class="cite">（证据：第8页 讨论）</span></p>
-
-    <div class="figure">
-      <img src="assets/img/fig2A.jpg" alt="大鼠ReHo差异图：模型组相对对照组在前额区域ReHo升高（红），在后部区域ReHo降低（蓝），右侧散点图展示三组个体ReHo分布。"/>
-      <div class="cap">Figure 2A（裁切复用）：MAM模型的前后失衡与rTMS相关变化 <span class="cite">（证据：第6页 3.2；第7页 图2A）</span></div>
-    </div>
-
-    <h3>发现2：刺激视觉皮层后，大鼠前额叶异常活动回落，并出现突触相关蛋白变化线索</h3>
-    <p>通俗说：刺激点在“视觉入口”，但最明显的变化出现在更前端的“执行中心”（前额叶）。<span class="cite">（证据：第6页 3.2–3.3）</span></p>
-    <p><strong>关键证据（影像）：</strong>MAM-rTMS 相比 MAM-sham 在前额区域出现 ReHo 降低；后部区域未见显著 ReHo 改变。<span class="cite">（证据：第6页 3.2；第7页 图2A）</span></p>
-    <p><strong>关键证据（分子）：</strong>蛋白质组共获得 3382 种蛋白；重叠差异蛋白：前额 81 个、后部 8 个；前额叶 GO 富集指向 presynapse、vesicle、intracellular transport 等。<span class="cite">（证据：第6页 3.3；第7页 图2B–C；Table S4）</span></p>
-    <p><strong>这意味着：</strong>研究提供“影像—分子”两层线索，提示 rTMS 的效应可能涉及前额叶突触相关过程，但具体环路仍需验证。<span class="cite">（证据：第8–9页 讨论与局限）</span></p>
-
-    <div class="figure">
-      <img src="assets/img/fig2BC.jpg" alt="蛋白质组结果：维恩图显示前额叶有81个蛋白同时出现在模型异常与rTMS影响两次比较中，后部为8个；富集图显示前额叶重叠蛋白集中于突触前、囊泡与细胞内运输等功能类别。"/>
-      <div class="cap">Figure 2B–C（裁切复用）：蛋白质组的“机制线索” <span class="cite">（证据：第6页 3.3；第7页 图2B–C）</span></div>
-    </div>
-
-    <h3>发现3：21名青少年患者治疗后出现“前降后升”，量表显著下降，且前额ReHo与症状相关</h3>
-    <p>通俗说：患者治疗后脑图变了，量表也同步下降；并且治疗后“前额同步性越高，症状评分越高”的关系可观察到。<span class="cite">（证据：第6页 3.4；第8页 图3）</span></p>
-    <p><strong>关键证据（影像）：</strong>治疗后前额与边缘系统 ReHo 下降，后部（枕叶、舌回）ReHo 上升。<span class="cite">（证据：第6页 3.4；第8页 图3A；Table S3）</span></p>
-    <p><strong>关键证据（量表）：</strong>BPRS、HAMD、HAMA 治疗后均显著降低（均 p&lt;0.0001）。<span class="cite">（证据：第6页 3.4；第8页 图3B）</span></p>
-    <p><strong>关键证据（关联）：</strong>治疗后左额叶 ReHo 与 BPRS 正相关（r=0.554, p=0.036，FDR校正）。<span class="cite">（证据：第6页 3.4；第8页 图3C）</span></p>
-    <p><strong>这意味着：</strong>在本研究设计下，临床改善与前额功能指标变化“同向出现”，支持前额叶的重要性；但相关不等于因果，且单臂开放标签需要更强证据验证。<span class="cite">（证据：第4页 2.7；第9页 局限）</span></p>
-
-    <div class="grid two">
-      <div class="figure">
-        <img src="assets/img/fig3A.png" alt="患者ReHo差异脑图：治疗后前额与边缘系统ReHo下降（蓝），后部枕叶与舌回ReHo上升（红）。"/>
-        <div class="cap">Figure 3A（裁切复用）：患者“前降后升” <span class="cite">（证据：第6页 3.4；第8页 图3A）</span></div>
-      </div>
-      <div class="figure">
-        <img src="assets/img/fig3B.png" alt="患者量表变化：三张配对点线图显示BPRS、HAMD、HAMA多数个体治疗后评分降低，统计显著。"/>
-        <div class="cap">Figure 3B（裁切复用）：量表下降 <span class="cite">（证据：第6页 3.4；第8页 图3B）</span></div>
-      </div>
-    </div>
-
-    <div class="figure">
-      <img src="assets/img/fig3C.png" alt="相关性图：治疗后前额ReHo与BPRS呈正相关趋势，标注r=0.554、p=0.036（FDR校正）。"/>
-      <div class="cap">Figure 3C（裁切复用）：ReHo与症状相关 <span class="cite">（证据：第6页 3.4；第8页 图3C）</span></div>
-    </div>
-  </section>
-
-  <section id="use">
-    <h2>这项研究有什么用</h2>
-
-    <div class="grid two">
-      <div class="callout">
-        <h3>已证据支持的</h3>
-        <p>1）提出视觉皮层作为青少年 MPDs 的候选 rTMS 靶点，并在大鼠与患者中都观察到前额 ReHo 下降这一相似方向变化。<span class="cite">（证据：第6页 3.2–3.4；第7–8页 图2–3）</span></p>
-        <p>2）展示一种“可转译的中间表型”策略：用同一 fMRI 指标（ReHo）把动物的分子机制线索与人的症状量表连接。<span class="cite">（证据：第9页 讨论“intermediate phenotype”）</span></p>
-        <p>3）提供机制线索：前额叶突触相关蛋白与细胞内运输相关过程可能参与 rTMS 作用。<span class="cite">（证据：第6页 3.3；第7页 图2C）</span></p>
-      </div>
-
-      <div class="callout">
-        <h3>合理推测（需更多证据）</h3>
-        <p>1）未来可探索用“前额—后部功能平衡”作为治疗监测/分型线索，但本研究未提供预测模型或随机对照证据。<span class="cite">（证据：第9页 局限与结论）</span></p>
-        <p>2）视觉皮层到前额叶的具体环路可能关键，但作者明确指出环路仍不清楚，需要电路层面实验。<span class="cite">（证据：第9页 局限）</span></p>
-      </div>
-    </div>
-
-    <div class="figure">
-      <img src="assets/img/mechanism_unknown.svg" alt="示意图：左为视觉皮层（刺激靶点），右为前额叶（观察到ReHo变化）。中间虚线箭头与问号表示具体神经环路仍不清楚；下方提示需要进一步机制实验与更大临床试验验证。"/>
-      <div class="cap">概念示意（自制）：观察到效应 ≠ 已解释清楚机制 <span class="cite">（证据：第6–8页 结果；第9页 局限）</span></div>
-    </div>
-  </section>
-
-  <section id="interact">
-    <h2>交互模块：让公众“玩明白”研究结论</h2>
-
-    <div class="callout">
-      <h3>模块1｜跨物种脑图对照器：大鼠 vs 青少年</h3>
-      <p>目的：用一张图看懂“前强后弱”与“前降后升”如何在两种物种中呼应。<span class="cite">（证据：第7–8页 图2–3；第6页 结果3.2–3.4）</span></p>
-
-      <div class="controls" role="group" aria-label="跨物种脑图对照器控件">
-        <label>选择物种
-          <select id="mapSpecies" aria-label="选择物种">
-            <option value="rat">大鼠（MAM模型）</option>
-            <option value="human">青少年患者</option>
-          </select>
-        </label>
-        <label>选择对比
-          <select id="mapContrast" aria-label="选择对比">
-            <option value="baseline_difference">模型 vs 对照（基线差异）</option>
-            <option value="pre_post_rtms">rTMS相关变化</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="figure">
-        <img id="mapImg" src="assets/img/fig2A.jpg" alt="跨物种脑图显示区域ReHo变化"/>
-        <div class="cap"><strong id="mapTitle">—</strong><br/><span id="mapCaption">—</span></div>
-      </div>
-
-      <p class="smallprint">风险提示：图中差异为组水平统计结果，不能用于个体诊断或个人疗效预测。<span class="cite">（证据：第4页 2.7；第6页 结果为组统计）</span></p>
-    </div>
-
-    <div class="callout">
-      <h3>模块2｜量表与脑指标联动：症状怎么变？脑怎么变？</h3>
-      <p>目的：把“量表下降”与“前额ReHo变化/相关性”放在同一屏里，理解“同向出现”与“相关不等于因果”。<span class="cite">（证据：第6页 3.4；第8页 图3B–C）</span></p>
-
-      <div class="controls" role="group" aria-label="量表与脑指标联动控件">
-        <label>选择量表
-          <select id="scaleSelect" aria-label="选择量表">
-            <option value="BPRS">BPRS</option>
-            <option value="HAMD">HAMD</option>
-            <option value="HAMA">HAMA</option>
-          </select>
-        </label>
-        <label>
-          <input id="showCorr" type="checkbox" checked/>
-          显示“前额ReHo—BPRS相关”图
-        </label>
-      </div>
-
-      <div class="kpi">
-        <div class="item">
-          <div class="label">当前量表</div>
-          <div class="value" id="scaleLabel">—</div>
-        </div>
-        <div class="item">
-          <div class="label">治疗前后差异显著性（p值）</div>
-          <div class="value">&lt;<span id="scaleP">—</span></div>
-          <div class="smallprint" id="scaleCite">—</div>
-        </div>
-      </div>
-
-      <div class="grid two">
-        <div class="figure">
-          <img src="assets/img/fig3B.png" alt="患者量表变化：配对点线图显示治疗后评分下降。"/>
-          <div class="cap">量表变化（Figure 3B） <span class="cite">（证据：第8页 图3B）</span></div>
-        </div>
-
-        <div class="figure" id="corrBlock">
-          <img src="assets/img/fig3C.png" alt="相关性：治疗后前额ReHo与BPRS正相关，标注r=0.554、p=0.036。"/>
-          <div class="cap">治疗后相关性（Figure 3C） <span class="cite">（证据：第8页 图3C）</span></div>
-        </div>
-      </div>
-
-      <p class="smallprint">风险提示：相关关系不代表因果机制；单臂开放标签设计需要更强证据验证。<span class="cite">（证据：第4页 2.7；第9页 局限）</span></p>
-    </div>
-
-    <div class="callout">
-      <h3>模块3｜蛋白质组“机制线索”浏览器：前额 vs 后部</h3>
-      <p>目的：把“看似很复杂的蛋白质组”压缩成几个能读懂的数字：有多少蛋白异常？rTMS影响了多少？哪些功能类别最集中？<span class="cite">（证据：第6页 3.3；第7页 图2B–C）</span></p>
-
-      <div class="controls" role="group" aria-label="蛋白质组浏览器控件">
-        <label>选择脑区
-          <select id="regionSelect" aria-label="选择脑区">
-            <option value="frontal">前额ROI</option>
-            <option value="posterior">后部ROI</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="kpi">
-        <div class="item">
-          <div class="label">鉴定蛋白总数</div>
-          <div class="value" id="protTotal">—</div>
-        </div>
-        <div class="item">
-          <div class="label">筛选规则</div>
-          <div class="value" style="font-size:14px;font-weight:600;" id="protRule">—</div>
-          <div class="smallprint"><span id="protCite">—</span></div>
-        </div>
-        <div class="item">
-          <div class="label">模型 vs 对照：差异蛋白数</div>
-          <div class="value" id="protDiff1">—</div>
-        </div>
-        <div class="item">
-          <div class="label">rTMS vs 模型：差异蛋白数</div>
-          <div class="value" id="protDiff2">—</div>
-        </div>
-        <div class="item">
-          <div class="label">两次比较重叠蛋白数</div>
-          <div class="value" id="protOverlap">—</div>
-        </div>
-      </div>
-
-      <div class="callout">
-        <h4 style="margin:0 0 8px;">富集到的功能类别（GO）</h4>
-        <ul id="protGO" style="margin:0; padding-left:18px; color:var(--muted);"></ul>
-      </div>
-
-      <div class="figure">
-        <img src="assets/img/fig2BC.jpg" alt="蛋白质组维恩图与GO富集图：前额叶有81个重叠蛋白并出现突触前、囊泡等富集类别。"/>
-        <div class="cap">Figure 2B–C（裁切复用） <span class="cite">（证据：第7页 图2B–C）</span></div>
-      </div>
-
-      <p class="smallprint">风险提示：蛋白变化提供“机制线索”，不等同于已经证明了完整的因果链路。<span class="cite">（证据：第9页 局限）</span></p>
-    </div>
-
-  </section>
-
-  <section id="glossary">
-    <h2>术语小词典（选读）</h2>
-
-    <details>
-      <summary>rTMS（重复经颅磁刺激）是什么？</summary>
-      <p>用线圈产生重复磁脉冲，非侵入式影响大脑活动与可塑性。类比：给某个脑区“打节拍”。<span class="cite">（证据：第2页 引言）</span></p>
-    </details>
-
-    <details>
-      <summary>ReHo（区域同质性）是什么意思？</summary>
-      <p>衡量一个小区域内信号变化是否同步；本研究用Kendall协同系数比较一个体素与周围26体素时间序列一致性。类比：一个街区的人是不是“齐步走”。<span class="cite">（证据：第4页 2.5；第5页 2.10）</span></p>
-    </details>
-
-    <details>
-      <summary>MAM 大鼠模型是什么？</summary>
-      <p>在孕鼠妊娠第17天给药扰动胚胎期发育，后代用于模拟精神障碍相关的神经发育风险。类比：在“施工图”关键步骤做了干预。<span class="cite">（证据：第3页 2.2；第2页 引言）</span></p>
-    </details>
-
-    <details>
-      <summary>开放标签、单臂研究有什么局限？</summary>
-      <p>所有人都接受治疗且知道自己接受治疗，没有随机对照组，因此无法排除时间、安慰、药物等影响。<span class="cite">（证据：第4页 2.7；第9页 局限）</span></p>
-    </details>
-
-    <p class="smallprint">完整版术语小词典与FAQ见 content/glossary_faq.md。</p>
-  </section>
-
-  <section id="faq">
-    <h2>FAQ（公众常问）</h2>
-
-    <details>
-      <summary>这是不是说明“刺激视觉皮层就能治疗青少年精神障碍”？</summary>
-      <p>不能这样下结论。患者研究为开放标签、单臂设计，样本量也较小；作者建议需要更大临床试验验证与复现。<span class="cite">（证据：第4页 2.7；第9页 局限与结论）</span></p>
-    </details>
-
-    <details>
-      <summary>为什么选择视觉皮层？</summary>
-      <p>作者提出皮层发育呈“从后到前”梯度，视觉皮层更早成熟，可能在发育关键期更适合作为“撬动可塑性”的入口。<span class="cite">（证据：第2页 引言）</span></p>
-    </details>
-
-    <details>
-      <summary>研究有没有报告副作用？</summary>
-      <p>方法部分说明每次治疗后记录自报不良事件，但主文结果部分未报告不良事件发生率或类型，因此无法从论文判断安全性细节。<span class="cite">（证据：第5页 2.8；第6页 结果未见相关报告）</span></p>
-    </details>
-
-    <details>
-      <summary>我能据此自测或自行使用设备吗？</summary>
-      <p>不能。rTMS 属专业医疗干预，应由合规医疗机构与专业人员评估与操作；论文结果为组水平统计，不能用于个人诊断。<span class="cite">（证据：第4–5页 2.7–2.8；第6页 结果）</span></p>
-    </details>
-
-    <p class="smallprint">更多问答见 content/glossary_faq.md。</p>
-  </section>
-
-  <section id="limits">
-    <h2>局限性与下一步（作者怎么说）</h2>
-    <p>1）机制层面：视觉到前额的神经环路仍不明确，需要电路层面的基础实验。<span class="cite">（证据：第9页 局限）</span></p>
-    <p>2）临床设计：样本量小；缺少健康对照，无法确认患者基线是否存在假设的“前后失衡”。<span class="cite">（证据：第9页 局限）</span></p>
-    <p>3）混杂因素：患者维持稳定药物，但仍不能排除药物影响临床结局。<span class="cite">（证据：第5页 2.7末；第9页 局限）</span></p>
-    <p>4）动物行为：MAM-rTMS 与 MAM-sham 在NOR/OFT多项指标上无显著差异。<span class="cite">（证据：第6页 结果3.1；Figure S1）</span></p>
-    <p>5）数据可得性：数据可向通讯作者申请，但因隐私/伦理限制不公开。<span class="cite">（证据：第10页 Data Availability Statement）</span></p>
-  </section>
-
-  <section id="takehome">
-    <h2>一句话带走</h2>
-    <div class="callout">
-      <p style="margin:0;font-size:18px;font-weight:700;">从视觉皮层入手，可能“牵动”前额叶功能——但仍需更强证据确认。</p>
-      <p class="smallprint" style="margin-top:8px;">（证据：第6–8页 结果；第9页 局限）</p>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div>
-    <strong>统一免责声明：</strong>本页面为科普用途，不构成医疗建议、诊断或治疗方案；若有健康问题请咨询专业医生。本研究的人体部分为开放标签、单臂设计，结果需在更大随机对照试验中验证。<span class="cite">（证据：第4页 2.7；第9页 局限）</span>
   </div>
-  <div style="margin-top:10px;">
-    <strong>来源与许可：</strong>论文为开放获取，PDF第1页注明 Creative Commons Attribution License（CC BY）。页面中复用的 Figure 1–3 来自论文原图（见 CREDITS.md）。<span class="cite">（证据：第1页 版权声明；第3/7/8页 图1–3）</span>
-  </div>
-  <div style="margin-top:10px;" class="smallprint">
-    建议开发读取：data/site-structure.json（含sections、visual_assets、interactive_modules与schema引用）。
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
   </div>
 </footer>
 
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

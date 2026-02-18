@@ -1,283 +1,184 @@
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>谁在牵动情绪？把抑郁、焦虑、睡眠和压力画成一张“控制地图”</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <title>模块控制网络分析：睡眠与压力为何可能牵动情绪症状｜论文科普</title>
-  <meta name="description" content="基于iScience论文：提出模块控制与模块控制网络（MCN）。在大学新生症状网络中发现睡眠/压力等非情绪模块对抑郁/焦虑模块的平均控制强度更高，并通过bootstrapping验证稳定性。" />
-  <meta name="keywords" content="症状网络,模块控制,网络可控性,最小支配集,MCN,AMCS,控制频率,睡眠,压力,抑郁,焦虑" />
+<div class="reading-progress" id="readingProgress"></div>
 
-  <meta property="og:title" content="模块控制网络分析：睡眠与压力为何可能牵动情绪症状" />
-  <meta property="og:description" content="面向公众的论文解读与可交互演示：模块控制（module control）与MCN。" />
-  <meta property="og:type" content="article" />
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">谁在牵动情绪？把抑郁、焦虑、睡眠和压力画成一张“控制地图”</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- Structured data (minimal) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "模块控制网络分析：睡眠与压力为何可能牵动情绪症状｜论文科普",
-    "isBasedOn": {
-      "@type": "ScholarlyArticle",
-      "name": "Module control of network analysis in psychopathology",
-      "identifier": "https://doi.org/10.1016/j.isci.2024.110302"
-    },
-    "inLanguage": "zh-CN"
-  }
-  </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
-
-  <header class="hero">
-    <div class="container">
-      <h1>谁在牵动情绪？把抑郁、焦虑、睡眠和压力画成一张“控制地图”</h1>
-      <p class="sub">副标题：论文提出“模块控制（module control）”网络分析：在大学新生的症状网络中，睡眠与压力等非情绪模块更像主要控制源。<sup><a href="#cite-C1">[C1]</a></sup><sup><a href="#cite-C2">[C2]</a></sup><sup><a href="#cite-C6">[C6]</a></sup></p>
-
-      <div class="badges" aria-label="页面标签">
-        <span class="badge">证据锚点：页码/图号可追溯</span>
-        <span class="badge">交互演示：3个模块</span>
-        <span class="badge">无障碍：alt文本与跳转目录</span>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">谁在牵动情绪？把抑郁、焦虑、睡眠和压力画成一张“控制地图”</h2>
+    <div class="reveal"><p><strong>副标题：</strong> 论文提出“模块控制（module control）”网络分析：在大学新生的症状网络中，睡眠与压力等非情绪模块更像主要控制源。[^C1][^C2][^C6]</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig4.png" alt="谁在牵动情绪？把抑郁、焦虑、睡眠和压力画成一张“控制地图”" loading="lazy">
       </div>
-
-      <div class="notice" role="note">
-        <b>免责声明：</b>本页面为科普解读，不构成医疗/心理诊断或治疗建议。论文为横断面问卷网络模型，不能直接推出个体因果或疗效。<sup><a href="#cite-C9">[C9]</a></sup>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂</h2>
+    <div class="reveal"><p>问题：抑郁、焦虑、睡眠和压力等症状常一起出现，但哪一组症状更可能牵动全局？[^C2]</p><p>方法：研究用2773名大学新生四份量表（PHQ-9/GAD-7/ISI/PSS-14）构建37个症状节点网络，并提出“模块控制”与模块控制网络（MCN）。[^C4][^C11]</p><p>发现：在模块尺度上，非情绪模块（睡眠、压力）对情绪模块（抑郁、焦虑）的平均控制强度更高。[^C6]</p><p>意义：这为理解症状簇之间的“上游/下游”结构关系提供线索，但不等同于真实因果或临床疗效。[^C9]</p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/fig1.png" alt="30秒读懂" loading="lazy">
       </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>很多人的困扰并不是单一症状：睡不好、压力大、情绪低落、焦虑紧张常常一起出现。传统做法常把这些体验压缩为一个总分或一个诊断标签，但这样很难回答一个更贴近日常的问题：<strong>到底是哪一组症状在推动另一组症状？</strong>[^C2]</p><p>论文采用“症状网络”视角，把每个症状条目当作节点，用连线表示它们在同一人群中的关联。作者指出：仅用“中心性”找重要节点不一定等同于理解系统如何被带动；而且在症状网络里，依赖“路径”的指标（如接近中心性、介数中心性）可能不稳定，因此需要更贴近“直接邻居关系”的控制分析框架。[^C3][^C9]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（类比版）</h2>
+    <div class="reveal"><p>你可以把这项研究想成三步：</p><p>第一步：把问卷变成“城市路网”。研究收集2773名大学新生的自评量表数据，把每一道题当作一个“路口”（节点），用Graphical LASSO把节点之间的关联连成网络；边越强，表示两题在控制其他题后仍更同步。[^C4][^C11]</p><p>第二步：把路网划分“街区”（模块）。作者用Louvain算法把联系更紧密的节点聚成模块，相当于把经常一起拥堵的路段划为一个片区。结果识别出6个模块：抑郁（DRM）、焦虑（ARM）、睡眠相关（SRM）、负向压力（NSM）、正向压力（PSM）以及自杀相关单条目模块（SUM=PHQ9）。[^C5]</p><p>第三步：找最省力的“开关组合”，并比较街区之间的控制方向。</p><p>这里的关键概念是“最小支配集（MDSet）”：想象你想用最少几个开关点亮整栋楼——每个开关能点亮自己和相邻房间；如果一组开关的覆盖范围能覆盖整栋楼，而且数量最少，它就是MDSet。[^C4][^C12]</p><p>论文在37节点的症状网络里穷举出全部27个MDSet，并基于每个MDSet计算模块之间的“模块控制强度（MCS）”，再对所有MDSet取平均得到“平均模块控制强度（AMCS）”，从而构建模块控制网络（MCN）：模块当节点，AMCS当有向边权重。[^C6][^C12]</p><p>此外，作者统计每个节点在27个MDSet中出现的频率（控制频率CF），以及每个模块内部的平均控制频率（ACF），并用80%抽样、1000次bootstrapping检验网络与控制指标稳定性。[^C7][^C8][^C12]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现1：症状形成6个模块</h2>
+    <div class="reveal"><p>研究得到一个37节点、254条边的症状网络，并识别出6个模块（DRM/SRM/SUM/ARM/NSM/PSM）。这说明症状不是一盘散沙，而是以“症状簇”的形式组织。[^C4][^C5]</p><p><strong>这意味着什么：</strong> 如果干预实践更常面向“睡眠问题”“压力管理”“焦虑/抑郁症状群”，那么模块级分析可能更贴近真实决策单元。[^C9]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现2：非情绪模块更像“上游控制源”</h2>
+    <div class="reveal"><p>在MCN里，论文报告了多条AMCS边，显示非情绪模块的外向控制强度更高、情绪模块的入向更高，并且“非情绪→情绪”的平均AMCS最高。[^C6]</p><p>正文明确给出的极值包括：</p><p><ul><li>SRM→PSM = 0.586</li><br><li>PSM→ARM = 0.497</li><br><li>SRM→DRM = 0.444</li><br><li>DRM→SRM = 0.042</li><br><li>ARM→NSM = 0.042</li><br><li>DRM→NSM = 0.019</li><br></ul><br>（以上数值均来自论文正文对AMCS的报告。[^C6]）</p><p><strong>这意味着什么：</strong> 在该样本与该网络模型下，睡眠/压力相关模块更像“上游闸门”。但这不等同于因果结论，需要纵向与干预研究进一步验证。[^C9]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现3：一些条目更常成为“驱动节点”，且作者做了稳定性检验</h2>
+    <div class="reveal"><p>论文给出Top5控制频率（CF）：PHQ9=1.000、ISI4=0.778、PSS2=0.444、PSS7=0.370、GAD6=0.222。[^C7]</p><p>稳定性方面：作者用80%样本重复1000次重建网络，报告全样本网络边权无显著差异；节点强度在仅10%样本时平均相关仍>0.8；多数bootstrapping网络仍为6个模块；MDSet大小约4且与全样本一致；并指出ACF在样本<50%时平均相关会低于0.5。[^C7][^C8]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（不夸大）</h2>
+    <div class="reveal"><p><strong>已证据支持的：</strong> 论文提出模块控制与MCN/AMCS/CF/ACF一整套框架，并在大学新生症状网络上展示了“非情绪模块更像控制源”的模式。[^C2][^C6][^C12]</p><p><strong>合理推测但论文未直接验证的：</strong> 作者在讨论中提出：若未来在更广泛人群与纵向数据中复现，针对睡眠与压力模块的干预可能更有效地影响情绪模块；但当前为横断面自评量表网络，不能直接推出“改变A一定导致B改善”。[^C9]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>作者明确指出：适用性受样本特征、量表选择以及“不同MDSet权重相近”的方法假设影响；不同输入会改变网络边与权重，从而影响MDSets与控制结果。[^C9]</p><p>下一步：需要更有效的网络估计方法、与其他精神病理学框架对话、结合神经影像数据，并从横断面走向纵向与动态网络控制。[^C9]</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p><strong>在该样本中，睡眠与压力更像上游开关。</strong>[^C6]</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">证据锚点（脚注）</h2>
+    <div class="reveal"><p>[^C1]: PDF第1页 Highlights/出版信息<br>[^C2]: PDF第2页 Summary/Introduction开头<br>[^C3]: PDF第3页 Introduction/Results开头<br>[^C4]: PDF第4页 图1与网络/模块识别细节<br>[^C5]: PDF第4页 图3（模块结构与网络统计）<br>[^C6]: PDF第5页 模块控制结果（图4相关）<br>[^C7]: PDF第6页 CF/ACF与稳定性文字<br>[^C8]: PDF第7页 稳定性补充与图4图注<br>[^C9]: PDF第9页 Discussion与Limitations/下一步<br>[^C10]: PDF第13页 Data & code availability<br>[^C11]: PDF第14页 Network estimation & Module detection<br>[^C12]: PDF第15-16页 MDSet/MCS/AMCS/CF/ACF定义与Bootstrapping</p></div>
+    
+  </div>
+</section>
 
-      <nav class="toc" aria-label="页面目录">
-        <b>目录</b>
-        <ul>
-          <li><a href="#read-30s">30秒读懂</a></li>
-          <li><a href="#why">为什么要做这个研究</a></li>
-          <li><a href="#how">我们怎么做的</a></li>
-          <li><a href="#findings">我们发现了什么</a></li>
-          <li><a href="#use">这项研究有什么用</a></li>
-          <li><a href="#limits">局限性与下一步</a></li>
-          <li><a href="#visuals">图文并茂（论文原图截取）</a></li>
-          <li><a href="#interactives">交互模块（可玩）</a></li>
-          <li><a href="#glossary">术语小词典</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#citations">证据锚点（页码/图号）</a></li>
-        </ul>
-      </nav>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/fig5.png" alt="fig5" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig5</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig4.png" alt="fig4" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig4</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig1.png" alt="fig1" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig3.png" alt="fig3" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig3</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/fig2.png" alt="fig2" loading="lazy">
+          <div class="visual-card-body">
+            <p>fig2</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main" class="container">
 
-    <section id="read-30s">
-      <h2>30秒读懂</h2>
-      <div class="kpi-grid">
-        <div class="card"><b>问题</b><br/>抑郁、焦虑、睡眠、压力常一起出现：哪一组症状更可能牵动全局？<sup><a href="#cite-C2">[C2]</a></sup></div>
-        <div class="card"><b>方法</b><br/>2773名新生问卷→37节点网络；提出模块控制与MCN。<sup><a href="#cite-C4">[C4]</a></sup><sup><a href="#cite-C11">[C11]</a></sup></div>
-        <div class="card"><b>发现</b><br/>非情绪模块（睡眠/压力）→情绪模块（抑郁/焦虑）的平均控制更强。<sup><a href="#cite-C6">[C6]</a></sup></div>
-        <div class="card"><b>意义</b><br/>提供结构线索，但不等同因果或临床疗效。<sup><a href="#cite-C9">[C9]</a></sup></div>
-      </div>
-    </section>
 
-    <section id="why">
-      <h2>为什么要做这个研究</h2>
-      <p>很多人的困扰不是单一症状：睡不好、压力大、情绪低落、焦虑紧张经常一起出现。传统总分或标签很难回答“谁推动谁”。<sup><a href="#cite-C2">[C2]</a></sup></p>
-      <p>作者采用症状网络视角，并指出：仅凭中心性不一定能解释系统如何被带动；在症状网络里，依赖“路径”的指标可能不稳定，因此需要更贴近直接邻居关系的控制框架，并把尺度提升到模块。<sup><a href="#cite-C3">[C3]</a></sup><sup><a href="#cite-C9">[C9]</a></sup></p>
-    </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-    <section id="how">
-      <h2>我们怎么做的</h2>
-      <p><b>类比：</b>把问卷当“城市路网”，把一组紧密相连的路段当“街区（模块）”，再问“哪个街区更像上游闸门”。</p>
-      <p>研究收集2773名大学新生四份量表数据，Graphical LASSO构建37节点网络（取绝对偏相关、稀疏参数a=0.05），再用Louvain算法识别6个模块（DRM/SRM/SUM/ARM/NSM/PSM）。<sup><a href="#cite-C4">[C4]</a></sup><sup><a href="#cite-C5">[C5]</a></sup><sup><a href="#cite-C11">[C11]</a></sup></p>
-      <p>核心创新是“模块控制”：论文穷举得到27个最小支配集（MDSet），在每个MDSet下计算模块间控制强度MCS，再对所有MDSet取平均得到AMCS，构建模块控制网络MCN（有向）。并计算控制频率CF与模块ACF，最后用80%抽样、1000次bootstrapping验证稳定性。<sup><a href="#cite-C6">[C6]</a></sup><sup><a href="#cite-C12">[C12]</a></sup><sup><a href="#cite-C7">[C7]</a></sup></p>
-    </section>
-
-    <section id="findings">
-      <h2>我们发现了什么</h2>
-
-      <h3>发现1：症状形成6个模块</h3>
-      <p>网络包含37节点、254条边，并识别出6个模块，说明症状以“症状簇”形式组织。<sup><a href="#cite-C4">[C4]</a></sup><sup><a href="#cite-C5">[C5]</a></sup></p>
-
-      <h3>发现2：非情绪模块更像“上游控制源”</h3>
-      <p>模块控制网络显示非情绪模块外向控制更强、情绪模块更易被控制，并且“非情绪→情绪”的平均AMCS最高。<sup><a href="#cite-C6">[C6]</a></sup></p>
-      <div class="card" role="note">
-        <b>论文正文明确报告的AMCS极值（示例）</b><br/>
-        SRM→PSM=0.586；PSM→ARM=0.497；SRM→DRM=0.444；DRM→SRM=0.042；ARM→NSM=0.042；DRM→NSM=0.019。<sup><a href="#cite-C6">[C6]</a></sup>
-      </div>
-      <p><b>重要边界：</b>这里的“控制”来自结构控制模型含义，不等同真实因果或疗效。<sup><a href="#cite-C9">[C9]</a></sup></p>
-
-      <h3>发现3：Top5驱动节点与稳定性</h3>
-      <p>Top5 CF：PHQ9=1.000、ISI4=0.778、PSS2=0.444、PSS7=0.370、GAD6=0.222。<sup><a href="#cite-C7">[C7]</a></sup></p>
-      <p>稳定性：80%抽样1000次；节点强度在仅10%样本时平均相关仍>0.8；多数bootstrapping网络仍为6模块；MDSet大小约4；但ACF在样本<50%时平均相关可能低于0.5。<sup><a href="#cite-C7">[C7]</a></sup><sup><a href="#cite-C8">[C8]</a></sup></p>
-    </section>
-
-    <section id="use">
-      <h2>这项研究有什么用</h2>
-      <p><b>已证据支持的：</b>论文给出模块控制与MCN/AMCS/CF/ACF框架，并在该数据上展示非情绪模块更像控制源的模式。<sup><a href="#cite-C2">[C2]</a></sup><sup><a href="#cite-C6">[C6]</a></sup><sup><a href="#cite-C12">[C12]</a></sup></p>
-      <p><b>合理推测但论文未直接验证的：</b>作者讨论提出，如果未来在更广泛人群与纵向数据中复现，针对睡眠与压力模块的干预可能更有效影响情绪模块；但当前不能直接推出“改变A一定导致B改善”。<sup><a href="#cite-C9">[C9]</a></sup></p>
-    </section>
-
-    <section id="limits">
-      <h2>局限性与下一步</h2>
-      <p>作者指出：适用性受样本、量表选择与方法假设影响；不同输入会改变网络边与权重，从而影响MDSets与控制结果。未来将探索更有效网络估计、结合神经影像，并从横断面走向纵向与动态控制。<sup><a href="#cite-C9">[C9]</a></sup></p>
-      <div class="notice" role="note">
-        <b>一句话带走：</b>在该样本中，睡眠与压力更像上游开关。<sup><a href="#cite-C6">[C6]</a></sup>
-      </div>
-    </section>
-
-    <section id="visuals">
-      <h2>图文并茂（论文原图截取）</h2>
-
-      <figure class="figure">
-        <img src="assets/img/fig1.png" alt="图像展示网络控制与最小支配集概念：绿色驱动节点能直接覆盖自身和邻居节点，多个驱动节点的覆盖范围并集可覆盖全网，说明可用最少节点实现结构控制。" />
-        <figcaption><b>图1</b> 最小支配集（MDSet）概念：用最少开关覆盖全网。来源：论文PDF第4页，Figure 1。<sup><a href="#cite-C4">[C4]</a></sup></figcaption>
-      </figure>
-
-      <figure class="figure">
-        <img src="assets/img/fig2.png" alt="图像以示例网络解释模块控制：模块的控制范围是其驱动节点控制范围的并集；MCS衡量模块m对模块m′覆盖比例；对所有MDSet求平均得到AMCS，并形成模块控制网络MCN。" />
-        <figcaption><b>图2</b> 从MCS到AMCS，再到MCN。来源：论文PDF第5页，Figure 2。<sup><a href="#cite-C12">[C12]</a></sup></figcaption>
-      </figure>
-
-      <figure class="figure">
-        <img src="assets/img/fig3.png" alt="图像展示作者构建的37节点症状网络及模块检测结果，并给出网络/模块统计指标。不同颜色表示不同量表条目或模块归属，体现症状以模块形式聚集。" />
-        <figcaption><b>图3</b> 症状网络与6模块结构。来源：论文PDF第6页，Figure 3。<sup><a href="#cite-C5">[C5]</a></sup></figcaption>
-      </figure>
-
-      <figure class="figure">
-        <img src="assets/img/fig4.png" alt="图像包含MCN及多组柱状图：展示模块间AMCS方向性、非情绪模块更高的外向强度、情绪模块更高的入向强度，以及非情绪→情绪平均AMCS最高；并展示控制频率CF与模块ACF对比。" />
-        <figcaption><b>图4</b> 模块控制结果（MCN/AMCS/CF/ACF）。来源：论文PDF第7页，Figure 4。<sup><a href="#cite-C6">[C6]</a></sup></figcaption>
-      </figure>
-
-      <figure class="figure">
-        <img src="assets/img/fig5.png" alt="图像展示稳定性测试：边权95%区间、边数分布、随样本比例变化的相关稳定性曲线、模块数量与MDSet大小分布等。文本指出节点强度在仅10%样本时平均相关仍>0.8，而ACF在样本<50%时可能<0.5。" />
-        <figcaption><b>图5</b> 稳定性检验（bootstrapping/case-dropping）。来源：论文PDF第8页，Figure 5。<sup><a href="#cite-C7">[C7]</a></sup><sup><a href="#cite-C8">[C8]</a></sup></figcaption>
-      </figure>
-    </section>
-
-    <section id="interactives">
-      <h2>交互模块（可玩）</h2>
-
-      <div class="interactive" aria-labelledby="mcn-title">
-        <h3 id="mcn-title">交互1：模块控制地图（MCN Explorer）</h3>
-        <p>目的：直观看到“模块间控制方向与强弱”。注意：演示仅使用论文正文明确报告的AMCS数值。<sup><a href="#cite-C6">[C6]</a></sup></p>
-        <div class="controls" aria-label="MCN控件">
-          <label><input type="checkbox" id="mcn-only-reported" checked /> 只看已报告数值的连线</label>
-          <label><input type="checkbox" id="mcn-only-ne2e" /> 只看非情绪→情绪</label>
-          <label>聚焦模块：
-            <select id="mcn-focus" aria-label="聚焦模块"></select>
-          </label>
-        </div>
-        <svg id="mcn-svg" role="img" aria-label="模块控制网络交互图"></svg>
-        <div class="kpi-grid">
-          <div class="card" id="mcn-info"><b>点击箭头</b>查看该边的AMCS与证据锚点。</div>
-          <div class="card" id="mcn-legend"></div>
-        </div>
-        <p class="notice"><b>风险提示：</b>此处“控制”为结构控制框架含义，不等同因果或临床疗效。<sup><a href="#cite-C9">[C9]</a></sup></p>
-      </div>
-
-      <div class="interactive" aria-labelledby="cf-title">
-        <h3 id="cf-title">交互2：驱动症状Top5（CF Explorer）</h3>
-        <p>目的：用Top5 CF示例解释“常当开关”的含义。<sup><a href="#cite-C7">[C7]</a></sup></p>
-        <svg id="cf-svg" role="img" aria-label="控制频率Top5条形图"></svg>
-        <div class="card" id="cf-info">把鼠标移动到条形上，查看模块归属与证据锚点。</div>
-        <p class="notice"><b>风险提示：</b>CF不是严重程度排名，也不等于最需要干预的症状。<sup><a href="#cite-C9">[C9]</a></sup></p>
-      </div>
-
-      <div class="interactive" aria-labelledby="toy-title">
-        <h3 id="toy-title">交互3：最小支配集玩具模型（概念演示）</h3>
-        <p>目的：演示MDSet不唯一，以及为什么要看“频率CF”。（概念来自MDSet定义与论文“27个MDSet”。<sup><a href="#cite-C12">[C12]</a></sup><sup><a href="#cite-C6">[C6]</a></sup>）</p>
-        <div class="controls">
-          <button id="toy-a" type="button">切换到示例MDSet A</button>
-          <button id="toy-b" type="button">切换到示例MDSet B</button>
-        </div>
-        <svg id="toy-svg" role="img" aria-label="MDSet玩具网络"></svg>
-        <div class="card" id="toy-info"></div>
-        <p class="notice"><b>风险提示：</b>该玩具网络不使用论文真实MDSet组成；真实MDSet需从代码/补充材料提取。<sup><a href="#cite-C10">[C10]</a></sup></p>
-      </div>
-
-      <div class="interactive" aria-labelledby="stab-title">
-        <h3 id="stab-title">（附加）稳定性实验室：用滑杆理解“稳健”与“边界”</h3>
-        <p>说明：这里不绘制论文曲线的精确数值（论文未在正文给出每个比例点的数值），只展示论文明确写出的关键阈值与结论。<sup><a href="#cite-C7">[C7]</a></sup><sup><a href="#cite-C8">[C8]</a></sup></p>
-        <div class="controls">
-          <label for="stability-slider">保留样本比例：</label>
-          <input id="stability-slider" type="range" min="10" max="90" step="10" value="80" />
-        </div>
-        <div class="card" id="stability-out"></div>
-      </div>
-
-    </section>
-
-    <section id="glossary">
-      <h2>术语小词典</h2>
-      <details>
-        <summary>症状网络（symptom network）</summary>
-        <p>把每个症状条目当节点、用连线表示关联的网络模型。类比：城市路口与道路的地图。<sup><a href="#cite-C2">[C2]</a></sup></p>
-      </details>
-      <details>
-        <summary>模块（module）</summary>
-        <p>网络中联系更紧密的一组节点，代表症状簇。类比：城市街区。<sup><a href="#cite-C5">[C5]</a></sup></p>
-      </details>
-      <details>
-        <summary>最小支配集（MDSet）</summary>
-        <p>能覆盖全网且节点数最少的一组驱动节点集合。类比：最少开关点亮整栋楼。<sup><a href="#cite-C4">[C4]</a></sup><sup><a href="#cite-C12">[C12]</a></sup></p>
-      </details>
-      <details>
-        <summary>平均模块控制强度（AMCS）与模块控制网络（MCN）</summary>
-        <p>AMCS是模块间控制强度在所有MDSet下的平均；MCN把模块当节点、AMCS当有向边权重。类比：街区之间的长期平均影响箭头图。<sup><a href="#cite-C12">[C12]</a></sup></p>
-      </details>
-      <details>
-        <summary>控制频率（CF）</summary>
-        <p>一个节点在所有MDSet中被选为驱动节点的频率。类比：当选关键开关的概率。<sup><a href="#cite-C12">[C12]</a></sup></p>
-      </details>
-    </section>
-
-    <section id="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>这是不是说明睡不好一定会导致抑郁/焦虑？</summary>
-        <p>不等同。论文给出的是横断面症状网络的结构控制线索，不能直接推出因果或疗效；作者也强调需要纵向与干预研究验证。<sup><a href="#cite-C6">[C6]</a></sup><sup><a href="#cite-C9">[C9]</a></sup></p>
-      </details>
-      <details>
-        <summary>这里的“控制”是什么意思？</summary>
-        <p>在支配集结构控制框架中，驱动节点能覆盖自身与邻居；模块控制强度衡量模块覆盖另一个模块的比例，并对所有MDSet求平均得到AMCS。<sup><a href="#cite-C12">[C12]</a></sup></p>
-      </details>
-      <details>
-        <summary>我可以用这个做自测或诊断吗？</summary>
-        <p>不建议。本研究是群体层面的问卷网络建模，不是个体诊断工具。<sup><a href="#cite-C4">[C4]</a></sup><sup><a href="#cite-C9">[C9]</a></sup></p>
-      </details>
-      <details>
-        <summary>数据和代码能拿到吗？</summary>
-        <p>论文写明：数据可向lead contact申请；代码公开在GitHub仓库。<sup><a href="#cite-C10">[C10]</a></sup></p>
-      </details>
-    </section>
-
-    <section id="citations">
-      <h2>证据锚点（页码/图号）</h2>
-      <ol class="footnotes">
-        <li id="cite-C1"><b>C1</b>：PDF第1页 Highlights/出版信息</li>
-        <li id="cite-C2"><b>C2</b>：PDF第2页 Summary/Introduction开头</li>
-        <li id="cite-C3"><b>C3</b>：PDF第3页 Introduction/Results开头</li>
-        <li id="cite-C4"><b>C4</b>：PDF第4页 图1与网络/模块识别细节</li>
-        <li id="cite-C5"><b>C5</b>：PDF第4-6页 图3（模块结构与网络统计）</li>
-        <li id="cite-C6"><b>C6</b>：PDF第5页 模块控制结果（图4相关）</li>
-        <li id="cite-C7"><b>C7</b>：PDF第6页 CF/ACF与稳定性文字</li>
-        <li id="cite-C8"><b>C8</b>：PDF第7-8页 稳定性补充与图注</li>
-        <li id="cite-C9"><b>C9</b>：PDF第9页 Discussion与Limitations/下一步</li>
-        <li id="cite-C10"><b>C10</b>：PDF第13页 Data & code availability</li>
-        <li id="cite-C11"><b>C11</b>：PDF第14页 Network estimation & Module detection</li>
-        <li id="cite-C12"><b>C12</b>：PDF第15-16页 定义与Bootstrapping</li>
-      </ol>
-      <p>源论文PDF已随包附在 <small class="mono">source/paper.pdf</small>。你也可以在内容数据中查阅更详细的引用说明（<small class="mono">content/citations.json</small>）。</p>
-    </section>
-
-    <footer>
-      <p><b>版权与来源：</b>本页面为对论文的科普性再表达。论文为开放获取（PDF第2页说明CC BY-NC）。图像为论文原图截取，用于非商业科普演示。</p>
-      <p><b>打包内容：</b>静态站点（site/）、结构化内容与schema（content/、schemas/）、开发说明（dev/）。</p>
-    </footer>
-
-  </main>
-
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

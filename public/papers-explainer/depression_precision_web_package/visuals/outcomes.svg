@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">两周后症状改善：总体响应率与缓解率</title>
+  <desc id="desc">信息图展示中心2住院青少年/青年在精准rTMS后的关键百分比：总体响应率T2为原型90.00%、非典型70.73%；缓解率T2为原型30.00%、非典型46.34%。来源：论文第5页第3.4节与图4B。</desc>
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+  <text x="48" y="70" font-family="system-ui" font-size="34" font-weight="700">两周后：症状改善到什么程度？</text>
+  <text x="48" y="110" font-family="system-ui" font-size="18" fill="#333333">展示中心2的总体“响应/缓解”百分比（证据：第5页，第3.4节；图4B）</text>
+
+  <!-- Cards -->
+  <g transform="translate(48,160)">
+    <rect x="0" y="0" width="864" height="150" rx="18" fill="#f3f4f6" stroke="#e5e7eb"/>
+    <text x="24" y="42" font-family="system-ui" font-size="18" font-weight="700">总体响应率（T2）</text>
+    <text x="24" y="78" font-family="system-ui" font-size="40" font-weight="800" fill="#111827">原型 90.00%</text>
+    <text x="360" y="78" font-family="system-ui" font-size="40" font-weight="800" fill="#111827">非典型 70.73%</text>
+    <text x="24" y="118" font-family="system-ui" font-size="14" fill="#4b5563">定义：HAMD-17或HAMA达到≥50%下降（证据：第3页第2.7节；第5页第3.4节）</text>
+  </g>
+
+  <g transform="translate(48,336)">
+    <rect x="0" y="0" width="864" height="150" rx="18" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="24" y="42" font-family="system-ui" font-size="18" font-weight="700">总体缓解率（T2）</text>
+    <text x="24" y="78" font-family="system-ui" font-size="40" font-weight="800" fill="#ea580c">原型 30.00%</text>
+    <text x="360" y="78" font-family="system-ui" font-size="40" font-weight="800" fill="#ea580c">非典型 46.34%</text>
+    <text x="24" y="118" font-family="system-ui" font-size="14" fill="#4b5563">定义：HAMD-17或HAMA≤7（证据：第3页第2.7节；第5页第3.4节）</text>
+  </g>
+
+  <text x="48" y="520" font-family="system-ui" font-size="13" fill="#4b5563">
+    重要提示：论文指出本试验缺少假刺激对照且未完全盲法，百分比不能直接等同于因果疗效。（证据：第7页Discussion）
+  </text>
+</svg>

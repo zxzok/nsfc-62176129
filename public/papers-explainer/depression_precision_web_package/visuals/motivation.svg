@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">为什么需要更精准的抑郁治疗</title>
+  <desc id="desc">信息图用四个事实说明研究动机：抑郁终生患病率约15到18%；全球约3.5亿人受影响；单用抗抑郁药3到6个月缓解率最多约40%；全球疾病负担过去30年未明显下降。来源：论文第1页Background。</desc>
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+  <text x="48" y="70" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" font-weight="700">为什么要找“更精准”的抑郁治疗？</text>
+  <text x="48" y="108" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#333333">
+    论文用流行病学与疗效现实说明：只靠症状分诊与“一刀切”治疗很难满足需要。
+  </text>
+
+  <!-- Cards -->
+  <g transform="translate(48,150)">
+    <rect x="0" y="0" width="420" height="140" rx="18" fill="#f6f8ff" stroke="#c7d2fe"/>
+    <text x="24" y="44" font-family="system-ui" font-size="44" font-weight="800" fill="#1d4ed8">15–18%</text>
+    <text x="24" y="78" font-family="system-ui" font-size="18" fill="#111827">抑郁终生患病率</text>
+    <text x="24" y="108" font-family="system-ui" font-size="14" fill="#374151">（证据：第1页，Background）</text>
+  </g>
+
+  <g transform="translate(492,150)">
+    <rect x="0" y="0" width="420" height="140" rx="18" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="24" y="44" font-family="system-ui" font-size="44" font-weight="800" fill="#16a34a">≈3.5亿</text>
+    <text x="24" y="78" font-family="system-ui" font-size="18" fill="#111827">全球受影响人数</text>
+    <text x="24" y="108" font-family="system-ui" font-size="14" fill="#374151">（证据：第1页，Background）</text>
+  </g>
+
+  <g transform="translate(48,320)">
+    <rect x="0" y="0" width="420" height="170" rx="18" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="24" y="50" font-family="system-ui" font-size="44" font-weight="800" fill="#ea580c">≤40%</text>
+    <text x="24" y="84" font-family="system-ui" font-size="18" fill="#111827">单药治疗3–6个月缓解</text>
+    <text x="24" y="112" font-family="system-ui" font-size="14" fill="#374151">“最多约40%达到缓解”</text>
+    <text x="24" y="142" font-family="system-ui" font-size="14" fill="#374151">（证据：第1页，Background）</text>
+  </g>
+
+  <g transform="translate(492,320)">
+    <rect x="0" y="0" width="420" height="170" rx="18" fill="#fdf2f8" stroke="#f9a8d4"/>
+    <text x="24" y="50" font-family="system-ui" font-size="38" font-weight="800" fill="#db2777">30年</text>
+    <text x="24" y="84" font-family="system-ui" font-size="18" fill="#111827">全球疾病负担未明显下降</text>
+    <text x="24" y="112" font-family="system-ui" font-size="14" fill="#374151">提示需要新的、更“对症”的路径</text>
+    <text x="24" y="142" font-family="system-ui" font-size="14" fill="#374151">（证据：第1页，Background）</text>
+  </g>
+
+  <text x="48" y="520" font-family="system-ui" font-size="13" fill="#4b5563">
+    注：本图为科普重绘，数值与表述来自论文文字；并非新增研究结果。
+  </text>
+</svg>

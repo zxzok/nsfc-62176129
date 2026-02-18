@@ -1,85 +1,191 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>模块控制：用网络科学找出心理症状群的“控制枢纽”｜iScience 2024</title>
-  <meta name="description" content="基于2773名大学新生的37项问卷症状网络，研究提出“模块控制”方法：睡眠与压力相关模块的外向控制更强，而抑郁/焦虑模块更易被影响，并通过抽样重复验证结果稳定。" />
-  <link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <header class="hero">
-    <div class="container">
-      <h1 id="main-title"></h1>
-      <p class="subtitle" id="sub-title"></p>
-      <div class="card">
-        <h2>30秒读懂</h2>
-        <p id="summary"></p>
-        <p class="note">提示：页面中的“证据：第X页/图Y”用于溯源审校。</p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>谁在“操盘”心理症状网络？用模块控制找出关键症状群</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">谁在“操盘”心理症状网络？用模块控制找出关键症状群</h1>
+    <p class="hero-subtitle">副标题：在2773名大学新生的问卷网络中，睡眠与压力相关模块比抑郁/焦虑模块更像“控制枢纽”</p>
+  </div>
+</section>
+
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>问题：心理困扰常以一串症状同时出现，我们难判断该先动哪一类症状。方法：把4份常用量表的37个条目连成症状网络，并用“最小支配集”推算各模块的控制力。发现：睡眠与压力等非情绪模块的外向控制更强，情绪模块更易被影响。意义：干预不必只盯情绪本身，也应把睡眠与压力作为关键入口。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/figure3.png" alt="30秒读懂（120–180字）" loading="lazy">
       </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>心理健康问题往往不是单一症状：失眠、紧张、注意力下降、情绪低落等可能一起出现、互相强化。网络心理病理学（network approach）把这些症状看作彼此相连的系统，而不是某个“隐藏疾病”单向造成的结果。<br>但在现实干预中，一个难题是：当症状像一张网一样牵一发而动全身，我们应该优先处理哪一类症状？传统网络分析常用“中心性”找最重要的单个节点，可是一些基于“路径”的指标（如接近度、介数）在症状网络这类相关网络里可能不稳定、也不容易解释。因此，作者把问题提升到“症状群/模块”层面：不是只问“哪个症状最中心”，而是问“哪个模块更能带动或约束其他模块”，希望为更贴近实际的干预策略提供线索。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/figure1.png" alt="为什么要做这个研究" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的</h2>
+    <div class="reveal"><p>研究者先收集一批大学新生填写的四份自评问卷：抑郁（PHQ‑9）、焦虑（GAD‑7）、失眠（ISI）与压力量表（PSS‑14），把每一道题当作一个“症状节点”（总共37个节点）。接着，他们用一种常见的网络建模方法“Graphical LASSO”（可以理解为：在很多可能的连线里，自动保留最可靠、最少但最关键的连接），把题目之间的关联估计成一张稀疏网络；连线的权重来自偏相关强度，并取绝对值来关注“关联有多强”，不区分正负。然后用Louvain算法自动把关联更紧的一组节点归到同一“模块”（就像把经常一起出现的症状归成“症状群”），最终得到6个模块：抑郁、焦虑、睡眠、压力（正/负两类）以及一个“自杀”单题模块。<br>这篇论文的关键创新在于“模块控制”。传统做法常找网络里最“中心”的单个症状；而模块控制更像问：如果把网络当作一台有很多联动零件的机器，最少需要按下哪些“启动按钮”，就能让整台机器都被带动？这个最少按钮集合在控制理论里叫“最小支配集（MDSet）”：每个按钮能直接影响自己和相邻节点，多个按钮合起来要覆盖全网。作者在这张37节点网络里枚举出全部27个MDSet，并统计每个模块在这些MDSet里“当按钮”的频率（CF/ACF），以及一个模块的按钮覆盖到另一个模块的比例（MCS/AMCS）。最后，他们把模块当作新网络的节点、把模块间平均控制强度（AMCS）当作有向边，得到“模块控制网络（MCN）”，并用自助法重复抽样验证结果稳定。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：睡眠与压力模块更像“外向控制者”，情绪模块更像“被影响者”</h2>
+    <div class="reveal"><p>在模块控制网络（MCN）里，非情绪模块（睡眠SRM、压力NSM/PSM）的“出向控制强度”（out-degree strength）整体高于情绪模块：SRM=1.442、NSM=1.221、PSM=1.19，而ARM=0.598、DRM=0.207。相反，情绪模块更容易被其他模块“控制”（in-degree strength更高）：DRM=1.36、ARM=1.265，高于SRM=0.431、NSM=0.375。  <br>这意味着：在这个样本的症状网络结构中，“睡眠/压力相关症状群”更可能处在影响其他症状群的位置，而抑郁/焦虑相关症状群更可能处在被联动的位置。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：最强的模块间控制连线，集中在“睡眠→压力/抑郁”“压力→焦虑/抑郁”</h2>
+    <div class="reveal"><p>作者报告MCN中权重最高的三条连线分别是：SRM→PSM 的AMCS=0.586、PSM→ARM 的AMCS=0.497、SRM→DRM 的AMCS=0.444。图4A还标注了 NSM→ARM=0.40、NSM→PSM=0.35、PSM→DRM=0.35 等较强连线（数值为图中显示的四舍五入）。  <br>相对地，作者也给出三条最弱连线：DRM→SRM=0.042、ARM→NSM=0.042、DRM→NSM=0.019。  <br>这意味着：如果把模块看作“症状群”，网络的控制方向更像从睡眠/压力相关群落流向焦虑/抑郁相关群落，而反向较弱。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：少数“驱动症状”频繁出现在最小支配集中，其中非情绪模块的平均频率更高</h2>
+    <div class="reveal"><p>在37个症状节点中，有24个节点至少在一个最小支配集（MDSet）里当过“驱动节点”。作者枚举出全部27个MDSet，并计算每个节点作为驱动节点出现的频率CF。出现频率最高的前五个节点是：PHQ9（CF=1.000）、ISI4（CF=0.778）、PSS2（CF=0.444）、PSS7（CF=0.370）、GAD6（CF=0.222）。这些高CF节点分布在5个不同模块，作者据此认为各模块都存在“核心驱动点”，有助于控制结构的稳定。  <br>在模块层面，非情绪模块的平均控制频率ACF更高：NSM=0.125、SRM=0.125、PSM=0.086，高于情绪模块ARM=0.048、DRM=0.021。作者进一步讨论了睡眠模块中的ISI4、压力模块中的PSS2与PSS7等，可能是网络中更关键的控制症状。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用</h2>
+    <div class="reveal"><p>这项研究的直接产出是一个可复用的方法框架：把症状网络先分成模块，再用“模块控制”量化模块之间的控制关系，并构建模块控制网络（MCN）。在论文演示的数据里，这个框架确实识别出睡眠与压力相关模块的更强控制角色，并在自助法检验中表现稳定。</p><p>从“已被论文证据支持”的角度，它可以用于：<br><ul><li>在多量表、多人群的筛查数据中，把复杂的“共病现象”压缩成模块之间的关系图，帮助研究者用更接近临床语言的“症状群”来讨论系统结构。</li><br><li>为后续研究提供优先级线索：例如在同一张网络里，哪些模块更像“外向控制者”、哪些模块更像“被影响者”。</li><br></ul><br>从“合理推测但需要额外验证”的角度，作者提出：如果非情绪模块更能控制情绪模块，那么把干预入口放在睡眠与压力相关症状群，可能更有机会带动情绪相关症状群的改善。但需要强调：论文并未实施任何干预实验，也无法仅凭横断面相关网络证明真实因果方向；因此这应被视为“生成假设”，而不是可直接用于临床决策的结论。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p>作者在论文中明确指出，模块控制结论的适用范围会受到样本与方法选择的影响：本研究样本来自单一学校的新生群体，所用量表与输入组合不同，可能导致网络边的出现/消失或权重波动，从而改变最小支配集与模块控制结果。此外，作者的控制分析还基于“不同MDSet权重相近”等设定；当网络估计方式变化或稳定性不足时，控制指标也可能随之不稳定，因此需要更有效的网络估计方法来从根本上缓解稳定性问题。</p><p>下一步方向方面，作者提出三条较清晰的路线：  <br><ul><li>把模块控制放到更多精神病理学框架中比较与讨论，例如与现象学或时空精神病理学等路径对话，以增强实际意义。  </li><br><li>结合神经影像等生物学数据做联合分析，而不仅停留在症状层面。  </li><br><li>从横断面走向纵向数据：作者认为纵向更贴近网络理论“个体内变化”的假设，并计划把模块控制扩展到随时间变化的动态控制问题。</li><br></ul><br><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p><strong>睡眠与压力模块可能是关键入口</strong></p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/graphical_abstract_full.png" alt="graphical abstract full" loading="lazy">
+          <div class="visual-card-body">
+            <p>graphical abstract full</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure3</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure1.png" alt="figure1" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure5.png" alt="figure5" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure5</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure4.png" alt="figure4" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure4</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main class="container" id="content"></main>
 
-  <section class="container">
-    <h2>交互演示（简版）</h2>
-    <p class="note">这是一个静态演示页，用少量示例数据复现论文的关键数字；完整数据并未在论文中全部公开，因此未做推测填充。</p>
-
-    <div class="grid">
-      <div class="card" id="im1">
-        <h3>模块卡片</h3>
-        <div class="controls" id="im1-tabs"></div>
-        <div id="im1-body"></div>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">FAQ</h2>
+    
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          术语小词典（8–12条）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><strong>症状网络（symptom network）</strong>：把每个症状/问卷条目当作节点，用连线表示它们之间的统计关联强度。 类比：像一张“症状关系地图”，看哪些症状常一起出现并互相牵动。</p><p><strong>模块（module）</strong>：网络里连接更紧密的一群节点，可理解为一个症状群/症状簇。 类比：像把一堆零件按“经常一起运转”的方式分成几个子组件。</p><p><strong>模块控制（module control）</strong>：在模块层面分析“哪个模块更能带动/覆盖其他模块”的控制关系框架。 类比：不只找单个关键按钮，而是找“哪个功能区的按钮更能带动整机”。</p><p><strong>驱动节点（driver node）</strong>：在控制模型中接收外部信号、能直接影响自身与邻居节点的节点。 类比：像能按下去就点亮周围一圈灯的开关。</p><p><strong>支配集 / 最小支配集（dominating set / MDSet）</strong>：一组节点的控制范围合起来覆盖全网；其中规模最小的一组叫最小支配集。 类比：像用最少数量的路灯照亮整条街，覆盖所有角落。</p><p><strong>控制范围（control area）</strong>：在支配集模型里，一个驱动节点能覆盖“自己+直接相连的邻居”。 类比：像一个Wi‑Fi路由器能覆盖自己所在房间和隔壁房间。</p><p><strong>模块控制强度（MCS/AMCS）</strong>：某模块的驱动节点覆盖到另一个模块节点的比例；在所有MDSet上取平均得到AMCS。 类比：像A区的工作人员能覆盖到B区多少岗位，比例越高代表影响力越强。</p><p><strong>模块控制网络（MCN）</strong>：把“模块”当作新网络的节点，用模块间AMCS作为有向边权，得到模块尺度网络。 类比：像把城市的街区当节点，用“影响力箭头”画出街区之间的方向关系。</p><p><strong>控制频率（CF）/ 平均控制频率（ACF）</strong>：CF表示某节点在所有MDSet里成为驱动节点的比例；ACF是一个模块内CF的平均。 类比：像某个岗位在所有值班表里出现为“值班负责人”的次数比例。</p><p><strong>Graphical LASSO</strong>：一种构建稀疏相关网络的方法：在众多可能连线中保留最必要的连接。 类比：像在嘈杂对话里只抓住最关键的几条线索，避免“全都连上”的噪声。</p><p><strong>Louvain算法</strong>：一种常用的社区/模块发现算法，目标是让模块内连接密、模块间连接稀。 类比：像自动把社交圈按“谁跟谁更常互动”分群。</p><p><strong>自助法（bootstrapping）</strong>：反复从样本中抽取子样本重建网络，用分布与相关性检验结果稳定性。 类比：像反复从一锅汤里舀几勺尝味道，看结论是否每次都差不多。</p></div>
       </div>
-
-      <div class="card" id="im2">
-        <h3>模块控制概览</h3>
-        <div class="controls">
-          <button data-view="out">出向控制力</button>
-          <button data-view="in">被控制程度</button>
-          <button data-view="group">四类关系均值</button>
-        </div>
-        <div id="im2-body"></div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          FAQ（8–10问答）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p><strong>Q：这是不是证明“睡眠或压力会导致抑郁/焦虑”？</strong></p><p>A：不能直接这样说。网络由Graphical LASSO估计的偏相关构成，属于统计关联网络；模块控制是基于支配集的结构可控性分析，并不等同于真实因果机制。论文也强调本研究为横断面分析，结论需在纵向与更多数据中验证。</p><p><strong>Q：我能用这套方法给自己做诊断或自测吗？</strong></p><p>A：不建议。研究使用的是群体层面的筛查问卷网络，目的在于理解症状结构与控制关系，而不是用于个体诊断。问卷分级阈值与用途在方法部分有说明，但论文没有给出个人层面可直接应用的“控制指数”。</p><p><strong>Q：为什么作者不只用“中心性”找关键症状？</strong></p><p>A：作者指出，在症状网络这种相关网络里，“路径”概念可能不可靠，因此一些基于最短路径的中心性（如接近度、介数）可能不稳定；他们更重视节点与直接邻居的关系，而支配集理论正基于这种直接邻域关系。</p><p><strong>Q：研究数据来自哪些人？样本有多大？</strong></p><p>A：数据来自南京医科大学新生的横断面线上调查，共2773份有效问卷；年龄范围15–24岁，18–20岁占90%以上。</p><p><strong>Q：论文里的“控制”是什么意思？听起来像真的能控制人？</strong></p><p>A：这里的“控制”是网络控制理论中的概念：在给定的结构假设下，哪些节点或模块更可能作为外部输入点影响系统状态。它是一种结构层面的分析语言，不等同于临床上的直接操控或因果断言。</p><p><strong>Q：为什么要在‘模块’层面分析，而不是逐条症状？</strong></p><p>A：作者强调，临床干预往往面向更大的症状类别（如睡眠问题、压力、情绪问题）而非逐条题目；同时量表之间存在功能重叠，用数据驱动的模块可更贴近真实症状簇。</p><p><strong>Q：结果稳不稳定？会不会换一批人就变了？</strong></p><p>A：作者用80%样本、重复1000次的自助法重建网络并检验：边权分布、边数、模块数与MDSet大小等指标与全样本一致性较好；但也指出不同样本与输入组合可能改变网络结构，因此需要在更多人群与设置中复现。</p><p><strong>Q：代码和数据能获取吗？</strong></p><p>A：代码在GitHub公开仓库提供；数据需要向通讯作者提出申请获取。</p><p><strong>Q：‘自杀模块（SUM）’为什么只有一个节点？</strong></p><p>A：模块#2（SUM）只包含PHQ9这一条关于自杀意念的条目，属于单题模块；论文在模块识别结果中明确列出。</p><p><strong>Q：下一步研究会怎么做？</strong></p><p>A：作者计划在三方面推进：与其他精神病理学框架对话、与神经影像等数据联合分析、以及从横断面走向纵向与动态控制研究。</p></div>
       </div>
+  </div>
+</section>
 
-      <div class="card" id="im3">
-        <h3>驱动症状Top5</h3>
-        <div class="controls">
-          <label>按模块筛选：
-            <select id="im3-filter">
-              <option value="ALL">全部</option>
-              <option value="DRM">DRM 抑郁</option>
-              <option value="ARM">ARM 焦虑</option>
-              <option value="SRM">SRM 睡眠</option>
-              <option value="NSM">NSM 负性压力</option>
-              <option value="PSM">PSM 正性压力</option>
-              <option value="SUM">SUM 自杀</option>
-            </select>
-          </label>
-        </div>
-        <div id="im3-body"></div>
-        <p class="risk">风险提示：结构可控性≠因果；研究基于横断面群体数据，不能用于个体诊断。（证据：第9页；第14-15页）</p>
-      </div>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-      <div class="card" id="im4">
-        <h3>稳定性：抽样后还一样吗</h3>
-        <div class="controls">
-          <button data-view="modules">模块数量分布</button>
-          <button data-view="mdset">MDSet大小分布</button>
-        </div>
-        <div id="im4-body"></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="container footer">
-    <p id="disclaimer"></p>
-    <p class="note">本包内裁切的论文图片仅用于设计参考与复用测试；上线请按期刊 Open Access 声明完成署名与链接。（证据：第2页）</p>
-  </footer>
-
-  <script type="application/json" id="site-data">{&quot;slug&quot;: &quot;module-control-psychopathology&quot;, &quot;seo_title&quot;: &quot;模块控制：用网络科学找出心理症状群的“控制枢纽”｜iScience 2024&quot;, &quot;seo_description&quot;: &quot;基于2773名大学新生的37项问卷症状网络，研究提出“模块控制”方法：睡眠与压力相关模块的外向控制更强，而抑郁/焦虑模块更易被影响，并通过抽样重复验证结果稳定。&quot;, &quot;keywords&quot;: [&quot;模块控制&quot;, &quot;症状网络&quot;, &quot;网络心理病理学&quot;, &quot;最小支配集&quot;, &quot;驱动节点&quot;, &quot;睡眠&quot;, &quot;压力&quot;, &quot;抑郁&quot;, &quot;焦虑&quot;, &quot;Graphical LASSO&quot;, &quot;Louvain&quot;, &quot;iScience 2024&quot;], &quot;sections&quot;: [{&quot;id&quot;: &quot;hero&quot;, &quot;heading&quot;: &quot;谁在“操盘”心理症状网络？用模块控制找出关键症状群&quot;, &quot;body_markdown&quot;: &quot;**在2773名大学新生的问卷网络中，睡眠与压力相关模块比抑郁/焦虑模块更像“控制枢纽”**\n\n问题：心理困扰常以一串症状同时出现，我们难判断该先动哪一类症状。方法：把4份常用量表的37个条目连成症状网络，并用“最小支配集”推算各模块的控制力。发现：睡眠与压力等非情绪模块的外向控制更强，情绪模块更易被影响。意义：干预不必只盯情绪本身，也应把睡眠与压力作为关键入口。（证据：第4-7页，图3-4；第13页）\n&quot;, &quot;citations&quot;: [&quot;第2页 Summary&quot;, &quot;第4-7页 图3-4&quot;, &quot;第13页 Participants&quot;]}, {&quot;id&quot;: &quot;why&quot;, &quot;heading&quot;: &quot;为什么要做这个研究&quot;, &quot;body_markdown&quot;: &quot;心理健康问题往往不是单一症状：失眠、紧张、注意力下降、情绪低落等可能一起出现、互相强化。网络心理病理学（network approach）把这些症状看作彼此相连的系统，而不是某个“隐藏疾病”单向造成的结果。（证据：第2-3页 Introduction）\n但在现实干预中，一个难题是：当症状像一张网一样牵一发而动全身，我们应该优先处理哪一类症状？传统网络分析常用“中心性”找最重要的单个节点，可是一些基于“路径”的指标（如接近度、介数）在症状网络这类相关网络里可能不稳定、也不容易解释。（证据：第3页；第8页 Discussion）因此，作者把问题提升到“症状群/模块”层面：不是只问“哪个症状最中心”，而是问“哪个模块更能带动或约束其他模块”，希望为更贴近实际的干预策略提供线索。（证据：第3页；第9页 Discussion）&quot;, &quot;citations&quot;: [&quot;第2-3页 Introduction&quot;, &quot;第8页 Discussion&quot;, &quot;第9页 Discussion&quot;]}, {&quot;id&quot;: &quot;how&quot;, &quot;heading&quot;: &quot;我们怎么做的&quot;, &quot;body_markdown&quot;: &quot;研究者先收集一批大学新生填写的四份自评问卷：抑郁（PHQ‑9）、焦虑（GAD‑7）、失眠（ISI）与压力量表（PSS‑14），把每一道题当作一个“症状节点”（总共37个节点）。（证据：第4页；第13-14页）接着，他们用一种常见的网络建模方法“Graphical LASSO”（可以理解为：在很多可能的连线里，自动保留最可靠、最少但最关键的连接），把题目之间的关联估计成一张稀疏网络；连线的权重来自偏相关强度，并取绝对值来关注“关联有多强”，不区分正负。（证据：第4页；第14页）然后用Louvain算法自动把关联更紧的一组节点归到同一“模块”（就像把经常一起出现的症状归成“症状群”），最终得到6个模块：抑郁、焦虑、睡眠、压力（正/负两类）以及一个“自杀”单题模块。（证据：第4页，图3A/3C）\n这篇论文的关键创新在于“模块控制”。传统做法常找网络里最“中心”的单个症状；而模块控制更像问：如果把网络当作一台有很多联动零件的机器，最少需要按下哪些“启动按钮”，就能让整台机器都被带动？这个最少按钮集合在控制理论里叫“最小支配集（MDSet）”：每个按钮能直接影响自己和相邻节点，多个按钮合起来要覆盖全网。（证据：第3页；第15页，图1）作者在这张37节点网络里枚举出全部27个MDSet，并统计每个模块在这些MDSet里“当按钮”的频率（CF/ACF），以及一个模块的按钮覆盖到另一个模块的比例（MCS/AMCS）。最后，他们把模块当作新网络的节点、把模块间平均控制强度（AMCS）当作有向边，得到“模块控制网络（MCN）”，并用自助法重复抽样验证结果稳定。（证据：第5-7页，图4-5；第15-16页）&quot;, &quot;citations&quot;: [&quot;第4页&quot;, &quot;第14-16页 Methods/STAR Methods&quot;, &quot;第5-7页 图4-5&quot;, &quot;第4页 图1&quot;, &quot;第4页 图3&quot;]}, {&quot;id&quot;: &quot;findings&quot;, &quot;heading&quot;: &quot;我们发现了什么&quot;, &quot;body_markdown&quot;: &quot;### 发现1：睡眠与压力模块更像“外向控制者”，情绪模块更像“被影响者”\n在模块控制网络（MCN）里，非情绪模块（睡眠SRM、压力NSM/PSM）的“出向控制强度”（out-degree strength）整体高于情绪模块：SRM=1.442、NSM=1.221、PSM=1.19，而ARM=0.598、DRM=0.207。（证据：第7页，图4B；第5页正文）相反，情绪模块更容易被其他模块“控制”（in-degree strength更高）：DRM=1.36、ARM=1.265，高于SRM=0.431、NSM=0.375。（证据：第7页，图4C；第5页正文）  \n这意味着：在这个样本的症状网络结构中，“睡眠/压力相关症状群”更可能处在影响其他症状群的位置，而抑郁/焦虑相关症状群更可能处在被联动的位置。（证据：第5页；第8页 Discussion）\n\n### 发现2：最强的模块间控制连线，集中在“睡眠→压力/抑郁”“压力→焦虑/抑郁”\n作者报告MCN中权重最高的三条连线分别是：SRM→PSM 的AMCS=0.586、PSM→ARM 的AMCS=0.497、SRM→DRM 的AMCS=0.444。（证据：第5页正文；第7页 图4A）图4A还标注了 NSM→ARM=0.40、NSM→PSM=0.35、PSM→DRM=0.35 等较强连线（数值为图中显示的四舍五入）。（证据：第7页，图4A）  \n相对地，作者也给出三条最弱连线：DRM→SRM=0.042、ARM→NSM=0.042、DRM→NSM=0.019。（证据：第5页正文）  \n这意味着：如果把模块看作“症状群”，网络的控制方向更像从睡眠/压力相关群落流向焦虑/抑郁相关群落，而反向较弱。（证据：第5页；第7页 图4D）\n\n### 发现3：少数“驱动症状”频繁出现在最小支配集中，其中非情绪模块的平均频率更高\n在37个症状节点中，有24个节点至少在一个最小支配集（MDSet）里当过“驱动节点”。（证据：第6页正文）作者枚举出全部27个MDSet，并计算每个节点作为驱动节点出现的频率CF。出现频率最高的前五个节点是：PHQ9（CF=1.000）、ISI4（CF=0.778）、PSS2（CF=0.444）、PSS7（CF=0.370）、GAD6（CF=0.222）。（证据：第6页正文；第7页 图4E）这些高CF节点分布在5个不同模块，作者据此认为各模块都存在“核心驱动点”，有助于控制结构的稳定。（证据：第6页正文）  \n在模块层面，非情绪模块的平均控制频率ACF更高：NSM=0.125、SRM=0.125、PSM=0.086，高于情绪模块ARM=0.048、DRM=0.021。（证据：第7页 图4F；第6页正文）作者进一步讨论了睡眠模块中的ISI4、压力模块中的PSS2与PSS7等，可能是网络中更关键的控制症状。（证据：第9页 Discussion）&quot;, &quot;citations&quot;: [&quot;第5页&quot;, &quot;第6页&quot;, &quot;第7页 图4A-4F&quot;, &quot;第9页 Discussion&quot;]}, {&quot;id&quot;: &quot;use&quot;, &quot;heading&quot;: &quot;这项研究有什么用&quot;, &quot;body_markdown&quot;: &quot;这项研究的直接产出是一个可复用的方法框架：把症状网络先分成模块，再用“模块控制”量化模块之间的控制关系，并构建模块控制网络（MCN）。（证据：第3-5页；第15页）在论文演示的数据里，这个框架确实识别出睡眠与压力相关模块的更强控制角色，并在自助法检验中表现稳定。（证据：第5-7页，图4-5）\n\n从“已被论文证据支持”的角度，它可以用于：\n1）在多量表、多人群的筛查数据中，把复杂的“共病现象”压缩成模块之间的关系图，帮助研究者用更接近临床语言的“症状群”来讨论系统结构。（证据：第3页；第9页 Discussion）\n2）为后续研究提供优先级线索：例如在同一张网络里，哪些模块更像“外向控制者”、哪些模块更像“被影响者”。（证据：第5页；第7页 图4B-4D）\n\n从“合理推测但需要额外验证”的角度，作者提出：如果非情绪模块更能控制情绪模块，那么把干预入口放在睡眠与压力相关症状群，可能更有机会带动情绪相关症状群的改善。（证据：第9页 Discussion）但需要强调：论文并未实施任何干预实验，也无法仅凭横断面相关网络证明真实因果方向；因此这应被视为“生成假设”，而不是可直接用于临床决策的结论。（证据：第9页 Limitations of the study；第14-15页 方法假设）&quot;, &quot;citations&quot;: [&quot;第3-5页&quot;, &quot;第5-7页 图4-5&quot;, &quot;第9页 Limitations&quot;]}, {&quot;id&quot;: &quot;limitations&quot;, &quot;heading&quot;: &quot;局限性与下一步&quot;, &quot;body_markdown&quot;: &quot;作者在论文中明确指出，模块控制结论的适用范围会受到样本与方法选择的影响：本研究样本来自单一学校的新生群体，所用量表与输入组合不同，可能导致网络边的出现/消失或权重波动，从而改变最小支配集与模块控制结果。（证据：第9页 Limitations of the study；第13页 Participants）此外，作者的控制分析还基于“不同MDSet权重相近”等设定；当网络估计方式变化或稳定性不足时，控制指标也可能随之不稳定，因此需要更有效的网络估计方法来从根本上缓解稳定性问题。（证据：第5页关于MDSet权重；第9页 Limitations）\n\n下一步方向方面，作者提出三条较清晰的路线：  \n1）把模块控制放到更多精神病理学框架中比较与讨论，例如与现象学或时空精神病理学等路径对话，以增强实际意义。（证据：第9页 Limitations）  \n2）结合神经影像等生物学数据做联合分析，而不仅停留在症状层面。（证据：第9页 Limitations）  \n3）从横断面走向纵向数据：作者认为纵向更贴近网络理论“个体内变化”的假设，并计划把模块控制扩展到随时间变化的动态控制问题。（证据：第9页 Discussion，未来工作段落）&quot;, &quot;citations&quot;: [&quot;第9页 Limitations of the study&quot;, &quot;第13页 Participants&quot;, &quot;第5页（MDSet权重讨论）&quot;]}, {&quot;id&quot;: &quot;take_home&quot;, &quot;heading&quot;: &quot;一句话带走&quot;, &quot;body_markdown&quot;: &quot;**睡眠与压力模块可能是关键入口**&quot;, &quot;citations&quot;: [&quot;第5-7页 图4&quot;, &quot;第9页 Discussion&quot;]}, {&quot;id&quot;: &quot;glossary_faq&quot;, &quot;heading&quot;: &quot;术语小词典与FAQ&quot;, &quot;body_markdown&quot;: &quot;# 术语小词典（8–12条）\n\n**症状网络（symptom network）**：把每个症状/问卷条目当作节点，用连线表示它们之间的统计关联强度。 类比：像一张“症状关系地图”，看哪些症状常一起出现并互相牵动。（证据：第4页；第14页 Network estimation）\n\n**模块（module）**：网络里连接更紧密的一群节点，可理解为一个症状群/症状簇。 类比：像把一堆零件按“经常一起运转”的方式分成几个子组件。（证据：第4页，图3A/3C；第15页 Module identification）\n\n**模块控制（module control）**：在模块层面分析“哪个模块更能带动/覆盖其他模块”的控制关系框架。 类比：不只找单个关键按钮，而是找“哪个功能区的按钮更能带动整机”。（证据：第2页 Summary；第5页 Results；第15页 Module control metrics）\n\n**驱动节点（driver node）**：在控制模型中接收外部信号、能直接影响自身与邻居节点的节点。 类比：像能按下去就点亮周围一圈灯的开关。（证据：第15页 Dominating set control model；第4页 图1D）\n\n**支配集 / 最小支配集（dominating set / MDSet）**：一组节点的控制范围合起来覆盖全网；其中规模最小的一组叫最小支配集。 类比：像用最少数量的路灯照亮整条街，覆盖所有角落。（证据：第3页 Results；第4页 图1C/1E；第15页 MDSet定义）\n\n**控制范围（control area）**：在支配集模型里，一个驱动节点能覆盖“自己+直接相连的邻居”。 类比：像一个Wi‑Fi路由器能覆盖自己所在房间和隔壁房间。（证据：第4页 图1B；第15页 Dominating set control model）\n\n**模块控制强度（MCS/AMCS）**：某模块的驱动节点覆盖到另一个模块节点的比例；在所有MDSet上取平均得到AMCS。 类比：像A区的工作人员能覆盖到B区多少岗位，比例越高代表影响力越强。（证据：第15页 Module control metrics；第7页 图4A/4D）\n\n**模块控制网络（MCN）**：把“模块”当作新网络的节点，用模块间AMCS作为有向边权，得到模块尺度网络。 类比：像把城市的街区当节点，用“影响力箭头”画出街区之间的方向关系。（证据：第5页 Results；第7页 图4A）\n\n**控制频率（CF）/ 平均控制频率（ACF）**：CF表示某节点在所有MDSet里成为驱动节点的比例；ACF是一个模块内CF的平均。 类比：像某个岗位在所有值班表里出现为“值班负责人”的次数比例。（证据：第6页正文；第7页 图4E/4F；第16页 CF/ACF定义）\n\n**Graphical LASSO**：一种构建稀疏相关网络的方法：在众多可能连线中保留最必要的连接。 类比：像在嘈杂对话里只抓住最关键的几条线索，避免“全都连上”的噪声。（证据：第4页；第14页 Network estimation）\n\n**Louvain算法**：一种常用的社区/模块发现算法，目标是让模块内连接密、模块间连接稀。 类比：像自动把社交圈按“谁跟谁更常互动”分群。（证据：第4页；第15页 Module identification）\n\n**自助法（bootstrapping）**：反复从样本中抽取子样本重建网络，用分布与相关性检验结果稳定性。 类比：像反复从一锅汤里舀几勺尝味道，看结论是否每次都差不多。（证据：第6-7页；第8页 图5；第16页 Stability analysis）\n\n\n# FAQ（8–10问答）\n\n**Q：这是不是证明“睡眠或压力会导致抑郁/焦虑”？**\n\nA：不能直接这样说。网络由Graphical LASSO估计的偏相关构成，属于统计关联网络；模块控制是基于支配集的结构可控性分析，并不等同于真实因果机制。论文也强调本研究为横断面分析，结论需在纵向与更多数据中验证。（证据：第14页 Network estimation；第9页 Discussion与Limitations）\n\n**Q：我能用这套方法给自己做诊断或自测吗？**\n\nA：不建议。研究使用的是群体层面的筛查问卷网络，目的在于理解症状结构与控制关系，而不是用于个体诊断。问卷分级阈值与用途在方法部分有说明，但论文没有给出个人层面可直接应用的“控制指数”。（证据：第13-14页 Measures；第5页方法与结果范围）\n\n**Q：为什么作者不只用“中心性”找关键症状？**\n\nA：作者指出，在症状网络这种相关网络里，“路径”概念可能不可靠，因此一些基于最短路径的中心性（如接近度、介数）可能不稳定；他们更重视节点与直接邻居的关系，而支配集理论正基于这种直接邻域关系。（证据：第8页 Discussion）\n\n**Q：研究数据来自哪些人？样本有多大？**\n\nA：数据来自南京医科大学新生的横断面线上调查，共2773份有效问卷；年龄范围15–24岁，18–20岁占90%以上。（证据：第13页 Participants；第4页样本描述）\n\n**Q：论文里的“控制”是什么意思？听起来像真的能控制人？**\n\nA：这里的“控制”是网络控制理论中的概念：在给定的结构假设下，哪些节点或模块更可能作为外部输入点影响系统状态。它是一种结构层面的分析语言，不等同于临床上的直接操控或因果断言。（证据：第3页 Results；第15页 Controllability与MDSet定义）\n\n**Q：为什么要在‘模块’层面分析，而不是逐条症状？**\n\nA：作者强调，临床干预往往面向更大的症状类别（如睡眠问题、压力、情绪问题）而非逐条题目；同时量表之间存在功能重叠，用数据驱动的模块可更贴近真实症状簇。（证据：第9页 Discussion，关于模块与临床干预的段落）\n\n**Q：结果稳不稳定？会不会换一批人就变了？**\n\nA：作者用80%样本、重复1000次的自助法重建网络并检验：边权分布、边数、模块数与MDSet大小等指标与全样本一致性较好；但也指出不同样本与输入组合可能改变网络结构，因此需要在更多人群与设置中复现。（证据：第6-7页；第8页 图5；第9页 Limitations）\n\n**Q：代码和数据能获取吗？**\n\nA：代码在GitHub公开仓库提供；数据需要向通讯作者提出申请获取。（证据：第13页 Data and code availability）\n\n**Q：‘自杀模块（SUM）’为什么只有一个节点？**\n\nA：模块#2（SUM）只包含PHQ9这一条关于自杀意念的条目，属于单题模块；论文在模块识别结果中明确列出。（证据：第4页，图3C与文字描述）\n\n**Q：下一步研究会怎么做？**\n\nA：作者计划在三方面推进：与其他精神病理学框架对话、与神经影像等数据联合分析、以及从横断面走向纵向与动态控制研究。（证据：第9页 Limitations与未来工作段落）\n\n&quot;, &quot;citations&quot;: [&quot;第4页 图1/图3&quot;, &quot;第7-8页 图4-5&quot;, &quot;第14-16页 Methods&quot;, &quot;第9页 Discussion/Limitations&quot;]}], &quot;visual_assets&quot;: [{&quot;id&quot;: &quot;v1_graphical_abstract&quot;, &quot;title&quot;: &quot;研究一张图：从症状网络到模块控制&quot;, &quot;type&quot;: &quot;论文原图复用&quot;, &quot;source_ref&quot;: &quot;第1页 图形摘要（Graphical abstract）&quot;, &quot;file&quot;: &quot;assets/figures/graphical_abstract_full.png&quot;, &quot;alt_text&quot;: &quot;图形摘要展示研究流程：从症状网络识别模块，构建模块控制网络并计算控制频率；再用80%抽样、重复1000次做稳定性检验。图中强调睡眠与压力相关模块更能影响其他模块。&quot;}, {&quot;id&quot;: &quot;v2_mdset_explainer&quot;, &quot;title&quot;: &quot;什么是最小支配集：最少按钮覆盖全网&quot;, &quot;type&quot;: &quot;论文原图复用/可重绘示意图&quot;, &quot;source_ref&quot;: &quot;第4页 图1A–1E&quot;, &quot;file&quot;: &quot;assets/figures/figure1.png&quot;, &quot;alt_text&quot;: &quot;示意图解释“网络可控性”和最小支配集：驱动节点能直接控制自身与邻居，多个驱动节点的控制范围合并后覆盖全网；最小支配集是在控制成本最低时所需的最少节点，且可能有多种组合。&quot;}, {&quot;id&quot;: &quot;v3_modules_map&quot;, &quot;title&quot;: &quot;37个症状如何分成6个模块&quot;, &quot;type&quot;: &quot;论文原图复用&quot;, &quot;source_ref&quot;: &quot;第6页 图3A–3C（含网络性质表）&quot;, &quot;file&quot;: &quot;assets/figures/figure3.png&quot;, &quot;alt_text&quot;: &quot;症状网络图把37个问卷条目按关联分成6个模块：抑郁、焦虑、睡眠、压力（正/负）与自杀单题；右侧表格列出节点数37、边数254、密度0.40、模块度0.27等总体性质。&quot;}, {&quot;id&quot;: &quot;v4_module_control_results&quot;, &quot;title&quot;: &quot;谁在控制谁：模块控制网络与强度对比&quot;, &quot;type&quot;: &quot;论文原图复用&quot;, &quot;source_ref&quot;: &quot;第7页 图4A–4F&quot;, &quot;file&quot;: &quot;assets/figures/figure4.png&quot;, &quot;alt_text&quot;: &quot;模块控制结果图：左上为模块控制网络，箭头从控制者指向被控制模块，标注平均控制强度；右上柱状图对比各模块的出向控制力与被控制程度；下方展示驱动节点频率与各模块平均控制频率。&quot;}, {&quot;id&quot;: &quot;v5_stability&quot;, &quot;title&quot;: &quot;结果靠不靠谱：稳定性检验怎么做&quot;, &quot;type&quot;: &quot;论文原图复用&quot;, &quot;source_ref&quot;: &quot;第8页 图5A–5F&quot;, &quot;file&quot;: &quot;assets/figures/figure5.png&quot;, &quot;alt_text&quot;: &quot;稳定性检验图展示自助法结果：用80%样本重复1000次重建网络，边权与边数分布与全样本接近；多数重复网络仍得到6个模块，最小支配集大小多集中在4，提示结论较稳。&quot;}, {&quot;id&quot;: &quot;v6_pipeline_infographic&quot;, &quot;title&quot;: &quot;从问卷到控制网络：方法流程图（重绘）&quot;, &quot;type&quot;: &quot;重绘流程图/示意图&quot;, &quot;source_ref&quot;: &quot;第4-8页 方法与结果；第15-16页 公式与流程&quot;, &quot;file&quot;: null, &quot;alt_text&quot;: &quot;流程图从左到右展示：问卷条目→症状网络（Graphical LASSO估计连线）→模块识别（Louvain）→枚举最小支配集→计算模块控制强度与频率→得到模块控制网络并做稳定性检验。&quot;}, {&quot;id&quot;: &quot;v7_control_type_comparison&quot;, &quot;title&quot;: &quot;四种“模块→模块”关系，哪种最强？&quot;, &quot;type&quot;: &quot;重绘信息图（柱状/桑基/四象限）&quot;, &quot;source_ref&quot;: &quot;第7页 图4D&quot;, &quot;file&quot;: null, &quot;alt_text&quot;: &quot;对比图把模块分为非情绪（睡眠、压力）与情绪（抑郁、焦虑）：非情绪→情绪的平均控制强度最高，而情绪→非情绪最低；整体提示控制关系更倾向由睡眠/压力流向抑郁/焦虑。&quot;}, {&quot;id&quot;: &quot;v8_driver_symptoms_top5&quot;, &quot;title&quot;: &quot;最常当“驱动节点”的5个症状&quot;, &quot;type&quot;: &quot;重绘信息图/排行榜&quot;, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;, &quot;file&quot;: null, &quot;alt_text&quot;: &quot;排名信息图列出驱动节点出现频率最高的5个症状条目：PHQ9、ISI4、PSS2、PSS7与GAD6，并标注各自频率值；图意强调少数症状在多数最小支配集中反复出现。&quot;}], &quot;interactive_modules&quot;: [{&quot;id&quot;: &quot;im1_module_explorer&quot;, &quot;title&quot;: &quot;模块卡片：六大症状模块是什么？&quot;, &quot;purpose&quot;: &quot;让读者先建立“模块=症状群”的直觉，并理解每个模块包含哪些问卷条目。&quot;, &quot;ui_controls&quot;: [{&quot;control&quot;: &quot;模块切换&quot;, &quot;type&quot;: &quot;tab_buttons&quot;, &quot;options&quot;: [&quot;DRM 抑郁&quot;, &quot;ARM 焦虑&quot;, &quot;SRM 睡眠&quot;, &quot;NSM 负性压力&quot;, &quot;PSM 正性压力&quot;, &quot;SUM 自杀&quot;]}, {&quot;control&quot;: &quot;显示层级&quot;, &quot;type&quot;: &quot;toggle&quot;, &quot;options&quot;: [&quot;只看模块&quot;, &quot;展开到条目&quot;]}, {&quot;control&quot;: &quot;排序&quot;, &quot;type&quot;: &quot;dropdown&quot;, &quot;options&quot;: [&quot;按模块编号&quot;, &quot;按条目数量&quot;, &quot;按ACF（若有）&quot;]}], &quot;schema&quot;: {&quot;$ref&quot;: &quot;data/interactive/im1_module_explorer.schema.json&quot;}, &quot;sample_data&quot;: {&quot;$ref&quot;: &quot;data/interactive/im1_module_explorer.data.json&quot;}, &quot;source_ref&quot;: &quot;第4页 图3C（模块与条目）；第7页 图4F（ACF）&quot;}, {&quot;id&quot;: &quot;im2_control_explorer&quot;, &quot;title&quot;: &quot;谁在控制谁：模块控制网络探索器&quot;, &quot;purpose&quot;: &quot;用最少交互把研究主结论讲清：非情绪模块更像‘外向控制者’，情绪模块更像‘被影响者’，并展示代表性强/弱连线。&quot;, &quot;ui_controls&quot;: [{&quot;control&quot;: &quot;指标切换&quot;, &quot;type&quot;: &quot;segmented_control&quot;, &quot;options&quot;: [&quot;出向控制力（out-degree）&quot;, &quot;被控制程度（in-degree）&quot;, &quot;四类关系均值（AMCS）&quot;]}, {&quot;control&quot;: &quot;查看连线&quot;, &quot;type&quot;: &quot;dropdown&quot;, &quot;options&quot;: [&quot;最强连线&quot;, &quot;最弱连线&quot;, &quot;图4A标注连线&quot;]}, {&quot;control&quot;: &quot;模块高亮&quot;, &quot;type&quot;: &quot;checkbox_group&quot;, &quot;options&quot;: [&quot;非情绪模块&quot;, &quot;情绪模块&quot;, &quot;SUM（单题）&quot;]}], &quot;schema&quot;: {&quot;$ref&quot;: &quot;data/interactive/im2_control_explorer.schema.json&quot;}, &quot;sample_data&quot;: {&quot;$ref&quot;: &quot;data/interactive/im2_control_explorer.data.json&quot;}, &quot;source_ref&quot;: &quot;第7页 图4A-4D；第5页正文（最高/最低AMCS）&quot;}, {&quot;id&quot;: &quot;im3_driver_symptoms&quot;, &quot;title&quot;: &quot;驱动症状榜：哪些症状最常当“最少控制按钮”？&quot;, &quot;purpose&quot;: &quot;把抽象的MDSet落到具体条目上，解释CF/ACF意味着什么，并提示它不是诊断或因果。&quot;, &quot;ui_controls&quot;: [{&quot;control&quot;: &quot;模块筛选&quot;, &quot;type&quot;: &quot;dropdown&quot;, &quot;options&quot;: [&quot;全部&quot;, &quot;DRM&quot;, &quot;ARM&quot;, &quot;SRM&quot;, &quot;NSM&quot;, &quot;PSM&quot;, &quot;SUM&quot;]}, {&quot;control&quot;: &quot;排序&quot;, &quot;type&quot;: &quot;dropdown&quot;, &quot;options&quot;: [&quot;CF从高到低&quot;, &quot;按量表分组&quot;]}, {&quot;control&quot;: &quot;查看定义&quot;, &quot;type&quot;: &quot;info_tooltip&quot;, &quot;options&quot;: [&quot;CF是什么？&quot;, &quot;驱动节点是什么？&quot;]}], &quot;schema&quot;: {&quot;$ref&quot;: &quot;data/interactive/im3_driver_symptoms.schema.json&quot;}, &quot;sample_data&quot;: {&quot;$ref&quot;: &quot;data/interactive/im3_driver_symptoms.data.json&quot;}, &quot;source_ref&quot;: &quot;第6页正文（CF前五、24/37驱动节点）；第7页 图4E/4F；第16页 CF/ACF定义&quot;}, {&quot;id&quot;: &quot;im4_stability_explorer&quot;, &quot;title&quot;: &quot;稳不稳？抽样后结果还一样吗&quot;, &quot;purpose&quot;: &quot;把‘可信度’可视化：抽样重建后模块数与MDSet大小分布是否稳定。&quot;, &quot;ui_controls&quot;: [{&quot;control&quot;: &quot;查看分布&quot;, &quot;type&quot;: &quot;segmented_control&quot;, &quot;options&quot;: [&quot;模块数量分布&quot;, &quot;MDSet大小分布&quot;]}, {&quot;control&quot;: &quot;参数说明&quot;, &quot;type&quot;: &quot;static_text&quot;, &quot;options&quot;: [&quot;80%抽样 × 1000次&quot;]}], &quot;schema&quot;: {&quot;$ref&quot;: &quot;data/interactive/im4_stability_explorer.schema.json&quot;}, &quot;sample_data&quot;: {&quot;$ref&quot;: &quot;data/interactive/im4_stability_explorer.data.json&quot;}, &quot;source_ref&quot;: &quot;第6-8页；第8页 图5E/5F&quot;}], &quot;disclaimer&quot;: &quot;本文为科研科普解读，旨在帮助公众理解论文方法与结论，不构成医疗建议或诊断依据。研究基于单一学校新生群体的横断面自评问卷与统计网络模型，‘控制’为结构可控性概念，并不等同于因果关系；任何个人健康决策请咨询专业人员。（证据：第9页 Limitations；第14-15页 Methods）&quot;, &quot;paper_reference&quot;: {&quot;title&quot;: &quot;Module control of network analysis in psychopathology&quot;, &quot;journal&quot;: &quot;iScience&quot;, &quot;year&quot;: 2024, &quot;open_access&quot;: &quot;Open access (CC BY-NC-ND 4.0) as stated in article header&quot;, &quot;source_file&quot;: &quot;source/paper.pdf&quot;, &quot;evidence&quot;: &quot;第2页（Open access声明）&quot;}}</script>
-  <script type="application/json" id="im-data">{&quot;im1&quot;: {&quot;modules&quot;: [{&quot;module_id&quot;: &quot;DRM&quot;, &quot;module_number&quot;: 0, &quot;module_name_zh&quot;: &quot;抑郁相关模块&quot;, &quot;module_type&quot;: &quot;emotional&quot;, &quot;item_count&quot;: 7, &quot;acronym_source&quot;: &quot;Fig.3C&quot;, &quot;description&quot;: &quot;Depression related&quot;, &quot;out_degree_strength&quot;: 0.207, &quot;in_degree_strength&quot;: 1.36, &quot;acf&quot;: 0.021, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;第7页 图4B/4C&quot;, &quot;acf&quot;: &quot;第7页 图4F&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;PHQ1&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ2&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ4&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ5&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ6&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ7&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}, {&quot;item_id&quot;: &quot;PHQ8&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}]}, {&quot;module_id&quot;: &quot;SRM&quot;, &quot;module_number&quot;: 1, &quot;module_name_zh&quot;: &quot;睡眠相关模块&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;item_count&quot;: 8, &quot;description&quot;: &quot;Sleep related&quot;, &quot;out_degree_strength&quot;: 1.442, &quot;in_degree_strength&quot;: 0.431, &quot;acf&quot;: 0.125, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;第7页 图4B/4C&quot;, &quot;acf&quot;: &quot;第7页 图4F&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;ISI1&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI2&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI3&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI4&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI5&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI6&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;ISI7&quot;, &quot;scale&quot;: &quot;ISI&quot;}, {&quot;item_id&quot;: &quot;PHQ3&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}]}, {&quot;module_id&quot;: &quot;SUM&quot;, &quot;module_number&quot;: 2, &quot;module_name_zh&quot;: &quot;自杀相关单题模块&quot;, &quot;module_type&quot;: &quot;special&quot;, &quot;item_count&quot;: 1, &quot;description&quot;: &quot;Suicide related (single item)&quot;, &quot;out_degree_strength&quot;: null, &quot;in_degree_strength&quot;: null, &quot;acf&quot;: null, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;论文未在图4B/4C报告SUM&quot;, &quot;acf&quot;: &quot;论文未在图4F报告SUM&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;PHQ9&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;}]}, {&quot;module_id&quot;: &quot;ARM&quot;, &quot;module_number&quot;: 3, &quot;module_name_zh&quot;: &quot;焦虑相关模块&quot;, &quot;module_type&quot;: &quot;emotional&quot;, &quot;item_count&quot;: 7, &quot;description&quot;: &quot;Anxiety related&quot;, &quot;out_degree_strength&quot;: 0.598, &quot;in_degree_strength&quot;: 1.265, &quot;acf&quot;: 0.048, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;第7页 图4B/4C&quot;, &quot;acf&quot;: &quot;第7页 图4F&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;GAD1&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD2&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD3&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD4&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD5&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD6&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}, {&quot;item_id&quot;: &quot;GAD7&quot;, &quot;scale&quot;: &quot;GAD-7&quot;}]}, {&quot;module_id&quot;: &quot;NSM&quot;, &quot;module_number&quot;: 4, &quot;module_name_zh&quot;: &quot;负性压力相关模块&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;item_count&quot;: 8, &quot;description&quot;: &quot;Negative Stress related&quot;, &quot;out_degree_strength&quot;: 1.221, &quot;in_degree_strength&quot;: 0.375, &quot;acf&quot;: 0.125, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;第7页 图4B/4C&quot;, &quot;acf&quot;: &quot;第7页 图4F&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;PSS4&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS5&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS6&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS7&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS9&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS10&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS12&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS13&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}]}, {&quot;module_id&quot;: &quot;PSM&quot;, &quot;module_number&quot;: 5, &quot;module_name_zh&quot;: &quot;正性压力相关模块&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;item_count&quot;: 6, &quot;description&quot;: &quot;Positive Stress related&quot;, &quot;out_degree_strength&quot;: 1.19, &quot;in_degree_strength&quot;: 1.228, &quot;acf&quot;: 0.086, &quot;source_ref&quot;: {&quot;module_items&quot;: &quot;第4页 图3C&quot;, &quot;out_in_degree&quot;: &quot;第7页 图4B/4C&quot;, &quot;acf&quot;: &quot;第7页 图4F&quot;}, &quot;items&quot;: [{&quot;item_id&quot;: &quot;PSS1&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS2&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS3&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS8&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS11&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}, {&quot;item_id&quot;: &quot;PSS14&quot;, &quot;scale&quot;: &quot;PSS-14&quot;}]}]}, &quot;im2&quot;: {&quot;modules&quot;: [{&quot;module_id&quot;: &quot;DRM&quot;, &quot;module_type&quot;: &quot;emotional&quot;, &quot;out_degree_strength&quot;: 0.207, &quot;in_degree_strength&quot;: 1.36}, {&quot;module_id&quot;: &quot;SRM&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;out_degree_strength&quot;: 1.442, &quot;in_degree_strength&quot;: 0.431}, {&quot;module_id&quot;: &quot;SUM&quot;, &quot;module_type&quot;: &quot;special&quot;, &quot;out_degree_strength&quot;: null, &quot;in_degree_strength&quot;: null}, {&quot;module_id&quot;: &quot;ARM&quot;, &quot;module_type&quot;: &quot;emotional&quot;, &quot;out_degree_strength&quot;: 0.598, &quot;in_degree_strength&quot;: 1.265}, {&quot;module_id&quot;: &quot;NSM&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;out_degree_strength&quot;: 1.221, &quot;in_degree_strength&quot;: 0.375}, {&quot;module_id&quot;: &quot;PSM&quot;, &quot;module_type&quot;: &quot;non_emotional&quot;, &quot;out_degree_strength&quot;: 1.19, &quot;in_degree_strength&quot;: 1.228}], &quot;edge_highlights&quot;: [{&quot;from&quot;: &quot;SRM&quot;, &quot;to&quot;: &quot;PSM&quot;, &quot;amcs&quot;: 0.586, &quot;amcs_display&quot;: 0.59, &quot;note&quot;: &quot;最高三条之一，正文给出更精确值；图4A显示约0.59&quot;, &quot;source_ref&quot;: &quot;第5页正文；第7页 图4A&quot;}, {&quot;from&quot;: &quot;PSM&quot;, &quot;to&quot;: &quot;ARM&quot;, &quot;amcs&quot;: 0.497, &quot;amcs_display&quot;: 0.5, &quot;note&quot;: &quot;最高三条之一，正文给出更精确值；图4A显示约0.50&quot;, &quot;source_ref&quot;: &quot;第5页正文；第7页 图4A&quot;}, {&quot;from&quot;: &quot;SRM&quot;, &quot;to&quot;: &quot;DRM&quot;, &quot;amcs&quot;: 0.444, &quot;amcs_display&quot;: 0.44, &quot;note&quot;: &quot;最高三条之一，正文给出更精确值；图4A显示约0.44&quot;, &quot;source_ref&quot;: &quot;第5页正文；第7页 图4A&quot;}, {&quot;from&quot;: &quot;NSM&quot;, &quot;to&quot;: &quot;ARM&quot;, &quot;amcs&quot;: null, &quot;amcs_display&quot;: 0.4, &quot;note&quot;: &quot;图4A标注（四舍五入）；正文未单独报告精确值&quot;, &quot;source_ref&quot;: &quot;第7页 图4A&quot;}, {&quot;from&quot;: &quot;NSM&quot;, &quot;to&quot;: &quot;PSM&quot;, &quot;amcs&quot;: null, &quot;amcs_display&quot;: 0.35, &quot;note&quot;: &quot;图4A标注（四舍五入）；可能与第五强连线并列&quot;, &quot;source_ref&quot;: &quot;第7页 图4A&quot;}, {&quot;from&quot;: &quot;PSM&quot;, &quot;to&quot;: &quot;DRM&quot;, &quot;amcs&quot;: null, &quot;amcs_display&quot;: 0.35, &quot;note&quot;: &quot;图4A标注（四舍五入）；正文未单独报告精确值&quot;, &quot;source_ref&quot;: &quot;第7页 图4A&quot;}, {&quot;from&quot;: &quot;DRM&quot;, &quot;to&quot;: &quot;SRM&quot;, &quot;amcs&quot;: 0.042, &quot;amcs_display&quot;: 0.042, &quot;note&quot;: &quot;作者报告的最弱三条之一&quot;, &quot;source_ref&quot;: &quot;第5页正文&quot;}, {&quot;from&quot;: &quot;ARM&quot;, &quot;to&quot;: &quot;NSM&quot;, &quot;amcs&quot;: 0.042, &quot;amcs_display&quot;: 0.042, &quot;note&quot;: &quot;作者报告的最弱三条之一&quot;, &quot;source_ref&quot;: &quot;第5页正文&quot;}, {&quot;from&quot;: &quot;DRM&quot;, &quot;to&quot;: &quot;NSM&quot;, &quot;amcs&quot;: 0.019, &quot;amcs_display&quot;: 0.019, &quot;note&quot;: &quot;作者报告的最弱三条之一&quot;, &quot;source_ref&quot;: &quot;第5页正文&quot;}], &quot;amcs_group_means&quot;: [{&quot;from_type&quot;: &quot;non_emotional&quot;, &quot;to_type&quot;: &quot;emotional&quot;, &quot;mean_amcs&quot;: 0.379, &quot;source_ref&quot;: &quot;第7页 图4D&quot;}, {&quot;from_type&quot;: &quot;non_emotional&quot;, &quot;to_type&quot;: &quot;non_emotional&quot;, &quot;mean_amcs&quot;: 0.263, &quot;source_ref&quot;: &quot;第7页 图4D&quot;}, {&quot;from_type&quot;: &quot;emotional&quot;, &quot;to_type&quot;: &quot;emotional&quot;, &quot;mean_amcs&quot;: 0.175, &quot;source_ref&quot;: &quot;第7页 图4D&quot;}, {&quot;from_type&quot;: &quot;emotional&quot;, &quot;to_type&quot;: &quot;non_emotional&quot;, &quot;mean_amcs&quot;: 0.076, &quot;source_ref&quot;: &quot;第7页 图4D&quot;}], &quot;meta&quot;: {&quot;mdset_count&quot;: 27, &quot;mcn_nodes&quot;: 6, &quot;mcn_edges&quot;: 36, &quot;source_ref&quot;: &quot;第5页正文（“27 MDSets”; “MCN consist 6 nodes and 36 edges”）&quot;}}, &quot;im3&quot;: {&quot;driver_nodes&quot;: [{&quot;item_id&quot;: &quot;PHQ9&quot;, &quot;scale&quot;: &quot;PHQ-9&quot;, &quot;module_id&quot;: &quot;SUM&quot;, &quot;cf&quot;: 1.0, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;}, {&quot;item_id&quot;: &quot;ISI4&quot;, &quot;scale&quot;: &quot;ISI&quot;, &quot;module_id&quot;: &quot;SRM&quot;, &quot;cf&quot;: 0.778, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;}, {&quot;item_id&quot;: &quot;PSS2&quot;, &quot;scale&quot;: &quot;PSS-14&quot;, &quot;module_id&quot;: &quot;PSM&quot;, &quot;cf&quot;: 0.444, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;}, {&quot;item_id&quot;: &quot;PSS7&quot;, &quot;scale&quot;: &quot;PSS-14&quot;, &quot;module_id&quot;: &quot;NSM&quot;, &quot;cf&quot;: 0.37, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;}, {&quot;item_id&quot;: &quot;GAD6&quot;, &quot;scale&quot;: &quot;GAD-7&quot;, &quot;module_id&quot;: &quot;ARM&quot;, &quot;cf&quot;: 0.222, &quot;source_ref&quot;: &quot;第6页正文；第7页 图4E&quot;}], &quot;meta&quot;: {&quot;total_nodes&quot;: 37, &quot;driver_nodes_count&quot;: 24, &quot;mdset_count&quot;: 27, &quot;source_ref&quot;: {&quot;total_nodes&quot;: &quot;第4页（37 nodes）；第6页&quot;, &quot;driver_nodes_count&quot;: &quot;第6页正文&quot;, &quot;mdset_count&quot;: &quot;第5页正文&quot;}}}, &quot;im4&quot;: {&quot;bootstrap&quot;: {&quot;sampling_ratio&quot;: 0.8, &quot;repeats&quot;: 1000, &quot;source_ref&quot;: &quot;第6-7页正文；第16页 Stability analysis&quot;}, &quot;module_count_distribution&quot;: [{&quot;module_count&quot;: 4, &quot;proportion&quot;: 0.004, &quot;source_ref&quot;: &quot;第8页 图5E&quot;}, {&quot;module_count&quot;: 5, &quot;proportion&quot;: 0.145, &quot;source_ref&quot;: &quot;第8页 图5E&quot;}, {&quot;module_count&quot;: 6, &quot;proportion&quot;: 0.851, &quot;source_ref&quot;: &quot;第8页 图5E&quot;}], &quot;mdset_size_distribution&quot;: [{&quot;mdset_size&quot;: 3, &quot;proportion&quot;: 0.03, &quot;source_ref&quot;: &quot;第8页 图5F&quot;}, {&quot;mdset_size&quot;: 4, &quot;proportion&quot;: 0.967, &quot;source_ref&quot;: &quot;第8页 图5F&quot;}, {&quot;mdset_size&quot;: 5, &quot;proportion&quot;: 0.003, &quot;source_ref&quot;: &quot;第8页 图5F&quot;}], &quot;stability_statements&quot;: [{&quot;claim&quot;: &quot;全样本网络的边数落在自助法95%区间内&quot;, &quot;source_ref&quot;: &quot;第6-7页正文；第8页 图5B&quot;}, {&quot;claim&quot;: &quot;当只使用10%样本构网时，节点强度的平均相关仍超过0.8&quot;, &quot;source_ref&quot;: &quot;第6页正文；第8页 图5C&quot;}]}}</script>
-  <script src="script.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

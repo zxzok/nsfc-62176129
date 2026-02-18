@@ -1,64 +1,180 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>数字化饮食行为与抑郁｜公众解读（Demo）</title>
-  <meta name="description" content="基于论文的公众科普页面 demo：用校园食堂刷卡记录观察抑郁相关的饮食节律变化，并提供交互模块帮助理解结果。"/>
-  <link rel="stylesheet" href="styles.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <div class="container">
-      <div class="kicker">论文宣传 · Web 内容包 · 静态 Demo</div>
-      <h1 id="page-title">加载中…</h1>
-      <p id="page-subtitle" class="subtitle"></p>
-      <p class="meta" id="paper-meta"></p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抑郁会改变吃饭的“节奏”吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">抑郁会改变吃饭的“节奏”吗？</h1>
+    
+  </div>
+</section>
+
+
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">用校园食堂刷卡记录，看见抑郁相关的真实饮食行为变化</h2>
+    <div class="reveal"><p><blockquote>本页面基于论文《Digital Dietary Behaviors in Individuals With Depression: Real-World Behavioral Observation》制作，所有关键事实均标注证据锚点（PDF页码/图表）。来源：JMIR Public Health and Surveillance 2024</blockquote></p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/figure2_full.png" alt="用校园食堂刷卡记录，看见抑郁相关的真实饮食行为变化" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（约120-180字）</h2>
+    <div class="reveal"><p>问题：抑郁常伴随食欲与饮食行为变化，但以前很多研究靠回忆式问卷，容易偏差。  <br>方法：研究把校园食堂的电子交易记录当作“行为传感器”，连续1个月客观记录吃饭时间、花费、餐次模式等，并用PHQ-9分组比较与建模。  <br>发现：中重度抑郁组更不规律：午晚餐时间波动更大、午晚间隔更“飘”，早餐更少、食物多样性更低，也更常出现“只吃午+晚”。  <br>意义：这些“数字化饮食特征”在研究层面能一定程度区分抑郁，提示未来可能作为客观补充线索，但不能替代临床评估。</p><p><ul><li>--</li></ul></p></div>
+    
+      <div class="figure reveal" style="margin-top:1.5rem;">
+        <img src="visuals/table1.png" alt="30秒读懂（约120-180字）" loading="lazy">
+      </div>
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>在现实生活里，很多人并不会主动说出“我最近情绪很差”，但行为往往会悄悄变化。抑郁筛查常依赖自评问卷或访谈，既可能受记忆影响，也难以做到长期、连续地追踪。  <br>与此同时，大学生心理健康在疫情等压力情境下受到关注。论文引述既有研究指出，在COVID-19暴发期间，中国大学生中相当比例报告存在心理健康问题。在校园场景里，学生就餐往往使用与个人账户绑定的电子支付，这就提供了一个机会：能不能用更“客观、连续”的真实记录，描绘抑郁相关的饮食行为画像，并探索其作为数字化标记（digital markers）的潜力？</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（500-800字，含类比解释）</h2>
+    <div class="reveal"><p>你可以把这项研究想象成：不问你“你上周几点吃的午饭”，而是直接读取“食堂刷卡时间线”，从而减少“靠回忆填空”的误差。</p><p>研究对象是中国一所医学院校的学生。研究先在2020年10月6-12日进行一次线上心理状态调查（通过微信平台完成问卷并签署线上知情同意），同时征得同意获取10月1-31日的食堂电子交易记录。最初有3678名学生参与，按量表标准筛选后，最终纳入3310人：健康对照2222人、轻度抑郁916人、中重度抑郁172人。</p><p>抑郁程度用PHQ-9自评量表划分：5-9分为轻度抑郁，≥10分为中重度抑郁；健康组还要求焦虑（GAD-7）、压力（PSS-14）与失眠（ISI）等指标处于低范围，以尽量排除“没有抑郁但有其他情绪问题”的情况。</p><p>饮食行为怎么从刷卡记录里“算出来”？研究把一天的刷卡记录按时间聚合：从当天第一条记录开始，2小时内的多次交易算作同一顿饭；再根据食堂营业时间把三餐划分为早餐6:30-8:30、午餐11:00-13:00、晚餐17:30-19:30，并用“一顿饭里第一笔交易的时间”代表该餐的用餐时间。在此基础上，研究计算六类饮食特征：吃饭时间模式、两餐间隔、每餐花费、就餐地点模式、每日食物多样性与各餐频率、以及“全天饮食模式”（比如某天是否是早-午-晚三餐，或只吃午+晚）。</p><p>统计上，研究用协方差分析（ANCOVA）比较三组差异，并把年龄、性别、BMI和教育水平作为协变量控制；同时把各指标转换为Z分数以统一尺度。研究还用多因素Logistic回归分析“全天饮食模式”与抑郁程度的关联，并用中介分析探讨焦虑在其中可能扮演的角色。最后，用支持向量机（SVM，RBF核）把多维饮食特征输入模型，评估其在区分不同抑郁组别上的表现。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"><p><h4>发现一：中重度抑郁的“吃饭时间”更不稳定，午餐与晚餐波动更明显</h4><br>通俗表述：不是简单地“吃得早/晚”，而是更像“忽早忽晚、节奏更飘”。  <br>关键证据：论文给出了工作日的具体波动时间（MAD）。午餐时间MAD：中重度抑郁18分58秒，高于轻度抑郁17分38秒与健康组17分05秒；晚餐时间MAD：中重度抑郁26分11秒，高于轻度抑郁23分39秒与健康组23分26秒；午晚间隔MAD：中重度抑郁34分20秒，高于轻度抑郁29分25秒与健康组29分23秒。  <br>这意味着什么：如果把一周的就餐看作一条“作息曲线”，中重度抑郁组的曲线更锯齿化。它提示饮食节律可能是抑郁相关的可量化行为线索之一，但仍需更多研究确定其稳定性与适用范围。</p><p><h4>发现二：中重度抑郁更常“少早餐、少多样性”，也更难维持三餐规律</h4><br>通俗表述：中重度抑郁组更可能出现“早餐缺席”，同时每天吃到的食物种类更少。  <br>关键证据：论文报告中重度抑郁组的早餐频率在工作日与周末都显著降低（与健康组相比P=.02与P=.005），并且日常饮食多样性在工作日与周末都显著降低（与健康组相比P=.01与P=.01）。此外，“早-午-晚”三餐模式在中重度抑郁组减少，而“只吃午+晚”模式增加（至少在工作日显著）。  <br>这意味着什么：抑郁的行为表现可能更像“模式级”的变化——不仅是某一餐吃多少，还包括一整天的安排是否规律。对校园健康服务来说，监测“早餐缺席 + 午晚偏重 + 节奏波动”的组合，可能比盯某个单一指标更接近真实情况。</p><p><h4>发现三：某些“全天饮食模式”与抑郁程度存在统计关联，且这些特征能在研究层面做出一定程度的分类</h4><br>通俗表述：在控制了年龄、性别、BMI、教育水平后，保持规律三餐与中重度抑郁“更少同时出现”；而更常见的“午+晚”模式与轻度抑郁“更常同时出现”。  <br>关键证据（关联）：工作日“总是三餐（Bre-Lun-Din）”与中重度抑郁呈负相关，AOR 0.467（95% CI 0.239-0.912）；工作日“总是午+晚（Lun-Din）”与轻度抑郁呈正相关，AOR 1.460（95% CI 1.016-2.100）。  <br>关键证据（分类）：用饮食特征检测中重度抑郁（健康 vs 中重度）时，模型准确率0.67、AUC 0.69；在三分类（健康 vs 轻度 vs 中重度）时，准确率为0.53、AUC 0.59。  <br>这意味着什么：这些数字提示“有信号”，但信号还不够强到可以单独用于个体诊断；更合理的定位是作为传统评估（问卷/访谈）的补充线索，或用于群体层面的风险提示与研究。</p><p><blockquote>补充：并非所有指标都不同。论文指出，就餐地点模式在三组之间没有显著差异。</blockquote></p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（证据支持 vs 合理推测）</h2>
+    <div class="reveal"><p>证据支持的层面：论文认为，连续的数字化饮食行为有潜力作为抑郁检测的客观补充指标，尤其对中重度抑郁更有区分度。这为校园人群的“早发现”提供了一个新方向：当行为长期偏离个人/群体健康基线时，可以触发进一步的关注与支持。</p><p>合理推测但需验证的层面：如果未来在更多学校、更多时间尺度、并结合临床评估与营养结构数据验证（论文也建议如此），这类方法可能用于：1）学校健康服务的群体监测与资源配置；2）数字健康产品里的“行为提示”模块；3）科研中用于研究饮食节律与情绪的动态关系。这些都需要在隐私保护、伦理治理与误报成本可控的前提下推进。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步（必须读）</h2>
+    <div class="reveal"><p>论文明确指出三点局限。第一，抑郁严重程度来自PHQ-9自评，未来应考虑临床评定以减少偏差。第二，本研究是横断面调查，无法捕捉症状随时间变化；作者建议未来做纵向心理评估并结合连续行为监测，以研究“饮食进展标记”。第三，研究未评估每日膳食结构和营养摄入，因此无法回答“吃了什么、营养是否均衡”这一层面的问题。  <br>基于这些局限，读者在解读时应把它理解为“行为线索画像”，而不是“饮食导致抑郁/抑郁导致饮食”的因果结论。</p><p><ul><li>--</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走（≤30字）</h2>
+    <div class="reveal"><p>抑郁越重，吃饭越不规律且更易少早餐。</p></div>
+    
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    
+    <div class="section-label reveal">图表资料</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      
+        <div class="visual-card">
+          <img src="visuals/figure1_full.png" alt="figure1 full" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure1 full</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure2_full.png" alt="figure2 full" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure2 full</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table1.png" alt="table1" loading="lazy">
+          <div class="visual-card-body">
+            <p>table1</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/table2.png" alt="table2" loading="lazy">
+          <div class="visual-card-body">
+            <p>table2</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/figure3.png" alt="figure3" loading="lazy">
+          <div class="visual-card-body">
+            <p>figure3</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/meal_rhythm.svg" alt="meal rhythm" loading="lazy">
+          <div class="visual-card-body">
+            <p>meal rhythm</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/nutrition_missing.svg" alt="nutrition missing" loading="lazy">
+          <div class="visual-card-body">
+            <p>nutrition missing</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/two_vs_three_meals.svg" alt="two vs three meals" loading="lazy">
+          <div class="visual-card-body">
+            <p>two vs three meals</p>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="visuals/privacy_shield.svg" alt="privacy shield" loading="lazy">
+          <div class="visual-card-body">
+            <p>privacy shield</p>
+          </div>
+        </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main" class="container">
-    <section aria-labelledby="toc-title" class="card">
-      <h2 id="toc-title">目录</h2>
-      <nav id="toc"></nav>
-    </section>
 
-    <div id="sections"></div>
 
-    <section aria-labelledby="visuals-title" class="card">
-      <h2 id="visuals-title">图文并茂（资产清单）</h2>
-      <p class="muted">下面列出本包已提供/建议的视觉元素。论文图表为从 PDF 渲染裁切得到的图片，仅用于快速上线与解释。</p>
-      <div id="visual-assets" class="grid"></div>
-    </section>
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
 
-    <section aria-labelledby="interactives-title" class="card">
-      <h2 id="interactives-title">交互模块（公众“玩明白”）</h2>
-      <p class="muted">提示：交互演示仅帮助理解论文方法与统计结果，不用于个人自测或诊断。</p>
-      <div id="interactive-modules"></div>
-    </section>
-
-    <section aria-labelledby="glossary-title" class="card">
-      <h2 id="glossary-title">术语小词典</h2>
-      <div id="glossary"></div>
-    </section>
-
-    <section aria-labelledby="faq-title" class="card">
-      <h2 id="faq-title">FAQ</h2>
-      <div id="faq"></div>
-    </section>
-
-    <section aria-labelledby="disclaimer-title" class="card disclaimer">
-      <h2 id="disclaimer-title">免责声明</h2>
-      <p id="disclaimer"></p>
-    </section>
-
-    <footer class="site-footer">
-      <p>生成时间：<span id="build-time"></span></p>
-      <p class="muted">内容与数据来源请以 <code>source/paper.pdf</code> 为准。</p>
-    </footer>
-  </main>
-
-  <script src="app.js"></script>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>

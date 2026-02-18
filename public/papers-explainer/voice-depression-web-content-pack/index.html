@@ -1,51 +1,124 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>声音与抑郁评估｜网页内容包演示</title>
-    <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-  <body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-    <header class="hero">
-      <div class="wrap">
-        <h1 id="title">加载中…</h1>
-        <p class="subtitle" id="subtitle"></p>
-        <p class="meta" id="meta"></p>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>只用一段朗读，能多快“量出”抑郁程度？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-    <main class="wrap" id="main" aria-live="polite">
-      <section class="card" aria-labelledby="sec-30s">
-        <h2 id="sec-30s">30秒读懂</h2>
-        <p id="blurb"></p>
-      </section>
+<div class="reading-progress" id="readingProgress"></div>
 
-      <section class="grid">
-        <section class="card" aria-labelledby="sec-runtime">
-          <h2 id="sec-runtime">互动演示①：耗时拆解</h2>
-          <p class="hint">数据来自论文表2（第7页）。</p>
-          <div id="runtime-bars" class="bars" role="img" aria-label="流程耗时拆解柱状图"></div>
-        </section>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">只用一段朗读，能多快“量出”抑郁程度？</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-        <section class="card" aria-labelledby="sec-icbt">
-          <h2 id="sec-icbt">互动演示②：ICBT前后关键数字</h2>
-          <p class="hint">HAMD均值±SD来自论文结果（第6页）。</p>
-          <div id="hamd-card" class="kpi"></div>
-          <div id="icbt-features" class="feature-list"></div>
-        </section>
-      </section>
 
-      <section class="card" aria-labelledby="sec-disclaimer">
-        <h2 id="sec-disclaimer">提示</h2>
-        <p><strong>本演示仅为科普，不构成医疗建议或诊断依据。</strong>研究样本量小且无健康对照，结果需进一步验证（见论文第8页）。</p>
-      </section>
-    </main>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">30秒读懂（120–180字）</h2>
+    <div class="reveal"><p>抑郁评估常靠问卷或访谈，容易受主观与疲劳影响。研究让47名大学生朗读同一段中性文本并用手机录音，提取声学特征训练神经网络，预测HAMD抑郁量表分数。模型的平均绝对误差为3.137分、预测与真实相关系数为0.682（摘要报告0.684）。在18人的网络CBT（ICBT）随访里，HAMD均值从8.79±5.43降到0.52±0.86，同时有4个声音特征显著下降。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>如果你把抑郁评估想成“给情绪做体检”，传统做法往往像“问诊+问卷”：需要当事人理解问题、愿意表达、并持续完成一整套题目。论文指出这种方式会受自我觉察、诚实程度、社会污名，以及长问卷带来的疲劳影响。因此，研究者希望找到更客观的“外部信号”。声音是每天都会产生的数据：情绪与精神运动状态会影响说话的节奏、响度、频谱形状等可计算指标，过去研究也提示一些声学特征与抑郁相关。但既往工作常有自评症状、语音任务不统一、分析较简单等限制。所以这项研究用“统一朗读”减少内容差异与说话重叠，让数据更可比，并用更复杂的机器学习模型去捕捉声音与抑郁之间可能的非线性关系。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的（公众友好版）</h2>
+    <div class="reveal"><p>可以把这项研究理解成：把一段朗读录音，先“切片做化验”，再让模型“综合打分”。</p><p>第一步是收集数据。研究招募47名大学生，先用PHQ‑9进行初筛（≥5），再由精神科医生通过HAMD‑17电话访谈评分（HAMD≥7视为存在抑郁症状）。论文强调这里衡量的是“近期抑郁症状”，并不等同于“重度抑郁障碍确诊人群”。</p><p>第二步是录音任务统一化。每个人朗读同一段中性文本（例如“Life like a summer flower”），用安卓手机录音。录音统一转为16kHz的wav格式，并做端点检测（截取真正开口到停口）和音量归一化（把不同音量拉到同一标尺），减少设备与录音条件差异。</p><p>第三步是把声音变成“数字体检表”。研究把声音按10毫秒切成一帧一帧（相当于每秒100帧），每帧计算120个底层声学特征（LLDs），包括74个COVAREP特征、20个MFCC‑deltas、20个MFCC‑delta‑deltas、5个共振峰（formants）与Peak‑to‑RMS等。随后把每个底层特征在整段录音上的分布，汇总成10类统计量（最大/最小/中位数/均值/方差/峰度/偏度/回归斜率/截距/R²），得到每条录音1,200个高层统计特征（HSFs）。</p><p>第四步是筛选“最相关的30项”，再训练模型。因为样本只有47人，1,200维特征容易过拟合，研究用控制性别与年龄的皮尔逊相关，挑出与HAMD显著相关（P<0.01）的30个特征，其余置0以降维。然后用人工神经网络（ANN）做预测，通过网格搜索得到4层、每层32节点、softplus激活、SGD优化器、学习率0.001、batch size 4。评估采用留一法交叉验证（LOOCV）。</p><p>第五步是看“治疗前后会不会变”。在47人中有18人完成4周网络CBT（ICBT），共12个模块，每模块约20分钟、每周3个模块。研究比较治疗前后声学特征差异；方法部分写使用Mann–Whitney U检验，而图注写Wilcoxon检验。结果显示有4个特征治疗后显著降低。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么（3个最重要发现）</h2>
+    <div class="reveal"></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现1：声音里确实存在一组与抑郁严重度显著相关的“可计算信号”</h2>
+    <div class="reveal"><p>通俗表述：同样是朗读，有些人的声音“统计特征”更像抑郁加重时的模式。</p><p>关键证据：研究在1,200个高层统计特征里，筛出30个与HAMD显著相关（P<0.01），涉及MCEP、MFCC变化量、HMPDM/HMPDD、creak、Peak‑to‑RMS等。</p><p>这意味着什么：在这类统一朗读任务下，声音可以被量化为客观指标，为“辅助评估/追踪”提供了一个可计算入口。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">发现2：模型能在样本内较准确地预测HAMD分数，但仍是“辅助”而非“诊断”</h2>
+    <div class="reveal"><p>通俗表述：模型能把一段录音转换成一个接近量表分数的预测值。</p><p>关键证据：预测与真实HAMD相关系数0.682（p=1.318×10^-7），MAE=3.137；63.83%样本误差<4分。论文摘要处相关系数写0.684。耗时主要在特征提取：总耗时347.6秒/条，其中COVAREP提取244.8秒。</p><p>这意味着什么：在论文环境与样本下，这种方法可能用于快速初筛或随访“量化趋势”，但论文未提供外部验证与临床阈值，因此不能替代诊断。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">发现3：ICBT随访中，有4个声音特征随症状改善显著下降</h2>
+    <div class="reveal"><p>通俗表述：不仅能“预测分数”，还有少数指标会跟着治疗改善而变化。</p><p>关键证据：18名完成ICBT者，HAMD均值从8.79±5.43降至0.52±0.86。4个特征治疗后显著降低：Peak2RMS_kurt、MFCC_deltas_10_intercept、MFCC_delta_deltas_4_kurt、MFCC_delta_deltas_9_kurt。图5给出对应p值（例如0.021、0.006、0.043、0.034）。</p><p>这意味着什么：这些指标可能更适合做“疗效跟踪信号”，帮助观察症状改善的过程；但这仍是单组前后对比，不能直接推断因果。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用（不夸大版）</h2>
+    <div class="reveal"><p>已证据支持的：<br><ul><li>在统一朗读+该样本条件下，声音特征可较准确预测HAMD分数。</li><br><li>少数特征在ICBT后显著下降，提示可用于追踪治疗反应。</li><br></ul><br>合理推测（论文提出但未直接验证的扩展）：若未来在更大样本、加入健康对照、增加更多语音任务并长期随访，可能整合进远程随访、社区筛查或数字化心理服务，作为“提醒需要进一步专业评估”的信号。</p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p><ul><li>缺少健康对照组。</li><br><li>样本量小且性别不均衡：47人中42女5男；纵向18人中16女2男。</li><br><li>纵向未完成率高：47人中仅18人完成；7人拒绝，22人未完成。</li><br><li>语音任务以统一朗读为主，真实自然对话场景尚未验证；作者计划加入其他语音任务并更长期随访。</li><br><li>研究衡量“近期抑郁症状”，并非等同于严重抑郁确诊样本。</li></ul></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>声音能提供抑郁评估的客观线索，但仍需更大样本与对照验证。</p></div>
+    
+  </div>
+</section>
 
-    <footer class="wrap" style="padding:28px 0 40px">
-      <small>数据与方法来源：Wang et al., Frontiers in Psychiatry (2023). CC BY.</small>
-    </footer>
 
-    <script src="script.js"></script>
-  </body>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
 </html>

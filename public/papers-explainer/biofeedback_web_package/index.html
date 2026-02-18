@@ -1,48 +1,110 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biofeedback × Speech × Physiology</title>
-  <link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <header class="hero">
-    <div class="container">
-      <h1 id="heroTitle"></h1>
-      <p id="heroSubtitle" class="subtitle"></p>
-      <p id="heroSource" class="source"></p>
-    </div>
-  </header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4周生物反馈训练，能让大学生睡得更好、没那么焦虑吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+</head>
+<body>
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
 
-  <main class="container">
-    <section id="sections"></section>
+<div class="reading-progress" id="readingProgress"></div>
 
-    <hr />
-    <section>
-      <h2>交互模块（轻量可运行Demo）</h2>
-      <p class="note">这是一个离线可打开的演示实现：用论文表格的结构化数据驱动交互。真实上线可替换为你们站点的组件体系。</p>
-      <div class="grid">
-        <div class="card" id="modScale"></div>
-        <div class="card" id="modSpeech"></div>
-        <div class="card" id="modCorr"></div>
-        <div class="card" id="modML"></div>
-      </div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">论文解读</span>
+    <h1 style="margin-top:1rem;">4周生物反馈训练，能让大学生睡得更好、没那么焦虑吗？</h1>
+    <p class="hero-subtitle">---</p>
+  </div>
+</section>
 
-    <hr />
-    <section>
-      <h2>免责声明</h2>
-      <p id="disclaimer" class="disclaimer"></p>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>Generated content package (public communication) · Not medical advice</p>
-    </div>
-  </footer>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">4周生物反馈训练，能让大学生‘睡得更好、没那么焦虑’吗？</h2>
+    <div class="reveal"><p>_一项随机对照试验把问卷、身体信号与朗读语音放在同一张‘证据桌’上，评估干预效果并探索谁更可能受益。_</p><p>（来源：第1页 摘要; 第3–4页 方法; 第10页 结论）</p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">30秒读懂</h2>
+    <div class="reveal"><p>问题：大学生焦虑/情绪低落与失眠常见，但疗效评估多靠主观量表。</p><p>方法：将符合筛查条件的学生随机分为生物反馈组与等待名单对照组，持续4周；在基线与第4周采集四项量表、心率/肌电等生理信号与约60秒朗读语音。</p><p>发现：生物反馈组四项量表组内下降，其中失眠（ISI）的变化量显著优于等待组；语音能量与MFCC等特征的‘变化量’也出现组间差异，并与症状改善相关。</p><p>意义：声音+生理信号或能作为更客观、更易获取的疗效追踪线索，但预测模型准确率约58–62%，仍不适合个人自测。</p><p><blockquote>证据锚点：第1页 摘要; 第3–4页 方法; 第5页 表1; 第6页 表2; 第7–8页 图1–4</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">为什么要做这个研究</h2>
+    <div class="reveal"><p>大学阶段是抑郁、焦虑与失眠的高发窗口，但真正得到药物或规范心理治疗的学生并不多，校园心理服务常面临‘需求大、供给不足’。</p><p>另一方面，精神健康评估常依赖自评与临床判断，容易受主观偏差影响，缺少稳定可重复的客观指标。</p><p>作者提出：把生物反馈（用实时身体信号训练自我调节）与语音分析（从朗读声音里提取能量、音色等特征）结合起来，或许能同时解决‘可及性’与‘客观追踪’两个痛点。</p><p><blockquote>证据锚点：第1–2页 引言; 第1页 摘要</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">我们怎么做的：把身体信号变成‘仪表盘’，再看声音有没有跟着变</h2>
+    <div class="reveal"><p>你可以把生物反馈想象成一块‘身体仪表盘’：系统用血容量脉搏（BVP/PPG）与额头表面肌电（sEMG）等传感器实时采集信号，训练者在电脑上看到自己的状态变化，学习把紧张的‘指针’往放松方向调。</p><p>研究纳入16–35岁的学生，入组条件为PHQ‑9或GAD‑7任一量表>5，并排除急性自杀意念与严重精神障碍等情况。随后随机分组：生物反馈组获得4周自助训练权限；等待组4周后再获得延迟干预。</p><p>主要结局是四项量表：抑郁（PHQ‑9）、焦虑（GAD‑7）、失眠（ISI）与压力（PSS），在基线与第4周各评估一次。</p><p>研究还加入‘声音’作为潜在生物标志物：参与者用手机朗读中性文本约60秒，先用语音活动检测（VAD）去掉首尾静音，并剔除有效语音少于10秒的录音；再把声音切成32毫秒的小片段，提取能量、基频、MFCC等特征。</p><p>最后，作者用人工神经网络（ANN）做了一个探索：只用那些在两组间‘变化量’不同的语音特征，预测谁更可能对干预有反应；论文把‘反应’定义为4周后GAD‑7与ISS总分至少下降50%。</p><p>透明说明：论文方法段落写“101人完成试验并随机分组”，结果段落写“107人随机分组、语音质控后每组52人用于语音分析”。本页面在涉及语音分析的样本量时采用每组n=52，并保留该差异提示。</p><p><blockquote>证据锚点：第3–4页 方法; 第5页 表1; 第7–8页 图1–4</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">我们发现了什么：三条最重要证据</h2>
+    <div class="reveal"><p><strong>发现1：量表普遍下降，但‘失眠改善’在组间比较中最稳健。</strong><br>生物反馈组在4周后PHQ‑9、GAD‑7、ISI、PSS均出现组内下降（Wilcoxon：p=0.001、0.001、0.013、0.004）。但在两组‘变化量’比较中，只有ISI达到显著（Z=-2.743，p=0.006），其他量表的变化量未达显著（PHQ‑9 p=0.097；GAD‑7 p=0.100；PSS p=0.317）。</p><p><strong>发现2：声音与身体信号也在变，并且与症状改善相关。</strong><br>语音方面，基线与第4周单一时点两组差异不显著，但‘变化量’差异显著，主要集中在能量参数与MFCC（例如energy_de_skew、ste_max、mfcc_para7_skew等）。此外，语音特征变化与症状改善存在Spearman相关，例如抑郁改善与energy_max变化相关（r=0.280，p=0.046），焦虑改善与ste_de2_std变化相关（r=0.363，p=0.009），失眠改善与ste_de2_ptp变化相关（r=0.329，p=0.018）。<br>生理方面，两组变化量差异主要出现在身体放松指数与表面肌电EMG（变化量p=0.002；训练组内p=0.001）。语音变化与HRV/EMG变化也有相关（表4）。</p><p><strong>发现3：用语音预测‘是否响应’可行但精度有限。</strong><br>ANN分类模型对焦虑响应的总体准确率约62%，对失眠响应约58%；ROC 5折交叉验证的AUC均值约0.57–0.59。这提示语音有潜力做低成本线索，但仍不足以支持个人层面的决策。</p><p><blockquote>证据锚点：第5页 表1; 第6页 表2; 第7页 表3–4; 第7–8页 图1–4; 第5页 相关分析</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">这项研究有什么用：证据边界内的应用想象</h2>
+    <div class="reveal"><p><strong>证据支持的：</strong>在这项4周随机对照试验中，生物反馈组量表症状减轻，且失眠变化量优于等待组；与此同时，语音与生理指标也呈现与干预相关的变化，并与症状改善存在相关。</p><p><strong>合理推测但需再验证的：</strong>论文讨论认为语音数据来源具有可扩展性，可整合到手机与网络医疗应用中，用于更低成本的随访。如果未来在更大样本、更长随访中重复验证，‘声音+生理信号’可能成为校园场景里一种更客观、可持续的疗效追踪方式。但当前预测模型准确率仅约58–62%，不适合个人自测或分诊。</p><p><blockquote>证据锚点：第5–7页 表1–4; 第9页 Discussion; 第7–8页 图1–4</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="">
+  <div class="container">
+    <h2 class="reveal">局限性与下一步</h2>
+    <div class="reveal"><p><ul><li>随访较短：评估点为基线与第4周，论文未报告更长期维持效果。</li><br></ul><br><ul><li>对照为等待名单：无法区分训练特异效应与时间/期待等非特异因素。</li><br></ul><br><ul><li>失眠与语音关联缺乏既往证据：论文限制性部分指出，相关文献不足，需要未来研究验证。</li><br></ul><br><ul><li>部分生理指标基线存在组间差异：例如表3中body_data与EMG在基线比较显著（p<0.001），提示需更严格控制潜在偏差。</li><br></ul><br><ul><li>预测模型精度有限：准确率约58–62%，AUC均值约0.57–0.59，仍需更大样本与外部验证。</li><br></ul><br><blockquote>证据锚点：第4页; 第7页 表3; 第7–8页 图1–4; 第10页 Limitations</blockquote></p></div>
+    
+  </div>
+</section>
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <h2 class="reveal">一句话带走</h2>
+    <div class="reveal"><p>4周生物反馈：睡眠改善证据最稳健，声音可能成为客观追踪线索。</p><p><blockquote>证据锚点：第5页 表1; 第6页 表2; 第10页 结论</blockquote></p></div>
+    
+  </div>
+</section>
 
-  <script src="scripts.js"></script>
+
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>
