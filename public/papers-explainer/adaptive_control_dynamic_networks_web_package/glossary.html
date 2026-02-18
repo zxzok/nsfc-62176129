@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>术语与FAQ | 动态网络自适应控制</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<!-- Back Nav -->
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<!-- Page Navigation -->
+<nav class="page-nav">
+  <div class="page-nav-inner">
+    <a href="index.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      概览
+    </a>
+    <a href="method.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      方法详解
+    </a>
+    <a href="results.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      实验结果
+    </a>
+    <a href="glossary.html" class="active">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      术语与FAQ
+    </a>
+  </div>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Hero -->
+<section class="hero" style="padding:3.5rem 24px 3rem;">
+  <div class="container">
+    <span class="hero-badge">参考</span>
+    <h1 style="margin-top:1rem;">术语小词典 &amp; FAQ</h1>
+    <p class="hero-subtitle">12 个核心术语的通俗解释与 9 个常见问题</p>
+  </div>
+</section>
+
+<!-- Quick Nav -->
+<section class="section" style="padding:2rem 0;">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <a href="#glossary" style="padding:6px 16px;border-radius:8px;background:rgba(0,180,216,0.08);color:var(--ocean);font-size:0.85rem;font-weight:600;border:1px solid rgba(0,180,216,0.2);">术语词典</a>
+      <a href="#faq" style="padding:6px 16px;border-radius:8px;background:rgba(16,185,129,0.08);color:#059669;font-size:0.85rem;font-weight:600;border:1px solid rgba(16,185,129,0.2);">常见问题</a>
+    </div>
+  </div>
+</section>
+
+<!-- Glossary -->
+<section class="section" id="glossary" style="background:var(--surface);padding-top:2rem;">
+  <div class="container">
+    <div class="section-label reveal">术语词典</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">12 个核心术语</h2>
+    <p class="reveal" style="margin-bottom:2rem;">每个术语都附有通俗解释和生活类比，帮助非专业读者快速理解。</p>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">动态网络 <span class="glossary-term-en">Dynamic Network</span></div>
+      <div class="glossary-def">网络的节点或连边会随时间变化，不能用一张固定拓扑图描述。</div>
+      <div class="glossary-analogy">像城市路网：每天都有道路施工、封路或新开通。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">快照 <span class="glossary-term-en">Snapshot / Temporal Subgraph</span></div>
+      <div class="glossary-def">把一段时间窗口内发生的连接汇总成一张"当下的网络图"，连续窗口形成序列。</div>
+      <div class="glossary-analogy">像视频逐帧：每一帧是一个定格画面。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">可控性 <span class="glossary-term-en">Controllability</span></div>
+      <div class="glossary-def">是否能用外部输入把系统从任意初始状态驱动到任意目标状态。</div>
+      <div class="glossary-analogy">像开车：方向盘和油门能把车从任意速度/位置带到你想要的状态。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">驱动节点 <span class="glossary-term-en">Driver Node</span></div>
+      <div class="glossary-def">直接接收控制信号的节点；控制输入通过这些节点影响全网。</div>
+      <div class="glossary-analogy">像指挥员/控制器接入点：把命令先下到这些点，再传导到全局。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">最小驱动节点集 <span class="glossary-term-en">MDS (Minimum Driver Set)</span></div>
+      <div class="glossary-def">保证网络结构可控所需的最少驱动节点集合；同一网络可能不唯一。</div>
+      <div class="glossary-analogy">像最少需要几个交通信号控制器，才能覆盖整个路网的调度。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">结构可控性 <span class="glossary-term-en">Structural Controllability</span></div>
+      <div class="glossary-def">只基于"有没有边"而不是精确边权来判断可控性，并据此求 MDS。</div>
+      <div class="glossary-analogy">像只看道路是否连通，不看每条路的限速和车流量，先做可达性规划。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">最大匹配 <span class="glossary-term-en">Maximum Matching</span></div>
+      <div class="glossary-def">在网络的二分图表示里选尽可能多且互不冲突的边；未被匹配到的入端点对应驱动节点。</div>
+      <div class="glossary-analogy">像把左边的人和右边的人配对，配对越多，剩下没人配对的一侧就越关键。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">额外控制成本 <span class="glossary-term-en">ECC (Extra Control Cost)</span></div>
+      <div class="glossary-def">把相邻两次 MDS 之间"新加入的驱动节点数"累加，衡量控制方案随时间更换的代价。</div>
+      <div class="glossary-analogy">像排班：每换一次岗位就有培训/交接成本，ECC 就是把这些新增岗位次数加总。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">Jaccard 相似度 <span class="glossary-term-en">Jaccard Similarity</span></div>
+      <div class="glossary-def">衡量两个集合的重叠程度：交集除以并集；可用于比较相邻快照的节点或边是否相似。</div>
+      <div class="glossary-analogy">像两天的出勤名单：重合越多，变化越小。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">度中心性 <span class="glossary-term-en">Degree Centrality</span></div>
+      <div class="glossary-def">节点在某一快照的连边数量（归一化后在有向图范围 [0, 2]）；连接越多通常越稳定。</div>
+      <div class="glossary-analogy">像一个枢纽路口：连接道路多，往往更不容易被完全"消失"。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">节点优先级 q <span class="glossary-term-en">Node Priority q</span></div>
+      <div class="glossary-def">AC 算法用来排序搜索的评分：既偏好上一时刻已是驱动节点的"延续性"，也考虑历史稳定性。</div>
+      <div class="glossary-analogy">像保留熟练员工优先上岗，同时也看岗位本身是否长期存在。</div>
+    </div>
+
+    <div class="glossary-item reveal">
+      <div class="glossary-term">UMDS <span class="glossary-term-en">Union of MDS</span></div>
+      <div class="glossary-def">把整个时间序列里出现过的所有驱动节点取并集，反映"长期需要准备多少个可能的控制点"。</div>
+      <div class="glossary-analogy">像全年排班：你可能需要培训的员工名单总数。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">常见问题</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">9 个常见问题</h2>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        这是不是说明只要选对几个节点，就能控制任何复杂系统？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>论文讨论的是<strong>结构可控性</strong>框架：在不知道精确边权时，只根据拓扑结构判断需要多少驱动节点与放在哪些节点上。它并不等同于"真实系统一定可用很少输入就精确控制到任意状态"，实际还受动力学参数、时延、噪声等影响，而这些论文未建模验证。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        为什么不能提前算好一套固定的控制点，一劳永逸？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>很多既有动态网络控制方法隐含假设：<strong>完整的时间演化已知</strong>，可以离线求一个全局方案。但论文指出现实网络往往随机变化、未来不可预测，因此更需要每一步在线更新 MDS。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        ECC 和"需要多少个驱动节点"是同一个东西吗？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>不是。|MDS| 描述每个快照最少要多少控制点；ECC 描述相邻快照之间新增了多少控制点（切换代价）。在扩展对比里，AC、MM、DPB、PPB 的 |MDS| 相同，但 ECC 不同。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        AC 需要知道未来网络怎么变吗？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>不需要。论文的自适应控制设置强调：在时刻 t 只能访问历史与当前快照，未来拓扑未知。算法以"上一快照匹配与 MDS"为输入进行修补更新。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        AC 在什么情况下最有用？什么情况下效果一般？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>当相邻快照节点/边相似度较高（网络渐进演化）时，AC 更容易沿用上一时刻驱动节点，ECC 下降更明显。当网络高度动态变化时，AC 与 MM 会更接近，但不会比 MM 更差。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        论文里的"平均下降 22%/19%"是怎么来的？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>摘要直接给出：合成网络平均降低约 22%，真实网络平均降低约 19%。在真实网络部分，作者也报告 20 个网络平均 ECC_AC/ECC_MM = 0.81。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        参数 l 要怎么选？是不是需要记住很长的历史？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>l 表示回看多少个历史快照来累计稳定性。作者在合成网络实验中指出，不同 l 下出现相似的优化结果，并推断 MDS 选择可能主要依赖网络结构和"紧邻的上一快照"，因此<strong>不必保留完整历史</strong>。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        如果网络突然大变，AC 会不会比基线更差？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>作者给出的边界分析是：当优先级度量因突变而失效时，AC 会退化为默认/随机顺序匹配，等价于常规最大匹配，因此总体表现有明确下界——<strong>不会比 MM 更差</strong>。</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        这项工作下一步要解决什么？
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-a">
+        <p>作者在结论中提出一个明确方向：为当前启发式算法建立理论框架，量化它与全局最优 ECC 之间的性能差距。此外，将方法扩展到带权动力学系统和真实部署场景也是潜在方向。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文 "Adaptive Control of Dynamic Networks" (Pan et al., IEEE TNSE, 2026) 生成，仅用于科学传播。</p>
+    <p style="margin-top:0.5rem;"><a href="results.html">&larr; 实验结果</a> &middot; <a href="index.html">返回概览 &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

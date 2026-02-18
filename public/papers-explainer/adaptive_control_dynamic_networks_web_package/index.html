@@ -1,28 +1,252 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>页面预览 | Adaptive Control of Dynamic Networks</title>
-  <link rel="stylesheet" href="./styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../unified-style.css"></head>
-<body><!-- NSFC Back Nav --><div id="nsfc-nav" style="position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#1a2744 0%,#1e3a5f 100%);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:Inter,-apple-system,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><a href="../../" style="color:#5eead4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回主站 Back to Site</a><span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span></div>
-  <header class="site-header">
-    <div class="container">
-      <h1 id="page-title">加载中…</h1>
-      <p id="page-subtitle" class="subtitle"></p>
-      <p class="note">此目录是“内容包预览器”，用于本地查看 structured/page.json 的渲染效果。请用本地HTTP服务器打开（避免 file:// 下的跨域限制）。</p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动态网络自适应控制 | Adaptive Control of Dynamic Networks</title>
+  <meta name="description" content="一种在线自适应算法，在未来未知的情况下减少动态网络驱动节点频繁切换的成本。IEEE TNSE 2026。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<!-- Back Nav -->
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<!-- Page Navigation -->
+<nav class="page-nav">
+  <div class="page-nav-inner">
+    <a href="index.html" class="active">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      概览
+    </a>
+    <a href="method.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      方法详解
+    </a>
+    <a href="results.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      实验结果
+    </a>
+    <a href="glossary.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      术语与FAQ
+    </a>
+  </div>
+</nav>
+
+<!-- Reading Progress -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div style="margin-bottom:1.5rem;">
+      <span class="hero-badge">IEEE TNSE 2026</span>
+      <span class="hero-badge" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3);color:#34d399;">代表性论文</span>
     </div>
-  </header>
-
-  <main class="container" id="main"></main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p id="disclaimer"></p>
+    <h1>动态网络也能实时<br>"少换控制点"</h1>
+    <p class="hero-subtitle">一种在线自适应算法：在未来未知的情况下，减少驱动节点频繁切换的成本</p>
+    <div class="hero-meta">
+      <span>Pan C, Zhang X*, Zheng H, Zhang R, Su Z, Zhang C, Zhang W</span>
+      <span>·</span>
+      <span>IEEE Trans. Network Science & Engineering, 13, 1918-1931</span>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="./app.js"></script>
+<!-- KPI Stats -->
+<div class="stats-row">
+  <div class="stat-card reveal">
+    <div class="stat-value">22%</div>
+    <div class="stat-label">合成网络平均<br>切换成本降低</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-value">19%</div>
+    <div class="stat-label">真实网络平均<br>切换成本降低</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-value">20</div>
+    <div class="stat-label">真实动态网络<br>数据集验证</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-value" style="font-size:1.5rem;">0.81</div>
+    <div class="stat-label">平均 ECC 比值<br>(越低越好)</div>
+  </div>
+</div>
+
+<!-- 30s Summary -->
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-label reveal">30秒读懂</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">核心问题与发现</h2>
+
+    <div class="two-col reveal">
+      <div>
+        <h3 style="margin-top:0;">问题是什么？</h3>
+        <p>现实网络（交通、社交、基因调控）会不断变化。为了"控制"网络——让系统从任意状态到达目标状态——我们需要选择一些关键节点（驱动节点）来施加控制信号。但网络结构一变，原来的驱动节点就可能失效，需要重新选择。</p>
+        <p><strong>频繁更换驱动节点 = 重新部署控制器 = 额外成本。</strong></p>
+        <p>能不能在只知道"过去和现在"的情况下，让控制点尽量稳定、少折腾？</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">解决方案</h3>
+        <p>作者提出<strong>自适应控制（AC）算法</strong>：</p>
+        <ul style="padding-left:1.2em;margin:0.75rem 0;">
+          <li>不需要知道未来网络怎么变</li>
+          <li>用节点的历史稳定性 + 上一时刻是否已是驱动节点来评分</li>
+          <li>从上一时刻的匹配出发做"局部修补"而非从头计算</li>
+          <li>保证每个时刻仍用最少的控制点</li>
+        </ul>
+        <div class="callout takeaway" style="margin-top:1rem;">
+          <div class="callout-title">一句话带走</div>
+          <p style="font-size:1.1rem;font-weight:600;color:var(--navy);margin:0;"><strong>让控制点少变，动态网络更好控</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Visual: Online Setting -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-label reveal">核心概念</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">在线自适应控制：过去已知、未来未知</h2>
+    <p class="reveal">传统方法假设我们预先知道整个网络的演化过程，可以离线求解最优方案。但现实中，未来的网络拓扑往往不可预测。AC 算法只用历史与当前快照实时更新驱动节点集。</p>
+    <div class="figure reveal">
+      <img src="visuals/png/visual_01_online_setting_diagram.png" alt="时间轴把过去与未来分开：左侧浅色区域表示已观测到的历史快照，右侧表示未知的未来拓扑" loading="lazy">
+      <div class="figure-caption"><strong>图 1 |</strong> 在线设置示意图 — 在当前时刻只能看到历史快照 G₁ 到 Gₙ，仍需实时计算当前最小驱动节点集（MDS）。基于 Fig.1（第2页）重绘。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Three Key Findings -->
+<section class="section" id="findings">
+  <div class="container">
+    <div class="section-label reveal">关键发现</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">三个核心发现</h2>
+    <div class="feature-grid">
+      <div class="card reveal">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">📉</div>
+        <h3 style="margin-top:0;">发现 1：显著降低切换成本</h3>
+        <p>在不知道未来网络怎么变的情况下，AC 在合成网络上平均降低 22% 切换成本，在 20 个真实网络上平均降低 19%。最好的案例（ia-hospital）比值低至 0.71。</p>
+      </div>
+      <div class="card reveal">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">🌊</div>
+        <h3 style="margin-top:0;">发现 2：越平稳越有效</h3>
+        <p>网络演化越"平稳"（相邻快照的节点/边相似度越高），AC 的优势越明显。变化剧烈时 AC 会接近基线但不会更差——它有明确的性能下界。</p>
+      </div>
+      <div class="card reveal">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">🎯</div>
+        <h3 style="margin-top:0;">发现 3：控制点更集中</h3>
+        <p>与只偏好高度/高 PageRank 节点的方法相比，AC 获得更小的 UMDS（全时段驱动节点并集）和更低的 ECC，说明"稳定+延续"的度量更有效。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual: Real Network Results -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="figure reveal">
+      <img src="visuals/png/visual_05_real_ratio_bar.png" alt="20个真实网络的ECC比值条形图" loading="lazy">
+      <div class="figure-caption"><strong>图 2 |</strong> 20 个真实网络的 ECC 比值（ECC_AC / ECC_MM）。虚线为基线 1，多数网络的比值小于 1，平均约 0.81，说明 AC 有效降低了驱动节点切换成本。基于 Table III（第11页）重绘。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Sub-page Navigation -->
+<section class="section" id="explore">
+  <div class="container">
+    <div class="section-label reveal">深入了解</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">探索更多内容</h2>
+    <div class="nav-cards">
+      <a href="method.html" class="nav-card reveal">
+        <div class="nav-card-icon">⚙️</div>
+        <h3>方法详解</h3>
+        <p>了解 AC 算法的核心思路：从交通调度类比到 ECC 公式、q 评分机制和局部匹配修补流程。</p>
+        <span class="nav-card-arrow">阅读详情 →</span>
+      </a>
+      <a href="results.html" class="nav-card reveal">
+        <div class="nav-card-icon">📊</div>
+        <h3>实验结果</h3>
+        <p>20 个真实网络的交互数据表、散点图可视化、合成网络对比与四策略基线比较。</p>
+        <span class="nav-card-arrow">查看数据 →</span>
+      </a>
+      <a href="glossary.html" class="nav-card reveal">
+        <div class="nav-card-icon">📖</div>
+        <h3>术语与 FAQ</h3>
+        <p>12 个核心术语的通俗解释与类比，以及 9 个常见问题的详细解答。</p>
+        <span class="nav-card-arrow">查阅词典 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Applications & Limitations -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="section-label">应用前景</div>
+        <h2 style="margin-top:0.5rem;">这项研究有什么用？</h2>
+        <div class="callout">
+          <div class="callout-title">✅ 证据支持</div>
+          <p>作为"在线"控制点更新策略：只依赖当前与历史拓扑计算 MDS，减少驱动节点更换成本。在 ER、SF 合成模型及 20 个真实动态网络上验证有效。</p>
+        </div>
+        <div class="callout warning">
+          <div class="callout-title">💭 潜在方向</div>
+          <p>论文指出有望用于交通、社交与分子调控系统，但未报告真实系统部署或成本换算，需后续研究验证。</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">局限与未来</div>
+        <h2 style="margin-top:0.5rem;">局限性与下一步</h2>
+        <div class="card" style="margin-top:1rem;">
+          <h4 style="color:var(--coral);margin:0 0 0.5rem;">① 启发式算法</h4>
+          <p style="margin:0;">目前缺乏"距全局最优 ECC 有多远"的理论近似界，建立理论框架是未来方向。</p>
+        </div>
+        <div class="card" style="margin-top:0.75rem;">
+          <h4 style="color:var(--amber);margin:0 0 0.5rem;">② 依赖渐进变化</h4>
+          <p style="margin:0;">当相邻快照差异很大时，AC 会退化到与基线相近的表现。在高动态网络上两者几乎一样。</p>
+        </div>
+        <div class="card" style="margin-top:0.75rem;">
+          <h4 style="color:var(--ocean);margin:0 0 0.5rem;">③ 快照化假设</h4>
+          <p style="margin:0;">将动态网络视作快照序列下的线性系统，使用结构可控性确定 MDS。若实际系统的动力学参数很关键，仍需扩展。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文 "Adaptive Control of Dynamic Networks" (Pan et al., IEEE TNSE, 2026) 生成，仅用于科学传播。</p>
+    <p style="margin-top:0.5rem;">所有数据图为基于论文数据重绘，非原文截图。如需引用请参阅原始论文。</p>
+    <p style="margin-top:1rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+  </div>
+</footer>
+
+<script>
+// Reading progress
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+  document.getElementById('readingProgress').style.width = p + '%';
+}, { passive: true });
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

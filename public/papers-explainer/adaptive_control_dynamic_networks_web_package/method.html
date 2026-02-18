@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>方法详解 | 动态网络自适应控制</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<!-- Back Nav -->
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<!-- Page Navigation -->
+<nav class="page-nav">
+  <div class="page-nav-inner">
+    <a href="index.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      概览
+    </a>
+    <a href="method.html" class="active">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      方法详解
+    </a>
+    <a href="results.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      实验结果
+    </a>
+    <a href="glossary.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      术语与FAQ
+    </a>
+  </div>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Hero -->
+<section class="hero" style="padding:3.5rem 24px 3rem;">
+  <div class="container">
+    <span class="hero-badge">方法详解</span>
+    <h1 style="margin-top:1rem;">我们怎么做的</h1>
+    <p class="hero-subtitle">从交通调度类比到 AC 算法的核心原理</p>
+  </div>
+</section>
+
+<!-- Analogy -->
+<section class="section">
+  <div class="container">
+    <div class="section-label reveal">直觉类比</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">把"控制动态网络"想成交通调度</h2>
+    <div class="two-col reveal">
+      <div>
+        <p>想象一座不断变形的城市：你只能看到今天和过去的路网，却要立刻决定把信号控制器放在哪些路口，才能让整座城市从任意状态被"拉到"目标状态。</p>
+        <p>网络控制理论里，这些需要直接施加控制信号的节点叫<strong>驱动节点</strong>，而<strong>最小驱动节点集（MDS）</strong>就是保证可控所需的最少控制点。</p>
+        <p>关键困难在于：动态网络每个时间快照都可能有不止一套 MDS —— 就像同样数量的交通指挥员，可以站在不同路口都能把交通疏导起来。如果每次都随意选一套，就会导致驱动节点在相邻时刻大幅更换，产生额外的人力/通信/部署成本。</p>
+      </div>
+      <div>
+        <div class="figure" style="margin-top:0;">
+          <img src="visuals/png/visual_02_multiple_mds_schematic.png" alt="同一张网络可能有多套最少控制点" loading="lazy">
+          <div class="figure-caption"><strong>图 1 |</strong> 同一个四节点有向网络有多套最小驱动节点集（MDS），为"选更连贯的那一套"提供了空间。基于 Fig.2（第5页）。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECC Definition -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-label reveal">核心指标</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">额外控制成本 ECC</h2>
+    <p class="reveal">论文用<strong>额外控制成本 ECC</strong> 把这种变化量化为：把每一步"新加入的驱动节点数"累加。ECC 越小，意味着控制方案在时间维度上越稳定，需要的调整越少。</p>
+    <div class="figure reveal">
+      <img src="visuals/png/visual_03_ecc_explainer_schematic.png" alt="ECC 定义：统计每一步新增的驱动节点" loading="lazy">
+      <div class="figure-caption"><strong>图 2 |</strong> ECC 把相邻两次 MDS 之间"新增的驱动节点数"累加。上行：频繁全换，ECC 高。下行：大多沿用旧集合，ECC 低。基于 ECC 定义（第5页）。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Two Principles -->
+<section class="section">
+  <div class="container">
+    <div class="section-label reveal">设计原则</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">两条直觉原则</h2>
+    <p class="reveal">为减少驱动节点的反复更换，作者提出两条直觉原则：</p>
+    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
+      <div class="card reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,180,216,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="margin:0;">原则一：稳定性优先</h3>
+        </div>
+        <p>优先选择在历史上更"稳定"的节点。稳定性通过节点的<strong>度中心性</strong>（连接多，角色更稳定）与相邻快照的<strong>边相似度</strong>（Jaccard 系数，连接变化小）来衡量。</p>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
+          <div style="width:48px;height:48px;border-radius:12px;background:rgba(30,96,145,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e6091" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          </div>
+          <h3 style="margin:0;">原则二：延续性加分</h3>
+        </div>
+        <p>尽量沿用上一时刻已经在 MDS 里的节点以保持"延续性"。如果一个节点上一时刻是驱动节点，它会获得更强的优先级加分——这是比稳定性更重要的因素。</p>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:1.5rem;">
+      <div class="callout-title">节点优先级评分 q</div>
+      <p>两条原则被合成为一个节点层面的优先级评分 <strong>q</strong>：先用度中心性与边相似度得到稳定性指标 σ，再把"是否属于上一时刻 MDS"作为更强的加分项。最终按 q 排序来引导匹配搜索。</p>
+      <p style="font-size:0.85rem;color:var(--text-faint);margin-top:0.5rem;">证据来源：第6页 公式(1)-(3) 与 Property 1</p>
+    </div>
+  </div>
+</section>
+
+<!-- Algorithm Flow -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-label reveal">算法流程</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">AC 算法：局部修补而非从头计算</h2>
+    <p class="reveal">AC 算法不是每次从零计算匹配，而是从上一快照的最大匹配出发，只对新增/删除的边做"局部修补"。</p>
+
+    <div class="figure reveal">
+      <img src="visuals/png/visual_04_ac_workflow_flowchart.png" alt="AC 算法流程图" loading="lazy">
+      <div class="figure-caption"><strong>图 3 |</strong> AC 算法流程：从上一刻匹配出发做局部修补。先移除失效匹配边，再用 q 排序搜索增广路径修补匹配，输出当前 MDS。基于 Algorithm 1（第8页）。</div>
+    </div>
+
+    <div class="steps reveal" style="margin-top:2rem;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>输入当前快照</h4>
+          <p>获取当前时刻的网络拓扑 G<sub>t</sub>，以及上一时刻的匹配 M<sub>t-1</sub> 和 MDS<sub>t-1</sub>。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>移除失效匹配边</h4>
+          <p>检查上一时刻的匹配 M<sub>t-1</sub> 中哪些边在当前拓扑已不存在，将它们从匹配中移除。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>计算节点优先级 q</h4>
+          <p>对当前网络中的每个节点，综合度中心性、边相似度以及"上一时刻是否为驱动节点"计算优先级评分 q。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>按 q 排序搜索增广路径</h4>
+          <p>按 q 的顺序优先探索更稳定、更延续的节点，搜索增广路径来修补匹配，从而最大化匹配数量。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>输出当前 MDS</h4>
+          <p>从修补后的最大匹配中确定未被匹配的节点，即为当前时刻的最小驱动节点集 MDS<sub>t</sub>。计算与上一时刻的 ECC 增量。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout takeaway reveal" style="margin-top:2rem;">
+      <div class="callout-title">算法复杂度</div>
+      <p>由于是在上一匹配基础上修补而非从头计算，实际计算量远小于每步独立求解最大匹配。算法复杂度与网络中变化的边数相关，而非整个网络规模。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why It Works -->
+<section class="section">
+  <div class="container">
+    <div class="section-label reveal">为什么有效</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">为什么 AC 能减少切换？</h2>
+    <div class="two-col reveal">
+      <div>
+        <p>AC 之所以有效，核心在于利用了一个观察：<strong>如果网络的变化是渐进的，那么相邻时刻的"好的"驱动节点集合也往往高度重叠。</strong></p>
+        <p>通过 q 评分机制：</p>
+        <ul style="padding-left:1.2em;">
+          <li><strong>延续性偏好</strong>让搜索优先保留上一时刻的驱动节点</li>
+          <li><strong>稳定性评分</strong>让连接稳定的"枢纽"节点获得更高优先级</li>
+          <li><strong>局部修补</strong>避免了完全重新计算带来的随机性</li>
+        </ul>
+        <p>当网络突变导致这些度量失效时，AC 会自动退化为常规最大匹配——<strong>有明确的性能下界，不会比基线更差。</strong></p>
+      </div>
+      <div>
+        <div class="figure" style="margin-top:0;">
+          <img src="visuals/png/visual_08_synthetic_summary.png" alt="合成网络 SF vs ER 比较" loading="lazy">
+          <div class="figure-caption"><strong>图 4 |</strong> 合成网络结果：Scale-Free 网络（平均比值 0.72）比 ER 随机网络（0.84）更受益于 AC。在更稳定的网络（r&lt;0.1）中，AC 几乎能把 ECC 降到接近一半。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>本页面内容基于论文 "Adaptive Control of Dynamic Networks" (Pan et al., IEEE TNSE, 2026) 生成，仅用于科学传播。</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← 返回概览</a> · <a href="results.html">查看实验结果 →</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

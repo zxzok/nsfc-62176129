@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>实验结果 | 动态网络自适应控制</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      margin: 1.5rem 0; padding: 1rem;
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .filter-btn {
+      padding: 6px 14px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-muted); cursor: pointer;
+      transition: all 0.2s; font-family: inherit;
+      box-shadow: none;
+    }
+    .filter-btn:hover { border-color: var(--cyan); color: var(--ocean); background: var(--surface); transform: none; box-shadow: none; }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--cyan), var(--ocean));
+      color: #fff; border-color: transparent;
+      box-shadow: 0 2px 8px rgba(0,180,216,0.25);
+    }
+    .sort-select {
+      padding: 6px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface);
+      font-size: 0.8rem; font-family: inherit; color: var(--text);
+      cursor: pointer;
+    }
+    .highlight-best td { background: rgba(0,180,216,0.06); }
+    .metric-tag {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .metric-tag.good { background: rgba(16,185,129,0.1); color: #059669; }
+    .metric-tag.neutral { background: rgba(245,158,11,0.1); color: #d97706; }
+    .metric-tag.poor { background: rgba(239,68,68,0.1); color: #dc2626; }
+  </style>
+</head>
+<body>
+<!-- Back Nav -->
+<div id="nsfc-nav">
+  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span style="color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:0.5px;">NSFC 62176129</span>
+</div>
+
+<!-- Page Navigation -->
+<nav class="page-nav">
+  <div class="page-nav-inner">
+    <a href="index.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      概览
+    </a>
+    <a href="method.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      方法详解
+    </a>
+    <a href="results.html" class="active">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      实验结果
+    </a>
+    <a href="glossary.html">
+      <svg class="page-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      术语与FAQ
+    </a>
+  </div>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Hero -->
+<section class="hero" style="padding:3.5rem 24px 3rem;">
+  <div class="container">
+    <span class="hero-badge">实验结果</span>
+    <h1 style="margin-top:1rem;">20 个真实网络的验证</h1>
+    <p class="hero-subtitle">交互式数据表、可视化图表与策略对比</p>
+  </div>
+</section>
+
+<!-- Real Network Dashboard -->
+<section class="section" id="dashboard">
+  <div class="container-wide">
+    <div class="section-label reveal">交互数据</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">真实网络实验结果</h2>
+    <p class="reveal">下表展示 20 个真实动态网络的 AC 算法表现。使用筛选按钮过滤网络类型，下拉菜单选择排序方式。</p>
+
+    <div class="filter-bar reveal">
+      <span style="font-size:0.8rem;font-weight:600;color:var(--text-muted);margin-right:4px;">类型筛选:</span>
+      <button class="filter-btn active" data-filter="all" onclick="setFilter(this,'all')">全部</button>
+      <button class="filter-btn" data-filter="Email" onclick="setFilter(this,'Email')">Email</button>
+      <button class="filter-btn" data-filter="Social" onclick="setFilter(this,'Social')">Social</button>
+      <button class="filter-btn" data-filter="Human contact" onclick="setFilter(this,'Human contact')">Human Contact</button>
+      <span style="flex:1;"></span>
+      <span style="font-size:0.8rem;color:var(--text-faint);">排序:</span>
+      <select class="sort-select" id="sortSelect" onchange="currentSort=this.value;renderTable()">
+        <option value="ratio-asc">ECC 比值 (最佳优先)</option>
+        <option value="ratio-desc">ECC 比值 (最差优先)</option>
+        <option value="name-asc">网络名称 A-Z</option>
+        <option value="sn-desc">节点相似度 (高→低)</option>
+        <option value="se-desc">边相似度 (高→低)</option>
+      </select>
+    </div>
+
+    <div class="data-table-wrap reveal">
+      <table class="data-table" id="networkTable">
+        <thead>
+          <tr>
+            <th>网络</th>
+            <th>类型</th>
+            <th>T</th>
+            <th>N<sub>avg</sub></th>
+            <th>S<sub>n</sub></th>
+            <th>S<sub>e</sub></th>
+            <th>ECC<sub>AC</sub></th>
+            <th>ECC<sub>MM</sub></th>
+            <th>比值</th>
+            <th>效果</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="callout reveal" style="margin-top:1rem;">
+      <div class="callout-title">数据说明</div>
+      <p style="font-size:0.88rem;">ECC 比值 = ECC<sub>AC</sub> / ECC<sub>MM</sub>，越小越好。比值 &lt; 0.80 标记为显著优势（绿色），0.80–0.95 为有效（黄色），&gt; 0.95 为接近基线（红色）。数据来自论文 Table II &amp; III（第9-11页）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Scatter Plots -->
+<section class="section" style="background:var(--surface);">
+  <div class="container-wide">
+    <div class="section-label reveal">趋势分析</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">网络相似度与 AC 效果的关系</h2>
+    <p class="reveal">网络演化越平稳（相似度越高），AC 的 ECC 比值越低，说明优势越明显。</p>
+
+    <div class="two-col">
+      <div class="chart-container reveal">
+        <h4 style="margin:0 0 0.5rem;font-size:0.9rem;">节点相似度 S<sub>n</sub> vs ECC 比值</h4>
+        <canvas id="snChart"></canvas>
+      </div>
+      <div class="chart-container reveal">
+        <h4 style="margin:0 0 0.5rem;font-size:0.9rem;">边相似度 S<sub>e</sub> vs ECC 比值</h4>
+        <canvas id="seChart"></canvas>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:1rem;">
+      <div class="figure reveal">
+        <img src="visuals/png/visual_06_sn_scatter.png" alt="节点相似度散点图" loading="lazy">
+        <div class="figure-caption"><strong>图 1 |</strong> 节点相似度 S<sub>n</sub> 越大，ECC 比值越低，AC 越有效。基于 Fig.9（第10页）。</div>
+      </div>
+      <div class="figure reveal">
+        <img src="visuals/png/visual_07_se_scatter.png" alt="边相似度散点图" loading="lazy">
+        <div class="figure-caption"><strong>图 2 |</strong> 边相似度 S<sub>e</sub> 越大，ECC 比值通常更低。基于 Fig.9（第10页）。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Baseline Comparison -->
+<section class="section" id="baseline">
+  <div class="container-wide">
+    <div class="section-label reveal">策略对比</div>
+    <h2 class="reveal" style="margin-top:0.5rem;">四种策略基线比较</h2>
+    <p class="reveal">在相同 |MDS| 条件下，AC 与 MM（最大匹配）、DPB（度优先）、PPB（PageRank 优先）的 ECC 比较。</p>
+
+    <div class="chart-container reveal">
+      <canvas id="baselineChart" style="max-height:350px;"></canvas>
+    </div>
+
+    <div class="figure reveal" style="margin-top:1.5rem;">
+      <img src="visuals/png/visual_09_tableIV_ecc_grouped.png" alt="四种策略 ECC 分组对比" loading="lazy">
+      <div class="figure-caption"><strong>图 3 |</strong> 分组柱状图比较 AC、MM、DPB、PPB 在不同参数区间下的 ECC 均值。AC 在各组中通常最低。基于 Table IV（第12页）。</div>
+    </div>
+
+    <div class="callout takeaway reveal" style="margin-top:1.5rem;">
+      <div class="callout-title">关键结论</div>
+      <p>四种方法在每个快照得到相同的 |MDS|（最小驱动节点数），但 AC 获得了更小的 UMDS（全时段驱动节点并集）和更低的 ECC。这说明 AC 的"稳定+延续"策略比单纯使用度或 PageRank 更能抓住动态网络里可复用的控制点。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>数据来自论文 "Adaptive Control of Dynamic Networks" (Pan et al., IEEE TNSE, 2026)。所有图表为基于论文数据重绘。</p>
+    <p style="margin-top:0.5rem;"><a href="method.html">&larr; 方法详解</a> &middot; <a href="glossary.html">术语与 FAQ &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+// Static data from the paper (Table II & III)
+var networks = [
+  {network:"CollegeMsg",type:"Social",T:7,N:631.86,k:7.35,Sn:0.38,Se:0.08,MDS:236.71,AC:934,MM:1023,ratio:0.91},
+  {network:"email-Eu-core-temporal",type:"Email",T:9,N:763.22,k:19.62,Sn:0.87,Se:0.36,MDS:148.33,AC:406,MM:811,ratio:0.50},
+  {network:"email-Eu-Dept1",type:"Email",T:9,N:231.67,k:9.94,Sn:0.86,Se:0.45,MDS:55.78,AC:154,MM:275,ratio:0.56},
+  {network:"email-Eu-Dept2",type:"Email",T:9,N:120.78,k:13.28,Sn:0.86,Se:0.54,MDS:20.11,AC:68,MM:117,ratio:0.58},
+  {network:"email-Eu-Dept3",type:"Email",T:9,N:72.67,k:11.94,Sn:0.89,Se:0.34,MDS:13.78,AC:43,MM:82,ratio:0.52},
+  {network:"email-Eu-Dept4",type:"Email",T:9,N:108.11,k:11.36,Sn:0.89,Se:0.56,MDS:16.44,AC:55,MM:99,ratio:0.56},
+  {network:"sx-mathoverflow",type:"Social",T:40,N:2038.02,k:7.93,Sn:0.30,Se:0.05,MDS:694.0,AC:21508,MM:22919,ratio:0.94},
+  {network:"sx-mathoverflow-a2q",type:"Social",T:40,N:1532.75,k:3.36,Sn:0.24,Se:0.02,MDS:874.1,AC:24279,MM:25320,ratio:0.96},
+  {network:"sx-mathoverflow-c2a",type:"Social",T:40,N:1185.18,k:4.71,Sn:0.30,Se:0.06,MDS:578.9,AC:18246,MM:18536,ratio:0.98},
+  {network:"sx-mathoverflow-c2q",type:"Social",T:40,N:1285.4,k:5.01,Sn:0.28,Se:0.04,MDS:498.0,AC:12018,MM:12634,ratio:0.95},
+  {network:"sx-superuser",type:"Social",T:93,N:5642.14,k:4.07,Sn:0.15,Se:0.02,MDS:2496.41,AC:207738,MM:211540,ratio:0.98},
+  {network:"sx-superuser-a2q",type:"Social",T:93,N:4032.52,k:2.33,Sn:0.12,Se:0.004,MDS:2385.38,AC:189038,MM:191514,ratio:0.99},
+  {network:"sx-superuser-c2q",type:"Social",T:93,N:2171.78,k:3.04,Sn:0.12,Se:0.02,MDS:927.6,AC:67131,MM:68091,ratio:0.99},
+  {network:"contacts-prox-HS-2013",type:"Human contact",T:6,N:291.33,k:12.9,Sn:0.87,Se:0.24,MDS:52.5,AC:96,MM:134,ratio:0.72},
+  {network:"fb-forum",type:"Social",T:10,N:434.5,k:4.86,Sn:0.60,Se:0.21,MDS:212.6,AC:815,MM:908,ratio:0.90},
+  {network:"edit-enwikibooks",type:"Human contact",T:139,N:3453.56,k:1.97,Sn:0.14,Se:0.05,MDS:2962.58,AC:334285,MM:337951,ratio:0.99},
+  {network:"copresence-LH10",type:"Human contact",T:13,N:31.54,k:15.32,Sn:0.55,Se:0.23,MDS:4.85,AC:33,MM:43,ratio:0.77},
+  {network:"ia-radoslaw-email",type:"Email",T:118,N:93.94,k:7.64,Sn:0.64,Se:0.19,MDS:22.22,AC:1706,MM:2017,ratio:0.85},
+  {network:"ia-workplace-contacts",type:"Human contact",T:4,N:73.75,k:6.82,Sn:0.68,Se:0.13,MDS:20.0,AC:37,MM:42,ratio:0.88},
+  {network:"ia-hospital",type:"Human contact",T:8,N:42.0,k:12.56,Sn:0.61,Se:0.16,MDS:15.5,AC:45,MM:63,ratio:0.71}
+];
+
+var currentFilter = 'all';
+var currentSort = 'ratio-asc';
+
+function getTag(ratio) {
+  if (ratio < 0.80) return '<span class="metric-tag good">\u2193' + Math.round((1-ratio)*100) + '%</span>';
+  if (ratio <= 0.95) return '<span class="metric-tag neutral">\u2193' + Math.round((1-ratio)*100) + '%</span>';
+  return '<span class="metric-tag poor">\u2248 \u57FA\u7EBF</span>';
+}
+
+function setFilter(btn, val) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  currentFilter = val;
+  renderTable();
+}
+
+function renderTable() {
+  var data = currentFilter === 'all' ? networks.slice() : networks.filter(function(n) { return n.type === currentFilter; });
+  var parts = currentSort.split('-');
+  var field = parts[0], dir = parts[1];
+  data.sort(function(a, b) {
+    var va, vb;
+    if (field === 'ratio') { va = a.ratio; vb = b.ratio; }
+    else if (field === 'name') { va = a.network; vb = b.network; }
+    else if (field === 'sn') { va = a.Sn; vb = b.Sn; }
+    else if (field === 'se') { va = a.Se; vb = b.Se; }
+    if (typeof va === 'string') return dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+    return dir === 'asc' ? va - vb : vb - va;
+  });
+  var tbody = document.getElementById('tableBody');
+  var rows = [];
+  for (var i = 0; i < data.length; i++) {
+    var n = data[i];
+    var barW = Math.max(5, Math.round(n.ratio * 100));
+    var best = n.ratio <= 0.75;
+    var tr = document.createElement('tr');
+    if (best) tr.className = 'highlight-best';
+    tr.innerHTML =
+      '<td style="font-weight:500;font-size:0.82rem;">' + n.network + '</td>' +
+      '<td><span class="hero-badge" style="font-size:0.7rem;padding:2px 8px;">' + n.type + '</span></td>' +
+      '<td>' + n.T + '</td>' +
+      '<td>' + n.N.toFixed(0) + '</td>' +
+      '<td>' + n.Sn.toFixed(2) + '</td>' +
+      '<td>' + n.Se.toFixed(2) + '</td>' +
+      '<td style="font-family:JetBrains Mono,monospace;font-size:0.82rem;">' + n.AC.toLocaleString() + '</td>' +
+      '<td style="font-family:JetBrains Mono,monospace;font-size:0.82rem;">' + n.MM.toLocaleString() + '</td>' +
+      '<td style="font-weight:700;color:var(--navy);"><span class="ratio-bar" style="width:' + barW + 'px;"></span>' + n.ratio.toFixed(2) + '</td>' +
+      '<td>' + getTag(n.ratio) + '</td>';
+    rows.push(tr);
+  }
+  tbody.replaceChildren.apply(tbody, rows);
+}
+renderTable();
+
+// Scatter charts
+function makeScatter(id, xKey, xLabel) {
+  var ctx = document.getElementById(id).getContext('2d');
+  var colors = networks.map(function(n) {
+    if (n.type === 'Email') return '#00b4d8';
+    if (n.type === 'Social') return '#f77f6b';
+    return '#10b981';
+  });
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        data: networks.map(function(n) { return { x: n[xKey], y: n.ratio, label: n.network }; }),
+        backgroundColor: colors,
+        borderColor: colors.map(function(c) { return c + '88'; }),
+        borderWidth: 1,
+        pointRadius: 7,
+        pointHoverRadius: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              var d = ctx.raw;
+              return d.label + ': ' + xLabel + '=' + d.x.toFixed(2) + ', \u6BD4\u503C=' + d.y.toFixed(2);
+            }
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: xLabel, font: { family: 'Inter', weight: 600 } }, grid: { color: '#f1f5f9' } },
+        y: { title: { display: true, text: 'ECC \u6BD4\u503C (AC/MM)', font: { family: 'Inter', weight: 600 } }, min: 0.4, max: 1.05, grid: { color: '#f1f5f9' } }
+      }
+    }
+  });
+}
+makeScatter('snChart', 'Sn', '\u8282\u70B9\u76F8\u4F3C\u5EA6 Sn');
+makeScatter('seChart', 'Se', '\u8FB9\u76F8\u4F3C\u5EA6 Se');
+
+// Baseline chart
+var baseCtx = document.getElementById('baselineChart').getContext('2d');
+var baseData = [
+  { label: 'k\u2208[4,5]', AC: 821.77, MM: 918.06, DPB: 904.67, PPB: 918.60 },
+  { label: 'k\u2208[5,6]', AC: 327.82, MM: 367.39, DPB: 367.69, PPB: 365.44 },
+  { label: 'r\u2208[0.10,0.15]', AC: 519.66, MM: 594.86, DPB: 581.86, PPB: 555.05 },
+  { label: 'r\u2208[0.15,0.20]', AC: 605.44, MM: 666.00, DPB: 664.98, PPB: 668.39 }
+];
+new Chart(baseCtx, {
+  type: 'bar',
+  data: {
+    labels: baseData.map(function(d) { return d.label; }),
+    datasets: [
+      { label: 'AC', data: baseData.map(function(d) { return d.AC; }), backgroundColor: '#00b4d8', borderRadius: 4 },
+      { label: 'MM', data: baseData.map(function(d) { return d.MM; }), backgroundColor: '#94a3b8', borderRadius: 4 },
+      { label: 'DPB', data: baseData.map(function(d) { return d.DPB; }), backgroundColor: '#f59e0b', borderRadius: 4 },
+      { label: 'PPB', data: baseData.map(function(d) { return d.PPB; }), backgroundColor: '#f77f6b', borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'top', labels: { font: { family: 'Inter', size: 12 }, usePointStyle: true, pointStyle: 'rectRounded' } },
+      title: { display: true, text: '\u56DB\u79CD\u7B56\u7565\u5728\u4E0D\u540C\u53C2\u6570\u533A\u95F4\u4E0B\u7684\u5E73\u5747 ECC', font: { family: 'Inter', size: 14, weight: 600 }, color: '#0f2b46' }
+    },
+    scales: {
+      x: { grid: { display: false } },
+      y: { title: { display: true, text: 'ECC \u5747\u503C', font: { family: 'Inter', weight: 600 } }, grid: { color: '#f1f5f9' } }
+    }
+  }
+});
+
+// Progress bar
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
