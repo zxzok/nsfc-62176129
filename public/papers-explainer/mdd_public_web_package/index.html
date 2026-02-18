@@ -3,15 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>同样是抑郁，身体里的“原因”可能不一样</title>
+  <title>同样是抑郁，身体里的"原因"可能不一样——脑影像+多组学的3型分类</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../adaptive_control_dynamic_networks_web_package/shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background:#f8f9fc!important; }
+
+    .hero-custom {
+      background:linear-gradient(155deg,#0c0f1d 0%,#1e293b 30%,#334155 60%,#64748b 100%)!important;
+      padding:5rem 24px 4rem!important; text-align:left!important; position:relative!important; overflow:hidden!important;
+    }
+    .hero-custom::before { content:''; position:absolute; top:-35%; right:-10%; width:550px; height:550px; background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 65%); pointer-events:none; }
+    .hero-custom::after { content:''; position:absolute; bottom:-20%; left:10%; width:400px; height:400px; background:radial-gradient(circle,rgba(16,185,129,0.08) 0%,transparent 55%); pointer-events:none; }
+    .hero-inner { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+    .hero-custom h1 { font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(2rem,5vw,3.2rem)!important; font-weight:900!important; color:#fff!important; line-height:1.25!important; letter-spacing:-0.03em!important; margin:0 0 1.25rem!important; max-width:22ch!important; }
+    .hero-custom .lead { color:rgba(255,255,255,0.82)!important; font-size:1.08rem!important; line-height:1.7!important; max-width:54ch!important; margin:0!important; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.75rem; }
+    .hero-chip { display:inline-flex; align-items:center; gap:5px; padding:5px 14px; border-radius:20px; font-size:0.78rem; font-weight:600; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.07); backdrop-filter:blur(6px); }
+
+    .sec { padding:4rem 24px!important; }
+    .sec-alt { background:#fff!important; }
+    .sec-inner { max-width:760px; margin:0 auto; }
+    .sec-wide { max-width:960px; margin:0 auto; }
+
+    .sec-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#4f46e5; margin-bottom:0.4rem; }
+    .sec h2 { font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(1.5rem,3.5vw,2rem)!important; font-weight:800!important; color:#0f2b46!important; line-height:1.3!important; margin:0 0 1rem!important; border:none!important; padding:0!important; }
+    .sec h2::after { display:none!important; }
+
+    .prose { font-size:1.05rem; line-height:1.9; color:#334155; }
+    .prose p { margin:0 0 1.25rem; }
+    .prose strong { color:#0f2b46; }
+
+    .callout-highlight { background:linear-gradient(135deg,rgba(79,70,229,0.06),rgba(16,185,129,0.03)); border-left:4px solid #4f46e5; border-radius:0 14px 14px 0; padding:1.25rem 1.75rem; margin:2rem 0; font-size:1.05rem; line-height:1.75; color:#1e293b; }
+    .callout-highlight strong { color:#0f2b46; }
+    .callout-warn { background:rgba(251,191,36,0.06); border-left:4px solid #f59e0b; border-radius:0 14px 14px 0; padding:1.1rem 1.5rem; margin:1.5rem 0; font-size:0.92rem; color:#78350f; }
+
+    .fig-inline { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; margin:2rem 0; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+    .fig-inline img { max-width:100%; height:auto; display:block; margin:0 auto; border-radius:8px; }
+    .fig-inline figcaption { text-align:center; color:#64748b; font-size:0.82rem; margin-top:0.75rem; font-style:italic; }
+
+    .kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:2.5rem 0; }
+    @media(max-width:600px){ .kpi-strip{grid-template-columns:repeat(2,1fr);} }
+    .kpi-item { text-align:center; padding:1.5rem 1rem; background:linear-gradient(145deg,#0c0f1d,#1e293b); border-radius:14px; box-shadow:0 4px 16px rgba(30,41,59,0.2); }
+    .kpi-item .big { display:block; font-size:2.2rem; font-weight:900; color:#a5b4fc; line-height:1.1; font-family:'Inter',sans-serif; }
+    .kpi-item .small { display:block; font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:6px; }
+
+    .analogy { display:flex; gap:1rem; align-items:flex-start; background:linear-gradient(135deg,#eef2ff,#f8fafc); border:1px solid #e0e7ff; border-radius:14px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+    .analogy-icon { flex-shrink:0; width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,#4f46e5,#818cf8); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+    .analogy-text { font-size:0.95rem; color:#334155; line-height:1.7; }
+    .analogy-text strong { color:#0f2b46; }
+
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:2.5rem 0; position:relative; }
+    @media(max-width:700px){ .steps{grid-template-columns:1fr;gap:1.25rem;} .step-arrow{display:none!important;} }
+    .step { text-align:center; padding:0 0.75rem; position:relative; }
+    .step-num { width:52px; height:52px; border-radius:50%; background:linear-gradient(145deg,#0c0f1d,#4f46e5); color:#c7d2fe; font-size:1.2rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; box-shadow:0 4px 12px rgba(79,70,229,0.2); }
+    .step h4 { font-size:0.92rem; color:#0f2b46; margin:0 0 0.3rem; font-weight:700; }
+    .step p { font-size:0.82rem; color:#64748b; margin:0; line-height:1.55; }
+    .step-arrow { position:absolute; right:-10px; top:26px; color:#4f46e5; font-size:1.3rem; z-index:2; }
+
+    .find-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+    .find-card { border-radius:14px; padding:1.25rem; border:1px solid; transition:all 0.25s ease; cursor:default; }
+    .find-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin:0 0 0.3rem; font-size:0.95rem; }
+    .find-card .desc { font-size:0.85rem; line-height:1.6; margin:0; color:#475569; }
+    .find-card .tag { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; display:block; }
+    .fc-a { background:rgba(79,70,229,0.04); border-color:rgba(79,70,229,0.15); }
+    .fc-a h4,.fc-a .tag { color:#4f46e5; }
+    .fc-b { background:rgba(234,88,12,0.04); border-color:rgba(234,88,12,0.15); }
+    .fc-b h4,.fc-b .tag { color:#ea580c; }
+    .fc-c { background:rgba(16,185,129,0.04); border-color:rgba(16,185,129,0.15); }
+    .fc-c h4,.fc-c .tag { color:#059669; }
+    .fc-d { background:rgba(236,72,153,0.04); border-color:rgba(236,72,153,0.15); }
+    .fc-d h4,.fc-d .tag { color:#db2777; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
+    @media(max-width:640px){ .two-col{grid-template-columns:1fr;} }
+
+    /* 3-card subtype */
+    .subtype-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0; }
+    @media(max-width:700px){ .subtype-grid{grid-template-columns:1fr;} }
+    .subtype-card { border-radius:14px; padding:1.5rem; text-align:center; }
+    .subtype-card h4 { font-size:1rem; font-weight:800; margin:0 0 0.5rem; }
+    .subtype-card .pct { font-size:2rem; font-weight:900; font-family:'Inter',sans-serif; line-height:1.1; }
+    .subtype-card p { font-size:0.82rem; color:#475569; margin:0.5rem 0 0; line-height:1.5; }
+    .st-1 { background:linear-gradient(145deg,#eef2ff,#e0e7ff); border:2px solid #c7d2fe; }
+    .st-1 h4 { color:#4f46e5; }
+    .st-1 .pct { color:#4338ca; }
+    .st-2 { background:linear-gradient(145deg,#fef2f2,#fecaca); border:2px solid #fca5a5; }
+    .st-2 h4 { color:#dc2626; }
+    .st-2 .pct { color:#b91c1c; }
+    .st-3 { background:linear-gradient(145deg,#f0fdf4,#dcfce7); border:2px solid #bbf7d0; }
+    .st-3 h4 { color:#059669; }
+    .st-3 .pct { color:#047857; }
+
+    .takeaway-banner { background:linear-gradient(135deg,#0c0f1d,#1e293b); border-radius:18px; padding:2.5rem 2rem; text-align:center; margin:2rem 0; box-shadow:0 8px 32px rgba(30,41,59,0.15); }
+    .takeaway-banner .icon { font-size:2.5rem; margin-bottom:0.75rem; }
+    .takeaway-banner p { color:#e0e7ff; font-size:1.15rem; line-height:1.7; margin:0; }
+    .takeaway-banner strong { color:#a5b4fc; }
+
+    .faq details { border:1px solid #e2e8f0; border-radius:12px; margin-bottom:0.75rem; background:#fff; transition:box-shadow 0.25s ease; }
+    .faq details[open] { box-shadow:0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary { padding:1rem 1.25rem; font-weight:700; font-size:0.95rem; color:#0f2b46; cursor:pointer; list-style:none; display:flex; align-items:center; gap:0.75rem; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::before { content:'+'; width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,#4f46e5,#818cf8); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; transition:transform 0.25s ease; }
+    .faq details[open] summary::before { content:'−'; transform:rotate(180deg); }
+    .faq .faq-body { padding:0 1.25rem 1.25rem 3.5rem; font-size:0.92rem; line-height:1.7; color:#475569; }
+
+    .gloss-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:0.75rem; margin:1.5rem 0; }
+    .gloss-card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1rem 1.25rem; }
+    .gloss-card dt { font-weight:700; font-size:0.92rem; color:#4f46e5; margin-bottom:0.3rem; }
+    .gloss-card dd { font-size:0.85rem; color:#475569; line-height:1.55; margin:0; }
+
+    .site-footer a { color:#6366f1!important; }
+  </style>
 </head>
 <body>
+
 <div id="nsfc-nav">
-  <a href="../../#/" style="color:#48cae4;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
+  <a href="../../#/" style="color:#a5b4fc;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     返回主站
   </a>
@@ -20,175 +131,332 @@
 
 <div class="reading-progress" id="readingProgress"></div>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">论文解读</span>
-    <h1 style="margin-top:1rem;">同样是抑郁，身体里的“原因”可能不一样</h1>
-    
-  </div>
-</section>
-
-
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">用脑影像把抑郁症分成3个亚型，再用血液多组学追踪各自更像的生物机制（证据：第1页摘要；第3页RESULTS；第9页CONCLUSION）</h2>
-    <div class="reveal"></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig4_metabolites_il1b.png" alt="用脑影像把抑郁症分成3个亚型，再用血液多组学追踪各自更像的生物机制（证据：第1页摘要；第3页RESULTS；第9页CONCLUSION）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">30秒读懂（120–180字）</h2>
-    <div class="reveal"><p>问题：为什么抑郁症的症状看起来相似，但生物原因与治疗反应可能差很多？  <br>方法：研究用静息态fMRI的ALFF（可理解为“脑区待机时的自然波动强弱”）对327名MDD患者做机器学习聚类分型，并用炎症因子、DNA甲基化、代谢组与遗传数据验证各型差异。  <br>发现：得到3个脑影像亚型；其中亚型1遗传易感性更突出且症状更重、认知更受影响；亚型2呈现免疫炎症‑代谢异常（IL‑1β升高、EIS更低、中性粒细胞比例更高、36个差异代谢物且部分与IL‑1β相关）；亚型3未见清晰分子标志。；图2–图5（第5–8页）；第1页摘要）  <br>意义：这为“按机制分层”研究抑郁症提供了可检验的框架，有助于未来更精准地设计临床试验与治疗策略，但本研究并未直接验证任何分型指导治疗的效果。</p><p><ul><li>--</li></ul></p></div>
-    
-      <div class="figure reveal" style="margin-top:1.5rem;">
-        <img src="visuals/fig2_cytokines.png" alt="30秒读懂（120–180字）" loading="lazy">
-      </div>
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">为什么要做这个研究：公众视角的真实难题</h2>
-    <div class="reveal"><p>抑郁症（MDD）并不是一个“单一原因导致的统一疾病”。论文指出，MDD存在显著异质性：相同症状可能来自不同生物原因，不同症状也可能对应相似生物改变。这会带来两个现实后果：  <br>第一，诊断主要依赖症状聚类，但可靠的生物标志仍然难以建立。  <br>第二，治疗常呈“试错式”路径：论文提到初始治疗后缓解比例不足三分之一；也有约三分之一患者即使经历一年内多轮、较长疗程抗抑郁药尝试仍难以达到临床恢复。  <br>因此，一个更可执行的目标是：先用客观生物信号把患者分成更“同质”的亚型，再去问每一型更像哪种机制，从而为后续精准研究铺路。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">我们怎么做的：把“脑的指纹”与“血的线索”拼到一起</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">1）先用脑影像找“模式”：ALFF + 机器学习聚类</h2>
-    <div class="reveal"><p>研究采集静息态fMRI，并计算ALFF。论文解释ALFF是一种衡量静息时局部自发神经活动的指标，且具有较好的重复测量可靠性。  <br>你可以把ALFF理解为：大脑每个区域在“待机状态”下的自然波动强弱；波动更强/更弱，可能意味着该区域的基础活动水平不同。  <br>接着，研究用AAL90模板提取全脑ALFF数据，用SVD把高维信息压缩到30维，再用K-means对327名MDD患者聚类，并用Dunn Index选择最合适的聚类数，得到3个亚型。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">2）再用血液多组学做“机制核验”</h2>
-    <div class="reveal"><p>研究同一天采血（8:00–12:00）并测量三类促炎细胞因子（TNF‑α、IL‑6、IL‑1β）。  <br>同时采集三类组学：  <br>（1）遗传：芯片分型后计算PRS（多基因风险评分），并对显著阈值的基因做GO富集。  <br>（2）表观遗传：用EPIC芯片测甲基化，计算EIS（表观遗传炎症评分）并估计免疫细胞比例；论文强调由于权重为负，EIS越低代表炎症状态越高。  <br>（3）代谢组：量化669种代谢物，线性回归并做FDR校正识别差异代谢物。  <br>最后把“每个亚型 vs 健康对照”逐一比较，寻找各亚型更突出的分子证据链。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">我们发现了什么：3个最重要发现（含证据）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现一：同为MDD，静息态脑活动可分成3种“影像亚型”</h2>
-    <div class="reveal"><p>研究把327名MDD患者按ALFF聚类为：亚型1（28%）、亚型2（28%）、亚型3（44%）N=93/93/141）。  <br>三型各自的ALFF模式如下：  <br>亚型1：边缘系统（海马、扣带、杏仁核、丘脑）ALFF升高，初级皮层（中央前回、枕叶、中央后回等）降低）。  <br>亚型2：前额叶ALFF升高，初级感觉皮层降低）。  <br>亚型3：前额叶ALFF降低，初级感觉皮层升高）。  <br>这意味着：在影像层面，“抑郁”至少可见多种不同的脑功能失衡方式，为解释“同症不同因”提供了可量化的切入口。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">发现二：亚型1更像“遗传/突触调控主导”，且症状更重、认知更受影响</h2>
-    <div class="reveal"><p>症状：亚型1的HAMD均值21.1±10.1，高于亚型2（18.1±10.0）与亚型3（17.4±9.6）；第3页RESULTS临床比较）。  <br>认知：在完成WCST的子样本中，亚型1正确反应更低、总错误更高等差异更明显WCST各行与样本量）。  <br>遗传：只有亚型1在PRS分析中显示显著遗传易感性：PT=0.001时P=0.011、NSNPs=1325、解释方差5.9%；PT=0.01时P=0.002、NSNPs=4769、解释方差8.1%）。显著阈值映射基因的GO富集主要指向突触组织、神经突起发育、轴突发生等通路）。  <br>这意味着：亚型1可能更贴近“遗传相关的神经发育/突触调控”假说，但本研究并未检验针对该机制的治疗效果。</p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">发现三：亚型2更像“免疫炎症‑代谢异常主导”，并出现多层证据链</h2>
-    <div class="reveal"><p>炎症因子：亚型2的IL‑1β显著高于健康对照；IL‑6与TNF‑α仅呈上升趋势未达显著）。  <br>慢性炎症指纹：亚型2 EIS显著更低；论文解释EIS更低代表炎症状态更高）。同时亚型2中性粒细胞比例显著更高）。  <br>代谢：只有亚型2出现36个差异代谢物（亚型1/3为0），且16/36（44%）与IL‑1β显著相关）。  <br>这意味着：亚型2提供了一条较完整的“炎症→免疫细胞→代谢”一致证据链。论文据此认为，对具有免疫炎症特征的子群体，抗炎治疗作为辅助可能更有前景，但这仍需独立临床试验验证。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">这项研究有什么用：证据支持 vs 合理推测（不夸大）</h2>
-    <div class="reveal"></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">已有证据支持</h2>
-    <div class="reveal"><p><ul><li>“分型可行且有生物学意义”：至少两类亚型在多组学层面出现相对一致的差异信号（亚型1遗传/突触通路，亚型2免疫炎症‑代谢）。  </li><br><li>“为精准研究提供路线”：分型框架可用于后续研究中更精准地招募样本、构建机制假说与验证指标。</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">合理推测（但本研究未直接验证）</h2>
-    <div class="reveal"><p><ul><li>亚型2可能更适合探索抗炎治疗的辅助策略；论文在讨论中将其称为“promising adjunctive treatment modality”，但并未在本研究中做干预验证。  </li><br><li>三种亚型都涉及初级感觉皮层改变。论文结合既往研究提出，视觉皮层等初级皮层可能成为神经调控靶点，但这同样需要独立试验验证。</li><br></ul><br><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <h2 class="reveal">局限性与下一步（必须读）</h2>
-    <div class="reveal"><p>论文明确指出三点局限：  <br>（1）遗传与表观遗传样本量受限，统计效能不足以定位到更具体的基因/通路，因此采用PRS、EIS等汇总指标。  <br>（2）并非所有患者未用药；研究在表观遗传与代谢组分析中把用药状态作为协变量控制，但用药仍可能影响外周分子指标解释。  <br>（3）横断面设计无法推断因果，需要纵向研究。  <br>此外，表1显示WCST只覆盖子样本（MDD N=253，HC N=383；各亚型N=62/76/115），因此“认知差异”应理解为在完成测验的人群中观察到WCST样本量行）。  <br>下一步：论文提出需要更大样本与纵向随访，并进一步阐明亚型3的机制。</p><p><ul><li>--</li></ul></p></div>
-    
-  </div>
-</section>
-<section class="section" style="">
-  <div class="container">
-    <h2 class="reveal">一句话带走（≤30字）</h2>
-    <div class="reveal"><p>抑郁症可能由不同生物机制驱动，分型是走向精准治疗的关键一步。</p></div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    
-    <div class="section-label reveal">图表资料</div>
-    <h2 class="reveal" style="margin-top:0.5rem;">研究图表</h2>
-    <div class="feature-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-      
-        <div class="visual-card">
-          <img src="visuals/fig1_alff_subtypes.png" alt="fig1 alff subtypes" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig1 alff subtypes</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig4_metabolites_il1b.png" alt="fig4 metabolites il1b" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig4 metabolites il1b</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig2_cytokines.png" alt="fig2 cytokines" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig2 cytokines</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig3_eis_immune_cells.png" alt="fig3 eis immune cells" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig3 eis immune cells</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig5_prs_go.png" alt="fig5 prs go" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig5 prs go</p>
-          </div>
-        </div>
-        <div class="visual-card">
-          <img src="visuals/fig6_correlations.png" alt="fig6 correlations" loading="lazy">
-          <div class="visual-card-body">
-            <p>fig6 correlations</p>
-          </div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(99,102,241,0.25);color:#c7d2fe;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>同样是抑郁，身体里的"原因"可能不一样</h1>
+    <p class="lead">用脑影像把327名抑郁症患者分成3个亚型，再用血液多组学（炎症因子、甲基化、代谢组、遗传）追踪各自更像的生物机制——发现一型偏"遗传/突触"，一型偏"免疫炎症-代谢"。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">fMRI 分型</span>
+      <span class="hero-chip">多组学验证</span>
+      <span class="hero-chip">327名MDD患者</span>
+      <span class="hero-chip">3种亚型</span>
     </div>
   </div>
 </section>
 
+<!-- ============ KPI ============ -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">327</span>
+        <span class="small">MDD患者</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">3</span>
+        <span class="small">脑影像亚型</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">4层</span>
+        <span class="small">多组学验证</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">36</span>
+        <span class="small">亚型2差异代谢物</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ 背景 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>抑郁症（MDD）并非"单一原因导致的统一疾病"。相同症状可能来自不同生物原因，不同症状也可能对应相似生物改变。这导致两个现实后果：</p>
+      <p><strong>诊断难：</strong>可靠的生物标志仍难以建立。<strong>治疗难：</strong>初始治疗后缓解比例不足三分之一，约三分之一患者经多轮尝试仍难以恢复。</p>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🧩</div>
+      <div class="analogy-text">
+        <strong>核心思路：</strong>先用客观脑影像信号把患者分成更"同质"的亚型，再分别追问每一型更像哪种生物机制——像拼图一样，把"脑的指纹"与"血的线索"拼到一起。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>脑影像分型 + 多组学机制核验</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>脑影像采集</h4>
+        <p>静息态fMRI → 计算ALFF（各脑区"待机波动强弱"）</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>聚类分型</h4>
+        <p>SVD降维 + K-means聚类 → 3个亚型</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>采血多组学</h4>
+        <p>炎症因子 + 甲基化 + 代谢组 + 遗传PRS</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>各亚型 vs 健康</h4>
+        <p>逐型比较，寻找各自突出的分子证据链</p>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">📡</div>
+      <div class="analogy-text">
+        <strong>ALFF 是什么？</strong>可以理解为大脑每个区域在"待机状态"下的自然波动强弱。波动更强或更弱，意味着该区域的基础活动水平不同——用来构建每个人的"脑活动指纹"。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig1_alff_subtypes.png" alt="ALFF亚型">
+      <figcaption>Fig 1 — 三种亚型的ALFF模式差异</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 三种亚型 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">核心发现</div>
+      <h2>同为MDD，脑活动可分为3种"影像亚型"</h2>
+    </div>
+
+    <div class="subtype-grid reveal">
+      <div class="subtype-card st-1">
+        <h4>亚型 1</h4>
+        <div class="pct">28%</div>
+        <p>边缘系统ALFF升高<br>初级皮层降低<br><strong>遗传/突触</strong>主导</p>
+      </div>
+      <div class="subtype-card st-2">
+        <h4>亚型 2</h4>
+        <div class="pct">28%</div>
+        <p>前额叶ALFF升高<br>初级感觉皮层降低<br><strong>免疫炎症-代谢</strong>主导</p>
+      </div>
+      <div class="subtype-card st-3">
+        <h4>亚型 3</h4>
+        <div class="pct">44%</div>
+        <p>前额叶ALFF降低<br>初级感觉皮层升高<br>机制标志<strong>尚不清晰</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 亚型1 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">亚型 1 详解</div>
+      <h2>更像"遗传/突触调控主导"，症状更重</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">症状</span>
+        <h4>HAMD最高</h4>
+        <p class="desc">均值 21.1±10.1，高于亚型2(18.1)和亚型3(17.4)</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">遗传</span>
+        <h4>PRS显著</h4>
+        <p class="desc">PT=0.01时P=0.002，解释方差8.1%——唯一显示显著遗传易感性的亚型</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">通路</span>
+        <h4>突触/神经发育</h4>
+        <p class="desc">GO富集指向突触组织、神经突起发育、轴突发生等通路</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig5_prs_go.png" alt="PRS与GO富集">
+      <figcaption>Fig 5 — 亚型1的多基因风险评分与GO富集分析</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 亚型2 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">亚型 2 详解</div>
+      <h2>更像"免疫炎症-代谢异常主导"，多层证据链</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-b">
+        <span class="tag">炎症因子</span>
+        <h4>IL-1β显著升高</h4>
+        <p class="desc">亚型2的IL-1β显著高于健康对照；IL-6与TNF-α仅呈上升趋势</p>
+      </div>
+      <div class="find-card fc-d">
+        <span class="tag">表观遗传</span>
+        <h4>EIS更低 = 炎症更高</h4>
+        <p class="desc">表观遗传炎症评分显著更低；中性粒细胞比例显著更高</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">代谢组</span>
+        <h4>36个差异代谢物</h4>
+        <p class="desc">唯一出现差异代谢物的亚型（亚型1/3为0），且44%与IL-1β显著相关</p>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      亚型2提供了一条较完整的<strong>"炎症→免疫细胞→代谢"一致证据链</strong>——论文据此认为，对具有免疫炎症特征的子群体，抗炎治疗作为辅助可能更有前景，但仍需独立临床试验验证。
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig2_cytokines.png" alt="炎症因子">
+        <figcaption>Fig 2 — 三亚型炎症因子比较</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig3_eis_immune_cells.png" alt="EIS与免疫细胞">
+        <figcaption>Fig 3 — EIS与免疫细胞比例</figcaption>
+      </figure>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig4_metabolites_il1b.png" alt="代谢物与IL-1β">
+      <figcaption>Fig 4 — 差异代谢物及其与IL-1β的关联</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig6_correlations.png" alt="多层关联">
+      <figcaption>Fig 6 — 多组学层面的关联分析</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 价值与局限 ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">价值与局限</div>
+      <h2>能做什么 vs 还不能做什么</h2>
+    </div>
+    <div class="two-col reveal">
+      <div style="background:#eef2ff;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#4f46e5;font-size:0.92rem;margin-bottom:0.5rem;">✅ 证据支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>分型可行且有生物学意义</li>
+          <li>亚型1→遗传/突触、亚型2→免疫炎症-代谢，出现多层一致信号</li>
+          <li>为精准研究提供路线框架</li>
+        </ul>
+      </div>
+      <div style="background:#fef3c7;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#92400e;font-size:0.92rem;margin-bottom:0.5rem;">⚠️ 目前不支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>本研究未验证任何分型指导治疗的效果</li>
+          <li>横断面设计，无法推断因果</li>
+          <li>部分患者未停药，可能影响外周分子指标</li>
+          <li>亚型3机制仍不清晰</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">🔬</div>
+      <p><strong>抑郁症可能由不同生物机制驱动，分型是走向精准治疗的关键一步</strong>——至少两类亚型在多组学层面出现了一致的差异信号。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>这三种亚型能在门诊直接使用吗？</summary>
+        <div class="faq-body">目前不能。分型需要静息态fMRI和多组学检测，且本研究为横断面设计，尚未验证分型对治疗选择的指导作用。</div>
+      </details>
+      <details>
+        <summary>亚型2的人应该吃抗炎药吗？</summary>
+        <div class="faq-body">论文确实在讨论中提到抗炎治疗对该亚群体"可能更有前景"，但这只是基于横断面关联的假说推测，论文本身<strong>没有做干预验证</strong>。不能据此自行用药。</div>
+      </details>
+      <details>
+        <summary>为什么亚型3没有清晰的分子标志？</summary>
+        <div class="faq-body">亚型3占比最大(44%)但在多组学层面未显示突出差异。可能原因：异质性仍大、样本量限制了统计效能，或者亚型3的机制更分散/微弱。论文也指出需要进一步研究。</div>
+      </details>
+      <details>
+        <summary>ALFF和功能连接有什么区别？</summary>
+        <div class="faq-body">ALFF衡量单个脑区的自发活动强度（"自己有多活跃"），功能连接衡量两个脑区之间的信号协同（"是否同步"）。本研究选择ALFF是因为它重测可靠性好、计算简单。</div>
+      </details>
+      <details>
+        <summary>多基因风险评分（PRS）是什么？</summary>
+        <div class="faq-body">PRS把很多个基因位点的微小遗传效应加权求和，得到一个综合评分来反映遗传易感性。分数越高，统计上患某种疾病的概率越大——但不是确定性预测。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>ALFF</dt>
+        <dd>低频振幅，衡量静息态下脑区自发活动的强度</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>多组学</dt>
+        <dd>同时使用基因组、表观基因组、代谢组等多个层面的生物数据</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>IL-1β / IL-6 / TNF-α</dt>
+        <dd>促炎细胞因子，免疫系统释放的信号分子，与炎症反应相关</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>EIS</dt>
+        <dd>表观遗传炎症评分，基于DNA甲基化数据估计的慢性炎症指标（越低=炎症越高）</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PRS</dt>
+        <dd>多基因风险评分，综合多个遗传位点效应的加权评分</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>K-means</dt>
+        <dd>一种常用的聚类算法，将数据分成K个组使组内差异最小</dd>
+      </dl>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
