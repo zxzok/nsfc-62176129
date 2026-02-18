@@ -3,363 +3,377 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>谁在"操盘"心理症状网络？模块控制找出关键症状群</title>
+  <title>睡不好、压力大，才是情绪问题的"幕后推手"？</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../unified-style.css">
   <style>
-    /* === Page-specific layout overrides === */
-    .kpi-grid {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 1rem !important;
-      margin: 2rem 0 !important;
+    /* ========== Page-level overrides ========== */
+    body { background: #fafbfd !important; }
+
+    /* Hero — full-bleed, dramatic */
+    .hero-custom {
+      background: linear-gradient(160deg, #0a1628 0%, #0f2b46 35%, #1e6091 70%, #00b4d8 100%) !important;
+      padding: 5rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
     }
-    @media (max-width: 640px) {
-      .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .hero-custom::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(72,202,228,0.12) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .kpi-card {
-      background: linear-gradient(135deg, #0f2b46, #1a3a5c) !important;
-      border-radius: 12px !important;
-      padding: 1.25rem 1rem !important;
-      text-align: center !important;
-      box-shadow: 0 4px 12px rgba(15,43,70,0.2) !important;
+    .hero-custom::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 60%);
+      pointer-events: none;
     }
-    .kpi-card .num {
-      display: block !important;
-      font-size: 2rem !important;
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-custom h1 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important;
+      max-width: 20ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.78) !important;
+      font-size: 1.1rem !important;
+      line-height: 1.7 !important;
+      max-width: 52ch !important;
+      margin: 0 !important;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Section spacing */
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    /* Section title */
+    .sec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #00b4d8;
+      margin-bottom: 0.4rem;
+    }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
       font-weight: 800 !important;
-      color: #48cae4 !important;
-      line-height: 1.2 !important;
+      color: #0f2b46 !important;
+      line-height: 1.3 !important;
+      margin: 0 0 1rem !important;
+      border: none !important;
+      padding: 0 !important;
     }
-    .kpi-card .label {
-      display: block !important;
-      font-size: 0.8rem !important;
-      color: rgba(255,255,255,0.65) !important;
-      margin-top: 4px !important;
+    .sec h2::after { display: none !important; }
+
+    /* Body copy */
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    /* Highlight callout */
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(0,180,216,0.06), rgba(72,202,228,0.03));
+      border-left: 4px solid #00b4d8;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem;
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1e293b;
     }
+    .callout-highlight strong { color: #0f2b46; }
+
+    /* Warning callout */
+    .callout-warn {
+      background: rgba(251,191,36,0.06);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: #78350f;
+    }
+
+    /* Full-bleed figure */
+    .fig-full {
+      margin: 2.5rem -24px;
+      background: #fff;
+      border-top: 1px solid #e8ecf1;
+      border-bottom: 1px solid #e8ecf1;
+      padding: 1.5rem 24px;
+    }
+    .fig-full img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+    .fig-full figcaption {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.82rem;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+    @media (min-width: 800px) {
+      .fig-full { margin: 2.5rem calc((760px - 960px) / 2); max-width: 960px; margin-left: auto; margin-right: auto; padding: 1.5rem 0; border: none; }
+    }
+
+    /* Inline figure */
+    .fig-inline {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    /* KPI strip */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #0f2b46, #1a3a5c);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(15,43,70,0.18);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #48cae4; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    /* Analogy box */
+    .analogy {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #f0f9ff, #f8fafc);
+      border: 1px solid #e0f2fe;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00b4d8, #48cae4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    /* Step flow */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none !important; }
+    }
+    .step {
+      text-align: center;
+      padding: 0 0.75rem;
+      position: relative;
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #0f2b46, #1e6091);
+      color: #48cae4;
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 12px rgba(15,43,70,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow {
+      position: absolute;
+      right: -10px;
+      top: 26px;
+      color: #00b4d8;
+      font-size: 1.3rem;
+      z-index: 2;
+    }
+
+    /* Module grid */
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 700px) { .mod-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .mod-grid { grid-template-columns: 1fr; } }
+    .mod-card {
+      border-radius: 14px;
+      padding: 1.25rem;
+      border: 1px solid;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+    .mod-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .mod-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .mod-card .mod-desc { font-size: 0.82rem; line-height: 1.55; margin: 0; opacity: 0.85; }
+    .mod-card .mod-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+
+    .mc-sleep { background: rgba(59,130,246,0.04); border-color: rgba(59,130,246,0.15); }
+    .mc-sleep h4, .mc-sleep .mod-tag { color: #2563eb; }
+    .mc-nstress { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.15); }
+    .mc-nstress h4, .mc-nstress .mod-tag { color: #d97706; }
+    .mc-pstress { background: rgba(16,185,129,0.04); border-color: rgba(16,185,129,0.15); }
+    .mc-pstress h4, .mc-pstress .mod-tag { color: #059669; }
+    .mc-dep { background: rgba(139,92,246,0.04); border-color: rgba(139,92,246,0.15); }
+    .mc-dep h4, .mc-dep .mod-tag { color: #7c3aed; }
+    .mc-anx { background: rgba(236,72,153,0.04); border-color: rgba(236,72,153,0.15); }
+    .mc-anx h4, .mc-anx .mod-tag { color: #db2777; }
+    .mc-sui { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.15); }
+    .mc-sui h4, .mc-sui .mod-tag { color: #dc2626; }
+
+    /* Bar chart */
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 80px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-blue { background: linear-gradient(90deg, #0ea5e9, #00b4d8); }
+    .bf-red { background: linear-gradient(90deg, #fb923c, #ef4444); }
+    .bar-caption { font-size: 0.78rem; color: #64748b; margin-top: 0.5rem; }
+
+    /* Arrow table */
+    .arrow-table { margin: 1.5rem 0; }
+    .arrow-row {
+      display: flex;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+    }
+    .arrow-row:nth-child(odd) { background: #f8fafc; }
+    .arrow-from { font-weight: 700; color: #0f2b46; min-width: 70px; }
+    .arrow-icon { margin: 0 0.75rem; color: #00b4d8; font-size: 1.1rem; }
+    .arrow-to { font-weight: 700; color: #1e6091; min-width: 70px; }
+    .arrow-val { margin-left: auto; font-family: 'Inter', monospace; font-weight: 800; color: #0f2b46; background: #e2e8f0; padding: 2px 10px; border-radius: 6px; font-size: 0.85rem; }
+
+    /* Two-column */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .col-box { border-radius: 14px; padding: 1.5rem; }
+    .col-box h4 { font-size: 0.85rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .col-green { background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); }
+    .col-green h4 { color: #059669; }
+    .col-amber { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); }
+    .col-amber h4 { color: #d97706; }
+
+    /* FAQ */
+    .faq-list { margin: 1.5rem 0; }
+    .faq-list details { margin-bottom: 0.75rem; }
+
+    /* Glossary */
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .gloss-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      transition: all 0.25s;
+    }
+    .gloss-card:hover { border-color: #00b4d8; box-shadow: 0 4px 16px rgba(0,180,216,0.08); }
+    .gloss-card h4 { margin: 0 0 0.3rem; font-size: 0.92rem; color: #0f2b46; }
+    .gloss-card .gloss-en { font-size: 0.75rem; color: #94a3b8; margin: 0 0 0.5rem; font-style: italic; }
+    .gloss-card p { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.6; }
 
     /* Takeaway banner */
-    .takeaway {
-      background: linear-gradient(135deg, rgba(0,180,216,0.08), rgba(72,202,228,0.04)) !important;
-      border: 2px solid rgba(0,180,216,0.2) !important;
-      border-radius: 16px !important;
-      padding: 1.5rem 2rem !important;
-      text-align: center !important;
-      margin: 2rem 0 !important;
+    .takeaway-banner {
+      background: linear-gradient(145deg, #0f2b46, #1e6091);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
     }
-    .takeaway p {
-      font-size: 1.15rem !important;
-      font-weight: 600 !important;
-      color: #0f2b46 !important;
-      margin: 0 !important;
+    .takeaway-banner::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(72,202,228,0.15) 0%, transparent 60%);
     }
-
-    /* Flow steps */
-    .flow-steps {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 0 !important;
-      margin: 2rem 0 !important;
-      position: relative !important;
-    }
-    @media (max-width: 768px) {
-      .flow-steps { grid-template-columns: 1fr !important; gap: 1rem !important; }
-      .flow-step::after { display: none !important; }
-    }
-    .flow-step {
-      text-align: center !important;
-      padding: 1rem !important;
-      position: relative !important;
-    }
-    .flow-step::after {
-      content: '\2192' !important;
-      position: absolute !important;
-      right: -8px !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      font-size: 1.5rem !important;
-      color: #00b4d8 !important;
-      z-index: 2 !important;
-    }
-    .flow-step:last-child::after { display: none !important; }
-    .flow-icon {
-      width: 56px !important;
-      height: 56px !important;
-      border-radius: 50% !important;
-      background: linear-gradient(135deg, #00b4d8, #48cae4) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      margin: 0 auto 0.75rem !important;
-      font-size: 1.5rem !important;
-      color: #fff !important;
-      box-shadow: 0 4px 12px rgba(0,180,216,0.3) !important;
-    }
-    .flow-step h4 {
-      font-size: 0.85rem !important;
-      color: #0f2b46 !important;
-      margin: 0 0 4px !important;
-    }
-    .flow-step p {
-      font-size: 0.78rem !important;
-      color: #64748b !important;
-      margin: 0 !important;
-      line-height: 1.5 !important;
-    }
-
-    /* Findings cards */
-    .findings-grid {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
-      margin: 2rem 0 !important;
-    }
-    .finding-card {
-      background: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-radius: 16px !important;
-      overflow: hidden !important;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07) !important;
-      transition: all 0.3s ease !important;
-    }
-    .finding-card:hover {
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1) !important;
-      transform: translateY(-2px) !important;
-    }
-    .finding-header {
-      background: linear-gradient(135deg, #0f2b46, #1e6091) !important;
-      padding: 1rem 1.5rem !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.75rem !important;
-    }
-    .finding-num {
-      width: 36px !important;
-      height: 36px !important;
-      border-radius: 50% !important;
-      background: rgba(72,202,228,0.2) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-weight: 800 !important;
-      color: #48cae4 !important;
-      font-size: 1rem !important;
-      flex-shrink: 0 !important;
-    }
-    .finding-header h3 {
-      color: #ffffff !important;
-      font-size: 1rem !important;
-      margin: 0 !important;
-      font-weight: 600 !important;
-      line-height: 1.4 !important;
-    }
-    .finding-body {
-      padding: 1.5rem !important;
-    }
-    .finding-body p {
-      margin: 0 0 1rem !important;
-    }
-
-    /* Module control bars */
-    .control-bar-group {
-      margin: 1.5rem 0 !important;
-    }
-    .control-bar-item {
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.75rem !important;
-      margin-bottom: 0.6rem !important;
-    }
-    .control-bar-label {
-      width: 48px !important;
-      font-size: 0.8rem !important;
-      font-weight: 700 !important;
-      color: #0f2b46 !important;
-      text-align: right !important;
-      flex-shrink: 0 !important;
-    }
-    .control-bar-track {
-      flex: 1 !important;
-      height: 22px !important;
-      background: #f1f5f9 !important;
-      border-radius: 11px !important;
-      overflow: hidden !important;
-      position: relative !important;
-    }
-    .control-bar-fill {
-      height: 100% !important;
-      border-radius: 11px !important;
-      transition: width 0.8s ease !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      padding-right: 8px !important;
-      font-size: 0.7rem !important;
-      font-weight: 700 !important;
-      color: #fff !important;
-      min-width: 40px !important;
-    }
-    .bar-out { background: linear-gradient(90deg, #00b4d8, #0ea5e9) !important; }
-    .bar-in { background: linear-gradient(90deg, #f77f6b, #ef4444) !important; }
-
-    /* Compare layout */
-    .compare-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 1.5rem !important;
-      margin: 1.5rem 0 !important;
-    }
-    @media (max-width: 640px) {
-      .compare-grid { grid-template-columns: 1fr !important; }
-    }
-    .compare-box {
-      background: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-radius: 12px !important;
-      padding: 1.25rem !important;
-    }
-    .compare-box h4 {
-      font-size: 0.85rem !important;
-      color: #64748b !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.05em !important;
-      margin: 0 0 0.75rem !important;
-    }
-
-    /* Edge table */
-    .edge-list {
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    .edge-list li {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      padding: 0.5rem 0 !important;
-      border-bottom: 1px solid #f1f5f9 !important;
-      font-size: 0.88rem !important;
-    }
-    .edge-list li:last-child { border-bottom: none !important; }
-    .edge-from { font-weight: 600 !important; color: #0f2b46 !important; }
-    .edge-arrow { color: #00b4d8 !important; margin: 0 0.5rem !important; }
-    .edge-to { font-weight: 600 !important; color: #1e6091 !important; }
-    .edge-val {
-      font-family: 'JetBrains Mono', monospace !important;
-      font-size: 0.82rem !important;
-      font-weight: 700 !important;
-      color: #0f2b46 !important;
-      background: #f1f5f9 !important;
-      padding: 2px 8px !important;
-      border-radius: 6px !important;
-    }
-
-    /* Module pills */
-    .module-pills {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 0.5rem !important;
-      margin: 1rem 0 !important;
-    }
-    .module-pill {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      padding: 6px 14px !important;
-      border-radius: 20px !important;
-      font-size: 0.8rem !important;
-      font-weight: 600 !important;
-      border: 1px solid !important;
-    }
-    .mp-sleep { background: rgba(59,130,246,0.08) !important; color: #2563eb !important; border-color: rgba(59,130,246,0.2) !important; }
-    .mp-stress { background: rgba(245,158,11,0.08) !important; color: #d97706 !important; border-color: rgba(245,158,11,0.2) !important; }
-    .mp-depression { background: rgba(139,92,246,0.08) !important; color: #7c3aed !important; border-color: rgba(139,92,246,0.2) !important; }
-    .mp-anxiety { background: rgba(236,72,153,0.08) !important; color: #db2777 !important; border-color: rgba(236,72,153,0.2) !important; }
-    .mp-suicide { background: rgba(239,68,68,0.08) !important; color: #dc2626 !important; border-color: rgba(239,68,68,0.2) !important; }
-    .mp-positive { background: rgba(16,185,129,0.08) !important; color: #059669 !important; border-color: rgba(16,185,129,0.2) !important; }
-
-    /* Section anchors */
-    .section-anchor {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      font-size: 0.75rem !important;
-      font-weight: 600 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.08em !important;
-      color: #00b4d8 !important;
-      margin-bottom: 0.5rem !important;
-    }
-
-    /* Figure with caption */
-    .fig-block {
-      background: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-radius: 12px !important;
-      padding: 1rem !important;
-      margin: 1.5rem 0 !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
-    }
-    .fig-block img {
-      max-width: 100% !important;
-      height: auto !important;
-      border-radius: 8px !important;
-      display: block !important;
-      margin: 0 auto !important;
-    }
-    .fig-caption {
-      text-align: center !important;
-      color: #64748b !important;
-      font-size: 0.82rem !important;
-      margin-top: 0.75rem !important;
-      font-style: italic !important;
-    }
-
-    /* TOC */
-    .toc-inline {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 0.5rem !important;
-      margin: 1.5rem 0 !important;
-      justify-content: center !important;
-    }
-    .toc-inline a {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 4px !important;
-      padding: 6px 14px !important;
-      border-radius: 20px !important;
-      background: rgba(0,180,216,0.06) !important;
-      border: 1px solid rgba(0,180,216,0.15) !important;
-      font-size: 0.82rem !important;
-      font-weight: 500 !important;
-      color: #1e6091 !important;
-      text-decoration: none !important;
-    }
-    .toc-inline a:hover {
-      background: rgba(0,180,216,0.12) !important;
-      text-decoration: none !important;
-    }
-
-    /* Disclaimer chip */
-    .disclaimer-chip {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      background: rgba(245,158,11,0.08) !important;
-      border: 1px solid rgba(245,158,11,0.2) !important;
-      color: #92400e !important;
-      font-size: 0.78rem !important;
-      font-weight: 500 !important;
-      padding: 6px 14px !important;
-      border-radius: 8px !important;
-      margin-top: 1rem !important;
-    }
+    .takeaway-banner h3 { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 0.75rem; position: relative; z-index: 1; }
+    .takeaway-banner p { color: #fff; font-size: 1.3rem; font-weight: 700; line-height: 1.5; margin: 0; position: relative; z-index: 1; max-width: 36ch; margin: 0 auto; }
   </style>
 </head>
 <body>
+
 <!-- Nav -->
 <div id="nsfc-nav">
   <a href="../../#/">
@@ -372,478 +386,497 @@
 <!-- Reading progress -->
 <div class="reading-progress" id="readingProgress"></div>
 
-<!-- ==================== HERO ==================== -->
-<section class="hero">
-  <div class="container" style="text-align:center;">
-    <span class="badge" style="background:rgba(255,255,255,0.12)!important;color:#fff!important;border-color:rgba(255,255,255,0.2)!important;margin-bottom:1rem;display:inline-block;">iScience &middot; 2024</span>
-    <h1>谁在"操盘"心理症状网络？<br>用模块控制找出关键症状群</h1>
-    <p style="color:rgba(255,255,255,0.75)!important;max-width:60ch;margin:1rem auto 0;font-size:1rem;">
-      在 2773 名大学新生的症状网络中，睡眠与压力模块比抑郁/焦虑模块更像"控制枢纽"
+<!-- ======================== HERO ======================== -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <h1>睡不好、压力大，才是情绪问题的"幕后推手"？</h1>
+    <p class="lead">
+      一项覆盖近三千名大学生的研究发现：在心理症状之间的"关系网"里，<strong style="color:#48cae4;">睡眠和压力</strong>相关症状比抑郁和焦虑本身更像是"上游控制者"。
     </p>
-    <!-- Quick jump TOC -->
-    <div class="toc-inline" style="margin-top:1.5rem;">
-      <a href="#summary" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">30秒读懂</a>
-      <a href="#method" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">研究方法</a>
-      <a href="#findings" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">核心发现</a>
-      <a href="#implications" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">意义与局限</a>
-      <a href="#faq" style="color:#fff!important;background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;">FAQ</a>
+    <div class="hero-meta">
+      <span class="hero-chip">iScience &middot; 2024</span>
+      <span class="hero-chip">Pan, Zhang, Zhu 等</span>
+      <span class="hero-chip">2773 名大学新生</span>
     </div>
   </div>
 </section>
 
-<!-- ==================== KPI DASHBOARD ==================== -->
-<section id="summary">
-  <div class="container">
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <span class="num">2773</span>
-        <span class="label">大学新生样本</span>
-      </div>
-      <div class="kpi-card">
-        <span class="num">37</span>
-        <span class="label">症状节点</span>
-      </div>
-      <div class="kpi-card">
-        <span class="num">6</span>
-        <span class="label">症状模块</span>
-      </div>
-      <div class="kpi-card">
-        <span class="num">27</span>
-        <span class="label">最小支配集</span>
-      </div>
+<!-- ======================== 30秒读懂 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">30 秒读懂</div>
+    <h2>这篇论文说了什么？</h2>
+
+    <div class="prose">
+      <p>
+        你有没有这样的经历：最近一阵子睡不好觉，白天就开始容易烦躁，做什么都提不起劲，甚至觉得焦虑、低落？
+      </p>
+      <p>
+        失眠、压力、焦虑、抑郁——这些困扰常常<strong>成群结队地出现</strong>。但一个关键问题是：它们之间到底谁在影响谁？如果我们想帮助一个正在经历这些问题的人，该从哪个"症状群"下手最有效？
+      </p>
+      <p>
+        这项研究用一种新方法分析了近三千名大学新生的心理问卷数据，把 37 个症状条目连成一张"关系网"，再看哪一组症状更能"带动"其他组。结论出乎意料：
+      </p>
     </div>
 
-    <!-- Takeaway -->
-    <div class="takeaway">
-      <p>核心结论：睡眠与压力相关症状群更像"上游控制源"，抑郁与焦虑症状群更像"被影响者"</p>
-      <div class="disclaimer-chip">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        横断面关联分析 &middot; 不等同于因果结论 &middot; 需纵向验证
-      </div>
+    <div class="callout-highlight">
+      <strong>不是抑郁和焦虑在"牵头"，而是睡眠问题和压力感受更像是整个网络的"上游开关"。</strong>
+      也就是说，改善睡眠和减轻压力，也许比直接对抗情绪低落更能从根本上帮助缓解一连串心理困扰。
     </div>
 
-    <!-- Graphical Abstract -->
-    <div class="fig-block">
-      <img src="visuals/graphical_abstract_full.png" alt="Graphical Abstract" loading="lazy">
-      <div class="fig-caption">图形摘要：从症状问卷到模块控制网络的完整分析流程</div>
+    <div class="callout-warn">
+      需要说明：这是一项横断面统计分析，发现的是"结构上的控制关系"，而不是严格意义上的因果关系。但它为"先调睡眠和压力"这一干预思路提供了重要线索。
     </div>
   </div>
 </section>
 
-<!-- ==================== 6 MODULES OVERVIEW ==================== -->
-<section style="background:#fff;">
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m-7-7h6m6 0h6"/></svg>
-      6 个症状模块
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">37个症状条目被自动分成6个"功能群"</h2>
-    <p>Louvain 算法根据关联紧密度将症状节点聚类。以下是各模块的核心特征：</p>
-
-    <div class="module-pills">
-      <span class="module-pill mp-sleep">SRM &middot; 睡眠相关（ISI 4题）</span>
-      <span class="module-pill mp-stress">NSM &middot; 负向压力（PSS 7题）</span>
-      <span class="module-pill mp-positive">PSM &middot; 正向压力（PSS 7题）</span>
-      <span class="module-pill mp-depression">DRM &middot; 抑郁相关（PHQ 8题）</span>
-      <span class="module-pill mp-anxiety">ARM &middot; 焦虑相关（GAD 7题）</span>
-      <span class="module-pill mp-suicide">SUM &middot; 自杀意念（PHQ9 单题）</span>
-    </div>
-
-    <div class="fig-block">
-      <img src="visuals/figure3.png" alt="症状网络与模块划分" loading="lazy">
-      <div class="fig-caption">Figure 3 — 37 个症状节点的网络图，不同颜色代表不同模块</div>
+<!-- ======================== KPI ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="kpi-strip">
+      <div class="kpi-item">
+        <span class="big">2773</span>
+        <span class="small">位大学新生参与</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">4</span>
+        <span class="small">份心理问卷</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">37</span>
+        <span class="small">个症状条目</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">6</span>
+        <span class="small">个症状"功能群"</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== METHOD FLOW ==================== -->
-<section id="method">
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      研究方法
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">四步构建"模块控制网络"</h2>
+<!-- ======================== 为什么做这个研究 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">研究背景</div>
+    <h2>为什么要研究症状之间的"关系网"？</h2>
 
-    <div class="flow-steps">
-      <div class="flow-step reveal">
-        <div class="flow-icon">1</div>
-        <h4>收集问卷</h4>
-        <p>4 份量表 (PHQ-9, GAD-7, ISI, PSS-14)，共 37 题</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-icon">2</div>
-        <h4>建症状网络</h4>
-        <p>Graphical LASSO 估计偏相关，保留最可靠的连接</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-icon">3</div>
-        <h4>模块划分</h4>
-        <p>Louvain 算法自动聚类为 6 个症状模块</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-icon">4</div>
-        <h4>模块控制分析</h4>
-        <p>枚举 27 个最小支配集，计算模块间控制强度</p>
+    <div class="prose">
+      <p>
+        传统的心理学研究通常把一个人的症状加成一个总分——比如抑郁量表得了多少分、焦虑量表得了多少分——然后分别处理。但在真实生活中，这些症状并不是各自独立的，它们会<strong>互相影响、互相强化</strong>。
+      </p>
+      <p>
+        近年来，研究者开始用"网络视角"来看待心理症状：把每个症状看作一个节点，把它们之间的关联看作连线，画成一张<strong>症状关系网络</strong>。
+      </p>
+    </div>
+
+    <div class="analogy">
+      <div class="analogy-icon">&#127961;</div>
+      <div class="analogy-text">
+        <strong>打个比方：</strong>想象一座城市的交通网络。每条街道是一个症状，它们互相连通。传统方法只关心"整座城堵不堵"，而网络方法会去问：<strong>"堵在哪些关键路口，才导致整座城市瘫痪？"</strong>
       </div>
     </div>
 
-    <!-- Collapsible: detailed method -->
-    <details style="margin-top:1.5rem;">
-      <summary>展开查看详细方法说明</summary>
-      <div style="padding:1rem 0;">
-        <p><strong>最小支配集（MDSet）</strong>是关键概念。想象你想用最少的"开关"点亮整栋楼——每个开关能点亮自己和相邻房间。如果一组开关合起来覆盖整栋楼且数量最少，就是一个 MDSet。</p>
-        <p>论文在 37 节点网络中穷举出全部 <strong>27 个 MDSet</strong>（每个大小约为 4 个节点），然后对每个 MDSet 计算：</p>
-        <ul>
-          <li><strong>MCS</strong>（模块控制强度）：一个模块的驱动节点覆盖到另一个模块的比例</li>
-          <li><strong>AMCS</strong>（平均 MCS）：在所有 27 个 MDSet 上取均值</li>
-          <li><strong>CF</strong>（控制频率）：某节点在 27 个 MDSet 中出现的比例</li>
-          <li><strong>ACF</strong>（平均 CF）：一个模块内所有节点 CF 的均值</li>
+    <div class="prose">
+      <p>
+        但以前的网络分析大多只能找到单个"最重要的症状"。这篇论文的创新在于——它不只看单个路口，而是看<strong>一整片区域（"模块"）对另一片区域的控制力</strong>，更接近临床实际：医生通常面对的是"睡眠问题"或"压力问题"这样的症状群，而不是逐条症状。
+      </p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/figure1.png" alt="研究思路：从问卷到网络到模块控制" loading="lazy">
+      <figcaption>研究思路：从问卷数据出发，构建症状网络，再分析模块之间的控制关系</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 怎么做的 ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-wide">
+    <div class="sec-label">研究方法</div>
+    <h2>研究分几步走？</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>收集问卷数据</h4>
+        <p>2773 名大学新生填写了关于<strong>抑郁、焦虑、失眠、压力</strong>的 4 份量表，总计 37 道题。</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>画出症状"关系网"</h4>
+        <p>用统计方法只保留<strong>最可靠的关联</strong>，形成一张 37 个节点的网络图。</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>自动分组</h4>
+        <p>算法自动将关联紧密的症状聚成 <strong>6 个"症状群"</strong>（模块）。</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h4>分析谁控制谁</h4>
+        <p>找出<strong>最少几个"开关"就能覆盖全网</strong>，比较各模块的控制力。</p>
+      </div>
+    </div>
+
+    <div class="analogy" style="max-width:760px;margin:2rem auto;">
+      <div class="analogy-icon">&#128161;</div>
+      <div class="analogy-text">
+        <strong>关于"最小支配集"：</strong>想象一栋楼，你要用<strong>最少的开关</strong>点亮所有房间。每个开关能点亮自己所在的房间和隔壁房间。找到的这组最少开关，就叫"最小支配集"。研究者在这张网络中一共找到了 <strong>27 种</strong>不同的最小开关组合，然后统计哪个"区域"的开关出现得最多——出现频率高的区域，就更像是网络的"控制中心"。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 6 个模块 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">6 个症状群</div>
+    <h2>37 个症状被分成了哪 6 组？</h2>
+
+    <div class="prose" style="max-width:760px;">
+      <p>算法根据"谁和谁更常一起出现"，自动将 37 个症状条目聚成 6 个功能群。你可以把它们想象成城市的 6 个不同片区：</p>
+    </div>
+
+    <div class="mod-grid">
+      <div class="mod-card mc-sleep">
+        <span class="mod-tag">睡眠区</span>
+        <h4>SRM &middot; 睡眠相关</h4>
+        <p class="mod-desc">包含失眠量表的 4 道题：入睡困难、早醒、对睡眠不满意等。</p>
+      </div>
+      <div class="mod-card mc-nstress">
+        <span class="mod-tag">负面压力区</span>
+        <h4>NSM &middot; 负向压力</h4>
+        <p class="mod-desc">包含压力量表中"无法控制""感到困难堆积"等 7 道负面感受题。</p>
+      </div>
+      <div class="mod-card mc-pstress">
+        <span class="mod-tag">正面应对区</span>
+        <h4>PSM &middot; 正向压力</h4>
+        <p class="mod-desc">包含压力量表中"觉得事情在掌控中""有信心处理问题"等 7 道正向题。</p>
+      </div>
+      <div class="mod-card mc-dep">
+        <span class="mod-tag">情绪低落区</span>
+        <h4>DRM &middot; 抑郁相关</h4>
+        <p class="mod-desc">包含抑郁量表的 8 道题：兴趣减退、感到沮丧、疲劳等。</p>
+      </div>
+      <div class="mod-card mc-anx">
+        <span class="mod-tag">焦虑紧张区</span>
+        <h4>ARM &middot; 焦虑相关</h4>
+        <p class="mod-desc">包含焦虑量表的全部 7 道题：紧张不安、担心过多、难以放松等。</p>
+      </div>
+      <div class="mod-card mc-sui">
+        <span class="mod-tag">特殊关注</span>
+        <h4>SUM &middot; 自杀意念</h4>
+        <p class="mod-desc">仅包含抑郁量表最后一题（PHQ-9），因其特殊性独立成组。</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/figure3.png" alt="症状网络图，不同颜色代表不同模块" loading="lazy">
+      <figcaption>症状网络图 — 同一颜色的节点属于同一个模块，连线越粗代表关联越强</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 核心发现 ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label">核心发现</div>
+    <h2>研究发现了什么？</h2>
+
+    <!-- 发现 1 -->
+    <h3 style="color:#0f2b46;margin-top:2rem;">发现一：睡眠和压力是"上游"，情绪是"下游"</h3>
+    <div class="prose">
+      <p>
+        如果把模块之间的控制关系画成有方向的箭头，研究发现：<strong>睡眠和压力模块发出的"控制箭头"特别多、特别强</strong>，而抑郁和焦虑模块则是<strong>接收箭头更多</strong>。
+      </p>
+      <p>
+        换句话说，在这张网络的结构里，睡眠和压力更像是"输出端"——它们的变化更容易传导到其他症状群；而抑郁和焦虑更像是"接收端"——更多地被其他模块所影响。
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:0.82rem;font-weight:700;color:#00b4d8;margin:0 0 0.5rem;text-transform:uppercase;letter-spacing:0.06em;">影响别人的能力（出向控制）</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-label">睡眠</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:100%">1.44</div></div></div>
+          <div class="bar-row"><span class="bar-label">负向压力</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:85%">1.22</div></div></div>
+          <div class="bar-row"><span class="bar-label">正向压力</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:83%">1.19</div></div></div>
+          <div class="bar-row"><span class="bar-label">焦虑</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:41%">0.60</div></div></div>
+          <div class="bar-row"><span class="bar-label">抑郁</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:14%">0.21</div></div></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.82rem;font-weight:700;color:#ef4444;margin:0 0 0.5rem;text-transform:uppercase;letter-spacing:0.06em;">被别人影响的程度（入向控制）</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-label">抑郁</span><div class="bar-track"><div class="bar-fill bf-red" style="width:100%">1.36</div></div></div>
+          <div class="bar-row"><span class="bar-label">焦虑</span><div class="bar-track"><div class="bar-fill bf-red" style="width:93%">1.27</div></div></div>
+          <div class="bar-row"><span class="bar-label">正向压力</span><div class="bar-track"><div class="bar-fill bf-red" style="width:49%">0.67</div></div></div>
+          <div class="bar-row"><span class="bar-label">睡眠</span><div class="bar-track"><div class="bar-fill bf-red" style="width:32%">0.43</div></div></div>
+          <div class="bar-row"><span class="bar-label">负向压力</span><div class="bar-track"><div class="bar-fill bf-red" style="width:28%">0.38</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="analogy">
+      <div class="analogy-icon">&#128214;</div>
+      <div class="analogy-text">
+        <strong>怎么理解这个图？</strong>左图柱子越长，说明这个模块越能"带动"别的模块；右图柱子越长，说明这个模块越"容易被带动"。可以看到：<strong>睡眠和压力在左图遥遥领先，而抑郁和焦虑在右图排名最高</strong>——前者是"推手"，后者是"被推的"。
+      </div>
+    </div>
+
+    <!-- 发现 2 -->
+    <h3 style="color:#0f2b46;margin-top:3rem;">发现二：最强的传导路径是"睡眠 → 压力 → 情绪"</h3>
+    <div class="prose">
+      <p>
+        研究进一步追踪了模块之间最强和最弱的"传导线路"。结果显示，影响力的方向高度不对称：
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="col-box col-green">
+        <h4 style="color:#059669!important;">最强传导（容易影响）</h4>
+        <div class="arrow-table">
+          <div class="arrow-row">
+            <span class="arrow-from">睡眠</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">正向压力</span>
+            <span class="arrow-val">0.586</span>
+          </div>
+          <div class="arrow-row">
+            <span class="arrow-from">正向压力</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">焦虑</span>
+            <span class="arrow-val">0.497</span>
+          </div>
+          <div class="arrow-row">
+            <span class="arrow-from">睡眠</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">抑郁</span>
+            <span class="arrow-val">0.444</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-box col-amber">
+        <h4 style="color:#d97706!important;">最弱传导（难以影响）</h4>
+        <div class="arrow-table">
+          <div class="arrow-row">
+            <span class="arrow-from">抑郁</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">睡眠</span>
+            <span class="arrow-val">0.042</span>
+          </div>
+          <div class="arrow-row">
+            <span class="arrow-from">焦虑</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">负向压力</span>
+            <span class="arrow-val">0.042</span>
+          </div>
+          <div class="arrow-row">
+            <span class="arrow-from">抑郁</span>
+            <span class="arrow-icon">&rarr;</span>
+            <span class="arrow-to">负向压力</span>
+            <span class="arrow-val">0.019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>
+        注意右边最弱传导的数值——从抑郁到睡眠的影响力只有 <strong>0.042</strong>，而反方向（睡眠到抑郁）高达 <strong>0.444</strong>，足足相差 <strong>10 倍</strong>！这说明影响力的传导是<strong>单向不对称</strong>的：从睡眠/压力到情绪的方向很强，但反过来几乎传不回去。
+      </p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/figure4.png" alt="模块控制网络图" loading="lazy">
+      <figcaption>模块控制网络 — 箭头越粗代表一个模块对另一个模块的控制力越强。可以清晰看到从睡眠/压力到情绪方向的粗箭头</figcaption>
+    </figure>
+
+    <!-- 发现 3 -->
+    <h3 style="color:#0f2b46;margin-top:3rem;">发现三：睡眠和压力里藏着更多"关键开关"</h3>
+    <div class="prose">
+      <p>
+        在 37 个症状中，有 24 个曾经在某种最小开关组合中出现过。但出现频率差别很大——有些症状几乎每次都是"必选开关"。研究者统计了每个症状在 27 种开关组合中出现的频率：
+      </p>
+    </div>
+
+    <table class="table" style="max-width:600px;margin:1.5rem auto!important;">
+      <thead>
+        <tr><th style="width:40px;">排名</th><th>症状内容</th><th>所属群</th><th style="width:60px;">出现率</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>有自伤或自杀的念头</td><td style="color:#dc2626;font-weight:600;">自杀意念</td><td><strong>100%</strong></td></tr>
+        <tr><td><strong>2</strong></td><td>对自己的睡眠状况不满意</td><td style="color:#2563eb;font-weight:600;">睡眠</td><td><strong>78%</strong></td></tr>
+        <tr><td><strong>3</strong></td><td>觉得自己无法控制生活中重要的事</td><td style="color:#d97706;font-weight:600;">负向压力</td><td>44%</td></tr>
+        <tr><td><strong>4</strong></td><td>觉得自己无法控制恼怒的情绪</td><td style="color:#d97706;font-weight:600;">负向压力</td><td>37%</td></tr>
+        <tr><td><strong>5</strong></td><td>容易觉得烦躁或易怒</td><td style="color:#db2777;font-weight:600;">焦虑</td><td>22%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>
+        前五名中，有三个来自<strong>睡眠或压力</strong>模块（排名 2、3、4）。从模块整体来看，非情绪模块的"平均开关角色"也更重：
+      </p>
+    </div>
+
+    <div class="bar-chart" style="max-width:500px;margin:1rem auto;">
+      <p style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin:0 0 0.75rem;">各模块的平均"开关频率"</p>
+      <div class="bar-row"><span class="bar-label">负向压力</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:100%">0.125</div></div></div>
+      <div class="bar-row"><span class="bar-label">睡眠</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:100%">0.125</div></div></div>
+      <div class="bar-row"><span class="bar-label">正向压力</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:69%">0.086</div></div></div>
+      <div class="bar-row"><span class="bar-label">焦虑</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:38%">0.048</div></div></div>
+      <div class="bar-row"><span class="bar-label">抑郁</span><div class="bar-track"><div class="bar-fill bf-blue" style="width:17%">0.021</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== Takeaway ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <h3>一句话带走</h3>
+      <p>在这个样本中，改善睡眠和管理压力，也许是缓解一系列心理困扰的更好入口。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 意义与局限 ======================== -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="sec-label">意义与局限</div>
+    <h2>这个发现意味着什么？</h2>
+
+    <div class="two-col">
+      <div class="col-box col-green">
+        <h4 style="color:#059669!important;">这项研究做到了</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>提出了一套从"单个症状"升级到"症状群之间关系"的新分析方法</li>
+          <li>发现睡眠/压力的控制角色比情绪模块更强，且经过了 1000 次随机检验</li>
+          <li>方法和代码公开，其他研究者可以复现</li>
         </ul>
-        <p>把模块作为新网络节点、AMCS 作为有向边，即得到 <strong>模块控制网络（MCN）</strong>。最后用 80% 抽样、1000 次 bootstrap 检验稳定性。</p>
       </div>
-    </details>
-
-    <div class="fig-block">
-      <img src="visuals/figure1.png" alt="分析流程图" loading="lazy">
-      <div class="fig-caption">Figure 1 — 从症状网络到模块控制网络的分析流程</div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== KEY FINDINGS ==================== -->
-<section id="findings" style="background:#fff;">
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      核心发现
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">三大发现</h2>
-
-    <div class="findings-grid">
-      <!-- Finding 1 -->
-      <div class="finding-card reveal">
-        <div class="finding-header">
-          <div class="finding-num">1</div>
-          <h3>睡眠/压力 = 外向控制源，情绪 = 被影响者</h3>
-        </div>
-        <div class="finding-body">
-          <p>非情绪模块的<strong>出向控制强度</strong>远高于情绪模块，而情绪模块的<strong>入向强度</strong>更高——意味着睡眠和压力更可能处于"影响别人"的位置。</p>
-
-          <div class="compare-grid">
-            <div class="compare-box">
-              <h4 style="color:#00b4d8!important;">出向控制强度（越高 = 越像控制源）</h4>
-              <div class="control-bar-group">
-                <div class="control-bar-item">
-                  <span class="control-bar-label">SRM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">1.442</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">NSM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:84.7%">1.221</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">PSM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:82.5%">1.190</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">ARM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:41.5%">0.598</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">DRM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:14.4%">0.207</div></div>
-                </div>
-              </div>
-            </div>
-            <div class="compare-box">
-              <h4 style="color:#f77f6b!important;">入向控制强度（越高 = 越容易被影响）</h4>
-              <div class="control-bar-group">
-                <div class="control-bar-item">
-                  <span class="control-bar-label">DRM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:100%">1.360</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">ARM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:93%">1.265</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">PSM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:49.2%">0.669</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">SRM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:31.7%">0.431</div></div>
-                </div>
-                <div class="control-bar-item">
-                  <span class="control-bar-label">NSM</span>
-                  <div class="control-bar-track"><div class="control-bar-fill bar-in" style="width:27.6%">0.375</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Finding 2 -->
-      <div class="finding-card reveal">
-        <div class="finding-header">
-          <div class="finding-num">2</div>
-          <h3>最强控制连线：睡眠 → 压力 / 抑郁，压力 → 焦虑 / 抑郁</h3>
-        </div>
-        <div class="finding-body">
-          <div class="compare-grid">
-            <div class="compare-box">
-              <h4 style="color:#059669!important;">最强三条连线 (AMCS)</h4>
-              <ul class="edge-list">
-                <li>
-                  <span><span class="edge-from">SRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">PSM</span></span>
-                  <span class="edge-val">0.586</span>
-                </li>
-                <li>
-                  <span><span class="edge-from">PSM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">ARM</span></span>
-                  <span class="edge-val">0.497</span>
-                </li>
-                <li>
-                  <span><span class="edge-from">SRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">DRM</span></span>
-                  <span class="edge-val">0.444</span>
-                </li>
-              </ul>
-            </div>
-            <div class="compare-box">
-              <h4 style="color:#dc2626!important;">最弱三条连线 (AMCS)</h4>
-              <ul class="edge-list">
-                <li>
-                  <span><span class="edge-from">DRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">SRM</span></span>
-                  <span class="edge-val">0.042</span>
-                </li>
-                <li>
-                  <span><span class="edge-from">ARM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">NSM</span></span>
-                  <span class="edge-val">0.042</span>
-                </li>
-                <li>
-                  <span><span class="edge-from">DRM</span><span class="edge-arrow">&rarr;</span><span class="edge-to">NSM</span></span>
-                  <span class="edge-val">0.019</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <p style="margin-top:1rem;">控制方向是<strong>单向不对称</strong>的：从睡眠/压力到情绪方向很强，反向极弱。</p>
-
-          <div class="fig-block">
-            <img src="visuals/figure4.png" alt="模块控制网络" loading="lazy">
-            <div class="fig-caption">Figure 4 — 模块控制网络（MCN），箭头粗细代表 AMCS 强度</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Finding 3 -->
-      <div class="finding-card reveal">
-        <div class="finding-header">
-          <div class="finding-num">3</div>
-          <h3>非情绪模块包含更多"关键驱动症状"</h3>
-        </div>
-        <div class="finding-body">
-          <p>24/37 个节点至少在一个 MDSet 里出现过。出现频率（CF）最高的 5 个症状：</p>
-
-          <table class="table" style="margin:1rem 0!important;">
-            <thead>
-              <tr><th>排名</th><th>症状条目</th><th>所属模块</th><th>CF</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td>PHQ9（自杀意念）</td><td><span class="module-pill mp-suicide" style="font-size:0.72rem!important;padding:2px 8px!important;">SUM</span></td><td><strong>1.000</strong></td></tr>
-              <tr><td>2</td><td>ISI4（对睡眠不满）</td><td><span class="module-pill mp-sleep" style="font-size:0.72rem!important;padding:2px 8px!important;">SRM</span></td><td><strong>0.778</strong></td></tr>
-              <tr><td>3</td><td>PSS2（无法控制重要事情）</td><td><span class="module-pill mp-stress" style="font-size:0.72rem!important;padding:2px 8px!important;">NSM</span></td><td>0.444</td></tr>
-              <tr><td>4</td><td>PSS7（无法控制恼怒）</td><td><span class="module-pill mp-stress" style="font-size:0.72rem!important;padding:2px 8px!important;">NSM</span></td><td>0.370</td></tr>
-              <tr><td>5</td><td>GAD6（容易烦躁）</td><td><span class="module-pill mp-anxiety" style="font-size:0.72rem!important;padding:2px 8px!important;">ARM</span></td><td>0.222</td></tr>
-            </tbody>
-          </table>
-
-          <p>在模块层面，非情绪模块的平均控制频率（ACF）也更高：</p>
-          <div class="control-bar-group">
-            <div class="control-bar-item">
-              <span class="control-bar-label">NSM</span>
-              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">0.125</div></div>
-            </div>
-            <div class="control-bar-item">
-              <span class="control-bar-label">SRM</span>
-              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:100%">0.125</div></div>
-            </div>
-            <div class="control-bar-item">
-              <span class="control-bar-label">PSM</span>
-              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:68.8%">0.086</div></div>
-            </div>
-            <div class="control-bar-item">
-              <span class="control-bar-label">ARM</span>
-              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:38.4%">0.048</div></div>
-            </div>
-            <div class="control-bar-item">
-              <span class="control-bar-label">DRM</span>
-              <div class="control-bar-track"><div class="control-bar-fill bar-out" style="width:16.8%">0.021</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="fig-block">
-      <img src="visuals/figure5.png" alt="稳定性分析" loading="lazy">
-      <div class="fig-caption">Figure 5 — Bootstrap 稳定性分析：1000 次 80% 抽样重建，模块数与 MDSet 大小分布一致</div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== IMPLICATIONS ==================== -->
-<section id="implications">
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      意义与局限
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">这项研究有什么用？</h2>
-
-    <div class="compare-grid">
-      <div class="compare-box" style="border-left:4px solid #059669!important;">
-        <h4 style="color:#059669!important;">已有证据支持</h4>
-        <ul style="padding-left:1.2em!important;">
-          <li>提出一套可复用的"模块控制"分析框架（MDSet → MCS/AMCS → MCN）</li>
-          <li>在本数据中成功识别出非情绪模块的更强控制角色</li>
-          <li>Bootstrap 检验表明结果在大多数重抽样中稳定</li>
-        </ul>
-      </div>
-      <div class="compare-box" style="border-left:4px solid #f59e0b!important;">
-        <h4 style="color:#d97706!important;">合理推测，待验证</h4>
-        <ul style="padding-left:1.2em!important;">
-          <li>如果控制方向在纵向研究中复现，针对睡眠/压力的干预可能更有效</li>
-          <li>横断面设计无法证明因果方向</li>
-          <li>来自单一学校的样本，不同人群与量表组合可能改变结论</li>
+      <div class="col-box col-amber">
+        <h4 style="color:#d97706!important;">需要注意的限制</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>这是<strong>一个时间点</strong>的调查数据，不是跟踪观察——无法证明因果</li>
+          <li>参与者全部是<strong>同一所大学的新生</strong>，结论能否推广到其他人群未知</li>
+          <li>使用不同的问卷组合，网络结构可能会变化</li>
         </ul>
       </div>
     </div>
 
-    <h3>局限性</h3>
-    <ul>
-      <li>单一学校新生样本，年龄集中在 18-20 岁</li>
-      <li>量表和输入组合不同可能改变网络结构和 MDSet</li>
-      <li>ACF 在抽样比例 &lt;50% 时平均相关降至 &lt;0.5</li>
-      <li>模块控制基于"不同 MDSet 权重相近"的假设</li>
-    </ul>
+    <div class="prose" style="margin-top:1.5rem;">
+      <p>
+        简单说：这项研究提供了一条很有价值的线索——<strong>睡眠和压力可能是干预的优先入口</strong>。但要真正证实这一点，还需要进一步的纵向研究（跟踪同一批人随时间的变化）和干预实验（真正去改善睡眠，看情绪是否跟着好转）。
+      </p>
+    </div>
 
-    <h3>下一步方向</h3>
-    <div class="flow-steps" style="grid-template-columns:repeat(3,1fr)!important;">
-      <div class="flow-step reveal">
-        <div class="flow-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)!important;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        </div>
-        <h4>框架对话</h4>
-        <p>与现象学、时空精神病理学等其他路径比较</p>
+    <figure class="fig-inline">
+      <img src="visuals/figure5.png" alt="稳定性检验" loading="lazy">
+      <figcaption>稳定性检验 — 研究者反复随机抽取 80% 的样本重建网络 1000 次，结果一致性良好</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 图形摘要 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">全局概览</div>
+    <h2>一张图看懂整篇论文</h2>
+    <figure class="fig-inline">
+      <img src="visuals/graphical_abstract_full.png" alt="图形摘要" loading="lazy">
+      <figcaption>图形摘要 — 从左到右展示了完整的分析流程：数据收集 → 网络构建 → 模块划分 → 控制分析 → 核心结论</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section class="sec sec-alt" id="faq">
+  <div class="sec-inner">
+    <div class="sec-label">常见问题</div>
+    <h2>你可能会问……</h2>
+
+    <div class="faq-list">
+      <details>
+        <summary>这能证明"睡不好会导致抑郁"吗？</summary>
+        <p>严格来说不能。这项研究发现的是<strong>统计关联层面的控制结构</strong>，也就是"在网络结构中，睡眠模块更像控制源"。但这不完全等于因果关系。要证明因果，需要做纵向跟踪研究或干预实验。不过，它确实为"先改善睡眠"这一思路提供了结构性证据支持。</p>
+      </details>
+      <details>
+        <summary>"控制"这个词听起来好像很严重？</summary>
+        <p>这里的"控制"是借用网络科学的术语，指的是"在网络结构上处于可以影响其他部分的位置"。就像说"这个路口可以控制交通流向"一样，是描述结构关系，不是说一个症状真的在"操控"另一个症状。</p>
+      </details>
+      <details>
+        <summary>我能用这个研究来判断自己的心理状态吗？</summary>
+        <p>不建议这样做。这项研究分析的是<strong>群体层面</strong>的统计规律，不能直接应用于个人。每个人的症状模式可能不同。如果你正在经历心理困扰，建议咨询专业的心理咨询师或精神科医生。</p>
+      </details>
+      <details>
+        <summary>研究对象是谁？</summary>
+        <p>来自南京医科大学的 2773 名大一新生，年龄主要集中在 18-20 岁。由于样本来自单一学校且以年轻群体为主，结论能否推广到其他年龄段和人群还需要更多研究。</p>
+      </details>
+      <details>
+        <summary>为什么不直接找"最重要的单个症状"？</summary>
+        <p>传统方法确实会找"最中心"的单个症状，但研究者发现这些指标在症状网络中可能不够稳定。更重要的是，<strong>临床干预通常面向的是一类症状</strong>（比如"改善睡眠""减轻压力"），而不是某一道具体的题目。所以在"症状群"层面分析更有实际意义。</p>
+      </details>
+      <details>
+        <summary>换一批人做，结果会不同吗？</summary>
+        <p>有可能。作者用 1000 次随机抽样检验了稳定性，在大多数情况下结论一致。但他们也承认，如果用完全不同的人群或不同的问卷组合，网络结构可能改变。这也是为什么他们呼吁在更多人群中复现结果。</p>
+      </details>
+      <details>
+        <summary>论文的代码和数据公开吗？</summary>
+        <p>分析代码在 GitHub 上公开。原始数据需要向论文通讯作者申请获取。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 术语 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">术语速查</div>
+    <h2>几个关键概念，用大白话说</h2>
+
+    <div class="gloss-grid">
+      <div class="gloss-card">
+        <h4>症状网络</h4>
+        <p class="gloss-en">Symptom Network</p>
+        <p>把每个症状当成一个"点"，它们之间的关联当成"线"，画出来的关系地图。线越粗，两个症状越"同步"。</p>
       </div>
-      <div class="flow-step reveal">
-        <div class="flow-icon" style="background:linear-gradient(135deg,#059669,#34d399)!important;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
-        <h4>生物学联合</h4>
-        <p>结合神经影像数据，不仅限于症状层面</p>
+      <div class="gloss-card">
+        <h4>模块</h4>
+        <p class="gloss-en">Module</p>
+        <p>网络里关联特别紧密的一群症状，像社交圈里的"小团体"。比如失眠相关的几个症状自然聚成一组。</p>
       </div>
-      <div class="flow-step reveal">
-        <div class="flow-icon" style="background:linear-gradient(135deg,#d97706,#fbbf24)!important;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h4>纵向动态</h4>
-        <p>从横断面扩展到随时间变化的动态控制</p>
+      <div class="gloss-card">
+        <h4>最小支配集</h4>
+        <p class="gloss-en">Minimum Dominating Set</p>
+        <p>能覆盖全网所需的最少"开关"组合。每个开关可以影响自己和邻居。开关越少，网络越"高效可控"。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>模块控制网络</h4>
+        <p class="gloss-en">Module Control Network</p>
+        <p>把 6 个模块看成新的节点，用"谁能影响谁"画出的方向关系图。箭头越粗 = 控制力越强。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>控制频率</h4>
+        <p class="gloss-en">Control Frequency (CF)</p>
+        <p>某个症状在所有 27 种开关组合中出现的比例。100% 意味着"每种方案都少不了它"。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>自助法检验</h4>
+        <p class="gloss-en">Bootstrapping</p>
+        <p>反复从样本里随机抽取一部分重做分析，看结论是不是每次都差不多——差不多就说明结果稳定。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
-<section id="faq" style="background:#fff;">
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      常见问题
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">FAQ</h2>
-
-    <details>
-      <summary>这是不是证明"睡眠或压力会导致抑郁/焦虑"？</summary>
-      <p>不能直接这样说。网络由偏相关构成，属于统计关联网络；模块控制是结构可控性分析，不等同于因果。论文强调为横断面分析，需在纵向数据中验证。</p>
-    </details>
-
-    <details>
-      <summary>论文里的"控制"是什么意思？不是真的控制人吧？</summary>
-      <p>"控制"是网络控制理论概念：在给定结构下，哪些节点/模块更可能作为外部输入点影响系统状态。是结构分析语言，不等于临床操控或因果断言。</p>
-    </details>
-
-    <details>
-      <summary>为什么不用"中心性"找关键症状，而用支配集？</summary>
-      <p>基于"路径"的中心性指标（接近度、介数）在症状网络这类相关网络里可能不稳定。支配集理论只依赖"直接邻居关系"，更适合这类数据。</p>
-    </details>
-
-    <details>
-      <summary>为什么在"模块"层面分析，而不是逐条症状？</summary>
-      <p>临床干预通常面向更大的症状类别（如"睡眠问题""压力管理"）而非逐条题目。数据驱动的模块更贴近实际决策单元。</p>
-    </details>
-
-    <details>
-      <summary>结果稳定吗？换一批人会变吗？</summary>
-      <p>作者用 80% 抽样 &times; 1000 次 bootstrap 检验：边权分布一致、多数网络仍为 6 模块、MDSet 大小约 4。但不同样本/量表组合可能改变网络结构，需更多人群复现。</p>
-    </details>
-
-    <details>
-      <summary>"自杀模块（SUM）"为什么只有一个节点？</summary>
-      <p>模块 #2 只包含 PHQ9（关于自杀意念的条目），属于单题模块，在 Louvain 聚类中自动形成独立社区。</p>
-    </details>
-
-    <details>
-      <summary>代码和数据能获取吗？</summary>
-      <p>代码在 GitHub 公开仓库提供；数据需向通讯作者提出申请。</p>
-    </details>
-  </div>
-</section>
-
-<!-- ==================== GLOSSARY ==================== -->
-<section>
-  <div class="container">
-    <div class="section-anchor">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-      术语词典
-    </div>
-    <h2 style="margin-top:0.5rem!important;border:none!important;">关键术语速查</h2>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem;">
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">症状网络</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">每个症状/条目 = 节点，连线 = 统计关联强度。像一张"症状关系地图"。</p>
-      </div>
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">最小支配集 (MDSet)</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">覆盖全网所需的最少"开关"集合。每个开关点亮自己和相邻节点。</p>
-      </div>
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">模块控制强度 (AMCS)</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">一个模块的驱动节点覆盖另一模块的平均比例。越高 = 控制力越强。</p>
-      </div>
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">模块控制网络 (MCN)</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">模块 = 节点，AMCS = 有向边。像把街区用"影响力箭头"连起来。</p>
-      </div>
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">控制频率 (CF / ACF)</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">节点在所有 MDSet 中做"开关"的比例。ACF 是模块内均值。</p>
-      </div>
-      <div class="card">
-        <h4 style="margin-top:0!important;font-size:0.95rem!important;">Graphical LASSO</h4>
-        <p style="font-size:0.85rem!important;margin:0!important;">从众多可能连线中只保留最关键的连接，避免"全都连上"的噪声。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== FOOTER ==================== -->
+<!-- ======================== Footer ======================== -->
 <footer class="site-footer">
   <div class="container">
-    <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+    <p>本页面基于论文 <em>Module control of network analysis in psychopathology</em> (iScience, 2024) 生成，仅用于科学传播与学术交流。</p>
     <p style="margin-top:0.5rem;"><a href="../../#/">NSFC 62176129 项目主站</a></p>
   </div>
 </footer>
@@ -862,14 +895,11 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-// Smooth scroll for anchor links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   a.addEventListener('click', function(e) {
     var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
 </script>
