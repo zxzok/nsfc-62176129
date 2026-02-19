@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>视觉皮层 rTMS — 从大鼠到青少年的跨物种转化研究</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#4338ca;--accent-light:#a5b4fc;--accent-bg:rgba(67,56,202,.08);--grad-start:#312e81;--grad-end:#4338ca}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(165,180,252,.12),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#ec4899}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .cross-species{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .cs-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .cs-card h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .cs-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.cross-species{grid-template-columns:1fr}}
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#a5b4fc;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#a5b4fc),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#a5b4fc)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">跨物种转化研究</span>
+      <span class="hero-chip">视觉皮层 rTMS</span>
+      <span class="hero-chip">ReHo + 蛋白质组学</span>
+    </div>
+    <h1>把磁刺激"对准视觉皮层"，能否帮青少年精神障碍的大脑找回发育节奏？</h1>
+    <p class="subtitle">"从大鼠到人"的研究观察到：视觉皮层 rTMS 后前额叶异常同步性下降，并伴随症状量表下降</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1111/cns.14427" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">CNS Neurosci. Ther., 2024, 30(3), e14427</a></p>
+  </div>
+</header>
+
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">30</div><div class="label">MAM 大鼠（3 组×10）</div></div>
+      <div class="kpi-card reveal"><div class="num">21</div><div class="label">青少年患者（13-18岁）</div></div>
+      <div class="kpi-card reveal"><div class="num">3382</div><div class="label">蛋白质组鉴定数</div></div>
+      <div class="kpi-card reveal"><div class="num">p&lt;0.0001</div><div class="label">症状量表改善</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      大脑皮层发育通常呈"从后到前"的梯度——枕叶视觉皮层更早成熟，额叶成熟最晚。这就像一条装配线，从视觉"入口"到执行"总部"。这项研究把磁刺激的"节拍器"对准入口（视觉皮层），结果发现最明显的变化出现在总部（前额叶）——而且大鼠和人的趋势一致。
+    </div>
+  </div>
+</section>
+
+<!-- Cross-species comparison -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">跨物种"同题测验"</h2>
+    <div class="cross-species reveal">
+      <div class="cs-card" style="border-top:4px solid #f59e0b">
+        <h4 style="color:#f59e0b">大鼠实验</h4>
+        <p>MAM 模型（孕鼠 E17 注射 MAM）。30 只分 3 组。青春期 10Hz rTMS 2 周，每次 900 脉冲。结果：前额 ReHo ↓、突触相关蛋白变化（81 个重叠蛋白，富集于 presynapse/vesicle）。</p>
+      </div>
+      <div class="cs-card" style="border-top:4px solid var(--accent)">
+        <h4 style="color:var(--accent)">青少年患者</h4>
+        <p>21 名 13-18 岁住院患者（SZ 2/BD 12/MDD 7）。10Hz 视觉皮层 rTMS 10 次，每次 1200 脉冲。结果：前额/边缘系统 ReHo ↓，后部 ReHo ↑；BPRS/HAMD/HAMA 均 p&lt;0.0001。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig1.png" alt="研究设计" loading="lazy">
+      <div class="caption">图 1 · 跨物种研究设计：MAM 大鼠与青少年患者的平行对比</div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · MAM 大鼠呈"前强后弱"功能失衡</h4>
+        <p>前额多区域 ReHo 显著升高，后部感觉区偏低——像把"总指挥"音量开太大，感觉入口反而偏弱。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · 视觉皮层 rTMS 后前额叶回落 + 突触蛋白变化</h4>
+        <p>刺激点在视觉"入口"，最明显变化出现在前额"总部"。前额叶 81 个重叠蛋白富集于 presynapse、vesicle、intracellular transport。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 患者"前降后升" + 症状显著改善</h4>
+        <p>治疗后前额/边缘 ReHo ↓，后部 ReHo ↑。BPRS/HAMD/HAMA 均显著下降。治疗后左额 ReHo 与 BPRS 正相关（r=0.554, FDR 校正）。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig3C.png" alt="患者治疗前后ReHo变化" loading="lazy">
+      <div class="caption">图 3C · 患者治疗前后的 ReHo 变化及与症状的相关</div>
+    </div>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>从视觉皮层入手，可能"牵动"前额叶功能 — 但仍需更大对照试验验证。</p>
+  </div>
+</div>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>这是否证明"刺激视觉皮层就能治疗精神障碍"？</summary><div class="faq-body">不能。患者研究是开放标签、单臂、小样本设计，缺少健康对照，需要更大随机对照试验验证。</div></details>
+    <details class="reveal"><summary>为什么不直接刺激前额叶？</summary><div class="faq-body">皮层发育"从后到前"，视觉皮层更早成熟。作者推测在发育关键期调节视觉系统可能带动整体可塑性。</div></details>
+    <details class="reveal"><summary>大鼠行为改善了吗？</summary><div class="faq-body">NOR/OFT 多项指标上 MAM-rTMS 与 MAM-sham 无显著差异，提示影像/分子层面的改变不一定直接转化为行为改善。</div></details>
+    <details class="reveal"><summary>我能据此自行使用 rTMS 设备吗？</summary><div class="faq-body">不能。rTMS 属专业医疗干预，应由合规医疗机构与专业人员评估操作。</div></details>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>rTMS</dt><dd>重复经颅磁刺激 — 像给脑区"打节拍"的非侵入式技术。</dd></div>
+      <div class="glossary-card reveal"><dt>ReHo</dt><dd>区域同质性 — 衡量一个小区域内信号是否"齐步走"。</dd></div>
+      <div class="glossary-card reveal"><dt>MAM 模型</dt><dd>在孕鼠 E17 给药扰动发育，后代呈现精神障碍风险特征。</dd></div>
+      <div class="glossary-card reveal"><dt>神经可塑性</dt><dd>大脑连接可被经验或刺激改变的能力，青春期更强。</dd></div>
+      <div class="glossary-card reveal"><dt>蛋白质组学</dt><dd>一次测量多种蛋白表达变化，寻找机制线索。</dd></div>
+      <div class="glossary-card reveal"><dt>GO 富集</dt><dd>把变化蛋白按功能分类统计，看哪些功能被集中影响。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

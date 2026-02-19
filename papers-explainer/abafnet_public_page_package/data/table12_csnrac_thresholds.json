@@ -1,0 +1,56 @@
+[
+  {
+    "Endpoints":"Mild Left",
+    "Threshold":3,
+    "ACC":0.565,
+    "Precision":0.556,
+    "Recall":0.852,
+    "F1":0.673,
+    "PR_AUC":0.546
+  },
+  {
+    "Endpoints":"Mild Left",
+    "Threshold":4,
+    "ACC":0.545,
+    "Precision":0.537,
+    "Recall":0.765,
+    "F1":0.631,
+    "PR_AUC":0.475
+  },
+  {
+    "Endpoints":"Mild Left",
+    "Threshold":5,
+    "ACC":0.587,
+    "Precision":0.568,
+    "Recall":0.857,
+    "F1":0.684,
+    "PR_AUC":0.541
+  },
+  {
+    "Endpoints":"Mild Right",
+    "Threshold":8,
+    "ACC":0.537,
+    "Precision":1.0,
+    "Recall":0.05,
+    "F1":0.095,
+    "PR_AUC":0.471
+  },
+  {
+    "Endpoints":"Mild Right",
+    "Threshold":9,
+    "ACC":0.542,
+    "Precision":0.529,
+    "Recall":0.75,
+    "F1":0.621,
+    "PR_AUC":0.374
+  },
+  {
+    "Endpoints":"Mild Right",
+    "Threshold":10,
+    "ACC":0.6,
+    "Precision":0.0,
+    "Recall":0.0,
+    "F1":0.0,
+    "PR_AUC":0.572
+  }
+]

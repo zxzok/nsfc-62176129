@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI能从你的声音里"听出"抑郁吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    /* ========== Page-level overrides ========== */
+    body { background: #fafbfd !important; }
+
+    /* Hero */
+    .hero-custom {
+      background: linear-gradient(160deg, #0a1628 0%, #1a1040 30%, #2d1b69 55%, #00b4d8 100%) !important;
+      padding:7rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(72,202,228,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-custom h1{
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important;
+      max-width: 22ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.78) !important;
+      font-size: 1.1rem !important;
+      line-height: 1.7 !important;
+      max-width: 52ch !important;
+      margin: 0 !important;
+    ;margin-left:auto;margin-right:auto}
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Section spacing */
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    /* Section title */
+    .sec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #7c3aed;
+      margin-bottom: 0.4rem;
+    }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important;
+      color: #0f2b46 !important;
+      line-height: 1.3 !important;
+      margin: 0 0 1rem !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+    .sec h2::after { display: none !important; }
+
+    /* Body copy */
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    /* Highlight callout */
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(72,202,228,0.03));
+      border-left: 4px solid #7c3aed;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem;
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+
+    /* Warning callout */
+    .callout-warn {
+      background: rgba(251,191,36,0.06);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: #78350f;
+    }
+
+    /* Inline figure */
+    .fig-inline {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    /* KPI strip */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #1a1040, #2d1b69);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(45,27,105,0.18);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #a78bfa; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    /* Analogy box */
+    .analogy {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #f5f3ff, #f8fafc);
+      border: 1px solid #e9e5ff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    /* Step flow */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none !important; }
+    }
+    .step {
+      text-align: center;
+      padding: 0 0.75rem;
+      position: relative;
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #1a1040, #7c3aed);
+      color: #e9e5ff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 12px rgba(124,58,237,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow {
+      position: absolute;
+      right: -10px;
+      top: 26px;
+      color: #7c3aed;
+      font-size: 1.3rem;
+      z-index: 2;
+    }
+
+    /* Feature cards */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 600px) { .feat-grid { grid-template-columns: 1fr; } }
+    .feat-card {
+      border-radius: 14px;
+      padding: 1.25rem;
+      border: 1px solid;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+    .feat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .feat-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .feat-card .feat-desc { font-size: 0.85rem; line-height: 1.6; margin: 0; }
+    .feat-card .feat-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+
+    .fc-env { background: rgba(59,130,246,0.04); border-color: rgba(59,130,246,0.15); }
+    .fc-env h4, .fc-env .feat-tag { color: #2563eb; }
+    .fc-spec { background: rgba(139,92,246,0.04); border-color: rgba(139,92,246,0.15); }
+    .fc-spec h4, .fc-spec .feat-tag { color: #7c3aed; }
+    .fc-mel { background: rgba(236,72,153,0.04); border-color: rgba(236,72,153,0.15); }
+    .fc-mel h4, .fc-mel .feat-tag { color: #db2777; }
+    .fc-hsf { background: rgba(16,185,129,0.04); border-color: rgba(16,185,129,0.15); }
+    .fc-hsf h4, .fc-hsf .feat-tag { color: #059669; }
+
+    /* Bar chart */
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 80px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-purple { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+    .bf-pink { background: linear-gradient(90deg, #db2777, #f472b6); }
+    .bf-blue { background: linear-gradient(90deg, #0ea5e9, #00b4d8); }
+
+    /* Two-column */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .col-box { border-radius: 14px; padding: 1.5rem; }
+    .col-box h4 { font-size: 0.85rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .col-green { background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); }
+    .col-green h4 { color: #059669; }
+    .col-amber { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); }
+    .col-amber h4 { color: #d97706; }
+
+    /* Takeaway banner */
+    .takeaway-banner {
+      background: linear-gradient(145deg, #1a1040, #2d1b69);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .takeaway-banner::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 60%);
+    }
+    .takeaway-banner h3 { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 0.75rem; position: relative; z-index: 1; }
+    .takeaway-banner p { color: #fff; font-size: 1.3rem; font-weight: 700; line-height: 1.5; margin: 0; position: relative; z-index: 1; max-width: 36ch; margin: 0 auto; }
+
+    /* FAQ */
+    .faq-list { margin: 1.5rem 0; }
+    .faq-list details { margin-bottom: 0.75rem; }
+
+    /* Glossary */
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .gloss-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      transition: all 0.25s;
+    }
+    .gloss-card:hover { border-color: #7c3aed; box-shadow: 0 4px 16px rgba(124,58,237,0.08); }
+    .gloss-card h4 { margin: 0 0 0.3rem; font-size: 0.92rem; color: #0f2b46; }
+    .gloss-card .gloss-en { font-size: 0.75rem; color: #94a3b8; margin: 0 0 0.5rem; font-style: italic; }
+    .gloss-card p { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.6; }
+
+    /* Visual gallery */
+    .vis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .vis-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.25s;
+    }
+    .vis-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .vis-card img { width: 100%; display: block; }
+    .vis-card-body { padding: 0.75rem 1rem; }
+    .vis-card-body p { font-size: 0.82rem; color: #64748b; margin: 0; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<!-- Reading progress -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <h1>AI能从你的声音里"听出"抑郁吗？</h1>
+    <p class="lead">
+      一个人说话的方式，可能藏着情绪的线索。这项研究用<strong style="color:#a78bfa;">四种声音特征</strong>训练AI，让它像"多位医生会诊"一样综合判断——准确率超过 81%。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-chip">Neurocomputing &middot; 2024</span>
+      <span class="hero-chip">Jiang, Zhang 等</span>
+      <span class="hero-chip">371 位受试者</span>
+      <span class="hero-chip">中文朗读语音</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1016/j.neucom.2024.128209" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Neurocomputing, 2024, 601, 128209</a></p>
+  </div>
+</section>
+
+<!-- ======================== 30秒读懂 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">30 秒读懂</div>
+    <h2>这篇论文说了什么？</h2>
+
+    <div class="prose">
+      <p>
+        你有没有注意过：当一个人心情低落时，说话的语调、节奏甚至音量都会和平时不太一样？有时候不用听内容，光凭"声音的感觉"就能隐约察觉到对方的状态。
+      </p>
+      <p>
+        那么问题来了：<strong>如果人类凭感觉就能"听出"情绪变化，AI 能不能做得更准确？</strong>
+      </p>
+      <p>
+        这项研究的答案是：<strong>可以，但不能只听一种线索</strong>。研究者从同一段录音里提取了 4 类不同的声学特征（相当于请了4位"专家"分别从不同角度打分），再用注意力机制把这些分数智能地加权汇总。
+      </p>
+    </div>
+
+    <div class="callout-highlight">
+      <strong>核心发现：</strong>把 4 种声音线索"合起来听"，比只依赖单一线索准确率提高了约 6 个百分点，AUC 提升了近 5 个百分点。<strong>多角度融合</strong>是关键。
+    </div>
+
+    <div class="callout-warn">
+      需要说明：这是一项技术验证研究，使用的是受控环境下的朗读录音。它展示了方法的可行性，但并不意味着可以直接用手机"自测抑郁"。临床应用还需要大量进一步验证。
+    </div>
+  </div>
+</section>
+
+<!-- ======================== KPI ======================== -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="kpi-strip">
+      <div class="kpi-item">
+        <span class="big">81.4%</span>
+        <span class="small">融合模型准确率</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">4</span>
+        <span class="small">类声学特征</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">371</span>
+        <span class="small">位受试者（CNRAC）</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">0.847</span>
+        <span class="small">ROC-AUC 指标</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 为什么做这个研究 ======================== -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">研究背景</div>
+    <h2>为什么要用"声音"来检测抑郁？</h2>
+
+    <div class="prose">
+      <p>
+        抑郁症是全球最常见的精神健康问题之一。COVID-19 之后，发病率更是明显上升。但目前的诊断和评估主要依赖<strong>医生访谈 + 量表打分</strong>，这种方式需要专业人员面对面操作，耗时长、主观性强，而且很难大规模筛查。
+      </p>
+      <p>
+        与此同时，<strong>声音是一种非常容易获取、完全无创的数据</strong>。你只需要说几句话，录音就包含了丰富的信息：语速快慢、音调高低、能量变化、音色特点……这些特征在抑郁人群和健康人群之间往往存在细微但系统性的差异。
+      </p>
+    </div>
+
+    <div class="analogy">
+      <div class="analogy-icon">&#127897;</div>
+      <div class="analogy-text">
+        <strong>打个比方：</strong>就像中医可以通过"望闻问切"中的"闻"（听声音）来辅助诊断一样，AI 也能通过"听"你说话的方式，从声音信号里提取人耳不容易察觉的细微特征，辅助判断情绪状态。
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>
+        但之前的研究有一个共同的不足：大多只用了<strong>一种声学特征</strong>来做判断。就好比你去看病，只量了体温就下结论——显然不够全面。这项研究的核心创新就是：<strong>把 4 种不同维度的声音特征"联合会诊"</strong>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 怎么做的 ======================== -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="sec-label">研究方法</div>
+    <h2>研究分几步走？</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>录音 & 清洗</h4>
+        <p>受试者朗读固定文本，去掉静音段，统一采样率为 16kHz</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>提取 4 类特征</h4>
+        <p>从同一段录音中提取上包络、频谱图、梅尔谱和 HSFs</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>各自训练子模型</h4>
+        <p>每类特征用 CNN+LSTM+注意力各训练一个"专家"模型</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h4>加权融合</h4>
+        <p>按各专家表现分配权重，汇总得出最终判断</p>
+      </div>
+    </div>
+
+    <div class="analogy" style="max-width:760px;margin:2rem auto;">
+      <div class="analogy-icon">&#128101;</div>
+      <div class="analogy-text">
+        <strong>类比"多位评委打分"：</strong>想象一场才艺比赛有 4 位评委，一位专门听节奏感，一位评音准，一位看表现力，一位综合打分。最后不是简单平均，而是<strong>根据每位评委之前的打分准确度来分配权重</strong>——更准的评委话语权更大。ABAFnet 就是这么做的。
+      </div>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/fig1_preprocessing_pipeline.png" alt="预处理流程" loading="lazy">
+      <figcaption>预处理流程 — 从原始录音出发，经过语音活动检测（VAD）和降采样，得到干净的语音片段</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 4 类特征 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">四位"专家"</div>
+    <h2>4 类声学特征分别在听什么？</h2>
+
+    <div class="prose" style="max-width:760px;">
+      <p>同一段录音，从 4 个不同角度"翻译"成 AI 能理解的信号。就像同一幅风景，用不同镜头拍出来的效果完全不同：</p>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-card fc-env">
+        <span class="feat-tag">特征 1</span>
+        <h4>上包络线</h4>
+        <p class="feat-desc">描绘声音波形的"峰值轮廓"，反映说话时能量的起伏节奏。就像从远处看山脉的天际线——只看大轮廓，忽略细节。</p>
+      </div>
+      <div class="feat-card fc-spec">
+        <span class="feat-tag">特征 2</span>
+        <h4>频谱图</h4>
+        <p class="feat-desc">把声音按频率拆开，画成随时间变化的"热力图"。就像用棱镜把白光分成彩虹——看每个频率的能量分布。</p>
+      </div>
+      <div class="feat-card fc-mel">
+        <span class="feat-tag">特征 3</span>
+        <h4>梅尔频谱图</h4>
+        <p class="feat-desc">和频谱图类似，但用更接近人耳听觉的刻度来表示频率。人耳对低频更敏感，梅尔谱就反映了这种"听觉偏好"。</p>
+      </div>
+      <div class="feat-card fc-hsf">
+        <span class="feat-tag">特征 4</span>
+        <h4>高层语义特征 (HSFs)</h4>
+        <p class="feat-desc">用专业工具 OpenSMILE 从底层指标中汇总出 6552 维的"体检报表"——涵盖能量、音调、节奏等多维统计信息。</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/fig2_abafnet_architecture.png" alt="ABAFnet 网络架构" loading="lazy">
+      <figcaption>ABAFnet 架构全景 — 左侧是 4 个特征子模型分别提取深层表征，右侧通过权重调整模块（WAM）做融合决策</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 核心发现 ======================== -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label">核心发现</div>
+    <h2>研究发现了什么？</h2>
+
+    <!-- 发现 1 -->
+    <h3 style="color:#0f2b46;margin-top:2rem;">发现一："合起来听"比"只听一种"更准</h3>
+    <div class="prose">
+      <p>
+        在临床数据集 CNRAC 上，融合模型的准确率达到 <strong>81.4%</strong>，而表现最好的单特征（梅尔谱）只有 75.2%。ROC-AUC 从 0.798 提升到 <strong>0.847</strong>。
+      </p>
+      <p>
+        这意味着抑郁相关的声音线索分散在多个维度——有些反映在能量起伏中，有些藏在频率结构里。只盯一个维度，必然会"看漏"。
+      </p>
+    </div>
+
+    <div class="bar-chart" style="max-width:500px;margin:1rem auto;">
+      <p style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin:0 0 0.75rem;">各模型准确率（CNRAC 数据集）</p>
+      <div class="bar-row"><span class="bar-label">融合模型</span><div class="bar-track"><div class="bar-fill bf-purple" style="width:100%">81.4%</div></div></div>
+      <div class="bar-row"><span class="bar-label">梅尔谱</span><div class="bar-track"><div class="bar-fill bf-pink" style="width:92%">75.2%</div></div></div>
+      <div class="bar-row"><span class="bar-label">频谱图</span><div class="bar-track"><div class="bar-fill bf-pink" style="width:90%">73.6%</div></div></div>
+      <div class="bar-row"><span class="bar-label">上包络</span><div class="bar-track"><div class="bar-fill bf-pink" style="width:86%">70.1%</div></div></div>
+      <div class="bar-row"><span class="bar-label">HSFs</span><div class="bar-track"><div class="bar-fill bf-pink" style="width:83%">68.0%</div></div></div>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/fig3_confusion_roc.png" alt="混淆矩阵与 ROC 曲线" loading="lazy">
+      <figcaption>混淆矩阵与 ROC 曲线 — 融合模型（最右）曲线更靠近左上角，表示在不同判断阈值下都保持更好的平衡</figcaption>
+    </figure>
+
+    <!-- 发现 2 -->
+    <h3 style="color:#0f2b46;margin-top:3rem;">发现二：不仅能判断"有没有"，还能区分"轻重"</h3>
+    <div class="prose">
+      <p>
+        研究还测试了模型在抑郁严重度分级上的表现（正常 vs 轻度/中度/重度的两两对比）。其中：
+      </p>
+      <ul style="font-size:0.95rem;color:#334155;line-height:1.8;padding-left:1.5rem;">
+        <li><strong>正常 vs 中度</strong>：AUC 达到 <strong>0.946</strong></li>
+        <li><strong>正常 vs 重度</strong>：AUC 达到 <strong>0.940</strong></li>
+        <li><strong>中度 vs 重度</strong>：AUC 达到 <strong>0.902</strong></li>
+      </ul>
+      <p>
+        这说明模型不只能做"有/无"的二分类，对严重度差异也有一定区分能力。不过需要注意：轻度样本量较少（仅 13 例），结论需谨慎。
+      </p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/chart_table6_auc.png" alt="不同严重度分类的 AUC" loading="lazy">
+      <figcaption>不同严重度分类任务的 AUC — 正常 vs 中度/重度的区分最为突出</figcaption>
+    </figure>
+
+    <!-- 发现 3 -->
+    <h3 style="color:#0f2b46;margin-top:3rem;">发现三：梅尔谱相关特征最关键，但每种都不可或缺</h3>
+    <div class="prose">
+      <p>
+        消融实验（逐个去掉某类特征看性能变化）显示：<strong>去掉梅尔谱时准确率下降最严重</strong>（从 81.4% 降到 60.9%），说明它是信息量最大的单一特征。
+      </p>
+      <p>
+        但值得注意的是：<strong>去掉任何一种特征都会导致性能下降</strong>，说明 4 种特征各自提供了不可替代的信息，真正的优势来自"互补"。
+      </p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/fig4_ablation_heatmap.png" alt="消融实验热力图" loading="lazy">
+      <figcaption>消融实验热力图 — 每列是去掉某类特征后的指标变化，颜色越深代表影响越大</figcaption>
+    </figure>
+
+    <div class="analogy">
+      <div class="analogy-icon">&#129529;</div>
+      <div class="analogy-text">
+        <strong>类比体检：</strong>就像一份全面体检不能只测血压或只验血——每个指标都在看身体的不同方面。单独一项可能遗漏问题，但<strong>综合在一起就能更全面地评估健康状况</strong>。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== Takeaway ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <h3>一句话带走</h3>
+      <p>多种声音线索"联合会诊"，比单一线索更能稳定地检测抑郁。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 意义与局限 ======================== -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label">意义与局限</div>
+    <h2>这个发现意味着什么？</h2>
+
+    <div class="two-col">
+      <div class="col-box col-green">
+        <h4 style="color:#059669!important;">这项研究做到了</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>验证了多特征融合在抑郁语音检测中的有效性</li>
+          <li>提出了基于注意力的权重调整机制（WAM），自动给不同特征分配"信任度"</li>
+          <li>在临床数据和大规模筛查数据上都做了测试</li>
+          <li>对比了多种深度学习方法，ABAFnet 整体最优</li>
+        </ul>
+      </div>
+      <div class="col-box col-amber">
+        <h4 style="color:#d97706!important;">需要注意的限制</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li><strong>受控环境</strong>：录音在安静环境下完成，真实场景效果未知</li>
+          <li><strong>固定朗读</strong>：受试者读的是指定文本，不是自由对话</li>
+          <li><strong>年龄差异</strong>：抑郁组和对照组年龄分布不同，可能引入混淆</li>
+          <li><strong>样本量有限</strong>：轻度抑郁仅 13 例，分级结论需谨慎</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-top:1.5rem;">
+      <p>
+        简单说：这项研究证明了"用声音辅助检测抑郁"的技术路线是可行的，而且<strong>多特征融合是提升准确性的关键</strong>。但距离"拿起手机就能自测"还有很远的路——需要在更多环境、更多人群中反复验证，并妥善处理隐私和误判风险。
+      </p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/chart_table9_acc_f1.png" alt="与其他模型的对比" loading="lazy">
+      <figcaption>ABAFnet 与其他深度学习模型的性能对比 — 在准确率和 F1 指标上均表现最优</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================== 更多图表 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">深入探索</div>
+    <h2>更多研究图表</h2>
+    <div class="vis-grid">
+      <div class="vis-card">
+        <img src="visuals/chart_table5_acc_auc.png" alt="单特征 vs 融合的准确率和 AUC 对比" loading="lazy">
+        <div class="vis-card-body">
+          <p>单特征 vs 融合模型的准确率和 AUC 对比</p>
+        </div>
+      </div>
+      <div class="vis-card">
+        <img src="visuals/chart_table7_ablation_delta.png" alt="消融实验性能变化量" loading="lazy">
+        <div class="vis-card-body">
+          <p>消融实验 — 去掉每类特征后性能下降幅度</p>
+        </div>
+      </div>
+      <div class="vis-card">
+        <img src="visuals/chart_table8_category_counts.png" alt="显著差异特征分布" loading="lazy">
+        <div class="vis-card-body">
+          <p>32 个显著差异特征中，MFCC 和梅尔谱占比 87.5%</p>
+        </div>
+      </div>
+      <div class="vis-card">
+        <img src="visuals/chart_csnrac_thresholds.png" alt="CS-NRAC 不同阈值验证" loading="lazy">
+        <div class="vis-card-body">
+          <p>大规模筛查数据在不同阈值下的表现</p>
+        </div>
+      </div>
+      <div class="vis-card">
+        <img src="visuals/fig6_pr_curves.png" alt="PR 曲线" loading="lazy">
+        <div class="vis-card-body">
+          <p>PR 曲线 — 在类别不均衡场景下的评估</p>
+        </div>
+      </div>
+      <div class="vis-card">
+        <img src="visuals/fig5_runtime.png" alt="运行时间对比" loading="lazy">
+        <div class="vis-card-body">
+          <p>各模型训练/推理时间对比 — 融合的代价是更长的训练时间</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section class="sec bg-surface" id="faq">
+  <div class="sec-inner">
+    <div class="sec-label">常见问题</div>
+    <h2>你可能会问……</h2>
+
+    <div class="faq-list">
+      <details>
+        <summary>这能替代医生诊断抑郁吗？</summary>
+        <p>不能。这是一项技术验证研究，测试的是 AI 在特定条件下的分类能力。它不等于临床诊断，也不构成医疗建议。如果你正在经历心理困扰，请咨询专业医生。</p>
+      </details>
+      <details>
+        <summary>我能用手机录一段话自测吗？</summary>
+        <p>目前不行。研究使用的是安静环境下的标准化朗读录音（44.1kHz 专业设备），论文没有测试手机录音或嘈杂环境的效果。日常环境的噪声、设备差异等都可能影响结果。</p>
+      </details>
+      <details>
+        <summary>为什么要让受试者读固定文本？</summary>
+        <p>固定文本可以消除"说话内容不同"带来的干扰，让模型更专注于分析<strong>说话方式</strong>（语调、节奏、能量等）而不是<strong>说话内容</strong>。就像体检时要求空腹——为了控制无关变量。</p>
+      </details>
+      <details>
+        <summary>准确率 81.4% 意味着什么？</summary>
+        <p>这是指模型在 5 折交叉验证中平均正确分类的比例。<strong>不是</strong>说"你有 81.4% 的概率是抑郁"。它描述的是模型整体的区分能力，不能直接用于个人的概率判断。</p>
+      </details>
+      <details>
+        <summary>4 种特征中哪种最重要？</summary>
+        <p>消融实验显示梅尔频谱影响最大——去掉它后准确率降幅最大。但每种特征都有贡献：去掉任何一种性能都会下降，说明它们是互补而非冗余的。</p>
+      </details>
+      <details>
+        <summary>受试者年龄差异会影响结果吗？</summary>
+        <p>可能会。CNRAC 数据集中，抑郁组平均年龄 15 岁，对照组平均年龄 27 岁，差异显著。声音特征本身会随年龄变化，论文未报告校正分析，这是需要注意的混淆因素。</p>
+      </details>
+      <details>
+        <summary>论文的代码和数据能获取吗？</summary>
+        <p>论文提供了代码仓库地址。原始数据需要联系通讯作者申请获取。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 术语 ======================== -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">术语速查</div>
+    <h2>几个关键概念，用大白话说</h2>
+
+    <div class="gloss-grid">
+      <div class="gloss-card">
+        <h4>VAD（语音活动检测）</h4>
+        <p class="gloss-en">Voice Activity Detection</p>
+        <p>自动找出录音里"真正在说话"的部分，去掉静音和噪声。就像把视频里的废话剪掉，只留有价值的片段。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>梅尔频谱</h4>
+        <p class="gloss-en">Mel-Spectrogram</p>
+        <p>用更接近人耳听觉习惯的刻度来表示声音的频率分布。人耳对低频更敏感——梅尔谱就反映了这种"偏好"。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>MFCC</h4>
+        <p class="gloss-en">Mel-Frequency Cepstral Coefficients</p>
+        <p>从梅尔谱进一步提取的紧凑特征，常被称为"声音指纹"。在本研究的显著差异特征中占比最高（43.75%）。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>CNN</h4>
+        <p class="gloss-en">Convolutional Neural Network</p>
+        <p>擅长从"图像型"输入中提取局部纹理和模式。就像用放大镜扫描频谱图，寻找有规律的特征。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>LSTM</h4>
+        <p class="gloss-en">Long Short-Term Memory</p>
+        <p>能记住前面的信息来理解后面的内容。就像读文章时记住上一段的要点来理解下一段。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>注意力机制</h4>
+        <p class="gloss-en">Attention Mechanism</p>
+        <p>让模型自动"聚焦"到更关键的信息上。就像在一堆文件里用荧光笔标出重点段落。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>晚期融合</h4>
+        <p class="gloss-en">Late Fusion</p>
+        <p>先让每个子模型独立给出判断，最后再把判断结果加权合并。相对于在早期就混合特征的"早期融合"方案。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>ROC-AUC</h4>
+        <p class="gloss-en">Area Under ROC Curve</p>
+        <p>衡量分类器在不同判断阈值下的整体表现。数值越接近 1，说明模型区分能力越强。0.847 是比较好的成绩。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== Footer ======================== -->
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Reading progress
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>

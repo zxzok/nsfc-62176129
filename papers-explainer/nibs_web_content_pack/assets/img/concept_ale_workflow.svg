@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">ALE坐标元分析流程</title>
+  <desc id="desc">从多研究提取峰值坐标，统一到MNI空间，按样本量模糊成热区，随机效应叠加得到收敛区域，并用阈值筛选。</desc>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="40" y="60" font-family="Arial" font-size="26" fill="#111">ALE怎么把多篇fMRI结果“叠成一张图”</text>
+
+  <g font-family="Arial" font-size="16" fill="#111" stroke="#222" stroke-width="1.5">
+    <rect x="60" y="110" width="260" height="70" rx="10" fill="#f2f4f7"/>
+    <text x="80" y="150">1. 提取每项研究的峰值坐标</text>
+
+    <rect x="340" y="110" width="240" height="70" rx="10" fill="#f2f4f7"/>
+    <text x="360" y="150">2. 坐标统一到MNI空间</text>
+
+    <rect x="600" y="110" width="240" height="70" rx="10" fill="#f2f4f7"/>
+    <text x="620" y="150">3. 按样本量模糊成“热斑”</text>
+
+    <rect x="200" y="220" width="500" height="80" rx="10" fill="#e8eefc"/>
+    <text x="220" y="255">4. 随机效应叠加：得到ALE收敛图</text>
+    <text x="220" y="280" font-size="14" fill="#333">（增加与降低分别做）</text>
+
+    <rect x="200" y="330" width="500" height="90" rx="10" fill="#eaf7ef"/>
+    <text x="220" y="365">5. 阈值筛选：P&lt;0.001 且 簇&gt;150 mm³</text>
+    <text x="220" y="395" font-size="14" fill="#333">输出：最一致的上调/下调脑区（表2、图4）</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M320,145 L340,145"/>
+    <path d="M580,145 L600,145"/>
+    <path d="M720,180 L720,220"/>
+    <path d="M450,180 L450,220"/>
+    <path d="M450,300 L450,330"/>
+  </g>
+
+  <text x="40" y="480" font-family="Arial" font-size="14" fill="#333">方法来源：论文Statistical Analysis（第3页）；阈值同摘要（第1页）。</text>
+</svg>

@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>无创"脑刺激"真的能缓解抑郁吗？——一项系统综述与元分析</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #f8f9fc !important; }
+
+    /* Hero */
+    .hero-custom {
+      background: linear-gradient(155deg, #0c0a1d 0%, #1e1b4b 30%, #3730a3 60%, #6366f1 100%) !important;
+      padding:7rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: '';
+      position: absolute;
+      top: -35%;
+      right: -10%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1{
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important;
+      max-width: 22ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.8) !important;
+      font-size: 1.08rem !important;
+      line-height: 1.7 !important;
+      max-width: 54ch !important;
+      margin: 0 !important;
+    ;margin-left:auto;margin-right:auto}
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Sections */
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    .sec-label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: #4f46e5; margin-bottom: 0.4rem;
+    }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important;
+      color: #0f2b46 !important;
+      line-height: 1.3 !important;
+      margin: 0 0 1rem !important;
+      border: none !important; padding: 0 !important;
+    }
+    .sec h2::after { display: none !important; }
+
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    /* Callout */
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(79,70,229,0.06), rgba(99,102,241,0.03));
+      border-left: 4px solid #4f46e5;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem;
+      margin: 2rem 0;
+      font-size: 1.05rem; line-height: 1.75; color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+
+    .callout-warn {
+      background: rgba(251,191,36,0.06);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem; margin: 1.5rem 0;
+      font-size: 0.92rem; color: #78350f;
+    }
+
+    /* Fig inline */
+    .fig-inline {
+      background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 14px; padding: 1rem; margin: 2rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    /* KPI strip */
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin: 2.5rem 0;
+    }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center; padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #1e1b4b, #3730a3);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(55,48,163,0.2);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #a5b4fc; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    /* Analogy */
+    .analogy {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      border: 1px solid #e0e7ff;
+      border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0; width: 44px; height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4f46e5, #818cf8);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    /* Step flow */
+    .steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin: 2.5rem 0; position: relative;
+    }
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none !important; }
+    }
+    .step { text-align: center; padding: 0 0.75rem; position: relative; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(145deg, #1e1b4b, #4f46e5);
+      color: #c7d2fe; font-size: 1.2rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 12px rgba(79,70,229,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow { position: absolute; right: -10px; top: 26px; color: #4f46e5; font-size: 1.3rem; z-index: 2; }
+
+    /* Finding cards */
+    .find-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 2rem 0;
+    }
+    .find-card {
+      border-radius: 14px; padding: 1.25rem;
+      border: 1px solid; transition: all 0.25s ease; cursor: default;
+    }
+    .find-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .find-card .desc { font-size: 0.85rem; line-height: 1.6; margin: 0; color: #475569; }
+    .find-card .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+
+    .fc-a { background: rgba(79,70,229,0.04); border-color: rgba(79,70,229,0.15); }
+    .fc-a h4, .fc-a .tag { color: #4f46e5; }
+    .fc-b { background: rgba(16,185,129,0.04); border-color: rgba(16,185,129,0.15); }
+    .fc-b h4, .fc-b .tag { color: #059669; }
+    .fc-c { background: rgba(236,72,153,0.04); border-color: rgba(236,72,153,0.15); }
+    .fc-c h4, .fc-c .tag { color: #db2777; }
+
+    /* Bar chart */
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 120px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-indigo { background: linear-gradient(90deg, #4f46e5, #818cf8); }
+    .bf-green { background: linear-gradient(90deg, #059669, #34d399); }
+    .bf-amber { background: linear-gradient(90deg, #d97706, #fbbf24); }
+    .bf-pink { background: linear-gradient(90deg, #db2777, #f472b6); }
+
+    /* Two-col */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* Up/Down network table */
+    .net-table {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 2rem 0;
+    }
+    @media (max-width: 600px) { .net-table { grid-template-columns: 1fr; } }
+    .net-card {
+      border-radius: 14px; padding: 1.5rem; text-align: center;
+    }
+    .net-up { background: linear-gradient(145deg, #ecfdf5, #d1fae5); border: 2px solid #a7f3d0; }
+    .net-up h4 { color: #059669; margin: 0 0 0.75rem; font-size: 1rem; }
+    .net-down { background: linear-gradient(145deg, #fef2f2, #fecaca); border: 2px solid #fca5a5; }
+    .net-down h4 { color: #dc2626; margin: 0 0 0.75rem; font-size: 1rem; }
+    .net-card ul { text-align: left; margin: 0; padding-left: 1.25rem; font-size: 0.88rem; color: #334155; line-height: 1.7; }
+
+    /* Takeaway */
+    .takeaway-banner {
+      background: linear-gradient(135deg, #1e1b4b, #3730a3);
+      border-radius: 18px; padding: 2.5rem 2rem;
+      text-align: center; margin: 2rem 0;
+      box-shadow: 0 8px 32px rgba(55,48,163,0.15);
+    }
+    .takeaway-banner .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .takeaway-banner p { color: #e0e7ff; font-size: 1.15rem; line-height: 1.7; margin: 0; }
+    .takeaway-banner strong { color: #a5b4fc; }
+
+    /* FAQ */
+    .faq details {
+      border: 1px solid #e2e8f0; border-radius: 12px;
+      margin-bottom: 0.75rem; background: #fff;
+      transition: box-shadow 0.25s ease;
+    }
+    .faq details[open] { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary {
+      padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem;
+      color: #0f2b46; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before {
+      content: '+'; width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, #4f46e5, #818cf8);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; transition: transform 0.25s ease;
+    }
+    .faq details[open] summary::before { content: '−'; transform: rotate(180deg); }
+    .faq .faq-body { padding: 0 1.25rem 1.25rem 3.5rem; font-size: 0.92rem; line-height: 1.7; color: #475569; }
+
+    /* Glossary */
+    .gloss-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+    .gloss-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+    .gloss-card dt { font-weight: 700; font-size: 0.92rem; color: #4f46e5; margin-bottom: 0.3rem; }
+    .gloss-card dd { font-size: 0.85rem; color: #475569; line-height: 1.55; margin: 0; }
+
+    .site-footer a { color: #6366f1 !important; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(99,102,241,0.25);color:#c7d2fe;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>无创"脑刺激"真的能缓解抑郁吗？</h1>
+    <p class="lead">一项系统综述与元分析汇总14项fMRI研究（584人），发现前额叶无创脑刺激确实与抑郁症状改善和大脑网络再平衡相关——但疗效因人、因方案而异。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">系统综述 / 元分析</span>
+      <span class="hero-chip">NIBS × fMRI</span>
+      <span class="hero-chip">14项研究 584人</span>
+      <span class="hero-chip">效应量 d = 1.82</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1093/psyrad/kkae025" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Psychoradiology, 2024, 4, kkae025</a></p>
+  </div>
+</section>
+
+<!-- ============ KPI STRIP ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">14</span>
+        <span class="small">纳入研究数</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">584</span>
+        <span class="small">总样本量</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">1.82</span>
+        <span class="small">合并效应量 (Cohen's d)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">49%</span>
+        <span class="small">调节因素解释方差</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 30秒读懂 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">速览</div>
+      <h2>30秒读懂这篇论文</h2>
+    </div>
+    <div class="callout-highlight reveal">
+      抑郁很常见且药物疗效并不理想，能否用无创方式"调一调大脑回路"？研究者系统检索至2020年11月，纳入14项以前额叶为靶点的NIBS-fMRI研究，做了<strong>ALE坐标元分析</strong>与<strong>症状效应量合并</strong>。结果显示症状总体改善很大，同时在奖励/情绪通路与三大核心网络节点出现一致的上调与下调；疗效差异与性别、难治性、共病、疗程和定位方式等因素相关。
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/concept_nibs.svg" alt="NIBS概念示意">
+      <figcaption>无创脑刺激（NIBS）概念示意</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 为什么做 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>抑郁患病率可达 <strong>15%–18%</strong>，传统药物治疗"效果并不理想"、机制也未完全明确。无创脑刺激（NIBS）通过磁刺激（TMS）或电刺激（tES/tDCS）从头皮外影响大脑，无需手术植入、安全顾虑较少。</p>
+      <p>然而，已有fMRI研究对干预后脑活动变化的结论<strong>并不一致</strong>，哪些临床或方案因素会让疗效更好也不清楚。作者因此将"症状是否改善"与"脑影像是否出现一致变化"放在同一框架里检验。</p>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🔌</div>
+      <div class="analogy-text">
+        <strong>生活类比：</strong>把大脑回路想象成一栋楼的电路系统。药物像是给整栋楼投放化学物质改变电流，而 NIBS 像是从外面"隔墙"给特定房间调节开关——精准、无创，但需要知道哪个开关该调。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig2_rob.png" alt="偏倚风险评估">
+      <figcaption>纳入研究的偏倚风险评估</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>怎么做的：把不同研究的"脑地图"叠到一起</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>文献检索</h4>
+        <p>PRISMA流程，三大数据库检索至2020年11月，938→14项</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>ALE 坐标叠加</h4>
+        <p>统一MNI空间，分开分析激活上调与下调区域</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>效应量合并</h4>
+        <p>11项研究计算Cohen's d，随机效应模型合并</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>调节因素分析</h4>
+        <p>分组比较 + 多变量元回归，找出疗效差异来源</p>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🗺️</div>
+      <div class="analogy-text">
+        <strong>类比理解ALE：</strong>把每篇fMRI论文想成一张"城市热力图"，告诉你治疗后哪些路段更拥挤（上调）、哪些更空（下调）。但不同城市、不同测量方式会让地图看起来不一样。ALE做的事就是把所有城市的热力图叠在同一张底图上，找出"大家都热"的区域。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig1_prisma.png" alt="PRISMA流程图">
+      <figcaption>PRISMA 文献筛选流程：从938条记录到最终14项研究</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/table1_studies.png" alt="纳入研究列表">
+      <figcaption>Table 1 — 纳入研究的基本特征</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现1 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 1</div>
+      <h2>症状平均改善很大，但研究之间差异也很大</h2>
+    </div>
+    <div class="prose reveal">
+      <p>合并11项研究后，抑郁症状从治疗前到治疗后<strong>显著下降</strong>，合并效应量为 <strong>d = 1.82</strong>（95% CI 1.23–2.40）。但异质性很高（<strong>I² = 87%</strong>），意味着不同研究的改善幅度差别很大。</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">合并效应量（Cohen's d）</div>
+      <div class="bar-row">
+        <span class="bar-label">合并 d</span>
+        <div class="bar-track"><div class="bar-fill bf-indigo" style="width:91%;">1.82</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">95%CI 下限</span>
+        <div class="bar-track"><div class="bar-fill bf-green" style="width:61.5%;">1.23</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">95%CI 上限</span>
+        <div class="bar-track"><div class="bar-fill bf-pink" style="width:100%;">2.40</div></div>
+      </div>
+    </div>
+
+    <div class="callout-warn reveal">
+      <strong>注意：</strong>漏斗图不对称且Egger检验显著（t=2.57, P=0.03），提示可能存在发表偏倚——"平均效应"可能被高估。
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig5_forest.png" alt="森林图">
+        <figcaption>森林图 — 各研究效应量与合并值</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig3_funnel.png" alt="漏斗图">
+        <figcaption>漏斗图 — 存在不对称，提示发表偏倚</figcaption>
+      </figure>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig7_mid_forest.png" alt="中间效应森林图">
+      <figcaption>详细森林图 — 各研究的效应量分布</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现2 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 2</div>
+      <h2>大脑出现一致的上调与下调，落在核心网络节点</h2>
+    </div>
+    <div class="prose reveal">
+      <p>ALE分析发现，治疗后大脑出现<strong>可重复的</strong>激活变化模式，主要涉及三大核心网络：</p>
+    </div>
+
+    <div class="net-table reveal">
+      <div class="net-card net-up">
+        <h4>⬆ 治疗后上调</h4>
+        <ul>
+          <li><strong>左侧壳核/纹状体</strong>（奖励通路）</li>
+          <li><strong>眶额皮层</strong>（情绪评估）</li>
+          <li><strong>背侧前扣带</strong>（SN节点）</li>
+          <li><strong>岛叶</strong>（SN节点）</li>
+          <li><strong>左dlPFC</strong>（CEN节点）</li>
+        </ul>
+      </div>
+      <div class="net-card net-down">
+        <h4>⬇ 治疗后下调</h4>
+        <ul>
+          <li><strong>右侧纹状体相关区</strong></li>
+          <li><strong>右背侧后扣带皮层</strong>（DMN节点）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🧠</div>
+      <div class="analogy-text">
+        <strong>三网络再平衡：</strong>大脑有三个核心网络——显著性网络（SN，"交通指挥中心"）、中央执行网络（CEN，"工作台"）、默认模式网络（DMN，"内心独白"）。抑郁时DMN过度活跃（反复自我纠结），SN和CEN不够活跃。NIBS治疗后的模式正好是：SN/CEN节点上调 + DMN节点下调——纠正失衡。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig4_brain_clusters.png" alt="ALE脑区集群">
+      <figcaption>ALE分析结果 — 治疗后激活变化的收敛脑区集群</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/concept_networks.svg" alt="网络概念图">
+      <figcaption>三大核心网络示意 — SN、CEN、DMN的功能分工</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/table2_clusters.png" alt="ALE集群表格">
+      <figcaption>Table 2 — ALE显著集群坐标与体积</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现3 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 3</div>
+      <h2>疗效差异与"人群特征 + 治疗细节"相关</h2>
+    </div>
+    <div class="prose reveal">
+      <p>为什么不同研究的效果差别那么大？作者用分组分析和元回归找到了线索：</p>
+    </div>
+
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">调节因素</span>
+        <h4>性别比例</h4>
+        <p class="desc">女性比例更高与更负向的治疗反应相关（元回归显著）</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">调节因素</span>
+        <h4>难治性抑郁 (TRD)</h4>
+        <p class="desc">TRD患者总体效应反而更好（可能反映选择偏倚或既往治疗史）</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">调节因素</span>
+        <h4>共病与疗程</h4>
+        <p class="desc">有共病者效果更差；更长疗程趋向更好效果</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">调节因素</span>
+        <h4>定位方法</h4>
+        <p class="desc">F3 Beam定位法在比较中表现最好；不同定位精度可能影响效果</p>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      多变量元回归模型中，这些因素的联合检验 <strong>Q = 42.32 (P &lt; 0.01)</strong>，解释了 <strong>49% 的研究间方差</strong>——近一半的"为什么不同"可以用"人群不同 + 方案不同"来解释。
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/table3_moderators.png" alt="调节因素表格">
+        <figcaption>Table 3 — 调节因素分组分析</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig6_scatter.png" alt="元回归散点图">
+        <figcaption>元回归散点图 — 各因素与效应量关系</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 局限 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">局限</div>
+      <h2>需要注意的局限</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-c">
+        <span class="tag">局限 1</span>
+        <h4>研究数量少</h4>
+        <p class="desc">仅14项fMRI研究，难以比较不同刺激技术（TMS vs tES）或不同靶点子区</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">局限 2</span>
+        <h4>异质性与偏倚</h4>
+        <p class="desc">I²=87%异质性显著，漏斗图不对称提示发表偏倚，效应可能被高估</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">局限 3</span>
+        <h4>指标与方法差异</h4>
+        <p class="desc">各研究使用不同fMRI指标和ROI报告方式，可能引入额外偏倚</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">⚡</div>
+      <p><strong>无创刺激前额叶可能有效，但更需要"挑人 + 挑参数 + 挑定位"</strong>——哪种人、用什么参数、刺激哪里，都会影响效果。个体化才是关键。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>这是不是说无创脑刺激一定能治好抑郁？</summary>
+        <div class="faq-body">不是。合并效应量虽大（d=1.82），但研究间异质性也很高（I²=87%），且存在发表偏倚信号，不能理解为人人都必然获益或获益相同。</div>
+      </details>
+      <details>
+        <summary>能自己在家用NIBS设备吗？</summary>
+        <div class="faq-body">论文未提供任何家庭自用的安全有效结论，也未给出公众可自行操作的剂量处方。作者反而强调需要更多高质量多中心RCT与个体化方案。</div>
+      </details>
+      <details>
+        <summary>为什么纹状体可能是候选生物标志物？</summary>
+        <div class="faq-body">ALE结果在纹状体相关区域出现上调和下调的收敛变化（左壳核上调、右纹状体下调），论文据此提出纹状体可能用于未来预测或评估疗效——但这仍属候选假设，需要前瞻性验证。</div>
+      </details>
+      <details>
+        <summary>"三网络再平衡"是论文的直接发现吗？</summary>
+        <div class="faq-body">ALE分析直接发现的是特定脑区的激活变化。"三网络再平衡"（SN/CEN上调、DMN下调）是论文讨论中对这些变化的解释框架，不是直接证明的因果机制。</div>
+      </details>
+      <details>
+        <summary>F3 Beam定位法是什么？</summary>
+        <div class="faq-body">F3 Beam是一种基于头皮测量的TMS定位方法，用简单的头部坐标计算来近似个体化的dlPFC位置。相比"5cm法则"等更粗略的方法，它可能更精确地对准目标脑区。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>NIBS</dt>
+        <dd>无创脑刺激（Non-Invasive Brain Stimulation），包括TMS和tES两大类</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>TMS / rTMS</dt>
+        <dd>（重复）经颅磁刺激，通过磁脉冲调节脑区活动</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>tES / tDCS</dt>
+        <dd>经颅电刺激/经颅直流电刺激，通过微弱电流调节大脑</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>ALE</dt>
+        <dd>激活似然估计（Activation Likelihood Estimation），将多项fMRI研究的显著坐标叠加，找出一致变化区域</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>Cohen's d</dt>
+        <dd>标准化均差，衡量两组之间差异大小的效应量指标（0.2小/0.5中/0.8大）</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>I²</dt>
+        <dd>异质性统计量，表示各研究效应量变异中不能归因于随机误差的比例</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>SN / CEN / DMN</dt>
+        <dd>显著性网络/中央执行网络/默认模式网络，大脑三大核心静息态网络</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>dlPFC</dt>
+        <dd>背外侧前额叶皮层，FDA批准的rTMS抑郁治疗靶点所在区域</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

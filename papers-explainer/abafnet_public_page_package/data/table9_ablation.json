@@ -1,0 +1,35 @@
+[
+  {
+    "Ablated_Module":"LSTM",
+    "ACC_mean":0.65,
+    "ACC_sd":0.2,
+    "Precision_mean":0.41,
+    "Precision_sd":0.27,
+    "Recall_mean":0.6,
+    "Recall_sd":0.33,
+    "F1_mean":0.48,
+    "F1_sd":0.29
+  },
+  {
+    "Ablated_Module":"Attention",
+    "ACC_mean":0.79,
+    "ACC_sd":0.04,
+    "Precision_mean":0.64,
+    "Precision_sd":0.03,
+    "Recall_mean":0.83,
+    "Recall_sd":0.13,
+    "F1_mean":0.72,
+    "F1_sd":0.04
+  },
+  {
+    "Ablated_Module":"DWA",
+    "ACC_mean":0.79,
+    "ACC_sd":0.07,
+    "Precision_mean":0.41,
+    "Precision_sd":0.23,
+    "Recall_mean":0.77,
+    "Recall_sd":0.39,
+    "F1_mean":0.52,
+    "F1_sd":0.27
+  }
+]

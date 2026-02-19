@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>心理问卷不只看答案：把"作答时间"也变成数据</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background:#f0fdfa!important; }
+
+    .hero-custom {
+      background:linear-gradient(155deg,#042f2e 0%,#134e4a 30%,#0d9488 60%,#2dd4bf 100%)!important;
+      padding:7rem 24px 4rem!important; text-align:center; position:relative!important; overflow:hidden!important;
+    }
+    .hero-custom::before { content:''; position:absolute; top:-35%; right:-10%; width:550px; height:550px; background:radial-gradient(circle,rgba(45,212,191,0.15) 0%,transparent 65%); pointer-events:none; }
+    .hero-custom::after { content:''; position:absolute; bottom:-20%; left:10%; width:400px; height:400px; background:radial-gradient(circle,rgba(94,234,212,0.08) 0%,transparent 55%); pointer-events:none; }
+    .hero-inner { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+    .hero-custom h1{ font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(2rem,5vw,3.2rem)!important; font-weight:900!important; color:#fff!important; line-height:1.25!important; letter-spacing:-0.03em!important; margin:0 auto 1.25rem!important; max-width:24ch!important; }
+    .hero-custom .lead { color:rgba(255,255,255,0.82)!important; font-size:1.08rem!important; line-height:1.7!important; max-width:54ch!important; margin:0!important; ;margin-left:auto;margin-right:auto}
+    .hero-meta { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.75rem; }
+    .hero-chip { display:inline-flex; align-items:center; gap:5px; padding:5px 14px; border-radius:20px; font-size:0.78rem; font-weight:600; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.07); backdrop-filter:blur(6px); }
+
+    .sec { padding:4rem 24px!important; }
+    .sec-alt { background:#fff!important; }
+    .sec-inner { max-width:760px; margin:0 auto; }
+    .sec-wide { max-width:960px; margin:0 auto; }
+
+    .sec-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#0d9488; margin-bottom:0.4rem; }
+    .sec h2 { font-family:'Noto Sans SC',sans-serif!important; font-size:clamp(1.5rem,3.5vw,2rem)!important; font-weight:800!important; color:#0f2b46!important; line-height:1.3!important; margin:0 0 1rem!important; border:none!important; padding:0!important; }
+    .sec h2::after { display:none!important; }
+
+    .prose { font-size:1.05rem; line-height:1.9; color:#334155; }
+    .prose p { margin:0 0 1.25rem; }
+    .prose strong { color:#0f2b46; }
+
+    .callout-highlight { background:linear-gradient(135deg,rgba(13,148,136,0.06),rgba(45,212,191,0.03)); border-left:4px solid #0d9488; border-radius:0 14px 14px 0; padding:1.25rem 1.75rem; margin:2rem 0; font-size:1.05rem; line-height:1.75; color:#1e293b; }
+    .callout-highlight strong { color:#0f2b46; }
+    .callout-warn { background:rgba(251,191,36,0.06); border-left:4px solid #f59e0b; border-radius:0 14px 14px 0; padding:1.1rem 1.5rem; margin:1.5rem 0; font-size:0.92rem; color:#78350f; }
+
+    .fig-inline { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; margin:2rem 0; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+    .fig-inline img { max-width:100%; height:auto; display:block; margin:0 auto; border-radius:8px; }
+    .fig-inline figcaption { text-align:center; color:#64748b; font-size:0.82rem; margin-top:0.75rem; font-style:italic; }
+
+    .kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:2.5rem 0; }
+    @media(max-width:600px){ .kpi-strip{grid-template-columns:repeat(2,1fr);} }
+    .kpi-item { text-align:center; padding:1.5rem 1rem; background:linear-gradient(145deg,#042f2e,#134e4a); border-radius:14px; box-shadow:0 4px 16px rgba(19,78,74,0.2); }
+    .kpi-item .big { display:block; font-size:2.2rem; font-weight:900; color:#5eead4; line-height:1.1; font-family:'Inter',sans-serif; }
+    .kpi-item .small { display:block; font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:6px; }
+
+    .analogy { display:flex; gap:1rem; align-items:flex-start; background:linear-gradient(135deg,#f0fdfa,#ccfbf1); border:1px solid #99f6e4; border-radius:14px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+    .analogy-icon { flex-shrink:0; width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,#0d9488,#2dd4bf); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+    .analogy-text { font-size:0.95rem; color:#334155; line-height:1.7; }
+    .analogy-text strong { color:#0f2b46; }
+
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:2.5rem 0; position:relative; }
+    @media(max-width:700px){ .steps{grid-template-columns:1fr;gap:1.25rem;} .step-arrow{display:none!important;} }
+    .step { text-align:center; padding:0 0.75rem; position:relative; }
+    .step-num { width:52px; height:52px; border-radius:50%; background:linear-gradient(145deg,#042f2e,#0d9488); color:#99f6e4; font-size:1.2rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; box-shadow:0 4px 12px rgba(13,148,136,0.2); }
+    .step h4 { font-size:0.92rem; color:#0f2b46; margin:0 0 0.3rem; font-weight:700; }
+    .step p { font-size:0.82rem; color:#64748b; margin:0; line-height:1.55; }
+    .step-arrow { position:absolute; right:-10px; top:26px; color:#0d9488; font-size:1.3rem; z-index:2; }
+
+    .find-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+    .find-card { border-radius:14px; padding:1.25rem; border:1px solid; transition:all 0.25s ease; cursor:default; }
+    .find-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin:0 0 0.3rem; font-size:0.95rem; }
+    .find-card .desc { font-size:0.85rem; line-height:1.6; margin:0; color:#475569; }
+    .find-card .tag { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; display:block; }
+    .fc-a { background:rgba(13,148,136,0.04); border-color:rgba(13,148,136,0.15); }
+    .fc-a h4,.fc-a .tag { color:#0d9488; }
+    .fc-b { background:rgba(79,70,229,0.04); border-color:rgba(79,70,229,0.15); }
+    .fc-b h4,.fc-b .tag { color:#4f46e5; }
+    .fc-c { background:rgba(234,88,12,0.04); border-color:rgba(234,88,12,0.15); }
+    .fc-c h4,.fc-c .tag { color:#ea580c; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
+    @media(max-width:640px){ .two-col{grid-template-columns:1fr;} }
+
+    .takeaway-banner { background:linear-gradient(135deg,#042f2e,#134e4a); border-radius:18px; padding:2.5rem 2rem; text-align:center; margin:2rem 0; box-shadow:0 8px 32px rgba(19,78,74,0.15); }
+    .takeaway-banner .icon { font-size:2.5rem; margin-bottom:0.75rem; }
+    .takeaway-banner p { color:#ccfbf1; font-size:1.15rem; line-height:1.7; margin:0; }
+    .takeaway-banner strong { color:#5eead4; }
+
+    .faq details { border:1px solid #e2e8f0; border-radius:12px; margin-bottom:0.75rem; background:#fff; transition:box-shadow 0.25s ease; }
+    .faq details[open] { box-shadow:0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary { padding:1rem 1.25rem; font-weight:700; font-size:0.95rem; color:#0f2b46; cursor:pointer; list-style:none; display:flex; align-items:center; gap:0.75rem; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::before { content:'+'; width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,#0d9488,#2dd4bf); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; transition:transform 0.25s ease; }
+    .faq details[open] summary::before { content:'−'; transform:rotate(180deg); }
+    .faq .faq-body { padding:0 1.25rem 1.25rem 3.5rem; font-size:0.92rem; line-height:1.7; color:#475569; }
+
+    .gloss-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:0.75rem; margin:1.5rem 0; }
+    .gloss-card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1rem 1.25rem; }
+    .gloss-card dt { font-weight:700; font-size:0.92rem; color:#0d9488; margin-bottom:0.3rem; }
+    .gloss-card dd { font-size:0.85rem; color:#475569; line-height:1.55; margin:0; }
+
+    .site-footer a { color:#14b8a6!important; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(45,212,191,0.25);color:#ccfbf1;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>心理问卷不只看答案：把"作答时间"也变成数据</h1>
+    <p class="lead">24,292名大学生的PHQ-9、GAD-7、ISI、PSS逐题答案与秒级作答时间——一份开放数据集让线上心理筛查更透明、更可靠。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">开放数据集</span>
+      <span class="hero-chip">作答时间分析</span>
+      <span class="hero-chip">24,292人</span>
+      <span class="hero-chip">Scientific Data 2024</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1038/s41597-024-03888-8" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Scientific Data, 2024, 11, 1046</a></p>
+  </div>
+</section>
+
+<!-- ============ KPI ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">24,292</span>
+        <span class="small">大学生样本量</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">4</span>
+        <span class="small">心理量表</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">0.075s</span>
+        <span class="small">每多一个词的额外时间</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">5 CSV</span>
+        <span class="small">开放数据文件</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 背景 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>线上筛查"快"，但也容易"失真"</h2>
+    </div>
+    <div class="prose reveal">
+      <p>大规模线上心理筛查越来越常见——能让更多人快速获得"初步线索"。但在自由环境下，部分参与者可能不认真作答。文献中"粗心作答"的比例从 <strong>1% 到 50%</strong> 不等，足以影响研究结论。</p>
+      <p>作者提出：引入<strong>作答时间（RT）</strong>——每道题从出现到点击之间的秒数——作为更客观的补充信号。</p>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">⏱️</div>
+      <div class="analogy-text">
+        <strong>类比：</strong>把一份线上量表想成一条"站点路线"，每道题是一站。你在这一站停留多久（作答时间），就像在站台上等车的时间——它不等同于你"答了什么"，但能提示你"怎么答的"。
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/cr_rt_concept.svg" alt="粗心作答与作答时间">
+      <figcaption>粗心作答（CR）与作答时间（RT）的概念关系</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>把问卷变成"带秒表的答题轨迹"</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>校园筛查</h4>
+        <p>2021年2-3月，24,367人通过网页端完成问卷</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>记录RT</h4>
+        <p>每题进入→点击的时间差，精确到0.01秒</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>质量控制</h4>
+        <p>75份缺失数据剔除，最终24,292人</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>开放发布</h4>
+        <p>5个CSV + Python代码发布在Zenodo</p>
+      </div>
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/rt_logging.svg" alt="RT记录示意">
+        <figcaption>作答时间的记录方式</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/four_scales.svg" alt="四个量表">
+        <figcaption>四个量表的构成</figcaption>
+      </figure>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/cleaning_flow.svg" alt="数据清洗流程">
+      <figcaption>数据采集与清洗流程</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/participants_profile.svg" alt="参与者画像">
+      <figcaption>参与者人口学画像</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现1 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 1</div>
+      <h2>大多数人在低症状区间，但仍有"长尾"高风险人群</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">PHQ-9 抑郁</span>
+        <h4>"最轻" 69.5%</h4>
+        <p class="desc">16,886人处于最低等级，但仍有相当比例处于更高水平</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">GAD-7 焦虑</span>
+        <h4>"最轻" 83.0%</h4>
+        <p class="desc">20,170人无明显焦虑症状</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">ISI 失眠</span>
+        <h4>"无临床意义" 90.9%</h4>
+        <p class="desc">22,090人无明显失眠</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">PSS 压力</span>
+        <h4>"中等压力" 61.3%</h4>
+        <p class="desc">最大比例为中等压力，仍有高/很高压力群体</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现2 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 2</div>
+      <h2>ISI与PSS的作答时间出现明显"双峰"</h2>
+    </div>
+    <div class="prose reveal">
+      <p>仅看分数，可能分不清"真的没问题"与"随便点了几下"。作答时间分布在ISI和PSS上呈明显<strong>双峰</strong>，拐点分别出现在约 <strong>12秒</strong>（ISI）和 <strong>23秒</strong>（PSS）附近——更短的一峰可能代表粗心作答。</p>
+    </div>
+
+    <div class="callout-highlight reveal">
+      作答时间提供了一个<strong>额外维度</strong>，用来提示"哪些回答可能更不可靠"——但不能把"快/慢"简单等同于"真/假"。
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig1.png" alt="Figure 1">
+      <figcaption>Fig 1 — 四个量表的总分分布与总作答时间分布</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 发现3 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 3</div>
+      <h2>题目字数越多 → 作答越慢：每多1词 ≈ 多0.075秒</h2>
+    </div>
+    <div class="prose reveal">
+      <p>GLMM模型显示 word count 系数为 <strong>0.075</strong>（SE=0.001, p&lt;0.001）。</p>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/wordcount_effect.svg" alt="字数效应">
+      <figcaption>字数-作答时间关系 — 更长的题干平均需要更多阅读时间</figcaption>
+    </figure>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/fig2.jpeg" alt="Figure 2">
+      <figcaption>Fig 2 — 逐题作答时间分布</figcaption>
+    </figure>
+
+    <div class="callout-warn reveal">
+      <strong>注意：</strong>这说明"题干更长→花更多时间阅读"，属于阅读负担层面的统计关系，不能等同于心理问题严重程度。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 数据复用 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">开放数据</div>
+      <h2>数据集结构与复用价值</h2>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/dataset_files.svg" alt="数据集文件结构">
+      <figcaption>5个CSV文件结构 — 可通过export_id联表</figcaption>
+    </figure>
+
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">用途 1</span>
+        <h4>识别无效作答</h4>
+        <p class="desc">用作答时间异常检测粗心/随机作答，提升数据质量</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">用途 2</span>
+        <h4>作答行为分型</h4>
+        <p class="desc">基于作答速度和模式将参与者分群，研究行为差异</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">用途 3</span>
+        <h4>量表优化</h4>
+        <p class="desc">基于时间成本数据改进问卷设计与线上筛查效率</p>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/reuse_pipeline.svg" alt="复用流程">
+      <figcaption>数据复用建议流程</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 局限 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">局限</div>
+      <h2>三个需要注意的局限</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-c">
+        <span class="tag">局限 1</span>
+        <h4>自评偏差</h4>
+        <p class="desc">自评问卷存在社会称许性与回忆偏差</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">局限 2</span>
+        <h4>单一学校</h4>
+        <p class="desc">样本来自新乡医学院，推广到其他人群需谨慎</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">局限 3</span>
+        <h4>RT原因复杂</h4>
+        <p class="desc">快可能是粗心，也可能是熟悉；慢可能是认真，也可能是被打断</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">📋</div>
+      <p><strong>把"作答时间"加入问卷，让线上筛查更可靠</strong>——不只看"答了什么"，也看"怎么答的"，用行为线索提升数据质量。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>作答时间很短就一定是在乱填吗？</summary>
+        <div class="faq-body">不一定。论文观察到短RT群体可能存在粗心作答，但也强调RT受多因素影响——认真但熟悉的人也可能很快。不能把"快"简单等于"假"。</div>
+      </details>
+      <details>
+        <summary>12秒/23秒的拐点可以当作通用筛查阈值吗？</summary>
+        <div class="faq-body">不建议。这些数值是该数据集中ISI/PSS分布形态的描述性观察，不同平台、人群与场景下分布可能不同。</div>
+      </details>
+      <details>
+        <summary>数据可以在哪里下载？</summary>
+        <div class="faq-body">论文说明数据（5个CSV，含原始与清洗版本）已发布在Zenodo平台，Python代码在GitHub。所有数据已匿名化处理。</div>
+      </details>
+      <details>
+        <summary>能用这份数据做个人自测吗？</summary>
+        <div class="faq-body">不能。这是群体层面的统计研究数据，不构成对个人的诊断建议。有心理困扰应寻求专业服务。</div>
+      </details>
+      <details>
+        <summary>为什么提到COVID-19？</summary>
+        <div class="faq-body">数据采集于2021年2-3月，COVID-19限制下活动限于校园内。论文认为该背景为研究疫情期间学生心理状态提供了情境。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>RT (Response Time)</dt>
+        <dd>作答时间，从题目出现到点击选项的时长，单位为秒</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>CR (Careless Responding)</dt>
+        <dd>粗心作答，指未认真阅读题目就随意作答的行为</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PHQ-9 / GAD-7</dt>
+        <dd>标准化抑郁/焦虑筛查量表</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>ISI / PSS</dt>
+        <dd>失眠严重程度指数/知觉压力量表</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>GLMM</dt>
+        <dd>广义线性混合模型，允许处理嵌套数据结构的回归方法</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>Zenodo</dt>
+        <dd>CERN运营的开放数据存储平台，用于学术数据共享</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

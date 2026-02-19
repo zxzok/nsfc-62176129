@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">两周研究时间线：基线与第2周</title>
+  <desc id="desc">从入院治疗开始的基线评估，到两周后复测。显示样本量132，分为早期响应75与未响应57；两次静息态MRI；以HAMD两周下降至少50%定义早期响应。</desc>
+  <rect x="0" y="0" width="1200" height="560" fill="#ffffff"/>
+  <text x="60" y="72" font-size="36" font-family="system-ui, -apple-system, Segoe UI, Arial">研究时间线（两周窗口）</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">样本：132名青少年重性抑郁发作；早期响应=两周HAMD下降≥50%（75人），未响应57人（证据：PDF第1页摘要；PDF第2页表1）</text>
+
+  <!-- timeline line -->
+  <line x1="120" y1="240" x2="1080" y2="240" stroke="#222" stroke-width="4"/>
+  <circle cx="220" cy="240" r="14" fill="#222"/>
+  <circle cx="980" cy="240" r="14" fill="#222"/>
+
+  <text x="170" y="205" font-size="22" font-family="system-ui, -apple-system, Segoe UI, Arial">基线（入院/开始治疗）</text>
+  <text x="900" y="205" font-size="22" font-family="system-ui, -apple-system, Segoe UI, Arial">第2周（两周后）</text>
+
+  <!-- baseline box -->
+  <rect x="140" y="280" width="360" height="200" rx="12" fill="#f5f7ff" stroke="#c7d2fe"/>
+  <text x="170" y="320" font-size="20" font-family="system-ui, -apple-system, Segoe UI, Arial">做什么？</text>
+  <text x="170" y="352" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">1) 症状量表：HAMD/HAMA/YMRS</text>
+  <text x="170" y="384" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">2) 静息态MRI（约8分钟）</text>
+  <text x="170" y="416" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">3) 计算“蚓部—全脑”功能连接</text>
+  <text x="170" y="456" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">（证据：PDF第2页2.1节；PDF第3页2.3节）</text>
+
+  <!-- week2 box -->
+  <rect x="700" y="280" width="360" height="200" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="730" y="320" font-size="20" font-family="system-ui, -apple-system, Segoe UI, Arial">两周后再做一次</text>
+  <text x="730" y="352" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">1) HAMD复评</text>
+  <text x="730" y="384" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">2) 静息态MRI复扫</text>
+  <text x="730" y="416" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">3) 比较“前后变化”</text>
+  <text x="730" y="456" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">（证据：PDF第2页2.1节；PDF第3页3.2节）</text>
+
+  <!-- grouping -->
+  <rect x="520" y="150" width="160" height="180" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="540" y="190" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial">分组规则</text>
+  <text x="540" y="222" font-size="16" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">响应：≥50%</text>
+  <text x="540" y="250" font-size="16" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">未响应：&lt;50%</text>
+  <text x="540" y="284" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">HAMD下降比例</text>
+  <text x="540" y="312" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">（证据：PDF第1页摘要）</text>
+
+</svg>

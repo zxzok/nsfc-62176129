@@ -1,0 +1,28 @@
+[
+  {
+    "Set":"Validation",
+    "ACC_mean":0.83,
+    "ACC_sd":0.03,
+    "Precision_mean":0.68,
+    "Precision_sd":0.08,
+    "Recall_mean":0.82,
+    "Recall_sd":0.11,
+    "F1_mean":0.73,
+    "F1_sd":0.02,
+    "AUC_mean":0.87,
+    "AUC_sd":0.03
+  },
+  {
+    "Set":"Test",
+    "ACC_mean":0.81,
+    "ACC_sd":0.04,
+    "Precision_mean":0.65,
+    "Precision_sd":0.09,
+    "Recall_mean":0.8,
+    "Recall_sd":0.13,
+    "F1_mean":0.7,
+    "F1_sd":0.03,
+    "AUC_mean":0.85,
+    "AUC_sd":0.04
+  }
+]

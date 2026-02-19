@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">枕叶到海马体的“间接路径”示意图</title>
+  <desc id="desc">简化大脑侧面轮廓，标出枕叶皮层位置与海马体位置，用箭头表示二者存在解剖连接，并提示rTMS主要作用皮层。</desc>
+  <rect width="1200" height="675" fill="white"/>
+  <!-- Brain outline -->
+  <path d="M240,380 C240,250 340,150 500,140 C600,80 740,100 840,180 C960,210 1020,300 1010,390 C1010,510 880,560 800,560 C700,610 500,600 400,560 C300,540 240,480 240,380 Z"
+        fill="none" stroke="#333" stroke-width="6"/>
+  <!-- Occipital cortex region (back of brain) -->
+  <path d="M900,260 C960,290 990,340 980,400 C970,460 930,500 880,510 C860,430 860,350 900,260 Z"
+        fill="#cfe8ff" stroke="#1e5aa8" stroke-width="4"/>
+  <!-- Hippocampus -->
+  <path d="M540,380 C580,340 640,340 680,370 C720,400 720,440 680,470 C640,500 580,500 540,460 C510,430 510,400 540,380 Z"
+        fill="#ffcccb" stroke="#b22222" stroke-width="4"/>
+  <!-- Arrow showing connection -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+  <line x1="870" y1="360" x2="700" y2="420" stroke="#333" stroke-width="4" marker-end="url(#arrow)"/>
+  <!-- Labels -->
+  <text x="860" y="240" font-size="28" font-family="Arial, sans-serif" fill="#111">枕叶皮层（rTMS靶点）</text>
+  <text x="720" y="450" font-size="26" font-family="Arial, sans-serif" fill="#111">海马体</text>
+  <text x="60" y="620" font-size="20" font-family="Arial, sans-serif" fill="#555">注：论文依据“枕叶与海马体存在解剖连接”选择靶点；本图仅示意连接逻辑。</text>
+</svg>

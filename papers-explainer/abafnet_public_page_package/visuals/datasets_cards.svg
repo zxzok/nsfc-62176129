@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="340" viewBox="0 0 800 340">
+<rect width="100%" height="100%" fill="white"/>
+<text x="20" y="40" font-size="20" font-family="Arial" font-weight="bold">Datasets at a glance (Table 3–4)</text>
+<rect x="20" y="70" width="360" height="240" fill="#ffffff" stroke="#333" rx="14"/>
+<text x="40" y="105" font-size="16" font-family="Arial" font-weight="bold">CNRAC (clinical)</text>
+<text x="40" y="135" font-size="13" font-family="Arial">155 depression / 216 controls</text>
+<text x="40" y="163" font-size="13" font-family="Arial">HAMD-17 clinician-rated severity</text>
+<text x="40" y="191" font-size="13" font-family="Arial">Reading text: 'Let Life be Beautiful like summer flowers'</text>
+<text x="40" y="219" font-size="13" font-family="Arial">WAV, 44.1kHz, ~2–4 min</text>
+<text x="40" y="247" font-size="13" font-family="Arial">Quiet, private environment</text>
+<rect x="420" y="70" width="360" height="240" fill="#ffffff" stroke="#333" rx="14"/>
+<text x="440" y="105" font-size="16" font-family="Arial" font-weight="bold">CS-NRAC (screening)</text>
+<text x="440" y="135" font-size="13" font-family="Arial">1561 college freshmen (mostly healthy)</text>
+<text x="440" y="163" font-size="13" font-family="Arial">PHQ-9 self-report (not a diagnosis)</text>
+<text x="440" y="191" font-size="13" font-family="Arial">Reading text: 'The North Wind and the Sun'</text>
+<text x="440" y="219" font-size="13" font-family="Arial">Recorded M4A 8kHz → WAV 16kHz, ~60s</text>
+<text x="440" y="247" font-size="13" font-family="Arial">Screened out noisy/distorted audio</text>
+</svg>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>只用一段朗读，能多快"量出"抑郁程度？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../unified-style.css">
+<style>
+:root{--accent:#a21caf;--accent-light:#d946ef;--accent-bg:rgba(162,28,175,.08);--accent-bg2:rgba(162,28,175,.14);--grad-start:#1a0a1e;--grad-end:#86198f}
+
+.hero-custom{background:linear-gradient(135deg,var(--grad-start) 0%,var(--grad-end) 100%);padding:7rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+.hero-custom::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,70,239,.18),transparent 70%);top:-180px;right:-120px}
+.hero-custom .sec-inner{max-width:820px;position:relative;z-index:1}
+.hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.hero-chip{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);padding:4px 14px;border-radius:999px;font-size:.82rem;color:rgba(255,255,255,.88)}
+.hero-custom h1{font-size:clamp(1.65rem,4vw,2.6rem);font-weight:800;line-height:1.35;color:#fff;margin:0 auto 1rem}
+.hero-custom .subtitle{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;max-width:640px;margin-left:auto;margin-right:auto}
+
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2.5rem 0}
+.kpi-item{text-align:center;padding:1.2rem .5rem;background:var(--accent-bg);border-radius:14px;border:1px solid var(--accent-bg2)}
+.kpi-num{font-size:1.85rem;font-weight:800;color:var(--accent);line-height:1.1}
+.kpi-label{font-size:.82rem;color:#64748b;margin-top:.35rem}
+
+.analogy{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0;font-size:.97rem;line-height:1.75;color:#334155}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin:2rem 0}
+.step{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.4rem;position:relative}
+.step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-title{font-weight:700;font-size:.93rem;color:var(--accent);margin-top:.5rem;margin-bottom:.35rem}
+.step p{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.feat-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid #e2e8f0;border-top:4px solid var(--accent)}
+.feat-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin:0 0 .6rem}
+.feat-card p{font-size:.88rem;color:#475569;line-height:1.7;margin:0}
+
+.bar-chart{margin:2rem 0}
+.bar-row{display:flex;align-items:center;margin-bottom:.65rem}
+.bar-label{width:130px;font-size:.82rem;color:#334155;font-weight:500;flex-shrink:0}
+.bar-track{flex:1;height:26px;background:#f1f5f9;border-radius:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-size:.75rem;font-weight:700;color:#fff;transition:width .8s}
+.bar-val{font-size:.82rem;color:#64748b;width:60px;text-align:right;margin-left:8px}
+
+/* waveform decoration */
+.wave-deco{display:flex;align-items:flex-end;gap:3px;justify-content:center;margin:2rem 0;height:60px}
+.wave-deco span{display:block;width:4px;border-radius:2px;background:var(--accent);opacity:.5}
+
+.takeaway-banner{background:linear-gradient(135deg,#1a0a1e 0%,#701a75 100%);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:2.5rem 0;color:#fff}
+.takeaway-banner .emoji{font-size:2.2rem;margin-bottom:.8rem}
+.takeaway-banner h3{font-size:1.25rem;font-weight:800;margin:0 0 .6rem}
+.takeaway-banner p{font-size:.95rem;color:rgba(255,255,255,.78);max-width:540px;margin:0 auto;line-height:1.7}
+
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0}
+.gloss-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.2rem}
+.gloss-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+.gloss-card dd{font-size:.84rem;color:#475569;margin:0;line-height:1.6}
+
+.faq-wrap{max-width:720px;margin:2rem auto}
+.faq-wrap details{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:.75rem;overflow:hidden}
+.faq-wrap summary{padding:1rem 1.2rem;font-weight:600;font-size:.93rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#0f172a}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:700}
+.faq-wrap details[open] summary::after{content:'−'}
+.faq-wrap .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+
+/* feature scatter placeholder */
+.scatter-placeholder{background:var(--accent-bg);border-radius:14px;padding:2rem;text-align:center;margin:2rem 0}
+.scatter-placeholder p{font-size:.88rem;color:#64748b;margin:0}
+
+@media(max-width:640px){
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .bar-label{width:100px;font-size:.75rem}
+}
+
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#d946ef;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#d946ef),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#d946ef)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero-custom">
+  <div class="sec-inner">
+    <div class="hero-chip-row">
+      <span class="hero-chip">语音分析</span>
+      <span class="hero-chip">声学特征</span>
+      <span class="hero-chip">神经网络</span>
+      <span class="hero-chip">ICBT 随访</span>
+    </div>
+    <h1>只用一段朗读，能多快"量出"抑郁程度？</h1>
+    <p class="subtitle">情绪会影响说话的节奏、响度与频谱形状。这项研究让大学生朗读同一段文本，提取声学特征训练模型，用声音预测抑郁量表分数——并在网络 CBT 随访中观察到部分特征随症状改善而变化。</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.3389/fpsyt.2023.1195276" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Front. Psychiatry, 2023, 14, 1195276</a></p>
+  </div>
+</header>
+
+<!-- ═══════════════ KPI ═══════════════ -->
+<section class="sec" style="padding-top:0;margin-top:-1.5rem;position:relative;z-index:2">
+  <div class="sec-inner">
+    <div class="kpi-strip">
+      <div class="kpi-item"><div class="kpi-num">47</div><div class="kpi-label">参与者</div></div>
+      <div class="kpi-item"><div class="kpi-num">r=0.68</div><div class="kpi-label">预测-实际相关</div></div>
+      <div class="kpi-item"><div class="kpi-num">3.14</div><div class="kpi-label">MAE（分）</div></div>
+      <div class="kpi-item"><div class="kpi-num">4</div><div class="kpi-label">随访显著变化特征</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WAVEFORM DECO ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="wave-deco reveal" aria-hidden="true">
+      <span style="height:18px"></span><span style="height:28px"></span><span style="height:45px"></span><span style="height:32px"></span><span style="height:55px"></span><span style="height:38px"></span><span style="height:22px"></span><span style="height:48px"></span><span style="height:60px"></span><span style="height:35px"></span><span style="height:20px"></span><span style="height:42px"></span><span style="height:50px"></span><span style="height:25px"></span><span style="height:58px"></span><span style="height:30px"></span><span style="height:15px"></span><span style="height:40px"></span><span style="height:52px"></span><span style="height:28px"></span><span style="height:18px"></span><span style="height:45px"></span><span style="height:35px"></span><span style="height:55px"></span><span style="height:22px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:32px"></span><span style="height:20px"></span><span style="height:42px"></span>
+    </div>
+    <p class="reveal" style="font-size:.85rem;color:#94a3b8;text-align:center">声音的节奏、响度与频谱——每 10 毫秒一帧，每帧 120 个底层声学特征。</p>
+  </div>
+</section>
+
+<!-- ═══════════════ ANALOGY ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">通俗理解</div>
+    <h2 class="reveal">把朗读录音"切片做化验"</h2>
+    <div class="analogy reveal">
+      传统抑郁评估像"问诊 + 问卷"——需要当事人理解问题、愿意表达，还要完成一整套题目。这项研究换了一种思路：让你朗读一段中性文本，<strong>用手机录下来，然后把声音拆成每秒 100 帧、每帧 120 个数字特征，再用神经网络"综合打分"</strong>——相当于给声音做一次"数字化验"。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究流程</div>
+    <h2 class="reveal">五步：从录音到预测</h2>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-title">招募与筛查</div>
+        <p>47 名大学生，PHQ-9 初筛（≥5），精神科医生 HAMD-17 电话评分。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-title">统一朗读</div>
+        <p>朗读同一段中性文本，安卓手机录音，转 16 kHz wav，做端点检测与音量归一化。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-title">声学特征提取</div>
+        <p>10 ms/帧 × 120 LLDs → 10 类统计量 → 1,200 个高层特征（HSFs）。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div class="step-title">特征筛选 + ANN</div>
+        <p>偏相关选出 30 个显著特征（p &lt; 0.01），4 层 ANN + LOOCV 预测 HAMD。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">5</span>
+        <div class="step-title">ICBT 随访</div>
+        <p>18 人完成 4 周网络 CBT，比较治疗前后声学特征变化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURE FUNNEL ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">特征漏斗</div>
+    <h2 class="reveal">从 1,200 维到 30 个关键声学特征</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><span class="bar-label">底层 LLDs</span><div class="bar-track"><div class="bar-fill" style="width:10%;background:#d946ef">120/帧</div></div><div class="bar-val">120</div></div>
+      <div class="bar-row"><span class="bar-label">高层 HSFs</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent)">1,200</div></div><div class="bar-val">1,200</div></div>
+      <div class="bar-row"><span class="bar-label">筛选后</span><div class="bar-track"><div class="bar-fill" style="width:2.5%;background:#701a75">30</div></div><div class="bar-val">30</div></div>
+    </div>
+    <p class="reveal" style="font-size:.84rem;color:#64748b;text-align:center">74 COVAREP + 20 MFCC-delta + 20 MFCC-delta² + 5 formants + Peak-to-RMS 等 → 10 类统计量 → 偏相关筛选</p>
+  </div>
+</section>
+
+<!-- ═══════════════ FINDINGS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">核心发现</div>
+    <h2 class="reveal">三条证据链</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>发现 1｜声音中存在与抑郁相关的可计算信号</h3>
+        <p>1,200 个特征中筛出 30 个与 HAMD 显著相关（p &lt; 0.01），涉及 MCEP、MFCC 变化量、HMPDM/HMPDD、creak、Peak-to-RMS 等。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 2｜ANN 可预测 HAMD 分数</h3>
+        <p>预测-实际相关 r = 0.682（p = 1.3×10⁻⁷），MAE = 3.137 分，63.83% 样本误差 &lt; 4 分。但仅为样本内 LOOCV，无外部验证。</p>
+      </div>
+      <div class="feat-card">
+        <h3>发现 3｜ICBT 后 4 个特征显著变化</h3>
+        <p>18 人完成 ICBT，HAMD 从 8.79±5.43 降至 0.52±0.86。Peak2RMS_kurt、MFCC 相关特征治疗后显著降低（p = 0.006–0.043）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PREDICTION PERFORMANCE ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">模型性能</div>
+    <h2 class="reveal">预测精度一览</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><span class="bar-label">相关系数 r</span><div class="bar-track"><div class="bar-fill" style="width:68.2%;background:var(--accent)">0.682</div></div><div class="bar-val">0.682</div></div>
+      <div class="bar-row"><span class="bar-label">MAE</span><div class="bar-track"><div class="bar-fill" style="width:31.4%;background:#c026d3">3.137</div></div><div class="bar-val">3.14 分</div></div>
+      <div class="bar-row"><span class="bar-label">误差 &lt;4 分占比</span><div class="bar-track"><div class="bar-fill" style="width:63.8%;background:#d946ef">63.83%</div></div><div class="bar-val">63.83%</div></div>
+    </div>
+    <p class="reveal" style="font-size:.84rem;color:#94a3b8;text-align:center">HAMD-17 总分 0–52 分，MAE ≈ 6% 量程；但 47 人 LOOCV，无外部独立验证</p>
+  </div>
+</section>
+
+<!-- ═══════════════ ICBT CHANGE ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">治疗反应</div>
+    <h2 class="reveal">ICBT 4 周后：症状与声学特征同步变化</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><span class="bar-label">HAMD 治疗前</span><div class="bar-track"><div class="bar-fill" style="width:16.9%;background:#f0abfc">8.79</div></div><div class="bar-val">8.79</div></div>
+      <div class="bar-row"><span class="bar-label">HAMD 治疗后</span><div class="bar-track"><div class="bar-fill" style="width:1%;background:var(--accent)">0.52</div></div><div class="bar-val">0.52</div></div>
+    </div>
+    <p class="reveal" style="font-size:.88rem;color:#475569;line-height:1.7;margin-top:1rem">18 名完成 ICBT 者中，4 个声音特征（Peak2RMS_kurt、MFCC_deltas_10_intercept、MFCC_delta_deltas_4_kurt、MFCC_delta_deltas_9_kurt）治疗后显著降低。这些指标可能更适合做"疗效跟踪信号"——但仍为单组前后对比，无法推断因果。</p>
+  </div>
+</section>
+
+<!-- ═══════════════ TAKEAWAY ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="takeaway-banner reveal">
+      <div class="emoji">&#127908;</div>
+      <h3>声音能提供抑郁评估的客观线索，但仍需更大样本与对照验证</h3>
+      <p>这是一个"录音→数字化验→预测分数"的可行性展示。距离真正用于筛查或辅助诊断，还需健康对照、更大样本、自然对话场景与外部验证。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LIMITS ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">局限性</div>
+    <h2 class="reveal">需要注意什么</h2>
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <h3>无健康对照组</h3>
+        <p>47 人全部为 PHQ-9 ≥ 5 的抑郁症状人群，缺少健康对照基线。</p>
+      </div>
+      <div class="feat-card">
+        <h3>样本小且性别不均</h3>
+        <p>47 人中 42 女 5 男；纵向 18 人中 16 女 2 男——性别泛化能力有限。</p>
+      </div>
+      <div class="feat-card">
+        <h3>纵向完成率低</h3>
+        <p>47 人中仅 18 人完成 ICBT 随访；7 人拒绝，22 人未完成。</p>
+      </div>
+      <div class="feat-card">
+        <h3>仅限统一朗读</h3>
+        <p>真实自然对话场景尚未验证；作者计划加入更多语音任务与更长随访。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">常见问题</div>
+    <h2 class="reveal">FAQ</h2>
+    <div class="faq-wrap reveal">
+      <details>
+        <summary>我自己录音发给 AI 就能测抑郁吗？</summary>
+        <div class="faq-body">不能。本研究在严格控制条件下（统一文本、统一设备处理、精神科医生评分）训练模型，且仅为 47 人 LOOCV。消费级 App 环境与本研究完全不同，不能直接套用。</div>
+      </details>
+      <details>
+        <summary>为什么让所有人读同一段文字？</summary>
+        <div class="faq-body">统一朗读内容消除了"说什么"带来的差异，让模型只关注"怎么说"——即声学特征本身，提高可比性。</div>
+      </details>
+      <details>
+        <summary>MAE = 3.14 分意味着什么？</summary>
+        <div class="faq-body">HAMD-17 总分 0–52，3.14 分约占量程 6%。在该样本内表现尚可，但 47 人的泛化能力未知。HAMD 临床分级通常以 7 分为界，3 分误差可能影响分类判断。</div>
+      </details>
+      <details>
+        <summary>ICBT 后特征变化能说明声音是"因果指标"吗？</summary>
+        <div class="faq-body">不能。这是单组前后对比（无对照组），不排除自然缓解、安慰剂效应等混杂。只能说"两者同步变化"。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GLOSSARY ═══════════════ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">术语速查</div>
+    <h2 class="reveal">关键概念</h2>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card"><dt>HAMD-17</dt><dd>汉密尔顿抑郁量表 17 项版，由临床医生评定，总分 0–52，≥7 提示存在抑郁症状。</dd></dl>
+      <dl class="gloss-card"><dt>LLD（底层声学特征）</dt><dd>每帧（10 ms）计算的声学指标，如 MFCC、基频、频谱包络等。</dd></dl>
+      <dl class="gloss-card"><dt>HSF（高层统计特征）</dt><dd>将 LLD 在整段录音上的分布汇总为统计量（均值、方差、峰度等）。</dd></dl>
+      <dl class="gloss-card"><dt>LOOCV</dt><dd>留一交叉验证——每次留 1 人测试、其余训练，重复 n 次，适用于小样本。</dd></dl>
+      <dl class="gloss-card"><dt>ICBT</dt><dd>网络认知行为治疗，通过线上模块完成的 CBT，本研究为 4 周 12 模块。</dd></dl>
+      <dl class="gloss-card"><dt>COVAREP</dt><dd>一套开源语音分析工具箱，提取基频、频谱、声门脉冲等 74 个声学特征。</dd></dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISCLAIMER ═══════════════ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <p class="reveal" style="font-size:.82rem;color:#94a3b8;text-align:center;line-height:1.7;max-width:600px;margin:0 auto">
+      本页面用于科研科普与方法解读，不构成医疗建议或诊断/治疗依据。论文为小样本探索性研究，无健康对照与外部验证。任何心理健康问题请咨询专业医生。
+    </p>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

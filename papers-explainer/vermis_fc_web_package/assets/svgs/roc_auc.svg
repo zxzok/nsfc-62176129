@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">AUC=0.760：模型区分能力的一个尺度</title>
+  <desc id="desc">示意ROC坐标系，随机猜测的对角线与一条上弯曲的示意曲线。标注AUC=0.760，95%置信区间0.678到0.843，并提示曲线形状为示意，不是论文原图。</desc>
+  <rect x="0" y="0" width="1200" height="560" fill="#ffffff"/>
+  <text x="60" y="70" font-size="34" font-family="system-ui, -apple-system, Segoe UI, Arial">AUC=0.760：能“分开两组”的程度</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">模型：基线蚓部—左颞叶FC + 年龄 + 性别变量；AUC=0.760（95%CI 0.678–0.843，p&lt;0.001）（证据：PDF第4页3.4节；PDF第1页摘要）</text>
+
+  <rect x="120" y="150" width="520" height="360" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <!-- axes -->
+  <line x1="180" y1="470" x2="580" y2="470" stroke="#0f172a" stroke-width="4"/>
+  <line x1="180" y1="470" x2="180" y2="210" stroke="#0f172a" stroke-width="4"/>
+  <text x="250" y="505" font-size="16" font-family="system-ui, -apple-system, Segoe UI, Arial">假阳性率（1-特异度）</text>
+  <text x="70" y="250" font-size="16" font-family="system-ui, -apple-system, Segoe UI, Arial" transform="rotate(-90 70 250)">真阳性率（敏感度）</text>
+
+  <!-- diagonal -->
+  <line x1="180" y1="470" x2="580" y2="210" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="200" y="450" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#64748b">随机猜测</text>
+
+  <!-- curve -->
+  <path d="M180 470 C260 340, 360 300, 580 230" fill="none" stroke="#0f172a" stroke-width="5"/>
+  <text x="360" y="280" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#0f172a">示意曲线</text>
+  <text x="180" y="520" font-size="12" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#64748b">注：论文ROC曲线图位于补充材料，本页仅作概念示意（证据：PDF第4页3.4节）</text>
+
+  <!-- AUC card -->
+  <rect x="700" y="180" width="420" height="300" rx="16" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="740" y="235" font-size="22" font-family="system-ui, -apple-system, Segoe UI, Arial">读法</text>
+  <text x="740" y="270" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">AUC越接近1，区分越强；0.5≈随机。</text>
+  <text x="740" y="305" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">本研究：AUC=0.760</text>
+  <text x="740" y="340" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">95%CI：0.678–0.843</text>
+  <text x="740" y="375" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">含义：有一定区分度，但仍需外部验证。</text>
+  <text x="740" y="420" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">（验证需求见局限：PDF第6页5节）</text>
+</svg>

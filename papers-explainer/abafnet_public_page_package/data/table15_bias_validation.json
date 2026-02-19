@@ -1,0 +1,35 @@
+[
+  {
+    "Experiment":"G-C (male)",
+    "Accuracy_mean":0.55,
+    "Accuracy_sd":0.19,
+    "Precision_mean":0.58,
+    "Precision_sd":0.16,
+    "Recall_mean":0.82,
+    "Recall_sd":0.49,
+    "F1_mean":0.68,
+    "F1_sd":0.25
+  },
+  {
+    "Experiment":"G-C (female)",
+    "Accuracy_mean":0.83,
+    "Accuracy_sd":0.04,
+    "Precision_mean":0.67,
+    "Precision_sd":0.35,
+    "Recall_mean":0.52,
+    "Recall_sd":0.33,
+    "F1_mean":0.55,
+    "F1_sd":0.3
+  },
+  {
+    "Experiment":"A-C",
+    "Accuracy_mean":0.7,
+    "Accuracy_sd":0.43,
+    "Precision_mean":0.67,
+    "Precision_sd":0.03,
+    "Recall_mean":0.73,
+    "Recall_sd":0.49,
+    "F1_mean":0.7,
+    "F1_sd":0.05
+  }
+]

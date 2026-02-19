@@ -1,0 +1,73 @@
+{
+  "steps": [
+    {
+      "step_id": "student_web_screening",
+      "day": 1,
+      "actor": "student",
+      "device": "学校电脑教室：SEARCH网站（web page）",
+      "what_is_collected": [
+        "基本信息：年龄、性别、族群等",
+        "家庭结构与学习表现",
+        "情绪与睡眠（如DASS-21、SDQ、失眠相关量表等；具体量表清单见补充表S1但本文未逐项展开）",
+        "家庭环境与创伤暴露（如FES、CTQ-28等）",
+        "风险行为（自伤/自杀、欺凌、体力活动、屏幕使用、吸烟饮酒等）",
+        "每题作答反应时（页面出现到提交的时间差）"
+      ],
+      "trigger_rule": null,
+      "time_limit_seconds": null,
+      "source_ref": "Procedure, p.3; Measures, p.3; Response time intervals, p.4–5; Figure 2, p.4"
+    },
+    {
+      "step_id": "student_face_voice_recording",
+      "day": 1,
+      "actor": "student",
+      "device": "安静教室：Android平板SEARCH app（tablet program）",
+      "what_is_collected": [
+        "三道开放式问题的作答录音（每题60秒上限）",
+        "统一文本朗读录音（60秒上限，文本为《The North Wind and the Sun》）",
+        "面部与声学信息用于后续特征提取（本文未报告具体算法与特征分布）"
+      ],
+      "trigger_rule": null,
+      "time_limit_seconds": 60,
+      "source_ref": "Facial and acoustic recording, p.4; Figure 2, p.4"
+    },
+    {
+      "step_id": "caregiver_mobile_questionnaire",
+      "day": 2,
+      "actor": "caregiver",
+      "device": "手机：微信小程序/移动端app（mobile online applet）",
+      "what_is_collected": [
+        "从照护者视角评估学生情绪与适应情况",
+        "家庭环境相关信息（如SDQ、FES等量表框架）"
+      ],
+      "trigger_rule": null,
+      "time_limit_seconds": null,
+      "source_ref": "Procedure, p.3; Caregiver questionnaires, p.3; Figure 2, p.4"
+    },
+    {
+      "step_id": "teacher_sdq_triggered",
+      "day": 2,
+      "actor": "teacher",
+      "device": "手机：微信小程序/移动端app（mobile online applet）",
+      "what_is_collected": [
+        "教师版SDQ（对达到阈值学生的课堂/行为观察补充）"
+      ],
+      "trigger_rule": "仅对DASS-21超过阈值的学生：抑郁>9 或 焦虑>7 或 压力>14（分量表分数）",
+      "time_limit_seconds": null,
+      "source_ref": "Procedure, p.3 (DASS-21 thresholds); Teacher questionnaires, p.3; Figure 2, p.4"
+    },
+    {
+      "step_id": "admin_monitoring",
+      "day": 2,
+      "actor": "administrator",
+      "device": "数字平台后台监测",
+      "what_is_collected": [
+        "各类问卷与录音数据的收集进度与状态（仅监测，不代表对个体的诊断/干预）"
+      ],
+      "trigger_rule": null,
+      "time_limit_seconds": null,
+      "source_ref": "Procedure, p.3; Figure 2, p.4"
+    }
+  ],
+  "missing_value_policy": "If details such as feedback/referral are not described, label them as 'Not reported in the paper'."
+}

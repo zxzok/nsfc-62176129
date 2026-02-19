@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">功能连接是什么：看“同步”，不看“强弱”</title>
+  <desc id="desc">左侧展示两条几乎同相的波形，表示功能连接较强；右侧展示不同步波形，表示功能连接较弱。下方文字说明这是静息态fMRI里用信号自发起伏的同步程度来定义的。</desc>
+  <rect x="0" y="0" width="1200" height="560" fill="#ffffff"/>
+  <text x="60" y="72" font-size="34" font-family="system-ui, -apple-system, Segoe UI, Arial">功能连接（FC）= 两个脑区“合不合拍”</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">在静息态fMRI里，FC常用来描述脑区信号自发起伏的同步程度（证据：PDF第2页引言）</text>
+
+  <rect x="80" y="160" width="500" height="300" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="120" y="210" font-size="20" font-family="system-ui, -apple-system, Segoe UI, Arial">同步：FC更强</text>
+  <path d="M120 290 C180 230, 240 350, 300 290 S420 350, 520 290" fill="none" stroke="#0f172a" stroke-width="5"/>
+  <path d="M120 330 C180 270, 240 390, 300 330 S420 390, 520 330" fill="none" stroke="#64748b" stroke-width="5"/>
+
+  <rect x="620" y="160" width="500" height="300" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="660" y="210" font-size="20" font-family="system-ui, -apple-system, Segoe UI, Arial">不同步：FC更弱</text>
+  <path d="M660 290 C720 230, 780 350, 840 290 S960 350, 1060 290" fill="none" stroke="#0f172a" stroke-width="5"/>
+  <path d="M660 330 C740 390, 800 250, 880 330 S1000 250, 1120 330" fill="none" stroke="#64748b" stroke-width="5"/>
+
+  <text x="60" y="510" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#222">重要提醒：FC是统计关联指标，表示“同时起伏”而不是“因果指挥”（证据：方法为相关分析，PDF第3页2.6节）</text>
+</svg>

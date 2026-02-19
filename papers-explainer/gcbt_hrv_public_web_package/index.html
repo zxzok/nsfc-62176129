@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>心跳的"微波动"，能提示谁更受益于团体CBT？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #fdf2f8 !important; }
+
+    .hero-custom {
+      background: linear-gradient(155deg, #1c0a1a 0%, #831843 30%, #be185d 60%, #f472b6 100%) !important;
+      padding:7rem 24px 4rem !important;
+      text-align: left !important; position: relative !important; overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: ''; position: absolute; top: -35%; right: -10%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(244,114,182,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: ''; position: absolute; bottom: -20%; left: 10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(236,72,153,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1{
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important; color: #fff !important;
+      line-height: 1.25 !important; letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important; max-width: 22ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.82) !important;
+      font-size: 1.08rem !important; line-height: 1.7 !important;
+      max-width: 54ch !important; margin: 0 !important;
+    ;margin-left:auto;margin-right:auto}
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    .sec-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #be185d; margin-bottom: 0.4rem; }
+    .sec h2 { font-family: 'Noto Sans SC', sans-serif !important; font-size: clamp(1.5rem, 3.5vw, 2rem) !important; font-weight: 800 !important; color: #0f2b46 !important; line-height: 1.3 !important; margin: 0 0 1rem !important; border: none !important; padding: 0 !important; }
+    .sec h2::after { display: none !important; }
+
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(190,24,93,0.06), rgba(244,114,182,0.03));
+      border-left: 4px solid #be185d;
+      border-radius: 0 14px 14px 0; padding: 1.25rem 1.75rem; margin: 2rem 0;
+      font-size: 1.05rem; line-height: 1.75; color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+    .callout-warn { background: rgba(251,191,36,0.06); border-left: 4px solid #f59e0b; border-radius: 0 14px 14px 0; padding: 1.1rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; color: #78350f; }
+
+    .fig-inline { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1rem; margin: 2rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+
+    .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2.5rem 0; }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item { text-align: center; padding: 1.5rem 1rem; background: linear-gradient(145deg, #1c0a1a, #831843); border-radius: 14px; box-shadow: 0 4px 16px rgba(131,24,67,0.2); }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #f9a8d4; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    .analogy { display: flex; gap: 1rem; align-items: flex-start; background: linear-gradient(135deg, #fdf2f8, #fce7f3); border: 1px solid #fbcfe8; border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .analogy-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #be185d, #f472b6); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 2.5rem 0; position: relative; }
+    @media (max-width: 700px) { .steps { grid-template-columns: 1fr; gap: 1.25rem; } .step-arrow { display: none !important; } }
+    .step { text-align: center; padding: 0 0.75rem; position: relative; }
+    .step-num { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(145deg, #1c0a1a, #be185d); color: #fce7f3; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; box-shadow: 0 4px 12px rgba(190,24,93,0.2); }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow { position: absolute; right: -10px; top: 26px; color: #be185d; font-size: 1.3rem; z-index: 2; }
+
+    .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .find-card { border-radius: 14px; padding: 1.25rem; border: 1px solid; transition: all 0.25s ease; cursor: default; }
+    .find-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .find-card .desc { font-size: 0.85rem; line-height: 1.6; margin: 0; color: #475569; }
+    .find-card .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+    .fc-a { background: rgba(190,24,93,0.04); border-color: rgba(190,24,93,0.15); }
+    .fc-a h4, .fc-a .tag { color: #be185d; }
+    .fc-b { background: rgba(16,185,129,0.04); border-color: rgba(16,185,129,0.15); }
+    .fc-b h4, .fc-b .tag { color: #059669; }
+    .fc-c { background: rgba(79,70,229,0.04); border-color: rgba(79,70,229,0.15); }
+    .fc-c h4, .fc-c .tag { color: #4f46e5; }
+
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 80px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-rose { background: linear-gradient(90deg, #be185d, #f472b6); }
+    .bf-green { background: linear-gradient(90deg, #059669, #34d399); }
+    .bf-gray { background: linear-gradient(90deg, #6b7280, #9ca3af); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    .takeaway-banner { background: linear-gradient(135deg, #1c0a1a, #831843); border-radius: 18px; padding: 2.5rem 2rem; text-align: center; margin: 2rem 0; box-shadow: 0 8px 32px rgba(131,24,67,0.15); }
+    .takeaway-banner .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .takeaway-banner p { color: #fce7f3; font-size: 1.15rem; line-height: 1.7; margin: 0; }
+    .takeaway-banner strong { color: #f9a8d4; }
+
+    .faq details { border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 0.75rem; background: #fff; transition: box-shadow 0.25s ease; }
+    .faq details[open] { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary { padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem; color: #0f2b46; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.75rem; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before { content: '+'; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #be185d, #f472b6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: transform 0.25s ease; }
+    .faq details[open] summary::before { content: '−'; transform: rotate(180deg); }
+    .faq .faq-body { padding: 0 1.25rem 1.25rem 3.5rem; font-size: 0.92rem; line-height: 1.7; color: #475569; }
+
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+    .gloss-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem 1.25rem; }
+    .gloss-card dt { font-weight: 700; font-size: 0.92rem; color: #be185d; margin-bottom: 0.3rem; }
+    .gloss-card dd { font-size: 0.85rem; color: #475569; line-height: 1.55; margin: 0; }
+
+    .site-footer a { color: #ec4899 !important; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(244,114,182,0.25);color:#fce7f3;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>心跳的"微波动"，能提示谁更受益于团体CBT？</h1>
+    <p class="lead">同样参加团体认知行为治疗，有人改善明显、有人变化不大。本研究用华为手环在日常生活中记录心率变异性（HRV），发现基线HRV越高的人，往往改善幅度越大。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">随机对照试验</span>
+      <span class="hero-chip">可穿戴 HRV</span>
+      <span class="hero-chip">团体CBT</span>
+      <span class="hero-chip">大学生心理健康</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1186/s12888-024-05638-x" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">BMC Psychiatry, 2024, 24, 187</a></p>
+  </div>
+</section>
+
+<!-- ============ KPI ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">33</span>
+        <span class="small">入组大学生</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">4周</span>
+        <span class="small">GCBT干预时长</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">R²=.95</span>
+        <span class="small">HRV预测焦虑改善</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">R²=.94</span>
+        <span class="small">HRV预测抑郁改善</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 背景 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>大学阶段是心理健康风险上升的时期——青年人群中抑郁/焦虑的患病率可达 <strong>23%–39%</strong>。不少学生处于"症状已影响生活，但还不够满足诊断标准"的亚阈值状态。</p>
+      <p>团体CBT（GCBT）可同时帮助更多人，但<strong>不是所有人都同样受益</strong>。问题是：能否找到更客观的指标，帮助提前识别"谁更可能从GCBT获益"？</p>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">💓</div>
+      <div class="analogy-text">
+        <strong>什么是HRV？</strong>相邻两次心跳间隔的自然波动，反映自主神经系统的"调节灵活度"。像走路步距的自然变化——越能随环境调整越灵活。HRV高通常意味着身体的"应变弹性"更好。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>手环当"生理监测仪"的随机试验</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>筛选入组</h4>
+        <p>16-25岁大学生，PHQ-9或GAD-7 > 5</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>随机分组</h4>
+        <p>GCBT组（立即干预）vs 等待名单组</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>4周干预 + 监测</h4>
+        <p>4次手册化课程 + 华为Band 6全天佩戴</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>统计分析</h4>
+        <p>重复测量ANOVA + Spearman相关 + 多元回归</p>
+      </div>
+    </div>
+
+    <div class="prose reveal">
+      <p><strong>GCBT课程：</strong>4次×90分钟（2次线下+2次线上），按模块推进：理解CBT模型 → 识别自动化负性思维 → 学习纠正技巧 → 巩固应用。</p>
+      <p><strong>HRV采集：</strong>华为Band 6用PPG以100Hz采样。为统一"比的是同一种状态"，选择数据最完整的 <strong>13:00–14:00</strong> 作为分析窗口，用第1周该时段平均HRV作为基线。</p>
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig2_participant_flow.png" alt="参与者流程图">
+        <figcaption>参与者筛选与随机分组流程</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig1_hourly_samples.png" alt="每小时数据量">
+        <figcaption>每小时可用HRV片段数 — 13:00-14:00最完整</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现1 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 1</div>
+      <h2>4周GCBT让量表分数出现更明显下降</h2>
+    </div>
+    <div class="prose reveal">
+      <p>GCBT组的 PHQ-9、GAD-7、PSS-14 均值在4周后下降，等待组变化较小。</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">PHQ-9 抑郁评分变化</div>
+      <div class="bar-row">
+        <span class="bar-label">GCBT 前</span>
+        <div class="bar-track"><div class="bar-fill bf-rose" style="width:57.5%;">5.75</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">GCBT 后</span>
+        <div class="bar-track"><div class="bar-fill bf-green" style="width:37.5%;">3.75 ↓</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">等待 前</span>
+        <div class="bar-track"><div class="bar-fill bf-gray" style="width:41.2%;">4.12</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">等待 后</span>
+        <div class="bar-track"><div class="bar-fill bf-gray" style="width:44.7%;">4.47</div></div>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      组 × 时间交互 <strong>P = 0.03</strong>：GCBT组在组水平上与更好的结局相关，但仍存在个体差异。
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;" class="reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/symptom_change_phq.png" alt="PHQ变化">
+        <figcaption>PHQ-9 变化趋势</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/symptom_change_gad.png" alt="GAD变化">
+        <figcaption>GAD-7 变化趋势</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/symptom_change_pss.png" alt="PSS变化">
+        <figcaption>PSS-14 变化趋势</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现2 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 2</div>
+      <h2>基线HRV与抑郁/压力相关，但与焦虑量表不显著</h2>
+    </div>
+    <div class="prose reveal">
+      <p>相关分析显示：副交感神经指标（HFnu）与 PHQ-9、PSS-14 呈<strong>负相关</strong>；交感/副交感比值（LF/HF）与它们呈<strong>正相关</strong>。但 HRV 与 GAD-7 之间<strong>未发现统计学显著相关</strong>。</p>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/corr_heatmap_table5.png" alt="相关性热力图">
+      <figcaption>HRV指标与症状量表的Spearman相关矩阵</figcaption>
+    </figure>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🔗</div>
+      <div class="analogy-text">
+        <strong>简单来说：</strong>在这个样本中，心跳的灵活度更像是与"抑郁和压力"同步的客观信号，而与焦虑量表的关系没有那么清晰。这提示不同维度的症状可能与自主神经功能有不同的关联模式。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现3 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 3</div>
+      <h2>基线HRV越高 → 改善越多</h2>
+    </div>
+    <div class="prose reveal">
+      <p>这是本研究的核心发现：把"改善幅度"与"基线HRV"对应起来后，在控制性别、年龄、BMI与活动水平后，HRV仍能<strong>显著预测改善</strong>：</p>
+    </div>
+
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">预测模型</span>
+        <h4>抑郁改善预测</h4>
+        <p class="desc">F = 7.308, P = 0.02, R² = 0.936</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">预测模型</span>
+        <h4>焦虑改善预测</h4>
+        <p class="desc">F = 13.849, P = 0.002, R² = 0.954</p>
+      </div>
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig3_depression_prediction.png" alt="抑郁预测">
+        <figcaption>Fig 3 — HRV预测抑郁改善</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/fig4_anxiety_prediction.png" alt="焦虑预测">
+        <figcaption>Fig 4 — HRV预测焦虑改善</figcaption>
+      </figure>
+    </div>
+
+    <div class="two-col reveal">
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/baseline_predictors_depression.png" alt="基线预测因子-抑郁">
+        <figcaption>基线HRV与抑郁改善的关系</figcaption>
+      </figure>
+      <figure class="fig-inline" style="margin:0;">
+        <img src="visuals/baseline_predictors_anxiety.png" alt="基线预测因子-焦虑">
+        <figcaption>基线HRV与焦虑改善的关系</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout-warn reveal">
+      <strong>注意：</strong>R²很高（&gt;0.93）但样本仅33人，过拟合风险不可忽视。需要更大样本验证这些关系的稳健性。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 价值与局限 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">价值与局限</div>
+      <h2>能做什么 vs 还不能做什么</h2>
+    </div>
+    <div class="two-col reveal">
+      <div style="background:#fdf2f8;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#be185d;font-size:0.92rem;margin-bottom:0.5rem;">✅ 证据支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>可穿戴HRV提供低成本、非侵入的监测方式</li>
+          <li>基线HRV与CBT改善幅度存在显著统计关联</li>
+          <li>短程GCBT在组水平上与症状减轻相关</li>
+        </ul>
+      </div>
+      <div style="background:#fef3c7;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#92400e;font-size:0.92rem;margin-bottom:0.5rem;">⚠️ 目前不支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>个人通过手环HRV自行判断是否需要治疗</li>
+          <li>小样本（33人），过拟合风险大</li>
+          <li>探索性研究，不能替代专业评估</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="fig-inline reveal">
+      <img src="visuals/page07_tables_3_4_5.png" alt="统计表格">
+      <figcaption>Tables 3-5 — 详细统计结果</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">⌚</div>
+      <p><strong>手环HRV或可提示团体CBT疗效</strong>——基线心跳灵活度越高的人，改善往往越大。但33人的小样本只是开端，还需要更大规模的验证。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>团体CBT对所有人都有效吗？</summary>
+        <div class="faq-body">论文显示GCBT组整体量表下降更明显，但个体差异大——这正是研究想要探索"谁更受益"的原因。</div>
+      </details>
+      <details>
+        <summary>戴手环就能判断自己要不要做心理治疗吗？</summary>
+        <div class="faq-body">不能。这是探索性试点研究，小样本且存在依从性偏倚。HRV只能作为研究层面的候选线索，不能替代专业评估。</div>
+      </details>
+      <details>
+        <summary>为什么只用下午1-2点的HRV？</summary>
+        <div class="faq-body">HRV受昼夜节律影响，不同时段数值差异大。研究统计每小时可用的5分钟有效片段数量，选择数据完整性最高的13:00-14:00，确保"大家比的是同一种状态"。</div>
+      </details>
+      <details>
+        <summary>HRV越高就代表越不抑郁吗？</summary>
+        <div class="faq-body">论文在基线发现HRV与PHQ/PSS相关，但"相关不等于因果"。低HRV也可能由其他因素（体质、药物、运动习惯等）造成，不能简单等同于抑郁。</div>
+      </details>
+      <details>
+        <summary>R²这么高（>0.93），结果可靠吗？</summary>
+        <div class="faq-body">R²高但样本仅33人，变量较多的情况下过拟合风险很大。论文自身也承认这是局限之一，需要更大样本和交叉验证。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>HRV</dt>
+        <dd>心率变异性（Heart Rate Variability），相邻心跳间隔的波动程度，反映自主神经调节灵活度</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>GCBT</dt>
+        <dd>团体认知行为治疗（Group CBT），以小组形式开展的结构化心理治疗</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>HFnu / LF/HF</dt>
+        <dd>高频归一化功率/低高频比，分别反映副交感活动和交感/副交感平衡</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>RMSSD</dt>
+        <dd>相邻RR间隔差值的均方根，短期HRV指标，主要反映副交感活动</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PHQ-9 / GAD-7</dt>
+        <dd>标准化抑郁/焦虑自评量表，分数越高症状越重</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PPG</dt>
+        <dd>光电容积描记法，手环通过LED光学测量皮肤下血容量变化来推算心率</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">三大核心网络的“调度系统”示意</title>
+  <desc id="desc">DMN负责内向反思，CEN负责外向任务，SN负责切换。研究讨论认为NIBS后SN与CEN更活跃，DMN节点被下调。</desc>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="40" y="60" font-family="Arial" font-size="26" fill="#111">把三大网络想成“注意力调度系统”</text>
+
+  <g font-family="Arial" fill="#111" stroke="#222" stroke-width="2">
+    <rect x="80" y="110" width="240" height="150" rx="14" fill="#fff4e6"/>
+    <text x="110" y="150" font-size="22">DMN</text>
+    <text x="110" y="180" font-size="14" fill="#333">内部反思 / 走神</text>
+    <text x="110" y="205" font-size="14" fill="#333">与反刍相关</text>
+    <text x="110" y="240" font-size="16" fill="#b00020">干预后：↓</text>
+
+    <rect x="580" y="110" width="240" height="150" rx="14" fill="#e8f5ff"/>
+    <text x="610" y="150" font-size="22">CEN</text>
+    <text x="610" y="180" font-size="14" fill="#333">外部任务 / 执行控制</text>
+    <text x="610" y="205" font-size="14" fill="#333">注意与决策</text>
+    <text x="610" y="240" font-size="16" fill="#0b6b2d">干预后：↑</text>
+
+    <rect x="330" y="300" width="240" height="150" rx="14" fill="#eef5ee"/>
+    <text x="360" y="340" font-size="22">SN</text>
+    <text x="360" y="370" font-size="14" fill="#333">发现“重要信号”</text>
+    <text x="360" y="395" font-size="14" fill="#333">负责DMN↔CEN切换</text>
+    <text x="360" y="430" font-size="16" fill="#0b6b2d">干预后：↑</text>
+  </g>
+
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M320,185 C420,140 480,140 580,185" marker-end="url(#arrow)"/>
+    <path d="M580,200 C480,245 420,245 320,200" marker-end="url(#arrow)"/>
+    <path d="M450,260 L450,300" marker-end="url(#arrow)"/>
+  </g>
+
+  <text x="40" y="490" font-family="Arial" font-size="14" fill="#333">解释来源：论文讨论“SN/CEN/DMN为核心网络并可能被NIBS纠正失衡”（第7页）。</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

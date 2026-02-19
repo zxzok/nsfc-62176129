@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI走进精神科：能让诊断更客观、治疗更精准吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #fafbfd !important; }
+    .hero-custom {
+      background: linear-gradient(160deg, #0a1628 0%, #1a2744 30%, #2d4a7a 60%, #0ea5e9 100%) !important;
+      padding:7rem 24px 4rem !important; text-align: left !important;
+      position: relative !important; overflow: hidden !important;
+    }
+    .hero-custom::before { content: ''; position: absolute; top: -40%; right: -15%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 65%); pointer-events: none; }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1{ font-family: 'Noto Sans SC', sans-serif !important; font-size: clamp(2rem, 5vw, 3.2rem) !important; font-weight: 900 !important; color: #fff !important; line-height: 1.25 !important; margin: 0 0 1.25rem !important; max-width: 22ch !important; }
+    .hero-custom .lead { color: rgba(255,255,255,0.78) !important; font-size: 1.1rem !important; line-height: 1.7 !important; max-width: 52ch !important; margin: 0 !important; ;margin-left:auto;margin-right:auto}
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip { display: inline-flex; align-items: center; gap: 5px; padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+    .sec-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #0ea5e9; margin-bottom: 0.4rem; }
+    .sec h2 { font-family: 'Noto Sans SC', sans-serif !important; font-size: clamp(1.5rem, 3.5vw, 2rem) !important; font-weight: 800 !important; color: #0f2b46 !important; line-height: 1.3 !important; margin: 0 0 1rem !important; border: none !important; padding: 0 !important; }
+    .sec h2::after { display: none !important; }
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+    .callout-highlight { background: linear-gradient(135deg, rgba(14,165,233,0.06), rgba(56,189,248,0.03)); border-left: 4px solid #0ea5e9; border-radius: 0 14px 14px 0; padding: 1.25rem 1.75rem; margin: 2rem 0; font-size: 1.05rem; line-height: 1.75; color: #1e293b; }
+    .callout-highlight strong { color: #0f2b46; }
+    .callout-warn { background: rgba(251,191,36,0.06); border-left: 4px solid #f59e0b; border-radius: 0 14px 14px 0; padding: 1.1rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; color: #78350f; }
+    .fig-inline { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1rem; margin: 2rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .fig-inline img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+    .fig-inline figcaption { text-align: center; color: #64748b; font-size: 0.82rem; margin-top: 0.75rem; font-style: italic; }
+    .analogy { display: flex; gap: 1rem; align-items: flex-start; background: linear-gradient(135deg, #f0f9ff, #f8fafc); border: 1px solid #e0f2fe; border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .analogy-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #0ea5e9, #38bdf8); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+    @media (max-width: 700px) { .finding-grid { grid-template-columns: 1fr; } }
+    .finding-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; transition: all 0.25s; }
+    .finding-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .finding-card .finding-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .finding-card h4 { font-size: 0.95rem; color: #0f2b46; margin: 0 0 0.5rem; font-weight: 700; }
+    .finding-card p { font-size: 0.85rem; color: #64748b; margin: 0; line-height: 1.6; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .col-box { border-radius: 14px; padding: 1.5rem; }
+    .col-box h4 { font-size: 0.85rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .col-green { background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); }
+    .col-green h4 { color: #059669; }
+    .col-amber { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); }
+    .col-amber h4 { color: #d97706; }
+
+    .takeaway-banner { background: linear-gradient(145deg, #0f2b46, #1e6091); border-radius: 18px; padding: 2.5rem 2rem; text-align: center; margin: 3rem 0; position: relative; overflow: hidden; }
+    .takeaway-banner::before { content: ''; position: absolute; top: -30%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 60%); }
+    .takeaway-banner h3 { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 0.75rem; position: relative; z-index: 1; }
+    .takeaway-banner p { color: #fff; font-size: 1.3rem; font-weight: 700; line-height: 1.5; margin: 0; position: relative; z-index: 1; max-width: 36ch; margin: 0 auto; }
+    .faq-list { margin: 1.5rem 0; }
+    .faq-list details { margin-bottom: 0.75rem; }
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .gloss-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem; transition: all 0.25s; }
+    .gloss-card:hover { border-color: #0ea5e9; box-shadow: 0 4px 16px rgba(14,165,233,0.08); }
+    .gloss-card h4 { margin: 0 0 0.3rem; font-size: 0.92rem; color: #0f2b46; }
+    .gloss-card .gloss-en { font-size: 0.75rem; color: #94a3b8; margin: 0 0 0.5rem; font-style: italic; }
+    .gloss-card p { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.6; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- HERO -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <h1>AI走进精神科：能让诊断更客观、治疗更精准吗？</h1>
+    <p class="lead">
+      这篇综述梳理了 AI 在精神医学中的应用前景与落地难题：从<strong style="color:#38bdf8;">脑影像辅助分型</strong>到<strong style="color:#38bdf8;">数字表型连续监测</strong>，技术能力在增长，但隐私、偏见与教育准备仍是关键瓶颈。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-chip">Frontiers in Public Health &middot; 2025</span>
+      <span class="hero-chip">Zheng, Zhang</span>
+      <span class="hero-chip">叙事性综述</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.3389/fpubh.2025.1660448" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Front. Public Health, 2025, 13, 1660448</a></p>
+  </div>
+</section>
+
+<!-- 30秒读懂 -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">30 秒读懂</div>
+    <h2>这篇论文说了什么？</h2>
+    <div class="prose">
+      <p>去看精神科，最常见的流程是什么？医生问你一系列问题，你填一些量表，医生根据经验和标准给出诊断。用药呢？往往先试一种，不行再换——<strong>这就是所谓的"试错"路径</strong>。</p>
+      <p>AI 能不能帮上忙？这篇综述回顾了过去 20 年的研究，发现 AI 确实能在三个方面提供价值：</p>
+    </div>
+
+    <div class="finding-grid">
+      <div class="finding-card">
+        <div class="finding-icon">&#129504;</div>
+        <h4>更精细的分型</h4>
+        <p>整合脑影像、基因、量表数据，找出传统分类看不到的"亚型"。</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-icon">&#128241;</div>
+        <h4>连续的数字监测</h4>
+        <p>手机和穿戴设备持续采集行为数据，把"门诊快照"变成"生活影片"。</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-icon">&#128272;</div>
+        <h4>必须同步的治理</h4>
+        <p>隐私保护、算法偏见、医学教育——技术不到位，AI 就无法安全落地。</p>
+      </div>
+    </div>
+
+    <div class="callout-highlight">
+      <strong>核心结论：</strong>AI 能让精神科更精准，但它不是"装上就好"——<strong>制度、教育、伦理必须同步升级</strong>，才能真正变成医生的可靠助手。
+    </div>
+  </div>
+</section>
+
+<!-- 为什么做这个研究 -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label">研究背景</div>
+    <h2>精神科面临哪些"老问题"？</h2>
+    <div class="prose">
+      <p>WHO 预测：到 2030 年，精神疾病可能成为全球疾病负担的主要来源之一。跨国研究也提示：约半数人在 75 岁前可能经历至少一种可诊断精神障碍。</p>
+      <p>但诊疗体系被两个"老问题"卡住：</p>
+    </div>
+    <div class="analogy">
+      <div class="analogy-icon">&#128203;</div>
+      <div class="analogy-text">
+        <strong>问题一：诊断靠"感觉"</strong> — DSM/ICD 等分类主要依赖症状访谈，缺少客观生物标志物。同一个诊断下的患者可能差异巨大，不同诊断之间又高度重叠——"同名不同病、不同名同病"。
+      </div>
+    </div>
+    <div class="analogy">
+      <div class="analogy-icon">&#128138;</div>
+      <div class="analogy-text">
+        <strong>问题二：用药靠"试错"</strong> — 以抑郁症为例，一线治疗（西酞普兰）的缓解率仅约 28-33%。不少患者要经历多轮换药，时间成本和症状持续叠加。
+      </div>
+    </div>
+    <div class="prose">
+      <p>这就是为什么研究者把目光转向了 AI——<strong>它擅长从高维、多模态数据中发现人眼看不到的模式</strong>。</p>
+    </div>
+
+    <figure class="fig-inline">
+      <img src="visuals/figure1.png" alt="AI 在精神医学中的应用框架" loading="lazy">
+      <figcaption>AI 在精神医学中的应用全景 — 从数据采集到临床决策支持</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 三大发现 -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">核心发现</div>
+    <h2>综述梳理出了什么？</h2>
+
+    <h3 style="color:#0f2b46;margin-top:2rem;">发现一：AI 能帮助发现更精细的疾病亚型</h3>
+    <div class="prose">
+      <p>传统分类像按"外观"分箱。多模态机器学习可以整合脑影像、遗传、心理测评等数据，提出更细粒度的分类方案。初步研究表明，多模态模型在区分患者和健康人方面优于单模态。</p>
+      <p>例如，有研究整合静息态 fMRI 和 EEG 数据预测抗抑郁药疗效，模型 R² 约 0.2-0.3——虽然不算高，但相比"盲试"已经提供了有价值的参考信号。</p>
+    </div>
+
+    <h3 style="color:#0f2b46;margin-top:2.5rem;">发现二：数字表型能把"门诊快照"变成"生活影片"</h3>
+    <div class="prose">
+      <p>手机和可穿戴设备可以持续采集：运动量、GPS 移动模式、通话频率、打字速度、甚至语音特征。这些"数字足迹"可能反映心理状态的变化趋势。</p>
+      <p>但综述特别强调边界：这些信号是"趋势线"，帮助发现变化和触发评估，<strong>不是替代医生的诊断工具</strong>。早期研究还未评估临床疗效，隐私和标准化也是难题。</p>
+    </div>
+
+    <h3 style="color:#0f2b46;margin-top:2.5rem;">发现三：技术能力的增长必须与治理同步</h3>
+    <div class="prose">
+      <p>综述梳理了三大落地障碍：</p>
+      <ul style="padding-left:1.5rem;line-height:1.8;">
+        <li><strong>隐私</strong>：精神健康数据高度敏感，需要去标识化和加密</li>
+        <li><strong>偏见</strong>：训练数据不均衡可能导致对某些群体系统性不利</li>
+        <li><strong>可解释性</strong>：深度学习是"黑箱"，高风险决策需要可解释的 AI</li>
+      </ul>
+      <p>监管方面，综述对比了 WHO 伦理六原则、欧盟 AI 法案（精神健康 AI 归为"高风险"）和 FDA 生命周期监管思路。教育方面，多数医学院尚未系统纳入 AI 课程。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Takeaway -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <h3>一句话带走</h3>
+      <p>AI 能让精神科更精准，但必须守住隐私、公平与人文。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 意义与局限 -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">意义与局限</div>
+    <h2>综述的价值与边界</h2>
+    <div class="two-col">
+      <div class="col-box col-green">
+        <h4 style="color:#059669!important;">综述做到了</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>系统检索 2005-2025 年三大数据库文献</li>
+          <li>按证据成熟度对应用分级（试点/验证/部署）</li>
+          <li>同时覆盖技术、伦理、监管和教育四个维度</li>
+        </ul>
+      </div>
+      <div class="col-box col-amber">
+        <h4 style="color:#d97706!important;">需要注意</h4>
+        <ul style="padding-left:1.2em;font-size:0.95rem;">
+          <li>叙事性综述，不做 meta-analysis，无统一效应量</li>
+          <li>许多 AI 模型在封闭数据集表现好，但外部验证不足</li>
+          <li>新亚型的可复现性和临床意义仍不明确</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec bg-surface" id="faq">
+  <div class="sec-inner">
+    <div class="sec-label">常见问题</div>
+    <h2>你可能会问……</h2>
+    <div class="faq-list">
+      <details>
+        <summary>AI 现在能直接诊断精神疾病吗？</summary>
+        <p>不能。目前 AI 主要作为辅助工具，帮助医生发现模式和趋势。没有任何 AI 系统被批准替代精神科医生的诊断。</p>
+      </details>
+      <details>
+        <summary>用手机 APP 能监测心理健康吗？</summary>
+        <p>部分 APP 可以采集行为数据作为参考，但综述强调这些是"趋势信号"，不是诊断工具。需要专业评估才能下结论。</p>
+      </details>
+      <details>
+        <summary>AI 会不会歧视某些患者群体？</summary>
+        <p>如果训练数据不均衡，确实可能产生偏见。综述强调需要在多元人群中验证，并建立公平性审计机制。</p>
+      </details>
+      <details>
+        <summary>精神健康数据会被滥用吗？</summary>
+        <p>这是综述重点讨论的问题。建议包括：严格去标识化、加密存储、禁止用于商业营销或保险风控。欧盟 AI 法案将此类应用列为"高风险"。</p>
+      </details>
+      <details>
+        <summary>医学生需要学 AI 吗？</summary>
+        <p>综述建议分层培养：工具使用者、临床翻译者、开发者三个层级。核心是培养"会用也会质疑"的 AI 素养。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 术语 -->
+<section class="sec">
+  <div class="sec-wide">
+    <div class="sec-label">术语速查</div>
+    <h2>几个关键概念</h2>
+    <div class="gloss-grid">
+      <div class="gloss-card">
+        <h4>数字表型</h4>
+        <p class="gloss-en">Digital Phenotyping</p>
+        <p>利用手机、穿戴设备持续采集行为和生理数据，量化个体的日常状态。像给健康装了一个"行车记录仪"。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>多模态学习</h4>
+        <p class="gloss-en">Multi-modal Learning</p>
+        <p>同时分析影像、基因、量表等多种数据类型。就像看病时既验血又拍片——综合判断更准确。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>可解释 AI</h4>
+        <p class="gloss-en">Explainable AI (XAI)</p>
+        <p>让 AI 的决策过程能被人类理解。在高风险的医疗场景中，"知道为什么"和"答案是什么"一样重要。</p>
+      </div>
+      <div class="gloss-card">
+        <h4>叙事性综述</h4>
+        <p class="gloss-en">Narrative Review</p>
+        <p>系统检索文献后按主题综合讨论，但不做统计合并（meta-analysis）。适合研究异质性大的领域。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

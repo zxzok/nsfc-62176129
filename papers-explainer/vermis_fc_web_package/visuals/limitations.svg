@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">为什么还不能当作临床一键测试：研究局限</title>
+  <desc id="desc">用六个卡片总结论文局限：样本量较小、单中心、统计校正可能较宽、需更大多样样本验证、AAL图谱限制、空间平滑可能模糊局部活动；并补充仅观察到第2周结局。</desc>
+  <rect x="0" y="0" width="1200" height="640" fill="#ffffff"/>
+  <text x="60" y="72" font-size="34" font-family="system-ui, -apple-system, Segoe UI, Arial">研究局限（必须一起看）</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">主要来自论文Limitations（PDF第6页5节）与研究时间窗说明（PDF第2页2.1节）</text>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, Arial">
+    <rect x="60" y="160" width="360" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="90" y="205" font-size="18">1) 样本量相对较小</text>
+    <text x="90" y="235" font-size="14" fill="#444">可能限制可推广性</text>
+
+    <rect x="440" y="160" width="360" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="470" y="205" font-size="18">2) 单中心研究</text>
+    <text x="470" y="235" font-size="14" fill="#444">外部有效性受限</text>
+
+    <rect x="820" y="160" width="320" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="850" y="205" font-size="18">3) 校正可能较宽</text>
+    <text x="850" y="235" font-size="14" fill="#444">影响结果特异性</text>
+
+    <rect x="60" y="310" width="360" height="140" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="90" y="355" font-size="18">4) 需要更大更多少样本验证</text>
+    <text x="90" y="385" font-size="14" fill="#444">并探索调节/中介因素</text>
+
+    <rect x="440" y="310" width="360" height="140" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="470" y="355" font-size="18">5) AAL图谱的分区限制</text>
+    <text x="470" y="385" font-size="14" fill="#444">预定义区域可能不一致</text>
+
+    <rect x="820" y="310" width="320" height="140" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="850" y="355" font-size="18">6) 空间平滑的取舍</text>
+    <text x="850" y="385" font-size="14" fill="#444">可能“抹平”局部活动</text>
+
+    <rect x="60" y="480" width="1080" height="100" rx="14" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="90" y="525" font-size="18">补充范围限制：本文仅报告基线与第2周结局</text>
+    <text x="90" y="555" font-size="14" fill="#444">无法从论文确定这些指标能否预测更长期（数月）的缓解或复发。</text>
+  </g>
+</svg>

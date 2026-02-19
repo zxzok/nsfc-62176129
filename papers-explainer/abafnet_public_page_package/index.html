@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>用声音识别抑郁：AI 在"听"什么？ — NSFC 62176129</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../unified-style.css">
+<style>
+:root{
+  --accent:#c2410c;--accent-light:#fb923c;--accent-bg:#fff7ed;
+  --grad-start:#7c2d12;--grad-end:#c2410c;
+}
+/* nav */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(124,45,18,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#fdba74;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+/* progress */
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light),var(--accent));width:0;z-index:999;transition:width .15s}
+/* hero */
+.hero-custom{padding:7rem 1.5rem 3.5rem;background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;text-align:center}
+.hero-custom h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:780px;margin:0 auto}
+.hero-custom .subtitle{margin-top:.8rem;font-size:1.05rem;opacity:.88;max-width:640px;margin-left:auto;margin-right:auto}
+.hero-chip-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:1rem}
+.hero-chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 14px;font-size:.78rem;color:#fff}
+/* kpi strip */
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.kpi{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+.kpi strong{display:block;font-size:1.7rem;color:var(--accent);font-weight:800}
+.kpi span{font-size:.82rem;color:#666;margin-top:4px;display:block}
+/* analogy */
+.analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.3rem 1.5rem;margin:2rem 0;font-size:.97rem;line-height:1.7;color:#333}
+.analogy-box strong{color:var(--accent)}
+/* section helpers */
+.sec{padding:3rem 1.5rem}.sec-inner{max-width:820px;margin:0 auto}
+.sec-title{font-size:1.35rem;font-weight:700;margin-bottom:1rem;color:#1a1a1a}
+.sec-label{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:600;margin-bottom:.3rem}
+/* step flow */
+.step-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0}
+.step-card{background:#fff;border-radius:12px;padding:1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative;padding-top:2.2rem}
+.step-num{position:absolute;top:-12px;left:16px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.step-card h4{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.step-card p{font-size:.85rem;color:#555;line-height:1.55}
+/* finding cards */
+.finding-card{background:#fff;border-radius:12px;padding:1.4rem 1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:1.2rem;border-left:4px solid var(--accent)}
+.finding-card.blue{border-left-color:#2563eb}
+.finding-card.green{border-left-color:#16a34a}
+.finding-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.finding-card p{font-size:.92rem;color:#444;line-height:1.65}
+/* feature grid */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+.feat-tag{background:#fff;border-radius:10px;padding:1rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+.feat-tag.env{border-top-color:#16a34a}.feat-tag.spec{border-top-color:#2563eb}.feat-tag.mel{border-top-color:#7c3aed}.feat-tag.hsf{border-top-color:#b45309}
+.feat-tag strong{display:block;font-size:1rem;margin-bottom:.3rem}
+.feat-tag span{font-size:.82rem;color:#666}
+/* bar chart */
+.bar-chart{margin:1.5rem 0}.bar-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}.bar-label{min-width:130px;font-size:.85rem;font-weight:600;text-align:right;color:#333}
+.bar-track{flex:1;height:22px;background:#f1f5f9;border-radius:6px;overflow:hidden;position:relative}.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:.72rem;font-weight:700;color:#fff;transition:width .6s}
+/* fig inline */
+.fig-inline{display:flex;flex-wrap:wrap;gap:1.2rem;margin:1.5rem 0}
+.fig-card{flex:1;min-width:260px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.fig-card img{width:100%;display:block}
+.fig-card figcaption{padding:.8rem 1rem;font-size:.82rem;color:#555;line-height:1.5}
+/* takeaway */
+.takeaway-banner{background:linear-gradient(135deg,#1e1e1e,#333);color:#fff;padding:2.5rem 1.5rem;text-align:center;margin:0}
+.takeaway-banner .emoji{font-size:2rem;margin-bottom:.5rem}
+.takeaway-banner p{font-size:1.15rem;font-weight:600;max-width:600px;margin:0 auto}
+/* faq */
+details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+details summary{padding:1rem 1.2rem;font-weight:600;cursor:pointer;font-size:.95rem;list-style:none;display:flex;align-items:center;justify-content:space-between}
+details summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:700}
+details[open] summary::after{content:'−'}
+details .faq-body{padding:0 1.2rem 1rem;font-size:.9rem;color:#555;line-height:1.7}
+/* glossary */
+.glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.glossary-card{background:#fff;border-radius:10px;padding:1rem 1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.glossary-card dt{font-weight:700;font-size:.95rem;color:var(--accent);margin-bottom:.3rem}
+.glossary-card dd{font-size:.85rem;color:#555;line-height:1.6;margin:0}
+/* footer */
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light)}
+/* util */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+.bg-surface{background:#f8f9fa}
+</style>
+</head>
+<body>
+
+<!-- nav -->
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- hero -->
+<header class="hero-custom">
+  <div class="sec-inner">
+    <div class="hero-chip-row">
+      <span class="hero-chip">论文解读</span>
+      <span class="hero-chip">语音 AI</span>
+      <span class="hero-chip">抑郁检测</span>
+      <span class="hero-chip">多特征融合</span>
+    </div>
+    <h1>用声音识别抑郁：AI 在"听"什么？</h1>
+    <p class="subtitle">ABAFnet 融合 4 类声学特征，在临床中文朗读语音上达到 AUC 0.85 ± 0.04</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1016/j.neucom.2024.128209" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Neurocomputing, 2024, 601, 128209</a></p>
+  </div>
+</header>
+
+<!-- KPI strip -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="kpi-strip reveal">
+      <div class="kpi"><strong>4 类</strong><span>声学特征通道</span></div>
+      <div class="kpi"><strong>0.85</strong><span>融合 AUC（±0.04）</span></div>
+      <div class="kpi"><strong>6 552</strong><span>维 HSF 统计特征</span></div>
+      <div class="kpi"><strong>87.5 %</strong><span>关键特征来自 Mel/MFCC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30s summary -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">30 秒速览</div>
+    <h2 class="sec-title reveal">一段朗读，四重"听诊"</h2>
+    <div class="analogy-box reveal">
+      <strong>类比：</strong>抑郁的评估常靠访谈和量表，耗时且受主观影响。ABAFnet 像一位同时戴着四副"听诊器"的 AI——分别听声音的<em>能量起伏、频率纹理、人耳感知频谱</em>和<em>6 552 维统计指标</em>，再用注意力机制把"最值得听"的信号放大。在临床中文朗读数据 CNRAC 上，融合模型 AUC 0.85、ACC 0.81，优于任何单一特征，表明多角度线索融合可为语音辅助筛查带来更稳定的信号。
+    </div>
+  </div>
+</section>
+
+<!-- why -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究背景</div>
+    <h2 class="sec-title reveal">为什么要让 AI "听"抑郁？</h2>
+    <p class="reveal" style="font-size:.94rem;color:#444;line-height:1.7">
+      COVID-19 后抑郁病例上升，传统量表评估耗时且受回忆偏差影响。语音是一种低负担行为标记——抑郁人群在单调度、语速、韵律等方面可能出现差异，但过去方法多依赖<strong>单一维度特征</strong>，可能忽略语音"多层次"信息。不同特征的形态与尺寸差异很大，直接拼接并不容易。ABAFnet 试图解决两个问题：<em>如何分别提取不同角度的声音线索</em>，以及<em>如何让模型自己学会给每个角度分配合适的权重</em>。
+    </p>
+    <div class="fig-inline reveal">
+      <figure class="fig-card">
+        <img src="visuals/datasets_cards.svg" alt="数据集概览" loading="lazy">
+        <figcaption>两套数据集：临床 CNRAC 与社区筛查 CS-NRAC，分别提供朗读语音与 PHQ-9 在线自评。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- method -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">研究方法</div>
+    <h2 class="sec-title reveal">四副"听诊器" + 动态加权融合</h2>
+    <p class="reveal" style="font-size:.94rem;color:#444;line-height:1.7;margin-bottom:1rem">
+      把一段朗读语音想成一部"电影"：它既有随时间变化的剧情，也有不同频率上的"画面纹理"。ABAFnet 从四个角度"截屏"，再让模型学会在不同情境下给每个角度分配合适的权重。
+    </p>
+    <div class="feature-grid reveal">
+      <div class="feat-tag env"><strong>Envelope</strong><span>声音能量随时间的起伏曲线，反映节奏与能量变化</span></div>
+      <div class="feat-tag spec"><strong>Spectrogram</strong><span>时间×频率热力图，捕捉频率结构如何随时间变化</span></div>
+      <div class="feat-tag mel"><strong>Mel-spectrogram</strong><span>人耳感知频率刻度，更容易抓到细微变化</span></div>
+      <div class="feat-tag hsf"><strong>HSFs（6 552 维）</strong><span>OpenSMILE 提取的语音学统计指标"体检报告"</span></div>
+    </div>
+
+    <h3 class="reveal" style="font-size:1.1rem;font-weight:700;margin-top:2rem">三大核心模块</h3>
+    <div class="step-flow reveal">
+      <div class="step-card"><div class="step-num">1</div><h4>TAC</h4><p>Type-Adaptive CNN：对"图像型"与"向量型"特征分别用不同卷积方式处理，像给不同材料选不同刀具</p></div>
+      <div class="step-card"><div class="step-num">2</div><h4>LAM</h4><p>LSTM + Attention：用 LSTM 捕捉长短期依赖，再用注意力对关键时间片段高亮</p></div>
+      <div class="step-card"><div class="step-num">3</div><h4>LLFN + DWA</h4><p>线性融合 + 动态权重：权重不固定，根据训练评价指标自动调整各通道重要性</p></div>
+    </div>
+
+    <div class="fig-inline reveal" style="margin-top:1.5rem">
+      <figure class="fig-card">
+        <img src="visuals/abafnet_schematic.svg" alt="ABAFnet 架构示意" loading="lazy">
+        <figcaption>ABAFnet 架构：四路特征分别经过 TAC → LAM，再经 LLFN + DWA 动态融合输出判断。</figcaption>
+      </figure>
+      <figure class="fig-card">
+        <img src="visuals/pipeline_schematic.svg" alt="处理流程" loading="lazy">
+        <figcaption>完整处理流程：原始录音 → VAD 去噪 → 重采样 → 四路特征提取 → 融合分类。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- finding 1 -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">核心发现</div>
+    <h2 class="sec-title reveal">发现 1：四特征融合 &gt; 任何单一特征</h2>
+    <div class="finding-card reveal">
+      <h3>多角度融合带来最稳表现</h3>
+      <p>只看一种"声音线索"不够稳。融合后 ACC 0.81±0.04、AUC 0.85±0.04；而单一特征中表现最好的 Mel-spectrogram 仅达 ACC 0.75±0.05、AUC 0.80±0.03。不同特征携带互补信息，融合策略更适合真实语音里复杂、异质的抑郁线索。</p>
+    </div>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><div class="bar-label">融合（ABAFnet）</div><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent)">0.85</div></div></div>
+      <div class="bar-row"><div class="bar-label">Mel-spectrogram</div><div class="bar-track"><div class="bar-fill" style="width:80%;background:#7c3aed">0.80</div></div></div>
+      <div class="bar-row"><div class="bar-label">Spectrogram</div><div class="bar-track"><div class="bar-fill" style="width:76%;background:#2563eb">0.76</div></div></div>
+      <div class="bar-row"><div class="bar-label">Envelope</div><div class="bar-track"><div class="bar-fill" style="width:73%;background:#16a34a">0.73</div></div></div>
+      <div class="bar-row"><div class="bar-label">HSFs</div><div class="bar-track"><div class="bar-fill" style="width:71%;background:#b45309">0.71</div></div></div>
+    </div>
+    <p class="reveal" style="font-size:.82rem;color:#888;text-align:center">AUC 对比（CNRAC 二分类，10 折交叉验证均值）</p>
+
+    <div class="fig-inline reveal">
+      <figure class="fig-card">
+        <img src="visuals/table5_auc.png" alt="AUC 对比表" loading="lazy">
+        <figcaption>表 5：各特征及融合模型在 CNRAC 上的 AUC 对比。</figcaption>
+      </figure>
+      <figure class="fig-card">
+        <img src="visuals/table5_acc.png" alt="ACC 对比表" loading="lazy">
+        <figcaption>表 5：各特征及融合模型在 CNRAC 上的 ACC 对比。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- finding 2 -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <h2 class="sec-title reveal">发现 2：区分严重度更难，但"健康 vs 中重度"信号强</h2>
+    <div class="finding-card blue reveal">
+      <h3>亚型任务：NC vs Moderate AUC 达 0.95</h3>
+      <p>模型不仅能做"有没有抑郁"，也能区分一定程度的严重度，但任务难度不一样。"NC vs Moderate" AUC 达到 0.95±0.04；而"Inter-Subtype（如 Mild vs Moderate）" AUC 为 0.79±0.22，标准差更大。语音线索对"健康与中重度差异"更敏感，相邻严重度之间差异更细微、模型更容易波动。</p>
+    </div>
+    <div class="fig-inline reveal">
+      <figure class="fig-card">
+        <img src="visuals/table7_auc.png" alt="亚型 AUC" loading="lazy">
+        <figcaption>表 7：不同严重度对比的 AUC，NC vs Moderate 最高。</figcaption>
+      </figure>
+      <figure class="fig-card">
+        <img src="visuals/table9_f1.png" alt="亚型 F1" loading="lazy">
+        <figcaption>表 9：不同严重度对比的 F1 分数。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- finding 3 -->
+<section class="sec">
+  <div class="sec-inner">
+    <h2 class="sec-title reveal">发现 3：关键模块与 Mel/MFCC 线索"确实起作用"</h2>
+    <div class="finding-card green reveal">
+      <h3>LSTM 与 DWA 是性能关键，87.5 % 显著特征指向 Mel/MFCC</h3>
+      <p>消融实验：去掉 LSTM 后 ACC 从 0.81 降到 0.65，F1 从 0.70 降到 0.48；去掉 DWA 则 Precision 与 F1 降到约 0.5。在 HSFs 的统计检验中，32 个显著差异特征里 MFCC 相关占 43.75 %、Mel 谱相关占 43.75 %，合计 87.5 %。与人耳感知相关的 Mel/MFCC 线索是语音抑郁检测里更稳定的"信号来源"。</p>
+    </div>
+    <div class="bar-chart reveal">
+      <div class="bar-row"><div class="bar-label">MFCC 相关</div><div class="bar-track"><div class="bar-fill" style="width:43.75%;background:#7c3aed">43.75 %</div></div></div>
+      <div class="bar-row"><div class="bar-label">Mel 谱相关</div><div class="bar-track"><div class="bar-fill" style="width:43.75%;background:var(--accent)">43.75 %</div></div></div>
+      <div class="bar-row"><div class="bar-label">其他</div><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#94a3b8">12.5 %</div></div></div>
+    </div>
+    <p class="reveal" style="font-size:.82rem;color:#888;text-align:center">32 个显著差异 HSF 特征的类别占比</p>
+
+    <div class="fig-inline reveal">
+      <figure class="fig-card">
+        <img src="visuals/table12_recall.png" alt="消融实验 Recall" loading="lazy">
+        <figcaption>表 12：消融实验——去掉各模块后 Recall 的变化。</figcaption>
+      </figure>
+      <figure class="fig-card">
+        <img src="visuals/table15_accuracy.png" alt="消融实验 Accuracy" loading="lazy">
+        <figcaption>表 15：消融实验——去掉各模块后 Accuracy 的变化。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- metrics explainer -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">评估指标</div>
+    <h2 class="sec-title reveal">如何衡量"AI 听得准不准"？</h2>
+    <div class="fig-inline reveal">
+      <figure class="fig-card">
+        <img src="visuals/metrics_explainer.svg" alt="指标说明" loading="lazy">
+        <figcaption>ACC（准确率）、AUC（区分能力）、F1（精确率与召回率的调和）——三个维度共同描述模型的实用水平。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- application -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">应用前景</div>
+    <h2 class="sec-title reveal">这项研究有什么用？</h2>
+    <div class="step-flow reveal">
+      <div class="step-card" style="border-top:3px solid #16a34a"><div class="step-num" style="background:#16a34a">✓</div><h4>证据支持</h4><p>在 CNRAC 上，融合模型优于多种对比深度模型；迁移验证 ACC 0.89±0.02、F1 0.89±0.03</p></div>
+      <div class="step-card" style="border-top:3px solid #d97706"><div class="step-num" style="background:#d97706">?</div><h4>合理推测</h4><p>结合标准化录音流程，ABAFnet 可能用于大规模筛查的初筛环节，但需更多多中心数据与真实流程验证</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- limitations -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">局限与展望</div>
+    <h2 class="sec-title reveal">需要注意的边界</h2>
+    <div class="finding-card reveal" style="border-left-color:#94a3b8">
+      <p><strong>外部验证受限：</strong>CS-NRAC 中抑郁样本较少，PHQ-9 阈值划分本身存在可靠性讨论。</p>
+      <p><strong>训练耗时更长：</strong>需提取并处理四类特征，比端到端模型训练耗时更长。</p>
+      <p><strong>人群差异仍需关注：</strong>不同性别/年龄子群的 Accuracy 存在差异，需更均衡数据验证。</p>
+    </div>
+  </div>
+</section>
+
+<!-- takeaway -->
+<div class="takeaway-banner reveal">
+  <div class="sec-inner">
+    <div class="emoji">🎙️</div>
+    <p>一句话带走：多特征融合，让语音抑郁检测更稳。</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label reveal">常见问题</div>
+    <h2 class="sec-title reveal">FAQ</h2>
+
+    <details class="reveal"><summary>"只要说话就能诊断抑郁"吗？</summary><div class="faq-body">不是。论文是在特定录音与朗读任务下的机器学习分类实验，CS-NRAC 部分也强调 PHQ-9 只是筛查工具而非临床诊断。</div></details>
+
+    <details class="reveal"><summary>我能用它做自测吗？</summary><div class="faq-body">论文未提供可用于个人自测的产品或阈值，也未报告家庭/手机随录场景的可靠性。抑郁评估需要专业人士综合判断。</div></details>
+
+    <details class="reveal"><summary>为什么要用 4 种特征？</summary><div class="faq-body">融合模型 AUC 0.85±0.04 高于最佳单一特征 Mel-spectrogram 的 0.80±0.03。单一特征可能忽略语音的多层次信息。</div></details>
+
+    <details class="reveal"><summary>哪种特征最关键？</summary><div class="faq-body">去掉 Mel-spectrogram 带来最大性能下降；在 HSFs 解释性分析里，MFCC 与 Mel 谱相关特征合计占 87.5 %。</div></details>
+
+    <details class="reveal"><summary>"NC vs Mild"精确度很低，是不是模型不行？</summary><div class="faq-body">Precision 均值 0.25±0.27 表明该任务更难或数据分布不稳定；样本不平衡需随机下采样，细微差异更难区分。</div></details>
+
+    <details class="reveal"><summary>模型在不同性别/年龄上公平吗？</summary><div class="faq-body">补充实验显示不同组的 Accuracy 不同，仍需更均衡数据验证。</div></details>
+
+    <details class="reveal"><summary>会不会侵犯隐私？</summary><div class="faq-body">两套数据均取得知情同意并通过伦理审批（附伦理批号）；但若落地真实产品仍需额外隐私保护与合规设计。</div></details>
+
+    <details class="reveal"><summary>代码或数据在哪里？</summary><div class="faq-body">论文提供了代码仓库地址，语音统计特征可在合理请求下获取。</div></details>
+  </div>
+</section>
+
+<!-- glossary -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="sec-label reveal">术语词典</div>
+    <h2 class="sec-title reveal">公众版小词典</h2>
+    <div class="glossary-grid reveal">
+      <div class="glossary-card"><dt>VAD</dt><dd>语音活动检测——自动找到"有人说话"的片段并剪掉静音/噪声</dd></div>
+      <div class="glossary-card"><dt>声谱图</dt><dd>"时间×频率"的热力图，把音乐变成随时间变化的"指纹图"</dd></div>
+      <div class="glossary-card"><dt>Mel 声谱图</dt><dd>声谱图的"人耳版"频率刻度，更贴近人类听觉</dd></div>
+      <div class="glossary-card"><dt>MFCC</dt><dd>从 Mel 谱提取的压缩表征，像把复杂图案压缩成一串数字</dd></div>
+      <div class="glossary-card"><dt>OpenSMILE</dt><dd>开源语音特征提取工具箱，一次能输出大量指标</dd></div>
+      <div class="glossary-card"><dt>LSTM</dt><dd>擅长处理序列数据的神经网络，能"记住前文剧情"</dd></div>
+      <div class="glossary-card"><dt>注意力机制</dt><dd>让模型自动更关注关键片段，像用荧光笔标出重点</dd></div>
+      <div class="glossary-card"><dt>AUC</dt><dd>衡量模型区分两类的整体能力，0.5 ≈ 随机、1 ≈ 完美</dd></div>
+    </div>
+  </div>
+</section>
+
+<!-- disclaimer -->
+<section class="sec">
+  <div class="sec-inner">
+    <p class="reveal" style="font-size:.85rem;color:#888;line-height:1.7;text-align:center">
+      本页面仅用于科研科普与方法解读，不构成医疗建议或诊断依据。若你或身边的人正在经历情绪困扰，请及时联系专业医疗机构或心理健康服务。
+    </p>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <p style="margin-top:.5rem"><a href="../../#/">NSFC 62176129 项目主站</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%';
+},{passive:true});
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

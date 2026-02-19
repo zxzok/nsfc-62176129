@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
+<rect width="100%" height="100%" fill="white"/>
+<text x="20" y="40" font-size="20" font-family="Arial" font-weight="bold">How to read the metrics</text>
+<text x="20" y="70" font-size="13" font-family="Arial">Accuracy: overall correct rate.</text>
+<text x="20" y="95" font-size="13" font-family="Arial">Precision: among predicted positives, how many are true positives.</text>
+<text x="20" y="120" font-size="13" font-family="Arial">Recall: among true positives, how many were found.</text>
+<text x="20" y="145" font-size="13" font-family="Arial">AUC: overall separability between classes (0.5 random, 1 best).</text>
+<rect x="520" y="70" width="240" height="240" fill="#fff" stroke="#333"/>
+<line x1="640" y1="70" x2="640" y2="310" stroke="#333"/>
+<line x1="520" y1="190" x2="760" y2="190" stroke="#333"/>
+<text x="580" y="140" font-size="14" font-family="Arial" text-anchor="middle">TP</text>
+<text x="700" y="140" font-size="14" font-family="Arial" text-anchor="middle">FP</text>
+<text x="580" y="260" font-size="14" font-family="Arial" text-anchor="middle">FN</text>
+<text x="700" y="260" font-size="14" font-family="Arial" text-anchor="middle">TN</text>
+<text x="640" y="335" font-size="12" font-family="Arial" text-anchor="middle">Example confusion matrix</text>
+</svg>

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProteomicsMechanismExplorerData",
+  "type": "object",
+  "description": "蛋白质组机制线索浏览器数据：展示前额/后部ROI差异蛋白数量、重叠蛋白与GO富集信息。",
+  "properties": {
+    "total_proteins_identified": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "鉴定蛋白总数（1%FDR cut-off）"
+    },
+    "threshold_rule": {
+      "type": "string",
+      "description": "差异蛋白筛选阈值（FC与p值规则）"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "region_id": {
+            "type": "string",
+            "enum": [
+              "frontal",
+              "posterior"
+            ],
+            "description": "ROI"
+          },
+          "diff_model_vs_control": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "MAM-sham vs vehicle-sham 差异蛋白数"
+          },
+          "diff_rtms_vs_model": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "MAM-rTMS vs MAM-sham 差异蛋白数"
+          },
+          "overlap": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "两次比较重叠蛋白数"
+          },
+          "go_enrichment_present": {
+            "type": "boolean",
+            "description": "是否有显著GO条目（FDR校正）"
+          },
+          "go_terms_examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "若有富集，列出代表性条目；若无则为空数组"
+          }
+        },
+        "required": [
+          "region_id",
+          "diff_model_vs_control",
+          "diff_rtms_vs_model",
+          "overlap",
+          "go_enrichment_present",
+          "go_terms_examples"
+        ]
+      }
+    },
+    "image_path": {
+      "type": "string",
+      "description": "Figure 2B–C 图片路径"
+    },
+    "source_ref": {
+      "type": "string",
+      "description": "来源锚点（页码/图号/表号）"
+    },
+    "missing_value_handling": {
+      "type": "string",
+      "description": "缺失值处理策略（例如：如论文未提供单蛋白明细，则仅展示计数与示意）"
+    }
+  },
+  "required": [
+    "total_proteins_identified",
+    "threshold_rule",
+    "regions",
+    "image_path",
+    "source_ref",
+    "missing_value_handling"
+  ]
+}

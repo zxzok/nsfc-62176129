@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">发育时间轴模板：纹状体与海马体</title>
+  <desc id="desc">三段时间轴（童年、青春期、成年），分别标出纹状体与海马体在MAM模型中出现差异的阶段。</desc>
+  <rect width="1200" height="675" fill="white"/>
+  <text x="60" y="70" font-size="34" font-family="Arial, sans-serif" fill="#111">发育时间轴（模板）</text>
+  <!-- Timeline line -->
+  <line x1="120" y1="170" x2="1080" y2="170" stroke="#333" stroke-width="6"/>
+  <!-- Nodes -->
+  <circle cx="220" cy="170" r="16" fill="#fff" stroke="#333" stroke-width="5"/>
+  <circle cx="600" cy="170" r="16" fill="#fff" stroke="#333" stroke-width="5"/>
+  <circle cx="980" cy="170" r="16" fill="#fff" stroke="#333" stroke-width="5"/>
+  <text x="180" y="220" font-size="24" font-family="Arial, sans-serif" fill="#111">童年</text>
+  <text x="550" y="220" font-size="24" font-family="Arial, sans-serif" fill="#111">青春期</text>
+  <text x="940" y="220" font-size="24" font-family="Arial, sans-serif" fill="#111">成年</text>
+
+  <!-- Rows -->
+  <text x="60" y="320" font-size="26" font-family="Arial, sans-serif" fill="#111">纹状体</text>
+  <text x="60" y="430" font-size="26" font-family="Arial, sans-serif" fill="#111">海马体</text>
+
+  <!-- Markers: striatum abnormal all stages -->
+  <rect x="200" y="290" width="40" height="40" rx="8" fill="#ffe8cc" stroke="#333" stroke-width="3"/>
+  <rect x="580" y="290" width="40" height="40" rx="8" fill="#ffe8cc" stroke="#333" stroke-width="3"/>
+  <rect x="960" y="290" width="40" height="40" rx="8" fill="#ffe8cc" stroke="#333" stroke-width="3"/>
+  <text x="252" y="318" font-size="22" font-family="Arial, sans-serif" fill="#333">↓</text>
+  <text x="632" y="318" font-size="22" font-family="Arial, sans-serif" fill="#333">↓</text>
+  <text x="1012" y="318" font-size="22" font-family="Arial, sans-serif" fill="#333">↓</text>
+
+  <!-- Markers: hippocampus abnormal from adolescence -->
+  <rect x="200" y="400" width="40" height="40" rx="8" fill="#f0f0f0" stroke="#333" stroke-width="3"/>
+  <rect x="580" y="400" width="40" height="40" rx="8" fill="#ffe8cc" stroke="#333" stroke-width="3"/>
+  <rect x="960" y="400" width="40" height="40" rx="8" fill="#ffe8cc" stroke="#333" stroke-width="3"/>
+  <text x="250" y="428" font-size="18" font-family="Arial, sans-serif" fill="#666">ns</text>
+  <text x="632" y="428" font-size="22" font-family="Arial, sans-serif" fill="#333">↓</text>
+  <text x="1012" y="428" font-size="22" font-family="Arial, sans-serif" fill="#333">↓</text>
+
+  <text x="60" y="540" font-size="20" font-family="Arial, sans-serif" fill="#555">说明：↓表示MAM组较对照组更低；ns表示差异不显著。具体P值阈值见论文图2B。</text>
+</svg>

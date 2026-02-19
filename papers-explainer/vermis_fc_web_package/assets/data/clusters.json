@@ -1,0 +1,163 @@
+{
+  "comparisons": [
+    {
+      "comparison_id": "baseline_between_groups",
+      "label": "基线：早期响应 vs 未响应",
+      "time_context": "baseline_between_groups",
+      "direction_note": "响应组FC更高（表2；图1）",
+      "source_ref": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_responder",
+      "label": "响应组：治疗前 vs 两周后",
+      "time_context": "pre_post_within_responder",
+      "direction_note": "治疗后FC增加（表3；图2A）",
+      "source_ref": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_nonresponder",
+      "label": "未响应组：治疗前 vs 两周后",
+      "time_context": "pre_post_within_nonresponder",
+      "direction_note": "治疗后FC增加（表4；图2B）",
+      "source_ref": [
+        "C12",
+        "C11"
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "comparison_id": "baseline_between_groups",
+      "cluster_id": "Table2_Cluster1",
+      "voxel_count": 429,
+      "peak_mni": {
+        "x": -36,
+        "y": 18,
+        "z": -24
+      },
+      "statistic_f_reported": 3.701,
+      "aal_region_labels": [
+        "Temporal_Pole_Sup_L",
+        "Frontal_Inf_Oper_L",
+        "Temporal_Inf_L",
+        "Temporal_Pole_Mid_L",
+        "Frontal_Inf_Orb_L",
+        "Temporal_Sup_L",
+        "Frontal_Inf_Tri_L"
+      ],
+      "grf_corrected_p_note": "p<0.05, GRF corrected",
+      "source_ref": [
+        "C6"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_responder",
+      "cluster_id": "Table3_Cluster1",
+      "voxel_count": 470,
+      "peak_mni": {
+        "x": 30,
+        "y": -15,
+        "z": -15
+      },
+      "statistic_f_reported": 3.888,
+      "aal_region_labels": [
+        "ParaHippocampal_R",
+        "Temporal_Pole_Sup_R",
+        "Hippocampus_R",
+        "Frontal_Inf_Orb_R",
+        "Temporal_Pole_Mid_R",
+        "Temporal_Sup_R",
+        "Insula_R",
+        "Temporal_Mid_R",
+        "Fusiform_R"
+      ],
+      "grf_corrected_p_note": "p<0.05, GRF corrected",
+      "source_ref": [
+        "C10"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_responder",
+      "cluster_id": "Table3_Cluster2",
+      "voxel_count": 435,
+      "peak_mni": {
+        "x": 57,
+        "y": 15,
+        "z": 24
+      },
+      "statistic_f_reported": 3.935,
+      "aal_region_labels": [
+        "Precentral_R",
+        "Frontal_Inf_Oper_R",
+        "Frontal_Mid_R",
+        "Frontal_Inf_Tri_R",
+        "Postcentral_R"
+      ],
+      "grf_corrected_p_note": "p<0.05, GRF corrected",
+      "source_ref": [
+        "C10"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_responder",
+      "cluster_id": "Table3_Cluster3",
+      "voxel_count": 723,
+      "peak_mni": {
+        "x": -3,
+        "y": -3,
+        "z": 60
+      },
+      "statistic_f_reported": 4.244,
+      "aal_region_labels": [
+        "Supp_Motor_Area_L",
+        "Supp_Motor_Area_R",
+        "Paracentral_Lobule_L",
+        "Frontal_Sup_L",
+        "Cingulum_Mid_L",
+        "Frontal_Sup_Medial_L",
+        "Precentral_R",
+        "Frontal_Sup_R"
+      ],
+      "grf_corrected_p_note": "p<0.05, GRF corrected",
+      "source_ref": [
+        "C10"
+      ]
+    },
+    {
+      "comparison_id": "pre_post_nonresponder",
+      "cluster_id": "Table4_Cluster1",
+      "voxel_count": 1497,
+      "peak_mni": {
+        "x": 39,
+        "y": 6,
+        "z": 42
+      },
+      "statistic_f_reported": 4.071,
+      "aal_region_labels": [
+        "Frontal_Mid_R",
+        "Postcentral_R",
+        "Precentral_R",
+        "Frontal_Inf_Tri_R",
+        "Temporal_Sup_R",
+        "Frontal_Inf_Oper_R",
+        "Temporal_Pole_Sup_R",
+        "Frontal_Sup_Medial_R",
+        "Frontal_Sup_R",
+        "ParaHippocampal_R",
+        "Insula_R",
+        "Fusiform_R",
+        "Temporal_Mid_R"
+      ],
+      "grf_corrected_p_note": "p<0.05, GRF corrected",
+      "source_ref": [
+        "C12"
+      ]
+    }
+  ]
+}

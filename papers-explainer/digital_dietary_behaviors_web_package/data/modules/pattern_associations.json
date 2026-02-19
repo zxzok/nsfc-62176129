@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "title": "Associations between all-day dietary patterns and depression/anxiety (AOR with 95% CI)",
+    "measure": "AOR",
+    "source_ref": "PDF第7页 图3A-3D",
+    "notes": "Ref. 代表参考组。CI不跨1通常表示统计学显著，但网页呈现应避免将其解释为因果。"
+  },
+  "associations": [
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Normal",
+      "aor": 0.994,
+      "ci_low": 0.778,
+      "ci_high": 1.269,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Always",
+      "aor": 0.99,
+      "ci_low": 0.725,
+      "ci_high": 1.353,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Normal",
+      "aor": 1.36,
+      "ci_low": 1.05,
+      "ci_high": 1.761,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Always",
+      "aor": 1.46,
+      "ci_low": 1.016,
+      "ci_high": 2.1,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Normal",
+      "aor": 0.952,
+      "ci_low": 0.787,
+      "ci_high": 1.152,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "mild_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Always",
+      "aor": 1.023,
+      "ci_low": 0.77,
+      "ci_high": 1.359,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3A"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Normal",
+      "aor": 0.736,
+      "ci_low": 0.469,
+      "ci_high": 1.155,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Always",
+      "aor": 0.467,
+      "ci_low": 0.239,
+      "ci_high": 0.912,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Normal",
+      "aor": 1.207,
+      "ci_low": 0.689,
+      "ci_high": 2.113,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekday",
+      "pattern": "Lun-Din",
+      "level": "Always",
+      "aor": 1.231,
+      "ci_low": 0.595,
+      "ci_high": 2.546,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Normal",
+      "aor": 1.212,
+      "ci_low": 0.795,
+      "ci_high": 1.848,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "moderate_severe_depression",
+      "day_type": "weekend",
+      "pattern": "Lun-Din",
+      "level": "Always",
+      "aor": 1.608,
+      "ci_low": 0.92,
+      "ci_high": 2.81,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3B"
+    },
+    {
+      "outcome": "depression_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3C"
+    },
+    {
+      "outcome": "depression_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Normal",
+      "aor": 1.107,
+      "ci_low": 0.776,
+      "ci_high": 1.579,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3C"
+    },
+    {
+      "outcome": "depression_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Always",
+      "aor": 1.647,
+      "ci_low": 1.032,
+      "ci_high": 2.629,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3C"
+    },
+    {
+      "outcome": "all_subjects_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Rare",
+      "aor": 1.0,
+      "ci_low": null,
+      "ci_high": null,
+      "is_reference": true,
+      "source_ref": "PDF第7页 图3D"
+    },
+    {
+      "outcome": "all_subjects_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Normal",
+      "aor": 1.116,
+      "ci_low": 0.787,
+      "ci_high": 1.583,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3D"
+    },
+    {
+      "outcome": "all_subjects_with_anxiety",
+      "day_type": "weekday",
+      "pattern": "Bre-Lun-Din",
+      "level": "Always",
+      "aor": 1.7,
+      "ci_low": 1.068,
+      "ci_high": 2.706,
+      "is_reference": false,
+      "source_ref": "PDF第7页 图3D"
+    }
+  ]
+}

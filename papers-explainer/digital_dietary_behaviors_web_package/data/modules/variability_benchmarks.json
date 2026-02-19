@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "Meal timing variability benchmarks (MAD) from paper",
+    "units": "seconds",
+    "source_ref": "PDF第5-6页 Results（MAD具体时间）; PDF第6页 图2A-2B",
+    "notes": "MAD为中位数绝对偏差，用于描述时间波动大小。此处为论文正文明确给出的工作日指标。"
+  },
+  "benchmarks": [
+    {
+      "feature_id": "weekday_lunch_time_MAD",
+      "group": "HC",
+      "value_seconds": 1025,
+      "value_label": "17:05",
+      "source_ref": "PDF第5页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_lunch_time_MAD",
+      "group": "mild_depression",
+      "value_seconds": 1058,
+      "value_label": "17:38",
+      "source_ref": "PDF第5页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_lunch_time_MAD",
+      "group": "moderate_severe_depression",
+      "value_seconds": 1138,
+      "value_label": "18:58",
+      "source_ref": "PDF第5页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_dinner_time_MAD",
+      "group": "HC",
+      "value_seconds": 1406,
+      "value_label": "23:26",
+      "source_ref": "PDF第6页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_dinner_time_MAD",
+      "group": "mild_depression",
+      "value_seconds": 1419,
+      "value_label": "23:39",
+      "source_ref": "PDF第6页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_dinner_time_MAD",
+      "group": "moderate_severe_depression",
+      "value_seconds": 1571,
+      "value_label": "26:11",
+      "source_ref": "PDF第6页 Results; 图2A"
+    },
+    {
+      "feature_id": "weekday_lunch_dinner_interval_MAD",
+      "group": "HC",
+      "value_seconds": 1763,
+      "value_label": "29:23",
+      "source_ref": "PDF第6页 Results; 图2B"
+    },
+    {
+      "feature_id": "weekday_lunch_dinner_interval_MAD",
+      "group": "mild_depression",
+      "value_seconds": 1765,
+      "value_label": "29:25",
+      "source_ref": "PDF第6页 Results; 图2B"
+    },
+    {
+      "feature_id": "weekday_lunch_dinner_interval_MAD",
+      "group": "moderate_severe_depression",
+      "value_seconds": 2060,
+      "value_label": "34:20",
+      "source_ref": "PDF第6页 Results; 图2B"
+    }
+  ]
+}

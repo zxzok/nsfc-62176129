@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>把磁刺激对准"初级皮层" — 早期压力相关情绪障碍的新靶点</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#15803d;--accent-light:#86efac;--accent-bg:rgba(21,128,61,.08);--grad-start:#14532d;--grad-end:#15803d}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(134,239,172,.1),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .step-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+    .step-card{background:#fff;border-radius:12px;padding:1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative;padding-top:2.2rem}
+    .step-card .step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+    .step-card h4{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#1e293b}
+    .step-card p{font-size:.85rem;color:#475569;line-height:1.6}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#dc2626}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}}
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#86efac;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#86efac),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#86efac)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">跨物种转化研究</span>
+      <span class="hero-chip">早期生活压力 (ELS)</span>
+      <span class="hero-chip">初级皮层 rTMS</span>
+    </div>
+    <h1>把磁刺激对准大脑"初级皮层"：早期压力相关情绪障碍的新靶点</h1>
+    <p class="subtitle">大鼠 CUMS 模型与 17-25 岁 ELS 患者中，初级皮层 ALFF 偏高，低频 rTMS 后异常模式反转并伴随症状改善</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1016/j.ajp.2024.104092" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Asian J. Psychiatry, 2024, 97, 104092</a></p>
+  </div>
+</header>
+
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">CUMS</div><div class="label">大鼠慢性应激模型</div></div>
+      <div class="kpi-card reveal"><div class="num">17-25岁</div><div class="label">ELS 情绪障碍患者</div></div>
+      <div class="kpi-card reveal"><div class="num">1 Hz</div><div class="label">低频 rTMS</div></div>
+      <div class="kpi-card reveal"><div class="num">ALFF</div><div class="label">跨物种共同指标</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      如果把大脑想成信息加工工厂，初级皮层（视觉/听觉/运动等）像"入口传送带"。早期压力把入口节奏打乱——传送带转速偏高，后续调控区（人类的额叶 / 大鼠的亚皮层）可能被连锁影响。研究把低频 rTMS 对准传送带"减速"，结果整个工厂的异常模式都朝相反方向变化。
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">四步串联的跨物种路线</h2>
+    <div class="step-flow reveal">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>大鼠基线</h4>
+        <p>CUMS 慢性应激 → fMRI 观察 ALFF 模式：初级皮层 ↑ 亚皮层 ↓</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>大鼠 rTMS</h4>
+        <p>1Hz 初级皮层 rTMS 14天 → 初级皮层 ↓ 亚皮层 ↑（反转）</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>人类基线</h4>
+        <p>ELS 患者 vs 健康对照：初级视觉/躯体感觉/听觉 ↑ 额叶 ↓</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>人类 rTMS</h4>
+        <p>视觉皮层 1Hz rTMS 10次 → 初级皮层 ↓ 额叶 ↑（反转）</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig1_study_overview.png" alt="研究设计概览" loading="lazy">
+      <div class="caption">图 1 · 四步串联的跨物种研究设计</div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 初级皮层是"共同指纹"</h4>
+        <p>无论大鼠还是人群，初级皮层 ALFF 都偏高。这提示初级皮层可能是早期压力留下的跨物种"共同标记"。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · rTMS 可将异常推向反方向</h4>
+        <p>大鼠：初级皮层 ↓ 亚皮层 ↑。患者：初级皮层 ↓ 额叶 ↑。两物种均伴随行为/症状改善。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 下游网络在人鼠之间不同</h4>
+        <p>大鼠更突出"初级皮层 ↑ + 亚皮层 ↓"；患者更突出"初级皮层 ↑ + 额叶 ↓"。可能与人类额叶更发达的进化差异有关。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/fig3_human_alff.png" alt="人类ALFF差异" loading="lazy">
+      <div class="caption">图 3 · 患者基线 vs 对照（左）与 rTMS 前后对比（右）的 ALFF 差异</div>
+    </div>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>把初级皮层当作"入口层"去调节，rTMS 可能帮助纠偏早期压力相关的异常脑活动模式。</p>
+  </div>
+</div>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>抑郁/双相主要是初级皮层的问题吗？</summary><div class="faq-body">论文报告的是群体层面活动模式与可逆转性，并未把情绪障碍归因到单一脑区，机制仍需进一步研究。</div></details>
+    <details class="reveal"><summary>有童年压力经历，做 rTMS 就一定有效吗？</summary><div class="faq-body">不能。论文样本为 17-25 岁住院患者，正文未给出量表具体变化数值，需要更大样本临床试验验证。</div></details>
+    <details class="reveal"><summary>效果能维持多久？</summary><div class="faq-body">正文只描述治疗前后评估，未报告长期随访，无法判断维持时间。</div></details>
+    <details class="reveal"><summary>药物会不会影响结果？</summary><div class="faq-body">论文把持续用药作为限制之一，指出影响不能排除，虽在试验中保持药物类型稳定。</div></details>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>ELS (早期生活压力)</dt><dd>16 岁前经历的创伤/虐待/忽视等，用 CTQ 评估。像树苗早期遇到长期风雨。</dd></div>
+      <div class="glossary-card reveal"><dt>CUMS</dt><dd>慢性不可预测轻度应激动物模型 — 每天随机小麻烦，久了系统"低电量"。</dd></div>
+      <div class="glossary-card reveal"><dt>初级皮层</dt><dd>负责最基础感觉/运动处理的皮层区域 — 信息进入大脑的"第一道关口"。</dd></div>
+      <div class="glossary-card reveal"><dt>ALFF</dt><dd>低频振幅 — 像测发动机怠速时的抖动幅度。</dd></div>
+      <div class="glossary-card reveal"><dt>GRF 校正</dt><dd>全脑统计的多重比较校正 — 在大海捞针时设"多大一把才算真发现"。</dd></div>
+      <div class="glossary-card reveal"><dt>CTQ</dt><dd>儿童期创伤问卷 — 把过去经历分门别类打分。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

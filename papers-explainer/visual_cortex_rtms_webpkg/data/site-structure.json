@@ -1,0 +1,237 @@
+{
+  "slug": "visual-cortex-rtms-mpds-adolescents",
+  "seo_title": "视觉皮层rTMS与青少年重性精神障碍：从大鼠到人的跨物种证据解读",
+  "seo_description": "一项跨物种研究将10Hz重复经颅磁刺激（rTMS）对准视觉皮层，在MAM大鼠与21名青少年患者中观察到前额ReHo下降及量表下降，并给出蛋白质组机制线索与局限。",
+  "keywords": [
+    "rTMS",
+    "视觉皮层",
+    "青少年",
+    "重性精神障碍",
+    "MPDs",
+    "fMRI",
+    "ReHo",
+    "跨物种研究",
+    "蛋白质组学",
+    "神经可塑性"
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "heading": "把磁刺激对准视觉皮层，能否帮青少年精神障碍的大脑找回发育节奏？",
+      "body_markdown": "副标题：跨物种研究观察到视觉皮层 rTMS 后前额 ReHo 下降，并伴随患者量表下降。",
+      "citations": [
+        "第1页 摘要",
+        "第6–8页 结果",
+        "图2–3"
+      ]
+    },
+    {
+      "id": "quick",
+      "heading": "30秒读懂",
+      "body_markdown": "问题：青少年MPDs的rTMS刺激部位证据仍不确定。方法：10Hz rTMS刺激视觉皮层，比较大鼠与患者ReHo前后。发现：两种物种均见前额ReHo下降；患者BPRS/HAMD/HAMA下降。意义：提示“从视觉入口”可能牵动前额功能，但需更大试验验证。",
+      "citations": [
+        "第2页 引言",
+        "第3–5页 方法",
+        "第6–8页 结果",
+        "第9页 局限"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "青春期是神经可塑性更强的干预窗口；青少年rTMS刺激部位仍不确定。作者基于皮层发育“从后到前”梯度提出视觉皮层为候选靶点。",
+      "citations": [
+        "第2页 引言"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的",
+      "body_markdown": "大鼠：MAM模型三组×10只，青春期2周rTMS；采集行为、fMRI与前额/后部蛋白质组。患者：21名13–18岁住院青少年，开放标签单臂，5天10次rTMS；治疗前后评估fMRI与量表。核心指标ReHo基于KCC衡量局部同步性。",
+      "citations": [
+        "第3页 方法2.1–2.2",
+        "第4页 2.3/2.5/2.7",
+        "第5页 2.8/2.10"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么：3个最重要发现",
+      "body_markdown": "发现1：MAM模型呈前额ReHo升高、后部ReHo降低。发现2：rTMS主要降低前额ReHo，并出现前额突触相关蛋白富集线索。发现3：患者治疗后“前降后升”，量表显著下降，且前额ReHo与BPRS相关。",
+      "citations": [
+        "第6页 结果3.1–3.4",
+        "第7页 图2",
+        "第8页 图3",
+        "Table S2/S3/S4"
+      ]
+    },
+    {
+      "id": "use",
+      "heading": "这项研究有什么用",
+      "body_markdown": "证据支持：视觉皮层作为候选靶点的跨物种一致影像变化；ReHo作为可转译中间表型；蛋白质组给出机制线索。合理推测：未来可探索用前后平衡作监测/分型，但需随机对照与更大样本验证。",
+      "citations": [
+        "第6–9页 结果与讨论",
+        "第9页 局限"
+      ]
+    },
+    {
+      "id": "interact",
+      "heading": "交互模块设计",
+      "body_markdown": "模块1跨物种脑图对照；模块2量表与ReHo联动；模块3蛋白质组机制线索浏览。",
+      "citations": [
+        "图2–3",
+        "第6页 结果3.2–3.4",
+        "第5页 统计阈值"
+      ]
+    },
+    {
+      "id": "glossary",
+      "heading": "术语小词典",
+      "body_markdown": "rTMS、ReHo、MAM模型等关键术语解释与类比。",
+      "citations": [
+        "第2页 引言",
+        "第3–5页 方法",
+        "第6–9页 结果与讨论"
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "body_markdown": "公众常问：能否治疗、为什么选视觉皮层、ReHo含义、安全性等；严格注明论文是否提供证据。",
+      "citations": [
+        "第4页 2.7",
+        "第5页 2.8",
+        "第9页 局限",
+        "第10页 数据可得性"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "局限性与下一步",
+      "body_markdown": "环路不明；样本量小且缺少健康对照；药物混杂；动物行为未显著改善；数据不公开。",
+      "citations": [
+        "第6页 3.1",
+        "第9页 局限",
+        "第10页 Data Availability Statement"
+      ]
+    },
+    {
+      "id": "takehome",
+      "heading": "一句话带走",
+      "body_markdown": "从视觉皮层入手，可能牵动前额叶功能——但仍需更强证据确认。",
+      "citations": [
+        "第6–8页 结果",
+        "第9页 局限"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "v1_flowchart",
+      "title": "从大鼠到人：研究怎么连起来？",
+      "type": "paper_figure_reuse",
+      "source_ref": "第3页 图1",
+      "file_path": "assets/img/fig1.png",
+      "alt_text": "图示分上下两部分：上半为大鼠三组（对照、模型、模型+rTMS）在青春期刺激视觉皮层后采集fMRI与前额/后部脑区蛋白；下半为21名青少年患者治疗前后采集fMRI并评估症状量表。"
+    },
+    {
+      "id": "v2_protocol_infographic",
+      "title": "视觉皮层 rTMS：刺激参数一眼懂",
+      "type": "redraw_infographic",
+      "source_ref": "第4页 2.3；第5页 2.8",
+      "file_path": null,
+      "alt_text": "信息图用两列对比大鼠与人类rTMS方案，突出10Hz、脉冲数、疗程与定位方式的差异。"
+    },
+    {
+      "id": "v3_rat_imbalance",
+      "title": "模型大鼠：前强后弱的ReHo失衡",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.2；第7页 图2A",
+      "file_path": "assets/img/fig2A.jpg",
+      "alt_text": "脑图用红蓝显示差异：模型大鼠前额ReHo显著升高（红），后部感觉相关区域ReHo显著降低（蓝）；右侧散点图展示三组个体ReHo分布。"
+    },
+    {
+      "id": "v4_rat_rtms_effect",
+      "title": "刺激后：大鼠前额ReHo回落",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.2；第7页 图2A",
+      "file_path": "assets/img/fig2A.jpg",
+      "alt_text": "散点图显示MAM-rTMS组在前额ReHo上低于MAM-sham组；论文文字指出后部区域未见显著ReHo改变。"
+    },
+    {
+      "id": "v5_proteomics",
+      "title": "分子线索：81个前额叶蛋白重叠 + GO富集",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.3；第7页 图2B–C",
+      "file_path": "assets/img/fig2BC.jpg",
+      "alt_text": "维恩图显示前额叶有81个蛋白同时出现在“模型异常”与“rTMS影响”两次比较中；富集图显示其功能集中于突触前结构、囊泡与细胞内运输等类别。"
+    },
+    {
+      "id": "v6_patient_map",
+      "title": "青少年患者脑图：前降后升",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.4；第8页 图3A",
+      "file_path": "assets/img/fig3A.png",
+      "alt_text": "治疗后ReHo下降（蓝）主要在前额与边缘系统，ReHo上升（红）主要在枕叶与舌回等后部区域，呈“前降后升”。"
+    },
+    {
+      "id": "v7_scales",
+      "title": "量表变化：BPRS/HAMD/HAMA显著下降",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.4；第8页 图3B",
+      "file_path": "assets/img/fig3B.png",
+      "alt_text": "三张配对点线图显示多数参与者治疗后评分下降，提示BPRS、HAMD、HAMA总体降低且统计显著。"
+    },
+    {
+      "id": "v8_correlation",
+      "title": "脑活动与症状：前额ReHo与BPRS正相关",
+      "type": "paper_figure_reuse",
+      "source_ref": "第6页 结果3.4；第8页 图3C",
+      "file_path": "assets/img/fig3C.png",
+      "alt_text": "散点图显示前额ReHo与BPRS呈正相关趋势，标注r=0.554、p=0.036（FDR校正），提示相关而非因果。"
+    },
+    {
+      "id": "v9_mechanism_unknown",
+      "title": "从视觉到前额：可能机制示意（含问号）",
+      "type": "concept_diagram",
+      "source_ref": "效应：第6–8页；局限：第9页",
+      "file_path": "assets/img/mechanism_unknown.svg",
+      "alt_text": "示意图左侧为视觉皮层（刺激靶点），右侧为前额叶（观察到ReHo变化）。中间虚线箭头与问号表示具体神经环路仍不清楚；提示需要进一步机制实验与更大临床试验验证。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "m1_cross_species_maps",
+      "title": "跨物种脑图对照器",
+      "purpose": "用可切换视图对比大鼠与青少年患者的ReHo差异模式，理解“前强后弱”与“前降后升”的对应关系。",
+      "ui_controls": [
+        "下拉选择物种（rat/human）",
+        "下拉选择对比（baseline_difference/pre_post_rtms）"
+      ],
+      "schema": "data/interactive-schemas/cross_species_map_switcher.schema.json",
+      "source_ref": "第6页 结果3.2–3.4；第7–8页 图2–3"
+    },
+    {
+      "id": "m2_symptom_reho_dashboard",
+      "title": "量表与ReHo联动面板",
+      "purpose": "通过切换量表与显示/隐藏相关性图，理解“量表变化”和“脑指标变化/相关”的证据边界。",
+      "ui_controls": [
+        "下拉选择量表（BPRS/HAMD/HAMA）",
+        "复选框切换显示相关性图"
+      ],
+      "schema": "data/interactive-schemas/symptom_reho_dashboard.schema.json",
+      "source_ref": "第6页 结果3.4；第8页 图3B–C"
+    },
+    {
+      "id": "m3_proteomics_explorer",
+      "title": "蛋白质组机制线索浏览器",
+      "purpose": "用数字化摘要方式展示蛋白质组关键结果（总蛋白、差异蛋白、重叠蛋白、GO富集），并比较前额与后部ROI。",
+      "ui_controls": [
+        "下拉选择脑区（frontal/posterior）"
+      ],
+      "schema": "data/interactive-schemas/proteomics_mechanism_explorer.schema.json",
+      "source_ref": "第6页 结果3.3；第7页 图2B–C；第5页 统计阈值"
+    }
+  ],
+  "disclaimer": "本页面为科普用途，不构成医疗建议、诊断或治疗方案。rTMS属于专业医疗干预，应由合规医疗机构与专业人员评估与操作。论文人体研究为开放标签单臂设计，结论需在更大随机对照试验中验证。（证据：第4页 2.7；第9页 局限）"
+}

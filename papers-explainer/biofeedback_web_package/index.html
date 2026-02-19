@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4周生物反馈训练能让大学生睡得更好、没那么焦虑吗？</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    body { background: #faf9f7 !important; }
+
+    .hero-custom {
+      background: linear-gradient(155deg, #1c1917 0%, #44403c 25%, #b45309 60%, #f59e0b 100%) !important;
+      padding:7rem 24px 4rem !important;
+      text-align: left !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .hero-custom::before {
+      content: '';
+      position: absolute; top: -35%; right: -10%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-custom::after {
+      content: '';
+      position: absolute; bottom: -20%; left: 10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-custom h1{
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(2rem, 5vw, 3.2rem) !important;
+      font-weight: 900 !important; color: #fff !important;
+      line-height: 1.25 !important; letter-spacing: -0.03em !important;
+      margin: 0 0 1.25rem !important; max-width: 24ch !important;
+    }
+    .hero-custom .lead {
+      color: rgba(255,255,255,0.82) !important;
+      font-size: 1.08rem !important; line-height: 1.7 !important;
+      max-width: 54ch !important; margin: 0 !important;
+    ;margin-left:auto;margin-right:auto}
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .sec { padding: 4rem 24px !important; }
+    .sec-alt { background: #fff !important; }
+    .sec-inner { max-width: 760px; margin: 0 auto; }
+    .sec-wide { max-width: 960px; margin: 0 auto; }
+
+    .sec-label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: #b45309; margin-bottom: 0.4rem;
+    }
+    .sec h2 {
+      font-family: 'Noto Sans SC', sans-serif !important;
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important; color: #0f2b46 !important;
+      line-height: 1.3 !important; margin: 0 0 1rem !important;
+      border: none !important; padding: 0 !important;
+    }
+    .sec h2::after { display: none !important; }
+
+    .prose { font-size: 1.05rem; line-height: 1.9; color: #334155; }
+    .prose p { margin: 0 0 1.25rem; }
+    .prose strong { color: #0f2b46; }
+
+    .callout-highlight {
+      background: linear-gradient(135deg, rgba(180,83,9,0.06), rgba(245,158,11,0.03));
+      border-left: 4px solid #b45309;
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.75rem; margin: 2rem 0;
+      font-size: 1.05rem; line-height: 1.75; color: #1e293b;
+    }
+    .callout-highlight strong { color: #0f2b46; }
+
+    .callout-warn {
+      background: rgba(239,68,68,0.05);
+      border-left: 4px solid #ef4444;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.5rem; margin: 1.5rem 0;
+      font-size: 0.92rem; color: #7f1d1d;
+    }
+
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin: 2.5rem 0;
+    }
+    @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-item {
+      text-align: center; padding: 1.5rem 1rem;
+      background: linear-gradient(145deg, #1c1917, #44403c);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(68,64,60,0.2);
+    }
+    .kpi-item .big { display: block; font-size: 2.2rem; font-weight: 900; color: #fbbf24; line-height: 1.1; font-family: 'Inter', sans-serif; }
+    .kpi-item .small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    .analogy {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border: 1px solid #fde68a;
+      border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .analogy-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, #b45309, #f59e0b);
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .analogy-text { font-size: 0.95rem; color: #334155; line-height: 1.7; }
+    .analogy-text strong { color: #0f2b46; }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin: 2.5rem 0; position: relative;
+    }
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none !important; }
+    }
+    .step { text-align: center; padding: 0 0.75rem; position: relative; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(145deg, #1c1917, #b45309);
+      color: #fde68a; font-size: 1.2rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 12px rgba(180,83,9,0.2);
+    }
+    .step h4 { font-size: 0.92rem; color: #0f2b46; margin: 0 0 0.3rem; font-weight: 700; }
+    .step p { font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .step-arrow { position: absolute; right: -10px; top: 26px; color: #b45309; font-size: 1.3rem; z-index: 2; }
+
+    .find-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 2rem 0;
+    }
+    .find-card {
+      border-radius: 14px; padding: 1.25rem; border: 1px solid;
+      transition: all 0.25s ease; cursor: default;
+    }
+    .find-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .find-card h4 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .find-card .desc { font-size: 0.85rem; line-height: 1.6; margin: 0; color: #475569; }
+    .find-card .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; display: block; }
+
+    .fc-a { background: rgba(180,83,9,0.04); border-color: rgba(180,83,9,0.15); }
+    .fc-a h4, .fc-a .tag { color: #b45309; }
+    .fc-b { background: rgba(16,185,129,0.04); border-color: rgba(16,185,129,0.15); }
+    .fc-b h4, .fc-b .tag { color: #059669; }
+    .fc-c { background: rgba(79,70,229,0.04); border-color: rgba(79,70,229,0.15); }
+    .fc-c h4, .fc-c .tag { color: #4f46e5; }
+    .fc-d { background: rgba(236,72,153,0.04); border-color: rgba(236,72,153,0.15); }
+    .fc-d h4, .fc-d .tag { color: #db2777; }
+
+    .bar-chart { margin: 1.5rem 0; }
+    .bar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .bar-label { width: 90px; font-size: 0.82rem; font-weight: 700; color: #0f2b46; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 26px; background: #f1f5f9; border-radius: 13px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.72rem; font-weight: 800; color: #fff; transition: width 1s ease; }
+    .bf-amber { background: linear-gradient(90deg, #b45309, #f59e0b); }
+    .bf-green { background: linear-gradient(90deg, #059669, #34d399); }
+    .bf-blue { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+    .bf-gray { background: linear-gradient(90deg, #6b7280, #9ca3af); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    .takeaway-banner {
+      background: linear-gradient(135deg, #1c1917, #44403c);
+      border-radius: 18px; padding: 2.5rem 2rem;
+      text-align: center; margin: 2rem 0;
+      box-shadow: 0 8px 32px rgba(68,64,60,0.15);
+    }
+    .takeaway-banner .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .takeaway-banner p { color: #fef3c7; font-size: 1.15rem; line-height: 1.7; margin: 0; }
+    .takeaway-banner strong { color: #fbbf24; }
+
+    .faq details {
+      border: 1px solid #e2e8f0; border-radius: 12px;
+      margin-bottom: 0.75rem; background: #fff;
+      transition: box-shadow 0.25s ease;
+    }
+    .faq details[open] { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .faq summary {
+      padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem;
+      color: #0f2b46; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before {
+      content: '+'; width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, #b45309, #f59e0b);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; transition: transform 0.25s ease;
+    }
+    .faq details[open] summary::before { content: '−'; transform: rotate(180deg); }
+    .faq .faq-body { padding: 0 1.25rem 1.25rem 3.5rem; font-size: 0.92rem; line-height: 1.7; color: #475569; }
+
+    .gloss-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+    .gloss-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+    .gloss-card dt { font-weight: 700; font-size: 0.92rem; color: #b45309; margin-bottom: 0.3rem; }
+    .gloss-card dd { font-size: 0.85rem; color: #475569; line-height: 1.55; margin: 0; }
+
+    .site-footer a { color: #d97706 !important; }
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#60a5fa;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#60a5fa),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#60a5fa)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero-custom">
+  <div class="hero-inner">
+    <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;background:rgba(245,158,11,0.25);color:#fde68a;text-transform:uppercase;margin-bottom:1.25rem;">论文科普解读</span>
+    <h1>4周生物反馈训练，能让大学生睡得更好、没那么焦虑吗？</h1>
+    <p class="lead">一项随机对照试验把问卷、身体信号与朗读语音放在同一张"证据桌"上，评估生物反馈效果并探索语音作为客观追踪线索的潜力。</p>
+    <div class="hero-meta">
+      <span class="hero-chip">随机对照试验</span>
+      <span class="hero-chip">生物反馈</span>
+      <span class="hero-chip">语音分析</span>
+      <span class="hero-chip">大学生心理健康</span>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1007/s10484-023-09612-3" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Appl. Psychophysiol. Biofeedback, 2024, 49, 71-83</a></p>
+  </div>
+</section>
+
+<!-- ============ KPI ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="kpi-strip reveal">
+      <div class="kpi-item">
+        <span class="big">4周</span>
+        <span class="small">干预持续时间</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">107</span>
+        <span class="small">随机分组人数</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">ISI ↓</span>
+        <span class="small">失眠组间改善最稳健</span>
+      </div>
+      <div class="kpi-item">
+        <span class="big">~60%</span>
+        <span class="small">语音预测准确率</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 为什么做 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">背景</div>
+      <h2>为什么要做这个研究？</h2>
+    </div>
+    <div class="prose reveal">
+      <p>大学阶段是抑郁、焦虑与失眠的<strong>高发窗口</strong>，但真正得到药物或规范心理治疗的学生并不多——校园心理服务常面临"需求大、供给不足"。</p>
+      <p>另一方面，精神健康评估常依赖自评量表与临床判断，缺少稳定可重复的<strong>客观指标</strong>。</p>
+      <p>作者提出：把<strong>生物反馈</strong>（用实时身体信号训练自我调节）与<strong>语音分析</strong>（从朗读声音提取特征）结合，或许能同时解决"可及性"与"客观追踪"两个痛点。</p>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">📊</div>
+      <div class="analogy-text">
+        <strong>生活类比：</strong>想象生物反馈就像一块"身体仪表盘"——传感器实时采集你的心率、肌电等信号，你在屏幕上看到自己的状态变化，学习把紧张的"指针"往放松方向调。而语音分析则像是给你的声音拍一张"X光"，从中提取人耳不易察觉的音色、能量变化。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 方法 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">方法</div>
+      <h2>怎么做的：问卷 + 身体信号 + 声音，三重证据</h2>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>筛选入组</h4>
+        <p>16-35岁学生，PHQ-9或GAD-7 > 5，排除急性自杀意念</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>随机分组</h4>
+        <p>生物反馈组 vs 等待名单对照组</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>4周干预</h4>
+        <p>训练组获得自助生物反馈权限（BVP + sEMG传感器）</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>多维评估</h4>
+        <p>基线 vs 第4周：量表 + 生理 + 60秒朗读语音</p>
+      </div>
+    </div>
+
+    <div class="prose reveal">
+      <p><strong>量表评估：</strong>抑郁（PHQ-9）、焦虑（GAD-7）、失眠（ISI）、压力（PSS）。</p>
+      <p><strong>语音处理：</strong>手机录制60秒中性文本朗读 → VAD去除静音 → 剔除有效语音 &lt; 10秒 → 切成32ms片段 → 提取能量、基频、MFCC等特征。每组约52人通过语音质控。</p>
+      <p><strong>预测探索：</strong>用组间变化量差异显著的语音特征训练ANN分类器，预测"是否对干预有反应"（GAD-7/ISI总分下降≥50%）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现1 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 1</div>
+      <h2>量表普遍下降，但"失眠改善"在组间比较最稳健</h2>
+    </div>
+    <div class="prose reveal">
+      <p>生物反馈组四项量表组内均显著下降。但在两组"变化量"的组间比较中：</p>
+    </div>
+
+    <div class="bar-chart reveal">
+      <div style="font-size:0.82rem;font-weight:700;color:#0f2b46;margin-bottom:0.75rem;">组间变化量比较 (p 值)</div>
+      <div class="bar-row">
+        <span class="bar-label">ISI (失眠)</span>
+        <div class="bar-track"><div class="bar-fill bf-amber" style="width:94%;">p = 0.006 ✓</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">PHQ-9 (抑郁)</span>
+        <div class="bar-track"><div class="bar-fill bf-gray" style="width:50%;">p = 0.097</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">GAD-7 (焦虑)</span>
+        <div class="bar-track"><div class="bar-fill bf-gray" style="width:48%;">p = 0.100</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">PSS (压力)</span>
+        <div class="bar-track"><div class="bar-fill bf-gray" style="width:30%;">p = 0.317</div></div>
+      </div>
+    </div>
+
+    <div class="callout-highlight reveal">
+      只有<strong>失眠（ISI）</strong>的变化量在组间达到显著差异（p = 0.006），其他量表虽然组内改善，但变化幅度与等待组的差异未达统计显著。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现2 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 2</div>
+      <h2>声音与身体信号也在变，且与症状改善相关</h2>
+    </div>
+    <div class="prose reveal">
+      <p>语音特征在单一时点（基线或第4周）两组无显著差异，但<strong>"变化量"差异显著</strong>，集中在能量参数与MFCC。关键相关性：</p>
+    </div>
+
+    <div class="find-grid reveal">
+      <div class="find-card fc-a">
+        <span class="tag">语音 × 抑郁</span>
+        <h4>energy_max 变化</h4>
+        <p class="desc">与抑郁改善相关 (r = 0.280, p = 0.046)</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">语音 × 焦虑</span>
+        <h4>ste_de2_std 变化</h4>
+        <p class="desc">与焦虑改善相关 (r = 0.363, p = 0.009)</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">语音 × 失眠</span>
+        <h4>ste_de2_ptp 变化</h4>
+        <p class="desc">与失眠改善相关 (r = 0.329, p = 0.018)</p>
+      </div>
+      <div class="find-card fc-d">
+        <span class="tag">生理信号</span>
+        <h4>肌电 EMG</h4>
+        <p class="desc">训练组变化量组间显著差异 (p = 0.002)</p>
+      </div>
+    </div>
+
+    <div class="analogy reveal">
+      <div class="analogy-icon">🎤</div>
+      <div class="analogy-text">
+        <strong>声音为什么会变？</strong>情绪状态会微妙地影响我们发声的方式——声带的紧张度、呼吸的深浅都会改变声音的能量和音色。研究发现的正是这类人耳不易察觉的"声学指纹"变化，它们与量表上的症状改善同步出现。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 发现3 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">发现 3</div>
+      <h2>语音预测"是否响应"：可行但精度有限</h2>
+    </div>
+
+    <div class="two-col reveal">
+      <div style="background:#fffbeb;border-radius:14px;padding:1.25rem;text-align:center;">
+        <div style="font-weight:700;color:#b45309;font-size:0.85rem;margin-bottom:0.5rem;">焦虑响应预测</div>
+        <div style="font-size:2.5rem;font-weight:900;color:#d97706;font-family:'Inter',sans-serif;">~62%</div>
+        <div style="font-size:0.82rem;color:#64748b;margin-top:0.25rem;">准确率</div>
+        <div style="font-size:0.78rem;color:#94a3b8;margin-top:0.25rem;">AUC ≈ 0.57–0.59</div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:14px;padding:1.25rem;text-align:center;">
+        <div style="font-weight:700;color:#059669;font-size:0.85rem;margin-bottom:0.5rem;">失眠响应预测</div>
+        <div style="font-size:2.5rem;font-weight:900;color:#059669;font-family:'Inter',sans-serif;">~58%</div>
+        <div style="font-size:0.82rem;color:#64748b;margin-top:0.25rem;">准确率</div>
+        <div style="font-size:0.78rem;color:#94a3b8;margin-top:0.25rem;">AUC ≈ 0.57–0.59</div>
+      </div>
+    </div>
+
+    <div class="callout-warn reveal">
+      <strong>注意：</strong>约58–62%的准确率仅略高于随机猜测（50%）。语音有潜力做低成本初筛线索，但目前不适合个人层面的决策。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 价值 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">临床意义</div>
+      <h2>这条路径有什么用</h2>
+    </div>
+    <div class="two-col reveal">
+      <div style="background:#fffbeb;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#b45309;font-size:0.92rem;margin-bottom:0.5rem;">✅ 证据支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>生物反馈组量表症状减轻，失眠改善最稳健</li>
+          <li>语音/生理指标变化与症状改善同步出现</li>
+          <li>证明"问卷+生理+语音"多维评估框架可行</li>
+        </ul>
+      </div>
+      <div style="background:#fef2f2;border-radius:14px;padding:1.25rem;">
+        <div style="font-weight:700;color:#b91c1c;font-size:0.92rem;margin-bottom:0.5rem;">⚠️ 目前不支持</div>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.88rem;color:#334155;line-height:1.7;">
+          <li>个人自测或自行判断治疗效果</li>
+          <li>仅比"随机猜"好一点的预测精度</li>
+          <li>无法区分特异效应与非特异因素</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 局限 ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">局限</div>
+      <h2>需要注意的五项局限</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div class="find-card fc-d">
+        <span class="tag">局限 1</span>
+        <h4>随访较短</h4>
+        <p class="desc">仅基线与第4周评估，未报告更长期维持效果</p>
+      </div>
+      <div class="find-card fc-c">
+        <span class="tag">局限 2</span>
+        <h4>等待名单对照</h4>
+        <p class="desc">无法区分训练特异效应与时间/期待等非特异因素</p>
+      </div>
+      <div class="find-card fc-a">
+        <span class="tag">局限 3</span>
+        <h4>语音-失眠文献不足</h4>
+        <p class="desc">相关性在先前研究中缺乏验证，需更多独立样本复现</p>
+      </div>
+      <div class="find-card fc-b">
+        <span class="tag">局限 4</span>
+        <h4>基线组间差异</h4>
+        <p class="desc">部分生理指标（EMG）基线存在组间差异(p &lt; 0.001)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话带走 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="takeaway-banner reveal">
+      <div class="icon">🎧</div>
+      <p><strong>4周生物反馈：睡眠改善证据最稳健，声音可能成为客观追踪线索</strong>——但预测精度有限，距离真正的"声音诊断"还有很长的路。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">常见问题</div>
+      <h2>你可能还想知道</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>生物反馈是什么？跟冥想有什么区别？</summary>
+        <div class="faq-body">生物反馈使用传感器实时测量你的生理信号（心率、肌电等），并在屏幕上可视化呈现，帮助你"看见"自己的身体状态并学习调控。与冥想的区别在于它有<strong>即时反馈环</strong>——你能看到自己的放松程度是否真的在变化。</div>
+      </details>
+      <details>
+        <summary>为什么失眠改善最稳健而抑郁/焦虑没达显著？</summary>
+        <div class="faq-body">组内看四项量表都改善了，但与等待组比较时，只有失眠的改善幅度显著更大。可能原因：4周对失眠的改善更直接（生理放松→更容易入睡），而抑郁/焦虑的改善可能需要更长疗程或更强干预。</div>
+      </details>
+      <details>
+        <summary>能用手机录音自测情绪状态吗？</summary>
+        <div class="faq-body">目前不能。论文中语音预测的准确率仅58–62%，且需要标准化条件（固定文本、质控流程）。手机录音环境嘈杂多变，距离可靠的个人自测还很远。</div>
+      </details>
+      <details>
+        <summary>MFCC是什么？</summary>
+        <div class="faq-body">MFCC（梅尔频率倒谱系数）是一组描述声音"音色轮廓"的数值。它模仿人耳对不同频率敏感程度不同的特点，把声音压缩成十几个数字，广泛用于语音识别和情绪分析。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 术语表 ============ -->
+<section class="sec bg-surface">
+  <div class="sec-wide">
+    <div class="reveal">
+      <div class="sec-label">术语速查</div>
+      <h2>名词解释</h2>
+    </div>
+    <div class="gloss-grid reveal">
+      <dl class="gloss-card">
+        <dt>生物反馈</dt>
+        <dd>通过实时呈现生理信号（心率、肌电等），帮助人学习自主调节身体状态的技术</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>PHQ-9 / GAD-7</dt>
+        <dd>标准化的抑郁/焦虑自评量表，分数越高症状越重</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>ISI</dt>
+        <dd>失眠严重程度指数（Insomnia Severity Index），评估入睡困难、维持睡眠困难等</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>MFCC</dt>
+        <dd>梅尔频率倒谱系数，模仿人耳频率感知的声学特征，用于描述音色</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>BVP / sEMG</dt>
+        <dd>血容量脉搏/表面肌电图，生物反馈中常用的两种生理测量方式</dd>
+      </dl>
+      <dl class="gloss-card">
+        <dt>ANN</dt>
+        <dd>人工神经网络，一种受大脑启发的机器学习模型，此处用于分类预测</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('readingProgress').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

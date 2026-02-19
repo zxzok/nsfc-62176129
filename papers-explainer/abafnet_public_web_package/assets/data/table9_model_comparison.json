@@ -1,0 +1,47 @@
+{
+  "source_ref": "第17-18页，表9（模型对比）",
+  "data": [
+    {
+      "model_name": "BiLSTM",
+      "acc": 0.64,
+      "precision": 0.46,
+      "recall": 0.44,
+      "f1": 0.45
+    },
+    {
+      "model_name": "StackedLSTM",
+      "acc": 0.55,
+      "precision": 0.47,
+      "recall": 0.5,
+      "f1": 0.48
+    },
+    {
+      "model_name": "DeepLSTM",
+      "acc": 0.57,
+      "precision": 0.71,
+      "recall": 0.26,
+      "f1": 0.38
+    },
+    {
+      "model_name": "DepAudioNet",
+      "acc": 0.65,
+      "precision": 0.8,
+      "recall": 0.42,
+      "f1": 0.55
+    },
+    {
+      "model_name": "ConvBiLSTM",
+      "acc": 0.78,
+      "precision": 0.41,
+      "recall": 0.91,
+      "f1": 0.57
+    },
+    {
+      "model_name": "ABAFnet",
+      "acc": 0.81,
+      "precision": 0.65,
+      "recall": 0.8,
+      "f1": 0.7
+    }
+  ]
+}

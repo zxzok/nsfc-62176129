@@ -1,0 +1,11 @@
+NOTICE
+
+This content package contains:
+1) Original webpage template code (HTML/CSS/JS) and generated illustrative assets.
+2) Structured JSON content and numeric values extracted from the user-provided paper, with page/figure/table anchors.
+
+It does NOT include the paper's original figure image files by default.
+
+Important:
+- The underlying paper is published by Springer under an exclusive license (see the PDF front matter).
+- Before publishing any original figures (Fig.1–Fig.5), confirm that you have permission or that the intended use complies with the publisher's reuse policy.

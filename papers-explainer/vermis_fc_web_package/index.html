@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>两周会不会好转？一条"小脑—大脑"连接给出线索</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#166534;--accent-light:#86efac;--accent-bg:rgba(22,101,52,.08);--grad-start:#14532d;--grad-end:#166534}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(134,239,172,.1),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .step-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+    .step-card{background:#fff;border-radius:12px;padding:1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative;padding-top:2.2rem}
+    .step-card .step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+    .step-card h4{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#1e293b}
+    .step-card p{font-size:.85rem;color:#475569;line-height:1.6}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#8b5cf6}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .bar-chart{margin:1.5rem 0}
+    .bar-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+    .bar-row .bar-label{width:130px;font-size:.82rem;color:#334155;text-align:right;flex-shrink:0}
+    .bar-row .bar-track{flex:1;height:22px;background:#dcfce7;border-radius:6px;overflow:hidden}
+    .bar-row .bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-size:.72rem;font-weight:600;color:#fff}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}}
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#86efac;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#86efac),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#86efac)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">J Affective Disorders · 2023</span>
+      <span class="hero-chip">小脑蚓部功能连接</span>
+      <span class="hero-chip">早期治疗响应预测</span>
+    </div>
+    <h1>两周内会不会好转？一条"小脑—大脑"连接给出线索</h1>
+    <p class="subtitle">静息态 MRI 提示：小脑蚓部与左颞叶的功能连接可区分青少年抑郁发作的早期治疗响应 — Wang et al., 2023</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1016/j.jad.2023.07.054" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">J. Affect. Disord., 2023, 339, 256-263</a></p>
+  </div>
+</header>
+
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">132</div><div class="label">青少年抑郁发作患者</div></div>
+      <div class="kpi-card reveal"><div class="num">75 vs 57</div><div class="label">响应组 vs 未响应组</div></div>
+      <div class="kpi-card reveal"><div class="num">0.760</div><div class="label">区分模型 AUC</div></div>
+      <div class="kpi-card reveal"><div class="num">r=0.264</div><div class="label">FC 与 HAMD 下降相关</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      把大脑想成一座城市，每个脑区像不同街区。如果两个街区的"活动节奏"经常同步——像两支乐队不用指挥也能合拍演奏——就说它们的功能连接更强。研究发现：治疗前小脑"中轴线"与左颞叶更"合拍"的青少年，更可能在两周内明显好转。
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">怎么做的</h2>
+    <div class="step-flow reveal">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>治疗前后扫描</h4>
+        <p>132 名青少年（MDD/BD 抑郁发作），治疗前后各做一次静息态 fMRI + HAMD 评估</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>定义早期响应</h4>
+        <p>两周后 HAMD 下降 ≥ 50% 为响应组（75人），其余为未响应组（57人）</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>蚓部种子分析</h4>
+        <p>以小脑蚓部为种子 ROI，计算与全脑每个体素的功能连接并 Fisher z 转换</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>逻辑回归建模</h4>
+        <p>用 FC + 年龄 + 性别建立区分模型，ROC/AUC 评估区分能力</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 基线蚓部—左颞叶 FC 更强 → 更可能两周内好转</h4>
+        <p>响应组在蚓部—左颞叶/颞极的 FC 显著高于未响应组（GRF 校正 p&lt;0.05），簇体素数 429，峰值坐标 (-36, 18, -24)。治疗开始前，脑网络状态已包含"谁更容易改善"的信息。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · FC 与症状改善相关，模型 AUC=0.760</h4>
+        <p>基线 FC 与 HAMD 下降比例正相关（r=0.264, p=0.002），与 HAMA 下降也正相关（r=0.189, p=0.030）。逻辑回归模型 AUC=0.760（95% CI 0.678–0.843）。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 治疗后蚓部—额叶连接均增强（与结局无关）</h4>
+        <p>治疗后所有患者蚓部—右额叶连接显著增加，提示存在与治疗结局无关的共同治疗效应。"预测"通路（颞叶）与"共同变化"通路（额叶）不同。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/paper_fig1.png" alt="基线FC差异" loading="lazy">
+      <div class="caption">图 1 · 基线蚓部功能连接差异：响应组在左颞叶/颞极区域 FC 显著更高</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUC bar -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">模型区分性能</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row">
+        <span class="bar-label">AUC</span>
+        <div class="bar-track"><div class="bar-fill" style="width:76%;background:var(--accent)">0.760</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">95% CI 下限</span>
+        <div class="bar-track"><div class="bar-fill" style="width:68%;background:#22c55e">0.678</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">95% CI 上限</span>
+        <div class="bar-track"><div class="bar-fill" style="width:84%;background:#16a34a">0.843</div></div>
+      </div>
+    </div>
+    <p class="reveal" style="font-size:.85rem;color:#64748b;margin-top:.5rem">模型方程：Log Odds = 6.071 + 0.312×FC − 0.308×age − 0.707×gender</p>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>蚓部—颞叶越"合拍"，两周越可能好转 — 但仍需更大样本验证。</p>
+  </div>
+</div>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>做一次 MRI 就能知道自己会不会好转？</summary><div class="faq-body">不能。研究结果来自群体统计，没有给出个人可用的临床阈值。"连接值"需要特定预处理流程获得。</div></details>
+    <details class="reveal"><summary>AUC=0.760 已经很准了吗？</summary><div class="faq-body">具有一定区分能力，但仍需更大、多中心样本验证，不能当作临床成熟工具。</div></details>
+    <details class="reveal"><summary>治疗具体做了什么？</summary><div class="faq-body">住院患者在药物治疗基础上接受经颅磁刺激（TMS）每天两次，疗程约两周。</div></details>
+    <details class="reveal"><summary>这能证明蚓部—颞叶连接"导致"好转吗？</summary><div class="faq-body">不能。本文用的是相关性分析与回归建模，说明关联与区分能力，不能证明因果机制。</div></details>
+  </div>
+</section>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>小脑蚓部</dt><dd>小脑正中线结构，本研究的"种子"区域，像城市"中轴线"。</dd></div>
+      <div class="glossary-card reveal"><dt>功能连接 (FC)</dt><dd>两个脑区信号自发起伏的同步程度——越同步越"合拍"。</dd></div>
+      <div class="glossary-card reveal"><dt>HAMD</dt><dd>汉密尔顿抑郁量表，用 ≥50% 下降定义早期响应。</dd></div>
+      <div class="glossary-card reveal"><dt>GRF 校正</dt><dd>全脑大量体素统计时控制多重比较的方法。</dd></div>
+      <div class="glossary-card reveal"><dt>ROC / AUC</dt><dd>评估二分类模型区分能力，AUC 越大区分越好。</dd></div>
+      <div class="glossary-card reveal"><dt>Fisher r-to-z</dt><dd>把相关系数转换为更适合比较的 z 值。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

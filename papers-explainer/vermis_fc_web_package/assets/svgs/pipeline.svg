@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">从MRI到结论：预处理与统计流程</title>
+  <desc id="desc">流程图：丢弃前10个时间点、头动校正与排除阈值、标准化、平滑、滤波、以蚓部为种子计算相关并转为Z值、GRF校正、组间与组内比较、ROC评估。</desc>
+  <rect x="0" y="0" width="1200" height="680" fill="#ffffff"/>
+  <text x="60" y="72" font-size="34" font-family="system-ui, -apple-system, Segoe UI, Arial">从MRI到结果：一串“过滤器”</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">关键步骤来自方法学：PDF第3页2.4–2.6节</text>
+
+  <!-- boxes -->
+  <g font-family="system-ui, -apple-system, Segoe UI, Arial">
+    <rect x="80" y="160" width="260" height="90" rx="12" fill="#f5f7ff" stroke="#c7d2fe"/>
+    <text x="110" y="195" font-size="18">1. 丢弃前10时间点</text>
+    <text x="110" y="223" font-size="14" fill="#444">避免磁饱和效应</text>
+
+    <rect x="380" y="160" width="260" height="90" rx="12" fill="#f5f7ff" stroke="#c7d2fe"/>
+    <text x="410" y="195" font-size="18">2. 头动校正与排除</text>
+    <text x="410" y="223" font-size="14" fill="#444">&gt;3mm或3°排除</text>
+
+    <rect x="680" y="160" width="440" height="90" rx="12" fill="#f5f7ff" stroke="#c7d2fe"/>
+    <text x="710" y="195" font-size="18">3. 标准化+平滑+滤波</text>
+    <text x="710" y="223" font-size="14" fill="#444">MNI空间；FWHM=6mm；0.01–0.08Hz</text>
+
+    <rect x="80" y="300" width="360" height="110" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="110" y="338" font-size="18">4. 蚓部ROI（AAL图谱）</text>
+    <text x="110" y="368" font-size="14" fill="#444">ROI内BOLD取平均作参考曲线</text>
+
+    <rect x="480" y="300" width="380" height="110" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="510" y="338" font-size="18">5. 相关→Z值（r-to-z）</text>
+    <text x="510" y="368" font-size="14" fill="#444">计算蚓部与全脑体素相关</text>
+
+    <rect x="900" y="300" width="220" height="110" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="930" y="338" font-size="18">6. GRF校正</text>
+    <text x="930" y="368" font-size="14" fill="#444">p&lt;0.05</text>
+
+    <rect x="80" y="460" width="520" height="120" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="110" y="498" font-size="18">7. 比较与解释</text>
+    <text x="110" y="528" font-size="14" fill="#444">基线：响应 vs 未响应；两组分别做前后比较</text>
+    <text x="110" y="556" font-size="14" fill="#444">控制年龄与性别变量</text>
+
+    <rect x="640" y="460" width="480" height="120" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="670" y="498" font-size="18">8. 建模评估</text>
+    <text x="670" y="528" font-size="14" fill="#444">逻辑回归 + ROC/AUC（AUC=0.760）</text>
+    <text x="670" y="556" font-size="14" fill="#444">ROC图在补充材料</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#0f172a" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#0f172a"/>
+      </marker>
+    </defs>
+    <path d="M340 205 L380 205"/>
+    <path d="M640 205 L680 205"/>
+    <path d="M900 250 L260 300"/>
+    <path d="M440 355 L480 355"/>
+    <path d="M860 355 L900 355"/>
+    <path d="M220 410 L220 460"/>
+    <path d="M760 410 L760 460"/>
+  </g>
+
+  <text x="60" y="640" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">注：流程为科普简化版；参数与阈值见PDF第3页2.3–2.6节。</text>
+</svg>

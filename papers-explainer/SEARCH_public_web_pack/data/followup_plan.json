@@ -1,0 +1,7 @@
+{
+  "follow_up_interval_months": 6,
+  "planned_duration_years": 5,
+  "cohort_rule": "At each participating school, all students enrolled in grades 4–12 at the time are invited at each wave; grade cohorts may vary as students enrol or leave (moving/graduation).",
+  "baseline_collection_window": "28 Sep 2022 – 28 Feb 2023 (across three cities with different windows).",
+  "source_ref": "Findings, p.1; Study design, p.2; Recruitment dates, p.3"
+}

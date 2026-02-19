@@ -1,0 +1,149 @@
+{
+  "groups": [
+    {
+      "group_id": "HC",
+      "n": 23,
+      "source_ref": "第5页 表1"
+    },
+    {
+      "group_id": "ELS",
+      "n": 25,
+      "source_ref": "第5页 表1"
+    }
+  ],
+  "metrics": [
+    {
+      "metric_id": "CTQ_emotional_abuse",
+      "label": "情感虐待",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 6.57,
+          "sd": 1.619,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 13.32,
+          "sd": 4.51,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -7.629,
+      "p_value": "<0.001",
+      "source_ref": "第5页 表1"
+    },
+    {
+      "metric_id": "CTQ_physical_abuse",
+      "label": "躯体虐待",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 5.26,
+          "sd": 0.864,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 8.16,
+          "sd": 4.233,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -4.07,
+      "p_value": "<0.001",
+      "source_ref": "第5页 表1"
+    },
+    {
+      "metric_id": "CTQ_sexual_abuse",
+      "label": "性虐待",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 5.0,
+          "sd": 0.0,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 6.37,
+          "sd": 1.674,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -3.623,
+      "p_value": "0.001",
+      "source_ref": "第5页 表1"
+    },
+    {
+      "metric_id": "CTQ_emotional_neglect",
+      "label": "情感忽视",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 7.43,
+          "sd": 2.573,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 15.58,
+          "sd": 5.037,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -7.74,
+      "p_value": "<0.001",
+      "source_ref": "第5页 表1"
+    },
+    {
+      "metric_id": "CTQ_physical_neglect",
+      "label": "躯体忽视",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 5.96,
+          "sd": 1.522,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 8.74,
+          "sd": 2.903,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -4.103,
+      "p_value": "<0.001",
+      "source_ref": "第5页 表1"
+    },
+    {
+      "metric_id": "CTQ_total",
+      "label": "CTQ总分",
+      "unit": "score",
+      "values": [
+        {
+          "group_id": "HC",
+          "mean": 30.22,
+          "sd": 3.908,
+          "source_ref": "第5页 表1"
+        },
+        {
+          "group_id": "ELS",
+          "mean": 52.16,
+          "sd": 12.954,
+          "source_ref": "第5页 表1"
+        }
+      ],
+      "test_stat": -8.609,
+      "p_value": "<0.001",
+      "source_ref": "第5页 表1"
+    }
+  ],
+  "notes": "表1同时给出教育年限差异与用药类别计数；本模块聚焦ELS分组相关的CTQ字段。（证据：第5页 表1）"
+}

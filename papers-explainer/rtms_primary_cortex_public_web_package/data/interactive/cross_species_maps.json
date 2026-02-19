@@ -1,0 +1,178 @@
+{
+  "maps": [
+    {
+      "id": "rat_baseline_control_vs_cums",
+      "species": "rat",
+      "contrast": "Control_vs_CUMS",
+      "stage": "baseline_difference",
+      "title": "大鼠：对照 vs CUMS（基线差异）",
+      "asset_ref": "./assets/figures/fig2A_rat_baseline.png",
+      "source_ref": "第4页 图2A；第5页 第3.1节",
+      "sample_size_note": "对照 n=17；CUMS n=18（证据：第4页 图2图注；第2页 2.1）",
+      "regions": [
+        {
+          "region_name": "初级运动皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "初级躯体感觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "初级视觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "纹状体",
+          "region_class": "subcortical",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "杏仁核",
+          "region_class": "subcortical",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "海马",
+          "region_class": "subcortical",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.1节"
+        },
+        {
+          "region_name": "丘脑",
+          "region_class": "subcortical",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.1节"
+        }
+      ]
+    },
+    {
+      "id": "rat_intervention_rtms_vs_sham",
+      "species": "rat",
+      "contrast": "CUMS_rTMS_vs_CUMS_sham",
+      "stage": "intervention_effect",
+      "title": "大鼠：rTMS vs 假刺激（干预效应）",
+      "asset_ref": "./assets/figures/fig2B_rat_rtms.png",
+      "source_ref": "第4页 图2B；第5页 第3.2节",
+      "sample_size_note": "假刺激 n=8；rTMS n=7（证据：第4页 图2图注；第2页 2.1）",
+      "regions": [
+        {
+          "region_name": "初级运动皮层",
+          "region_class": "primary_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.2节"
+        },
+        {
+          "region_name": "初级躯体感觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.2节"
+        },
+        {
+          "region_name": "纹状体",
+          "region_class": "subcortical",
+          "direction": "increase",
+          "source_ref": "第5页 第3.2节"
+        },
+        {
+          "region_name": "丘脑",
+          "region_class": "subcortical",
+          "direction": "increase",
+          "source_ref": "第5页 第3.2节"
+        }
+      ]
+    },
+    {
+      "id": "human_baseline_hc_vs_els",
+      "species": "human",
+      "contrast": "HC_vs_ELS",
+      "stage": "baseline_difference",
+      "title": "人群：健康对照 vs ELS患者（基线差异）",
+      "asset_ref": "./assets/figures/fig3A_human_baseline.png",
+      "source_ref": "第6页 图3A；第5页 第3.3节",
+      "sample_size_note": "HC n=23；ELS n=25（证据：第6页 图3图注；第3页 Study 3）",
+      "regions": [
+        {
+          "region_name": "初级视觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.3节"
+        },
+        {
+          "region_name": "初级躯体感觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.3节"
+        },
+        {
+          "region_name": "初级听觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.3节"
+        },
+        {
+          "region_name": "前额叶皮层",
+          "region_class": "frontal_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.3节"
+        },
+        {
+          "region_name": "眶额皮层",
+          "region_class": "frontal_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.3节"
+        }
+      ]
+    },
+    {
+      "id": "human_intervention_post_vs_pre",
+      "species": "human",
+      "contrast": "ELS_post_vs_pre_rTMS",
+      "stage": "intervention_effect",
+      "title": "人群：rTMS后 vs 前（干预效应）",
+      "asset_ref": "./assets/figures/fig3B_human_rtms.png",
+      "source_ref": "第6页 图3B；第5页 第3.4节",
+      "sample_size_note": "同一批患者 n=25 前后对照（证据：第6页 图3图注；第4页 2.4配对t检验）",
+      "regions": [
+        {
+          "region_name": "初级视觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.4节"
+        },
+        {
+          "region_name": "初级躯体感觉皮层",
+          "region_class": "primary_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.4节"
+        },
+        {
+          "region_name": "初级运动皮层",
+          "region_class": "primary_cortex",
+          "direction": "decrease",
+          "source_ref": "第5页 第3.4节"
+        },
+        {
+          "region_name": "前额叶皮层",
+          "region_class": "frontal_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.4节"
+        },
+        {
+          "region_name": "眶额皮层",
+          "region_class": "frontal_cortex",
+          "direction": "increase",
+          "source_ref": "第5页 第3.4节"
+        }
+      ]
+    }
+  ]
+}

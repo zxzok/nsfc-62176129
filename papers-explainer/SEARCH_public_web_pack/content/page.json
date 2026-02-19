@@ -1,0 +1,273 @@
+{
+  "slug": "search-school-mental-health-jiangsu",
+  "title": "把心理健康“体检”搬进学校：SEARCH研究在江苏启动",
+  "subtitle": "数字化问卷 + 多方视角 + 语音/表情与反应时，计划每6个月随访5年",
+  "seo": {
+    "seo_title": "SEARCH研究：把心理健康评估带进学校，用数字平台追踪儿童青少年5年变化",
+    "seo_description": "BMJ Mental Health发表的SEARCH研究在江苏11所学校建立数字化、学校为中心的儿童青少年心理健康评估与随访队列：学生自评 + 家长与教师视角 + 语音/面部与作答反应时等客观线索。首轮纳入11,427名学生。",
+    "keywords": [
+      "儿童青少年心理健康",
+      "学校心理健康服务",
+      "数字化筛查",
+      "混合纵向队列",
+      "SEARCH",
+      "DASS-21",
+      "SDQ",
+      "语音特征",
+      "面部表情",
+      "反应时"
+    ]
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "heading": "这项研究在解决什么问题？",
+      "body_markdown": "学校往往是孩子情绪、睡眠、压力变化最早被发现的地方，但现实中学生数量巨大、心理健康专业人力又紧缺，导致“看得见问题、来不及系统评估和持续跟踪”的矛盾非常突出。（证据：第1页，摘要Background；第2页，INTRODUCTION）\n\nSEARCH（School-based Evaluation Advancing Response for Child Health）就是在这种背景下提出的一项**学校为中心的长期队列研究**：把评估流程尽量放到学校里完成，并用数字平台让学生、照护者与教师的观察汇合到同一系统中。（证据：第1页，摘要Methods/Conclusions；第2页，METHOD）",
+      "citations": [
+        "第1页，摘要Background/Methods/Conclusions",
+        "第2页，INTRODUCTION；METHOD"
+      ]
+    },
+    {
+      "id": "30s",
+      "heading": "30秒读懂",
+      "body_markdown": "问题：学生多、人手少，学校很难做大规模、可重复的心理健康评估。（证据：第1页，摘要Background）\n\n方法：SEARCH用数字平台在校内收集学生自评，并联动照护者与教师视角；同时采集语音/面部相关信息与每题作答反应时等更客观线索。（证据：第1页，摘要Methods；第3-5页，Procedure/Facial and acoustic recording/Response time）\n\n发现：首轮在江苏11所学校纳入11,427名学生、8,839名照护者、1,656名教师，并计划每6个月随访一次、持续5年。（证据：第1页，摘要Findings；第5页，表1）\n\n意义：为理解心理健康随成长的变化轨迹、以及未来开发可扩展的学校筛查工具提供数据与流程基础。（证据：第1页，Conclusions；第5页，DISCUSSION）",
+      "citations": [
+        "第1页，摘要；Conclusions",
+        "第3-5页，方法相关段落",
+        "第5页，表1；DISCUSSION"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "论文指出，中国儿童青少年心理健康负担在增加，但服务供给存在明显缺口；一项覆盖6–16岁、超过7万名学生的全国调查发现，17.5%的学生存在行为与情绪问题。（证据：第2页，INTRODUCTION）\n\n在公共卫生层面，问题不只是“有没有问题”，还包括：问题会不会随年龄变化？家庭、学校与个体因素如何交互影响？哪些变化可能是未来风险的早期信号？要回答这些问题，仅靠一次性的横断面调查不够，需要长期追踪。（证据：第2页，INTRODUCTION；研究问题三条）\n\nSEARCH的核心思路，是用学校这个最贴近孩子的场景，建立一个可重复、可扩展的数据收集系统：既记录学生自己怎么感受，也收集照护者与教师怎么观察，并加入语音/面部与反应时等更客观的行为线索，为后续筛查工具研发与政策设计提供依据。（证据：第1页，Methods/Conclusions；第5页，DISCUSSION）",
+      "citations": [
+        "第2页，INTRODUCTION（含17.5%与研究问题）",
+        "第1页，Methods/Conclusions",
+        "第5页，DISCUSSION"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的：像一次可复制的“学校心理健康体检”",
+      "body_markdown": "可以把SEARCH理解为一套“在学校里完成的心理健康体检流程”，它由**问卷主线**和**客观线索辅线**两部分组成。\n\n**1）问卷主线：让三方视角拼成一张更完整的图。**\n学生先在学校电脑教室登录研究团队开发的SEARCH网站完成问卷；问卷内容覆盖情绪与睡眠、家庭环境与创伤暴露、风险行为（如自伤/自杀意念、欺凌、屏幕使用、吸烟饮酒等）以及学习表现等。（证据：第3页，Measures；第4页，图2左侧清单）\n\n随后，照护者在手机端（微信小程序形式）填写关于孩子情绪与家庭动态的问卷；教师并不是对所有学生都填写，而是采用“阈值触发”：当学生DASS-21抑郁>9、焦虑>7或压力>14时，教师才为这些学生填写问卷（SDQ教师版）。这样设计的现实意义是——在资源有限的学校里，让教师把精力优先用在更需要关注的学生身上。（证据：第3页，Procedure；第4页，图2）\n\n**2）客观线索辅线：不仅看‘你怎么说’，也记录‘你怎么表达’和‘你怎么作答’。**\n学生在安静、关门的教室里面对安卓平板，在调查员引导下回答3个开放式问题，并在60秒内朗读统一文本《The North Wind and the Sun》。每个任务到60秒会自动停止，学生需点击保存；论文报告录音文件保存为mp3与m4a格式，面部与声学信息存入平板本地数据库（面部数据具体文件格式本文未详细说明）。（证据：第4页，Facial and acoustic recording）\n\n同时，数字平台会为每一道题记录两次时间戳：题目页面出现时与提交答案时；两者差值就是作答反应时。论文指出反应时可帮助识别草率作答等质量问题，从而提升数字化筛查研究的数据有效性。（证据：第4-5页，Response time intervals；第5页，表1）\n\n**3）长期追踪：把“快照”变成“成长轨迹”。**\n研究在江苏三地11所学校启动首轮数据收集（2022年9月至2023年2月），并计划之后每6个月重复一次、持续5年。研究采用混合纵向设计：每轮邀请每校当时在读的4–12年级全体学生，因此同一所学校的年级群体会随入学与毕业而变化。（证据：第1页，Findings；第2页，Study design；第3页，三地时间窗）",
+      "citations": [
+        "第3-5页，Procedure/Measures/Facial and acoustic recording/Response time intervals",
+        "第4页，图2",
+        "第1-3页，Findings与Study design"
+      ]
+    },
+    {
+      "id": "what_found",
+      "heading": "我们发现了什么：首轮跑通了流程，建立了大样本基线",
+      "body_markdown": "这篇论文的“发现”主要集中在**首轮样本与流程**（并未报告心理问题发生率、量表分数分布或显著性比较）。在此边界内，可以提炼出三点对公众最有用的信息：\n\n**发现1：多方视角的学校评估流程已落地。**\n流程图显示：学生在校完成网页问卷与平板录音；照护者手机端填写问卷；教师仅对阈值触发的学生补充评估；管理员在后台监测收集状态。（证据：第4页，图2；第3页，Procedure）\n\n**发现2：首轮建立了覆盖4–12年级的大样本基线。**\n首轮共纳入11,427名学生、8,839名照护者、1,656名教师。学生按学段分布为小学（4–6年级）3,209人、初中（7–9年级）4,353人、高中（10–12年级）3,865人。（证据：第5页，表1；第5页，RESULTS）\n\n**发现3：语音/面部任务可行，但真实世界存在数据掉落。**\n论文报告语音/面部任务有27%–28%掉落，原因包括部分学生未保存与COVID-19在宜兴、射阳点位的大规模暴发；最终朗读任务完成8,269条（72.4%），三道开放式问题完成率约71.8%–72.2%。（证据：第5页，RESULTS；表1）\n\n这提醒我们：当研究走出实验室进入学校现场，流程设计与数据治理（如保存机制、现场培训、缺失值处理）同样决定结论是否可靠。（证据：第5页，RESULTS；第6页，DISCUSSION关于COVID与分析注意事项）",
+      "citations": [
+        "第4页，图2",
+        "第5页，表1与RESULTS",
+        "第6页，DISCUSSION（COVID与外推提醒）"
+      ]
+    },
+    {
+      "id": "impact",
+      "heading": "这项研究有什么用：证据支持的价值与需要验证的推测",
+      "body_markdown": "**已证据支持的价值（论文明确表述）：**\nSEARCH将为理解中国儿童青少年心理健康随发展变化的轨迹提供数据基础；它不只依赖学生自评，还纳入照护者与教师观点，并收集客观指标（如声学特征、面部信息、反应时）以支持未来筛查工具的开发。（证据：第1页，Conclusions；第5页，DISCUSSION）\n\n**合理推测但仍需验证的方向（需要后续随访与模型评估）：**\n如果后续研究证明这些多源指标能够稳定预测风险或追踪变化，学校可能更早识别需要进一步支持的学生，并更精细地分配有限资源。但论文目前是方案与首轮样本报告，未给出预测准确率、干预效果或转介收益，因此公众不应把它理解为“已经证明某种工具能诊断/治疗”。（证据：第1页，Findings主要为首轮与计划；第5-6页，DISCUSSION关于未来验证）",
+      "citations": [
+        "第1页，Conclusions/Findings",
+        "第5-6页，DISCUSSION"
+      ]
+    },
+    {
+      "id": "limits_next",
+      "heading": "局限性与下一步：论文怎么说？",
+      "body_markdown": "论文在讨论部分给出了多项限制条件：\n\n首先，研究点位集中在江苏省，可能带来样本同质性，外推到全国或其他国家/族群需要谨慎。（证据：第5-6页，DISCUSSION）\n其次，首轮样本约98%为汉族，少数民族样本较少，限制了对其他族群的泛化。（证据：第5页，RESULTS；第5页，表1；第5-6页，DISCUSSION）\n再次，本研究在普通学校人群中开展而非临床高风险/临床样本，因此问题症状的相对频率可能更低，结论未必直接适用于精神障碍人群。（证据：第6页，DISCUSSION）\n另外，论文指出缺乏生物样本限制了遗传因素探索，并提出在第三阶段设计唾液样本采集协议。（证据：第6页，DISCUSSION）\n最后，首轮数据收集跨越COVID政策变化期，且三地时间窗不同，分析需要考虑疫情在不同点位带来的差异影响。（证据：第3页，三地数据收集时间窗；第6页，DISCUSSION）\n\n下一步方面，论文提出应采用更全国性的方案、扩大参与者范围以验证SEARCH模型，并补充生物样本采集以拓展遗传因素研究。（证据：第6页，DISCUSSION）",
+      "citations": [
+        "第5-6页，DISCUSSION",
+        "第5页，表1",
+        "第3页，Recruitment dates"
+      ]
+    },
+    {
+      "id": "takehome",
+      "heading": "一句话带走",
+      "body_markdown": "用数字平台把心理健康评估带进学校，并长期追踪成长轨迹。（证据：第1页，Conclusions；第2页，Study design）",
+      "citations": [
+        "第1页，Conclusions",
+        "第2页，Study design"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "fig1_sites_map",
+      "title": "江苏三地学校点位在哪里？",
+      "type": "paper_figure_reuse",
+      "file": "assets/paper_figures_web/fig1_sites_w900.jpg",
+      "source_ref": "Figure 1（第3页）",
+      "alt_text": "一张地图显示中国与江苏省位置，并标出江苏省内三个调查城市（射阳、泰州、宜兴）。图意强调：研究首轮点位在江苏三地，并非全国铺开。"
+    },
+    {
+      "id": "fig2_service_flow",
+      "title": "一次“学校心理健康体检”怎么完成？",
+      "type": "paper_figure_reuse",
+      "file": "assets/paper_figures_web/fig2_flow_w900.jpg",
+      "source_ref": "Figure 2（第4页）",
+      "alt_text": "流程图展示SEARCH两天流程：第1天学生在校做网页问卷与平板录音；第2天照护者手机端填写问卷；教师仅对阈值触发学生补充评估；管理员后台监测数据收集状态。"
+    },
+    {
+      "id": "chart_participants_totals",
+      "title": "首轮三类参与者总人数",
+      "type": "redraw_chart",
+      "file": "assets/generated/participants_totals.png",
+      "source_ref": "Table 1（第5页）",
+      "alt_text": "柱状图比较首轮三类参与者人数：学生11,427人、照护者8,839人、教师1,656人。它说明研究以学校为中心，收集了来自学生与成人多方的视角。"
+    },
+    {
+      "id": "chart_students_level",
+      "title": "学生样本覆盖小学到高中",
+      "type": "redraw_chart",
+      "file": "assets/generated/students_by_level.png",
+      "source_ref": "Table 1（第5页）",
+      "alt_text": "柱状图显示学生样本按学段分布：小学（4–6年级）3,209人，初中（7–9年级）4,353人，高中（10–12年级）3,865人，体现覆盖4–12年级。"
+    },
+    {
+      "id": "chart_task_completion",
+      "title": "语音/面部任务完成率约72%",
+      "type": "redraw_chart",
+      "file": "assets/generated/task_completion_rate.png",
+      "source_ref": "RESULTS与Table 1（第5页）",
+      "alt_text": "柱状图展示四项任务完成率：统一文本朗读约72.4%，三道开放式问题约71.8%–72.2%。论文报告总体掉落率为27%–28%，与未保存及COVID暴发有关。"
+    },
+    {
+      "id": "chart_dass_thresholds",
+      "title": "教师评估的阈值触发规则",
+      "type": "redraw_chart",
+      "file": "assets/generated/dass21_thresholds.png",
+      "source_ref": "Procedure（第3页）",
+      "alt_text": "柱状图展示触发教师补充评估的DASS-21阈值：抑郁分量表>9、焦虑分量表>7、压力分量表>14。达到任一阈值时，教师填写相关问卷。"
+    },
+    {
+      "id": "svg_three_perspectives",
+      "title": "为什么要“三方视角”？",
+      "type": "concept_diagram",
+      "file": "assets/generated_svg/three_perspectives.svg",
+      "source_ref": "Measures/Procedure（第3页）；Figure 2（第4页）",
+      "alt_text": "三个相交圆代表学生自评、照护者视角与教师观察。图意强调三方信息相互补充：学生报告感受与行为，照护者补充家庭情境，教师对阈值触发学生提供课堂观察。"
+    },
+    {
+      "id": "svg_objective_signals",
+      "title": "除了问卷，还记录哪些“客观线索”？",
+      "type": "concept_diagram",
+      "file": "assets/generated_svg/objective_signals.svg",
+      "source_ref": "Facial and acoustic recording（第4页）；Response time intervals（第4-5页）",
+      "alt_text": "三块面板分别表示面部表情采集、语音采集与作答反应时记录。图意说明：研究不仅收集问卷，还收集表达方式与作答行为，以支持未来更客观的筛查工具研发。"
+    },
+    {
+      "id": "svg_followup_timeline",
+      "title": "每6个月一次，持续5年的随访计划",
+      "type": "concept_timeline",
+      "file": "assets/generated_svg/followup_timeline.svg",
+      "source_ref": "Findings/Study design（第1-2页）；Recruitment dates（第3页）",
+      "alt_text": "时间轴从基线到60个月，每6个月一个节点，表示研究计划重复评估。图意强调：通过多次测量才能看到心理健康随成长的变化轨迹，而不只是一次性快照。"
+    },
+    {
+      "id": "svg_limits_next",
+      "title": "局限与下一步一图读懂",
+      "type": "concept_infographic",
+      "file": "assets/generated_svg/limits_next_steps.svg",
+      "source_ref": "DISCUSSION（第5-6页）",
+      "alt_text": "两栏信息图：左栏列出局限（点位集中江苏、样本族群结构、普通人群非临床、缺少生物样本、COVID差异影响）；右栏列出下一步（全国验证、设计唾液采集、分析考虑疫情时序）。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "im_dashboard_wave1",
+      "title": "首轮样本看板",
+      "purpose": "用可点击方式理解研究规模与覆盖范围（点位/学段/性别/族群），避免把“样本构成”误解为“发生率”。",
+      "ui_controls": [
+        {
+          "type": "tabs",
+          "label": "参与者类别",
+          "options": [
+            "students",
+            "caregivers",
+            "teachers"
+          ]
+        },
+        {
+          "type": "select",
+          "label": "统计维度",
+          "options": [
+            "location",
+            "education_level",
+            "sex",
+            "race"
+          ]
+        }
+      ],
+      "schema": "interactive/schema_dashboard.json",
+      "data": "data/table1_counts.json",
+      "source_ref": "Table 1（第5页）"
+    },
+    {
+      "id": "im_completion_explorer",
+      "title": "完成率探险：语音/面部任务怎么“掉数据”？",
+      "purpose": "让公众理解真实世界研究的数据完整性问题，以及论文报告的掉落原因与范围。",
+      "ui_controls": [
+        {
+          "type": "buttons",
+          "label": "任务选择",
+          "options": [
+            "standardised_text",
+            "open_ended_q1",
+            "open_ended_q2",
+            "open_ended_q3"
+          ]
+        }
+      ],
+      "schema": "interactive/schema_task_completion.json",
+      "data": "data/task_completion.json",
+      "source_ref": "RESULTS与Table 1（第5页）"
+    },
+    {
+      "id": "im_flow_clickthrough",
+      "title": "把流程点亮：两天内发生了什么？",
+      "purpose": "用交互式流程图解释SEARCH的服务模型与分工，帮助读者把方法“想象出来”。",
+      "ui_controls": [
+        {
+          "type": "click_list",
+          "label": "流程步骤",
+          "options": [
+            "student_web_screening",
+            "student_face_voice_recording",
+            "caregiver_mobile_questionnaire",
+            "teacher_sdq_triggered",
+            "admin_monitoring"
+          ]
+        }
+      ],
+      "schema": "interactive/schema_flow.json",
+      "data": "data/flow_steps.json",
+      "source_ref": "Figure 2（第4页）；Procedure（第3-4页）"
+    },
+    {
+      "id": "im_followup_timeline",
+      "title": "随访时间线：为什么要每6个月一次？",
+      "purpose": "用时间轴/滑杆直观展示“重复测量”的意义与研究计划频率。",
+      "ui_controls": [
+        {
+          "type": "slider",
+          "label": "时间（月）",
+          "min": 0,
+          "max": 60,
+          "step": 6
+        }
+      ],
+      "schema": "interactive/schema_followup.json",
+      "data": "data/followup_plan.json",
+      "source_ref": "Findings/Study design（第1-2页）"
+    }
+  ],
+  "disclaimer": "本页面为科研科普解读，基于论文对研究设计与首轮样本情况的描述整理（非临床诊断或医疗建议）。论文未报告个体诊断、干预效果、预测准确率与完整的隐私技术细节时，本页面将明确标注“论文未报告”；读者不应据此做过度外推。（证据：第6页，Ethics approval；第5-6页，DISCUSSION）",
+  "citation": "Zhang R, et al. BMJ Mental Health 2023;26:1–7. doi:10.1136/bmjment-2023-300861 (Open access, CC BY-NC 4.0)."
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SymptomReHoDashboardData",
+  "type": "object",
+  "description": "量表与脑指标联动模块数据：展示BPRS/HAMD/HAMA治疗前后变化及ReHo-症状相关。",
+  "properties": {
+    "participants_n": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "参与者数量（人）",
+      "examples": [
+        21
+      ]
+    },
+    "scales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scale_id": {
+            "type": "string",
+            "enum": [
+              "BPRS",
+              "HAMD",
+              "HAMA"
+            ],
+            "description": "量表ID"
+          },
+          "scale_name_cn": {
+            "type": "string",
+            "description": "量表中文名/解释"
+          },
+          "p_value_text": {
+            "type": "string",
+            "description": "显著性文本（论文报告格式，如“<0.0001”）"
+          },
+          "figure_ref": {
+            "type": "string",
+            "description": "对应图号，如“图3B”"
+          },
+          "page_ref": {
+            "type": "string",
+            "description": "页码锚点，如“第8页”"
+          },
+          "notes": {
+            "type": "string",
+            "description": "缺失值/解释说明。若无具体数值，仅说明“论文未提供均值/SD”。"
+          }
+        },
+        "required": [
+          "scale_id",
+          "scale_name_cn",
+          "p_value_text",
+          "figure_ref",
+          "page_ref"
+        ]
+      }
+    },
+    "correlation": {
+      "type": "object",
+      "properties": {
+        "x_metric": {
+          "type": "string",
+          "const": "Frontal ReHo",
+          "description": "横轴指标"
+        },
+        "y_metric": {
+          "type": "string",
+          "const": "BPRS score",
+          "description": "纵轴指标"
+        },
+        "r": {
+          "type": "number",
+          "description": "相关系数 r"
+        },
+        "p": {
+          "type": "number",
+          "description": "p值"
+        },
+        "multiple_comparison": {
+          "type": "string",
+          "description": "多重比较说明（如FDR校正）"
+        },
+        "source_ref": {
+          "type": "string",
+          "description": "来源锚点（页码/图号）"
+        }
+      },
+      "required": [
+        "x_metric",
+        "y_metric",
+        "r",
+        "p",
+        "multiple_comparison",
+        "source_ref"
+      ]
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "fig3B_path": {
+          "type": "string"
+        },
+        "fig3C_path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fig3B_path",
+        "fig3C_path"
+      ]
+    }
+  },
+  "required": [
+    "participants_n",
+    "scales",
+    "correlation",
+    "images"
+  ]
+}

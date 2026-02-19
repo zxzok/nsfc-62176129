@@ -1,0 +1,75 @@
+{
+  "source_ref": "第13页，表5",
+  "data": [
+    {
+      "model_id": "upper_envelope",
+      "model_label": "Upper Envelope",
+      "acc_mean": 0.642,
+      "acc_sd": 0.054,
+      "precision_mean": 0.516,
+      "precision_sd": 0.101,
+      "recall_mean": 0.567,
+      "recall_sd": 0.142,
+      "f1_mean": 0.521,
+      "f1_sd": 0.064,
+      "roc_auc_mean": 0.658,
+      "roc_auc_sd": 0.059
+    },
+    {
+      "model_id": "spectrogram",
+      "model_label": "Spectrogram",
+      "acc_mean": 0.685,
+      "acc_sd": 0.063,
+      "precision_mean": 0.608,
+      "precision_sd": 0.091,
+      "recall_mean": 0.727,
+      "recall_sd": 0.096,
+      "f1_mean": 0.654,
+      "f1_sd": 0.06,
+      "roc_auc_mean": 0.762,
+      "roc_auc_sd": 0.063
+    },
+    {
+      "model_id": "mel_spectrogram",
+      "model_label": "Mel-spectrogram",
+      "acc_mean": 0.752,
+      "acc_sd": 0.049,
+      "precision_mean": 0.657,
+      "precision_sd": 0.072,
+      "recall_mean": 0.769,
+      "recall_sd": 0.095,
+      "f1_mean": 0.701,
+      "f1_sd": 0.032,
+      "roc_auc_mean": 0.798,
+      "roc_auc_sd": 0.032
+    },
+    {
+      "model_id": "hsfs",
+      "model_label": "HSFs (emoLarge, 6552-D)",
+      "acc_mean": 0.641,
+      "acc_sd": 0.018,
+      "precision_mean": 0.461,
+      "precision_sd": 0.032,
+      "recall_mean": 0.426,
+      "recall_sd": 0.056,
+      "f1_mean": 0.463,
+      "f1_sd": 0.018,
+      "roc_auc_mean": 0.559,
+      "roc_auc_sd": 0.046
+    },
+    {
+      "model_id": "fusion",
+      "model_label": "Fusion (ABAFnet)",
+      "acc_mean": 0.814,
+      "acc_sd": 0.041,
+      "precision_mean": 0.65,
+      "precision_sd": 0.09,
+      "recall_mean": 0.8,
+      "recall_sd": 0.133,
+      "f1_mean": 0.7,
+      "f1_sd": 0.03,
+      "roc_auc_mean": 0.847,
+      "roc_auc_sd": 0.044
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "module_id": "evidence_chain_puzzle",
+  "title": "三层证据拼图：影像→细胞/通路→遗传风险",
+  "description": "用于把两亚型的影像偏离、转录组富集与多基因风险（PRS）放到同一界面，帮助公众理解“多条证据链的一致与差异”。",
+  "fields": [
+    {
+      "name": "subtype",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "subtype_1",
+        "subtype_2"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：两亚型"
+    },
+    {
+      "name": "imaging_signature",
+      "type": "object",
+      "unit": null,
+      "allowed_range": "见子字段",
+      "missing": "not_allowed",
+      "source_ref": "PDF第5页 图2A"
+    },
+    {
+      "name": "imaging_signature.summary_cn",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "文本",
+      "missing": "not_allowed",
+      "source_ref": "PDF第5页 结果段落"
+    },
+    {
+      "name": "imaging_signature.key_regions",
+      "type": "array",
+      "unit": null,
+      "allowed_range": "字符串数组",
+      "missing": "allowed",
+      "source_ref": "PDF第5页 结果段落点名区域"
+    },
+    {
+      "name": "transcriptomics",
+      "type": "object",
+      "unit": null,
+      "allowed_range": "见子字段",
+      "missing": "not_allowed",
+      "source_ref": "PDF第6–7页；图4"
+    },
+    {
+      "name": "transcriptomics.pls1_covariance_explained_pct",
+      "type": "number",
+      "unit": "percent",
+      "allowed_range": [
+        0,
+        100
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第6页：PLS1-subtype1 26.38%"
+    },
+    {
+      "name": "transcriptomics.pls1_map_correlation_r",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        -1,
+        1
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页：r=0.52/0.48"
+    },
+    {
+      "name": "transcriptomics.pls1_map_correlation_p",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页：p=0.0017/0.0039"
+    },
+    {
+      "name": "transcriptomics.enriched_processes",
+      "type": "array",
+      "unit": null,
+      "allowed_range": "过程/通路对象数组",
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页；PDF第7页 图4C-4D"
+    },
+    {
+      "name": "transcriptomics.enriched_processes[].name",
+      "type": "string",
+      "unit": null,
+      "allowed_range": "文本",
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页：Alzheimer’s disease/ion transport等"
+    },
+    {
+      "name": "transcriptomics.cell_type_signals",
+      "type": "array",
+      "unit": null,
+      "allowed_range": "细胞类型对象数组",
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页；PDF第7页 图4E-4F"
+    },
+    {
+      "name": "transcriptomics.cell_type_signals[].cell_type",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "Micro",
+        "Neuro.in",
+        "Neuro.ex",
+        "Astro",
+        "Endo",
+        "Oligo",
+        "OPC",
+        "Other"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页：七类细胞"
+    },
+    {
+      "name": "transcriptomics.cell_type_signals[].overlap_gene_count",
+      "type": "integer",
+      "unit": "genes",
+      "allowed_range": [
+        0,
+        20000
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第6页：Micro overlap=117; inhibitory overlap=157"
+    },
+    {
+      "name": "transcriptomics.cell_type_signals[].pFDR_or_perm_p",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第6页：Micro permutation pFDR=0.005"
+    },
+    {
+      "name": "genetics",
+      "type": "array",
+      "unit": null,
+      "allowed_range": "PRS结果对象数组",
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页；PDF第8页 图5"
+    },
+    {
+      "name": "genetics[].prs_type",
+      "type": "string",
+      "unit": null,
+      "allowed_range": [
+        "PRS_AD",
+        "PRS_MDD"
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第4页 PRS方法"
+    },
+    {
+      "name": "genetics[].significant_vs_HC",
+      "type": "boolean",
+      "unit": null,
+      "allowed_range": [
+        true,
+        false
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页 结果；PDF第8页 图5"
+    },
+    {
+      "name": "genetics[].thresholds",
+      "type": "array",
+      "unit": null,
+      "allowed_range": "阈值对象数组",
+      "missing": "allowed",
+      "source_ref": "PDF第6页：阈值、NSNPs、R2"
+    },
+    {
+      "name": "genetics[].thresholds[].p_threshold",
+      "type": "number",
+      "unit": null,
+      "allowed_range": [
+        0,
+        1
+      ],
+      "missing": "not_allowed",
+      "source_ref": "PDF第6页"
+    },
+    {
+      "name": "genetics[].thresholds[].nsnps",
+      "type": "integer",
+      "unit": "SNPs",
+      "allowed_range": [
+        0,
+        10000000
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第6页"
+    },
+    {
+      "name": "genetics[].thresholds[].nagelkerke_r2_pct",
+      "type": "number",
+      "unit": "percent",
+      "allowed_range": [
+        0,
+        100
+      ],
+      "missing": "allowed",
+      "source_ref": "PDF第6页"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CrossSpeciesMapSwitcherData",
+  "type": "object",
+  "description": "跨物种脑图对照器数据：用于切换展示大鼠与人类的ReHo差异图与说明。",
+  "properties": {
+    "views": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "view_id": {
+            "type": "string",
+            "description": "视图ID，如 rat_baseline"
+          },
+          "species": {
+            "type": "string",
+            "enum": [
+              "rat",
+              "human"
+            ],
+            "description": "物种"
+          },
+          "contrast": {
+            "type": "string",
+            "enum": [
+              "baseline_difference",
+              "pre_post_rtms"
+            ],
+            "description": "对比类型"
+          },
+          "title": {
+            "type": "string",
+            "description": "视图标题（对公众友好）"
+          },
+          "image_path": {
+            "type": "string",
+            "description": "图片相对路径（本包assets/img）"
+          },
+          "alt_text": {
+            "type": "string",
+            "description": "无障碍alt文本（80–120字）"
+          },
+          "caption": {
+            "type": "string",
+            "description": "图注说明（含证据锚点）"
+          },
+          "source_ref": {
+            "type": "string",
+            "description": "论文来源锚点，如“第7页 图2A”"
+          },
+          "notes": {
+            "type": "string",
+            "description": "可选：补充解释或限制提示"
+          }
+        },
+        "required": [
+          "view_id",
+          "species",
+          "contrast",
+          "title",
+          "image_path",
+          "alt_text",
+          "caption",
+          "source_ref"
+        ]
+      }
+    }
+  },
+  "required": [
+    "views"
+  ]
+}

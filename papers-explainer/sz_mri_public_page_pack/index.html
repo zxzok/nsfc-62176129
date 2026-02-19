@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>长期抗精神病药会影响大脑吗？ — 真实世界 MRI 线索</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#0369a1;--accent-light:#7dd3fc;--accent-bg:rgba(3,105,161,.08);--grad-start:#0c4a6e;--grad-end:#075985}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(125,211,252,.12),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .vs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .vs-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .vs-card h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .vs-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#10b981}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.vs-row{grid-template-columns:1fr}}
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#7dd3fc;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#7dd3fc),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#7dd3fc)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">精神分裂症 MRI 研究</span>
+      <span class="hero-chip">GMV vs ALFF</span>
+      <span class="hero-chip">真实世界观察</span>
+    </div>
+    <h1>长期抗精神病药会影响大脑吗？真实世界 MRI 给出线索</h1>
+    <p class="subtitle">灰质体积更受用药状态影响，静息态脑活动更像"疾病底色" — 精神分裂症横断面 MRI 研究</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.3389/fnins.2021.749316" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Front. Neurosci., 2022, 15, 749316</a></p>
+  </div>
+</header>
+
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">89</div><div class="label">用药患者</div></div>
+      <div class="kpi-card reveal"><div class="num">81</div><div class="label">未用药患者</div></div>
+      <div class="kpi-card reveal"><div class="num">235</div><div class="label">健康对照</div></div>
+      <div class="kpi-card reveal"><div class="num">2 把尺子</div><div class="label">GMV + ALFF</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      把大脑想象成一座城市。<strong>灰质体积 (GMV)</strong> 像城市的"建筑材料量"——砖瓦多少会因翻新改造而变化。<strong>ALFF</strong> 像夜深人静时的"背景运转声"——即使没人工作，城市的电力系统仍有固有的嗡鸣。研究发现：建筑材料量更容易被"是否在改造（用药状态）"改变，而背景运转声的异常模式在用药/未用药之间几乎一样。
+    </div>
+  </div>
+</section>
+
+<!-- Two rulers -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">两把尺子的对比</h2>
+    <div class="vs-row reveal">
+      <div class="vs-card" style="border-top:4px solid #dc2626">
+        <h4 style="color:#dc2626">GMV · 结构尺</h4>
+        <p>神经元胞体密集的"材料层"。三组在前额叶、颞叶、扣带回等多处显著差异（FWE 校正）。<strong>用药组多处更低</strong>，差异最大簇 1873 体素 (F=22.54)。</p>
+      </div>
+      <div class="vs-card" style="border-top:4px solid var(--accent)">
+        <h4 style="color:var(--accent)">ALFF · 功能尺</h4>
+        <p>"背景运转强度"。患者呈"前部更高、后部更低"模式（纹状体 ↑ 视觉皮层 ↓）。<strong>用药与未用药之间无显著差异</strong>。</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/figure1.png" alt="GMV三组差异" loading="lazy">
+      <div class="caption">图 1 · GMV 差异：红黄区域表示三组存在显著差异，用药组在前额叶等区域更低</div>
+    </div>
+    <div class="fig-inline reveal">
+      <img src="visuals/figure2.png" alt="ALFF三组差异" loading="lazy">
+      <div class="caption">图 2 · ALFF 差异：纹状体更高、视觉皮层更低，但用药与未用药模式一致</div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 用药组 GMV 多处更低</h4>
+        <p>差异集中在前额叶、颞叶、扣带回与岛叶等认知控制/情绪调节相关脑区。GMV 对长期用药状态更"敏感"。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · ALFF"前高后低"模式不受用药影响</h4>
+        <p>两类患者都呈现纹状体 ALFF 偏高、视觉皮层偏低；用药 vs 未用药之间 ALFF 无显著差异。ALFF 更像"疾病本底"。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · GMV 与症状相关，ALFF 与症状无关</h4>
+        <p>BPRS 与多处 GMV 正相关（FDR 校正）；ALFF 与 BPRS 无显著相关。提示 GMV 更像"随状态一起动"的指标。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>结构更受长期用药影响，功能异常更像本底 — 研究者应根据目标选择影像指标。</p>
+  </div>
+</div>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>这是不是证明"抗精神病药会让大脑萎缩"？</summary><div class="faq-body">不能下此结论。本研究是横断面观察，且药物剂量、依从性等信息不完整，不能证明因果。</div></details>
+    <details class="reveal"><summary>未用药组是不是都从没吃过药？</summary><div class="faq-body">不是。38.27% 为从未用药，61.73% 为至少 4 周未用药，可能存在既往药物暴露混杂。</div></details>
+    <details class="reveal"><summary>ALFF 能判断病情轻重吗？</summary><div class="faq-body">在本研究中 ALFF 与 BPRS 无显著相关，不能用于症状定量评估，但可定性定位异常功能区。</div></details>
+    <details class="reveal"><summary>这些结果能指导停药/减药吗？</summary><div class="faq-body">不能。本研究不是临床试验，任何用药调整应由精神科医生评估。</div></details>
+  </div>
+</section>
+
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>GMV (灰质体积)</dt><dd>神经元胞体密集的脑组织"材料量"，用 VBM 逐体素比较。</dd></div>
+      <div class="glossary-card reveal"><dt>ALFF</dt><dd>低频振幅 — 静息态 BOLD 信号在 0.01-0.08 Hz 的波动强度。</dd></div>
+      <div class="glossary-card reveal"><dt>VBM</dt><dd>体素形态学分析 — 把大脑对齐后逐"小方块"比较材料量差异。</dd></div>
+      <div class="glossary-card reveal"><dt>FWE 校正</dt><dd>家族误差率校正 — 全脑大量体素比较时控制假阳性的统计方法。</dd></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

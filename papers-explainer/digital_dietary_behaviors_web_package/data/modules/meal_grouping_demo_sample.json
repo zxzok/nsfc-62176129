@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "title": "Transaction-to-meal grouping demo data",
+    "rules_source_ref": "PDF第3页 Methods: Calculation of Dietary Features—Time Patterns（2小时合并；三餐时间窗）",
+    "example_source_ref": "PDF第3页 图1 Step 2（示例原始数据表）",
+    "notes": "包含两份数据：一份来自论文图示中的示例记录（用于展示格式）；另一份为合成示例（用于展示“同一顿多次刷卡”会被合并）。"
+  },
+  "rules": {
+    "merge_window_hours": 2,
+    "meal_time_windows": {
+      "breakfast": {
+        "start": "06:30",
+        "end": "08:30"
+      },
+      "lunch": {
+        "start": "11:00",
+        "end": "13:00"
+      },
+      "dinner": {
+        "start": "17:30",
+        "end": "19:30"
+      }
+    },
+    "meal_time_source_ref": "PDF第3页 Methods: Calculation of Dietary Features—Time Patterns"
+  },
+  "datasets": [
+    {
+      "dataset_id": "paper_figure1_example",
+      "is_synthetic": false,
+      "records": [
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-01T07:24:34",
+          "amount_usd": 0.74,
+          "cafeteria": "Cafeteria No.2",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-01T12:11:05",
+          "amount_usd": 2.52,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-01T17:44:23",
+          "amount_usd": 2.37,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-02T07:12:45",
+          "amount_usd": 0.89,
+          "cafeteria": "Cafeteria No.3",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-31T08:03:27",
+          "amount_usd": 0.59,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-31T11:48:20",
+          "amount_usd": 2.23,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "PDF第3页 图1 Step 2"
+        },
+        {
+          "student_id": "No.1",
+          "timestamp": "2020-10-31T18:35:49",
+          "amount_usd": 2.67,
+          "cafeteria": "Cafeteria No.3",
+          "source_ref": "PDF第3页 图1 Step 2"
+        }
+      ]
+    },
+    {
+      "dataset_id": "synthetic_multi_transaction_example",
+      "is_synthetic": true,
+      "records": [
+        {
+          "student_id": "Demo",
+          "timestamp": "2020-10-08T11:12:00",
+          "amount_usd": 1.2,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "合成示例（非论文数据）"
+        },
+        {
+          "student_id": "Demo",
+          "timestamp": "2020-10-08T11:45:00",
+          "amount_usd": 0.8,
+          "cafeteria": "Cafeteria No.1",
+          "source_ref": "合成示例（非论文数据）"
+        },
+        {
+          "student_id": "Demo",
+          "timestamp": "2020-10-08T17:40:00",
+          "amount_usd": 2.1,
+          "cafeteria": "Cafeteria No.2",
+          "source_ref": "合成示例（非论文数据）"
+        },
+        {
+          "student_id": "Demo",
+          "timestamp": "2020-10-08T19:05:00",
+          "amount_usd": 0.6,
+          "cafeteria": "Cafeteria No.2",
+          "source_ref": "合成示例（非论文数据）"
+        }
+      ]
+    }
+  ]
+}

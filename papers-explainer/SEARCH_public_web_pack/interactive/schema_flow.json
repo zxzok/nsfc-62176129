@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEARCH_ServiceModel_Flow",
+  "type": "object",
+  "properties": {
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "day": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ]
+          },
+          "actor": {
+            "type": "string",
+            "enum": [
+              "student",
+              "caregiver",
+              "teacher",
+              "administrator"
+            ]
+          },
+          "device": {
+            "type": "string"
+          },
+          "what_is_collected": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "trigger_rule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_limit_seconds": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "source_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step_id",
+          "day",
+          "actor",
+          "device",
+          "what_is_collected",
+          "trigger_rule",
+          "time_limit_seconds",
+          "source_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_value_policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "steps",
+    "missing_value_policy"
+  ],
+  "additionalProperties": false
+}

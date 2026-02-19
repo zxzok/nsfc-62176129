@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>两种"炎症底色"的大脑 — 免疫-炎症型神经影像标记</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../unified-style.css">
+  <style>
+    :root{--accent:#dc2626;--accent-light:#fca5a5;--accent-bg:rgba(220,38,38,.08);--accent-bg2:rgba(220,38,38,.04);--grad-start:#7f1d1d;--grad-end:#991b1b}
+    .hero-custom{background:linear-gradient(135deg,var(--grad-start),var(--grad-end));color:#fff;padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+    .hero-custom::after{content:'';position:absolute;top:-60%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(252,165,165,.12),transparent 70%);pointer-events:none}
+    .hero-custom h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;line-height:1.25;max-width:720px}
+    .hero-custom .subtitle{color:rgba(255,255,255,.78);font-size:1.05rem;margin-top:.75rem;max-width:620px;line-height:1.7;margin-left:auto;margin-right:auto}
+    .hero-chip-row{justify-content:center;display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+    .hero-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.25rem .85rem;font-size:.78rem;color:rgba(255,255,255,.88);backdrop-filter:blur(4px)}
+    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .kpi-card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+    .kpi-card .num{font-size:1.7rem;font-weight:800;color:var(--accent)}
+    .kpi-card .label{font-size:.82rem;color:#64748b;margin-top:.25rem}
+    .analogy-box{background:var(--accent-bg);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.97rem;line-height:1.8}
+    .step-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2rem 0}
+    .step-card{background:#fff;border-radius:12px;padding:1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.06);position:relative;padding-top:2.2rem}
+    .step-card .step-num{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+    .step-card h4{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#1e293b}
+    .step-card p{font-size:.85rem;color:#475569;line-height:1.6}
+    .finding-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+    .finding-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+    .finding-card.alt{border-left-color:#f59e0b}
+    .finding-card.alt2{border-left-color:#2563eb}
+    .finding-card h4{font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:.5rem}
+    .finding-card p{font-size:.88rem;color:#475569;line-height:1.7}
+    .fig-inline{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:1.5rem 0}
+    .fig-inline img{width:100%;display:block}
+    .fig-inline .caption{padding:.8rem 1rem;font-size:.82rem;color:#64748b;border-top:1px solid #f1f5f9}
+    .bar-chart{margin:1.5rem 0}
+    .bar-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+    .bar-row .bar-label{width:120px;font-size:.82rem;color:#334155;text-align:right;flex-shrink:0}
+    .bar-row .bar-track{flex:1;height:22px;background:#fee2e2;border-radius:6px;overflow:hidden}
+    .bar-row .bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-size:.72rem;font-weight:600;color:#fff}
+    .vs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .vs-card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .vs-card.type1{border-top:4px solid #dc2626}
+    .vs-card.type2{border-top:4px solid #2563eb}
+    .vs-card h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .vs-card ul{font-size:.88rem;color:#475569;line-height:1.8;padding-left:1.2rem}
+    .takeaway-banner{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:2.5rem 0;margin:3rem 0;text-align:center}
+    .takeaway-banner h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+    .takeaway-banner p{color:rgba(255,255,255,.7);max-width:520px;margin:0 auto;font-size:.95rem}
+    details{background:#fff;border-radius:10px;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    details summary{padding:1rem 1.2rem;font-weight:600;font-size:.92rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    details summary::after{content:'+';font-size:1.2rem;color:var(--accent);transition:transform .2s}
+    details[open] summary::after{content:'-'}
+    details .faq-body{padding:0 1.2rem 1rem;font-size:.88rem;color:#475569;line-height:1.7}
+    .glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+    .glossary-card{background:#fff;border-radius:10px;padding:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .glossary-card dt{font-weight:700;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+    .glossary-card dd{font-size:.84rem;color:#475569;line-height:1.6;margin:0}
+    @media(max-width:640px){.hero-custom{padding:3.5rem 0 2.5rem}.vs-row{grid-template-columns:1fr}}
+  
+/* ── layout-fix injected ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);height:52px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar a{color:#fca5a5;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+.topbar span{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.5px}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-light,#fca5a5),var(--accent,#666));width:0;z-index:999;transition:width .15s}
+.bg-surface{background:#f8f9fa}
+.site-foot{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.82rem}
+.site-foot a{color:var(--accent-light,#fca5a5)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- Fixed Nav -->
+<nav class="topbar">
+  <a href="../../#/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回主站
+  </a>
+  <span>NSFC 62176129</span>
+</nav>
+
+<!-- Progress Bar -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Hero -->
+<header class="hero-custom">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="hero-chip-row">
+      <span class="hero-chip">Biological Psychiatry · 2025</span>
+      <span class="hero-chip">神经影像 × 表观遗传</span>
+      <span class="hero-chip">跨队列验证</span>
+    </div>
+    <h1>抑郁、双相、精神分裂背后，可能有两种"炎症底色"的大脑</h1>
+    <p class="subtitle">血液DNA甲基化 + 静息态脑连接，识别并验证"免疫-炎症型"神经影像标记 — Tang et al., 2025</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.75"><a href="https://doi.org/10.1016/j.biopsych.2025.10.004" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Biol. Psychiatry, 2025</a></p>
+  </div>
+</header>
+
+<!-- KPI Strip -->
+<section class="sec" style="padding:2rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div class="kpi-strip">
+      <div class="kpi-card reveal"><div class="num">329+169</div><div class="label">沈阳队列（患者+对照）</div></div>
+      <div class="kpi-card reveal"><div class="num">554</div><div class="label">南京青少年验证队列</div></div>
+      <div class="kpi-card reveal"><div class="num">443</div><div class="label">稳定脑连接"炎症指纹"</div></div>
+      <div class="kpi-card reveal"><div class="num">0.78</div><div class="label">分类器 ROC-AUC</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Analogy -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">打个比方</h2>
+    <div class="analogy-box reveal">
+      把精神障碍患者想象成一群发烧的人：有些人的发烧背后确实有"慢性感染"在作祟，另一些人的温度虽然也偏高，但原因不同。这项研究相当于先用"血液化验"把人群分成两类，再用"大脑连通图"画出只属于"感染型"的线路图，然后在一群新的青少年身上看这张线路图是否还管用。
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">为什么要做这个研究</h2>
+    <p class="reveal" style="color:#475569;line-height:1.8;margin-top:1rem">
+      同样被诊断为抑郁、双相或精神分裂的人，对治疗反应差异很大。免疫-炎症失衡是反复被提到的候选机制——但<strong>只有一部分患者</strong>可能受其驱动。如果能可靠地识别出这部分人，就能减少"试错式治疗"，并为验证抗炎辅助策略提供更精准的入组工具。
+    </p>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">怎么做的：两阶段 × 两队列</h2>
+    <div class="step-flow reveal">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>血液甲基化分型</h4>
+        <p>沈阳队列 329 名患者的启动子区 DNA 甲基化（850K 芯片），用 NMF + K-means 聚类分成两类生物型</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>炎症评分 EIS</h4>
+        <p>6 个与 CRP 相关 CpG 位点加权得到表观遗传炎症评分，作为慢性低度炎症代理指标</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>脑连接预测模型 CPM</h4>
+        <p>从静息态 fMRI 的 360 脑区两两连接中，筛出能预测 EIS 的 443 条稳定连接作为"炎症指纹"</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>独立队列验证</h4>
+        <p>南京 554 名青少年用该指纹分层，比较免疫-炎症型 vs 非免疫-炎症型的外周指标与症状轨迹</p>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/figure1_web.jpg" alt="研究设计流程图" loading="lazy">
+      <div class="caption">图 1 · 研究整体设计：从甲基化分型到脑连接炎症指纹再到独立队列验证</div>
+    </div>
+  </div>
+</section>
+
+<!-- Biotype Comparison -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">两类生物型：免疫-炎症 vs 非免疫-炎症</h2>
+    <div class="vs-row reveal">
+      <div class="vs-card type1">
+        <h4 style="color:#dc2626">Biotype-1 · 52.6%</h4>
+        <ul>
+          <li>2,189 个差异甲基化位点</li>
+          <li>适应性免疫被抑制</li>
+          <li>先天免疫增强</li>
+          <li>EIS 更低（提示更高慢性炎症）</li>
+          <li>中性粒细胞比例更高</li>
+        </ul>
+      </div>
+      <div class="vs-card type2">
+        <h4 style="color:#2563eb">Biotype-2 · 47.4%</h4>
+        <ul>
+          <li>仅 2 个差异甲基化位点</li>
+          <li>甲基化模式接近健康对照</li>
+          <li>炎症特征不突出</li>
+          <li>EIS 无显著偏离</li>
+          <li>外周免疫指标接近正常</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/figure2_web.jpg" alt="两类生物型的甲基化与脑连接特征" loading="lazy">
+      <div class="caption">图 2 · Biotype-1 vs Biotype-2 的甲基化差异、通路富集与脑连接炎症指纹</div>
+    </div>
+  </div>
+</section>
+
+<!-- Findings -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">三大发现</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>发现 1 · 甲基化可将患者分成两类</h4>
+        <p>Biotype-1 出现大量启动子区差异甲基化，富集于适应性免疫（高甲基化→抑制）和先天免疫（低甲基化→增强），呈现"慢性炎症不平衡"。Biotype-2 几乎没有差异。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>发现 2 · 443 条"炎症指纹"连接</h4>
+        <p>CPM 筛出 210 条正子网络（初级皮层内连接为主）和 233 条负子网络（视觉皮层与 DMN/FPN 之间），合计 443 条稳定连接，主要涉及 VIS、DMN 与 FPN。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>发现 3 · 独立队列验证成功</h4>
+        <p>南京队列 554 名青少年被分为免疫-炎症型 308 人 vs 非免疫-炎症型 246 人。前者 NEUT%↑、LYM%↓、NLR↑、SII↑，且住院期 HAMD/HAMA/YMRS/BPRS 下降更缓慢。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Classifier Performance -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">分类器性能</h2>
+    <div class="bar-chart reveal">
+      <div class="bar-row">
+        <span class="bar-label">ROC-AUC</span>
+        <div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--accent)">0.78</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">准确率</span>
+        <div class="bar-track"><div class="bar-fill" style="width:71%;background:#ef4444">71.1%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">F1</span>
+        <div class="bar-track"><div class="bar-fill" style="width:71%;background:#f87171">70.9%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Precision</span>
+        <div class="bar-track"><div class="bar-fill" style="width:76%;background:#fb923c">75.7%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Recall</span>
+        <div class="bar-track"><div class="bar-fill" style="width:62%;background:#fbbf24">62.2%</div></div>
+      </div>
+    </div>
+
+    <div class="fig-inline reveal">
+      <img src="visuals/figure3_web.jpg" alt="南京队列验证结果" loading="lazy">
+      <div class="caption">图 3 · 南京队列分层后免疫-炎症型与非免疫-炎症型的外周指标与症状轨迹差异</div>
+    </div>
+  </div>
+</section>
+
+<!-- Takeaway -->
+<div class="takeaway-banner reveal">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h3>一句话带走</h3>
+    <p>用脑连接"炎症指纹"分层精神障碍患者——不是所有患者都有炎症底色，分层是精准干预的前提。</p>
+  </div>
+</div>
+
+<!-- Limitations -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700">局限性与下一步</h2>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <h4>随访时间短</h4>
+        <p>观察主要限于住院期间（入院→第2周→出院），无法评估长期结局与分型稳定性。</p>
+      </div>
+      <div class="finding-card alt reveal">
+        <h4>治疗推断待验证</h4>
+        <p>抗炎辅助治疗是否能带来额外获益仍属推测，需要前瞻性随机对照试验检验。</p>
+      </div>
+      <div class="finding-card alt2 reveal">
+        <h4>人群适用性</h4>
+        <p>南京队列为 12-18 岁青少年且仅含 MDD/BD，向成人或精神分裂症外推仍需更多证据。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec bg-surface" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">常见问题</h2>
+    <details class="reveal"><summary>这是不是说明抑郁/双相/精神分裂"本质都是炎症病"？</summary><div class="faq-body">不是。论文强调免疫-炎症异常只驱动"部分比例"的患者，并据此分成两类生物型。</div></details>
+    <details class="reveal"><summary>做一次 fMRI 就能知道我属于哪一型吗？</summary><div class="faq-body">论文展示的是研究级分层工具，未提供临床标准化流程与个体级重复测量稳定性数据。</div></details>
+    <details class="reveal"><summary>研究里的"炎症"是直接测到脑里发炎了吗？</summary><div class="faq-body">不是。论文用外周血 DNA 甲基化计算 EIS 作为慢性低度炎症代理指标，再寻找与 EIS 相关的脑连接特征。</div></details>
+    <details class="reveal"><summary>为什么 EIS"更低"反而提示"更高慢性炎症"？</summary><div class="faq-body">论文直接解释 Biotype-1 的 EIS 显著更低 "hinting at a higher level of low-grade chronic inflammation"，正文未进一步展开该方向性的机制细节。</div></details>
+    <details class="reveal"><summary>免疫-炎症型症状改善更慢，需要立刻加抗炎药吗？</summary><div class="faq-body">不能这样推断。论文明确写到抗炎辅助治疗的潜在获益仍属推测，必须通过前瞻性随机对照试验检验。</div></details>
+  </div>
+</section>
+
+<!-- Glossary -->
+<section class="sec" style="padding:2.5rem 0">
+  <div class="sec-inner" style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <h2 class="reveal" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">术语速查</h2>
+    <div class="glossary-grid">
+      <div class="glossary-card reveal"><dt>DNA 甲基化</dt><dd>基因"说明书上的便签"，启动子区高甲基化可能下调基因表达。</dd></div>
+      <div class="glossary-card reveal"><dt>EIS (表观遗传炎症评分)</dt><dd>由 6 个与 CRP 相关 CpG 位点加权得到的慢性低度炎症代理指标。</dd></div>
+      <div class="glossary-card reveal"><dt>CPM (连接组预测模型)</dt><dd>从海量脑连接中挑出最能预测目标指标的连线组合。</dd></div>
+      <div class="glossary-card reveal"><dt>NLR / SII</dt><dd>中性粒细胞与淋巴细胞比值 / 全身免疫-炎症指数，均为外周炎症代理指标。</dd></div>
+      <div class="glossary-card reveal"><dt>DMN / FPN / VIS</dt><dd>默认模式网络 / 额顶网络 / 视觉网络，静息态脑连接的三大主要网络。</dd></div>
+      <div class="glossary-card reveal"><dt>生物型 (Biotype)</dt><dd>基于生物学指标（而非症状）划分的患者亚群。</dd></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-foot">
+  <p>本页面内容基于论文生成，仅用于科学传播与学术交流。</p>
+  <a href="../../#/">← NSFC 62176129 项目主站</a>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readingProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+</script>
+</body>
+</html>

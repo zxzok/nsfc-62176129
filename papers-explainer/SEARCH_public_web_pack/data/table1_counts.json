@@ -1,0 +1,198 @@
+{
+  "wave": "wave1",
+  "records": [
+    {
+      "respondent_group": "students",
+      "dimension": "location",
+      "label": "Survey site 1",
+      "count": 4180,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "location",
+      "label": "Survey site 1",
+      "count": 2897,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "location",
+      "label": "Survey site 1",
+      "count": 262,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "location",
+      "label": "Survey site 2",
+      "count": 3880,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "location",
+      "label": "Survey site 2",
+      "count": 3420,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "location",
+      "label": "Survey site 2",
+      "count": 862,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "location",
+      "label": "Survey site 3",
+      "count": 3447,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "location",
+      "label": "Survey site 3",
+      "count": 2522,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "location",
+      "label": "Survey site 3",
+      "count": 532,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "education_level",
+      "label": "Primary school (grades 4–6)",
+      "count": 3209,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "education_level",
+      "label": "Primary school (grades 4–6)",
+      "count": 2907,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "education_level",
+      "label": "Primary school (grades 4–6)",
+      "count": 317,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "education_level",
+      "label": "Junior high school (grades 7–9)",
+      "count": 4353,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "education_level",
+      "label": "Junior high school (grades 7–9)",
+      "count": 3045,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "education_level",
+      "label": "Junior high school (grades 7–9)",
+      "count": 934,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "education_level",
+      "label": "Senior high school (grades 10–12)",
+      "count": 3865,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "education_level",
+      "label": "Senior high school (grades 10–12)",
+      "count": 2887,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "teachers",
+      "dimension": "education_level",
+      "label": "Senior high school (grades 10–12)",
+      "count": 405,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "sex",
+      "label": "Male",
+      "count": 6083,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "sex",
+      "label": "Male",
+      "count": 2387,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "sex",
+      "label": "Female",
+      "count": 5344,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "caregivers",
+      "dimension": "sex",
+      "label": "Female",
+      "count": 6452,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "race",
+      "label": "Han",
+      "count": 11284,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    },
+    {
+      "respondent_group": "students",
+      "dimension": "race",
+      "label": "Ethnic minorities",
+      "count": 143,
+      "unit": "people",
+      "source_ref": "Table 1, p.5"
+    }
+  ],
+  "missing_value_policy": "If a breakdown is not reported in the paper, do not infer or fill it in; simply omit that record."
+}

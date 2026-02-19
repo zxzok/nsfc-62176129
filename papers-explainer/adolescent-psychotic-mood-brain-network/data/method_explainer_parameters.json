@@ -1,0 +1,13 @@
+{
+  "dataset": "method_explainer_parameters",
+  "description": "网络阈值与AUC方法教学参数（概念演示）。",
+  "source_ref": "第4页 Network analysis",
+  "sparsity_min": 0.1,
+  "sparsity_max": 0.34,
+  "sparsity_step": 0.01,
+  "summary_stat": "AUC",
+  "notes": [
+    "论文用σ>1确保小世界性成立，并据此选取稀疏度范围0.10–0.34（证据：第4页 Network analysis）。",
+    "AUC用于在阈值范围内汇总指标，论文称其具有较高敏感性（证据：第4页 Network analysis）。"
+  ]
+}

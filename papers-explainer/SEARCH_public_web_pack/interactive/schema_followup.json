@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEARCH_FollowUpPlan",
+  "type": "object",
+  "properties": {
+    "follow_up_interval_months": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "planned_duration_years": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cohort_rule": {
+      "type": "string"
+    },
+    "baseline_collection_window": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "follow_up_interval_months",
+    "planned_duration_years",
+    "cohort_rule",
+    "baseline_collection_window",
+    "source_ref"
+  ],
+  "additionalProperties": false
+}

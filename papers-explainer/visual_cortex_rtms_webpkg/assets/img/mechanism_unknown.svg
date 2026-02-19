@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">从视觉皮层到前额叶：可能通路示意（含问号）</title>
+  <desc id="desc">示意图：左侧为“视觉皮层（刺激靶点）”，右侧为“前额叶（观察到变化）”。中间用虚线箭头连接，并用问号标注“具体神经环路仍不清楚”。下方提示：研究在大鼠与青少年患者中都观察到前额ReHo下降，但作者指出需要电路层面实验进一步验证。</desc>
+
+  <style>
+    .box { fill: #f7f7f7; stroke: #333; stroke-width: 2; }
+    .label { font-family: system-ui, -apple-system, "Segoe UI", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-size: 28px; fill: #111; }
+    .small { font-size: 20px; fill: #333; }
+    .note { font-size: 18px; fill: #333; }
+  </style>
+
+  <!-- Left box -->
+  <rect x="70" y="90" rx="20" ry="20" width="320" height="180" class="box"/>
+  <text x="230" y="150" text-anchor="middle" class="label">视觉皮层</text>
+  <text x="230" y="190" text-anchor="middle" class="small">rTMS 刺激靶点</text>
+
+  <!-- Right box -->
+  <rect x="810" y="90" rx="20" ry="20" width="320" height="180" class="box"/>
+  <text x="970" y="150" text-anchor="middle" class="label">前额叶</text>
+  <text x="970" y="190" text-anchor="middle" class="small">观察到 ReHo 改变</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="180" x2="810" y2="180" stroke="#111" stroke-width="3" stroke-dasharray="10 8"/>
+  <polygon points="810,180 790,170 790,190" fill="#111"/>
+
+  <!-- Question mark -->
+  <text x="600" y="160" text-anchor="middle" class="label">？</text>
+  <text x="600" y="205" text-anchor="middle" class="small">具体神经环路仍不清楚</text>
+
+  <!-- Footnote -->
+  <text x="600" y="320" text-anchor="middle" class="note">提示：本研究在大鼠与青少年患者中均观察到“前额 ReHo 下降”等变化，但作者指出需要进一步的电路层面实验与更大临床试验验证。</text>
+</svg>

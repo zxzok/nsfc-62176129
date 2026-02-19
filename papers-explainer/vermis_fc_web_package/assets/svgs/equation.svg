@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">论文的逻辑回归方程：变量方向提示</title>
+  <desc id="desc">展示论文给出的Log Odds公式，并用箭头提示FC系数为正、年龄与性别变量系数为负；同时提示性别变量0/1编码在论文未报告。</desc>
+  <rect x="0" y="0" width="1200" height="560" fill="#ffffff"/>
+  <text x="60" y="72" font-size="34" font-family="system-ui, -apple-system, Segoe UI, Arial">把方程变成“方向提示”</text>
+  <text x="60" y="112" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#444">Log Odds Responder = 6.071 + 0.312×FC − 0.308×age − 0.707×gender（证据：PDF第4页3.4节）</text>
+
+  <rect x="90" y="160" width="1020" height="310" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="130" y="230" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Log Odds = 6.071 + 0.312×FC  − 0.308×Age  − 0.707×Gender</text>
+
+  <text x="130" y="290" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial">FC系数为正 → FC越高，模型预测“响应”的倾向越大。</text>
+  <text x="130" y="325" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial">Age系数为负 → 年龄越大，模型预测“响应”的倾向越小。</text>
+  <text x="130" y="360" font-size="18" font-family="system-ui, -apple-system, Segoe UI, Arial">Gender系数为负 → 方向存在，但0/1如何编码论文未报告，不能直接解释为某一性别更好/更差。</text>
+  <text x="130" y="410" font-size="14" font-family="system-ui, -apple-system, Segoe UI, Arial" fill="#555">提示：这是统计模型的方向，不是个体因果结论（证据：相关与回归方法，PDF第3页2.6节；局限，PDF第6页5节）</text>
+</svg>

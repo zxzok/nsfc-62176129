@@ -1,0 +1,229 @@
+{
+  "source_ref": "第16-17页，表8（显著差异HSFs）",
+  "data": [
+    {
+      "feature_name": "pcm_fftMag_melspec_sma[1]_meanPeakDist",
+      "F": -3.31,
+      "FDR": "9.44E-03",
+      "RF_score": "1.68E-02",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma_de_de[0]_quartile2",
+      "F": -5.58,
+      "FDR": "1.32E-05",
+      "RF_score": "1.44E-02",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de_de[0]_meanPeakDist",
+      "F": -4.75,
+      "FDR": "1.35E-04",
+      "RF_score": "1.39E-02",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_zcr_sma_de_de_minPos",
+      "F": -4.21,
+      "FDR": "7.53E-04",
+      "RF_score": "1.02E-02",
+      "category": "Envelope"
+    },
+    {
+      "feature_name": "mfcc_sma[7]_numPeaks",
+      "F": -5.18,
+      "FDR": "5.11E-05",
+      "RF_score": "8.14E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[0]_meanPeakDist",
+      "F": -4.0,
+      "FDR": "1.41E-03",
+      "RF_score": "7.94E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de_de[15]_meanPeakDist",
+      "F": -3.3,
+      "FDR": "9.44E-03",
+      "RF_score": "7.13E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[16]_meanPeakDist",
+      "F": -4.3,
+      "FDR": "6.07E-04",
+      "RF_score": "7.12E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma[1]_minPos",
+      "F": -4.3,
+      "FDR": "6.07E-04",
+      "RF_score": "6.71E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[7]_skewness",
+      "F": -3.5,
+      "FDR": "6.03E-03",
+      "RF_score": "6.66E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "mfcc_sma[8]_skewness",
+      "F": -3.88,
+      "FDR": "1.94E-03",
+      "RF_score": "6.57E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma[25]_minPos",
+      "F": -4.05,
+      "FDR": "1.22E-03",
+      "RF_score": "6.23E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[10]_meanPeakDist",
+      "F": -3.36,
+      "FDR": "8.66E-03",
+      "RF_score": "6.13E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[5]_numPeaks",
+      "F": -4.92,
+      "FDR": "1.01E-04",
+      "RF_score": "6.05E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[17]_meanPeakDist",
+      "F": -4.68,
+      "FDR": "1.61E-04",
+      "RF_score": "5.61E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[10]_numPeaks",
+      "F": -4.77,
+      "FDR": "1.35E-04",
+      "RF_score": "5.30E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_zcr_sma_de_de_skewness",
+      "F": -3.29,
+      "FDR": "9.44E-03",
+      "RF_score": "5.22E-03",
+      "category": "Envelope"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[23]_meanPeakDist",
+      "F": -3.54,
+      "FDR": "5.53E-03",
+      "RF_score": "5.14E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de[14]_meanPeakDist",
+      "F": -3.71,
+      "FDR": "3.34E-03",
+      "RF_score": "5.13E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_spectralRollOff90.0_sma_minPos",
+      "F": -3.42,
+      "FDR": "7.17E-03",
+      "RF_score": "5.07E-03",
+      "category": "Energy Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[4]_meanPeakDist",
+      "F": -3.96,
+      "FDR": "1.44E-03",
+      "RF_score": "5.02E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "mfcc_sma[2]_linregc1",
+      "F": 3.46,
+      "FDR": "6.45E-03",
+      "RF_score": "4.98E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma[2]_minPos",
+      "F": -3.79,
+      "FDR": "2.59E-03",
+      "RF_score": "4.87E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[2]_numPeaks",
+      "F": -4.9,
+      "FDR": "1.01E-04",
+      "RF_score": "4.85E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "mfcc_sma_de[0]_numPeaks",
+      "F": -4.22,
+      "FDR": "7.53E-04",
+      "RF_score": "4.52E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "mfcc_sma[5]_minPos",
+      "F": -3.97,
+      "FDR": "1.44E-03",
+      "RF_score": "4.46E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de_de[23]_meanPeakDist",
+      "F": -3.3,
+      "FDR": "9.44E-03",
+      "RF_score": "4.22E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "pcm_fftMag_spectralRollOff75.0_sma_minPos",
+      "F": -4.07,
+      "FDR": "1.22E-03",
+      "RF_score": "3.78E-03",
+      "category": "Energy Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[4]_numPeaks",
+      "F": -3.69,
+      "FDR": "3.39E-03",
+      "RF_score": "3.77E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "pcm_fftMag_melspec_sma_de_de[3]_meanPeakDist",
+      "F": -3.68,
+      "FDR": "3.41E-03",
+      "RF_score": "3.53E-03",
+      "category": "Mel Spec"
+    },
+    {
+      "feature_name": "mfcc_sma[6]_numPeaks",
+      "F": -4.62,
+      "FDR": "1.84E-04",
+      "RF_score": "3.50E-03",
+      "category": "MFCC"
+    },
+    {
+      "feature_name": "mfcc_sma[10]_minPos",
+      "F": -3.49,
+      "FDR": "6.03E-03",
+      "RF_score": "2.97E-03",
+      "category": "MFCC"
+    }
+  ]
+}

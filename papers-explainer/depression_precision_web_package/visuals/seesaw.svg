@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="title desc">
+  <title id="title">前额叶与后部脑区的“跷跷板”示意</title>
+  <desc id="desc">示意图把抑郁亚型理解为前部与后部脑区活动的相对高低：原型为前部更高后部更低，非典型相反。来源：论文第4页图2A与第3.1节。</desc>
+  <rect x="0" y="0" width="960" height="300" fill="#ffffff"/>
+  <text x="48" y="54" font-family="system-ui" font-size="22" font-weight="800">用一个直觉类比：大脑前后像一块跷跷板</text>
+  <text x="48" y="86" font-family="system-ui" font-size="14" fill="#4b5563">（证据：第4页，第3.1节；图2A）</text>
+
+  <!-- Seesaw base -->
+  <g transform="translate(120,140)">
+    <polygon points="360,140 420,140 390,200" fill="#9ca3af"/>
+    <rect x="120" y="120" width="540" height="18" rx="9" fill="#111827"/>
+    <circle cx="210" cy="120" r="18" fill="#60a5fa"/>
+    <circle cx="570" cy="120" r="18" fill="#34d399"/>
+
+    <text x="210" y="80" font-family="system-ui" font-size="14" text-anchor="middle">前额叶（Frontal）</text>
+    <text x="570" y="80" font-family="system-ui" font-size="14" text-anchor="middle">后部脑区（Posterior）</text>
+
+    <!-- Archetypal arrow -->
+    <text x="120" y="245" font-family="system-ui" font-size="14" font-weight="700" fill="#111827">原型：前↑ 后↓</text>
+    <text x="460" y="245" font-family="system-ui" font-size="14" font-weight="700" fill="#111827">非典型：前↓ 后↑</text>
+  </g>
+</svg>

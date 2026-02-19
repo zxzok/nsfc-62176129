@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">GMV与ALFF对照卡片</title>
+<desc id="desc">左右两栏对照：GMV结构指标在用药组更低，较敏感于用药状态；ALFF功能指标在用药与未用药患者间模式相似，更像疾病特质。</desc>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<text x="60" y="80" font-size="36" font-family="Arial" font-weight="700">结构 vs 功能：哪种更受用药状态影响？</text>
+<rect x="60" y="140" width="520" height="455" rx="16" fill="#E7F0FF" stroke="#2E90FA" stroke-width="2"/>
+<text x="90" y="200" font-size="28" font-family="Arial" font-weight="700">GMV（结构）</text>
+<text x="90" y="250" font-size="24" font-family="Arial">观察到：用药组GMV更低</text>
+<text x="90" y="295" font-size="22" font-family="Arial">主要在前额叶/颞叶/扣带回/岛叶</text>
+<text x="90" y="360" font-size="22" font-family="Arial">解读：更“敏感”于较长期用药状态</text>
+<text x="90" y="410" font-size="20" font-family="Arial">适合：研究治疗反应/药物相关变化</text>
+<rect x="620" y="140" width="520" height="455" rx="16" fill="#ECFDF3" stroke="#12B76A" stroke-width="2"/>
+<text x="650" y="200" font-size="28" font-family="Arial" font-weight="700">ALFF（功能）</text>
+<text x="650" y="250" font-size="24" font-family="Arial">观察到：两类患者模式相似</text>
+<text x="650" y="295" font-size="22" font-family="Arial">“前高后低”（纹状体↑，视觉皮层↓）</text>
+<text x="650" y="360" font-size="22" font-family="Arial">解读：更像较稳定的疾病特质</text>
+<text x="650" y="410" font-size="20" font-family="Arial">适合：研究疾病本底/核心功能异常</text>
+<text x="60" y="640" font-size="20" font-family="Arial">提示：横断面观察不能证明因果；不得用于个人诊断或自测。</text>
+</svg>

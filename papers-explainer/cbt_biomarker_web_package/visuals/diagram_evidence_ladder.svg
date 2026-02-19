@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="t d">
+  <title id="t">证据阶梯：从观察到可用性</title>
+  <desc id="d">四级阶梯：治疗相关变化、与症状相关、可预测、分子线索。并提示局限性：小样本、无随机对照、转录组非因果。</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0.75"/>
+    </linearGradient>
+    <style><![CDATA[
+      text{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+      .bg{fill:#12161c;stroke:#243042;stroke-width:2;rx:18;ry:18}
+      .title{fill:#e9eef5;font-size:28px;font-weight:700}
+      .muted{fill:#a9b4c1;font-size:18px}
+      .step{fill:#0b0d10;stroke:#243042;stroke-width:2;rx:18;ry:18}
+      .k{fill:#e9eef5;font-size:18px;font-weight:750}
+      .body{fill:#a9b4c1;font-size:16px}
+      .badge{fill:url(#g);stroke:#7dd3fc;stroke-width:1;rx:999;ry:999}
+      .badgeT{fill:#001018;font-size:14px;font-weight:800}
+      .warn{fill:#fbbf24}
+    ]]></style>
+  </defs>
+
+  <rect x="20" y="20" width="960" height="480" class="bg"/>
+  <text x="50" y="70" class="title">证据阶梯：这项研究走到了哪一层？</text>
+  <text x="50" y="105" class="muted">每一层都比上一层更接近“可用”，但也更需要严格验证。</text>
+
+  <g transform="translate(70,145)">
+    <rect x="0" y="0" width="820" height="70" class="step"/>
+    <rect x="18" y="20" width="130" height="30" class="badge"/><text x="33" y="41" class="badgeT">层1：变化</text>
+    <text x="170" y="43" class="k">CBT后DLPFC ReHo升高，HAMD下降</text>
+    <text x="170" y="63" class="body">证据：第2页4.1节；图1A–B</text>
+
+    <rect x="20" y="95" width="820" height="70" class="step"/>
+    <rect x="38" y="115" width="130" height="30" class="badge"/><text x="53" y="136" class="badgeT">层2：相关</text>
+    <text x="190" y="138" class="k">左DLPFC变化量与症状改善相关（r=0.53）</text>
+    <text x="190" y="158" class="body">证据：第2页4.2节；图1C</text>
+
+    <rect x="40" y="190" width="820" height="70" class="step"/>
+    <rect x="58" y="210" width="130" height="30" class="badge"/><text x="73" y="231" class="badgeT">层3：预测</text>
+    <text x="210" y="233" class="k">治疗前ReHo可预测治疗后HAMD（MAE=4.44）</text>
+    <text x="210" y="253" class="body">证据：第2页4.2节；图1D</text>
+
+    <rect x="60" y="285" width="820" height="95" class="step"/>
+    <rect x="78" y="305" width="150" height="30" class="badge"/><text x="93" y="326" class="badgeT">层4：线索</text>
+    <text x="250" y="328" class="k">公共转录组匹配提示：可塑性与细胞韧性相关通路</text>
+    <text x="250" y="350" class="body">证据：第2页4.3节；图1G–J；但仅为关联</text>
+    <text x="250" y="372" class="body"><tspan class="warn">⚠</tspan> 论文强调：小样本、无随机对照、转录组非因果（第3页局限性）</text>
+  </g>
+</svg>

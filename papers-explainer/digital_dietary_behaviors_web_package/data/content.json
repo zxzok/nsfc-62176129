@@ -1,0 +1,715 @@
+{
+  "slug": "digital-dietary-behaviors-depression",
+  "seo_title": "抑郁与吃饭节奏：用校园刷卡记录观察真实饮食行为变化",
+  "seo_description": "研究用校园食堂电子交易记录追踪1个月饮食行为，发现中重度抑郁更不规律、早餐更少，并探索数字化饮食特征作为抑郁检测补充线索的可能性（含图表与交互解读）。",
+  "keywords": [
+    "抑郁",
+    "饮食行为",
+    "数字化标记",
+    "行为监测",
+    "PHQ-9",
+    "SVM",
+    "大学生心理健康",
+    "meal timing",
+    "digital phenotyping"
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "heading": "抑郁会改变吃饭的“节奏”吗？｜用校园食堂刷卡记录，看见抑郁相关的真实饮食行为变化",
+      "body_markdown": "用一所大学食堂的刷卡记录，研究者观察到：抑郁程度越高，吃饭时间越不稳定、早餐更少、全天三餐规律更难维持。（证据：PDF第5-6页 Results；图2）",
+      "citations": [
+        "PDF第5-6页 Results",
+        "PDF第6页 图2"
+      ]
+    },
+    {
+      "id": "read_30s",
+      "heading": "30秒读懂",
+      "body_markdown": "问题、方法、发现与意义见 `content/page.md` 的同名段落，可直接上站使用。（证据：PDF第1-2页 摘要与Introduction）",
+      "citations": [
+        "PDF第1-2页 摘要与Introduction"
+      ]
+    },
+    {
+      "id": "why",
+      "heading": "为什么要做这个研究",
+      "body_markdown": "以往饮食研究常靠回忆问卷，容易受记忆偏差影响。电子交易等客观记录提供了持续、真实的行为数据，可能成为抑郁的补充“数字标记”。（证据：PDF第2页 Introduction）",
+      "citations": [
+        "PDF第2页 Introduction"
+      ]
+    },
+    {
+      "id": "how",
+      "heading": "我们怎么做的",
+      "body_markdown": "研究结合1个月食堂交易记录与一次心理量表调查；按PHQ-9分组，并计算6类饮食特征（时间、间隔、花费、地点、多样性/频率、全天模式），再用统计与机器学习方法分析差异与检测。（证据：PDF第3-4页 Methods；PDF第3页 图1；PDF第4页 Classification Model）",
+      "citations": [
+        "PDF第3-4页 Methods",
+        "PDF第3页 图1",
+        "PDF第4页 Classification Model"
+      ]
+    },
+    {
+      "id": "findings",
+      "heading": "我们发现了什么",
+      "body_markdown": "三条核心发现（含关键数字、AOR与模型指标）详见 `content/page.md`。（证据：PDF第5-7页 Results；PDF第6页 图2；PDF第7页 图3；PDF第7页 表2）",
+      "citations": [
+        "PDF第5-7页 Results",
+        "PDF第6页 图2",
+        "PDF第7页 图3",
+        "PDF第7页 表2"
+      ]
+    },
+    {
+      "id": "implications",
+      "heading": "这项研究有什么用",
+      "body_markdown": "论文认为数字化饮食特征可作为抑郁检测的客观补充线索，尤其对中重度更敏感，但需注意隐私治理与误报风险。（证据：PDF第8-9页 Discussion；PDF第3页 Ethical Considerations）",
+      "citations": [
+        "PDF第8-9页 Discussion",
+        "PDF第3页 Ethical Considerations"
+      ]
+    },
+    {
+      "id": "limitations",
+      "heading": "局限性与下一步",
+      "body_markdown": "局限包括：抑郁程度来自自评；横断面设计；未评估营养结构与摄入。下一步建议纵向随访、临床评定与更完整饮食信息。（证据：PDF第9页 Limitations）",
+      "citations": [
+        "PDF第9页 Limitations"
+      ]
+    },
+    {
+      "id": "takehome",
+      "heading": "一句话带走",
+      "body_markdown": "抑郁越重，吃饭越不规律且更易少早餐。（证据：PDF第8-9页 Discussion 总结）",
+      "citations": [
+        "PDF第8-9页 Discussion"
+      ]
+    }
+  ],
+  "visual_assets": [
+    {
+      "id": "va_fig1",
+      "title": "研究怎么做：从问卷到刷卡记录的两步流程",
+      "type": "论文原图复用",
+      "source_ref": "PDF第3页 图1（已裁切为 figure1_full.png）",
+      "file_path": "site/assets/figures/figure1_full.png",
+      "alt_text": "图示研究流程：10月做心理量表调查并收集1个月食堂刷卡记录，按PHQ-9分组，计算时间、间隔、花费、地点、多样性与全天模式等6类饮食特征。"
+    },
+    {
+      "id": "va_table1",
+      "title": "研究对象是谁：三组学生的基本特征与量表分数",
+      "type": "论文原表复用",
+      "source_ref": "PDF第5页 表1（已裁切为 table1.png）",
+      "file_path": "site/assets/figures/table1.png",
+      "alt_text": "表格列出健康组、轻度抑郁组与中重度抑郁组的人数与量表分数。三组年龄相近；PHQ-9、GAD-7、压力与失眠评分随抑郁程度升高而更高。"
+    },
+    {
+      "id": "va_fig2",
+      "title": "吃饭节奏有哪些差异：时间波动、花费、多样性与模式",
+      "type": "论文原图复用",
+      "source_ref": "PDF第6页 图2（已裁切为 figure2_full.png）",
+      "file_path": "site/assets/figures/figure2_full.png",
+      "alt_text": "多面板图比较三组饮食特征的Z分数：中重度抑郁组午晚餐时间与午晚间隔波动更大，晚餐花费更高，食物多样性与早餐频率更低，三餐规律模式更少而午+晚模式更多。"
+    },
+    {
+      "id": "va_fig3",
+      "title": "哪些模式与抑郁/焦虑相关：AOR与置信区间一图读懂",
+      "type": "论文原图复用",
+      "source_ref": "PDF第7页 图3（已裁切为 figure3.png）",
+      "file_path": "site/assets/figures/figure3.png",
+      "alt_text": "森林图展示饮食模式与抑郁/焦虑的调整后比值比：工作日总是三餐与中重度抑郁负相关，工作日总是午+晚与轻度抑郁正相关；焦虑与更规律三餐呈正相关，并显示中介关系。"
+    },
+    {
+      "id": "va_table2",
+      "title": "能分辨到什么程度：用饮食特征做分类的模型表现",
+      "type": "论文原表复用",
+      "source_ref": "PDF第7页 表2（已裁切为 table2.png）",
+      "file_path": "site/assets/figures/table2.png",
+      "alt_text": "表格给出分类模型指标：三分类（健康/轻度/中重度）准确率0.53，二分类（健康/中重度）准确率0.67，AUC最高为0.69，提示研究层面有一定区分能力但不完美。"
+    },
+    {
+      "id": "va_svg_meal_rhythm",
+      "title": "吃饭“节奏”是什么：用点的分散度理解波动",
+      "type": "示意图（SVG，可替换设计稿）",
+      "source_ref": "基于论文对时间波动（MAD）的定义与解释（证据：PDF第4页 Statistical Indices；PDF第5-6页 Results）",
+      "file_path": "site/assets/illustrations/meal_rhythm.svg",
+      "alt_text": "三只时钟旁散布许多小点，表示午餐、晚餐与午晚间隔的时间分布。点越分散代表波动越大，用来帮助理解论文中的MAD等“时间不稳定”指标。"
+    },
+    {
+      "id": "va_svg_two_vs_three",
+      "title": "全天饮食模式怎么理解：三餐 vs 午+晚",
+      "type": "示意图（SVG，可替换设计稿）",
+      "source_ref": "全天饮食模式定义（证据：PDF第4页 All-Day Dietary Behavior Patterns）",
+      "file_path": "site/assets/illustrations/two_vs_three_meals.svg",
+      "alt_text": "左侧用三个圆表示早餐、午餐、晚餐齐全的三餐模式；右侧用两个圆表示只吃午餐和晚餐，并用虚线提示早餐缺席，解释“午+晚模式”的含义。"
+    },
+    {
+      "id": "va_svg_privacy",
+      "title": "数字行为数据离不开隐私治理：知情同意与保护",
+      "type": "示意图（SVG，可替换设计稿）",
+      "source_ref": "知情同意与伦理审批说明（证据：PDF第3页 Ethical Considerations）",
+      "file_path": "site/assets/illustrations/privacy_shield.svg",
+      "alt_text": "一个盾牌和对勾符号旁写着“仅科普研究、不做个人诊断、最小化收集与去标识化”。用于提醒数字化行为数据应用必须以伦理与隐私保护为前提。"
+    },
+    {
+      "id": "va_svg_missing",
+      "title": "这份数据不能回答什么：营养结构与食物成分未评估",
+      "type": "示意图（SVG，可替换设计稿）",
+      "source_ref": "未评估营养摄入的局限（证据：PDF第9页 Limitations）",
+      "file_path": "site/assets/illustrations/nutrition_missing.svg",
+      "alt_text": "盘子图标中间有问号，旁边说明：电子交易能看到吃饭时间、频率和花费，但看不到营养素、食物成分等细节，强调论文局限性。"
+    }
+  ],
+  "interactive_modules": [
+    {
+      "id": "im_meal_grouping",
+      "title": "刷卡记录如何变成“一顿饭”？（可交互演示）",
+      "purpose": "用一个小例子让读者理解论文的核心算法：2小时内多次交易被合并为一餐，并按时间窗标注早餐/午餐/晚餐。",
+      "ui_controls": [
+        {
+          "type": "dropdown",
+          "label": "选择示例数据集",
+          "options": [
+            "paper_figure1_example",
+            "synthetic_multi_transaction_example"
+          ]
+        },
+        {
+          "type": "slider",
+          "label": "合并窗口（小时）",
+          "min": 0.5,
+          "max": 6,
+          "step": 0.5,
+          "default": 2
+        },
+        {
+          "type": "button",
+          "label": "重新计算"
+        }
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "MealGroupingDemo",
+        "type": "object",
+        "properties": {
+          "rules": {
+            "type": "object",
+            "properties": {
+              "merge_window_hours": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 6,
+                "unit": "hours",
+                "default": 2,
+                "source_ref": "PDF第3页 Time Patterns（2小时）"
+              },
+              "meal_time_windows": {
+                "type": "object",
+                "properties": {
+                  "breakfast": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "string"
+                      },
+                      "end": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "lunch": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "string"
+                      },
+                      "end": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "dinner": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "string"
+                      },
+                      "end": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "source_ref": "PDF第3页 Time Patterns（6:30-8:30；11:00-13:00；17:30-19:30）"
+              }
+            },
+            "required": [
+              "merge_window_hours",
+              "meal_time_windows"
+            ]
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "student_id": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "amount": {
+                  "type": "number",
+                  "minimum": 0,
+                  "unit": "currency"
+                },
+                "currency": {
+                  "type": "string",
+                  "default": "USD"
+                },
+                "cafeteria": {
+                  "type": "string"
+                },
+                "source_ref": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "timestamp",
+                "amount"
+              ]
+            },
+            "source_ref": "数据格式参考 PDF第3页 图1 Step 2"
+          }
+        },
+        "required": [
+          "rules",
+          "records"
+        ]
+      },
+      "source_ref": "PDF第3页 Time Patterns（2小时规则与时间窗）；PDF第3页 图1 Step 2（数据格式）"
+    },
+    {
+      "id": "im_variability_ruler",
+      "title": "你的“时间波动”在三组中大概处于哪里？（概念尺）",
+      "purpose": "把论文中给出的MAD时间数字做成可拖动的“标尺”，帮助理解什么叫‘波动更大’。",
+      "ui_controls": [
+        {
+          "type": "dropdown",
+          "label": "选择指标",
+          "options": [
+            "weekday_lunch_time_MAD",
+            "weekday_dinner_time_MAD",
+            "weekday_lunch_dinner_interval_MAD"
+          ]
+        },
+        {
+          "type": "slider",
+          "label": "你的值（秒）",
+          "min": 0,
+          "max": 3600,
+          "step": 10,
+          "default": 1800
+        }
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "VariabilityRuler",
+        "type": "object",
+        "properties": {
+          "feature_id": {
+            "type": "string",
+            "enum": [
+              "weekday_lunch_time_MAD",
+              "weekday_dinner_time_MAD",
+              "weekday_lunch_dinner_interval_MAD"
+            ]
+          },
+          "value_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 7200,
+            "unit": "seconds"
+          },
+          "benchmarks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "type": "string",
+                  "enum": [
+                    "HC",
+                    "mild_depression",
+                    "moderate_severe_depression"
+                  ]
+                },
+                "value_seconds": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 7200,
+                  "unit": "seconds"
+                },
+                "source_ref": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "group",
+                "value_seconds"
+              ]
+            },
+            "source_ref": "具体数值见 PDF第5-6页（MAD时间）"
+          }
+        },
+        "required": [
+          "feature_id",
+          "value_seconds",
+          "benchmarks"
+        ]
+      },
+      "source_ref": "PDF第5-6页（MAD具体时间）；PDF第6页 图2A-2B"
+    },
+    {
+      "id": "im_aor_explorer",
+      "title": "关联不是因果：用AOR森林图做‘如果…会怎样’的对比阅读",
+      "purpose": "让读者通过筛选 outcome / 模式 / 日类型，看到AOR及95%CI，并用通俗语言解释‘更常同时出现/更少同时出现’。",
+      "ui_controls": [
+        {
+          "type": "dropdown",
+          "label": "结果变量",
+          "options": [
+            "mild_depression",
+            "moderate_severe_depression",
+            "depression_with_anxiety",
+            "all_subjects_with_anxiety"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "label": "日类型",
+          "options": [
+            "weekday",
+            "weekend"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "label": "饮食模式",
+          "options": [
+            "Bre-Lun-Din",
+            "Lun-Din"
+          ]
+        }
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "AORExplorer",
+        "type": "object",
+        "properties": {
+          "associations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "outcome": {
+                  "type": "string",
+                  "enum": [
+                    "mild_depression",
+                    "moderate_severe_depression",
+                    "depression_with_anxiety",
+                    "all_subjects_with_anxiety"
+                  ]
+                },
+                "day_type": {
+                  "type": "string",
+                  "enum": [
+                    "weekday",
+                    "weekend"
+                  ]
+                },
+                "pattern": {
+                  "type": "string",
+                  "enum": [
+                    "Bre-Lun-Din",
+                    "Lun-Din"
+                  ]
+                },
+                "level": {
+                  "type": "string",
+                  "enum": [
+                    "Rare",
+                    "Normal",
+                    "Always"
+                  ]
+                },
+                "aor": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "ci_low": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "ci_high": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "is_reference": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "source_ref": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "outcome",
+                "day_type",
+                "pattern",
+                "level",
+                "aor",
+                "is_reference",
+                "source_ref"
+              ]
+            },
+            "source_ref": "数值抄录自 PDF第7页 图3A-3D"
+          }
+        },
+        "required": [
+          "associations"
+        ]
+      },
+      "source_ref": "PDF第6-7页 图3A-3D；PDF第6页 Results（关键AOR）"
+    },
+    {
+      "id": "im_model_dashboard",
+      "title": "模型成绩单：0.67意味着什么？",
+      "purpose": "把表2的指标做成‘成绩单’，并提示这不是临床诊断准确率。",
+      "ui_controls": [
+        {
+          "type": "toggle",
+          "label": "切换任务",
+          "options": [
+            "multiclass_hc_vs_mild_vs_moderate_severe",
+            "binary_hc_vs_moderate_severe"
+          ]
+        }
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "ModelPerformanceDashboard",
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "object",
+            "properties": {
+              "algorithm": {
+                "type": "string"
+              },
+              "hyperparameters": {
+                "type": "object"
+              },
+              "validation": {
+                "type": "object"
+              },
+              "source_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "algorithm",
+              "hyperparameters",
+              "validation",
+              "source_ref"
+            ]
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "task_id": {
+                  "type": "string"
+                },
+                "comparisons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "metrics": {
+                  "type": "object",
+                  "properties": {
+                    "accuracy": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "f1_score": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "precision": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "recall": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "auc": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "accuracy",
+                    "f1_score",
+                    "precision",
+                    "recall",
+                    "auc"
+                  ]
+                },
+                "source_ref": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "task_id",
+                "comparisons",
+                "metrics",
+                "source_ref"
+              ]
+            },
+            "source_ref": "指标见 PDF第7页 表2"
+          }
+        },
+        "required": [
+          "model",
+          "tasks"
+        ]
+      },
+      "source_ref": "PDF第4页 Classification Model；PDF第7页 表2"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "数字化饮食行为（digital dietary behaviors）",
+      "definition": "用电子记录（如刷卡支付时间、地点、花费等）来客观描述“什么时候、在哪里、花多少钱吃饭”。（证据：PDF第1页 摘要；PDF第3页 Diet Data Collection）",
+      "analogy": "像给吃饭这件事装上“电子脚印”，不用靠回忆也能看到规律。"
+    },
+    {
+      "term": "PHQ-9",
+      "definition": "一种9道题的自评量表，用来评估抑郁症状严重程度；本研究用它把学生分为健康、轻度抑郁、中重度抑郁。（证据：PDF第3页 Inclusion Criteria）",
+      "analogy": "像体温计的读数：不是医生诊断本身，但能提示“热不热”。"
+    },
+    {
+      "term": "GAD-7",
+      "definition": "一种7道题的自评量表，用来评估焦虑症状；研究还用它分析焦虑与饮食模式的关系。（证据：PDF第3-4页 Web-Based Measurements；PDF第7页 图3C-3D）",
+      "analogy": "像给“紧张程度”打分的刻度尺。"
+    },
+    {
+      "term": "行为监测（behavioral monitoring）",
+      "definition": "在真实生活场景里持续收集行为数据，用来观察行为是否偏离健康范围。（证据：PDF第2页 Introduction）",
+      "analogy": "像连续记录心率的手环，只不过记录的是吃饭行为。"
+    },
+    {
+      "term": "全天饮食模式（all-day dietary behavior patterns）",
+      "definition": "把一天吃了哪些餐（早餐/午餐/晚餐的组合）当作一个“模式”，例如“早-午-晚”或“午-晚”。（证据：PDF第4页 All-Day Dietary Behavior Patterns）",
+      "analogy": "像一天的“节目单”：三档节目齐全，还是只播两档。"
+    },
+    {
+      "term": "MAD（中位数绝对偏差）",
+      "definition": "一种衡量波动大小的指标；在这里用来表示吃饭时间或两餐间隔有多“飘”。（证据：PDF第4页 Statistical Indices；PDF第5-6页 给出MAD的具体时间）",
+      "analogy": "像看“准点程度”：越大表示越不稳定。"
+    },
+    {
+      "term": "ANCOVA（协方差分析）",
+      "definition": "一种统计方法，用来比较不同组的差异，同时把年龄、性别、BMI、教育水平等因素作为协变量控制。（证据：PDF第4页 Statistical Analysis）",
+      "analogy": "像把不同身高的人比跳远时，先把“身高影响”尽量扣掉再比较。"
+    },
+    {
+      "term": "Z 分数（Z-scores）",
+      "definition": "把不同指标统一换算到同一尺度（均值0、标准差1），让模型里每个指标权重更可比。（证据：PDF第4页 Statistical Analysis；PDF第6页 图2图注）",
+      "analogy": "像把厘米、公斤、元都先换成“标准单位”，再放到同一个秤上比较。"
+    },
+    {
+      "term": "AOR（调整后的比值比）",
+      "definition": "在控制协变量后，某种饮食模式与抑郁/焦虑的关联强度；AOR<1表示可能“更少见”，AOR>1表示可能“更常见”。（证据：PDF第6-7页 图3A-3D）",
+      "analogy": "像在“排除一些背景差异”后，看某个习惯是不是更常和某种状态一起出现。"
+    },
+    {
+      "term": "AUC（曲线下面积）",
+      "definition": "衡量分类模型区分两类的能力，越接近1通常越好；论文用它评估用饮食行为检测抑郁的效果。（证据：PDF第7页 表2）",
+      "analogy": "像考试的总分：分越高说明“区分对错”的能力越强。"
+    },
+    {
+      "term": "支持向量机（SVM）",
+      "definition": "一种常见的机器学习分类方法；论文用带RBF核的SVM来区分健康与抑郁组。（证据：PDF第4页 Classification Model）",
+      "analogy": "像在平面上画一条“分界线”，尽量把两类点分开。"
+    }
+  ],
+  "faq": [
+    {
+      "q": "这项研究是不是在说“少吃早餐会导致抑郁”？",
+      "a": "不能这样下结论。研究是横断面观察：同一个月里，用刷卡记录看到“中重度抑郁组早餐更少、三餐更不规律”（证据：PDF第6页 Figure 2D-2E），但这只能说明关联，不能证明因果。（证据：PDF第9页 Limitations 提到横断面设计）"
+    },
+    {
+      "q": "如果我最近吃饭不规律，是不是说明我抑郁了？",
+      "a": "论文没有提供“个人自测阈值”。它在群体层面比较不同组的统计差异与模型指标（证据：PDF第5-7页 Results；PDF第7页 表2）。个人层面的情绪与行为波动可能由学习压力、作息、身体不适等多种原因导致，不能据此自我诊断。"
+    },
+    {
+      "q": "研究怎么知道谁是轻度/中重度抑郁？",
+      "a": "用PHQ-9自评量表分组：5-9分为轻度抑郁，≥10分为中重度抑郁；健康组还要求焦虑、压力、失眠等量表在低范围。（证据：PDF第3页 Inclusion Criteria）"
+    },
+    {
+      "q": "他们记录了什么“饮食数据”？会不会很隐私？",
+      "a": "数据来自校园食堂的电子交易记录，包含时间、花费、地点等，用于计算时间规律、餐次模式与多样性等特征。（证据：PDF第3-4页 Dietary Data Collection & Calculation of Dietary Features；PDF第3页 图1 Step 2）论文说明参与者签署线上知情同意，且通过伦理审批。（证据：PDF第3页 Ethical Considerations）"
+    },
+    {
+      "q": "地点（去哪家食堂）能看出抑郁吗？",
+      "a": "在这份数据里，地点模式在三组之间没有显著差异。（证据：PDF第5页 Results：There was no significant difference in location patterns）"
+    },
+    {
+      "q": "模型准确率0.67算高吗？能当筛查工具吗？",
+      "a": "论文报告在“健康 vs 中重度抑郁”的二分类中准确率0.67、AUC 0.69（证据：PDF第7页 表2）。这说明有一定区分能力，但仍会有误判；而且研究对象是特定校园场景和特定人群，不能直接等同于临床筛查工具，论文也把它定位为“有前景的补充方法”。（证据：PDF第8-9页 Discussion：promising supplementary approach）"
+    },
+    {
+      "q": "研究有没有记录吃了什么、营养结构如何？",
+      "a": "没有。论文在局限性里明确说未评估每日膳食结构和营养摄入。（证据：PDF第9页 Limitations）"
+    },
+    {
+      "q": "这些结果适用于所有人吗？比如上班族或其他国家？",
+      "a": "论文样本是2020年10月在中国一所医学院校的学生，并且在疫情期间学生被要求留在校园、主要在校内食堂就餐。（证据：PDF第3页 Dietary Data Collection；PDF第2页 Recruitment）。因此外推到其他人群或更开放的饮食环境，需要额外研究验证。"
+    },
+    {
+      "q": "焦虑在这里扮演了什么角色？",
+      "a": "论文发现：在抑郁人群和全体样本中，焦虑与“工作日总是三餐（Bre-Lun-Din）”呈正相关，并在模型中显示出中介作用的一部分证据。（证据：PDF第7页 Figure 3C-3E；PDF第7页正文：anxiety served as a mediator）"
+    },
+    {
+      "q": "数据能公开获取吗？我可以复现吗？",
+      "a": "论文写明数据可在“合理请求”下向通讯作者获取。（证据：PDF第9页 Data Availability）是否能完整复现还取决于数据共享范围与预处理细节，论文提到预处理细节在Multimedia Appendix 1。（证据：PDF第3页 Dietary data preprocess; Multimedia Appendix 1 链接）"
+    }
+  ],
+  "disclaimer": "本页面为科研科普解读，不构成医疗建议或个人诊断依据。论文结果来自特定校园场景与人群的统计分析与模型评估（横断面研究），仅能说明关联与研究层面的区分能力，不能据此推断因果或替代专业评估。如你或身边的人出现持续情绪困扰，请寻求专业帮助。（证据：PDF第9页 Limitations）",
+  "paper_reference": {
+    "title": "Digital Dietary Behaviors in Individuals With Depression: Real-World Behavioral Observation",
+    "journal": "JMIR Public Health and Surveillance",
+    "year": 2024,
+    "doi": "10.2196/47428",
+    "license_note": "Open access under Creative Commons Attribution (CC BY 4.0).（证据：PDF第12页 版权与许可说明）"
+  }
+}

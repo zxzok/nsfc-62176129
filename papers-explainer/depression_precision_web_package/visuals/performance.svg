@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">分型后识别更准：F1与AUC对比</title>
+  <desc id="desc">信息图用三组指标比较分类性能：总体抑郁对健康对照F1为0.44、AUC为0.60；原型亚型对健康对照F1为0.70、AUC为0.77；非典型亚型对健康对照F1为0.71、AUC为0.77。来源：论文第4页图2C与第3.1节。</desc>
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+  <text x="48" y="70" font-family="system-ui" font-size="34" font-weight="700">分型后，识别“更准”了</text>
+  <text x="48" y="110" font-family="system-ui" font-size="18" fill="#333333">把所有抑郁混在一起 vs. 分成两亚型分别建模（证据：第4页，图2C）</text>
+
+  <!-- Axes -->
+  <g transform="translate(120,160)">
+    <line x1="0" y1="320" x2="720" y2="320" stroke="#111827" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="320" stroke="#111827" stroke-width="2"/>
+    <text x="-10" y="0" font-family="system-ui" font-size="12" fill="#111827" text-anchor="end">1.0</text>
+    <text x="-10" y="160" font-family="system-ui" font-size="12" fill="#111827" text-anchor="end">0.5</text>
+    <text x="-10" y="320" font-family="system-ui" font-size="12" fill="#111827" text-anchor="end">0</text>
+
+    <!-- Bars group 1: Total MDD -->
+    <g transform="translate(70,0)">
+      <rect x="-24" y="179.2" width="48" height="140.8" fill="#60a5fa"/>
+      <rect x="36" y="128" width="48" height="192" fill="#34d399"/>
+      <text x="6" y="350" font-family="system-ui" font-size="14" text-anchor="middle">总体MDD</text>
+      <text x="6" y="372" font-family="system-ui" font-size="12" fill="#4b5563" text-anchor="middle">vs HC</text>
+      <text x="6" y="168" font-family="system-ui" font-size="12" text-anchor="middle">F1 0.44</text>
+      <text x="66" y="118" font-family="system-ui" font-size="12" text-anchor="middle">AUC 0.60</text>
+    </g>
+
+    <!-- Bars group 2: Archetypal -->
+    <g transform="translate(310,0)">
+      <rect x="-24" y="96" width="48" height="224" fill="#60a5fa"/>
+      <rect x="36" y="73.6" width="48" height="246.4" fill="#34d399"/>
+      <text x="6" y="350" font-family="system-ui" font-size="14" text-anchor="middle">原型亚型</text>
+      <text x="6" y="372" font-family="system-ui" font-size="12" fill="#4b5563" text-anchor="middle">vs HC</text>
+      <text x="6" y="86" font-family="system-ui" font-size="12" text-anchor="middle">F1 0.70</text>
+      <text x="66" y="64" font-family="system-ui" font-size="12" text-anchor="middle">AUC 0.77</text>
+    </g>
+
+    <!-- Bars group 3: Atypical -->
+    <g transform="translate(550,0)">
+      <rect x="-24" y="92.8" width="48" height="227.2" fill="#60a5fa"/>
+      <rect x="36" y="73.6" width="48" height="246.4" fill="#34d399"/>
+      <text x="6" y="350" font-family="system-ui" font-size="14" text-anchor="middle">非典型亚型</text>
+      <text x="6" y="372" font-family="system-ui" font-size="12" fill="#4b5563" text-anchor="middle">vs HC</text>
+      <text x="6" y="82" font-family="system-ui" font-size="12" text-anchor="middle">F1 0.71</text>
+      <text x="66" y="64" font-family="system-ui" font-size="12" text-anchor="middle">AUC 0.77</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(0,410)">
+      <rect x="0" y="0" width="16" height="16" fill="#60a5fa"/>
+      <text x="24" y="13" font-family="system-ui" font-size="13">F1</text>
+      <rect x="90" y="0" width="16" height="16" fill="#34d399"/>
+      <text x="114" y="13" font-family="system-ui" font-size="13">AUC</text>
+    </g>
+  </g>
+
+  <text x="48" y="520" font-family="system-ui" font-size="13" fill="#4b5563">
+    注：本图为科普重绘，数值直接取自论文第4页图2C；柱高按0–1线性比例绘制。
+  </text>
+</svg>

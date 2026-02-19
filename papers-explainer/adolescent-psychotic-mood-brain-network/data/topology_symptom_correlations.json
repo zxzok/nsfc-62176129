@@ -1,0 +1,113 @@
+{
+  "dataset": "topology_symptom_correlations",
+  "description": "全体情绪障碍患者中，网络指标与症状严重度的偏相关（控制年龄、性别、诊断）。r与P值见图3/图4，FDR q值见正文段落。",
+  "covariates_controlled": [
+    "age",
+    "sex",
+    "diagnosis"
+  ],
+  "source_ref": [
+    "第5页 相关分析段落",
+    "第6页 图3",
+    "第7页 图4"
+  ],
+  "entries": [
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "gamma",
+      "metric_label_cn": "标准化聚类系数 γ",
+      "r_partial": 0.229,
+      "p_value": 0.002,
+      "fdr_q": 0.003
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "gamma",
+      "metric_label_cn": "标准化聚类系数 γ",
+      "r_partial": 0.263,
+      "p_value": "<0.001",
+      "fdr_q": "<0.001"
+    },
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "sigma",
+      "metric_label_cn": "小世界性 σ",
+      "r_partial": 0.265,
+      "p_value": "<0.001",
+      "fdr_q": 0.001
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "sigma",
+      "metric_label_cn": "小世界性 σ",
+      "r_partial": 0.276,
+      "p_value": "<0.001",
+      "fdr_q": "<0.001"
+    },
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "DC_STG_L",
+      "metric_label_cn": "左上颞回 度中心性 DC",
+      "r_partial": -0.296,
+      "p_value": "<0.001",
+      "fdr_q": "<0.001"
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "DC_STG_L",
+      "metric_label_cn": "左上颞回 度中心性 DC",
+      "r_partial": -0.285,
+      "p_value": "<0.001",
+      "fdr_q": "<0.001"
+    },
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "NE_STG_L",
+      "metric_label_cn": "左上颞回 节点效率 NE",
+      "r_partial": -0.245,
+      "p_value": 0.001,
+      "fdr_q": 0.002
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "NE_STG_L",
+      "metric_label_cn": "左上颞回 节点效率 NE",
+      "r_partial": -0.228,
+      "p_value": 0.002,
+      "fdr_q": 0.003
+    },
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "NE_HG_L",
+      "metric_label_cn": "左赫氏回 节点效率 NE",
+      "r_partial": -0.206,
+      "p_value": 0.006,
+      "fdr_q": 0.007
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "NE_HG_L",
+      "metric_label_cn": "左赫氏回 节点效率 NE",
+      "r_partial": -0.196,
+      "p_value": 0.009,
+      "fdr_q": 0.009
+    },
+    {
+      "symptom_measure": "BPRS_total",
+      "metric_id": "NE_MCG_L",
+      "metric_label_cn": "左内侧扣带回 节点效率 NE",
+      "r_partial": -0.159,
+      "p_value": 0.036,
+      "fdr_q": 0.035
+    },
+    {
+      "symptom_measure": "PositiveSymptoms_BPRS6",
+      "metric_id": "NE_MCG_L",
+      "metric_label_cn": "左内侧扣带回 节点效率 NE",
+      "r_partial": -0.205,
+      "p_value": 0.007,
+      "fdr_q": 0.008
+    }
+  ],
+  "missing_value_rule": "若出现“<0.001”等区间形式，按字符串存储；前端显示原样。"
+}

@@ -1,0 +1,19 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; }
+body { margin: 0; padding: 0; color: #111; background: #fafafa; }
+header { padding: 28px 20px 18px; background: #ffffff; border-bottom: 1px solid #e5e5e5; }
+main { max-width: 920px; margin: 0 auto; padding: 22px 20px 60px; }
+h1 { font-size: 30px; margin: 0 0 10px; }
+h2 { font-size: 22px; margin-top: 28px; }
+h3 { font-size: 18px; margin-top: 20px; }
+.subtitle { font-size: 16px; color: #333; margin: 0 0 6px; }
+.meta { font-size: 13px; color: #555; }
+.card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 16px; margin: 14px 0; }
+.small { font-size: 13px; color: #666; }
+hr { border: 0; border-top: 1px solid #eee; margin: 18px 0; }
+figure { margin: 0; }
+figure img { width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; }
+figcaption { font-size: 13px; color: #555; margin-top: 8px; }
+code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
+.footer { margin-top: 34px; font-size: 12px; color: #666; }
+.citations { font-size: 12px; color: #666; margin-top: 8px; }
+.badge { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #f0f0f0; margin-left: 8px; color: #333; }
