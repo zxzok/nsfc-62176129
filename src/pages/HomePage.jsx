@@ -9,9 +9,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <FeaturedPublications />
       <ResearchHighlights />
       <KeyResults />
+      <FeaturedPublications />
       <ApplicationImpact />
       <ContactSection />
     </>
