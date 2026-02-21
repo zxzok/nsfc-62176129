@@ -62,10 +62,14 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className={`border-t pt-6 text-center text-xs ${
+        <div className={`border-t pt-6 text-center text-xs space-y-2 ${
           isTesla ? 'border-white/10' : isAcademic ? 'border-white/10' : 'border-white/10'
         }`}>
-          &copy; {t('contact.copyright')}
+          <div>&copy; {t('contact.copyright')}</div>
+          <div>
+            {t('contact.reprint')}{' '}
+            <a href="mailto:zhangxizhe@njmu.edu.cn" className="text-cyan hover:underline">zhangxizhe@njmu.edu.cn</a>
+          </div>
         </div>
       </div>
     </footer>
