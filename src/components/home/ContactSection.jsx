@@ -7,14 +7,17 @@ function PICard({ t, variant }) {
   const isDark = variant === 'dark'
   const isTesla = variant === 'tesla'
 
+  const subTextClass = isDark ? 'text-white/50' : isTesla ? 'text-white/40' : 'text-slate-500'
+  const linkClass = isDark ? 'text-cyan hover:text-cyan/80' : isTesla ? 'text-white/60 hover:text-white/80' : 'text-ocean hover:text-ocean/80'
+
   return (
-    <div className={`flex items-center gap-4 rounded-xl px-5 py-4 max-w-md mx-auto mb-8 ${
+    <div className={`flex items-start gap-4 rounded-xl px-5 py-5 max-w-md mx-auto mb-8 ${
       isDark ? 'glass' :
       isTesla ? 'border border-white/10' :
       'border border-ocean/10 bg-ocean/[0.02]'
     }`}>
       {/* Avatar placeholder */}
-      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold ${
+      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold mt-0.5 ${
         isDark ? 'bg-white/[0.08] text-cyan' :
         isTesla ? 'bg-white/5 text-white/60' :
         'bg-ocean/10 text-ocean'
@@ -22,20 +25,31 @@ function PICard({ t, variant }) {
         {(t('contact.piName') || '').charAt(0)}
       </div>
       <div className="text-left">
-        <div className={`font-semibold text-[15px] ${
+        <div className={`font-semibold text-[15px] mb-1 ${
           isDark ? 'text-white' :
           isTesla ? 'text-white/80' :
           'text-navy'
         }`}>
           {t('contact.piName')}
         </div>
-        <div className={`text-[13px] ${
-          isDark ? 'text-white/50' :
-          isTesla ? 'text-white/40' :
-          'text-slate-500'
-        }`}>
+        <div className={`text-[13px] ${subTextClass}`}>
+          {t('contact.piTitle')}
+        </div>
+        <div className={`text-[13px] ${subTextClass}`}>
           {t('contact.piRole')}
         </div>
+        <div className={`text-[13px] ${subTextClass}`}>
+          {t('contact.piAffiliation')}
+        </div>
+        <a href="mailto:zhangxizhe@njmu.edu.cn"
+          className={`inline-flex items-center gap-1.5 text-[13px] mt-1.5 transition-colors ${linkClass}`}
+        >
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          zhangxizhe@njmu.edu.cn
+        </a>
       </div>
     </div>
   )

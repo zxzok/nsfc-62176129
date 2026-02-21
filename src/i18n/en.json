@@ -82,7 +82,9 @@
   "contact": {
     "heading": "Contact",
     "piName": "Xizhe Zhang",
-    "piRole": "Nanjing Medical University · Principal Investigator",
+    "piRole": "School of Biomedical Engineering and Informatics, NMU",
+    "piAffiliation": "Nanjing Brain Hospital, Affiliated to NMU",
+    "piTitle": "Professor · Doctoral Supervisor · PI",
     "funding": "This research was supported by the National Natural Science Foundation of China (Grant No. 62176129)",
     "copyright": "2025 NSFC 62176129 Project Team",
     "disclaimerTitle": "Disclaimer",
