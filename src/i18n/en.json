@@ -25,11 +25,12 @@
     "introDesc": "Leveraging brain imaging and AI to characterize individual differences, addressing three core questions — which brain region to stimulate, how to evaluate efficacy objectively, and how to translate findings into clinical practice — advancing non-invasive brain stimulation toward personalized precision."
   },
   "featured": {
-    "heading": "Featured Publications",
-    "desc": "Five representative papers spanning network control, precision subtyping, digital phenotyping, and clinical translation",
+    "heading": "Publications",
+    "desc": "All publications from the project funding period, spanning network control, precision subtyping, digital phenotyping, and clinical translation",
+    "representative": "Representative",
     "viewDetail": "View Details",
     "readExplainer": "Read Explainer",
-    "viewAll": "View All Publications"
+    "viewAll": "View Publications Page"
   },
   "research": {
     "heading": "Research Highlights",
