@@ -39,22 +39,30 @@ function DarkResults({ t }) {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {stats.map((s, i) => (
             <ScrollReveal key={s.key} delay={i * 120}>
-              <div className="group relative text-center p-7 rounded-2xl glass hover:bg-white/[0.08] transition-all duration-400 hover:-translate-y-1">
+              <div className="group relative text-center p-7 rounded-2xl glass hover:bg-white/[0.08] transition-all duration-400 hover:-translate-y-1 h-full flex flex-col">
                 <div className="w-14 h-14 rounded-2xl bg-white/[0.06] flex items-center justify-center mx-auto mb-4 text-cyan/70 group-hover:text-cyan group-hover:scale-110 transition-all">
                   {s.icon}
                 </div>
-                <div className="text-3xl sm:text-4xl font-bold text-cyan mb-2">
-                  <AnimatedCounter end={s.value} suffix={s.suffix} />
+                <div className="flex-1 flex flex-col justify-center items-center">
+                  <div className="text-[13px] text-white/60 group-hover:text-white/80 transition-colors leading-relaxed mb-2">
+                    {t(`results.${s.key}`)}
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-bold text-cyan mb-2">
+                    <AnimatedCounter end={s.value} suffix={s.suffix} />
+                  </div>
+                  <div className="text-[13px] text-white/60 group-hover:text-white/80 transition-colors leading-relaxed">
+                    {t(`results.${s.key}Unit`)}
+                  </div>
                 </div>
-                <div className="text-[13px] text-white/60 group-hover:text-white/80 transition-colors leading-relaxed">
-                  {t(`results.${s.key}`)}
-                  {t(`results.${s.key}Unit`) && <span className="ml-1">{t(`results.${s.key}Unit`)}</span>}
+                <div className="mt-4 h-[20px]">
+                  {s.link ? (
+                    <Link to={s.link} className="inline-block text-[13px] text-cyan/60 hover:text-cyan transition-colors">
+                      {t('results.viewAll')} &rarr;
+                    </Link>
+                  ) : (
+                    <span className="inline-block text-[13px] text-transparent">&nbsp;</span>
+                  )}
                 </div>
-                {s.link && (
-                  <Link to={s.link} className="inline-block mt-4 text-[13px] text-cyan/60 hover:text-cyan transition-colors">
-                    {t('results.viewAll')} &rarr;
-                  </Link>
-                )}
                 <div className="absolute bottom-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </ScrollReveal>
@@ -93,7 +101,7 @@ function LightResults({ t, theme }) {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {stats.map((s, i) => (
             <ScrollReveal key={s.key} delay={i * 120}>
-              <div className={`group relative text-center p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 ${
+              <div className={`group relative text-center p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col ${
                 isTesla
                   ? 'border border-white/10 hover:border-white/20'
                   : 'card-base'
@@ -103,22 +111,30 @@ function LightResults({ t, theme }) {
                 }`}>
                   {s.icon}
                 </div>
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${
-                  isTesla ? 'text-white' : 'text-gradient'
-                }`}>
-                  <AnimatedCounter end={s.value} suffix={s.suffix} />
-                </div>
-                <div className={`text-[13px] leading-relaxed ${isTesla ? 'text-white/50' : 'text-slate-500'}`}>
-                  {t(`results.${s.key}`)}
-                  {t(`results.${s.key}Unit`) && <span className="ml-1">{t(`results.${s.key}Unit`)}</span>}
-                </div>
-                {s.link && (
-                  <Link to={s.link} className={`inline-block mt-4 text-[13px] transition-colors ${
-                    isTesla ? 'text-white/40 hover:text-white/70' : 'text-ocean/60 hover:text-ocean'
+                <div className="flex-1 flex flex-col justify-center items-center">
+                  <div className={`text-[13px] leading-relaxed mb-2 ${isTesla ? 'text-white/50' : 'text-slate-500'}`}>
+                    {t(`results.${s.key}`)}
+                  </div>
+                  <div className={`text-3xl sm:text-4xl font-bold mb-2 ${
+                    isTesla ? 'text-white' : 'text-gradient'
                   }`}>
-                    {t('results.viewAll')} &rarr;
-                  </Link>
-                )}
+                    <AnimatedCounter end={s.value} suffix={s.suffix} />
+                  </div>
+                  <div className={`text-[13px] leading-relaxed ${isTesla ? 'text-white/50' : 'text-slate-500'}`}>
+                    {t(`results.${s.key}Unit`)}
+                  </div>
+                </div>
+                <div className="mt-4 h-[20px]">
+                  {s.link ? (
+                    <Link to={s.link} className={`inline-block text-[13px] transition-colors ${
+                      isTesla ? 'text-white/40 hover:text-white/70' : 'text-ocean/60 hover:text-ocean'
+                    }`}>
+                      {t('results.viewAll')} &rarr;
+                    </Link>
+                  ) : (
+                    <span className="inline-block text-[13px] text-transparent">&nbsp;</span>
+                  )}
+                </div>
               </div>
             </ScrollReveal>
           ))}
