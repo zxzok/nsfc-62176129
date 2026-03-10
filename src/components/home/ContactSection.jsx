@@ -83,7 +83,6 @@ function DarkContact({ t }) {
             </h3>
             <p className="text-[13px] text-white/40 leading-relaxed">{t('contact.disclaimer')}</p>
           </div>
-          <p className="text-[15px] text-white/50 max-w-xl mx-auto mb-8 leading-relaxed">{t('contact.funding')}</p>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-white/70 text-sm">
             <svg className="w-4 h-4 text-cyan/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -130,12 +129,6 @@ function LightContact({ t, theme }) {
               {t('contact.disclaimer')}
             </p>
           </div>
-
-          <p className={`text-[15px] max-w-xl mx-auto mb-8 leading-relaxed ${
-            isTesla ? 'text-white/40' : 'text-slate-500'
-          }`}>
-            {t('contact.funding')}
-          </p>
 
           <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm ${
             isTesla ? 'border border-white/15 text-white/50' : 'border border-ocean/15 text-slate-500'

@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { useState } from 'react'
 import { useTranslation } from '../i18n'
 import { publications, categories, getPublicationBySlug } from '../data/publications'
 import ScrollReveal from '../components/shared/ScrollReveal'
@@ -39,6 +40,7 @@ export default function PublicationDetailPage() {
   const { slug } = useParams()
   const { language, t } = useTranslation()
   const pub = getPublicationBySlug(slug)
+  const [showExplainer, setShowExplainer] = useState(false)
 
   if (!pub) {
     return (
@@ -61,7 +63,9 @@ export default function PublicationDetailPage() {
   const colors = categoryColorMap[pub.category] || categoryColorMap['network-control']
   const categoryLabel = categories.find((c) => c.id === pub.category)?.label[language] || pub.category
   const abstract = t(`publicationDetail.pub${pub.id}.abstract`)
+  const explainer = t(`publicationDetail.pub${pub.id}.explainer`)
   const hasAbstract = abstract && !abstract.startsWith('publicationDetail.')
+  const hasExplainer = explainer && !explainer.startsWith('publicationDetail.')
   const relatedPubs = publications.filter((p) => p.category === pub.category && p.id !== pub.id)
   const basePath = import.meta.env.BASE_URL || '/'
 
@@ -142,8 +146,8 @@ export default function PublicationDetailPage() {
             </div>
           </ScrollReveal>
 
-          {/* Abstract */}
-          {hasAbstract && (
+          {/* Abstract / Explainer */}
+          {(hasAbstract || hasExplainer) && (
             <ScrollReveal delay={100}>
               <div className="mb-10">
                 <h2 className="text-xl font-semibold text-navy mb-4 flex items-center gap-2">
@@ -159,9 +163,11 @@ export default function PublicationDetailPage() {
                     <line x1="16" y1="13" x2="8" y2="13" />
                     <line x1="16" y1="17" x2="8" y2="17" />
                   </svg>
-                  {t('publicationDetail.abstractLabel')}
+                  {showExplainer && hasExplainer ? t('publicationDetail.explainerLabel') : t('publicationDetail.abstractLabel')}
                 </h2>
-                <p className="text-slate-600 leading-[1.8] text-base">{abstract}</p>
+                <p className="text-slate-600 leading-[1.8] text-base whitespace-pre-line">
+                  {showExplainer && hasExplainer ? explainer : abstract}
+                </p>
               </div>
             </ScrollReveal>
           )}
@@ -206,11 +212,9 @@ export default function PublicationDetailPage() {
                   </svg>
                   {t('publicationDetail.downloadPdf')}
                 </a>
-                {pub.explainerUrl && (
-                  <a
-                    href={`${basePath}${pub.explainerUrl}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {hasExplainer && (
+                  <button
+                    onClick={() => setShowExplainer(!showExplainer)}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-ocean to-cyan text-white text-sm font-medium hover:shadow-lg transition-all"
                   >
                     <svg
@@ -222,25 +226,8 @@ export default function PublicationDetailPage() {
                     >
                       <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
-                    {language === 'zh' ? '阅读科普解读' : 'Read Explainer'}
-                  </a>
-                )}
-                {pub.hasExplainer && (
-                  <Link
-                    to={`/publications/${pub.slug}/explainer`}
-                    className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border ${colors.btnBorder} text-sm font-medium transition-colors`}
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    {language === 'zh' ? '科普解读' : 'Explainer'}
-                  </Link>
+                    {showExplainer ? t('publicationDetail.readAbstract') : t('publicationDetail.readExplainer')}
+                  </button>
                 )}
               </div>
             </ScrollReveal>

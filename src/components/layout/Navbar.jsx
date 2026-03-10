@@ -4,7 +4,7 @@ import { useTranslation } from '../../i18n'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import LanguageSwitcher from './LanguageSwitcher'
 
-const sectionIds = ['overview', 'research', 'results', 'impact', 'timeline', 'team']
+const sectionIds = ['overview', 'research', 'results', 'impact', 'team']
 
 const researchLinks = [
   { path: '/research/subtyping', key: 'subtyping' },
@@ -62,15 +62,27 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-0.5 flex-nowrap">
           {isHome ? (
             sectionIds.map((id) => (
-              <button
-                key={id}
-                onClick={() => scrollTo(id)}
-                className={`px-2 py-1.5 rounded-lg text-sm whitespace-nowrap transition-colors ${
-                  activeSection === id ? activeColor : textColor
-                }`}
-              >
-                {t(`nav.${id}`)}
-              </button>
+              id === 'team' ? (
+                <a
+                  key={id}
+                  href="https://github.com/njnklab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-2 py-1.5 rounded-lg text-sm whitespace-nowrap transition-colors ${textColor}`}
+                >
+                  {t(`nav.${id}`)}
+                </a>
+              ) : (
+                <button
+                  key={id}
+                  onClick={() => scrollTo(id)}
+                  className={`px-2 py-1.5 rounded-lg text-sm whitespace-nowrap transition-colors ${
+                    activeSection === id ? activeColor : textColor
+                  }`}
+                >
+                  {t(`nav.${id}`)}
+                </button>
+              )
             ))
           ) : (
             <Link to="/" className={`px-2 py-1.5 rounded-lg text-sm ${textColor}`}>
@@ -137,9 +149,15 @@ export default function Navbar() {
           <div className="section-container py-4 flex flex-col gap-2">
             {isHome ? (
               sectionIds.map((id) => (
-                <button key={id} onClick={() => scrollTo(id)} className="text-left px-3 py-2 text-sm text-slate-700 hover:text-cyan rounded-lg hover:bg-slate-50">
-                  {t(`nav.${id}`)}
-                </button>
+                id === 'team' ? (
+                  <a key={id} href="https://github.com/njnklab" target="_blank" rel="noopener noreferrer" className="text-left px-3 py-2 text-sm text-slate-700 hover:text-cyan rounded-lg hover:bg-slate-50">
+                    {t(`nav.${id}`)}
+                  </a>
+                ) : (
+                  <button key={id} onClick={() => scrollTo(id)} className="text-left px-3 py-2 text-sm text-slate-700 hover:text-cyan rounded-lg hover:bg-slate-50">
+                    {t(`nav.${id}`)}
+                  </button>
+                )
               ))
             ) : (
               <Link to="/" className="px-3 py-2 text-sm text-slate-700 hover:text-cyan">{t('nav.backHome')}</Link>
